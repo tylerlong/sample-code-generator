@@ -16,7 +16,17 @@ paths.forEach(path => {
     console.log(path, method);
     markdown += `\n\n## ${changeCase.sentenceCase(operation.operationId)}
 
-HTTP ${changeCase.upperCase(method)} ${path}`
+HTTP ${changeCase.upperCase(method)} ${path}
+
+\`\`\`js
+const SDK = require('ringcentral');
+
+const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const platform = rcsdk.platform();
+await platform.login({ username, extension, password });
+const r = await platform.${method}(\`${path.replace(/\{/g, '${')}\`);
+\`\`\`
+`
   });
 });
 
