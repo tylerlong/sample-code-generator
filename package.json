@@ -7,7 +7,8 @@
   "dependencies": {
     "change-case": "^3.1.0",
     "dotenv-override-true": "^6.2.0",
-    "js-yaml": "^3.12.2"
+    "js-yaml": "^3.12.2",
+    "ramda": "^0.26.1"
   },
   "devDependencies": {
     "@types/node": "^11.9.6",
