@@ -1,0 +1,15 @@
+{
+  "license": "MIT",
+  "scripts": {
+    "compile": "tsc -w *.ts",
+    "generate": "node -r dotenv-override-true/config index.js"
+  },
+  "dependencies": {
+    "dotenv-override-true": "^6.2.0",
+    "js-yaml": "^3.12.2"
+  },
+  "devDependencies": {
+    "@types/node": "^11.9.6",
+    "typescript": "^3.3.3333"
+  }
+}
