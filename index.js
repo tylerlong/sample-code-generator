@@ -55,7 +55,7 @@ const generateDoc = (path, method, operation) => {
   const codes = generateCodes(path, method, operation)
   const code = codes[0]
   const extraCode = codes.slice(1).join('\n')
-  let doc = `## ${changeCase.titleCase(operation.operationId)}
+  let doc = `## ${operation.summary || changeCase.titleCase(operation.operationId)}
 
 HTTP ${changeCase.upperCase(method)} ${path}
 

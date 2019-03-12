@@ -1,6 +1,6 @@
 # RingCentral JavaScript SDK code samples
 
-## Get All Versions
+## Get API Versions
 
 HTTP GET /restapi
 
@@ -13,7 +13,7 @@ const r = await platform.get('/restapi');
 ```
 
 
-## Get Api Version
+## Get Version Info
 
 HTTP GET /restapi/{apiVersion}
 
@@ -27,7 +27,7 @@ const r = await platform.get(`/restapi/${apiVersion}`);
 
 - `apiVersion`'s default value is `v1.0`
 
-## Load Api Status
+## Get Service Status
 
 HTTP GET /restapi/v1.0/status
 
@@ -40,7 +40,7 @@ const r = await platform.get('/restapi/v1.0/status');
 ```
 
 
-## Load User Call Log
+## Get User Call Log Records
 
 HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/call-log
 
@@ -55,7 +55,7 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${ext
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-## Delete User Call Log
+## Delete User Call Log Records
 
 HTTP DELETE /restapi/v1.0/account/{accountId}/extension/{extensionId}/call-log
 
@@ -85,7 +85,7 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${ext
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-## Get Call Records
+## Get User Call Record(s)
 
 HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/call-log/{callRecordId}
 
@@ -100,7 +100,7 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${ext
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-## List Extension Active Calls
+## Get User Active Calls
 
 HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/active-calls
 
@@ -115,7 +115,7 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${ext
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-## Load Company Call Log
+## Get Company Call Log Records
 
 HTTP GET /restapi/v1.0/account/{accountId}/call-log
 
@@ -129,7 +129,7 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/call-log`);
 
 - `accountId`'s default value is `~`
 
-## Load Company Call Log Record
+## Get Company Call Log Record(s)
 
 HTTP GET /restapi/v1.0/account/{accountId}/call-log/{callRecordId}
 
@@ -143,7 +143,7 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/call-log/${call
 
 - `accountId`'s default value is `~`
 
-## List Company Active Calls
+## Get Company Active Calls
 
 HTTP GET /restapi/v1.0/account/{accountId}/active-calls
 
@@ -157,7 +157,7 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/active-calls`);
 
 - `accountId`'s default value is `~`
 
-## List Call Recordings
+## Get Call Recording(s)
 
 HTTP GET /restapi/v1.0/account/{accountId}/recording/{recordingId}
 
@@ -171,7 +171,7 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/recording/${rec
 
 - `accountId`'s default value is `~`
 
-## List Call Recording Data
+## Get Call Recordings Data
 
 HTTP GET /restapi/v1.0/account/{accountId}/recording/{recordingId}/content
 
@@ -185,7 +185,7 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/recording/${rec
 
 - `accountId`'s default value is `~`
 
-## Send Sms
+## Create SMS Message
 
 HTTP POST /restapi/v1.0/account/{accountId}/extension/{extensionId}/sms
 
@@ -301,7 +301,7 @@ const r = await platform.post(`/restapi/v1.0/account/${accountId}/extension/${ex
 }
 ```
 
-## Send Fax Message
+## Create Fax Message
 
 HTTP POST /restapi/v1.0/account/{accountId}/extension/{extensionId}/fax
 
@@ -375,7 +375,7 @@ const r = await platform.post(`/restapi/v1.0/account/${accountId}/extension/${ex
 }
 ```
 
-## List Fax Cover Pages
+## Get Available Fax Cover Pages
 
 HTTP GET /restapi/v1.0/dictionary/fax-cover-page
 
@@ -388,7 +388,7 @@ const r = await platform.get('/restapi/v1.0/dictionary/fax-cover-page');
 ```
 
 
-## List Messages
+## Get Message List
 
 HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/message-store
 
@@ -403,7 +403,7 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${ext
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-## Delete Messages By Filter
+## Delete Conversation(s)
 
 HTTP DELETE /restapi/v1.0/account/{accountId}/extension/{extensionId}/message-store
 
@@ -418,7 +418,7 @@ const r = await platform.delete(`/restapi/v1.0/account/${accountId}/extension/${
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-## Load Message
+## Get Message(s)
 
 HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/message-store/{messageId}
 
@@ -433,7 +433,7 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${ext
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-## Update Message
+## Update Message(s)
 
 HTTP PUT /restapi/v1.0/account/{accountId}/extension/{extensionId}/message-store/{messageId}
 
@@ -466,7 +466,7 @@ const r = await platform.put(`/restapi/v1.0/account/${accountId}/extension/${ext
 }
 ```
 
-## Delete Message
+## Delete Message(s)
 
 HTTP DELETE /restapi/v1.0/account/{accountId}/extension/{extensionId}/message-store/{messageId}
 
@@ -481,7 +481,7 @@ const r = await platform.delete(`/restapi/v1.0/account/${accountId}/extension/${
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-## Get Message Attachment By Id
+## Get Message Attachment
 
 HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/message-store/{messageId}/content/{attachmentId}
 
@@ -511,7 +511,7 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${ext
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-## Load Message Store Configuration
+## Get Message Store Configuration
 
 HTTP GET /restapi/v1.0/account/{accountId}/message-store-configuration
 
@@ -555,7 +555,7 @@ const r = await platform.put(`/restapi/v1.0/account/${accountId}/message-store-c
 }
 ```
 
-## Make Ring Out Call
+## Make RingOut Call
 
 HTTP POST /restapi/v1.0/account/{accountId}/extension/{extensionId}/ring-out
 
@@ -628,7 +628,7 @@ const r = await platform.post(`/restapi/v1.0/account/${accountId}/extension/${ex
 }
 ```
 
-## Get Ring Out Call Status
+##  Get RingOut Call Status
 
 HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/ring-out/{ringoutId}
 
@@ -643,7 +643,7 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${ext
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-## Cancel Ring Out Call
+## Cancel RingOut Call
 
 HTTP DELETE /restapi/v1.0/account/{accountId}/extension/{extensionId}/ring-out/{ringoutId}
 
@@ -658,7 +658,7 @@ const r = await platform.delete(`/restapi/v1.0/account/${accountId}/extension/${
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-## Make Ring Out Call Deprecated
+## Make RingOut Call
 
 HTTP POST /restapi/v1.0/account/{accountId}/extension/{extensionId}/ringout
 
@@ -731,7 +731,7 @@ const r = await platform.post(`/restapi/v1.0/account/${accountId}/extension/${ex
 }
 ```
 
-## Get Ring Out Call Status Deprecated
+## Get RingOut Call Status
 
 HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/ringout/{ringoutId}
 
@@ -746,7 +746,7 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${ext
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-## Cancel Ring Out Call Deprecated
+## Cancel RingOut Call
 
 HTTP DELETE /restapi/v1.0/account/{accountId}/extension/{extensionId}/ringout/{ringoutId}
 
@@ -761,7 +761,7 @@ const r = await platform.delete(`/restapi/v1.0/account/${accountId}/extension/${
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-## List Contacts
+## Get Contact List
 
 HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/address-book/contact
 
@@ -961,7 +961,7 @@ const r = await platform.post(`/restapi/v1.0/account/${accountId}/extension/${ex
 }
 ```
 
-## Load Contact
+## Get Contact(s)
 
 HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/address-book/contact/{contactId}
 
@@ -976,7 +976,7 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${ext
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-## Update Contact
+## Update Contact(s)
 
 HTTP PUT /restapi/v1.0/account/{accountId}/extension/{extensionId}/address-book/contact/{contactId}
 
@@ -1161,7 +1161,7 @@ const r = await platform.put(`/restapi/v1.0/account/${accountId}/extension/${ext
 }
 ```
 
-## Delete Contact
+## Delete Contact(s)
 
 HTTP DELETE /restapi/v1.0/account/{accountId}/extension/{extensionId}/address-book/contact/{contactId}
 
@@ -1176,7 +1176,7 @@ const r = await platform.delete(`/restapi/v1.0/account/${accountId}/extension/${
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-## Sync Address Book
+## Address Book Synchronization
 
 HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/address-book-sync
 
@@ -1191,7 +1191,7 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${ext
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-## List Favorite Contacts
+## Get Favorite Contact List
 
 HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/favorite
 
@@ -1255,7 +1255,7 @@ const r = await platform.put(`/restapi/v1.0/account/${accountId}/extension/${ext
 }
 ```
 
-## Search Directory Entries
+## Search Company Directory Entries
 
 HTTP POST /restapi/v1.0/account/{accountId}/directory/entries/search
 
@@ -1343,7 +1343,7 @@ const r = await platform.post(`/restapi/v1.0/account/${accountId}/directory/entr
 }
 ```
 
-## List Directory Entries
+## Get Company Directory Entries
 
 HTTP GET /restapi/v1.0/account/{accountId}/directory/entries
 
@@ -1357,7 +1357,7 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/directory/entri
 
 - `accountId`'s default value is `~`
 
-## Load Account Federation
+## Get Account Federation
 
 HTTP GET /restapi/v1.0/account/{accountId}/directory/federation
 
@@ -1371,7 +1371,7 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/directory/feder
 
 - `accountId`'s default value is `~`
 
-## Get Presence Status
+## Get User Status
 
 HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/presence
 
@@ -1386,7 +1386,7 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${ext
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-## Update Presence Status
+## Update User Status
 
 HTTP PUT /restapi/v1.0/account/{accountId}/extension/{extensionId}/presence
 
@@ -1514,7 +1514,7 @@ const r = await platform.put(`/restapi/v1.0/account/${accountId}/extension/${ext
 }
 ```
 
-## Account Presence
+## Get User Presence Statuses List
 
 HTTP GET /restapi/v1.0/account/{accountId}/presence
 
@@ -1528,7 +1528,7 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/presence`);
 
 - `accountId`'s default value is `~`
 
-## List Glip Chats
+## Get Chat List
 
 HTTP GET /restapi/v1.0/glip/chats
 
@@ -1541,7 +1541,7 @@ const r = await platform.get('/restapi/v1.0/glip/chats');
 ```
 
 
-## Load Glip Chat
+## Get Chat
 
 HTTP GET /restapi/v1.0/glip/chats/{chatId}
 
@@ -1554,7 +1554,7 @@ const r = await platform.get(`/restapi/v1.0/glip/chats/${chatId}`);
 ```
 
 
-## List Glip Conversations
+## Get User Conversation List
 
 HTTP GET /restapi/v1.0/glip/conversations
 
@@ -1567,7 +1567,7 @@ const r = await platform.get('/restapi/v1.0/glip/conversations');
 ```
 
 
-## Create Glip Conversation
+## Create/Open Chat
 
 HTTP POST /restapi/v1.0/glip/conversations
 
@@ -1610,7 +1610,7 @@ const r = await platform.post('/restapi/v1.0/glip/conversations', glipPostMember
 }
 ```
 
-## Load Glip Conversation
+## Get Conversation
 
 HTTP GET /restapi/v1.0/glip/conversations/{chatId}
 
@@ -1623,7 +1623,7 @@ const r = await platform.get(`/restapi/v1.0/glip/conversations/${chatId}`);
 ```
 
 
-## List Glip Teams
+## Get Team List
 
 HTTP GET /restapi/v1.0/glip/teams
 
@@ -1636,7 +1636,7 @@ const r = await platform.get('/restapi/v1.0/glip/teams');
 ```
 
 
-## Create Glip Team
+## Create Team
 
 HTTP POST /restapi/v1.0/glip/teams
 
@@ -1691,7 +1691,7 @@ const r = await platform.post('/restapi/v1.0/glip/teams', glipPostTeamBody);
 }
 ```
 
-## Load Glip Team
+## Get Team
 
 HTTP GET /restapi/v1.0/glip/teams/{chatId}
 
@@ -1704,7 +1704,7 @@ const r = await platform.get(`/restapi/v1.0/glip/teams/${chatId}`);
 ```
 
 
-## Update Glip Team
+## Update Team
 
 HTTP PATCH /restapi/v1.0/glip/teams/{chatId}
 
@@ -1739,7 +1739,7 @@ const r = await platform.patch(`/restapi/v1.0/glip/teams/${chatId}`, glipPatchTe
 }
 ```
 
-## Delete Glip Team
+## Delete Team
 
 HTTP DELETE /restapi/v1.0/glip/teams/{chatId}
 
@@ -1752,7 +1752,7 @@ const r = await platform.delete(`/restapi/v1.0/glip/teams/${chatId}`);
 ```
 
 
-## Join Glip Team
+## Join Team
 
 HTTP POST /restapi/v1.0/glip/teams/{chatId}/join
 
@@ -1765,7 +1765,7 @@ const r = await platform.post(`/restapi/v1.0/glip/teams/${chatId}/join`);
 ```
 
 
-## Leave Glip Team
+## Leave Team
 
 HTTP POST /restapi/v1.0/glip/teams/{chatId}/leave
 
@@ -1778,7 +1778,7 @@ const r = await platform.post(`/restapi/v1.0/glip/teams/${chatId}/leave`);
 ```
 
 
-## Add Glip Team Members
+## Add Team Members
 
 HTTP POST /restapi/v1.0/glip/teams/{chatId}/add
 
@@ -1821,7 +1821,7 @@ const r = await platform.post(`/restapi/v1.0/glip/teams/${chatId}/add`, glipPost
 }
 ```
 
-## Remove Glip Team Members
+## Remove Members from Team
 
 HTTP POST /restapi/v1.0/glip/teams/{chatId}/remove
 
@@ -1860,7 +1860,7 @@ const r = await platform.post(`/restapi/v1.0/glip/teams/${chatId}/remove`, glipP
 }
 ```
 
-## Archive Glip Team
+## Archive Team
 
 HTTP POST /restapi/v1.0/glip/teams/{chatId}/archive
 
@@ -1873,7 +1873,7 @@ const r = await platform.post(`/restapi/v1.0/glip/teams/${chatId}/archive`);
 ```
 
 
-## Unarchive Glip Team
+## Unarchive Team
 
 HTTP POST /restapi/v1.0/glip/teams/{chatId}/unarchive
 
@@ -1886,7 +1886,7 @@ const r = await platform.post(`/restapi/v1.0/glip/teams/${chatId}/unarchive`);
 ```
 
 
-## Load Glip Everyone
+## Get Everyone Chat Info
 
 HTTP GET /restapi/v1.0/glip/everyone
 
@@ -1899,7 +1899,7 @@ const r = await platform.get('/restapi/v1.0/glip/everyone');
 ```
 
 
-## Update Glip Everyone
+## Update Everyone Сhat Info
 
 HTTP PATCH /restapi/v1.0/glip/everyone
 
@@ -1930,7 +1930,7 @@ const r = await platform.patch('/restapi/v1.0/glip/everyone', updateGlipEveryone
 }
 ```
 
-## List Glip Groups
+## Get User Groups
 
 HTTP GET /restapi/v1.0/glip/groups
 
@@ -1943,7 +1943,7 @@ const r = await platform.get('/restapi/v1.0/glip/groups');
 ```
 
 
-## Create Glip Group
+## Create Group
 
 HTTP POST /restapi/v1.0/glip/groups
 
@@ -1996,7 +1996,7 @@ const r = await platform.post('/restapi/v1.0/glip/groups', glipCreateGroup);
 }
 ```
 
-## Load Glip Group
+## Get Group
 
 HTTP GET /restapi/v1.0/glip/groups/{groupId}
 
@@ -2009,7 +2009,7 @@ const r = await platform.get(`/restapi/v1.0/glip/groups/${groupId}`);
 ```
 
 
-## Assign Glip Group Members
+## Edit Group Members
 
 HTTP POST /restapi/v1.0/glip/groups/{groupId}/bulk-assign
 
@@ -2053,7 +2053,7 @@ const r = await platform.post(`/restapi/v1.0/glip/groups/${groupId}/bulk-assign`
 }
 ```
 
-## List Glip Group Posts
+## Get Group Posts
 
 HTTP GET /restapi/v1.0/glip/groups/{groupId}/posts
 
@@ -2066,7 +2066,7 @@ const r = await platform.get(`/restapi/v1.0/glip/groups/${groupId}/posts`);
 ```
 
 
-## Create Glip Group Post
+## Create Post in Group
 
 HTTP POST /restapi/v1.0/glip/groups/{groupId}/posts
 
@@ -2248,7 +2248,7 @@ const r = await platform.post(`/restapi/v1.0/glip/groups/${groupId}/posts`, glip
 }
 ```
 
-## Update Glip Post Text
+## Update Post
 
 HTTP PUT /restapi/v1.0/glip/groups/{groupId}/posts/{postId}/text
 
@@ -2261,7 +2261,7 @@ const r = await platform.put(`/restapi/v1.0/glip/groups/${groupId}/posts/${postI
 ```
 
 
-## List Recent Chats
+## Get Recent Chats
 
 HTTP GET /restapi/v1.0/glip/recent/chats
 
@@ -2274,7 +2274,7 @@ const r = await platform.get('/restapi/v1.0/glip/recent/chats');
 ```
 
 
-## List Favorite Chats
+## Get Favorite Chats
 
 HTTP GET /restapi/v1.0/glip/favorites
 
@@ -2287,7 +2287,7 @@ const r = await platform.get('/restapi/v1.0/glip/favorites');
 ```
 
 
-## Favorite Glip Chat
+## Add Chat to Favorites
 
 HTTP POST /restapi/v1.0/glip/chats/{chatId}/favorite
 
@@ -2300,7 +2300,7 @@ const r = await platform.post(`/restapi/v1.0/glip/chats/${chatId}/favorite`);
 ```
 
 
-## Unfavorite Glip Chat
+## Remove Chat from Favorites
 
 HTTP POST /restapi/v1.0/glip/chats/{chatId}/unfavorite
 
@@ -2313,7 +2313,7 @@ const r = await platform.post(`/restapi/v1.0/glip/chats/${chatId}/unfavorite`);
 ```
 
 
-## Mark Chat Read
+## Mark Chat as Read
 
 HTTP POST /restapi/v1.0/glip/chats/{chatId}/read
 
@@ -2326,7 +2326,7 @@ const r = await platform.post(`/restapi/v1.0/glip/chats/${chatId}/read`);
 ```
 
 
-## Mark Chat Unread
+## Mark Chat as Unread
 
 HTTP POST /restapi/v1.0/glip/chats/{chatId}/unread
 
@@ -2339,7 +2339,7 @@ const r = await platform.post(`/restapi/v1.0/glip/chats/${chatId}/unread`);
 ```
 
 
-## List Glip Posts
+## Get Posts
 
 HTTP GET /restapi/v1.0/glip/posts
 
@@ -2534,7 +2534,7 @@ const r = await platform.post('/restapi/v1.0/glip/posts', glipCreatePost);
 }
 ```
 
-## Create Glip File
+## Upload File
 
 HTTP POST /restapi/v1.0/glip/files
 
@@ -2551,7 +2551,7 @@ const r = await platform.post('/restapi/v1.0/glip/files', formData);
 ```
 
 
-## Create Glip Card
+## Create Card
 
 HTTP POST /restapi/v1.0/glip/cards
 
@@ -2712,7 +2712,7 @@ const r = await platform.post('/restapi/v1.0/glip/cards', glipMessageAttachmentI
 }
 ```
 
-## Load Glip Card
+## Get Card
 
 HTTP GET /restapi/v1.0/glip/cards/{cardId}
 
@@ -2725,7 +2725,7 @@ const r = await platform.get(`/restapi/v1.0/glip/cards/${cardId}`);
 ```
 
 
-## Update Glip Card
+## Update Card
 
 HTTP PUT /restapi/v1.0/glip/cards/{cardId}
 
@@ -2886,7 +2886,7 @@ const r = await platform.put(`/restapi/v1.0/glip/cards/${cardId}`, glipMessageAt
 }
 ```
 
-## Delete Glip Card
+## Delete Card
 
 HTTP DELETE /restapi/v1.0/glip/cards/{cardId}
 
@@ -2899,7 +2899,7 @@ const r = await platform.delete(`/restapi/v1.0/glip/cards/${cardId}`);
 ```
 
 
-## Load Glip Events
+## Get User Events List
 
 HTTP GET /restapi/v1.0/glip/events
 
@@ -3018,7 +3018,7 @@ const r = await platform.post('/restapi/v1.0/glip/events', glipEventCreate);
 }
 ```
 
-## Load Event
+## Get Event
 
 HTTP GET /restapi/v1.0/glip/events/{eventId}
 
@@ -3150,7 +3150,7 @@ const r = await platform.delete(`/restapi/v1.0/glip/events/${eventId}`);
 ```
 
 
-## Create Eventby Group Id
+## Create Event by Group ID
 
 HTTP POST /restapi/v1.0/glip/groups/{groupId}/events
 
@@ -3256,7 +3256,7 @@ const r = await platform.post(`/restapi/v1.0/glip/groups/${groupId}/events`, gli
 }
 ```
 
-## List Group Events
+## Get Group Events
 
 HTTP GET /restapi/v1.0/glip/groups/{groupId}/events
 
@@ -3269,7 +3269,7 @@ const r = await platform.get(`/restapi/v1.0/glip/groups/${groupId}/events`);
 ```
 
 
-## Load Group Notes
+## Get Group Notes
 
 HTTP GET /restapi/v1.0/glip/groups/{groupId}/notes
 
@@ -3325,7 +3325,7 @@ const r = await platform.post(`/restapi/v1.0/glip/groups/${groupId}/notes`, glip
 }
 ```
 
-## Load User Notes
+## Get User Notes
 
 HTTP GET /restapi/v1.0/glip/notes
 
@@ -3381,7 +3381,7 @@ const r = await platform.post('/restapi/v1.0/glip/notes', glipNoteCreate);
 }
 ```
 
-## Load User Note
+## Get Note
 
 HTTP GET /restapi/v1.0/glip/notes/{noteId}
 
@@ -3532,7 +3532,7 @@ const r = await platform.post(`/restapi/v1.0/glip/notes/${noteId}/unlock`);
 ```
 
 
-## Load Glip Person
+## Get Person
 
 HTTP GET /restapi/v1.0/glip/persons/{personId}
 
@@ -3545,7 +3545,7 @@ const r = await platform.get(`/restapi/v1.0/glip/persons/${personId}`);
 ```
 
 
-## Load Glip Company
+## Get Company Info
 
 HTTP GET /restapi/v1.0/glip/companies/{companyId}
 
@@ -3558,7 +3558,7 @@ const r = await platform.get(`/restapi/v1.0/glip/companies/${companyId}`);
 ```
 
 
-## Create Glip Group Webhook
+## Create Webhook in Group
 
 HTTP POST /restapi/v1.0/glip/groups/{groupId}/webhooks
 
@@ -3571,7 +3571,7 @@ const r = await platform.post(`/restapi/v1.0/glip/groups/${groupId}/webhooks`);
 ```
 
 
-## List Glip Group Webhooks
+## Get Webhooks in Group
 
 HTTP GET /restapi/v1.0/glip/groups/{groupId}/webhooks
 
@@ -3584,7 +3584,7 @@ const r = await platform.get(`/restapi/v1.0/glip/groups/${groupId}/webhooks`);
 ```
 
 
-## List Glip Webhooks
+## Get Webhooks
 
 HTTP GET /restapi/v1.0/glip/webhooks
 
@@ -3597,7 +3597,7 @@ const r = await platform.get('/restapi/v1.0/glip/webhooks');
 ```
 
 
-## Load Glip Webhook
+## Get Webhook
 
 HTTP GET /restapi/v1.0/glip/webhooks/{webhookId}
 
@@ -3610,7 +3610,7 @@ const r = await platform.get(`/restapi/v1.0/glip/webhooks/${webhookId}`);
 ```
 
 
-## Delete Glip Webhook
+## Delete Webhook
 
 HTTP DELETE /restapi/v1.0/glip/webhooks/{webhookId}
 
@@ -3623,7 +3623,7 @@ const r = await platform.delete(`/restapi/v1.0/glip/webhooks/${webhookId}`);
 ```
 
 
-## Activate Glip Webhook
+## Activate Webhook
 
 HTTP POST /restapi/v1.0/glip/webhooks/{webhookId}/activate
 
@@ -3636,7 +3636,7 @@ const r = await platform.post(`/restapi/v1.0/glip/webhooks/${webhookId}/activate
 ```
 
 
-## Suspend Glip Webhook
+## Suspend Webhook
 
 HTTP POST /restapi/v1.0/glip/webhooks/{webhookId}/suspend
 
@@ -3649,7 +3649,7 @@ const r = await platform.post(`/restapi/v1.0/glip/webhooks/${webhookId}/suspend`
 ```
 
 
-## Load Glip Preferences
+## Get User Preferences
 
 HTTP GET /restapi/v1.0/glip/preferences
 
@@ -3662,7 +3662,7 @@ const r = await platform.get('/restapi/v1.0/glip/preferences');
 ```
 
 
-## List Meetings
+## Get Scheduled Meetings
 
 HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/meeting
 
@@ -3677,7 +3677,7 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${ext
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-## Create Meeting
+## Create Meetings
 
 HTTP POST /restapi/v1.0/account/{accountId}/extension/{extensionId}/meeting
 
@@ -3765,7 +3765,7 @@ const r = await platform.post(`/restapi/v1.0/account/${accountId}/extension/${ex
 }
 ```
 
-## Load Meeting
+## Get Meeting Info
 
 HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/meeting/{meetingId}
 
@@ -3898,7 +3898,7 @@ const r = await platform.post(`/restapi/v1.0/account/${accountId}/extension/${ex
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-## Load Meeting Service Info
+## Get Meeting Service Info
 
 HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/meeting/service-info
 
@@ -3913,7 +3913,7 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${ext
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-## List Subscriptions
+## Get Subscriptions
 
 HTTP GET /restapi/v1.0/subscription
 
@@ -4001,7 +4001,7 @@ const r = await platform.post('/restapi/v1.0/subscription', createSubscriptionRe
 }
 ```
 
-## Load Subscription
+## Get Subscription
 
 HTTP GET /restapi/v1.0/subscription/{subscriptionId}
 
@@ -4014,7 +4014,7 @@ const r = await platform.get(`/restapi/v1.0/subscription/${subscriptionId}`);
 ```
 
 
-## Update Subscription
+## Renew Subscription / Update Event Filters
 
 HTTP PUT /restapi/v1.0/subscription/{subscriptionId}
 
@@ -4088,7 +4088,7 @@ const r = await platform.put(`/restapi/v1.0/subscription/${subscriptionId}`, mod
 }
 ```
 
-## Delete Subscription
+## Cancel Subscription
 
 HTTP DELETE /restapi/v1.0/subscription/{subscriptionId}
 
@@ -4114,7 +4114,7 @@ const r = await platform.post(`/restapi/v1.0/subscription/${subscriptionId}/rene
 ```
 
 
-## Get Authorization Profile
+## Get User Permissions
 
 HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/authz-profile
 
@@ -4129,7 +4129,7 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${ext
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-## Check User Permission
+## Check User Permissions
 
 HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/authz-profile/check
 
@@ -4144,7 +4144,7 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${ext
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-## Load User Business Hours
+## Get User Business Hours
 
 HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/business-hours
 
@@ -4309,7 +4309,7 @@ const r = await platform.put(`/restapi/v1.0/account/${accountId}/extension/${ext
 }
 ```
 
-## Load Company Business Hours
+## Get Company Business Hours
 
 HTTP GET /restapi/v1.0/account/{accountId}/business-hours
 
@@ -4504,7 +4504,7 @@ const r = await platform.put(`/restapi/v1.0/account/${accountId}/business-hours`
 }
 ```
 
-## Load Call Blocking Settings
+## Get Caller Blocking Settings
 
 HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/caller-blocking
 
@@ -4519,7 +4519,7 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${ext
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-## Update Call Blocking Settings
+## Update Caller Blocking Settings
 
 HTTP PUT /restapi/v1.0/account/{accountId}/extension/{extensionId}/caller-blocking
 
@@ -4598,7 +4598,7 @@ const r = await platform.put(`/restapi/v1.0/account/${accountId}/extension/${ext
 }
 ```
 
-## List Blocked Allowed Phone Number
+## Get Blocked/Allowed Numbers
 
 HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/caller-blocking/phone-numbers
 
@@ -4613,7 +4613,7 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${ext
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-## Create Blocked Allowed Phone Number List
+## Add Blocked/Allowed Number
 
 HTTP POST /restapi/v1.0/account/{accountId}/extension/{extensionId}/caller-blocking/phone-numbers
 
@@ -4656,7 +4656,7 @@ const r = await platform.post(`/restapi/v1.0/account/${accountId}/extension/${ex
 }
 ```
 
-## Create Blocked Allowed Phone Number Lists
+## Add/Remove Blocked or Allowed Numbers using bulk request
 
 HTTP POST /restapi/v1.0/account/{accountId}/extension/{extensionId}/caller-blocking/phone-numbers/bulk-update
 
@@ -4671,7 +4671,7 @@ const r = await platform.post(`/restapi/v1.0/account/${accountId}/extension/${ex
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-## Load Blocked Allowed Phone Number
+## Get Blocked/Allowed Number
 
 HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/caller-blocking/phone-numbers/{blockedNumberId}
 
@@ -4686,7 +4686,7 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${ext
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-## Delete Blocked Allowed Phone Number
+## Delete Blocked Number
 
 HTTP DELETE /restapi/v1.0/account/{accountId}/extension/{extensionId}/caller-blocking/phone-numbers/{blockedNumberId}
 
@@ -4701,7 +4701,7 @@ const r = await platform.delete(`/restapi/v1.0/account/${accountId}/extension/${
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-## Update Blocked Allowed Phone Number
+## Update Blocked/Allowed Number
 
 HTTP PUT /restapi/v1.0/account/{accountId}/extension/{extensionId}/caller-blocking/phone-numbers/{blockedNumberId}
 
@@ -4744,7 +4744,7 @@ const r = await platform.put(`/restapi/v1.0/account/${accountId}/extension/${ext
 }
 ```
 
-## List Extension Forwarding Numbers
+## Get Forwarding Numbers
 
 HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/forwarding-number
 
@@ -4759,7 +4759,7 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${ext
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-## Create Extension Forwarding Number
+## Create Forwarding Numbers
 
 HTTP POST /restapi/v1.0/account/{accountId}/extension/{extensionId}/forwarding-number
 
@@ -4812,7 +4812,7 @@ const r = await platform.post(`/restapi/v1.0/account/${accountId}/extension/${ex
 }
 ```
 
-## Load Extension Forwarding Number
+## Get Forwarding Number
 
 HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/forwarding-number/{forwardingNumberId}
 
@@ -4827,7 +4827,7 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${ext
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-## Update Extension Forwarding Number
+## Update Forwarding Numbers
 
 HTTP PUT /restapi/v1.0/account/{accountId}/extension/{extensionId}/forwarding-number/{forwardingNumberId}
 
@@ -4876,7 +4876,7 @@ const r = await platform.put(`/restapi/v1.0/account/${accountId}/extension/${ext
 }
 ```
 
-## Delete Extension Forwarding Number
+## Delete Forwarding Number
 
 HTTP DELETE /restapi/v1.0/account/{accountId}/extension/{extensionId}/forwarding-number/{forwardingNumberId}
 
@@ -4891,7 +4891,7 @@ const r = await platform.delete(`/restapi/v1.0/account/${accountId}/extension/${
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-## List Answering Rules
+## Get Call Handling Rules
 
 HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/answering-rule
 
@@ -4906,7 +4906,7 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${ext
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-## Create Answering Rule
+## Create Custom Call Handling Rules
 
 HTTP POST /restapi/v1.0/account/{accountId}/extension/{extensionId}/answering-rule
 
@@ -5427,7 +5427,7 @@ const r = await platform.post(`/restapi/v1.0/account/${accountId}/extension/${ex
 }
 ```
 
-## Load Answering Rule
+## Get Call Handling Rule
 
 HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/answering-rule/{ruleId}
 
@@ -5442,7 +5442,7 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${ext
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-## Update Answering Rule
+## Update Custom Call Handling Rule
 
 HTTP PUT /restapi/v1.0/account/{accountId}/extension/{extensionId}/answering-rule/{ruleId}
 
@@ -5923,7 +5923,7 @@ const r = await platform.put(`/restapi/v1.0/account/${accountId}/extension/${ext
 }
 ```
 
-## Delete Answering Rule
+## Delete Call Handling Rule
 
 HTTP DELETE /restapi/v1.0/account/{accountId}/extension/{extensionId}/answering-rule/{ruleId}
 
@@ -5938,7 +5938,7 @@ const r = await platform.delete(`/restapi/v1.0/account/${accountId}/extension/${
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-## Create Company Answering Rule
+## Create Company Call Handling Rule
 
 HTTP POST /restapi/v1.0/account/{accountId}/answering-rule
 
@@ -6236,7 +6236,7 @@ const r = await platform.post(`/restapi/v1.0/account/${accountId}/answering-rule
 }
 ```
 
-## List Company Answering Rule
+## Get Company Call Handling Rules
 
 HTTP GET /restapi/v1.0/account/{accountId}/answering-rule
 
@@ -6250,7 +6250,7 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/answering-rule`
 
 - `accountId`'s default value is `~`
 
-## Load Company Answering Rule
+## Get Company Call Handling Rule
 
 HTTP GET /restapi/v1.0/account/{accountId}/answering-rule/{ruleId}
 
@@ -6264,7 +6264,7 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/answering-rule/
 
 - `accountId`'s default value is `~`
 
-## Update Company Answering Rule
+## Update Company Call Handling Rule
 
 HTTP PUT /restapi/v1.0/account/{accountId}/answering-rule/{ruleId}
 
@@ -6553,7 +6553,7 @@ const r = await platform.put(`/restapi/v1.0/account/${accountId}/answering-rule/
 }
 ```
 
-## Delete Company Answering Rule
+## Delete Company Call Handling Rule
 
 HTTP DELETE /restapi/v1.0/account/{accountId}/answering-rule/{ruleId}
 
@@ -6567,7 +6567,7 @@ const r = await platform.delete(`/restapi/v1.0/account/${accountId}/answering-ru
 
 - `accountId`'s default value is `~`
 
-## List Standard Greetings
+## Get Standard Greetings
 
 HTTP GET /restapi/v1.0/dictionary/greeting
 
@@ -6580,7 +6580,7 @@ const r = await platform.get('/restapi/v1.0/dictionary/greeting');
 ```
 
 
-## Load Standard Greeting
+## Get Greeting Info
 
 HTTP GET /restapi/v1.0/dictionary/greeting/{greetingId}
 
@@ -6593,7 +6593,7 @@ const r = await platform.get(`/restapi/v1.0/dictionary/greeting/${greetingId}`);
 ```
 
 
-## Create Company Greeting
+## Create Custom Company Greeting
 
 HTTP POST /restapi/v1.0/account/{accountId}/greeting
 
@@ -6700,7 +6700,7 @@ const r = await platform.post(`/restapi/v1.0/account/${accountId}/extension/${ex
 }
 ```
 
-## Load Custom Greeting
+## Get Custom Greeting Info
 
 HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/greeting/{greetingId}
 
@@ -6715,7 +6715,7 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${ext
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-## Create Ivr Prompt
+## Create IVR Prompts
 
 HTTP POST /restapi/v1.0/account/{accountId}/ivr-prompts
 
@@ -6748,7 +6748,7 @@ const r = await platform.post(`/restapi/v1.0/account/${accountId}/ivr-prompts`, 
 }
 ```
 
-## List Ivr Prompts
+## Get IVR Prompts
 
 HTTP GET /restapi/v1.0/account/{accountId}/ivr-prompts
 
@@ -6762,7 +6762,7 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/ivr-prompts`);
 
 - `accountId`'s default value is `~`
 
-## Load Ivr Prompt
+## Get IVR Prompt
 
 HTTP GET /restapi/v1.0/account/{accountId}/ivr-prompts/{promptId}
 
@@ -6776,7 +6776,7 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/ivr-prompts/${p
 
 - `accountId`'s default value is `~`
 
-## Delete Ivr Prompt
+## Delete IVR Prompt
 
 HTTP DELETE /restapi/v1.0/account/{accountId}/ivr-prompts/{promptId}
 
@@ -6790,7 +6790,7 @@ const r = await platform.delete(`/restapi/v1.0/account/${accountId}/ivr-prompts/
 
 - `accountId`'s default value is `~`
 
-## Update Ivr Prompt
+## Update IVR Prompt
 
 HTTP PUT /restapi/v1.0/account/{accountId}/ivr-prompts/{promptId}
 
@@ -6804,7 +6804,7 @@ const r = await platform.put(`/restapi/v1.0/account/${accountId}/ivr-prompts/${p
 
 - `accountId`'s default value is `~`
 
-## Load Ivr Prompt Content
+## Get IVR Prompt Content
 
 HTTP GET /restapi/v1.0/account/{accountId}/ivr-prompts/{promptId}/content
 
@@ -6818,7 +6818,7 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/ivr-prompts/${p
 
 - `accountId`'s default value is `~`
 
-## Create Ivr Menu
+## Create IVR Menu
 
 HTTP POST /restapi/v1.0/account/{accountId}/ivr-menus
 
@@ -6952,7 +6952,7 @@ const r = await platform.post(`/restapi/v1.0/account/${accountId}/ivr-menus`, iV
 }
 ```
 
-## Load Ivr Menu
+## Get IVR Menu
 
 HTTP GET /restapi/v1.0/account/{accountId}/ivr-menus/{ivrMenuId}
 
@@ -6966,7 +6966,7 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/ivr-menus/${ivr
 
 - `accountId`'s default value is `~`
 
-## Update Ivr Menu
+## Update IVR Menu
 
 HTTP PUT /restapi/v1.0/account/{accountId}/ivr-menus/{ivrMenuId}
 
@@ -7100,7 +7100,7 @@ const r = await platform.put(`/restapi/v1.0/account/${accountId}/ivr-menus/${ivr
 }
 ```
 
-## Load Call Recording Settings
+## Get Call Recording Settings
 
 HTTP GET /restapi/v1.0/account/{accountId}/call-recording
 
@@ -7194,7 +7194,7 @@ const r = await platform.put(`/restapi/v1.0/account/${accountId}/call-recording`
 }
 ```
 
-## List Call Recording Extension Settings
+## Get Call Recording Extension Settings
 
 HTTP GET /restapi/v1.0/account/{accountId}/call-recording/extensions
 
@@ -7310,7 +7310,7 @@ const r = await platform.post(`/restapi/v1.0/account/${accountId}/call-recording
 }
 ```
 
-## List Call Recording Custom Greetings
+## [Beta] Get Call Recording Custom Greetings
 
 HTTP GET /restapi/v1.0/account/{accountId}/call-recording/custom-greetings
 
@@ -7352,7 +7352,7 @@ const r = await platform.delete(`/restapi/v1.0/account/${accountId}/call-recordi
 
 - `accountId`'s default value is `~`
 
-## Create Sip Registration
+## Register SIP Device
 
 HTTP POST /restapi/v1.0/client-info/sip-provision
 
@@ -7418,7 +7418,7 @@ const r = await platform.post('/restapi/v1.0/client-info/sip-provision', createS
 }
 ```
 
-## List Extension Phone Numbers
+## Get Extension Phone Number List
 
 HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/phone-number
 
@@ -7433,7 +7433,7 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${ext
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-## Load Extension Info
+## Get Extension Info
 
 HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}
 
@@ -7708,7 +7708,7 @@ const r = await platform.delete(`/restapi/v1.0/account/${accountId}/extension/${
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-## Load Extension Caller Id
+## Get Extension Caller ID
 
 HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/caller-id
 
@@ -7723,7 +7723,7 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${ext
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-## Update Extension Caller Id
+## Update Extension Caller ID
 
 HTTP PUT /restapi/v1.0/account/{accountId}/extension/{extensionId}/caller-id
 
@@ -7854,7 +7854,7 @@ const r = await platform.put(`/restapi/v1.0/account/${accountId}/extension/${ext
 }
 ```
 
-## List Extension Grants
+## Get Extension Grants
 
 HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/grant
 
@@ -7869,7 +7869,7 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${ext
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-## Load Notification Settings
+## Get Notification Settings
 
 HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/notification-settings
 
@@ -8073,7 +8073,7 @@ const r = await platform.put(`/restapi/v1.0/account/${accountId}/extension/${ext
 }
 ```
 
-## Download Profile Image
+## Get User Profile Image
 
 HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/profile-image
 
@@ -8088,7 +8088,7 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${ext
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-## Upload Profile Image
+## Upload User Profile Image
 
 HTTP POST /restapi/v1.0/account/{accountId}/extension/{extensionId}/profile-image
 
@@ -8107,7 +8107,7 @@ const r = await platform.post(`/restapi/v1.0/account/${accountId}/extension/${ex
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-## Update Profile Image
+## Update User Profile Image
 
 HTTP PUT /restapi/v1.0/account/{accountId}/extension/{extensionId}/profile-image
 
@@ -8126,7 +8126,7 @@ const r = await platform.put(`/restapi/v1.0/account/${accountId}/extension/${ext
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-## Download Scaled Pofile Image
+## Get Extension Profile Image (Scaled)
 
 HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/profile-image/{scaleSize}
 
@@ -8141,7 +8141,7 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${ext
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-## Load Conferencing Info
+## Get User Conferencing Settings
 
 HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/conferencing
 
@@ -8156,7 +8156,7 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${ext
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-## Update Conferencing Info
+## Update User Conferencing Settings
 
 HTTP PUT /restapi/v1.0/account/{accountId}/extension/{extensionId}/conferencing
 
@@ -8201,7 +8201,7 @@ const r = await platform.put(`/restapi/v1.0/account/${accountId}/extension/${ext
 }
 ```
 
-## Load Account
+## Get Company Info
 
 HTTP GET /restapi/v1.0/account/{accountId}
 
@@ -8215,7 +8215,7 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}`);
 
 - `accountId`'s default value is `~`
 
-## Load Account Business Address
+## Get Company Business Address
 
 HTTP GET /restapi/v1.0/account/{accountId}/business-address
 
@@ -8229,7 +8229,7 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/business-addres
 
 - `accountId`'s default value is `~`
 
-## Update Account Business Address
+## Update Company Business Address
 
 HTTP PUT /restapi/v1.0/account/{accountId}/business-address
 
@@ -8289,7 +8289,7 @@ const r = await platform.put(`/restapi/v1.0/account/${accountId}/business-addres
 }
 ```
 
-## Load Service Info
+## Get Account Service Info [Beta]
 
 HTTP GET /restapi/v1.0/account/{accountId}/service-info
 
@@ -8303,7 +8303,7 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/service-info`);
 
 - `accountId`'s default value is `~`
 
-## List Languages
+## Get Language List
 
 HTTP GET /restapi/v1.0/dictionary/language
 
@@ -8316,7 +8316,7 @@ const r = await platform.get('/restapi/v1.0/dictionary/language');
 ```
 
 
-## Load Language
+## Get Language
 
 HTTP GET /restapi/v1.0/dictionary/language/{languageId}
 
@@ -8329,7 +8329,7 @@ const r = await platform.get(`/restapi/v1.0/dictionary/language/${languageId}`);
 ```
 
 
-## List Countries
+## Get Country List
 
 HTTP GET /restapi/v1.0/dictionary/country
 
@@ -8342,7 +8342,7 @@ const r = await platform.get('/restapi/v1.0/dictionary/country');
 ```
 
 
-## Load Country
+## Get Country
 
 HTTP GET /restapi/v1.0/dictionary/country/{countryId}
 
@@ -8355,7 +8355,7 @@ const r = await platform.get(`/restapi/v1.0/dictionary/country/${countryId}`);
 ```
 
 
-## List Locations
+## Get Location List
 
 HTTP GET /restapi/v1.0/dictionary/location
 
@@ -8368,7 +8368,7 @@ const r = await platform.get('/restapi/v1.0/dictionary/location');
 ```
 
 
-## List States
+## Get State List
 
 HTTP GET /restapi/v1.0/dictionary/state
 
@@ -8381,7 +8381,7 @@ const r = await platform.get('/restapi/v1.0/dictionary/state');
 ```
 
 
-## Load State
+## Get State
 
 HTTP GET /restapi/v1.0/dictionary/state/{stateId}
 
@@ -8394,7 +8394,7 @@ const r = await platform.get(`/restapi/v1.0/dictionary/state/${stateId}`);
 ```
 
 
-## List Timezones
+## Get Timezone List
 
 HTTP GET /restapi/v1.0/dictionary/timezone
 
@@ -8407,7 +8407,7 @@ const r = await platform.get('/restapi/v1.0/dictionary/timezone');
 ```
 
 
-## Load Timezone
+## Get Timezone
 
 HTTP GET /restapi/v1.0/dictionary/timezone/{timezoneId}
 
@@ -8420,7 +8420,7 @@ const r = await platform.get(`/restapi/v1.0/dictionary/timezone/${timezoneId}`);
 ```
 
 
-## List Account Phone Numbers
+## Get Company Phone Number List
 
 HTTP GET /restapi/v1.0/account/{accountId}/phone-number
 
@@ -8434,7 +8434,7 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/phone-number`);
 
 - `accountId`'s default value is `~`
 
-## Load Account Phone Number
+## Get Phone Number
 
 HTTP GET /restapi/v1.0/account/{accountId}/phone-number/{phoneNumberId}
 
@@ -8448,7 +8448,7 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/phone-number/${
 
 - `accountId`'s default value is `~`
 
-## List Extensions
+## Get Extension List
 
 HTTP GET /restapi/v1.0/account/{accountId}/extension
 
@@ -8794,7 +8794,7 @@ const r = await platform.post(`/restapi/v1.0/account/${accountId}/extension`, ex
 }
 ```
 
-## List Templates
+## Get Templates
 
 HTTP GET /restapi/v1.0/account/{accountId}/templates
 
@@ -8808,7 +8808,7 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/templates`);
 
 - `accountId`'s default value is `~`
 
-## Load Template
+## Get Template
 
 HTTP GET /restapi/v1.0/account/{accountId}/templates/{templateId}
 
@@ -8822,7 +8822,7 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/templates/${tem
 
 - `accountId`'s default value is `~`
 
-## List Call Queues
+## Get Call Queues
 
 HTTP GET /restapi/v1.0/account/{accountId}/call-queues
 
@@ -8836,7 +8836,7 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/call-queues`);
 
 - `accountId`'s default value is `~`
 
-## List Call Queue Members
+## Get Call Queue Members
 
 HTTP GET /restapi/v1.0/account/{accountId}/call-queues/{groupId}/members
 
@@ -8850,7 +8850,7 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/call-queues/${g
 
 - `accountId`'s default value is `~`
 
-## Assign Call Queue Members
+## Edit Call Queue Members
 
 HTTP POST /restapi/v1.0/account/{accountId}/call-queues/{groupId}/bulk-assign
 
@@ -8886,7 +8886,7 @@ const r = await platform.post(`/restapi/v1.0/account/${accountId}/call-queues/${
 }
 ```
 
-## List Department Members
+## Get Department Member List
 
 HTTP GET /restapi/v1.0/account/{accountId}/department/{departmentId}/members
 
@@ -8900,7 +8900,7 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/department/${de
 
 - `accountId`'s default value is `~`
 
-## Bulk Assign Departments
+## Edit Department Members
 
 HTTP POST /restapi/v1.0/account/{accountId}/department/bulk-assign
 
@@ -8946,7 +8946,7 @@ const r = await platform.post(`/restapi/v1.0/account/${accountId}/department/bul
 }
 ```
 
-## List Paging Group Users
+## Get Paging Only Group Users
 
 HTTP GET /restapi/v1.0/account/{accountId}/paging-only-groups/{pagingOnlyGroupId}/users
 
@@ -8960,7 +8960,7 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/paging-only-gro
 
 - `accountId`'s default value is `~`
 
-## List Paging Group Devices
+## Get Paging Only Group Devices
 
 HTTP GET /restapi/v1.0/account/{accountId}/paging-only-groups/{pagingOnlyGroupId}/devices
 
@@ -8974,7 +8974,7 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/paging-only-gro
 
 - `accountId`'s default value is `~`
 
-## Bulk Assign Paging Group
+## Edit Paging Group Users and Devices
 
 HTTP POST /restapi/v1.0/account/{accountId}/paging-only-groups/{pagingOnlyGroupId}/bulk-assign
 
@@ -9061,7 +9061,7 @@ const r = await platform.post(`/restapi/v1.0/account/${accountId}/call-monitorin
 }
 ```
 
-## List Call Monitoring Groups
+## Get Call Monitoring Groups
 
 HTTP GET /restapi/v1.0/account/{accountId}/call-monitoring-groups
 
@@ -9075,7 +9075,7 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/call-monitoring
 
 - `accountId`'s default value is `~`
 
-## Update Call Monitoring Group
+## Updates Call Monitoring Group
 
 HTTP PUT /restapi/v1.0/account/{accountId}/call-monitoring-groups/{groupId}
 
@@ -9110,7 +9110,7 @@ const r = await platform.put(`/restapi/v1.0/account/${accountId}/call-monitoring
 }
 ```
 
-## Remove Call Monitoring Group
+## Remove Given Call Monitoring Group
 
 HTTP DELETE /restapi/v1.0/account/{accountId}/call-monitoring-groups/{groupId}
 
@@ -9124,7 +9124,7 @@ const r = await platform.delete(`/restapi/v1.0/account/${accountId}/call-monitor
 
 - `accountId`'s default value is `~`
 
-## List Call Monitoring Group Members
+## Get Call Monitoring Group Members
 
 HTTP GET /restapi/v1.0/account/{accountId}/call-monitoring-groups/{groupId}/members
 
@@ -9138,7 +9138,7 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/call-monitoring
 
 - `accountId`'s default value is `~`
 
-## Update Call Monitoring Groups
+## Edit Call Monitoring Group
 
 HTTP POST /restapi/v1.0/account/{accountId}/call-monitoring-groups/{groupId}/bulk-assign
 
@@ -9225,7 +9225,7 @@ const r = await platform.post(`/restapi/v1.0/account/${accountId}/call-monitorin
 }
 ```
 
-## Parse Phone Number
+## Parse Phone Number [Beta]
 
 HTTP POST /restapi/v1.0/number-parser/parse
 
@@ -9255,7 +9255,7 @@ const r = await platform.post('/restapi/v1.0/number-parser/parse', parsePhoneNum
 }
 ```
 
-## Load Account Device
+## Get Device Info
 
 HTTP GET /restapi/v1.0/account/{accountId}/device/{deviceId}
 
@@ -9356,7 +9356,7 @@ const r = await platform.put(`/restapi/v1.0/account/${accountId}/device/${device
 }
 ```
 
-## List Extension Devices
+## Get User Device Info
 
 HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/device
 
@@ -9371,7 +9371,7 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${ext
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-## Check Health
+## check health
 
 HTTP GET /scim/health
 
@@ -9384,7 +9384,7 @@ const r = await platform.get('/scim/health');
 ```
 
 
-## Check Health2
+## check health
 
 HTTP GET /scim/v2/health
 
@@ -9397,7 +9397,7 @@ const r = await platform.get('/scim/v2/health');
 ```
 
 
-## Get Service Provider Config2
+## Get Service Provider Configuration
 
 HTTP GET /scim/v2/ServiceProviderConfig
 
@@ -9410,7 +9410,7 @@ const r = await platform.get('/scim/v2/ServiceProviderConfig');
 ```
 
 
-## Search Via Get2
+## Search or List Users
 
 HTTP GET /scim/v2/Users
 
@@ -9423,7 +9423,7 @@ const r = await platform.get('/scim/v2/Users');
 ```
 
 
-## Create User2
+## Create User
 
 HTTP POST /scim/v2/Users
 
@@ -9573,7 +9573,7 @@ const r = await platform.post('/scim/v2/Users', user);
 }
 ```
 
-## Search Via Post2
+## Search or List Users
 
 HTTP POST /scim/v2/Users/.search
 
@@ -9619,7 +9619,7 @@ const r = await platform.post('/scim/v2/Users/.search', searchRequest);
 }
 ```
 
-## Get User2
+## Get User
 
 HTTP GET /scim/v2/Users/{id}
 
@@ -9632,7 +9632,7 @@ const r = await platform.get(`/scim/v2/Users/${id}`);
 ```
 
 
-## Replace User2
+## Update/Replace User
 
 HTTP PUT /scim/v2/Users/{id}
 
@@ -9782,7 +9782,7 @@ const r = await platform.put(`/scim/v2/Users/${id}`, user);
 }
 ```
 
-## Delete User2
+## Delete User
 
 HTTP DELETE /scim/v2/Users/{id}
 
@@ -9795,7 +9795,7 @@ const r = await platform.delete(`/scim/v2/Users/${id}`);
 ```
 
 
-## Patch User2
+## Update/Patch User
 
 HTTP PATCH /scim/v2/Users/{id}
 
@@ -9868,7 +9868,7 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/telephony/sessi
 
 - `accountId`'s default value is `~`
 
-## Delete Call Session
+## Drop Call Session
 
 HTTP DELETE /restapi/v1.0/account/{accountId}/telephony/sessions/{sessionId}
 
@@ -9910,7 +9910,7 @@ const r = await platform.post(`/restapi/v1.0/account/${accountId}/telephony/sess
 
 - `accountId`'s default value is `~`
 
-## Reject Party
+## Reject Call Party
 
 HTTP POST /restapi/v1.0/account/{accountId}/telephony/sessions/{sessionId}/parties/{partyId}/reject
 
@@ -9992,7 +9992,7 @@ const r = await platform.post(`/restapi/v1.0/account/${accountId}/telephony/sess
 }
 ```
 
-## Call Flip Party
+## Call Flip on Party
 
 HTTP POST /restapi/v1.0/account/{accountId}/telephony/sessions/{sessionId}/parties/{partyId}/flip
 
@@ -10071,7 +10071,7 @@ const r = await platform.patch(`/restapi/v1.0/account/${accountId}/telephony/ses
 }
 ```
 
-## Start Call Recording
+## Starts new call recording in a party
 
 HTTP POST /restapi/v1.0/account/{accountId}/telephony/sessions/{sessionId}/parties/{partyId}/recordings
 
@@ -10085,7 +10085,7 @@ const r = await platform.post(`/restapi/v1.0/account/${accountId}/telephony/sess
 
 - `accountId`'s default value is `~`
 
-## Pause Resume Call Recording
+## Pause/Resume Recording
 
 HTTP PATCH /restapi/v1.0/account/{accountId}/telephony/sessions/{sessionId}/parties/{partyId}/recordings/{recordingId}
 
@@ -10113,7 +10113,7 @@ const r = await platform.patch(`/restapi/v1.0/account/${accountId}/telephony/ses
 }
 ```
 
-## Get Compliance Archive Stream
+## Get Glip Data Archive
 
 HTTP GET /restapi/v1.0/glip/data-export/{taskId}/archive/{archiveId}
 
@@ -10171,7 +10171,7 @@ const r = await platform.post('/restapi/v1.0/glip/data-export', createDataExport
 }
 ```
 
-## Load Data Export Task
+## Get Data Export Task
 
 HTTP GET /restapi/v1.0/glip/data-export/{taskId}
 
@@ -10216,7 +10216,7 @@ const r = await platform.post(`/restapi/v1.0/account/${accountId}/message-store-
 }
 ```
 
-## Load Message Store Report Task
+## Get Message Store Report Task
 
 HTTP GET /restapi/v1.0/account/{accountId}/message-store-report/{taskId}
 
@@ -10230,7 +10230,7 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/message-store-r
 
 - `accountId`'s default value is `~`
 
-## Load Message Store Report Archive
+## Get Message Store Report Archive
 
 HTTP GET /restapi/v1.0/account/{accountId}/message-store-report/{taskId}/archive
 
@@ -10244,7 +10244,7 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/message-store-r
 
 - `accountId`'s default value is `~`
 
-## Load Message Store Report Archive Content
+## Get Message Store Report Archive Content
 
 HTTP GET /restapi/v1.0/account/{accountId}/message-store-report/{taskId}/archive/{archiveId}
 
@@ -10258,7 +10258,7 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/message-store-r
 
 - `accountId`'s default value is `~`
 
-## List Account Meeting Recordings
+## Get Account Meeting Recordings
 
 HTTP GET /restapi/v1.0/account/{accountId}/meeting-recordings
 
@@ -10272,7 +10272,7 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/meeting-recordi
 
 - `accountId`'s default value is `~`
 
-## List User Meeting Recordings
+## Get User Meeting Recordings
 
 HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/meeting-recordings
 
