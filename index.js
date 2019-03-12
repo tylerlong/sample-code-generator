@@ -85,7 +85,7 @@ ${code}
   return doc
 }
 
-let markdown = '# RingCentral JavaScript SDK code samples'
+let markdown = '# RingCentral JavaScript SDK Code Samples'
 paths.forEach(path => {
   const methods = Object.keys(doc.paths[path])
   methods.forEach(method => {

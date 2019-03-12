@@ -1,4 +1,4 @@
-# RingCentral JavaScript SDK code samples
+# RingCentral JavaScript SDK Code Samples
 
 ## Get API Versions
 
