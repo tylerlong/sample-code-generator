@@ -3458,9 +3458,16 @@ const SDK = require('ringcentral');
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
-const r = await platform.put(`/restapi/v1.0/glip/groups/${groupId}/posts/${postId}/text`, body);
+const r = await platform.send({
+  method: 'PUT',
+  url: `/restapi/v1.0/glip/groups/${groupId}/posts/${postId}/text`,
+  headers: { 'Content-Type': 'text/plain' },
+  body: text
+});
 ```
 
+
+- `text` is a string
 
 ## Get Recent Chats
 
