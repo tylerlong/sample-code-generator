@@ -49,11 +49,139 @@ const SDK = require('ringcentral');
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
-const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/call-log`);
+const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/call-log`, loadUserCallLogParameters);
 ```
 
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
+
+`loadUserCallLogParameters` is an **optional** object with the following definition:
+
+```yaml
+{
+  "properties": {
+    "extensionNumber": {
+      "in": "query",
+      "description": "Extension number of a user. If specified, returns call log for a particular extension only",
+      "required": false,
+      "type": "string"
+    },
+    "showBlocked": {
+      "in": "query",
+      "description": "If 'True' then calls from/to blocked numbers are returned",
+      "default": true,
+      "required": false,
+      "type": "boolean"
+    },
+    "phoneNumber": {
+      "in": "query",
+      "description": "Phone number of a caller/callee. If specified, returns all calls (both incoming and outcoming) with the phone number specified",
+      "required": false,
+      "type": "string"
+    },
+    "direction": {
+      "in": "query",
+      "description": "The direction for the resulting records. If not specified, both inbound and outbound records are returned. Multiple values are accepted",
+      "required": false,
+      "type": "array",
+      "collectionFormat": "multi",
+      "items": {
+        "type": "string",
+        "enum": [
+          "Inbound",
+          "Outbound"
+        ]
+      }
+    },
+    "sessionId": {
+      "in": "query",
+      "description": "Internal identifier of a session",
+      "required": false,
+      "type": "string"
+    },
+    "type": {
+      "in": "query",
+      "description": "Call type of a record. It is allowed to specify more than one type. If not specified, all call types are returned. Multiple values are accepted",
+      "required": false,
+      "type": "array",
+      "collectionFormat": "multi",
+      "items": {
+        "type": "string",
+        "enum": [
+          "Voice",
+          "Fax"
+        ]
+      }
+    },
+    "transport": {
+      "in": "query",
+      "description": "Call transport type. 'PSTN' specifies that a call leg is initiated from the PSTN network provider; 'VoIP' - from an RC phone. By default this filter is disabled",
+      "required": false,
+      "type": "array",
+      "collectionFormat": "multi",
+      "items": {
+        "type": "string",
+        "enum": [
+          "PSTN",
+          "VoIP"
+        ]
+      }
+    },
+    "view": {
+      "description": "View of call records. The same view parameter specified for FSync will be applied for ISync, the view cannot be changed for ISync",
+      "in": "query",
+      "default": "Simple",
+      "required": false,
+      "type": "string",
+      "enum": [
+        "Simple",
+        "Detailed"
+      ]
+    },
+    "withRecording": {
+      "in": "query",
+      "description": "**Deprecated**. Supported for compatibility reasons only. `true` if only recorded calls are returned. The default value is `false`. If both `withRecording` and `recordingType` are specified, `withRecording` is ignored",
+      "required": false,
+      "type": "boolean"
+    },
+    "dateTo": {
+      "in": "query",
+      "description": "The end datetime for resulting records in ISO 8601 format including timezone, for example 2016-03-10T18:07:52.534Z. The default value is current time",
+      "required": false,
+      "type": "string",
+      "format": "date-time"
+    },
+    "dateFrom": {
+      "in": "query",
+      "description": "The start datetime for resulting records in ISO 8601 format including timezone, for example 2016-03-10T18:07:52.534Z. The default value is dateTo minus 24 hours",
+      "required": false,
+      "type": "string",
+      "format": "date-time"
+    },
+    "page": {
+      "in": "query",
+      "description": "Indicates the page number to retrieve. Only positive number values are allowed",
+      "default": 1,
+      "required": false,
+      "type": "integer"
+    },
+    "perPage": {
+      "in": "query",
+      "description": "Indicates the page size (number of items)",
+      "default": 100,
+      "required": false,
+      "type": "integer"
+    },
+    "showDeleted": {
+      "in": "query",
+      "description": "If 'True' then deleted calls are returned",
+      "default": false,
+      "required": false,
+      "type": "boolean"
+    }
+  }
+}
+```
 
 ## Delete User Call Log Records
 
@@ -64,11 +192,69 @@ const SDK = require('ringcentral');
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
-const r = await platform.delete(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/call-log`);
+const r = await platform.delete(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/call-log`, deleteUserCallLogParameters);
 ```
 
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
+
+`deleteUserCallLogParameters` is an **optional** object with the following definition:
+
+```yaml
+{
+  "properties": {
+    "dateTo": {
+      "in": "query",
+      "description": "The end datetime for records deletion in ISO 8601 format including timezone, for example 2016-03-10T18:07:52.534Z. The default value is current time",
+      "required": false,
+      "type": "string",
+      "format": "date-time"
+    },
+    "phoneNumber": {
+      "in": "query",
+      "required": false,
+      "type": "string"
+    },
+    "extensionNumber": {
+      "in": "query",
+      "required": false,
+      "type": "string"
+    },
+    "type": {
+      "in": "query",
+      "required": false,
+      "type": "array",
+      "collectionFormat": "multi",
+      "items": {
+        "type": "string",
+        "enum": [
+          "Voice",
+          "Fax"
+        ]
+      }
+    },
+    "direction": {
+      "in": "query",
+      "required": false,
+      "type": "array",
+      "collectionFormat": "multi",
+      "items": {
+        "type": "string",
+        "enum": [
+          "Inbound",
+          "Outbound"
+        ]
+      }
+    },
+    "dateFrom": {
+      "in": "query",
+      "format": "date-time",
+      "required": false,
+      "type": "string"
+    }
+  }
+}
+```
 
 ## Sync User Call Log
 
@@ -79,11 +265,78 @@ const SDK = require('ringcentral');
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
-const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/call-log-sync`);
+const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/call-log-sync`, syncUserCallLogParameters);
 ```
 
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
+
+`syncUserCallLogParameters` is an **optional** object with the following definition:
+
+```yaml
+{
+  "properties": {
+    "syncType": {
+      "in": "query",
+      "description": "Type of synchronization",
+      "required": false,
+      "type": "array",
+      "collectionFormat": "multi",
+      "items": {
+        "type": "string",
+        "enum": [
+          "FSync",
+          "ISync"
+        ]
+      }
+    },
+    "syncToken": {
+      "in": "query",
+      "description": "Value of syncToken property of last sync request response",
+      "required": false,
+      "type": "string"
+    },
+    "dateFrom": {
+      "in": "query",
+      "description": "The start datetime for resulting records in ISO 8601 format including timezone, for example 2016-03-10T18:07:52.534Z. The default value is the current moment",
+      "required": false,
+      "type": "string",
+      "format": "date-time"
+    },
+    "recordCount": {
+      "in": "query",
+      "description": "For 'FSync' the parameter is mandatory, it limits the number of records to be returned in response. For 'ISync' it specifies with how many records to extend sync Frame to the past, the maximum number of records is 250",
+      "required": false,
+      "type": "integer"
+    },
+    "statusGroup": {
+      "in": "query",
+      "description": "Type of calls to be returned. The default value is 'All'",
+      "required": false,
+      "type": "array",
+      "collectionFormat": "multi",
+      "items": {
+        "type": "string",
+        "enum": [
+          "Missed",
+          "All"
+        ]
+      }
+    },
+    "view": {
+      "in": "query",
+      "description": "View of call records. The same view parameter specified for FSync will be applied for ISync, the view cannot be changed for ISync",
+      "required": false,
+      "type": "string",
+      "default": "Simple",
+      "enum": [
+        "Simple",
+        "Detailed"
+      ]
+    }
+  }
+}
+```
 
 ## Get User Call Record(s)
 
@@ -94,11 +347,31 @@ const SDK = require('ringcentral');
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
-const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/call-log/${callRecordId}`);
+const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/call-log/${callRecordId}`, getCallRecordsParameters);
 ```
 
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
+
+`getCallRecordsParameters` is an **optional** object with the following definition:
+
+```yaml
+{
+  "properties": {
+    "view": {
+      "description": "View of call records. The same view parameter specified for FSync will be applied for ISync, the view cannot be changed for ISync",
+      "in": "query",
+      "required": false,
+      "type": "string",
+      "default": "Simple",
+      "enum": [
+        "Simple",
+        "Detailed"
+      ]
+    }
+  }
+}
+```
 
 ## Get User Active Calls
 
@@ -109,11 +382,73 @@ const SDK = require('ringcentral');
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
-const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/active-calls`);
+const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/active-calls`, listExtensionActiveCallsParameters);
 ```
 
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
+
+`listExtensionActiveCallsParameters` is an **optional** object with the following definition:
+
+```yaml
+{
+  "properties": {
+    "direction": {
+      "in": "query",
+      "description": "The direction for the result records. If not specified, both inbound and outbound records are returned. Multiple values are accepted",
+      "required": false,
+      "type": "array",
+      "collectionFormat": "multi",
+      "items": {
+        "type": "string",
+        "enum": [
+          "Inbound",
+          "Outbound"
+        ]
+      }
+    },
+    "view": {
+      "description": "View of call records. The same view parameter specified for FSync will be applied for ISync, the view cannot be changed for ISync",
+      "in": "query",
+      "default": "Simple",
+      "required": false,
+      "type": "string",
+      "enum": [
+        "Simple",
+        "Detailed"
+      ]
+    },
+    "type": {
+      "in": "query",
+      "description": "Call type of a record. If not specified, all call types are returned. Multiple values are accepted",
+      "required": false,
+      "type": "array",
+      "collectionFormat": "multi",
+      "items": {
+        "type": "string",
+        "enum": [
+          "Voice",
+          "Fax"
+        ]
+      }
+    },
+    "page": {
+      "in": "query",
+      "description": "Indicates the page number to retrieve. Only positive number values are allowed",
+      "default": 1,
+      "required": false,
+      "type": "integer"
+    },
+    "perPage": {
+      "in": "query",
+      "description": "Indicates the page size (number of items)",
+      "default": 100,
+      "required": false,
+      "type": "integer"
+    }
+  }
+}
+```
 
 ## Get Company Call Log Records
 
@@ -124,10 +459,110 @@ const SDK = require('ringcentral');
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
-const r = await platform.get(`/restapi/v1.0/account/${accountId}/call-log`);
+const r = await platform.get(`/restapi/v1.0/account/${accountId}/call-log`, loadCompanyCallLogParameters);
 ```
 
 - `accountId`'s default value is `~`
+
+`loadCompanyCallLogParameters` is an **optional** object with the following definition:
+
+```yaml
+{
+  "properties": {
+    "extensionNumber": {
+      "in": "query",
+      "description": "Extension number of a user. If specified, returns call log for a particular extension only",
+      "required": false,
+      "type": "string"
+    },
+    "phoneNumber": {
+      "in": "query",
+      "description": "Phone number of a caller/call recipient. If specified, returns all calls (both incoming and outcoming) with the phone number specified. Cannot be specified together with the extensionNumber filter",
+      "required": false,
+      "type": "string"
+    },
+    "direction": {
+      "in": "query",
+      "description": "The direction for the result records. If not specified, both inbound and outbound records are returned. Multiple values are accepted",
+      "required": false,
+      "type": "array",
+      "collectionFormat": "multi",
+      "items": {
+        "type": "string",
+        "enum": [
+          "Inbound",
+          "Outbound"
+        ]
+      }
+    },
+    "type": {
+      "in": "query",
+      "description": "Call type of a record. If not specified, all call types are returned. Multiple values are accepted",
+      "required": false,
+      "type": "array",
+      "collectionFormat": "multi",
+      "items": {
+        "type": "string",
+        "enum": [
+          "Voice",
+          "Fax"
+        ]
+      }
+    },
+    "view": {
+      "description": "View of call records. The same view parameter specified for FSync will be applied for ISync, the view cannot be changed for ISync",
+      "in": "query",
+      "default": "Simple",
+      "required": false,
+      "type": "string",
+      "enum": [
+        "Simple",
+        "Detailed"
+      ]
+    },
+    "withRecording": {
+      "in": "query",
+      "description": "**Deprecated**. Supported for compatibility reasons only. `true` if only recorded calls are returned. The default value is `false`. If both `withRecording` and `recordingType` are specified, `withRecording` is ignored",
+      "required": false,
+      "type": "boolean"
+    },
+    "dateFrom": {
+      "in": "query",
+      "description": "The start datetime for resulting records in ISO 8601 format including timezone, for example 2016-03-10T18:07:52.534Z. The default value is dateTo minus 24 hours",
+      "required": false,
+      "type": "string",
+      "format": "date-time"
+    },
+    "dateTo": {
+      "in": "query",
+      "description": "The end datetime for resulting records in ISO 8601 format including timezone, for example 2016-03-10T18:07:52.534Z. The default value is current time",
+      "required": false,
+      "type": "string",
+      "format": "date-time"
+    },
+    "page": {
+      "in": "query",
+      "description": "Indicates the page number to retrieve. Only positive number values are accepted",
+      "default": 1,
+      "required": false,
+      "type": "integer"
+    },
+    "perPage": {
+      "in": "query",
+      "description": "Indicates the page size (number of items)",
+      "default": 100,
+      "required": false,
+      "type": "integer"
+    },
+    "sessionId": {
+      "description": "Internal identifier of a session",
+      "in": "query",
+      "required": false,
+      "type": "string"
+    }
+  }
+}
+```
 
 ## Get Company Call Log Record(s)
 
@@ -152,10 +587,86 @@ const SDK = require('ringcentral');
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
-const r = await platform.get(`/restapi/v1.0/account/${accountId}/active-calls`);
+const r = await platform.get(`/restapi/v1.0/account/${accountId}/active-calls`, listCompanyActiveCallsParameters);
 ```
 
 - `accountId`'s default value is `~`
+
+`listCompanyActiveCallsParameters` is an **optional** object with the following definition:
+
+```yaml
+{
+  "properties": {
+    "direction": {
+      "in": "query",
+      "description": "The direction for the result records. If not specified, both inbound and outbound records are returned. Multiple values are accepted",
+      "required": false,
+      "type": "array",
+      "collectionFormat": "multi",
+      "items": {
+        "type": "string",
+        "enum": [
+          "Inbound",
+          "Outbound"
+        ]
+      }
+    },
+    "view": {
+      "description": "View of call records. The same view parameter specified for FSync will be applied for ISync, the view cannot be changed for ISync",
+      "in": "query",
+      "default": "Simple",
+      "required": false,
+      "type": "string",
+      "enum": [
+        "Simple",
+        "Detailed"
+      ]
+    },
+    "type": {
+      "in": "query",
+      "description": "Call type of a record. If not specified, all call types are returned. Multiple values are accepted",
+      "required": false,
+      "type": "array",
+      "collectionFormat": "multi",
+      "items": {
+        "type": "string",
+        "enum": [
+          "Voice",
+          "Fax"
+        ]
+      }
+    },
+    "transport": {
+      "in": "query",
+      "description": "Call transport type. 'PSTN' specifies that a call leg is initiated from the PSTN network provider; 'VoIP' - from an RC phone. By default this filter is disabled",
+      "required": false,
+      "type": "array",
+      "collectionFormat": "multi",
+      "items": {
+        "type": "string",
+        "enum": [
+          "PSTN",
+          "VoIP"
+        ]
+      }
+    },
+    "page": {
+      "in": "query",
+      "description": "Indicates the page number to retrieve. Only positive number values are accepted",
+      "required": false,
+      "default": 1,
+      "type": "integer"
+    },
+    "perPage": {
+      "in": "query",
+      "description": "Indicates the page size (number of items)",
+      "default": 100,
+      "required": false,
+      "type": "integer"
+    }
+  }
+}
+```
 
 ## Get Call Recording(s)
 
@@ -384,9 +895,32 @@ const SDK = require('ringcentral');
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
-const r = await platform.get('/restapi/v1.0/dictionary/fax-cover-page');
+const r = await platform.get('/restapi/v1.0/dictionary/fax-cover-page', listFaxCoverPagesParameters);
 ```
 
+
+`listFaxCoverPagesParameters` is an **optional** object with the following definition:
+
+```yaml
+{
+  "properties": {
+    "page": {
+      "in": "query",
+      "description": "Indicates the page number to retrieve. Only positive number values are accepted",
+      "default": 1,
+      "required": false,
+      "type": "integer"
+    },
+    "perPage": {
+      "in": "query",
+      "description": "Indicates the page size (number of items)",
+      "default": 100,
+      "required": false,
+      "type": "integer"
+    }
+  }
+}
+```
 
 ## Get Message List
 
@@ -397,11 +931,126 @@ const SDK = require('ringcentral');
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
-const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/message-store`);
+const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/message-store`, listMessagesParameters);
 ```
 
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
+
+`listMessagesParameters` is an **optional** object with the following definition:
+
+```yaml
+{
+  "properties": {
+    "availability": {
+      "in": "query",
+      "description": "Specifies the availability status for the resulting messages. Multiple values are accepted",
+      "required": false,
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "Alive",
+          "Deleted",
+          "Purged"
+        ]
+      },
+      "collectionFormat": "multi"
+    },
+    "conversationId": {
+      "in": "query",
+      "description": "Specifies the conversation identifier for the resulting messages",
+      "required": false,
+      "type": "integer"
+    },
+    "dateFrom": {
+      "in": "query",
+      "description": "The start datetime for resulting messages in ISO 8601 format including timezone, for example 2016-03-10T18:07:52.534Z. The default value is dateTo minus 24 hours",
+      "required": false,
+      "type": "string",
+      "format": "date-time"
+    },
+    "dateTo": {
+      "in": "query",
+      "description": "The end datetime for resulting messages in ISO 8601 format including timezone, for example 2016-03-10T18:07:52.534Z. The default value is current time",
+      "required": false,
+      "type": "string",
+      "format": "date-time"
+    },
+    "direction": {
+      "in": "query",
+      "description": "The direction for the resulting messages. If not specified, both inbound and outbound messages are returned. Multiple values are accepted",
+      "required": false,
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "Inbound",
+          "Outbound"
+        ]
+      },
+      "collectionFormat": "multi"
+    },
+    "distinctConversations": {
+      "in": "query",
+      "description": "If 'True', then the latest messages per every conversation ID are returned",
+      "required": false,
+      "type": "boolean"
+    },
+    "messageType": {
+      "in": "query",
+      "description": "The type of the resulting messages. If not specified, all messages without message type filtering are returned. Multiple values are accepted",
+      "required": false,
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "Fax",
+          "SMS",
+          "VoiceMail",
+          "Pager",
+          "Text"
+        ]
+      },
+      "collectionFormat": "multi"
+    },
+    "readStatus": {
+      "in": "query",
+      "description": "The read status for the resulting messages. Multiple values are accepted",
+      "required": false,
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "Read",
+          "Unread"
+        ]
+      },
+      "collectionFormat": "multi"
+    },
+    "page": {
+      "in": "query",
+      "description": "Indicates the page number to retrieve. Only positive number values are accepted",
+      "default": 1,
+      "required": false,
+      "type": "integer"
+    },
+    "perPage": {
+      "in": "query",
+      "description": "Indicates the page size (number of items)",
+      "default": 100,
+      "required": false,
+      "type": "integer"
+    },
+    "phoneNumber": {
+      "in": "query",
+      "description": "The phone number. If specified, messages are returned for this particular phone number only",
+      "required": false,
+      "type": "string"
+    }
+  }
+}
+```
 
 ## Delete Conversation(s)
 
@@ -412,11 +1061,51 @@ const SDK = require('ringcentral');
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
-const r = await platform.delete(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/message-store`);
+const r = await platform.delete(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/message-store`, deleteMessagesByFilterParameters);
 ```
 
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
+
+`deleteMessagesByFilterParameters` is an **optional** object with the following definition:
+
+```yaml
+{
+  "properties": {
+    "conversationId": {
+      "in": "query",
+      "required": false,
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "collectionFormat": "multi"
+    },
+    "dateTo": {
+      "in": "query",
+      "required": false,
+      "type": "string",
+      "description": "Messages received earlier then the date specified will be deleted. The default value is 'Now'",
+      "format": "date-time"
+    },
+    "type": {
+      "in": "query",
+      "required": false,
+      "description": "Type of messages to be deleted",
+      "type": "string",
+      "enum": [
+        "Fax",
+        "SMS",
+        "VoiceMail",
+        "Pager",
+        "Text",
+        "All"
+      ],
+      "default": "All"
+    }
+  }
+}
+```
 
 ## Get Message(s)
 
@@ -475,11 +1164,33 @@ const SDK = require('ringcentral');
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
-const r = await platform.delete(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/message-store/${messageId}`);
+const r = await platform.delete(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/message-store/${messageId}`, deleteMessageParameters);
 ```
 
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
+
+`deleteMessageParameters` is an **optional** object with the following definition:
+
+```yaml
+{
+  "properties": {
+    "purge": {
+      "in": "query",
+      "description": "If the value is 'True', then the message is purged immediately with all the attachments",
+      "default": false,
+      "required": false,
+      "type": "boolean"
+    },
+    "conversationId": {
+      "in": "query",
+      "description": "Internal identifier of a message thread",
+      "required": false,
+      "type": "integer"
+    }
+  }
+}
+```
 
 ## Get Message Attachment
 
@@ -490,11 +1201,31 @@ const SDK = require('ringcentral');
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
-const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/message-store/${messageId}/content/${attachmentId}`);
+const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/message-store/${messageId}/content/${attachmentId}`, getMessageAttachmentByIdParameters);
 ```
 
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
+
+`getMessageAttachmentByIdParameters` is an **optional** object with the following definition:
+
+```yaml
+{
+  "properties": {
+    "contentDisposition": {
+      "in": "query",
+      "required": false,
+      "description": "Content disposition of a response",
+      "type": "string",
+      "enum": [
+        "Inline",
+        "Attachment"
+      ],
+      "default": "Inline"
+    }
+  }
+}
+```
 
 ## Sync Messages
 
@@ -505,11 +1236,103 @@ const SDK = require('ringcentral');
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
-const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/message-sync`);
+const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/message-sync`, syncMessagesParameters);
 ```
 
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
+
+`syncMessagesParameters` is an **optional** object with the following definition:
+
+```yaml
+{
+  "properties": {
+    "conversationId": {
+      "in": "query",
+      "description": "Conversation identifier for the resulting messages. Meaningful for SMS and Pager messages only.",
+      "required": false,
+      "type": "integer"
+    },
+    "dateFrom": {
+      "in": "query",
+      "description": "The start datetime for resulting messages in ISO 8601 format including timezone, for example 2016-03-10T18:07:52.534Z. The default value is dateTo minus 24 hours",
+      "required": false,
+      "type": "string",
+      "format": "date-time"
+    },
+    "dateTo": {
+      "in": "query",
+      "description": "The end datetime for resulting messages in ISO 8601 format including timezone, for example 2016-03-10T18:07:52.534Z. The default value is current time",
+      "required": false,
+      "type": "string",
+      "format": "date-time"
+    },
+    "direction": {
+      "in": "query",
+      "description": "Direction for the resulting messages. If not specified, both inbound and outbound messages are returned. Multiple values are accepted",
+      "required": false,
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "Inbound",
+          "Outbound"
+        ]
+      },
+      "collectionFormat": "multi"
+    },
+    "distinctConversations": {
+      "in": "query",
+      "description": "If 'True', then the latest messages per every conversation ID are returned",
+      "required": false,
+      "type": "boolean"
+    },
+    "messageType": {
+      "in": "query",
+      "description": "Type for the resulting messages. If not specified, all types of messages are returned. Multiple values are accepted",
+      "required": false,
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "Fax",
+          "SMS",
+          "VoiceMail",
+          "Pager",
+          "Text"
+        ]
+      },
+      "collectionFormat": "multi"
+    },
+    "recordCount": {
+      "in": "query",
+      "description": "Limits the number of records to be returned (works in combination with dateFrom and dateTo if specified)",
+      "required": false,
+      "type": "integer"
+    },
+    "syncToken": {
+      "in": "query",
+      "description": "Value of syncToken property of last sync request response",
+      "required": false,
+      "type": "string"
+    },
+    "syncType": {
+      "in": "query",
+      "description": "Type of message synchronization",
+      "required": false,
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "FSync",
+          "ISync"
+        ]
+      },
+      "collectionFormat": "multi"
+    }
+  }
+}
+```
 
 ## Get Message Store Configuration
 
@@ -770,11 +1593,64 @@ const SDK = require('ringcentral');
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
-const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/address-book/contact`);
+const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/address-book/contact`, listContactsParameters);
 ```
 
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
+
+`listContactsParameters` is an **optional** object with the following definition:
+
+```yaml
+{
+  "properties": {
+    "startsWith": {
+      "in": "query",
+      "description": "If specified, only contacts whose First name or Last name start with the mentioned substring are returned. Case-insensitive",
+      "required": false,
+      "type": "string"
+    },
+    "sortBy": {
+      "in": "query",
+      "description": "Sorts results by the specified property",
+      "required": false,
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "FirstName",
+          "LastName",
+          "Company"
+        ]
+      },
+      "collectionFormat": "multi"
+    },
+    "page": {
+      "in": "query",
+      "description": "Indicates the page number to retrieve. Only positive number values are accepted",
+      "default": 1,
+      "required": false,
+      "type": "integer"
+    },
+    "perPage": {
+      "in": "query",
+      "description": "Indicates the page size (number of items)",
+      "default": 100,
+      "required": false,
+      "type": "integer"
+    },
+    "phoneNumber": {
+      "in": "query",
+      "required": false,
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "collectionFormat": "multi"
+    }
+  }
+}
+```
 
 ## Create Contact
 
@@ -785,7 +1661,7 @@ const SDK = require('ringcentral');
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
-const r = await platform.post(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/address-book/contact`, personalContactResource);
+const r = await platform.post(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/address-book/contact`, personalContactResource, createContactParameters);
 ```
 
 - `accountId`'s default value is `~`
@@ -955,6 +1831,21 @@ const r = await platform.post(`/restapi/v1.0/account/${accountId}/extension/${ex
       "type": "string"
     },
     "businessPhone2": {
+      "type": "string"
+    }
+  }
+}
+```
+
+`createContactParameters` is an **optional** object with the following definition:
+
+```yaml
+{
+  "properties": {
+    "dialingPlan": {
+      "in": "query",
+      "description": "A country code value complying with the [ISO 3166-1 alpha-2](https://ru.wikipedia.org/wiki/ISO_3166-1_alpha-2) format. The default value is home country of the current extension",
+      "required": false,
       "type": "string"
     }
   }
@@ -985,7 +1876,7 @@ const SDK = require('ringcentral');
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
-const r = await platform.put(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/address-book/contact/${contactId}`, personalContactResource);
+const r = await platform.put(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/address-book/contact/${contactId}`, personalContactResource, updateContactParameters);
 ```
 
 - `accountId`'s default value is `~`
@@ -1161,6 +2052,21 @@ const r = await platform.put(`/restapi/v1.0/account/${accountId}/extension/${ext
 }
 ```
 
+`updateContactParameters` is an **optional** object with the following definition:
+
+```yaml
+{
+  "properties": {
+    "dialingPlan": {
+      "in": "query",
+      "description": "A country code value complying with the [ISO 3166-1 alpha-2](https://ru.wikipedia.org/wiki/ISO_3166-1_alpha-2) format. The default value is home country of the current extension",
+      "required": false,
+      "type": "string"
+    }
+  }
+}
+```
+
 ## Delete Contact(s)
 
 HTTP DELETE /restapi/v1.0/account/{accountId}/extension/{extensionId}/address-book/contact/{contactId}
@@ -1185,11 +2091,52 @@ const SDK = require('ringcentral');
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
-const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/address-book-sync`);
+const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/address-book-sync`, syncAddressBookParameters);
 ```
 
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
+
+`syncAddressBookParameters` is an **optional** object with the following definition:
+
+```yaml
+{
+  "properties": {
+    "syncType": {
+      "in": "query",
+      "description": "Type of synchronization",
+      "required": false,
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "FSync",
+          "ISync"
+        ]
+      },
+      "collectionFormat": "multi"
+    },
+    "syncToken": {
+      "in": "query",
+      "description": "Value of syncToken property of the last sync request response",
+      "required": false,
+      "type": "string"
+    },
+    "perPage": {
+      "in": "query",
+      "description": "Number of records per page to be returned. The max number of records is 250, which is also the default. For 'FSync' if the number of records exceeds the parameter value (either specified or default), all of the pages can be retrieved in several requests. For 'ISync' if the number of records exceeds the page size, the number of incoming changes to this number is limited",
+      "required": false,
+      "type": "integer"
+    },
+    "pageId": {
+      "in": "query",
+      "description": "Internal identifier of a page. It can be obtained from the 'nextPageId' parameter passed in response body",
+      "required": false,
+      "type": "integer"
+    }
+  }
+}
+```
 
 ## Get Favorite Contact List
 
@@ -1352,10 +2299,64 @@ const SDK = require('ringcentral');
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
-const r = await platform.get(`/restapi/v1.0/account/${accountId}/directory/entries`);
+const r = await platform.get(`/restapi/v1.0/account/${accountId}/directory/entries`, listDirectoryEntriesParameters);
 ```
 
 - `accountId`'s default value is `~`
+
+`listDirectoryEntriesParameters` is an **optional** object with the following definition:
+
+```yaml
+{
+  "properties": {
+    "showFederated": {
+      "in": "query",
+      "description": "If 'True' then contacts of all accounts in federation are returned. If 'False' then only contacts of the current account are returned, and account section is eliminated in this case",
+      "required": false,
+      "type": "string",
+      "default": "true"
+    },
+    "type": {
+      "in": "query",
+      "description": "Type of an extension",
+      "required": false,
+      "type": "string",
+      "enum": [
+        "User",
+        "Department",
+        "Announcement",
+        "Voicemail",
+        "SharedLinesGroup",
+        "PagingOnly",
+        "IvrMenu",
+        "ParkLocation",
+        "Limited"
+      ]
+    },
+    "page": {
+      "in": "query",
+      "description": "Page number",
+      "required": false,
+      "type": "string",
+      "default": "1"
+    },
+    "perPage": {
+      "in": "query",
+      "description": "Records count to be returned per one page. The default value is 1000. Specific keyword values: `all` - all records are returned in one page; `max` - maximum count of records that can be returned in one page",
+      "maximum": 2000,
+      "default": 1000,
+      "required": false,
+      "type": "string"
+    },
+    "siteId": {
+      "in": "query",
+      "description": "Internal identifier of the business site to which extensions belong",
+      "required": false,
+      "type": "string"
+    }
+  }
+}
+```
 
 ## Get Account Federation
 
@@ -1380,11 +2381,32 @@ const SDK = require('ringcentral');
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
-const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/presence`);
+const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/presence`, getPresenceStatusParameters);
 ```
 
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
+
+`getPresenceStatusParameters` is an **optional** object with the following definition:
+
+```yaml
+{
+  "properties": {
+    "detailedTelephonyState": {
+      "in": "query",
+      "description": "Whether to return detailed telephony state",
+      "required": false,
+      "type": "boolean"
+    },
+    "sipData": {
+      "in": "query",
+      "description": "Whether to return SIP data",
+      "required": false,
+      "type": "boolean"
+    }
+  }
+}
+```
 
 ## Update User Status
 
@@ -1523,10 +2545,45 @@ const SDK = require('ringcentral');
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
-const r = await platform.get(`/restapi/v1.0/account/${accountId}/presence`);
+const r = await platform.get(`/restapi/v1.0/account/${accountId}/presence`, accountPresenceParameters);
 ```
 
 - `accountId`'s default value is `~`
+
+`accountPresenceParameters` is an **optional** object with the following definition:
+
+```yaml
+{
+  "properties": {
+    "detailedTelephonyState": {
+      "in": "query",
+      "description": "Whether to return detailed telephony state",
+      "required": false,
+      "type": "boolean"
+    },
+    "sipData": {
+      "in": "query",
+      "description": "Whether to return SIP data",
+      "required": false,
+      "type": "boolean"
+    },
+    "page": {
+      "in": "query",
+      "description": "Page number for account presence information",
+      "required": false,
+      "type": "integer",
+      "format": "int32"
+    },
+    "perPage": {
+      "in": "query",
+      "description": "Number for account presence information items per page",
+      "required": false,
+      "type": "integer",
+      "format": "int32"
+    }
+  }
+}
+```
 
 ## Get Chat List
 
@@ -1537,9 +2594,49 @@ const SDK = require('ringcentral');
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
-const r = await platform.get('/restapi/v1.0/glip/chats');
+const r = await platform.get('/restapi/v1.0/glip/chats', listGlipChatsParameters);
 ```
 
+
+`listGlipChatsParameters` is an **optional** object with the following definition:
+
+```yaml
+{
+  "properties": {
+    "type": {
+      "in": "query",
+      "description": "Type of chats to be fetched. By default all type of chats will be fetched",
+      "required": false,
+      "type": "array",
+      "collectionFormat": "multi",
+      "items": {
+        "type": "string",
+        "enum": [
+          "Everyone",
+          "Group",
+          "Personal",
+          "Direct",
+          "Team"
+        ]
+      }
+    },
+    "recordCount": {
+      "in": "query",
+      "description": "Number of chats to be fetched by one request. The maximum value is 250, by default - 30.",
+      "required": false,
+      "type": "integer",
+      "default": 30,
+      "maximum": 250
+    },
+    "pageToken": {
+      "in": "query",
+      "description": "Pagination token.",
+      "required": false,
+      "type": "string"
+    }
+  }
+}
+```
 
 ## Get Chat
 
@@ -1563,9 +2660,32 @@ const SDK = require('ringcentral');
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
-const r = await platform.get('/restapi/v1.0/glip/conversations');
+const r = await platform.get('/restapi/v1.0/glip/conversations', listGlipConversationsParameters);
 ```
 
+
+`listGlipConversationsParameters` is an **optional** object with the following definition:
+
+```yaml
+{
+  "properties": {
+    "recordCount": {
+      "in": "query",
+      "description": "Number of conversations to be fetched by one request. The maximum value is 250, by default - 30",
+      "required": false,
+      "type": "integer",
+      "default": 30,
+      "maximum": 250
+    },
+    "pageToken": {
+      "in": "query",
+      "description": "Pagination token.",
+      "required": false,
+      "type": "string"
+    }
+  }
+}
+```
 
 ## Create/Open Chat
 
@@ -1632,9 +2752,32 @@ const SDK = require('ringcentral');
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
-const r = await platform.get('/restapi/v1.0/glip/teams');
+const r = await platform.get('/restapi/v1.0/glip/teams', listGlipTeamsParameters);
 ```
 
+
+`listGlipTeamsParameters` is an **optional** object with the following definition:
+
+```yaml
+{
+  "properties": {
+    "recordCount": {
+      "in": "query",
+      "description": "Number of teams to be fetched by one request. The maximum value is 250, by default - 30",
+      "required": false,
+      "type": "integer",
+      "default": 30,
+      "maximum": 250
+    },
+    "pageToken": {
+      "in": "query",
+      "description": "Pagination token.",
+      "required": false,
+      "type": "string"
+    }
+  }
+}
+```
 
 ## Create Team
 
@@ -1939,9 +3082,44 @@ const SDK = require('ringcentral');
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
-const r = await platform.get('/restapi/v1.0/glip/groups');
+const r = await platform.get('/restapi/v1.0/glip/groups', listGlipGroupsParameters);
 ```
 
+
+`listGlipGroupsParameters` is an **optional** object with the following definition:
+
+```yaml
+{
+  "properties": {
+    "type": {
+      "in": "query",
+      "description": "Type of groups to be fetched (by default all type of groups will be fetched)",
+      "required": false,
+      "type": "string",
+      "enum": [
+        "Group",
+        "Team",
+        "PrivateChat",
+        "PersonalChat"
+      ]
+    },
+    "recordCount": {
+      "in": "query",
+      "description": "Number of groups to be fetched by one request. The maximum value is 250, by default - 30",
+      "required": false,
+      "type": "integer",
+      "default": 30,
+      "maximum": 250
+    },
+    "pageToken": {
+      "in": "query",
+      "description": "Pagination token.",
+      "required": false,
+      "type": "string"
+    }
+  }
+}
+```
 
 ## Create Group
 
@@ -2062,9 +3240,32 @@ const SDK = require('ringcentral');
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
-const r = await platform.get(`/restapi/v1.0/glip/groups/${groupId}/posts`);
+const r = await platform.get(`/restapi/v1.0/glip/groups/${groupId}/posts`, listGlipGroupPostsParameters);
 ```
 
+
+`listGlipGroupPostsParameters` is an **optional** object with the following definition:
+
+```yaml
+{
+  "properties": {
+    "recordCount": {
+      "in": "query",
+      "description": "Max number of records to be returned",
+      "required": false,
+      "type": "integer",
+      "default": 30,
+      "maximum": 250
+    },
+    "pageToken": {
+      "in": "query",
+      "description": "Pagination token",
+      "required": false,
+      "type": "string"
+    }
+  }
+}
+```
 
 ## Create Post in Group
 
@@ -2270,9 +3471,43 @@ const SDK = require('ringcentral');
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
-const r = await platform.get('/restapi/v1.0/glip/recent/chats');
+const r = await platform.get('/restapi/v1.0/glip/recent/chats', listRecentChatsParameters);
 ```
 
+
+`listRecentChatsParameters` is an **optional** object with the following definition:
+
+```yaml
+{
+  "properties": {
+    "type": {
+      "in": "query",
+      "description": "Type of chats to be fetched (by default, all type of chats will be fetched).",
+      "required": false,
+      "type": "array",
+      "collectionFormat": "multi",
+      "items": {
+        "type": "string",
+        "enum": [
+          "Everyone",
+          "Group",
+          "Personal",
+          "Direct",
+          "Team"
+        ]
+      }
+    },
+    "recordCount": {
+      "in": "query",
+      "description": "Max number of chats to be fetched by one request (Not more than 250).",
+      "required": false,
+      "type": "integer",
+      "default": 30,
+      "maximum": 250
+    }
+  }
+}
+```
 
 ## Get Favorite Chats
 
@@ -2283,9 +3518,26 @@ const SDK = require('ringcentral');
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
-const r = await platform.get('/restapi/v1.0/glip/favorites');
+const r = await platform.get('/restapi/v1.0/glip/favorites', listFavoriteChatsParameters);
 ```
 
+
+`listFavoriteChatsParameters` is an **optional** object with the following definition:
+
+```yaml
+{
+  "properties": {
+    "recordCount": {
+      "in": "query",
+      "description": "Max number of chats to be fetched by one request (Not more than 250).",
+      "required": false,
+      "type": "integer",
+      "default": 30,
+      "maximum": 250
+    }
+  }
+}
+```
 
 ## Add Chat to Favorites
 
@@ -2348,9 +3600,39 @@ const SDK = require('ringcentral');
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
-const r = await platform.get('/restapi/v1.0/glip/posts');
+const r = await platform.get('/restapi/v1.0/glip/posts', listGlipPostsParameters);
 ```
 
+
+`listGlipPostsParameters` is an **optional** object with the following definition:
+
+```yaml
+{
+  "properties": {
+    "groupId": {
+      "type": "string",
+      "in": "query",
+      "description": "Identifier of a group to filter posts",
+      "required": false
+    },
+    "pageToken": {
+      "type": "string",
+      "in": "query",
+      "description": "Token of a page to be returned",
+      "required": false
+    },
+    "recordCount": {
+      "type": "integer",
+      "format": "int64",
+      "in": "query",
+      "description": "Number of records to be returned. The maximum value is 250, by default - 30",
+      "default": 30,
+      "maximum": 250,
+      "required": false
+    }
+  }
+}
+```
 
 ## Create Post
 
@@ -2547,9 +3829,30 @@ const FormData = require('form-data');
 const formData = new FormData();
 
 formData.append('attachment', fs.readFileSync('./test.png'), { filename: 'text.png', contentType: 'image/png' });
-const r = await platform.post('/restapi/v1.0/glip/files', formData);
+const r = await platform.post('/restapi/v1.0/glip/files', formData, createGlipFileParameters);
 ```
 
+
+`createGlipFileParameters` is an **optional** object with the following definition:
+
+```yaml
+{
+  "properties": {
+    "groupId": {
+      "type": "integer",
+      "in": "query",
+      "description": "Internal identifier of a group to which the post with attachement will be added to",
+      "required": false
+    },
+    "name": {
+      "type": "string",
+      "in": "query",
+      "description": "Name of a file attached",
+      "required": false
+    }
+  }
+}
+```
 
 ## Create Card
 
@@ -2560,7 +3863,7 @@ const SDK = require('ringcentral');
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
-const r = await platform.post('/restapi/v1.0/glip/cards', glipMessageAttachmentInfoRequest);
+const r = await platform.post('/restapi/v1.0/glip/cards', glipMessageAttachmentInfoRequest, createGlipCardParameters);
 ```
 
 
@@ -2707,6 +4010,20 @@ const r = await platform.post('/restapi/v1.0/glip/cards', glipMessageAttachmentI
     "endingCondition": {
       "type": "string",
       "description": "Condition of ending an event"
+    }
+  }
+}
+```
+
+`createGlipCardParameters` is an **optional** object with the following definition:
+
+```yaml
+{
+  "properties": {
+    "groupId": {
+      "in": "query",
+      "description": "Internal identifier of a group where to create a post with the card",
+      "type": "integer"
     }
   }
 }
@@ -2908,9 +4225,32 @@ const SDK = require('ringcentral');
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
-const r = await platform.get('/restapi/v1.0/glip/events');
+const r = await platform.get('/restapi/v1.0/glip/events', loadGlipEventsParameters);
 ```
 
+
+`loadGlipEventsParameters` is an **optional** object with the following definition:
+
+```yaml
+{
+  "properties": {
+    "recordCount": {
+      "in": "query",
+      "description": "Number of groups to be fetched by one request. The maximum value is 250, by default - 30.",
+      "required": false,
+      "type": "integer",
+      "default": 30,
+      "maximum": 250
+    },
+    "pageToken": {
+      "in": "query",
+      "description": "Token of a page to be returned",
+      "required": false,
+      "type": "string"
+    }
+  }
+}
+```
 
 ## Create Event
 
@@ -3278,9 +4618,49 @@ const SDK = require('ringcentral');
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
-const r = await platform.get(`/restapi/v1.0/glip/groups/${groupId}/notes`);
+const r = await platform.get(`/restapi/v1.0/glip/groups/${groupId}/notes`, loadGroupNotesParameters);
 ```
 
+
+`loadGroupNotesParameters` is an **optional** object with the following definition:
+
+```yaml
+{
+  "properties": {
+    "recordCount": {
+      "in": "query",
+      "description": "Number of groups to be fetched by one request, the maximum value is 250, the default is 30",
+      "required": false,
+      "type": "integer",
+      "default": 30,
+      "maximum": 250
+    },
+    "pageToken": {
+      "in": "query",
+      "description": "Token of a page to be returned",
+      "required": false,
+      "type": "string"
+    },
+    "status": {
+      "in": "query",
+      "description": "Status of notes to be fetched. If not specified all notes are returned",
+      "required": false,
+      "type": "string",
+      "enum": [
+        "Active",
+        "Draft",
+        "Unknown"
+      ]
+    },
+    "creatorId": {
+      "in": "query",
+      "description": "Internal identifier of a note author",
+      "required": false,
+      "type": "string"
+    }
+  }
+}
+```
 
 ## Create Group Note
 
@@ -3334,9 +4714,42 @@ const SDK = require('ringcentral');
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
-const r = await platform.get('/restapi/v1.0/glip/notes');
+const r = await platform.get('/restapi/v1.0/glip/notes', loadUserNotesParameters);
 ```
 
+
+`loadUserNotesParameters` is an **optional** object with the following definition:
+
+```yaml
+{
+  "properties": {
+    "status": {
+      "in": "query",
+      "description": "Status of notes to be fetched. If not specified all notes are returned",
+      "required": false,
+      "type": "string",
+      "enum": [
+        "Active",
+        "Draft"
+      ]
+    },
+    "recordCount": {
+      "in": "query",
+      "description": "Number of groups to be fetched by one request. The maximum value is 250, by default - 30.",
+      "required": false,
+      "type": "integer",
+      "default": 30,
+      "maximum": 250
+    },
+    "pageToken": {
+      "in": "query",
+      "description": "Token of a page to be returned",
+      "required": false,
+      "type": "string"
+    }
+  }
+}
+```
 
 ## Create User Note
 
@@ -3416,7 +4829,7 @@ const SDK = require('ringcentral');
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
-const r = await platform.patch(`/restapi/v1.0/glip/notes/${noteId}`, glipNoteCreate);
+const r = await platform.patch(`/restapi/v1.0/glip/notes/${noteId}`, glipNoteCreate, patchNoteParameters);
 ```
 
 
@@ -3445,6 +4858,21 @@ const r = await platform.patch(`/restapi/v1.0/glip/notes/${noteId}`, glipNoteCre
     "body": {
       "type": "string",
       "description": "Contents of a note"
+    }
+  }
+}
+```
+
+`patchNoteParameters` is an **optional** object with the following definition:
+
+```yaml
+{
+  "properties": {
+    "releaseLock": {
+      "in": "query",
+      "type": "boolean",
+      "default": false,
+      "description": "If true then note lock (if any) will be released upon request"
     }
   }
 }
@@ -4023,7 +5451,7 @@ const SDK = require('ringcentral');
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
-const r = await platform.put(`/restapi/v1.0/subscription/${subscriptionId}`, modifySubscriptionRequest);
+const r = await platform.put(`/restapi/v1.0/subscription/${subscriptionId}`, modifySubscriptionRequest, updateSubscriptionParameters);
 ```
 
 
@@ -4088,6 +5516,21 @@ const r = await platform.put(`/restapi/v1.0/subscription/${subscriptionId}`, mod
 }
 ```
 
+`updateSubscriptionParameters` is an **optional** object with the following definition:
+
+```yaml
+{
+  "properties": {
+    "aggregated": {
+      "in": "query",
+      "description": "If 'True' then aggregated presence status is returned in a notification payload",
+      "required": false,
+      "type": "boolean"
+    }
+  }
+}
+```
+
 ## Cancel Subscription
 
 HTTP DELETE /restapi/v1.0/subscription/{subscriptionId}
@@ -4138,11 +5581,30 @@ const SDK = require('ringcentral');
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
-const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/authz-profile/check`);
+const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/authz-profile/check`, checkUserPermissionParameters);
 ```
 
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
+
+`checkUserPermissionParameters` is an **optional** object with the following definition:
+
+```yaml
+{
+  "properties": {
+    "permissionId": {
+      "in": "query",
+      "required": false,
+      "type": "string"
+    },
+    "targetExtensionId": {
+      "in": "query",
+      "required": false,
+      "type": "string"
+    }
+  }
+}
+```
 
 ## Get User Business Hours
 
@@ -4607,11 +6069,39 @@ const SDK = require('ringcentral');
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
-const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/caller-blocking/phone-numbers`);
+const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/caller-blocking/phone-numbers`, listBlockedAllowedPhoneNumberParameters);
 ```
 
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
+
+`listBlockedAllowedPhoneNumberParameters` is an **optional** object with the following definition:
+
+```yaml
+{
+  "properties": {
+    "page": {
+      "in": "query",
+      "required": false,
+      "type": "integer"
+    },
+    "perPage": {
+      "in": "query",
+      "required": false,
+      "type": "integer"
+    },
+    "status": {
+      "in": "query",
+      "required": false,
+      "type": "string",
+      "enum": [
+        "Blocked",
+        "Allowed"
+      ]
+    }
+  }
+}
+```
 
 ## Add Blocked/Allowed Number
 
@@ -4753,11 +6243,34 @@ const SDK = require('ringcentral');
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
-const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/forwarding-number`);
+const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/forwarding-number`, listExtensionForwardingNumbersParameters);
 ```
 
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
+
+`listExtensionForwardingNumbersParameters` is an **optional** object with the following definition:
+
+```yaml
+{
+  "properties": {
+    "page": {
+      "in": "query",
+      "description": "Indicates the page number to retrieve. Only positive number values are accepted.",
+      "default": 1,
+      "required": false,
+      "type": "integer"
+    },
+    "perPage": {
+      "in": "query",
+      "description": "Indicates the page size (number of items).",
+      "default": 100,
+      "required": false,
+      "type": "integer"
+    }
+  }
+}
+```
 
 ## Create Forwarding Numbers
 
@@ -4900,11 +6413,32 @@ const SDK = require('ringcentral');
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
-const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/answering-rule`);
+const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/answering-rule`, listAnsweringRulesParameters);
 ```
 
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
+
+`listAnsweringRulesParameters` is an **optional** object with the following definition:
+
+```yaml
+{
+  "properties": {
+    "page": {
+      "in": "query",
+      "required": false,
+      "type": "string",
+      "default": "1"
+    },
+    "perPage": {
+      "in": "query",
+      "required": false,
+      "type": "string",
+      "default": "100"
+    }
+  }
+}
+```
 
 ## Create Custom Call Handling Rules
 
@@ -5436,11 +6970,27 @@ const SDK = require('ringcentral');
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
-const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/answering-rule/${ruleId}`);
+const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/answering-rule/${ruleId}`, loadAnsweringRuleParameters);
 ```
 
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
+
+`loadAnsweringRuleParameters` is an **optional** object with the following definition:
+
+```yaml
+{
+  "properties": {
+    "showInactiveNumbers": {
+      "in": "query",
+      "description": "Indicates whether inactive numbers should be returned or not",
+      "default": false,
+      "required": false,
+      "type": "boolean"
+    }
+  }
+}
+```
 
 ## Update Custom Call Handling Rule
 
@@ -6576,9 +8126,62 @@ const SDK = require('ringcentral');
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
-const r = await platform.get('/restapi/v1.0/dictionary/greeting');
+const r = await platform.get('/restapi/v1.0/dictionary/greeting', listStandardGreetingsParameters);
 ```
 
+
+`listStandardGreetingsParameters` is an **optional** object with the following definition:
+
+```yaml
+{
+  "properties": {
+    "page": {
+      "in": "query",
+      "description": "Indicates the page number to retrieve. Only positive number values are accepted.",
+      "default": 1,
+      "required": false,
+      "type": "integer"
+    },
+    "perPage": {
+      "in": "query",
+      "description": "Indicates the page size (number of items).",
+      "default": 100,
+      "required": false,
+      "type": "integer"
+    },
+    "type": {
+      "in": "query",
+      "description": "Type of a greeting, specifying the case when the greeting is played",
+      "required": false,
+      "type": "string",
+      "enum": [
+        "Introductory",
+        "Announcement",
+        "ConnectingMessage",
+        "ConnectingAudio",
+        "Voicemail",
+        "Unavailable",
+        "HoldMusic",
+        "Company"
+      ]
+    },
+    "usageType": {
+      "in": "query",
+      "type": "string",
+      "description": "Usage type of a greeting, specifying if the greeting is applied for user extension or department extension",
+      "enum": [
+        "UserExtensionAnsweringRule",
+        "ExtensionAnsweringRule",
+        "DepartmentExtensionAnsweringRule",
+        "CompanyAnsweringRule",
+        "CompanyAfterHoursAnsweringRule",
+        "VoicemailExtensionAnsweringRule",
+        "AnnouncementExtensionAnsweringRule"
+      ]
+    }
+  }
+}
+```
 
 ## Get Greeting Info
 
@@ -7319,10 +8922,29 @@ const SDK = require('ringcentral');
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
-const r = await platform.get(`/restapi/v1.0/account/${accountId}/call-recording/custom-greetings`);
+const r = await platform.get(`/restapi/v1.0/account/${accountId}/call-recording/custom-greetings`, listCallRecordingCustomGreetingsParameters);
 ```
 
 - `accountId`'s default value is `~`
+
+`listCallRecordingCustomGreetingsParameters` is an **optional** object with the following definition:
+
+```yaml
+{
+  "properties": {
+    "type": {
+      "in": "query",
+      "required": false,
+      "type": "string",
+      "enum": [
+        "StartRecording",
+        "StopRecording",
+        "AutomaticRecording"
+      ]
+    }
+  }
+}
+```
 
 ## Delete Call Recording Custom Greetings
 
@@ -7427,11 +9049,51 @@ const SDK = require('ringcentral');
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
-const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/phone-number`);
+const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/phone-number`, listExtensionPhoneNumbersParameters);
 ```
 
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
+
+`listExtensionPhoneNumbersParameters` is an **optional** object with the following definition:
+
+```yaml
+{
+  "properties": {
+    "usageType": {
+      "in": "query",
+      "description": "Usage type of a phone number",
+      "required": false,
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "MainCompanyNumber",
+          "AdditionalCompanyNumber",
+          "CompanyNumber",
+          "DirectNumber",
+          "CompanyFaxNumber",
+          "ForwardedNumber",
+          "ForwardedCompanyNumber"
+        ]
+      },
+      "collectionFormat": "multi"
+    },
+    "page": {
+      "in": "query",
+      "description": "Indicates the page number to retrieve. Only positive number values are allowed. Default value is '1'",
+      "required": false,
+      "type": "integer"
+    },
+    "perPage": {
+      "in": "query",
+      "description": "Indicates the page size (number of items). If not specified, the value is '100' by default",
+      "required": false,
+      "type": "integer"
+    }
+  }
+}
+```
 
 ## Get Extension Info
 
@@ -7863,11 +9525,32 @@ const SDK = require('ringcentral');
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
-const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/grant`);
+const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/grant`, listExtensionGrantsParameters);
 ```
 
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
+
+`listExtensionGrantsParameters` is an **optional** object with the following definition:
+
+```yaml
+{
+  "properties": {
+    "page": {
+      "in": "query",
+      "required": false,
+      "type": "string",
+      "default": "1"
+    },
+    "perPage": {
+      "in": "query",
+      "required": false,
+      "type": "string",
+      "default": "100"
+    }
+  }
+}
+```
 
 ## Get Notification Settings
 
@@ -8150,11 +9833,26 @@ const SDK = require('ringcentral');
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
-const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/conferencing`);
+const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/conferencing`, loadConferencingInfoParameters);
 ```
 
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
+
+`loadConferencingInfoParameters` is an **optional** object with the following definition:
+
+```yaml
+{
+  "properties": {
+    "countryId": {
+      "in": "query",
+      "description": "Internal identifier of a country. If not specified, the response is returned for the brand country",
+      "required": false,
+      "type": "string"
+    }
+  }
+}
+```
 
 ## Update User Conferencing Settings
 
@@ -8338,9 +10036,56 @@ const SDK = require('ringcentral');
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
-const r = await platform.get('/restapi/v1.0/dictionary/country');
+const r = await platform.get('/restapi/v1.0/dictionary/country', listCountriesParameters);
 ```
 
+
+`listCountriesParameters` is an **optional** object with the following definition:
+
+```yaml
+{
+  "properties": {
+    "loginAllowed": {
+      "in": "query",
+      "description": "Specifies whether login with the phone numbers of this country is enabled or not",
+      "required": false,
+      "type": "boolean"
+    },
+    "signupAllowed": {
+      "in": "query",
+      "description": "Indicates whether signup/billing is allowed for a country. If not specified all countries are returned (according to other filters specified if any)",
+      "required": false,
+      "type": "boolean"
+    },
+    "numberSelling": {
+      "in": "query",
+      "description": "Specifies if RingCentral sells phone numbers of this country",
+      "required": false,
+      "type": "boolean"
+    },
+    "page": {
+      "in": "query",
+      "description": "Indicates the page number to retrieve. Only positive number values are accepted",
+      "default": 1,
+      "required": false,
+      "type": "integer"
+    },
+    "perPage": {
+      "in": "query",
+      "description": "Indicates the page size (number of items)",
+      "default": 100,
+      "required": false,
+      "type": "integer"
+    },
+    "freeSoftphoneLine": {
+      "in": "query",
+      "description": "Specifies if free phone line for softphone is available for a country or not",
+      "required": false,
+      "type": "boolean"
+    }
+  }
+}
+```
 
 ## Get Country
 
@@ -8364,9 +10109,58 @@ const SDK = require('ringcentral');
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
-const r = await platform.get('/restapi/v1.0/dictionary/location');
+const r = await platform.get('/restapi/v1.0/dictionary/location', listLocationsParameters);
 ```
 
+
+`listLocationsParameters` is an **optional** object with the following definition:
+
+```yaml
+{
+  "properties": {
+    "orderBy": {
+      "in": "query",
+      "description": "Sorts results by the property specified",
+      "required": false,
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "Npa",
+          "City"
+        ]
+      },
+      "collectionFormat": "multi"
+    },
+    "page": {
+      "in": "query",
+      "description": "Indicates the page number to retrieve. Only positive number values are accepted",
+      "required": false,
+      "default": 1,
+      "type": "integer"
+    },
+    "perPage": {
+      "in": "query",
+      "description": "Indicates the page size (number of items)",
+      "default": 100,
+      "required": false,
+      "type": "integer"
+    },
+    "stateId": {
+      "in": "query",
+      "description": "Internal identifier of a state",
+      "required": false,
+      "type": "string"
+    },
+    "withNxx": {
+      "in": "query",
+      "description": "Specifies if nxx codes are returned",
+      "required": false,
+      "type": "boolean"
+    }
+  }
+}
+```
 
 ## Get State List
 
@@ -8377,9 +10171,51 @@ const SDK = require('ringcentral');
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
-const r = await platform.get('/restapi/v1.0/dictionary/state');
+const r = await platform.get('/restapi/v1.0/dictionary/state', listStatesParameters);
 ```
 
+
+`listStatesParameters` is an **optional** object with the following definition:
+
+```yaml
+{
+  "properties": {
+    "allCountries": {
+      "in": "query",
+      "type": "boolean",
+      "description": "If set to 'True' then states for all countries are returned and `countryId` is ignored, even if specified. If the value is empty then the parameter is ignored",
+      "required": false
+    },
+    "countryId": {
+      "in": "query",
+      "description": "Internal identifier of a country",
+      "required": false,
+      "type": "integer"
+    },
+    "page": {
+      "in": "query",
+      "description": "Indicates the page number to retrieve. Only positive number values are accepted",
+      "default": 1,
+      "required": false,
+      "type": "integer"
+    },
+    "perPage": {
+      "in": "query",
+      "description": "Indicates the page size (number of items)",
+      "default": 100,
+      "required": false,
+      "type": "integer"
+    },
+    "withPhoneNumbers": {
+      "in": "query",
+      "description": "If 'True', the list of states with phone numbers available for buying is returned",
+      "default": false,
+      "required": false,
+      "type": "boolean"
+    }
+  }
+}
+```
 
 ## Get State
 
@@ -8403,9 +10239,32 @@ const SDK = require('ringcentral');
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
-const r = await platform.get('/restapi/v1.0/dictionary/timezone');
+const r = await platform.get('/restapi/v1.0/dictionary/timezone', listTimezonesParameters);
 ```
 
+
+`listTimezonesParameters` is an **optional** object with the following definition:
+
+```yaml
+{
+  "properties": {
+    "page": {
+      "in": "query",
+      "description": "Indicates the page number to retrieve. Only positive number values are accepted",
+      "default": "1",
+      "required": false,
+      "type": "string"
+    },
+    "perPage": {
+      "in": "query",
+      "description": "Indicates the page size (number of items)",
+      "default": "100",
+      "required": false,
+      "type": "string"
+    }
+  }
+}
+```
 
 ## Get Timezone
 
@@ -8416,9 +10275,32 @@ const SDK = require('ringcentral');
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
-const r = await platform.get(`/restapi/v1.0/dictionary/timezone/${timezoneId}`);
+const r = await platform.get(`/restapi/v1.0/dictionary/timezone/${timezoneId}`, loadTimezoneParameters);
 ```
 
+
+`loadTimezoneParameters` is an **optional** object with the following definition:
+
+```yaml
+{
+  "properties": {
+    "page": {
+      "in": "query",
+      "description": "Indicates the page number to retrieve. Only positive number values are accepted",
+      "default": "1",
+      "required": false,
+      "type": "string"
+    },
+    "perPage": {
+      "in": "query",
+      "description": "Indicates the page size (number of items)",
+      "default": "100",
+      "required": false,
+      "type": "string"
+    }
+  }
+}
+```
 
 ## Get Company Phone Number List
 
@@ -8429,10 +10311,55 @@ const SDK = require('ringcentral');
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
-const r = await platform.get(`/restapi/v1.0/account/${accountId}/phone-number`);
+const r = await platform.get(`/restapi/v1.0/account/${accountId}/phone-number`, listAccountPhoneNumbersParameters);
 ```
 
 - `accountId`'s default value is `~`
+
+`listAccountPhoneNumbersParameters` is an **optional** object with the following definition:
+
+```yaml
+{
+  "properties": {
+    "page": {
+      "in": "query",
+      "description": "Indicates the page number to retrieve. Only positive number values are accepted",
+      "default": 1,
+      "required": false,
+      "type": "integer"
+    },
+    "perPage": {
+      "in": "query",
+      "description": "Indicates the page size (number of items)",
+      "default": 100,
+      "required": false,
+      "type": "integer"
+    },
+    "usageType": {
+      "in": "query",
+      "description": "Usage type of a phone number",
+      "required": false,
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "MainCompanyNumber",
+          "AdditionalCompanyNumber",
+          "CompanyNumber",
+          "DirectNumber",
+          "CompanyFaxNumber",
+          "ForwardedNumber",
+          "ForwardedCompanyNumber",
+          "ContactCenterNumber",
+          "ConferencingNumber",
+          "MeetingsNumber"
+        ]
+      },
+      "collectionFormat": "multi"
+    }
+  }
+}
+```
 
 ## Get Phone Number
 
@@ -8457,10 +10384,91 @@ const SDK = require('ringcentral');
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
-const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension`);
+const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension`, listExtensionsParameters);
 ```
 
 - `accountId`'s default value is `~`
+
+`listExtensionsParameters` is an **optional** object with the following definition:
+
+```yaml
+{
+  "properties": {
+    "extensionId": {
+      "type": "string",
+      "in": "query",
+      "description": "Extension number to retrieve",
+      "required": false
+    },
+    "email": {
+      "type": "string",
+      "in": "query",
+      "description": "Extension email address",
+      "required": false
+    },
+    "page": {
+      "type": "integer",
+      "format": "int64",
+      "in": "query",
+      "description": "Indicates the page number to retrieve. Only positive number values are allowed",
+      "default": 1,
+      "required": false
+    },
+    "perPage": {
+      "type": "integer",
+      "format": "int64",
+      "in": "query",
+      "description": "Indicates the page size (number of items)",
+      "default": 100,
+      "required": false
+    },
+    "status": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "Enabled",
+          "Disabled",
+          "NotActivated",
+          "Unassigned"
+        ]
+      },
+      "collectionFormat": "multi",
+      "allowEmptyValue": true,
+      "in": "query",
+      "description": "Extension current state. Multiple values are supported. If 'Unassigned' is specified, then extensions without extensionNumber are returned. If not specified, then all extensions are returned.",
+      "required": false
+    },
+    "type": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "User",
+          "FaxUser",
+          "VirtualUser",
+          "DigitalUser",
+          "Department",
+          "Announcement",
+          "Voicemail",
+          "SharedLinesGroup",
+          "PagingOnly",
+          "IvrMenu",
+          "ApplicationExtension",
+          "ParkLocation",
+          "Limited",
+          "Bot"
+        ]
+      },
+      "collectionFormat": "multi",
+      "allowEmptyValue": true,
+      "in": "query",
+      "description": "Extension type. Multiple values are supported",
+      "required": false
+    }
+  }
+}
+```
 
 ## Create Extension
 
@@ -8803,10 +10811,35 @@ const SDK = require('ringcentral');
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
-const r = await platform.get(`/restapi/v1.0/account/${accountId}/templates`);
+const r = await platform.get(`/restapi/v1.0/account/${accountId}/templates`, listTemplatesParameters);
 ```
 
 - `accountId`'s default value is `~`
+
+`listTemplatesParameters` is an **optional** object with the following definition:
+
+```yaml
+{
+  "properties": {
+    "type": {
+      "in": "query",
+      "type": "string",
+      "enum": [
+        "UserSettings",
+        "CallHandling"
+      ]
+    },
+    "page": {
+      "in": "query",
+      "type": "string"
+    },
+    "perPage": {
+      "in": "query",
+      "type": "string"
+    }
+  }
+}
+```
 
 ## Get Template
 
@@ -8831,10 +10864,38 @@ const SDK = require('ringcentral');
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
-const r = await platform.get(`/restapi/v1.0/account/${accountId}/call-queues`);
+const r = await platform.get(`/restapi/v1.0/account/${accountId}/call-queues`, listCallQueuesParameters);
 ```
 
 - `accountId`'s default value is `~`
+
+`listCallQueuesParameters` is an **optional** object with the following definition:
+
+```yaml
+{
+  "properties": {
+    "page": {
+      "in": "query",
+      "description": "Indicates the page number to retrieve. Only positive number values are accepted",
+      "default": 1,
+      "required": false,
+      "type": "integer"
+    },
+    "perPage": {
+      "in": "query",
+      "description": "Indicates the page size (number of items)",
+      "default": 100,
+      "required": false,
+      "type": "integer"
+    },
+    "memberExtensionId": {
+      "in": "query",
+      "description": "Internal identifier of an extension that is a member of every group within the result",
+      "type": "string"
+    }
+  }
+}
+```
 
 ## Get Call Queue Members
 
@@ -8845,10 +10906,33 @@ const SDK = require('ringcentral');
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
-const r = await platform.get(`/restapi/v1.0/account/${accountId}/call-queues/${groupId}/members`);
+const r = await platform.get(`/restapi/v1.0/account/${accountId}/call-queues/${groupId}/members`, listCallQueueMembersParameters);
 ```
 
 - `accountId`'s default value is `~`
+
+`listCallQueueMembersParameters` is an **optional** object with the following definition:
+
+```yaml
+{
+  "properties": {
+    "page": {
+      "in": "query",
+      "description": "Indicates the page number to retrieve. Only positive number values are allowed",
+      "default": 1,
+      "required": false,
+      "type": "integer"
+    },
+    "perPage": {
+      "in": "query",
+      "description": "Indicates the page size (number of items)",
+      "default": 100,
+      "required": false,
+      "type": "integer"
+    }
+  }
+}
+```
 
 ## Edit Call Queue Members
 
@@ -8895,10 +10979,33 @@ const SDK = require('ringcentral');
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
-const r = await platform.get(`/restapi/v1.0/account/${accountId}/department/${departmentId}/members`);
+const r = await platform.get(`/restapi/v1.0/account/${accountId}/department/${departmentId}/members`, listDepartmentMembersParameters);
 ```
 
 - `accountId`'s default value is `~`
+
+`listDepartmentMembersParameters` is an **optional** object with the following definition:
+
+```yaml
+{
+  "properties": {
+    "page": {
+      "in": "query",
+      "description": "Indicates the page number to retrieve. Only positive number values are accepted",
+      "default": 1,
+      "required": false,
+      "type": "integer"
+    },
+    "perPage": {
+      "in": "query",
+      "description": "Indicates the page size (number of items)",
+      "default": 100,
+      "required": false,
+      "type": "integer"
+    }
+  }
+}
+```
 
 ## Edit Department Members
 
@@ -8955,10 +11062,33 @@ const SDK = require('ringcentral');
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
-const r = await platform.get(`/restapi/v1.0/account/${accountId}/paging-only-groups/${pagingOnlyGroupId}/users`);
+const r = await platform.get(`/restapi/v1.0/account/${accountId}/paging-only-groups/${pagingOnlyGroupId}/users`, listPagingGroupUsersParameters);
 ```
 
 - `accountId`'s default value is `~`
+
+`listPagingGroupUsersParameters` is an **optional** object with the following definition:
+
+```yaml
+{
+  "properties": {
+    "page": {
+      "in": "query",
+      "description": "Indicates the page number to retrieve. Only positive number values are accepted",
+      "default": 1,
+      "required": false,
+      "type": "integer"
+    },
+    "perPage": {
+      "in": "query",
+      "description": "Indicates the page size (number of items)",
+      "default": 100,
+      "required": false,
+      "type": "integer"
+    }
+  }
+}
+```
 
 ## Get Paging Only Group Devices
 
@@ -8969,10 +11099,33 @@ const SDK = require('ringcentral');
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
-const r = await platform.get(`/restapi/v1.0/account/${accountId}/paging-only-groups/${pagingOnlyGroupId}/devices`);
+const r = await platform.get(`/restapi/v1.0/account/${accountId}/paging-only-groups/${pagingOnlyGroupId}/devices`, listPagingGroupDevicesParameters);
 ```
 
 - `accountId`'s default value is `~`
+
+`listPagingGroupDevicesParameters` is an **optional** object with the following definition:
+
+```yaml
+{
+  "properties": {
+    "page": {
+      "in": "query",
+      "description": "Indicates the page number to retrieve. Only positive number values are accepted",
+      "default": 1,
+      "required": false,
+      "type": "integer"
+    },
+    "perPage": {
+      "in": "query",
+      "description": "Indicates the page size (number of items)",
+      "default": 100,
+      "required": false,
+      "type": "integer"
+    }
+  }
+}
+```
 
 ## Edit Paging Group Users and Devices
 
@@ -9070,10 +11223,38 @@ const SDK = require('ringcentral');
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
-const r = await platform.get(`/restapi/v1.0/account/${accountId}/call-monitoring-groups`);
+const r = await platform.get(`/restapi/v1.0/account/${accountId}/call-monitoring-groups`, listCallMonitoringGroupsParameters);
 ```
 
 - `accountId`'s default value is `~`
+
+`listCallMonitoringGroupsParameters` is an **optional** object with the following definition:
+
+```yaml
+{
+  "properties": {
+    "page": {
+      "in": "query",
+      "description": "Indicates the page number to retrieve. Only positive number values are allowed",
+      "default": "1",
+      "required": false,
+      "type": "integer"
+    },
+    "perPage": {
+      "in": "query",
+      "description": "Indicates the page size (number of items)",
+      "required": false,
+      "default": "100",
+      "type": "integer"
+    },
+    "memberExtensionId": {
+      "in": "query",
+      "description": "Internal identifier of an extension that is a member of every group within the result",
+      "type": "string"
+    }
+  }
+}
+```
 
 ## Updates Call Monitoring Group
 
@@ -9133,10 +11314,33 @@ const SDK = require('ringcentral');
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
-const r = await platform.get(`/restapi/v1.0/account/${accountId}/call-monitoring-groups/${groupId}/members`);
+const r = await platform.get(`/restapi/v1.0/account/${accountId}/call-monitoring-groups/${groupId}/members`, listCallMonitoringGroupMembersParameters);
 ```
 
 - `accountId`'s default value is `~`
+
+`listCallMonitoringGroupMembersParameters` is an **optional** object with the following definition:
+
+```yaml
+{
+  "properties": {
+    "page": {
+      "in": "query",
+      "description": "Indicates the page number to retrieve. Only positive number values are allowed",
+      "default": 1,
+      "required": false,
+      "type": "integer"
+    },
+    "perPage": {
+      "in": "query",
+      "description": "Indicates the page size (number of items)",
+      "default": 100,
+      "required": false,
+      "type": "integer"
+    }
+  }
+}
+```
 
 ## Edit Call Monitoring Group
 
@@ -9234,7 +11438,7 @@ const SDK = require('ringcentral');
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
-const r = await platform.post('/restapi/v1.0/number-parser/parse', parsePhoneNumberRequest);
+const r = await platform.post('/restapi/v1.0/number-parser/parse', parsePhoneNumberRequest, parsePhoneNumberParameters);
 ```
 
 
@@ -9250,6 +11454,27 @@ const r = await platform.post('/restapi/v1.0/number-parser/parse', parsePhoneNum
       "items": {
         "type": "string"
       }
+    }
+  }
+}
+```
+
+`parsePhoneNumberParameters` is an **optional** object with the following definition:
+
+```yaml
+{
+  "properties": {
+    "homeCountry": {
+      "in": "query",
+      "description": "Internal identifier of a home country. The default value is ISO code (ISO 3166) of the user's home country or brand country, if the user is undefined",
+      "required": false,
+      "type": "string"
+    },
+    "nationalAsPriority": {
+      "in": "query",
+      "description": "The default value is 'False'. If 'True', the numbers that are closer to the home country are given higher priority",
+      "required": false,
+      "type": "boolean"
     }
   }
 }
@@ -9365,11 +11590,42 @@ const SDK = require('ringcentral');
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
-const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/device`);
+const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/device`, listExtensionDevicesParameters);
 ```
 
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
+
+`listExtensionDevicesParameters` is an **optional** object with the following definition:
+
+```yaml
+{
+  "properties": {
+    "linePooling": {
+      "in": "query",
+      "type": "string",
+      "description": "Pooling type of a device",
+      "required": false,
+      "enum": [
+        "Host",
+        "Guest",
+        "None"
+      ]
+    },
+    "feature": {
+      "in": "query",
+      "type": "string",
+      "description": "Device feature or multiple features supported",
+      "required": false,
+      "enum": [
+        "Intercom",
+        "Paging",
+        "BLA"
+      ]
+    }
+  }
+}
+```
 
 ## check health
 
@@ -9419,9 +11675,40 @@ const SDK = require('ringcentral');
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
-const r = await platform.get('/scim/v2/Users');
+const r = await platform.get('/scim/v2/Users', searchViaGet2Parameters);
 ```
 
+
+`searchViaGet2Parameters` is an **optional** object with the following definition:
+
+```yaml
+{
+  "properties": {
+    "filter": {
+      "in": "query",
+      "description": "only support 'userName' or 'email' filter expressions for now",
+      "required": false,
+      "type": "string"
+    },
+    "startIndex": {
+      "in": "query",
+      "description": "start index (1-based)",
+      "required": false,
+      "type": "integer",
+      "default": 1,
+      "format": "int32"
+    },
+    "count": {
+      "in": "query",
+      "description": "page size",
+      "required": false,
+      "type": "integer",
+      "default": 100,
+      "format": "int32"
+    }
+  }
+}
+```
 
 ## Create User
 
@@ -9863,10 +12150,31 @@ const SDK = require('ringcentral');
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
-const r = await platform.get(`/restapi/v1.0/account/${accountId}/telephony/sessions/${sessionId}`);
+const r = await platform.get(`/restapi/v1.0/account/${accountId}/telephony/sessions/${sessionId}`, getCallSessionStatusParameters);
 ```
 
 - `accountId`'s default value is `~`
+
+`getCallSessionStatusParameters` is an **optional** object with the following definition:
+
+```yaml
+{
+  "properties": {
+    "timestamp": {
+      "in": "query",
+      "description": "The date and time of a call session latest change",
+      "required": false,
+      "type": "string"
+    },
+    "timeout": {
+      "in": "query",
+      "description": "The time frame of awaiting for a status change before sending the resulting one in response",
+      "required": false,
+      "type": "string"
+    }
+  }
+}
+```
 
 ## Drop Call Session
 
@@ -10094,7 +12402,7 @@ const SDK = require('ringcentral');
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
-const r = await platform.patch(`/restapi/v1.0/account/${accountId}/telephony/sessions/${sessionId}/parties/${partyId}/recordings/${recordingId}`, callRecordingUpdate);
+const r = await platform.patch(`/restapi/v1.0/account/${accountId}/telephony/sessions/${sessionId}/parties/${partyId}/recordings/${recordingId}`, callRecordingUpdate, pauseResumeCallRecordingParameters);
 ```
 
 - `accountId`'s default value is `~`
@@ -10108,6 +12416,22 @@ const r = await platform.patch(`/restapi/v1.0/account/${accountId}/telephony/ses
     "active": {
       "description": "Recording status",
       "type": "boolean"
+    }
+  }
+}
+```
+
+`pauseResumeCallRecordingParameters` is an **optional** object with the following definition:
+
+```yaml
+{
+  "properties": {
+    "brandId": {
+      "in": "query",
+      "description": "Identifies a brand of a logged in user or a brand of a sign-up session",
+      "required": true,
+      "type": "string",
+      "default": "~"
     }
   }
 }
@@ -10267,10 +12591,51 @@ const SDK = require('ringcentral');
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
-const r = await platform.get(`/restapi/v1.0/account/${accountId}/meeting-recordings`);
+const r = await platform.get(`/restapi/v1.0/account/${accountId}/meeting-recordings`, listAccountMeetingRecordingsParameters);
 ```
 
 - `accountId`'s default value is `~`
+
+`listAccountMeetingRecordingsParameters` is an **optional** object with the following definition:
+
+```yaml
+{
+  "properties": {
+    "meetingId": {
+      "description": "Internal identifier of a meeting. Either `meetingId` or `meetingStartTime`/`meetingEndTime` can be specified",
+      "in": "query",
+      "required": false,
+      "type": "string"
+    },
+    "meetingStartTimeFrom": {
+      "description": "Recordings of meetings started after the time specified will be returned. Either `meetingId` or `meetingStartTime`/`meetingEndTime` can be specified",
+      "in": "query",
+      "required": false,
+      "type": "string"
+    },
+    "meetingStartTimeTo": {
+      "description": "Recordings of meetings started before the time specified will be returned. The default value is current time. Either `meetingId` or `meetingStartTime`/`meetingEndTime` can be specified",
+      "in": "query",
+      "required": false,
+      "type": "string"
+    },
+    "page": {
+      "description": "Page number",
+      "in": "query",
+      "required": false,
+      "type": "integer"
+    },
+    "perPage": {
+      "description": "Number of items per page. The `max` value is supported to indicate the maximum size - 300",
+      "default": 100,
+      "maximum": 300,
+      "in": "query",
+      "required": false,
+      "type": "integer"
+    }
+  }
+}
+```
 
 ## Get User Meeting Recordings
 
@@ -10281,11 +12646,52 @@ const SDK = require('ringcentral');
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
-const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/meeting-recordings`);
+const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/meeting-recordings`, listUserMeetingRecordingsParameters);
 ```
 
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
+
+`listUserMeetingRecordingsParameters` is an **optional** object with the following definition:
+
+```yaml
+{
+  "properties": {
+    "meetingId": {
+      "description": "Internal identifier of a meeting. Either `meetingId` or `meetingStartTime`/`meetingEndTime` can be specified",
+      "in": "query",
+      "required": false,
+      "type": "string"
+    },
+    "meetingStartTimeFrom": {
+      "description": "Recordings of meetings started after the time specified will be returned. Either `meetingId` or `meetingStartTime`/`meetingEndTime` can be specified",
+      "in": "query",
+      "required": false,
+      "type": "string"
+    },
+    "meetingStartTimeTo": {
+      "description": "Recordings of meetings started before the time specified will be returned. The default value is current time. Either `meetingId` or `meetingStartTime`/`meetingEndTime` can be specified",
+      "in": "query",
+      "required": false,
+      "type": "string"
+    },
+    "page": {
+      "description": "Page number",
+      "in": "query",
+      "required": false,
+      "type": "integer"
+    },
+    "perPage": {
+      "description": "Number of items per page. The `max` value is supported to indicate the maximum size - 300",
+      "default": 100,
+      "maximum": 300,
+      "in": "query",
+      "required": false,
+      "type": "integer"
+    }
+  }
+}
+```
 
 ## Authorize
 

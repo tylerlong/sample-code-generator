@@ -16,7 +16,14 @@ const generateCodes = (path, method, operation) => {
   } else {
     endpoint = `'${path}'`
   }
-  let params = ''; let bodyClass; let bodyParam
+  let params = []; let bodyClass; let bodyParam
+
+  const queryParams = (operation.parameters || []).filter(p => p.in === 'query')
+  const operationId = operation.operationId
+  if (queryParams.length > 0) {
+    params.push(`${operationId}Parameters`)
+  }
+
   const body = (operation.parameters || []).filter(p => p.in === 'body')[0]
   if (body) {
     if (body.schema.type === 'string') {
@@ -26,27 +33,33 @@ const generateCodes = (path, method, operation) => {
       bodyClass = R.last(body.schema['$ref'].split('/'))
       bodyParam = changeCase.lowerCaseFirst(bodyClass)
     }
-    params += `, ${bodyParam}`
+    params.unshift(bodyParam)
   }
   let result
   if (operation.parameters && operation.parameters.some(p => p.in === 'formData')) {
+    params.unshift('formData')
     const hasFileType = operation.parameters.some(p => p.in === 'formData' && (p.type === 'file' || (p.items && p.items.type === 'file')))
     const formDataFields = operation.parameters.filter(p => p.in === 'formData' && p.type !== 'file' && !(p.items && p.items.type === 'file'))
     result = [`const FormData = require('form-data');
 const formData = new FormData();
 ${formDataFields.length > 0 ? `formData.append('body', Buffer.from(JSON.stringify(body)), { filename: 'request.json' });` : ''}
 ${hasFileType ? `formData.append('attachment', fs.readFileSync('./test.png'), { filename: 'text.png', contentType: 'image/png' });` : ''}
-const r = await platform.${method}(${endpoint}, formData);`]
+const r = await platform.${method}(${endpoint}${params.map(p => `, ${p}`).join('')});`]
     if (formDataFields.length > 0) {
       result.push(`\n\`body\` is an object with the following definition:`)
       result.push(`\n\`\`\`yaml\n${JSON.stringify(loadFullDefinition(formDataFields), null, 2)}\n\`\`\``)
     }
   } else {
-    result = [`const r = await platform.${method}(${endpoint}${params});`]
+    result = [`const r = await platform.${method}(${endpoint}${params.map(p => `, ${p}`).join('')});`]
     if (bodyClass && bodyClass !== 'string') {
       result.push(`\n\`${bodyParam}\` is an object with the following definition:`)
       result.push(`\n\`\`\`yaml\n${JSON.stringify(loadFullDefinition(bodyClass), null, 2)}\n\`\`\``)
     }
+  }
+
+  if (queryParams.length > 0) {
+    result.push(`\n\`${operationId}Parameters\` is an **optional** object with the following definition:`)
+    result.push(`\n\`\`\`yaml\n${JSON.stringify(loadFullDefinition(queryParams), null, 2)}\n\`\`\``)
   }
   return result
 }
