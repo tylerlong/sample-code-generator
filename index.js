@@ -103,7 +103,11 @@ paths.forEach(path => {
   const methods = Object.keys(doc.paths[path])
   methods.forEach(method => {
     const operation = doc.paths[path][method]
-    markdown += `\n\n${generateDoc(path, method, operation)}`
+    if (operation.consumes && operation.consumes[0] === 'application/x-www-form-urlencoded') {
+      // ignore oauth endpoints
+    } else {
+      markdown += `\n\n${generateDoc(path, method, operation)}`
+    }
   })
 })
 
