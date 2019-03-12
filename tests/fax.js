@@ -24,13 +24,13 @@ const platform = rcsdk.platform();
     to: [{ phoneNumber: '16506417402' }],
     faxResolution: 'High'
   }
-  formData.append('json', Buffer.from(JSON.stringify(body)),
+  formData.append('body', Buffer.from(JSON.stringify(body)),
     { filename: 'request.json' })
 
-  formData.append('attachment', Buffer.from('Hello world'),
+  formData.append('attachments', Buffer.from('Hello world'),
     { filename: 'text.txt' })
 
-  formData.append('attachment', fs.readFileSync('./test.png'),
+  formData.append('attachments', fs.readFileSync('./test.png'),
     { filename: 'text.png' })
 
   const r = await platform.post(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/fax`, formData)
