@@ -3,6 +3,8 @@ import yaml from 'js-yaml'
 import changeCase from 'change-case'
 import * as R from 'ramda'
 
+import { loadFullDefinition } from './utils'
+
 const doc = yaml.safeLoad(fs.readFileSync(process.env.SWAGGER_FILE_PATH, 'utf8'))
 
 const paths = Object.keys(doc.paths)
@@ -29,7 +31,7 @@ const generateCodes = (path, method, operation) => {
   const result = [`const r = await platform.${method}(${endpoint}${params});`]
   if (bodyClass && bodyClass !== 'string') {
     result.push(`\n\`${bodyParam}\` is an object with the following properties:`)
-    result.push(`\n\`\`\`yaml\n${yaml.safeDump(doc.definitions[bodyClass].properties)}\`\`\``)
+    result.push(`\n\`\`\`yaml\n${JSON.stringify(loadFullDefinition(bodyClass), null, 2)}\`\`\``)
   }
   return result
 }
@@ -45,9 +47,9 @@ HTTP ${changeCase.upperCase(method)} ${path}
 \`\`\`js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 ${code}
 \`\`\`
 `

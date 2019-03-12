@@ -7,9 +7,9 @@ HTTP GET /restapi
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.get('/restapi');
 ```
 
@@ -21,9 +21,9 @@ HTTP GET /restapi/{apiVersion}
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.get(`/restapi/${apiVersion}`);
 ```
 
@@ -36,9 +36,9 @@ HTTP GET /restapi/v1.0/status
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.get('/restapi/v1.0/status');
 ```
 
@@ -50,9 +50,9 @@ HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/call-log
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/call-log`);
 ```
 
@@ -66,9 +66,9 @@ HTTP DELETE /restapi/v1.0/account/{accountId}/extension/{extensionId}/call-log
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.delete(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/call-log`);
 ```
 
@@ -82,9 +82,9 @@ HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/call-log-sync
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/call-log-sync`);
 ```
 
@@ -98,9 +98,9 @@ HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/call-log/{cal
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/call-log/${callRecordId}`);
 ```
 
@@ -114,9 +114,9 @@ HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/active-calls
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/active-calls`);
 ```
 
@@ -130,9 +130,9 @@ HTTP GET /restapi/v1.0/account/{accountId}/call-log
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/call-log`);
 ```
 
@@ -145,9 +145,9 @@ HTTP GET /restapi/v1.0/account/{accountId}/call-log/{callRecordId}
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/call-log/${callRecordId}`);
 ```
 
@@ -160,9 +160,9 @@ HTTP GET /restapi/v1.0/account/{accountId}/active-calls
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/active-calls`);
 ```
 
@@ -175,9 +175,9 @@ HTTP GET /restapi/v1.0/account/{accountId}/recording/{recordingId}
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/recording/${recordingId}`);
 ```
 
@@ -190,9 +190,9 @@ HTTP GET /restapi/v1.0/account/{accountId}/recording/{recordingId}/content
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/recording/${recordingId}/content`);
 ```
 
@@ -205,9 +205,9 @@ HTTP POST /restapi/v1.0/account/{accountId}/extension/{extensionId}/sms
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.post(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/sms`, createSMSMessage);
 ```
 
@@ -217,23 +217,41 @@ const r = await platform.post(`/restapi/v1.0/account/${accountId}/extension/${ex
 `createSMSMessage` is an object with the following properties:
 
 ```yaml
-from:
-  description: >-
-    Sender of an SMS message. The phoneNumber property must be filled to
-    correspond to one of the account phone numbers which is allowed to send SMS
-  $ref: '#/definitions/MessageStoreCallerInfoRequest'
-to:
-  type: array
-  description: Receiver of an SMS message. The phoneNumber property must be filled
-  items:
-    $ref: '#/definitions/MessageStoreCallerInfoRequest'
-text:
-  type: string
-  description: >-
-    Text of a message. Max length is 1000 symbols (2-byte UTF-16 encoded). If a
-    character is encoded in 4 bytes in UTF-16 it is treated as 2 characters,
-    thus restricting the maximum message length to 500 symbols
-```
+{
+  "type": "object",
+  "required": [
+    "from",
+    "text",
+    "to"
+  ],
+  "properties": {
+    "from": {
+      "description": "Sender of an SMS message. The phoneNumber property must be filled to correspond to one of the account phone numbers which is allowed to send SMS",
+      "properties": {
+        "phoneNumber": {
+          "type": "string",
+          "description": "Phone number in E.164 format"
+        }
+      }
+    },
+    "to": {
+      "type": "array",
+      "description": "Receiver of an SMS message. The phoneNumber property must be filled",
+      "items": {
+        "properties": {
+          "phoneNumber": {
+            "type": "string",
+            "description": "Phone number in E.164 format"
+          }
+        }
+      }
+    },
+    "text": {
+      "type": "string",
+      "description": "Text of a message. Max length is 1000 symbols (2-byte UTF-16 encoded). If a character is encoded in 4 bytes in UTF-16 it is treated as 2 characters, thus restricting the maximum message length to 500 symbols"
+    }
+  }
+}```
 
 ## Create internal text message
 
@@ -242,9 +260,9 @@ HTTP POST /restapi/v1.0/account/{accountId}/extension/{extensionId}/company-page
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.post(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/company-pager`, createInternalTextMessageRequest);
 ```
 
@@ -254,25 +272,47 @@ const r = await platform.post(`/restapi/v1.0/account/${accountId}/extension/${ex
 `createInternalTextMessageRequest` is an object with the following properties:
 
 ```yaml
-from:
-  description: Sender of a pager message.
-  $ref: '#/definitions/PagerCallerInfoRequest'
-replyOn:
-  type: integer
-  description: Internal identifier of a message this message replies to
-text:
-  type: string
-  description: >-
-    Text of a pager message. Max length is 1024 symbols (2-byte UTF-16 encoded).
-    If a character is encoded in 4 bytes in UTF-16 it is treated as 2
-    characters, thus restricting the maximum message length to 512 symbols
-  example: hello world
-to:
-  type: array
-  description: Optional if replyOn parameter is specified. Receiver of a pager message.
-  items:
-    $ref: '#/definitions/PagerCallerInfoRequest'
-```
+{
+  "type": "object",
+  "required": [
+    "from",
+    "text"
+  ],
+  "properties": {
+    "from": {
+      "description": "Sender of a pager message.",
+      "properties": {
+        "extensionId": {
+          "type": "string",
+          "description": "Extension identifier",
+          "example": "123456789"
+        }
+      }
+    },
+    "replyOn": {
+      "type": "integer",
+      "description": "Internal identifier of a message this message replies to"
+    },
+    "text": {
+      "type": "string",
+      "description": "Text of a pager message. Max length is 1024 symbols (2-byte UTF-16 encoded). If a character is encoded in 4 bytes in UTF-16 it is treated as 2 characters, thus restricting the maximum message length to 512 symbols",
+      "example": "hello world"
+    },
+    "to": {
+      "type": "array",
+      "description": "Optional if replyOn parameter is specified. Receiver of a pager message.",
+      "items": {
+        "properties": {
+          "extensionId": {
+            "type": "string",
+            "description": "Extension identifier",
+            "example": "123456789"
+          }
+        }
+      }
+    }
+  }
+}```
 
 ## Send fax message
 
@@ -281,9 +321,9 @@ HTTP POST /restapi/v1.0/account/{accountId}/extension/{extensionId}/fax
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.post(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/fax`);
 ```
 
@@ -297,9 +337,9 @@ HTTP GET /restapi/v1.0/dictionary/fax-cover-page
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.get('/restapi/v1.0/dictionary/fax-cover-page');
 ```
 
@@ -311,9 +351,9 @@ HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/message-store
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/message-store`);
 ```
 
@@ -327,9 +367,9 @@ HTTP DELETE /restapi/v1.0/account/{accountId}/extension/{extensionId}/message-st
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.delete(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/message-store`);
 ```
 
@@ -343,9 +383,9 @@ HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/message-store
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/message-store/${messageId}`);
 ```
 
@@ -359,9 +399,9 @@ HTTP PUT /restapi/v1.0/account/{accountId}/extension/{extensionId}/message-store
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.put(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/message-store/${messageId}`, updateMessageRequest);
 ```
 
@@ -371,13 +411,19 @@ const r = await platform.put(`/restapi/v1.0/account/${accountId}/extension/${ext
 `updateMessageRequest` is an object with the following properties:
 
 ```yaml
-readStatus:
-  type: string
-  description: Read status of a message to be changed. Multiple values are accepted
-  enum:
-    - Read
-    - Unread
-```
+{
+  "type": "object",
+  "properties": {
+    "readStatus": {
+      "type": "string",
+      "description": "Read status of a message to be changed. Multiple values are accepted",
+      "enum": [
+        "Read",
+        "Unread"
+      ]
+    }
+  }
+}```
 
 ## Delete message
 
@@ -386,9 +432,9 @@ HTTP DELETE /restapi/v1.0/account/{accountId}/extension/{extensionId}/message-st
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.delete(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/message-store/${messageId}`);
 ```
 
@@ -402,9 +448,9 @@ HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/message-store
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/message-store/${messageId}/content/${attachmentId}`);
 ```
 
@@ -418,9 +464,9 @@ HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/message-sync
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/message-sync`);
 ```
 
@@ -434,9 +480,9 @@ HTTP GET /restapi/v1.0/account/{accountId}/message-store-configuration
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/message-store-configuration`);
 ```
 
@@ -449,9 +495,9 @@ HTTP PUT /restapi/v1.0/account/{accountId}/message-store-configuration
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.put(`/restapi/v1.0/account/${accountId}/message-store-configuration`, messageStoreConfiguration);
 ```
 
@@ -460,14 +506,17 @@ const r = await platform.put(`/restapi/v1.0/account/${accountId}/message-store-c
 `messageStoreConfiguration` is an object with the following properties:
 
 ```yaml
-retentionPeriod:
-  type: integer
-  description: >-
-    Retention policy setting, specifying how long to keep messages; the
-    supported value range is 7-90 days
-  minimum: 7
-  maximum: 90
-```
+{
+  "type": "object",
+  "properties": {
+    "retentionPeriod": {
+      "type": "integer",
+      "description": "Retention policy setting, specifying how long to keep messages; the supported value range is 7-90 days",
+      "minimum": 7,
+      "maximum": 90
+    }
+  }
+}```
 
 ## Make ring out call
 
@@ -476,9 +525,9 @@ HTTP POST /restapi/v1.0/account/{accountId}/extension/{extensionId}/ring-out
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.post(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/ring-out`, makeRingOutRequest);
 ```
 
@@ -488,29 +537,59 @@ const r = await platform.post(`/restapi/v1.0/account/${accountId}/extension/${ex
 `makeRingOutRequest` is an object with the following properties:
 
 ```yaml
-from:
-  description: >-
-    Phone number of the caller. This number corresponds to the 1st leg of the
-    RingOut call. This number can be one of user's configured forwarding numbers
-    or arbitrary number
-  $ref: '#/definitions/MakeRingOutCallerInfoRequestFrom'
-to:
-  description: >-
-    Phone number of the called party. This number corresponds to the 2nd leg of
-    a RingOut call
-  $ref: '#/definitions/MakeRingOutCallerInfoRequestTo'
-callerId:
-  description: The number which will be displayed to the called party
-  $ref: '#/definitions/MakeRingOutCallerInfoRequestTo'
-playPrompt:
-  type: boolean
-  description: The audio prompt that the calling party hears when the call is connected
-country:
-  description: >-
-    Optional. Dialing plan country data. If not specified, then extension home
-    country is applied by default
-  $ref: '#/definitions/MakeRingOutCoutryInfo'
-```
+{
+  "type": "object",
+  "required": [
+    "from",
+    "to"
+  ],
+  "properties": {
+    "from": {
+      "description": "Phone number of the caller. This number corresponds to the 1st leg of the RingOut call. This number can be one of user's configured forwarding numbers or arbitrary number",
+      "properties": {
+        "phoneNumber": {
+          "type": "string",
+          "description": "Phone number in E.164 format"
+        },
+        "forwardingNumberId": {
+          "type": "string",
+          "description": "Internal identifier of a forwarding number; returned in response as an 'id' field value. Can be specified instead of the phoneNumber attribute"
+        }
+      }
+    },
+    "to": {
+      "description": "Phone number of the called party. This number corresponds to the 2nd leg of a RingOut call",
+      "properties": {
+        "phoneNumber": {
+          "type": "string",
+          "description": "Phone number in E.164 format"
+        }
+      }
+    },
+    "callerId": {
+      "description": "The number which will be displayed to the called party",
+      "properties": {
+        "phoneNumber": {
+          "type": "string",
+          "description": "Phone number in E.164 format"
+        }
+      }
+    },
+    "playPrompt": {
+      "type": "boolean",
+      "description": "The audio prompt that the calling party hears when the call is connected"
+    },
+    "country": {
+      "description": "Optional. Dialing plan country data. If not specified, then extension home country is applied by default",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Dialing plan country identifier"
+        }
+      }
+    }
+  }
+}```
 
 ## Get ring out call status
 
@@ -519,9 +598,9 @@ HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/ring-out/{rin
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/ring-out/${ringoutId}`);
 ```
 
@@ -535,9 +614,9 @@ HTTP DELETE /restapi/v1.0/account/{accountId}/extension/{extensionId}/ring-out/{
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.delete(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/ring-out/${ringoutId}`);
 ```
 
@@ -551,9 +630,9 @@ HTTP POST /restapi/v1.0/account/{accountId}/extension/{extensionId}/ringout
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.post(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/ringout`, makeRingOutRequest);
 ```
 
@@ -563,29 +642,59 @@ const r = await platform.post(`/restapi/v1.0/account/${accountId}/extension/${ex
 `makeRingOutRequest` is an object with the following properties:
 
 ```yaml
-from:
-  description: >-
-    Phone number of the caller. This number corresponds to the 1st leg of the
-    RingOut call. This number can be one of user's configured forwarding numbers
-    or arbitrary number
-  $ref: '#/definitions/MakeRingOutCallerInfoRequestFrom'
-to:
-  description: >-
-    Phone number of the called party. This number corresponds to the 2nd leg of
-    a RingOut call
-  $ref: '#/definitions/MakeRingOutCallerInfoRequestTo'
-callerId:
-  description: The number which will be displayed to the called party
-  $ref: '#/definitions/MakeRingOutCallerInfoRequestTo'
-playPrompt:
-  type: boolean
-  description: The audio prompt that the calling party hears when the call is connected
-country:
-  description: >-
-    Optional. Dialing plan country data. If not specified, then extension home
-    country is applied by default
-  $ref: '#/definitions/MakeRingOutCoutryInfo'
-```
+{
+  "type": "object",
+  "required": [
+    "from",
+    "to"
+  ],
+  "properties": {
+    "from": {
+      "description": "Phone number of the caller. This number corresponds to the 1st leg of the RingOut call. This number can be one of user's configured forwarding numbers or arbitrary number",
+      "properties": {
+        "phoneNumber": {
+          "type": "string",
+          "description": "Phone number in E.164 format"
+        },
+        "forwardingNumberId": {
+          "type": "string",
+          "description": "Internal identifier of a forwarding number; returned in response as an 'id' field value. Can be specified instead of the phoneNumber attribute"
+        }
+      }
+    },
+    "to": {
+      "description": "Phone number of the called party. This number corresponds to the 2nd leg of a RingOut call",
+      "properties": {
+        "phoneNumber": {
+          "type": "string",
+          "description": "Phone number in E.164 format"
+        }
+      }
+    },
+    "callerId": {
+      "description": "The number which will be displayed to the called party",
+      "properties": {
+        "phoneNumber": {
+          "type": "string",
+          "description": "Phone number in E.164 format"
+        }
+      }
+    },
+    "playPrompt": {
+      "type": "boolean",
+      "description": "The audio prompt that the calling party hears when the call is connected"
+    },
+    "country": {
+      "description": "Optional. Dialing plan country data. If not specified, then extension home country is applied by default",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Dialing plan country identifier"
+        }
+      }
+    }
+  }
+}```
 
 ## Get ring out call status deprecated
 
@@ -594,9 +703,9 @@ HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/ringout/{ring
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/ringout/${ringoutId}`);
 ```
 
@@ -610,9 +719,9 @@ HTTP DELETE /restapi/v1.0/account/{accountId}/extension/{extensionId}/ringout/{r
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.delete(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/ringout/${ringoutId}`);
 ```
 
@@ -626,9 +735,9 @@ HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/address-book/
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/address-book/contact`);
 ```
 
@@ -642,9 +751,9 @@ HTTP POST /restapi/v1.0/account/{accountId}/extension/{extensionId}/address-book
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.post(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/address-book/contact`, personalContactResource);
 ```
 
@@ -654,73 +763,171 @@ const r = await platform.post(`/restapi/v1.0/account/${accountId}/extension/${ex
 `personalContactResource` is an object with the following properties:
 
 ```yaml
-uri:
-  type: string
-  format: uri
-availability:
-  type: string
-  enum:
-    - Alive
-    - Deleted
-    - Purged
-id:
-  type: string
-firstName:
-  type: string
-lastName:
-  type: string
-middleName:
-  type: string
-birthday:
-  type: string
-  format: date-time
-notes:
-  type: string
-webPage:
-  type: string
-company:
-  type: string
-jobTitle:
-  type: string
-nickName:
-  type: string
-email:
-  type: string
-email2:
-  type: string
-email3:
-  type: string
-homeAddress:
-  $ref: '#/definitions/ContactAddressInfo'
-otherAddress:
-  $ref: '#/definitions/ContactAddressInfo'
-homePhone:
-  type: string
-homePhone2:
-  type: string
-mobilePhone:
-  type: string
-businessPhone:
-  type: string
-callbackPhone:
-  type: string
-carPhone:
-  type: string
-companyPhone:
-  type: string
-otherPhone:
-  type: string
-businessFax:
-  type: string
-otherFax:
-  type: string
-businessAddress:
-  $ref: '#/definitions/ContactAddressInfo'
-assistantPhone:
-  type: string
-businessPhone2:
-  type: string
-```
+{
+  "type": "object",
+  "properties": {
+    "uri": {
+      "type": "string",
+      "format": "uri"
+    },
+    "availability": {
+      "type": "string",
+      "enum": [
+        "Alive",
+        "Deleted",
+        "Purged"
+      ]
+    },
+    "id": {
+      "type": "string"
+    },
+    "firstName": {
+      "type": "string"
+    },
+    "lastName": {
+      "type": "string"
+    },
+    "middleName": {
+      "type": "string"
+    },
+    "birthday": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "notes": {
+      "type": "string"
+    },
+    "webPage": {
+      "type": "string"
+    },
+    "company": {
+      "type": "string"
+    },
+    "jobTitle": {
+      "type": "string"
+    },
+    "nickName": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "email2": {
+      "type": "string"
+    },
+    "email3": {
+      "type": "string"
+    },
+    "homeAddress": {
+      "properties": {
+        "country": {
+          "type": "string",
+          "description": "Country name of extension user company. Not returned for Address Book"
+        },
+        "state": {
+          "type": "string",
+          "description": "State/province name of extension user company"
+        },
+        "city": {
+          "type": "string",
+          "description": "City name of extension user company"
+        },
+        "street": {
+          "type": "string",
+          "description": "Street address of extension user company"
+        },
+        "zip": {
+          "type": "string",
+          "description": "Zip code of extension user company"
+        }
+      }
+    },
+    "otherAddress": {
+      "properties": {
+        "country": {
+          "type": "string",
+          "description": "Country name of extension user company. Not returned for Address Book"
+        },
+        "state": {
+          "type": "string",
+          "description": "State/province name of extension user company"
+        },
+        "city": {
+          "type": "string",
+          "description": "City name of extension user company"
+        },
+        "street": {
+          "type": "string",
+          "description": "Street address of extension user company"
+        },
+        "zip": {
+          "type": "string",
+          "description": "Zip code of extension user company"
+        }
+      }
+    },
+    "homePhone": {
+      "type": "string"
+    },
+    "homePhone2": {
+      "type": "string"
+    },
+    "mobilePhone": {
+      "type": "string"
+    },
+    "businessPhone": {
+      "type": "string"
+    },
+    "callbackPhone": {
+      "type": "string"
+    },
+    "carPhone": {
+      "type": "string"
+    },
+    "companyPhone": {
+      "type": "string"
+    },
+    "otherPhone": {
+      "type": "string"
+    },
+    "businessFax": {
+      "type": "string"
+    },
+    "otherFax": {
+      "type": "string"
+    },
+    "businessAddress": {
+      "properties": {
+        "country": {
+          "type": "string",
+          "description": "Country name of extension user company. Not returned for Address Book"
+        },
+        "state": {
+          "type": "string",
+          "description": "State/province name of extension user company"
+        },
+        "city": {
+          "type": "string",
+          "description": "City name of extension user company"
+        },
+        "street": {
+          "type": "string",
+          "description": "Street address of extension user company"
+        },
+        "zip": {
+          "type": "string",
+          "description": "Zip code of extension user company"
+        }
+      }
+    },
+    "assistantPhone": {
+      "type": "string"
+    },
+    "businessPhone2": {
+      "type": "string"
+    }
+  }
+}```
 
 ## Load contact
 
@@ -729,9 +936,9 @@ HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/address-book/
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/address-book/contact/${contactId}`);
 ```
 
@@ -745,9 +952,9 @@ HTTP PUT /restapi/v1.0/account/{accountId}/extension/{extensionId}/address-book/
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.put(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/address-book/contact/${contactId}`, personalContactResource);
 ```
 
@@ -757,73 +964,171 @@ const r = await platform.put(`/restapi/v1.0/account/${accountId}/extension/${ext
 `personalContactResource` is an object with the following properties:
 
 ```yaml
-uri:
-  type: string
-  format: uri
-availability:
-  type: string
-  enum:
-    - Alive
-    - Deleted
-    - Purged
-id:
-  type: string
-firstName:
-  type: string
-lastName:
-  type: string
-middleName:
-  type: string
-birthday:
-  type: string
-  format: date-time
-notes:
-  type: string
-webPage:
-  type: string
-company:
-  type: string
-jobTitle:
-  type: string
-nickName:
-  type: string
-email:
-  type: string
-email2:
-  type: string
-email3:
-  type: string
-homeAddress:
-  $ref: '#/definitions/ContactAddressInfo'
-otherAddress:
-  $ref: '#/definitions/ContactAddressInfo'
-homePhone:
-  type: string
-homePhone2:
-  type: string
-mobilePhone:
-  type: string
-businessPhone:
-  type: string
-callbackPhone:
-  type: string
-carPhone:
-  type: string
-companyPhone:
-  type: string
-otherPhone:
-  type: string
-businessFax:
-  type: string
-otherFax:
-  type: string
-businessAddress:
-  $ref: '#/definitions/ContactAddressInfo'
-assistantPhone:
-  type: string
-businessPhone2:
-  type: string
-```
+{
+  "type": "object",
+  "properties": {
+    "uri": {
+      "type": "string",
+      "format": "uri"
+    },
+    "availability": {
+      "type": "string",
+      "enum": [
+        "Alive",
+        "Deleted",
+        "Purged"
+      ]
+    },
+    "id": {
+      "type": "string"
+    },
+    "firstName": {
+      "type": "string"
+    },
+    "lastName": {
+      "type": "string"
+    },
+    "middleName": {
+      "type": "string"
+    },
+    "birthday": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "notes": {
+      "type": "string"
+    },
+    "webPage": {
+      "type": "string"
+    },
+    "company": {
+      "type": "string"
+    },
+    "jobTitle": {
+      "type": "string"
+    },
+    "nickName": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "email2": {
+      "type": "string"
+    },
+    "email3": {
+      "type": "string"
+    },
+    "homeAddress": {
+      "properties": {
+        "country": {
+          "type": "string",
+          "description": "Country name of extension user company. Not returned for Address Book"
+        },
+        "state": {
+          "type": "string",
+          "description": "State/province name of extension user company"
+        },
+        "city": {
+          "type": "string",
+          "description": "City name of extension user company"
+        },
+        "street": {
+          "type": "string",
+          "description": "Street address of extension user company"
+        },
+        "zip": {
+          "type": "string",
+          "description": "Zip code of extension user company"
+        }
+      }
+    },
+    "otherAddress": {
+      "properties": {
+        "country": {
+          "type": "string",
+          "description": "Country name of extension user company. Not returned for Address Book"
+        },
+        "state": {
+          "type": "string",
+          "description": "State/province name of extension user company"
+        },
+        "city": {
+          "type": "string",
+          "description": "City name of extension user company"
+        },
+        "street": {
+          "type": "string",
+          "description": "Street address of extension user company"
+        },
+        "zip": {
+          "type": "string",
+          "description": "Zip code of extension user company"
+        }
+      }
+    },
+    "homePhone": {
+      "type": "string"
+    },
+    "homePhone2": {
+      "type": "string"
+    },
+    "mobilePhone": {
+      "type": "string"
+    },
+    "businessPhone": {
+      "type": "string"
+    },
+    "callbackPhone": {
+      "type": "string"
+    },
+    "carPhone": {
+      "type": "string"
+    },
+    "companyPhone": {
+      "type": "string"
+    },
+    "otherPhone": {
+      "type": "string"
+    },
+    "businessFax": {
+      "type": "string"
+    },
+    "otherFax": {
+      "type": "string"
+    },
+    "businessAddress": {
+      "properties": {
+        "country": {
+          "type": "string",
+          "description": "Country name of extension user company. Not returned for Address Book"
+        },
+        "state": {
+          "type": "string",
+          "description": "State/province name of extension user company"
+        },
+        "city": {
+          "type": "string",
+          "description": "City name of extension user company"
+        },
+        "street": {
+          "type": "string",
+          "description": "Street address of extension user company"
+        },
+        "zip": {
+          "type": "string",
+          "description": "Zip code of extension user company"
+        }
+      }
+    },
+    "assistantPhone": {
+      "type": "string"
+    },
+    "businessPhone2": {
+      "type": "string"
+    }
+  }
+}```
 
 ## Delete contact
 
@@ -832,9 +1137,9 @@ HTTP DELETE /restapi/v1.0/account/{accountId}/extension/{extensionId}/address-bo
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.delete(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/address-book/contact/${contactId}`);
 ```
 
@@ -848,9 +1153,9 @@ HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/address-book-
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/address-book-sync`);
 ```
 
@@ -864,9 +1169,9 @@ HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/favorite
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/favorite`);
 ```
 
@@ -880,9 +1185,9 @@ HTTP PUT /restapi/v1.0/account/{accountId}/extension/{extensionId}/favorite
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.put(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/favorite`, favoriteCollection);
 ```
 
@@ -892,14 +1197,35 @@ const r = await platform.put(`/restapi/v1.0/account/${accountId}/extension/${ext
 `favoriteCollection` is an object with the following properties:
 
 ```yaml
-uri:
-  type: string
-  format: uri
-records:
-  type: array
-  items:
-    $ref: '#/definitions/FavoriteContactResource'
-```
+{
+  "type": "object",
+  "properties": {
+    "uri": {
+      "type": "string",
+      "format": "uri"
+    },
+    "records": {
+      "type": "array",
+      "items": {
+        "properties": {
+          "uri": {
+            "type": "string",
+            "format": "uri"
+          },
+          "id": {
+            "type": "string"
+          },
+          "extensionId": {
+            "type": "string"
+          },
+          "contactId": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}```
 
 ## Search directory entries
 
@@ -908,9 +1234,9 @@ HTTP POST /restapi/v1.0/account/{accountId}/directory/entries/search
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.post(`/restapi/v1.0/account/${accountId}/directory/entries/search`, searchDirectoryEntriesRequest);
 ```
 
@@ -919,45 +1245,75 @@ const r = await platform.post(`/restapi/v1.0/account/${accountId}/directory/entr
 `searchDirectoryEntriesRequest` is an object with the following properties:
 
 ```yaml
-searchString:
-  type: string
-  description: >-
-    String value to filter the contacts. The value specified is searched through
-    the following fields: `firstName`, `lastName`, `extensionNumber`,
-    `phoneNumber`, `email`
-showFederated:
-  description: >-
-    If 'True' then contacts of all accounts in federation are returned. If
-    'False' then only contacts of the current account are returned, and account
-    section is eliminated in this case
-  default: true
-  type: boolean
-extensionType:
-  type: string
-  description: Type of extension to filter the contacts
-  enum:
-    - User
-    - Department
-    - Announcement
-    - Voicemail
-    - SharedLinesGroup
-    - PagingOnly
-    - ParkLocation
-    - IvrMenu
-    - Limited
-    - ApplicationExtension
-    - Site
-    - Bot
-orderBy:
-  type: array
-  description: Sorting settings
-  items:
-    $ref: '#/definitions/OrderBy'
-page:
-  type: integer
-perPage:
-  type: integer
-```
+{
+  "type": "object",
+  "properties": {
+    "searchString": {
+      "type": "string",
+      "description": "String value to filter the contacts. The value specified is searched through the following fields: `firstName`, `lastName`, `extensionNumber`, `phoneNumber`, `email`"
+    },
+    "showFederated": {
+      "description": "If 'True' then contacts of all accounts in federation are returned. If 'False' then only contacts of the current account are returned, and account section is eliminated in this case",
+      "default": true,
+      "type": "boolean"
+    },
+    "extensionType": {
+      "type": "string",
+      "description": "Type of extension to filter the contacts",
+      "enum": [
+        "User",
+        "Department",
+        "Announcement",
+        "Voicemail",
+        "SharedLinesGroup",
+        "PagingOnly",
+        "ParkLocation",
+        "IvrMenu",
+        "Limited",
+        "ApplicationExtension",
+        "Site",
+        "Bot"
+      ]
+    },
+    "orderBy": {
+      "type": "array",
+      "description": "Sorting settings",
+      "items": {
+        "properties": {
+          "index": {
+            "type": "integer",
+            "description": "Sorting priority index, starting from '1'. Optional if only one element in `orderBy` array is specified"
+          },
+          "fieldName": {
+            "type": "string",
+            "description": "Field name by which to sort the contacts",
+            "enum": [
+              "firstName",
+              "lastName",
+              "extensionNumber",
+              "phoneNumber",
+              "email"
+            ]
+          },
+          "direction": {
+            "type": "string",
+            "description": "Sorting direction",
+            "enum": [
+              "Asc",
+              "Desc"
+            ]
+          }
+        }
+      }
+    },
+    "page": {
+      "type": "integer"
+    },
+    "perPage": {
+      "type": "integer"
+    }
+  }
+}```
 
 ## List directory entries
 
@@ -966,9 +1322,9 @@ HTTP GET /restapi/v1.0/account/{accountId}/directory/entries
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/directory/entries`);
 ```
 
@@ -981,9 +1337,9 @@ HTTP GET /restapi/v1.0/account/{accountId}/directory/federation
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/directory/federation`);
 ```
 
@@ -996,9 +1352,9 @@ HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/presence
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/presence`);
 ```
 
@@ -1012,9 +1368,9 @@ HTTP PUT /restapi/v1.0/account/{accountId}/extension/{extensionId}/presence
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.put(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/presence`, presenceInfoResource);
 ```
 
@@ -1024,38 +1380,114 @@ const r = await platform.put(`/restapi/v1.0/account/${accountId}/extension/${ext
 `presenceInfoResource` is an object with the following properties:
 
 ```yaml
-userStatus:
-  type: string
-  enum:
-    - Offline
-    - Busy
-    - Available
-dndStatus:
-  type: string
-  enum:
-    - TakeAllCalls
-    - DoNotAcceptDepartmentCalls
-    - TakeDepartmentCallsOnly
-    - DoNotAcceptAnyCalls
-    - Unknown
-message:
-  type: string
-  minLength: 0
-  maxLength: 75
-allowSeeMyPresence:
-  type: boolean
-  default: false
-ringOnMonitoredCall:
-  type: boolean
-  default: false
-pickUpCallsOnHold:
-  type: boolean
-  default: false
-activeCalls:
-  type: array
-  items:
-    $ref: '#/definitions/ActiveCallInfo'
-```
+{
+  "type": "object",
+  "properties": {
+    "userStatus": {
+      "type": "string",
+      "enum": [
+        "Offline",
+        "Busy",
+        "Available"
+      ]
+    },
+    "dndStatus": {
+      "type": "string",
+      "enum": [
+        "TakeAllCalls",
+        "DoNotAcceptDepartmentCalls",
+        "TakeDepartmentCallsOnly",
+        "DoNotAcceptAnyCalls",
+        "Unknown"
+      ]
+    },
+    "message": {
+      "type": "string",
+      "minLength": 0,
+      "maxLength": 75
+    },
+    "allowSeeMyPresence": {
+      "type": "boolean",
+      "default": false
+    },
+    "ringOnMonitoredCall": {
+      "type": "boolean",
+      "default": false
+    },
+    "pickUpCallsOnHold": {
+      "type": "boolean",
+      "default": false
+    },
+    "activeCalls": {
+      "type": "array",
+      "items": {
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "direction": {
+            "type": "string",
+            "enum": [
+              "Inbound",
+              "Outbound"
+            ]
+          },
+          "from": {
+            "type": "string",
+            "description": "Phone number or extension number of a caller. For GCM transport type '_from' property should be used"
+          },
+          "fromName": {
+            "type": "string",
+            "description": "Name of a caller"
+          },
+          "to": {
+            "type": "string",
+            "description": "Phone number or extension number of a callee"
+          },
+          "toName": {
+            "type": "string",
+            "description": "Name of a callee"
+          },
+          "startTime": {
+            "type": "string",
+            "description": "Time when the call is actually started"
+          },
+          "telephonyStatus": {
+            "type": "string"
+          },
+          "sipData": {
+            "properties": {
+              "callId": {
+                "type": "string"
+              },
+              "toTag": {
+                "type": "string"
+              },
+              "fromTag": {
+                "type": "string"
+              },
+              "remoteUri": {
+                "type": "string"
+              },
+              "localUri": {
+                "type": "string"
+              },
+              "rcSessionId": {
+                "type": "string"
+              }
+            }
+          },
+          "sessionId": {
+            "type": "string"
+          },
+          "terminationType": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}```
 
 ## Account presence
 
@@ -1064,9 +1496,9 @@ HTTP GET /restapi/v1.0/account/{accountId}/presence
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/presence`);
 ```
 
@@ -1079,9 +1511,9 @@ HTTP GET /restapi/v1.0/glip/chats
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.get('/restapi/v1.0/glip/chats');
 ```
 
@@ -1093,9 +1525,9 @@ HTTP GET /restapi/v1.0/glip/chats/{chatId}
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.get(`/restapi/v1.0/glip/chats/${chatId}`);
 ```
 
@@ -1107,9 +1539,9 @@ HTTP GET /restapi/v1.0/glip/conversations
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.get('/restapi/v1.0/glip/conversations');
 ```
 
@@ -1121,9 +1553,9 @@ HTTP POST /restapi/v1.0/glip/conversations
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.post('/restapi/v1.0/glip/conversations', glipPostMembersListBody);
 ```
 
@@ -1131,19 +1563,31 @@ const r = await platform.post('/restapi/v1.0/glip/conversations', glipPostMember
 `glipPostMembersListBody` is an object with the following properties:
 
 ```yaml
-members:
-  description: Identifier(s) of chat members.
-  type: array
-  items:
-    type: object
-    properties:
-      id:
-        type: string
-        description: Internal identifier of a person
-      email:
-        type: string
-        description: Email of a person
-```
+{
+  "type": "object",
+  "required": [
+    "members"
+  ],
+  "properties": {
+    "members": {
+      "description": "Identifier(s) of chat members.",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Internal identifier of a person"
+          },
+          "email": {
+            "type": "string",
+            "description": "Email of a person"
+          }
+        }
+      }
+    }
+  }
+}```
 
 ## Load glip conversation
 
@@ -1152,9 +1596,9 @@ HTTP GET /restapi/v1.0/glip/conversations/{chatId}
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.get(`/restapi/v1.0/glip/conversations/${chatId}`);
 ```
 
@@ -1166,9 +1610,9 @@ HTTP GET /restapi/v1.0/glip/teams
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.get('/restapi/v1.0/glip/teams');
 ```
 
@@ -1180,9 +1624,9 @@ HTTP POST /restapi/v1.0/glip/teams
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.post('/restapi/v1.0/glip/teams', glipPostTeamBody);
 ```
 
@@ -1190,28 +1634,43 @@ const r = await platform.post('/restapi/v1.0/glip/teams', glipPostTeamBody);
 `glipPostTeamBody` is an object with the following properties:
 
 ```yaml
-public:
-  type: boolean
-  description: Team access level.
-name:
-  type: string
-  description: Team name.
-description:
-  type: string
-  description: Team description.
-members:
-  description: Identifier(s) of team members.
-  type: array
-  items:
-    type: object
-    properties:
-      id:
-        type: string
-        description: Internal identifier of a person
-      email:
-        type: string
-        description: Email of a person
-```
+{
+  "type": "object",
+  "required": [
+    "name"
+  ],
+  "properties": {
+    "public": {
+      "type": "boolean",
+      "description": "Team access level."
+    },
+    "name": {
+      "type": "string",
+      "description": "Team name."
+    },
+    "description": {
+      "type": "string",
+      "description": "Team description."
+    },
+    "members": {
+      "description": "Identifier(s) of team members.",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Internal identifier of a person"
+          },
+          "email": {
+            "type": "string",
+            "description": "Email of a person"
+          }
+        }
+      }
+    }
+  }
+}```
 
 ## Load glip team
 
@@ -1220,9 +1679,9 @@ HTTP GET /restapi/v1.0/glip/teams/{chatId}
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.get(`/restapi/v1.0/glip/teams/${chatId}`);
 ```
 
@@ -1234,9 +1693,9 @@ HTTP PATCH /restapi/v1.0/glip/teams/{chatId}
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.patch(`/restapi/v1.0/glip/teams/${chatId}`, glipPatchTeamBody);
 ```
 
@@ -1244,16 +1703,23 @@ const r = await platform.patch(`/restapi/v1.0/glip/teams/${chatId}`, glipPatchTe
 `glipPatchTeamBody` is an object with the following properties:
 
 ```yaml
-public:
-  type: boolean
-  description: Team access level.
-name:
-  type: string
-  description: Team name.
-description:
-  type: string
-  description: Team description.
-```
+{
+  "type": "object",
+  "properties": {
+    "public": {
+      "type": "boolean",
+      "description": "Team access level."
+    },
+    "name": {
+      "type": "string",
+      "description": "Team name."
+    },
+    "description": {
+      "type": "string",
+      "description": "Team description."
+    }
+  }
+}```
 
 ## Delete glip team
 
@@ -1262,9 +1728,9 @@ HTTP DELETE /restapi/v1.0/glip/teams/{chatId}
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.delete(`/restapi/v1.0/glip/teams/${chatId}`);
 ```
 
@@ -1276,9 +1742,9 @@ HTTP POST /restapi/v1.0/glip/teams/{chatId}/join
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.post(`/restapi/v1.0/glip/teams/${chatId}/join`);
 ```
 
@@ -1290,9 +1756,9 @@ HTTP POST /restapi/v1.0/glip/teams/{chatId}/leave
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.post(`/restapi/v1.0/glip/teams/${chatId}/leave`);
 ```
 
@@ -1304,9 +1770,9 @@ HTTP POST /restapi/v1.0/glip/teams/{chatId}/add
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.post(`/restapi/v1.0/glip/teams/${chatId}/add`, glipPostMembersListBody);
 ```
 
@@ -1314,19 +1780,31 @@ const r = await platform.post(`/restapi/v1.0/glip/teams/${chatId}/add`, glipPost
 `glipPostMembersListBody` is an object with the following properties:
 
 ```yaml
-members:
-  description: Identifier(s) of chat members.
-  type: array
-  items:
-    type: object
-    properties:
-      id:
-        type: string
-        description: Internal identifier of a person
-      email:
-        type: string
-        description: Email of a person
-```
+{
+  "type": "object",
+  "required": [
+    "members"
+  ],
+  "properties": {
+    "members": {
+      "description": "Identifier(s) of chat members.",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Internal identifier of a person"
+          },
+          "email": {
+            "type": "string",
+            "description": "Email of a person"
+          }
+        }
+      }
+    }
+  }
+}```
 
 ## Remove glip team members
 
@@ -1335,9 +1813,9 @@ HTTP POST /restapi/v1.0/glip/teams/{chatId}/remove
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.post(`/restapi/v1.0/glip/teams/${chatId}/remove`, glipPostMembersIdsListBody);
 ```
 
@@ -1345,16 +1823,27 @@ const r = await platform.post(`/restapi/v1.0/glip/teams/${chatId}/remove`, glipP
 `glipPostMembersIdsListBody` is an object with the following properties:
 
 ```yaml
-members:
-  description: Identifier(s) of chat members.
-  type: array
-  items:
-    type: object
-    properties:
-      id:
-        type: string
-        description: Internal identifier of a person
-```
+{
+  "type": "object",
+  "required": [
+    "members"
+  ],
+  "properties": {
+    "members": {
+      "description": "Identifier(s) of chat members.",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Internal identifier of a person"
+          }
+        }
+      }
+    }
+  }
+}```
 
 ## Archive glip team
 
@@ -1363,9 +1852,9 @@ HTTP POST /restapi/v1.0/glip/teams/{chatId}/archive
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.post(`/restapi/v1.0/glip/teams/${chatId}/archive`);
 ```
 
@@ -1377,9 +1866,9 @@ HTTP POST /restapi/v1.0/glip/teams/{chatId}/unarchive
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.post(`/restapi/v1.0/glip/teams/${chatId}/unarchive`);
 ```
 
@@ -1391,9 +1880,9 @@ HTTP GET /restapi/v1.0/glip/everyone
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.get('/restapi/v1.0/glip/everyone');
 ```
 
@@ -1405,9 +1894,9 @@ HTTP PATCH /restapi/v1.0/glip/everyone
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.patch('/restapi/v1.0/glip/everyone', updateGlipEveryoneRequest);
 ```
 
@@ -1415,13 +1904,19 @@ const r = await platform.patch('/restapi/v1.0/glip/everyone', updateGlipEveryone
 `updateGlipEveryoneRequest` is an object with the following properties:
 
 ```yaml
-name:
-  type: integer
-  description: Everyone chat name. Maximum number of characters supported is 250
-description:
-  type: string
-  description: Everyone chat description. Maximum number of characters supported is 1000
-```
+{
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "integer",
+      "description": "Everyone chat name. Maximum number of characters supported is 250"
+    },
+    "description": {
+      "type": "string",
+      "description": "Everyone chat description. Maximum number of characters supported is 1000"
+    }
+  }
+}```
 
 ## List glip groups
 
@@ -1430,9 +1925,9 @@ HTTP GET /restapi/v1.0/glip/groups
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.get('/restapi/v1.0/glip/groups');
 ```
 
@@ -1444,9 +1939,9 @@ HTTP POST /restapi/v1.0/glip/groups
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.post('/restapi/v1.0/glip/groups', glipCreateGroup);
 ```
 
@@ -1454,32 +1949,41 @@ const r = await platform.post('/restapi/v1.0/glip/groups', glipCreateGroup);
 `glipCreateGroup` is an object with the following properties:
 
 ```yaml
-type:
-  type: string
-  enum:
-    - PrivateChat
-    - Team
-  description: >-
-    Type of a group to be created. 'PrivateChat' is a group of 2 members. 'Team'
-    is a chat of 1 and more participants, the membership can be modified in
-    future. 'PersonalChat' is a private chat thread of a user
-isPublic:
-  type: boolean
-  description: For 'Team' group type only. Team access level
-name:
-  type: string
-  description: For 'Team' group type only. Team name
-description:
-  type: string
-  description: For 'Team' group type only. Team description
-members:
-  type: array
-  items:
-    type: string
-  description: >-
-    Identifier(s) of group members. For 'PrivateChat' group type 2 members only
-    are supported
-```
+{
+  "type": "object",
+  "required": [
+    "type"
+  ],
+  "properties": {
+    "type": {
+      "type": "string",
+      "enum": [
+        "PrivateChat",
+        "Team"
+      ],
+      "description": "Type of a group to be created. 'PrivateChat' is a group of 2 members. 'Team' is a chat of 1 and more participants, the membership can be modified in future. 'PersonalChat' is a private chat thread of a user"
+    },
+    "isPublic": {
+      "type": "boolean",
+      "description": "For 'Team' group type only. Team access level"
+    },
+    "name": {
+      "type": "string",
+      "description": "For 'Team' group type only. Team name"
+    },
+    "description": {
+      "type": "string",
+      "description": "For 'Team' group type only. Team description"
+    },
+    "members": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Identifier(s) of group members. For 'PrivateChat' group type 2 members only are supported"
+    }
+  }
+}```
 
 ## Load glip group
 
@@ -1488,9 +1992,9 @@ HTTP GET /restapi/v1.0/glip/groups/{groupId}
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.get(`/restapi/v1.0/glip/groups/${groupId}`);
 ```
 
@@ -1502,9 +2006,9 @@ HTTP POST /restapi/v1.0/glip/groups/{groupId}/bulk-assign
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.post(`/restapi/v1.0/glip/groups/${groupId}/bulk-assign`, editGroupRequest);
 ```
 
@@ -1512,22 +2016,32 @@ const r = await platform.post(`/restapi/v1.0/glip/groups/${groupId}/bulk-assign`
 `editGroupRequest` is an object with the following properties:
 
 ```yaml
-addedPersonIds:
-  type: array
-  items:
-    type: string
-  description: List of users to be added to a team
-addedPersonEmails:
-  type: array
-  items:
-    type: string
-  description: List of user email addresses to be added to a team (i.e. as guests)
-removedPersonIds:
-  type: array
-  items:
-    type: string
-  description: List of users to be removed from a team
-```
+{
+  "type": "object",
+  "properties": {
+    "addedPersonIds": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "List of users to be added to a team"
+    },
+    "addedPersonEmails": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "List of user email addresses to be added to a team (i.e. as guests)"
+    },
+    "removedPersonIds": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "List of users to be removed from a team"
+    }
+  }
+}```
 
 ## List glip group posts
 
@@ -1536,9 +2050,9 @@ HTTP GET /restapi/v1.0/glip/groups/{groupId}/posts
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.get(`/restapi/v1.0/glip/groups/${groupId}/posts`);
 ```
 
@@ -1550,9 +2064,9 @@ HTTP POST /restapi/v1.0/glip/groups/{groupId}/posts
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.post(`/restapi/v1.0/glip/groups/${groupId}/posts`, glipCreatePost);
 ```
 
@@ -1560,22 +2074,170 @@ const r = await platform.post(`/restapi/v1.0/glip/groups/${groupId}/posts`, glip
 `glipCreatePost` is an object with the following properties:
 
 ```yaml
-title:
-  type: string
-  description: Title of a message. (Can be set for bot's messages only).
-text:
-  type: string
-  description: Text of a post
-  maximum: 1000
-groupId:
-  type: string
-  description: Internal identifier of a group
-attachments:
-  type: array
-  items:
-    $ref: '#/definitions/GlipMessageAttachmentInfoRequest'
-  description: List of attachments to be posted
-```
+{
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Title of a message. (Can be set for bot's messages only)."
+    },
+    "text": {
+      "type": "string",
+      "description": "Text of a post",
+      "maximum": 1000
+    },
+    "groupId": {
+      "type": "string",
+      "description": "Internal identifier of a group"
+    },
+    "attachments": {
+      "type": "array",
+      "items": {
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Type of attachment",
+            "enum": [
+              "Card",
+              "Event",
+              "Note"
+            ],
+            "default": "Card"
+          },
+          "title": {
+            "type": "string",
+            "description": "Attachment title"
+          },
+          "fallback": {
+            "type": "string",
+            "description": "Default message returned in case the client does not support interactive messages"
+          },
+          "color": {
+            "type": "string",
+            "description": "Hex color code specifying font color of Event title, including its presentation in Calendar; or the color of the side border of an interactive message of a Card",
+            "enum": [
+              "Black",
+              "Red",
+              "Orange",
+              "Yellow",
+              "Green",
+              "Blue",
+              "Purple",
+              "Magenta"
+            ],
+            "default": "Black"
+          },
+          "intro": {
+            "type": "string",
+            "description": "Introductory text displayed directly above a message"
+          },
+          "author": {
+            "description": "Information about the author",
+            "properties": {
+              "name": {
+                "type": "string",
+                "description": "Name of a message author"
+              },
+              "uri": {
+                "type": "string",
+                "description": "Link to an author's name"
+              },
+              "iconUri": {
+                "type": "string",
+                "description": "Link to an image displayed to the left of an author's name; sized 82x82px"
+              }
+            }
+          },
+          "text": {
+            "type": "string",
+            "description": "Text of attachment (up to 1000 chars), supports GlipDown"
+          },
+          "imageUri": {
+            "type": "string",
+            "description": "Link to an image displayed at the bottom of a message"
+          },
+          "thumbnailUri": {
+            "type": "string",
+            "description": "Link to an image preview displayed to the right of a message (82x82)"
+          },
+          "fields": {
+            "type": "array",
+            "description": "Individual subsections within a message",
+            "items": {
+              "properties": {
+                "title": {
+                  "type": "string",
+                  "description": "Title of an individual field"
+                },
+                "value": {
+                  "type": "string",
+                  "description": "Value of an individual field (supports Markdown)"
+                },
+                "style": {
+                  "type": "string",
+                  "description": "Style of width span applied to a field",
+                  "default": "Short",
+                  "enum": [
+                    "Short",
+                    "Long"
+                  ]
+                }
+              }
+            }
+          },
+          "footnote": {
+            "description": "Message footer information",
+            "properties": {
+              "text": {
+                "type": "string",
+                "description": "Text of a footer"
+              },
+              "iconUri": {
+                "type": "string",
+                "description": "Link to an icon displayed to the left of a footer; sized 32x32px"
+              },
+              "time": {
+                "type": "string",
+                "description": "Message creation datetime in ISO 8601 format including timezone, for example *2016-03-10T18:07:52.534Z*",
+                "format": "date-time"
+              }
+            }
+          },
+          "startTime": {
+            "type": "string",
+            "description": "Datetime of starting an event"
+          },
+          "endTime": {
+            "type": "string",
+            "description": "Datetime of ending an event"
+          },
+          "allDay": {
+            "type": "boolean",
+            "description": "Indicates whether an event has some specific time slot or lasts for the whole day(s)",
+            "default": false
+          },
+          "recurrence": {
+            "type": "string",
+            "description": "Event recurrence settings. For non-periodic events the value is 'None'. Must be greater or equal to event duration: 1- Day/Weekday; 7 - Week; 28 - Month; 365 - Year",
+            "enum": [
+              "None",
+              "Day",
+              "Weekday",
+              "Week",
+              "Month",
+              "Year"
+            ]
+          },
+          "endingCondition": {
+            "type": "string",
+            "description": "Condition of ending an event"
+          }
+        }
+      },
+      "description": "List of attachments to be posted"
+    }
+  }
+}```
 
 ## Update glip post text
 
@@ -1584,9 +2246,9 @@ HTTP PUT /restapi/v1.0/glip/groups/{groupId}/posts/{postId}/text
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.put(`/restapi/v1.0/glip/groups/${groupId}/posts/${postId}/text`, body);
 ```
 
@@ -1598,9 +2260,9 @@ HTTP GET /restapi/v1.0/glip/recent/chats
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.get('/restapi/v1.0/glip/recent/chats');
 ```
 
@@ -1612,9 +2274,9 @@ HTTP GET /restapi/v1.0/glip/favorites
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.get('/restapi/v1.0/glip/favorites');
 ```
 
@@ -1626,9 +2288,9 @@ HTTP POST /restapi/v1.0/glip/chats/{chatId}/favorite
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.post(`/restapi/v1.0/glip/chats/${chatId}/favorite`);
 ```
 
@@ -1640,9 +2302,9 @@ HTTP POST /restapi/v1.0/glip/chats/{chatId}/unfavorite
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.post(`/restapi/v1.0/glip/chats/${chatId}/unfavorite`);
 ```
 
@@ -1654,9 +2316,9 @@ HTTP POST /restapi/v1.0/glip/chats/{chatId}/read
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.post(`/restapi/v1.0/glip/chats/${chatId}/read`);
 ```
 
@@ -1668,9 +2330,9 @@ HTTP POST /restapi/v1.0/glip/chats/{chatId}/unread
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.post(`/restapi/v1.0/glip/chats/${chatId}/unread`);
 ```
 
@@ -1682,9 +2344,9 @@ HTTP GET /restapi/v1.0/glip/posts
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.get('/restapi/v1.0/glip/posts');
 ```
 
@@ -1696,9 +2358,9 @@ HTTP POST /restapi/v1.0/glip/posts
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.post('/restapi/v1.0/glip/posts', glipCreatePost);
 ```
 
@@ -1706,22 +2368,170 @@ const r = await platform.post('/restapi/v1.0/glip/posts', glipCreatePost);
 `glipCreatePost` is an object with the following properties:
 
 ```yaml
-title:
-  type: string
-  description: Title of a message. (Can be set for bot's messages only).
-text:
-  type: string
-  description: Text of a post
-  maximum: 1000
-groupId:
-  type: string
-  description: Internal identifier of a group
-attachments:
-  type: array
-  items:
-    $ref: '#/definitions/GlipMessageAttachmentInfoRequest'
-  description: List of attachments to be posted
-```
+{
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Title of a message. (Can be set for bot's messages only)."
+    },
+    "text": {
+      "type": "string",
+      "description": "Text of a post",
+      "maximum": 1000
+    },
+    "groupId": {
+      "type": "string",
+      "description": "Internal identifier of a group"
+    },
+    "attachments": {
+      "type": "array",
+      "items": {
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Type of attachment",
+            "enum": [
+              "Card",
+              "Event",
+              "Note"
+            ],
+            "default": "Card"
+          },
+          "title": {
+            "type": "string",
+            "description": "Attachment title"
+          },
+          "fallback": {
+            "type": "string",
+            "description": "Default message returned in case the client does not support interactive messages"
+          },
+          "color": {
+            "type": "string",
+            "description": "Hex color code specifying font color of Event title, including its presentation in Calendar; or the color of the side border of an interactive message of a Card",
+            "enum": [
+              "Black",
+              "Red",
+              "Orange",
+              "Yellow",
+              "Green",
+              "Blue",
+              "Purple",
+              "Magenta"
+            ],
+            "default": "Black"
+          },
+          "intro": {
+            "type": "string",
+            "description": "Introductory text displayed directly above a message"
+          },
+          "author": {
+            "description": "Information about the author",
+            "properties": {
+              "name": {
+                "type": "string",
+                "description": "Name of a message author"
+              },
+              "uri": {
+                "type": "string",
+                "description": "Link to an author's name"
+              },
+              "iconUri": {
+                "type": "string",
+                "description": "Link to an image displayed to the left of an author's name; sized 82x82px"
+              }
+            }
+          },
+          "text": {
+            "type": "string",
+            "description": "Text of attachment (up to 1000 chars), supports GlipDown"
+          },
+          "imageUri": {
+            "type": "string",
+            "description": "Link to an image displayed at the bottom of a message"
+          },
+          "thumbnailUri": {
+            "type": "string",
+            "description": "Link to an image preview displayed to the right of a message (82x82)"
+          },
+          "fields": {
+            "type": "array",
+            "description": "Individual subsections within a message",
+            "items": {
+              "properties": {
+                "title": {
+                  "type": "string",
+                  "description": "Title of an individual field"
+                },
+                "value": {
+                  "type": "string",
+                  "description": "Value of an individual field (supports Markdown)"
+                },
+                "style": {
+                  "type": "string",
+                  "description": "Style of width span applied to a field",
+                  "default": "Short",
+                  "enum": [
+                    "Short",
+                    "Long"
+                  ]
+                }
+              }
+            }
+          },
+          "footnote": {
+            "description": "Message footer information",
+            "properties": {
+              "text": {
+                "type": "string",
+                "description": "Text of a footer"
+              },
+              "iconUri": {
+                "type": "string",
+                "description": "Link to an icon displayed to the left of a footer; sized 32x32px"
+              },
+              "time": {
+                "type": "string",
+                "description": "Message creation datetime in ISO 8601 format including timezone, for example *2016-03-10T18:07:52.534Z*",
+                "format": "date-time"
+              }
+            }
+          },
+          "startTime": {
+            "type": "string",
+            "description": "Datetime of starting an event"
+          },
+          "endTime": {
+            "type": "string",
+            "description": "Datetime of ending an event"
+          },
+          "allDay": {
+            "type": "boolean",
+            "description": "Indicates whether an event has some specific time slot or lasts for the whole day(s)",
+            "default": false
+          },
+          "recurrence": {
+            "type": "string",
+            "description": "Event recurrence settings. For non-periodic events the value is 'None'. Must be greater or equal to event duration: 1- Day/Weekday; 7 - Week; 28 - Month; 365 - Year",
+            "enum": [
+              "None",
+              "Day",
+              "Weekday",
+              "Week",
+              "Month",
+              "Year"
+            ]
+          },
+          "endingCondition": {
+            "type": "string",
+            "description": "Condition of ending an event"
+          }
+        }
+      },
+      "description": "List of attachments to be posted"
+    }
+  }
+}```
 
 ## Create glip file
 
@@ -1730,9 +2540,9 @@ HTTP POST /restapi/v1.0/glip/files
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.post('/restapi/v1.0/glip/files');
 ```
 
@@ -1744,9 +2554,9 @@ HTTP POST /restapi/v1.0/glip/cards
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.post('/restapi/v1.0/glip/cards', glipMessageAttachmentInfoRequest);
 ```
 
@@ -1754,90 +2564,149 @@ const r = await platform.post('/restapi/v1.0/glip/cards', glipMessageAttachmentI
 `glipMessageAttachmentInfoRequest` is an object with the following properties:
 
 ```yaml
-type:
-  type: string
-  description: Type of attachment
-  enum:
-    - Card
-    - Event
-    - Note
-  default: Card
-title:
-  type: string
-  description: Attachment title
-fallback:
-  type: string
-  description: >-
-    Default message returned in case the client does not support interactive
-    messages
-color:
-  type: string
-  description: >-
-    Hex color code specifying font color of Event title, including its
-    presentation in Calendar; or the color of the side border of an interactive
-    message of a Card
-  enum:
-    - Black
-    - Red
-    - Orange
-    - Yellow
-    - Green
-    - Blue
-    - Purple
-    - Magenta
-  default: Black
-intro:
-  type: string
-  description: Introductory text displayed directly above a message
-author:
-  description: Information about the author
-  $ref: '#/definitions/GlipMessageAttachmentAuthorInfo'
-text:
-  type: string
-  description: 'Text of attachment (up to 1000 chars), supports GlipDown'
-imageUri:
-  type: string
-  description: Link to an image displayed at the bottom of a message
-thumbnailUri:
-  type: string
-  description: Link to an image preview displayed to the right of a message (82x82)
-fields:
-  type: array
-  description: Individual subsections within a message
-  items:
-    $ref: '#/definitions/GlipMessageAttachmentFieldsInfo'
-footnote:
-  description: Message footer information
-  $ref: '#/definitions/GlipMessageAttachmentFootnoteInfo'
-startTime:
-  type: string
-  description: Datetime of starting an event
-endTime:
-  type: string
-  description: Datetime of ending an event
-allDay:
-  type: boolean
-  description: >-
-    Indicates whether an event has some specific time slot or lasts for the
-    whole day(s)
-  default: false
-recurrence:
-  type: string
-  description: >-
-    Event recurrence settings. For non-periodic events the value is 'None'. Must
-    be greater or equal to event duration: 1- Day/Weekday; 7 - Week; 28 - Month;
-    365 - Year
-  enum:
-    - None
-    - Day
-    - Weekday
-    - Week
-    - Month
-    - Year
-endingCondition:
-  type: string
-  description: Condition of ending an event
-```
+{
+  "type": "object",
+  "properties": {
+    "type": {
+      "type": "string",
+      "description": "Type of attachment",
+      "enum": [
+        "Card",
+        "Event",
+        "Note"
+      ],
+      "default": "Card"
+    },
+    "title": {
+      "type": "string",
+      "description": "Attachment title"
+    },
+    "fallback": {
+      "type": "string",
+      "description": "Default message returned in case the client does not support interactive messages"
+    },
+    "color": {
+      "type": "string",
+      "description": "Hex color code specifying font color of Event title, including its presentation in Calendar; or the color of the side border of an interactive message of a Card",
+      "enum": [
+        "Black",
+        "Red",
+        "Orange",
+        "Yellow",
+        "Green",
+        "Blue",
+        "Purple",
+        "Magenta"
+      ],
+      "default": "Black"
+    },
+    "intro": {
+      "type": "string",
+      "description": "Introductory text displayed directly above a message"
+    },
+    "author": {
+      "description": "Information about the author",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Name of a message author"
+        },
+        "uri": {
+          "type": "string",
+          "description": "Link to an author's name"
+        },
+        "iconUri": {
+          "type": "string",
+          "description": "Link to an image displayed to the left of an author's name; sized 82x82px"
+        }
+      }
+    },
+    "text": {
+      "type": "string",
+      "description": "Text of attachment (up to 1000 chars), supports GlipDown"
+    },
+    "imageUri": {
+      "type": "string",
+      "description": "Link to an image displayed at the bottom of a message"
+    },
+    "thumbnailUri": {
+      "type": "string",
+      "description": "Link to an image preview displayed to the right of a message (82x82)"
+    },
+    "fields": {
+      "type": "array",
+      "description": "Individual subsections within a message",
+      "items": {
+        "properties": {
+          "title": {
+            "type": "string",
+            "description": "Title of an individual field"
+          },
+          "value": {
+            "type": "string",
+            "description": "Value of an individual field (supports Markdown)"
+          },
+          "style": {
+            "type": "string",
+            "description": "Style of width span applied to a field",
+            "default": "Short",
+            "enum": [
+              "Short",
+              "Long"
+            ]
+          }
+        }
+      }
+    },
+    "footnote": {
+      "description": "Message footer information",
+      "properties": {
+        "text": {
+          "type": "string",
+          "description": "Text of a footer"
+        },
+        "iconUri": {
+          "type": "string",
+          "description": "Link to an icon displayed to the left of a footer; sized 32x32px"
+        },
+        "time": {
+          "type": "string",
+          "description": "Message creation datetime in ISO 8601 format including timezone, for example *2016-03-10T18:07:52.534Z*",
+          "format": "date-time"
+        }
+      }
+    },
+    "startTime": {
+      "type": "string",
+      "description": "Datetime of starting an event"
+    },
+    "endTime": {
+      "type": "string",
+      "description": "Datetime of ending an event"
+    },
+    "allDay": {
+      "type": "boolean",
+      "description": "Indicates whether an event has some specific time slot or lasts for the whole day(s)",
+      "default": false
+    },
+    "recurrence": {
+      "type": "string",
+      "description": "Event recurrence settings. For non-periodic events the value is 'None'. Must be greater or equal to event duration: 1- Day/Weekday; 7 - Week; 28 - Month; 365 - Year",
+      "enum": [
+        "None",
+        "Day",
+        "Weekday",
+        "Week",
+        "Month",
+        "Year"
+      ]
+    },
+    "endingCondition": {
+      "type": "string",
+      "description": "Condition of ending an event"
+    }
+  }
+}```
 
 ## Load glip card
 
@@ -1846,9 +2715,9 @@ HTTP GET /restapi/v1.0/glip/cards/{cardId}
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.get(`/restapi/v1.0/glip/cards/${cardId}`);
 ```
 
@@ -1860,9 +2729,9 @@ HTTP PUT /restapi/v1.0/glip/cards/{cardId}
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.put(`/restapi/v1.0/glip/cards/${cardId}`, glipMessageAttachmentInfoRequest);
 ```
 
@@ -1870,90 +2739,149 @@ const r = await platform.put(`/restapi/v1.0/glip/cards/${cardId}`, glipMessageAt
 `glipMessageAttachmentInfoRequest` is an object with the following properties:
 
 ```yaml
-type:
-  type: string
-  description: Type of attachment
-  enum:
-    - Card
-    - Event
-    - Note
-  default: Card
-title:
-  type: string
-  description: Attachment title
-fallback:
-  type: string
-  description: >-
-    Default message returned in case the client does not support interactive
-    messages
-color:
-  type: string
-  description: >-
-    Hex color code specifying font color of Event title, including its
-    presentation in Calendar; or the color of the side border of an interactive
-    message of a Card
-  enum:
-    - Black
-    - Red
-    - Orange
-    - Yellow
-    - Green
-    - Blue
-    - Purple
-    - Magenta
-  default: Black
-intro:
-  type: string
-  description: Introductory text displayed directly above a message
-author:
-  description: Information about the author
-  $ref: '#/definitions/GlipMessageAttachmentAuthorInfo'
-text:
-  type: string
-  description: 'Text of attachment (up to 1000 chars), supports GlipDown'
-imageUri:
-  type: string
-  description: Link to an image displayed at the bottom of a message
-thumbnailUri:
-  type: string
-  description: Link to an image preview displayed to the right of a message (82x82)
-fields:
-  type: array
-  description: Individual subsections within a message
-  items:
-    $ref: '#/definitions/GlipMessageAttachmentFieldsInfo'
-footnote:
-  description: Message footer information
-  $ref: '#/definitions/GlipMessageAttachmentFootnoteInfo'
-startTime:
-  type: string
-  description: Datetime of starting an event
-endTime:
-  type: string
-  description: Datetime of ending an event
-allDay:
-  type: boolean
-  description: >-
-    Indicates whether an event has some specific time slot or lasts for the
-    whole day(s)
-  default: false
-recurrence:
-  type: string
-  description: >-
-    Event recurrence settings. For non-periodic events the value is 'None'. Must
-    be greater or equal to event duration: 1- Day/Weekday; 7 - Week; 28 - Month;
-    365 - Year
-  enum:
-    - None
-    - Day
-    - Weekday
-    - Week
-    - Month
-    - Year
-endingCondition:
-  type: string
-  description: Condition of ending an event
-```
+{
+  "type": "object",
+  "properties": {
+    "type": {
+      "type": "string",
+      "description": "Type of attachment",
+      "enum": [
+        "Card",
+        "Event",
+        "Note"
+      ],
+      "default": "Card"
+    },
+    "title": {
+      "type": "string",
+      "description": "Attachment title"
+    },
+    "fallback": {
+      "type": "string",
+      "description": "Default message returned in case the client does not support interactive messages"
+    },
+    "color": {
+      "type": "string",
+      "description": "Hex color code specifying font color of Event title, including its presentation in Calendar; or the color of the side border of an interactive message of a Card",
+      "enum": [
+        "Black",
+        "Red",
+        "Orange",
+        "Yellow",
+        "Green",
+        "Blue",
+        "Purple",
+        "Magenta"
+      ],
+      "default": "Black"
+    },
+    "intro": {
+      "type": "string",
+      "description": "Introductory text displayed directly above a message"
+    },
+    "author": {
+      "description": "Information about the author",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Name of a message author"
+        },
+        "uri": {
+          "type": "string",
+          "description": "Link to an author's name"
+        },
+        "iconUri": {
+          "type": "string",
+          "description": "Link to an image displayed to the left of an author's name; sized 82x82px"
+        }
+      }
+    },
+    "text": {
+      "type": "string",
+      "description": "Text of attachment (up to 1000 chars), supports GlipDown"
+    },
+    "imageUri": {
+      "type": "string",
+      "description": "Link to an image displayed at the bottom of a message"
+    },
+    "thumbnailUri": {
+      "type": "string",
+      "description": "Link to an image preview displayed to the right of a message (82x82)"
+    },
+    "fields": {
+      "type": "array",
+      "description": "Individual subsections within a message",
+      "items": {
+        "properties": {
+          "title": {
+            "type": "string",
+            "description": "Title of an individual field"
+          },
+          "value": {
+            "type": "string",
+            "description": "Value of an individual field (supports Markdown)"
+          },
+          "style": {
+            "type": "string",
+            "description": "Style of width span applied to a field",
+            "default": "Short",
+            "enum": [
+              "Short",
+              "Long"
+            ]
+          }
+        }
+      }
+    },
+    "footnote": {
+      "description": "Message footer information",
+      "properties": {
+        "text": {
+          "type": "string",
+          "description": "Text of a footer"
+        },
+        "iconUri": {
+          "type": "string",
+          "description": "Link to an icon displayed to the left of a footer; sized 32x32px"
+        },
+        "time": {
+          "type": "string",
+          "description": "Message creation datetime in ISO 8601 format including timezone, for example *2016-03-10T18:07:52.534Z*",
+          "format": "date-time"
+        }
+      }
+    },
+    "startTime": {
+      "type": "string",
+      "description": "Datetime of starting an event"
+    },
+    "endTime": {
+      "type": "string",
+      "description": "Datetime of ending an event"
+    },
+    "allDay": {
+      "type": "boolean",
+      "description": "Indicates whether an event has some specific time slot or lasts for the whole day(s)",
+      "default": false
+    },
+    "recurrence": {
+      "type": "string",
+      "description": "Event recurrence settings. For non-periodic events the value is 'None'. Must be greater or equal to event duration: 1- Day/Weekday; 7 - Week; 28 - Month; 365 - Year",
+      "enum": [
+        "None",
+        "Day",
+        "Weekday",
+        "Week",
+        "Month",
+        "Year"
+      ]
+    },
+    "endingCondition": {
+      "type": "string",
+      "description": "Condition of ending an event"
+    }
+  }
+}```
 
 ## Delete glip card
 
@@ -1962,9 +2890,9 @@ HTTP DELETE /restapi/v1.0/glip/cards/{cardId}
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.delete(`/restapi/v1.0/glip/cards/${cardId}`);
 ```
 
@@ -1976,9 +2904,9 @@ HTTP GET /restapi/v1.0/glip/events
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.get('/restapi/v1.0/glip/events');
 ```
 
@@ -1990,9 +2918,9 @@ HTTP POST /restapi/v1.0/glip/events
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.post('/restapi/v1.0/glip/events', glipEventCreate);
 ```
 
@@ -2000,78 +2928,94 @@ const r = await platform.post('/restapi/v1.0/glip/events', glipEventCreate);
 `glipEventCreate` is an object with the following properties:
 
 ```yaml
-id:
-  type: string
-  description: Internal identifier of an event
-creatorId:
-  type: string
-  description: Internal identifier of a person created an event
-title:
-  type: string
-  description: Event title
-startTime:
-  type: string
-  description: Datetime of starting an event
-endTime:
-  type: string
-  description: Datetime of ending an event
-allDay:
-  type: boolean
-  description: >-
-    Indicates whether event has some specific time slot or lasts for whole
-    day(s)
-  default: false
-recurrence:
-  type: string
-  description: >-
-    Event recurrence settings. For non-periodic events the value is 'None'. Must
-    be greater or equal to event duration: 1- Day/Weekday; 7 - Week; 28 - Month;
-    365 - Year
-  enum:
-    - None
-    - Day
-    - Weekday
-    - Week
-    - Month
-    - Year
-endingCondition:
-  type: string
-  description: Condition of ending
-endingAfter:
-  type: integer
-  description: >-
-    Count of iterations. For periodic events only. Value range is 1 - 10. Must
-    be specified if 'endingCondition' is 'Count'
-endingOn:
-  type: string
-  enum:
-    - None
-    - Count
-    - Date
-  default: None
-  description: Iterations end datetime for periodic events.
-color:
-  type: string
-  description: >-
-    Hex color code, specifying font color of Event title (including its
-    presentation in Calendar)
-  enum:
-    - Black
-    - Red
-    - Orange
-    - Yellow
-    - Green
-    - Blue
-    - Purple
-    - Magenta
-  default: Black
-location:
-  type: string
-  description: Event location
-description:
-  type: string
-  description: Event details
-```
+{
+  "type": "object",
+  "required": [
+    "title",
+    "startTime",
+    "endTime"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Internal identifier of an event"
+    },
+    "creatorId": {
+      "type": "string",
+      "description": "Internal identifier of a person created an event"
+    },
+    "title": {
+      "type": "string",
+      "description": "Event title"
+    },
+    "startTime": {
+      "type": "string",
+      "description": "Datetime of starting an event"
+    },
+    "endTime": {
+      "type": "string",
+      "description": "Datetime of ending an event"
+    },
+    "allDay": {
+      "type": "boolean",
+      "description": "Indicates whether event has some specific time slot or lasts for whole day(s)",
+      "default": false
+    },
+    "recurrence": {
+      "type": "string",
+      "description": "Event recurrence settings. For non-periodic events the value is 'None'. Must be greater or equal to event duration: 1- Day/Weekday; 7 - Week; 28 - Month; 365 - Year",
+      "enum": [
+        "None",
+        "Day",
+        "Weekday",
+        "Week",
+        "Month",
+        "Year"
+      ]
+    },
+    "endingCondition": {
+      "type": "string",
+      "description": "Condition of ending"
+    },
+    "endingAfter": {
+      "type": "integer",
+      "description": "Count of iterations. For periodic events only. Value range is 1 - 10. Must be specified if 'endingCondition' is 'Count'"
+    },
+    "endingOn": {
+      "type": "string",
+      "enum": [
+        "None",
+        "Count",
+        "Date"
+      ],
+      "default": "None",
+      "description": "Iterations end datetime for periodic events."
+    },
+    "color": {
+      "type": "string",
+      "description": "Hex color code, specifying font color of Event title (including its presentation in Calendar)",
+      "enum": [
+        "Black",
+        "Red",
+        "Orange",
+        "Yellow",
+        "Green",
+        "Blue",
+        "Purple",
+        "Magenta"
+      ],
+      "default": "Black"
+    },
+    "location": {
+      "type": "string",
+      "description": "Event location"
+    },
+    "description": {
+      "type": "string",
+      "description": "Event details"
+    }
+  }
+}```
 
 ## Load event
 
@@ -2080,9 +3024,9 @@ HTTP GET /restapi/v1.0/glip/events/{eventId}
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.get(`/restapi/v1.0/glip/events/${eventId}`);
 ```
 
@@ -2094,9 +3038,9 @@ HTTP PUT /restapi/v1.0/glip/events/{eventId}
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.put(`/restapi/v1.0/glip/events/${eventId}`, glipEventCreate);
 ```
 
@@ -2104,78 +3048,94 @@ const r = await platform.put(`/restapi/v1.0/glip/events/${eventId}`, glipEventCr
 `glipEventCreate` is an object with the following properties:
 
 ```yaml
-id:
-  type: string
-  description: Internal identifier of an event
-creatorId:
-  type: string
-  description: Internal identifier of a person created an event
-title:
-  type: string
-  description: Event title
-startTime:
-  type: string
-  description: Datetime of starting an event
-endTime:
-  type: string
-  description: Datetime of ending an event
-allDay:
-  type: boolean
-  description: >-
-    Indicates whether event has some specific time slot or lasts for whole
-    day(s)
-  default: false
-recurrence:
-  type: string
-  description: >-
-    Event recurrence settings. For non-periodic events the value is 'None'. Must
-    be greater or equal to event duration: 1- Day/Weekday; 7 - Week; 28 - Month;
-    365 - Year
-  enum:
-    - None
-    - Day
-    - Weekday
-    - Week
-    - Month
-    - Year
-endingCondition:
-  type: string
-  description: Condition of ending
-endingAfter:
-  type: integer
-  description: >-
-    Count of iterations. For periodic events only. Value range is 1 - 10. Must
-    be specified if 'endingCondition' is 'Count'
-endingOn:
-  type: string
-  enum:
-    - None
-    - Count
-    - Date
-  default: None
-  description: Iterations end datetime for periodic events.
-color:
-  type: string
-  description: >-
-    Hex color code, specifying font color of Event title (including its
-    presentation in Calendar)
-  enum:
-    - Black
-    - Red
-    - Orange
-    - Yellow
-    - Green
-    - Blue
-    - Purple
-    - Magenta
-  default: Black
-location:
-  type: string
-  description: Event location
-description:
-  type: string
-  description: Event details
-```
+{
+  "type": "object",
+  "required": [
+    "title",
+    "startTime",
+    "endTime"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Internal identifier of an event"
+    },
+    "creatorId": {
+      "type": "string",
+      "description": "Internal identifier of a person created an event"
+    },
+    "title": {
+      "type": "string",
+      "description": "Event title"
+    },
+    "startTime": {
+      "type": "string",
+      "description": "Datetime of starting an event"
+    },
+    "endTime": {
+      "type": "string",
+      "description": "Datetime of ending an event"
+    },
+    "allDay": {
+      "type": "boolean",
+      "description": "Indicates whether event has some specific time slot or lasts for whole day(s)",
+      "default": false
+    },
+    "recurrence": {
+      "type": "string",
+      "description": "Event recurrence settings. For non-periodic events the value is 'None'. Must be greater or equal to event duration: 1- Day/Weekday; 7 - Week; 28 - Month; 365 - Year",
+      "enum": [
+        "None",
+        "Day",
+        "Weekday",
+        "Week",
+        "Month",
+        "Year"
+      ]
+    },
+    "endingCondition": {
+      "type": "string",
+      "description": "Condition of ending"
+    },
+    "endingAfter": {
+      "type": "integer",
+      "description": "Count of iterations. For periodic events only. Value range is 1 - 10. Must be specified if 'endingCondition' is 'Count'"
+    },
+    "endingOn": {
+      "type": "string",
+      "enum": [
+        "None",
+        "Count",
+        "Date"
+      ],
+      "default": "None",
+      "description": "Iterations end datetime for periodic events."
+    },
+    "color": {
+      "type": "string",
+      "description": "Hex color code, specifying font color of Event title (including its presentation in Calendar)",
+      "enum": [
+        "Black",
+        "Red",
+        "Orange",
+        "Yellow",
+        "Green",
+        "Blue",
+        "Purple",
+        "Magenta"
+      ],
+      "default": "Black"
+    },
+    "location": {
+      "type": "string",
+      "description": "Event location"
+    },
+    "description": {
+      "type": "string",
+      "description": "Event details"
+    }
+  }
+}```
 
 ## Delete event
 
@@ -2184,9 +3144,9 @@ HTTP DELETE /restapi/v1.0/glip/events/{eventId}
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.delete(`/restapi/v1.0/glip/events/${eventId}`);
 ```
 
@@ -2198,9 +3158,9 @@ HTTP POST /restapi/v1.0/glip/groups/{groupId}/events
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.post(`/restapi/v1.0/glip/groups/${groupId}/events`, glipEventCreate);
 ```
 
@@ -2208,78 +3168,94 @@ const r = await platform.post(`/restapi/v1.0/glip/groups/${groupId}/events`, gli
 `glipEventCreate` is an object with the following properties:
 
 ```yaml
-id:
-  type: string
-  description: Internal identifier of an event
-creatorId:
-  type: string
-  description: Internal identifier of a person created an event
-title:
-  type: string
-  description: Event title
-startTime:
-  type: string
-  description: Datetime of starting an event
-endTime:
-  type: string
-  description: Datetime of ending an event
-allDay:
-  type: boolean
-  description: >-
-    Indicates whether event has some specific time slot or lasts for whole
-    day(s)
-  default: false
-recurrence:
-  type: string
-  description: >-
-    Event recurrence settings. For non-periodic events the value is 'None'. Must
-    be greater or equal to event duration: 1- Day/Weekday; 7 - Week; 28 - Month;
-    365 - Year
-  enum:
-    - None
-    - Day
-    - Weekday
-    - Week
-    - Month
-    - Year
-endingCondition:
-  type: string
-  description: Condition of ending
-endingAfter:
-  type: integer
-  description: >-
-    Count of iterations. For periodic events only. Value range is 1 - 10. Must
-    be specified if 'endingCondition' is 'Count'
-endingOn:
-  type: string
-  enum:
-    - None
-    - Count
-    - Date
-  default: None
-  description: Iterations end datetime for periodic events.
-color:
-  type: string
-  description: >-
-    Hex color code, specifying font color of Event title (including its
-    presentation in Calendar)
-  enum:
-    - Black
-    - Red
-    - Orange
-    - Yellow
-    - Green
-    - Blue
-    - Purple
-    - Magenta
-  default: Black
-location:
-  type: string
-  description: Event location
-description:
-  type: string
-  description: Event details
-```
+{
+  "type": "object",
+  "required": [
+    "title",
+    "startTime",
+    "endTime"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Internal identifier of an event"
+    },
+    "creatorId": {
+      "type": "string",
+      "description": "Internal identifier of a person created an event"
+    },
+    "title": {
+      "type": "string",
+      "description": "Event title"
+    },
+    "startTime": {
+      "type": "string",
+      "description": "Datetime of starting an event"
+    },
+    "endTime": {
+      "type": "string",
+      "description": "Datetime of ending an event"
+    },
+    "allDay": {
+      "type": "boolean",
+      "description": "Indicates whether event has some specific time slot or lasts for whole day(s)",
+      "default": false
+    },
+    "recurrence": {
+      "type": "string",
+      "description": "Event recurrence settings. For non-periodic events the value is 'None'. Must be greater or equal to event duration: 1- Day/Weekday; 7 - Week; 28 - Month; 365 - Year",
+      "enum": [
+        "None",
+        "Day",
+        "Weekday",
+        "Week",
+        "Month",
+        "Year"
+      ]
+    },
+    "endingCondition": {
+      "type": "string",
+      "description": "Condition of ending"
+    },
+    "endingAfter": {
+      "type": "integer",
+      "description": "Count of iterations. For periodic events only. Value range is 1 - 10. Must be specified if 'endingCondition' is 'Count'"
+    },
+    "endingOn": {
+      "type": "string",
+      "enum": [
+        "None",
+        "Count",
+        "Date"
+      ],
+      "default": "None",
+      "description": "Iterations end datetime for periodic events."
+    },
+    "color": {
+      "type": "string",
+      "description": "Hex color code, specifying font color of Event title (including its presentation in Calendar)",
+      "enum": [
+        "Black",
+        "Red",
+        "Orange",
+        "Yellow",
+        "Green",
+        "Blue",
+        "Purple",
+        "Magenta"
+      ],
+      "default": "Black"
+    },
+    "location": {
+      "type": "string",
+      "description": "Event location"
+    },
+    "description": {
+      "type": "string",
+      "description": "Event details"
+    }
+  }
+}```
 
 ## List group events
 
@@ -2288,9 +3264,9 @@ HTTP GET /restapi/v1.0/glip/groups/{groupId}/events
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.get(`/restapi/v1.0/glip/groups/${groupId}/events`);
 ```
 
@@ -2302,9 +3278,9 @@ HTTP GET /restapi/v1.0/glip/groups/{groupId}/notes
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.get(`/restapi/v1.0/glip/groups/${groupId}/notes`);
 ```
 
@@ -2316,9 +3292,9 @@ HTTP POST /restapi/v1.0/glip/groups/{groupId}/notes
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.post(`/restapi/v1.0/glip/groups/${groupId}/notes`, glipNoteCreate);
 ```
 
@@ -2326,23 +3302,31 @@ const r = await platform.post(`/restapi/v1.0/glip/groups/${groupId}/notes`, glip
 `glipNoteCreate` is an object with the following properties:
 
 ```yaml
-title:
-  type: string
-  description: Title of a note
-status:
-  type: string
-  description: >-
-    If a note should be immediately published then pass 'Active' value. This
-    doesn't create a new post in the current group but as a result the note can
-    be read by members of this group
-  default: Draft
-  enum:
-    - Active
-    - Draft
-body:
-  type: string
-  description: Contents of a note
-```
+{
+  "type": "object",
+  "required": [
+    "title"
+  ],
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Title of a note"
+    },
+    "status": {
+      "type": "string",
+      "description": "If a note should be immediately published then pass 'Active' value. This doesn't create a new post in the current group but as a result the note can be read by members of this group",
+      "default": "Draft",
+      "enum": [
+        "Active",
+        "Draft"
+      ]
+    },
+    "body": {
+      "type": "string",
+      "description": "Contents of a note"
+    }
+  }
+}```
 
 ## Load user notes
 
@@ -2351,9 +3335,9 @@ HTTP GET /restapi/v1.0/glip/notes
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.get('/restapi/v1.0/glip/notes');
 ```
 
@@ -2365,9 +3349,9 @@ HTTP POST /restapi/v1.0/glip/notes
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.post('/restapi/v1.0/glip/notes', glipNoteCreate);
 ```
 
@@ -2375,23 +3359,31 @@ const r = await platform.post('/restapi/v1.0/glip/notes', glipNoteCreate);
 `glipNoteCreate` is an object with the following properties:
 
 ```yaml
-title:
-  type: string
-  description: Title of a note
-status:
-  type: string
-  description: >-
-    If a note should be immediately published then pass 'Active' value. This
-    doesn't create a new post in the current group but as a result the note can
-    be read by members of this group
-  default: Draft
-  enum:
-    - Active
-    - Draft
-body:
-  type: string
-  description: Contents of a note
-```
+{
+  "type": "object",
+  "required": [
+    "title"
+  ],
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Title of a note"
+    },
+    "status": {
+      "type": "string",
+      "description": "If a note should be immediately published then pass 'Active' value. This doesn't create a new post in the current group but as a result the note can be read by members of this group",
+      "default": "Draft",
+      "enum": [
+        "Active",
+        "Draft"
+      ]
+    },
+    "body": {
+      "type": "string",
+      "description": "Contents of a note"
+    }
+  }
+}```
 
 ## Load user note
 
@@ -2400,9 +3392,9 @@ HTTP GET /restapi/v1.0/glip/notes/{noteId}
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.get(`/restapi/v1.0/glip/notes/${noteId}`);
 ```
 
@@ -2414,9 +3406,9 @@ HTTP DELETE /restapi/v1.0/glip/notes/{noteId}
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.delete(`/restapi/v1.0/glip/notes/${noteId}`);
 ```
 
@@ -2428,9 +3420,9 @@ HTTP PATCH /restapi/v1.0/glip/notes/{noteId}
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.patch(`/restapi/v1.0/glip/notes/${noteId}`, glipNoteCreate);
 ```
 
@@ -2438,23 +3430,31 @@ const r = await platform.patch(`/restapi/v1.0/glip/notes/${noteId}`, glipNoteCre
 `glipNoteCreate` is an object with the following properties:
 
 ```yaml
-title:
-  type: string
-  description: Title of a note
-status:
-  type: string
-  description: >-
-    If a note should be immediately published then pass 'Active' value. This
-    doesn't create a new post in the current group but as a result the note can
-    be read by members of this group
-  default: Draft
-  enum:
-    - Active
-    - Draft
-body:
-  type: string
-  description: Contents of a note
-```
+{
+  "type": "object",
+  "required": [
+    "title"
+  ],
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Title of a note"
+    },
+    "status": {
+      "type": "string",
+      "description": "If a note should be immediately published then pass 'Active' value. This doesn't create a new post in the current group but as a result the note can be read by members of this group",
+      "default": "Draft",
+      "enum": [
+        "Active",
+        "Draft"
+      ]
+    },
+    "body": {
+      "type": "string",
+      "description": "Contents of a note"
+    }
+  }
+}```
 
 ## Update note
 
@@ -2463,9 +3463,9 @@ HTTP PUT /restapi/v1.0/glip/notes/{noteId}
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.put(`/restapi/v1.0/glip/notes/${noteId}`, glipNoteCreate);
 ```
 
@@ -2473,23 +3473,31 @@ const r = await platform.put(`/restapi/v1.0/glip/notes/${noteId}`, glipNoteCreat
 `glipNoteCreate` is an object with the following properties:
 
 ```yaml
-title:
-  type: string
-  description: Title of a note
-status:
-  type: string
-  description: >-
-    If a note should be immediately published then pass 'Active' value. This
-    doesn't create a new post in the current group but as a result the note can
-    be read by members of this group
-  default: Draft
-  enum:
-    - Active
-    - Draft
-body:
-  type: string
-  description: Contents of a note
-```
+{
+  "type": "object",
+  "required": [
+    "title"
+  ],
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Title of a note"
+    },
+    "status": {
+      "type": "string",
+      "description": "If a note should be immediately published then pass 'Active' value. This doesn't create a new post in the current group but as a result the note can be read by members of this group",
+      "default": "Draft",
+      "enum": [
+        "Active",
+        "Draft"
+      ]
+    },
+    "body": {
+      "type": "string",
+      "description": "Contents of a note"
+    }
+  }
+}```
 
 ## Lock note
 
@@ -2498,9 +3506,9 @@ HTTP POST /restapi/v1.0/glip/notes/{noteId}/lock
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.post(`/restapi/v1.0/glip/notes/${noteId}/lock`);
 ```
 
@@ -2512,9 +3520,9 @@ HTTP POST /restapi/v1.0/glip/notes/{noteId}/publish
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.post(`/restapi/v1.0/glip/notes/${noteId}/publish`);
 ```
 
@@ -2526,9 +3534,9 @@ HTTP POST /restapi/v1.0/glip/notes/{noteId}/unlock
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.post(`/restapi/v1.0/glip/notes/${noteId}/unlock`);
 ```
 
@@ -2540,9 +3548,9 @@ HTTP GET /restapi/v1.0/glip/persons/{personId}
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.get(`/restapi/v1.0/glip/persons/${personId}`);
 ```
 
@@ -2554,9 +3562,9 @@ HTTP GET /restapi/v1.0/glip/companies/{companyId}
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.get(`/restapi/v1.0/glip/companies/${companyId}`);
 ```
 
@@ -2568,9 +3576,9 @@ HTTP POST /restapi/v1.0/glip/groups/{groupId}/webhooks
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.post(`/restapi/v1.0/glip/groups/${groupId}/webhooks`);
 ```
 
@@ -2582,9 +3590,9 @@ HTTP GET /restapi/v1.0/glip/groups/{groupId}/webhooks
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.get(`/restapi/v1.0/glip/groups/${groupId}/webhooks`);
 ```
 
@@ -2596,9 +3604,9 @@ HTTP GET /restapi/v1.0/glip/webhooks
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.get('/restapi/v1.0/glip/webhooks');
 ```
 
@@ -2610,9 +3618,9 @@ HTTP GET /restapi/v1.0/glip/webhooks/{webhookId}
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.get(`/restapi/v1.0/glip/webhooks/${webhookId}`);
 ```
 
@@ -2624,9 +3632,9 @@ HTTP DELETE /restapi/v1.0/glip/webhooks/{webhookId}
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.delete(`/restapi/v1.0/glip/webhooks/${webhookId}`);
 ```
 
@@ -2638,9 +3646,9 @@ HTTP POST /restapi/v1.0/glip/webhooks/{webhookId}/activate
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.post(`/restapi/v1.0/glip/webhooks/${webhookId}/activate`);
 ```
 
@@ -2652,9 +3660,9 @@ HTTP POST /restapi/v1.0/glip/webhooks/{webhookId}/suspend
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.post(`/restapi/v1.0/glip/webhooks/${webhookId}/suspend`);
 ```
 
@@ -2666,9 +3674,9 @@ HTTP GET /restapi/v1.0/glip/preferences
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.get('/restapi/v1.0/glip/preferences');
 ```
 
@@ -2680,9 +3688,9 @@ HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/meeting
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/meeting`);
 ```
 
@@ -2696,9 +3704,9 @@ HTTP POST /restapi/v1.0/account/{accountId}/extension/{extensionId}/meeting
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.post(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/meeting`, meetingRequestResource);
 ```
 
@@ -2708,30 +3716,74 @@ const r = await platform.post(`/restapi/v1.0/account/${accountId}/extension/${ex
 `meetingRequestResource` is an object with the following properties:
 
 ```yaml
-topic:
-  type: string
-meetingType:
-  type: string
-schedule:
-  $ref: '#/definitions/MeetingScheduleResource'
-password:
-  type: string
-host:
-  $ref: '#/definitions/HostInfoRequest'
-allowJoinBeforeHost:
-  type: boolean
-  default: false
-startHostVideo:
-  type: boolean
-  default: false
-startParticipantsVideo:
-  type: boolean
-  default: false
-audioOptions:
-  type: array
-  items:
-    type: string
-```
+{
+  "type": "object",
+  "properties": {
+    "topic": {
+      "type": "string"
+    },
+    "meetingType": {
+      "type": "string"
+    },
+    "schedule": {
+      "properties": {
+        "startTime": {
+          "type": "string"
+        },
+        "durationInMinutes": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "timeZone": {
+          "properties": {
+            "uri": {
+              "type": "string",
+              "format": "uri"
+            },
+            "id": {
+              "type": "string"
+            },
+            "name": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "password": {
+      "type": "string"
+    },
+    "host": {
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Internal identifier of an extension which is assigned to be a meeting host. The default value is currently logged-in extension identifier"
+        }
+      }
+    },
+    "allowJoinBeforeHost": {
+      "type": "boolean",
+      "default": false
+    },
+    "startHostVideo": {
+      "type": "boolean",
+      "default": false
+    },
+    "startParticipantsVideo": {
+      "type": "boolean",
+      "default": false
+    },
+    "audioOptions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}```
 
 ## Load meeting
 
@@ -2740,9 +3792,9 @@ HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/meeting/{meet
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/meeting/${meetingId}`);
 ```
 
@@ -2756,9 +3808,9 @@ HTTP PUT /restapi/v1.0/account/{accountId}/extension/{extensionId}/meeting/{meet
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.put(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/meeting/${meetingId}`, meetingRequestResource);
 ```
 
@@ -2768,30 +3820,74 @@ const r = await platform.put(`/restapi/v1.0/account/${accountId}/extension/${ext
 `meetingRequestResource` is an object with the following properties:
 
 ```yaml
-topic:
-  type: string
-meetingType:
-  type: string
-schedule:
-  $ref: '#/definitions/MeetingScheduleResource'
-password:
-  type: string
-host:
-  $ref: '#/definitions/HostInfoRequest'
-allowJoinBeforeHost:
-  type: boolean
-  default: false
-startHostVideo:
-  type: boolean
-  default: false
-startParticipantsVideo:
-  type: boolean
-  default: false
-audioOptions:
-  type: array
-  items:
-    type: string
-```
+{
+  "type": "object",
+  "properties": {
+    "topic": {
+      "type": "string"
+    },
+    "meetingType": {
+      "type": "string"
+    },
+    "schedule": {
+      "properties": {
+        "startTime": {
+          "type": "string"
+        },
+        "durationInMinutes": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "timeZone": {
+          "properties": {
+            "uri": {
+              "type": "string",
+              "format": "uri"
+            },
+            "id": {
+              "type": "string"
+            },
+            "name": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "password": {
+      "type": "string"
+    },
+    "host": {
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Internal identifier of an extension which is assigned to be a meeting host. The default value is currently logged-in extension identifier"
+        }
+      }
+    },
+    "allowJoinBeforeHost": {
+      "type": "boolean",
+      "default": false
+    },
+    "startHostVideo": {
+      "type": "boolean",
+      "default": false
+    },
+    "startParticipantsVideo": {
+      "type": "boolean",
+      "default": false
+    },
+    "audioOptions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}```
 
 ## Delete meeting
 
@@ -2800,9 +3896,9 @@ HTTP DELETE /restapi/v1.0/account/{accountId}/extension/{extensionId}/meeting/{m
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.delete(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/meeting/${meetingId}`);
 ```
 
@@ -2816,9 +3912,9 @@ HTTP POST /restapi/v1.0/account/{accountId}/extension/{extensionId}/meeting/{mee
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.post(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/meeting/${meetingId}/end`);
 ```
 
@@ -2832,9 +3928,9 @@ HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/meeting/servi
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/meeting/service-info`);
 ```
 
@@ -2848,9 +3944,9 @@ HTTP GET /restapi/v1.0/subscription
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.get('/restapi/v1.0/subscription');
 ```
 
@@ -2862,9 +3958,9 @@ HTTP POST /restapi/v1.0/subscription
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.post('/restapi/v1.0/subscription', createSubscriptionRequest);
 ```
 
@@ -2872,24 +3968,63 @@ const r = await platform.post('/restapi/v1.0/subscription', createSubscriptionRe
 `createSubscriptionRequest` is an object with the following properties:
 
 ```yaml
-eventFilters:
-  type: array
-  description: >-
-    Collection of URIs to API resources. For APNS transport type only message
-    event filter is available
-  items:
-    type: string
-deliveryMode:
-  description: Notification delivery settings
-  $ref: '#/definitions/NotificationDeliveryModeRequest'
-expiresIn:
-  type: integer
-  description: >-
-    Subscription lifetime in seconds. Max value is 7 days (604800 sec). For
-    *WebHook* transport type max value might be set up to 630720000 seconds (20
-    years)
-  default: 604800
-```
+{
+  "type": "object",
+  "required": [
+    "deliveryMode",
+    "eventFilters"
+  ],
+  "properties": {
+    "eventFilters": {
+      "type": "array",
+      "description": "Collection of URIs to API resources. For APNS transport type only message event filter is available",
+      "items": {
+        "type": "string"
+      }
+    },
+    "deliveryMode": {
+      "description": "Notification delivery settings",
+      "properties": {
+        "transportType": {
+          "type": "string",
+          "description": "Notifications transportation provider name. 'APNS' (Apple Push Notifications Service)",
+          "enum": [
+            "PubNub",
+            "WebHook",
+            "APNS",
+            "PubNub/APNS",
+            "PubNub/GCM"
+          ]
+        },
+        "address": {
+          "type": "string",
+          "description": "Mandatory for 'APNS' and 'WebHook' transport types. For 'APNS' - internal identifier of a device 'device_token' for 'WebHook' - URL of a consumer service (cannot be changed during subscription update)"
+        },
+        "encryption": {
+          "type": "boolean",
+          "description": "Optional parameter. Specifies if the message will be encrypted or not. If request contains any presence event filter the value by default is 'True' (even if specified as 'false'). If request contains only message event filters the value by default is 'False'"
+        },
+        "certificateName": {
+          "type": "string",
+          "description": "For 'PubNub/APNS' and 'PubNub/GCM' transport types. Name of a certificate"
+        },
+        "registrationId": {
+          "type": "string",
+          "description": "For 'PubNub/APNS' and 'PubNub/GCM' transport types. Identifier of a registration"
+        },
+        "verificationToken": {
+          "type": "string",
+          "description": "For 'Webhook' transport type. Subscription verification key ensuring data security"
+        }
+      }
+    },
+    "expiresIn": {
+      "type": "integer",
+      "description": "Subscription lifetime in seconds. Max value is 7 days (604800 sec). For *WebHook* transport type max value might be set up to 630720000 seconds (20 years)",
+      "default": 604800
+    }
+  }
+}```
 
 ## Load subscription
 
@@ -2898,9 +4033,9 @@ HTTP GET /restapi/v1.0/subscription/{subscriptionId}
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.get(`/restapi/v1.0/subscription/${subscriptionId}`);
 ```
 
@@ -2912,9 +4047,9 @@ HTTP PUT /restapi/v1.0/subscription/{subscriptionId}
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.put(`/restapi/v1.0/subscription/${subscriptionId}`, modifySubscriptionRequest);
 ```
 
@@ -2922,22 +4057,62 @@ const r = await platform.put(`/restapi/v1.0/subscription/${subscriptionId}`, mod
 `modifySubscriptionRequest` is an object with the following properties:
 
 ```yaml
-eventFilters:
-  type: array
-  description: Collection of URIs to API resources
-  items:
-    type: string
-deliveryMode:
-  description: Notification delivery settings
-  $ref: '#/definitions/NotificationDeliveryModeRequest'
-expiresIn:
-  type: integer
-  description: >-
-    Subscription lifetime in seconds. Max value is 7 days (604800 sec). For
-    *WebHook* transport type max value might be set up to 630720000 seconds (20
-    years)
-  default: 604800
-```
+{
+  "type": "object",
+  "required": [
+    "eventFilters"
+  ],
+  "properties": {
+    "eventFilters": {
+      "type": "array",
+      "description": "Collection of URIs to API resources",
+      "items": {
+        "type": "string"
+      }
+    },
+    "deliveryMode": {
+      "description": "Notification delivery settings",
+      "properties": {
+        "transportType": {
+          "type": "string",
+          "description": "Notifications transportation provider name. 'APNS' (Apple Push Notifications Service)",
+          "enum": [
+            "PubNub",
+            "WebHook",
+            "APNS",
+            "PubNub/APNS",
+            "PubNub/GCM"
+          ]
+        },
+        "address": {
+          "type": "string",
+          "description": "Mandatory for 'APNS' and 'WebHook' transport types. For 'APNS' - internal identifier of a device 'device_token' for 'WebHook' - URL of a consumer service (cannot be changed during subscription update)"
+        },
+        "encryption": {
+          "type": "boolean",
+          "description": "Optional parameter. Specifies if the message will be encrypted or not. If request contains any presence event filter the value by default is 'True' (even if specified as 'false'). If request contains only message event filters the value by default is 'False'"
+        },
+        "certificateName": {
+          "type": "string",
+          "description": "For 'PubNub/APNS' and 'PubNub/GCM' transport types. Name of a certificate"
+        },
+        "registrationId": {
+          "type": "string",
+          "description": "For 'PubNub/APNS' and 'PubNub/GCM' transport types. Identifier of a registration"
+        },
+        "verificationToken": {
+          "type": "string",
+          "description": "For 'Webhook' transport type. Subscription verification key ensuring data security"
+        }
+      }
+    },
+    "expiresIn": {
+      "type": "integer",
+      "description": "Subscription lifetime in seconds. Max value is 7 days (604800 sec). For *WebHook* transport type max value might be set up to 630720000 seconds (20 years)",
+      "default": 604800
+    }
+  }
+}```
 
 ## Delete subscription
 
@@ -2946,9 +4121,9 @@ HTTP DELETE /restapi/v1.0/subscription/{subscriptionId}
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.delete(`/restapi/v1.0/subscription/${subscriptionId}`);
 ```
 
@@ -2960,9 +4135,9 @@ HTTP POST /restapi/v1.0/subscription/{subscriptionId}/renew
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.post(`/restapi/v1.0/subscription/${subscriptionId}/renew`);
 ```
 
@@ -2974,9 +4149,9 @@ HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/authz-profile
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/authz-profile`);
 ```
 
@@ -2990,9 +4165,9 @@ HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/authz-profile
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/authz-profile/check`);
 ```
 
@@ -3006,9 +4181,9 @@ HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/business-hour
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/business-hours`);
 ```
 
@@ -3022,9 +4197,9 @@ HTTP PUT /restapi/v1.0/account/{accountId}/extension/{extensionId}/business-hour
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.put(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/business-hours`, userBusinessHoursUpdateRequest);
 ```
 
@@ -3034,10 +4209,136 @@ const r = await platform.put(`/restapi/v1.0/account/${accountId}/extension/${ext
 `userBusinessHoursUpdateRequest` is an object with the following properties:
 
 ```yaml
-schedule:
-  description: Schedule when an answering rule is applied
-  $ref: '#/definitions/UserBusinessHoursScheduleInfo'
-```
+{
+  "type": "object",
+  "required": [
+    "schedule"
+  ],
+  "properties": {
+    "schedule": {
+      "description": "Schedule when an answering rule is applied",
+      "properties": {
+        "weeklyRanges": {
+          "description": "Weekly schedule",
+          "properties": {
+            "monday": {
+              "type": "array",
+              "description": "Time intervals for a particular day",
+              "items": {
+                "properties": {
+                  "from": {
+                    "type": "string",
+                    "description": "Time in format hh:mm"
+                  },
+                  "to": {
+                    "type": "string",
+                    "description": "Time in format hh:mm"
+                  }
+                }
+              }
+            },
+            "tuesday": {
+              "type": "array",
+              "description": "Time intervals for a particular day",
+              "items": {
+                "properties": {
+                  "from": {
+                    "type": "string",
+                    "description": "Time in format hh:mm"
+                  },
+                  "to": {
+                    "type": "string",
+                    "description": "Time in format hh:mm"
+                  }
+                }
+              }
+            },
+            "wednesday": {
+              "type": "array",
+              "description": "Time intervals for a particular day",
+              "items": {
+                "properties": {
+                  "from": {
+                    "type": "string",
+                    "description": "Time in format hh:mm"
+                  },
+                  "to": {
+                    "type": "string",
+                    "description": "Time in format hh:mm"
+                  }
+                }
+              }
+            },
+            "thursday": {
+              "type": "array",
+              "description": "Time intervals for a particular day",
+              "items": {
+                "properties": {
+                  "from": {
+                    "type": "string",
+                    "description": "Time in format hh:mm"
+                  },
+                  "to": {
+                    "type": "string",
+                    "description": "Time in format hh:mm"
+                  }
+                }
+              }
+            },
+            "friday": {
+              "type": "array",
+              "description": "Time intervals for a particular day",
+              "items": {
+                "properties": {
+                  "from": {
+                    "type": "string",
+                    "description": "Time in format hh:mm"
+                  },
+                  "to": {
+                    "type": "string",
+                    "description": "Time in format hh:mm"
+                  }
+                }
+              }
+            },
+            "saturday": {
+              "type": "array",
+              "description": "Time intervals for a particular day",
+              "items": {
+                "properties": {
+                  "from": {
+                    "type": "string",
+                    "description": "Time in format hh:mm"
+                  },
+                  "to": {
+                    "type": "string",
+                    "description": "Time in format hh:mm"
+                  }
+                }
+              }
+            },
+            "sunday": {
+              "type": "array",
+              "description": "Time intervals for a particular day",
+              "items": {
+                "properties": {
+                  "from": {
+                    "type": "string",
+                    "description": "Time in format hh:mm"
+                  },
+                  "to": {
+                    "type": "string",
+                    "description": "Time in format hh:mm"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}```
 
 ## Load company business hours
 
@@ -3046,9 +4347,9 @@ HTTP GET /restapi/v1.0/account/{accountId}/business-hours
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/business-hours`);
 ```
 
@@ -3061,9 +4362,9 @@ HTTP PUT /restapi/v1.0/account/{accountId}/business-hours
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.put(`/restapi/v1.0/account/${accountId}/business-hours`, companyBusinessHoursUpdateRequest);
 ```
 
@@ -3072,10 +4373,168 @@ const r = await platform.put(`/restapi/v1.0/account/${accountId}/business-hours`
 `companyBusinessHoursUpdateRequest` is an object with the following properties:
 
 ```yaml
-schedule:
-  description: Schedule when an answering rule is applied
-  $ref: '#/definitions/CompanyBusinessHoursScheduleInfo'
-```
+{
+  "type": "object",
+  "properties": {
+    "schedule": {
+      "description": "Schedule when an answering rule is applied",
+      "properties": {
+        "weeklyRanges": {
+          "properties": {
+            "monday": {
+              "type": "array",
+              "description": "Time intervals for a particular day",
+              "items": {
+                "properties": {
+                  "from": {
+                    "type": "string",
+                    "description": "Time in format hh:mm"
+                  },
+                  "to": {
+                    "type": "string",
+                    "description": "Time in format hh:mm"
+                  }
+                }
+              }
+            },
+            "tuesday": {
+              "type": "array",
+              "description": "Time intervals for a particular day",
+              "items": {
+                "properties": {
+                  "from": {
+                    "type": "string",
+                    "description": "Time in format hh:mm"
+                  },
+                  "to": {
+                    "type": "string",
+                    "description": "Time in format hh:mm"
+                  }
+                }
+              }
+            },
+            "wednesday": {
+              "type": "array",
+              "description": "Time intervals for a particular day",
+              "items": {
+                "properties": {
+                  "from": {
+                    "type": "string",
+                    "description": "Time in format hh:mm"
+                  },
+                  "to": {
+                    "type": "string",
+                    "description": "Time in format hh:mm"
+                  }
+                }
+              }
+            },
+            "thursday": {
+              "type": "array",
+              "description": "Time intervals for a particular day",
+              "items": {
+                "properties": {
+                  "from": {
+                    "type": "string",
+                    "description": "Time in format hh:mm"
+                  },
+                  "to": {
+                    "type": "string",
+                    "description": "Time in format hh:mm"
+                  }
+                }
+              }
+            },
+            "friday": {
+              "type": "array",
+              "description": "Time intervals for a particular day",
+              "items": {
+                "properties": {
+                  "from": {
+                    "type": "string",
+                    "description": "Time in format hh:mm"
+                  },
+                  "to": {
+                    "type": "string",
+                    "description": "Time in format hh:mm"
+                  }
+                }
+              }
+            },
+            "saturday": {
+              "type": "array",
+              "description": "Time intervals for a particular day",
+              "items": {
+                "properties": {
+                  "from": {
+                    "type": "string",
+                    "description": "Time in format hh:mm"
+                  },
+                  "to": {
+                    "type": "string",
+                    "description": "Time in format hh:mm"
+                  }
+                }
+              }
+            },
+            "sunday": {
+              "type": "array",
+              "description": "Time intervals for a particular day",
+              "items": {
+                "properties": {
+                  "from": {
+                    "type": "string",
+                    "description": "Time in format hh:mm"
+                  },
+                  "to": {
+                    "type": "string",
+                    "description": "Time in format hh:mm"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "example": {
+    "schedule": {
+      "weeklyRanges": {
+        "tuesday": [
+          {
+            "from": "09:00",
+            "to": "18:00"
+          }
+        ],
+        "friday": [
+          {
+            "from": "09:00",
+            "to": "18:00"
+          }
+        ],
+        "thursday": [
+          {
+            "from": "09:00",
+            "to": "18:00"
+          }
+        ],
+        "wednesday": [
+          {
+            "from": "09:00",
+            "to": "18:00"
+          }
+        ],
+        "monday": [
+          {
+            "from": "09:00",
+            "to": "18:00"
+          }
+        ]
+      }
+    }
+  }
+}```
 
 ## Load call blocking settings
 
@@ -3084,9 +4543,9 @@ HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/caller-blocki
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/caller-blocking`);
 ```
 
@@ -3100,9 +4559,9 @@ HTTP PUT /restapi/v1.0/account/{accountId}/extension/{extensionId}/caller-blocki
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.put(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/caller-blocking`, callerBlockingSettingsUpdate);
 ```
 
@@ -3112,31 +4571,65 @@ const r = await platform.put(`/restapi/v1.0/account/${accountId}/extension/${ext
 `callerBlockingSettingsUpdate` is an object with the following properties:
 
 ```yaml
-mode:
-  type: string
-  enum:
-    - Specific
-    - All
-  description: 'Call blocking options: either specific or all calls and faxes'
-noCallerId:
-  description: Determines how to handle calls with no caller ID in 'Specific' mode
-  type: string
-  enum:
-    - BlockCallsAndFaxes
-    - BlockFaxes
-    - Allow
-payPhones:
-  type: string
-  enum:
-    - Block
-    - Allow
-  description: Blocking settings for pay phones
-greetings:
-  type: array
-  description: List of greetings played for blocked callers
-  items:
-    $ref: '#/definitions/BlockedCallerGreetingInfo'
-```
+{
+  "type": "object",
+  "description": "Returns the lists of blocked and allowed phone numbers",
+  "properties": {
+    "mode": {
+      "type": "string",
+      "enum": [
+        "Specific",
+        "All"
+      ],
+      "description": "Call blocking options: either specific or all calls and faxes"
+    },
+    "noCallerId": {
+      "description": "Determines how to handle calls with no caller ID in 'Specific' mode",
+      "type": "string",
+      "enum": [
+        "BlockCallsAndFaxes",
+        "BlockFaxes",
+        "Allow"
+      ]
+    },
+    "payPhones": {
+      "type": "string",
+      "enum": [
+        "Block",
+        "Allow"
+      ],
+      "description": "Blocking settings for pay phones"
+    },
+    "greetings": {
+      "type": "array",
+      "description": "List of greetings played for blocked callers",
+      "items": {
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Type of a greeting"
+          },
+          "preset": {
+            "properties": {
+              "uri": {
+                "type": "string",
+                "description": "Link to a greeting resource"
+              },
+              "id": {
+                "type": "string",
+                "description": "Internal identifier of a greeting"
+              },
+              "name": {
+                "type": "string",
+                "description": "Name of a greeting"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}```
 
 ## List blocked allowed phone number
 
@@ -3145,9 +4638,9 @@ HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/caller-blocki
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/caller-blocking/phone-numbers`);
 ```
 
@@ -3161,9 +4654,9 @@ HTTP POST /restapi/v1.0/account/{accountId}/extension/{extensionId}/caller-block
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.post(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/caller-blocking/phone-numbers`, addBlockedAllowedPhoneNumber);
 ```
 
@@ -3173,22 +4666,29 @@ const r = await platform.post(`/restapi/v1.0/account/${accountId}/extension/${ex
 `addBlockedAllowedPhoneNumber` is an object with the following properties:
 
 ```yaml
-phoneNumber:
-  type: string
-  description: >-
-    A blocked/allowed phone number in
-    [E.164](https://www.itu.int/rec/T-REC-E.164-201011-I) format
-label:
-  type: string
-  description: Custom name of a blocked/allowed phone number
-status:
-  type: string
-  description: Status of a phone number
-  enum:
-    - Blocked
-    - Allowed
-  default: Blocked
-```
+{
+  "type": "object",
+  "description": "Updates either blocked or allowed phone number list with a new phone number.",
+  "properties": {
+    "phoneNumber": {
+      "type": "string",
+      "description": "A blocked/allowed phone number in [E.164](https://www.itu.int/rec/T-REC-E.164-201011-I) format"
+    },
+    "label": {
+      "type": "string",
+      "description": "Custom name of a blocked/allowed phone number"
+    },
+    "status": {
+      "type": "string",
+      "description": "Status of a phone number",
+      "enum": [
+        "Blocked",
+        "Allowed"
+      ],
+      "default": "Blocked"
+    }
+  }
+}```
 
 ## Create blocked allowed phone number lists
 
@@ -3197,9 +4697,9 @@ HTTP POST /restapi/v1.0/account/{accountId}/extension/{extensionId}/caller-block
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.post(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/caller-blocking/phone-numbers/bulk-update`);
 ```
 
@@ -3213,9 +4713,9 @@ HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/caller-blocki
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/caller-blocking/phone-numbers/${blockedNumberId}`);
 ```
 
@@ -3229,9 +4729,9 @@ HTTP DELETE /restapi/v1.0/account/{accountId}/extension/{extensionId}/caller-blo
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.delete(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/caller-blocking/phone-numbers/${blockedNumberId}`);
 ```
 
@@ -3245,9 +4745,9 @@ HTTP PUT /restapi/v1.0/account/{accountId}/extension/{extensionId}/caller-blocki
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.put(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/caller-blocking/phone-numbers/${blockedNumberId}`, addBlockedAllowedPhoneNumber);
 ```
 
@@ -3257,22 +4757,29 @@ const r = await platform.put(`/restapi/v1.0/account/${accountId}/extension/${ext
 `addBlockedAllowedPhoneNumber` is an object with the following properties:
 
 ```yaml
-phoneNumber:
-  type: string
-  description: >-
-    A blocked/allowed phone number in
-    [E.164](https://www.itu.int/rec/T-REC-E.164-201011-I) format
-label:
-  type: string
-  description: Custom name of a blocked/allowed phone number
-status:
-  type: string
-  description: Status of a phone number
-  enum:
-    - Blocked
-    - Allowed
-  default: Blocked
-```
+{
+  "type": "object",
+  "description": "Updates either blocked or allowed phone number list with a new phone number.",
+  "properties": {
+    "phoneNumber": {
+      "type": "string",
+      "description": "A blocked/allowed phone number in [E.164](https://www.itu.int/rec/T-REC-E.164-201011-I) format"
+    },
+    "label": {
+      "type": "string",
+      "description": "Custom name of a blocked/allowed phone number"
+    },
+    "status": {
+      "type": "string",
+      "description": "Status of a phone number",
+      "enum": [
+        "Blocked",
+        "Allowed"
+      ],
+      "default": "Blocked"
+    }
+  }
+}```
 
 ## List extension forwarding numbers
 
@@ -3281,9 +4788,9 @@ HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/forwarding-nu
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/forwarding-number`);
 ```
 
@@ -3297,9 +4804,9 @@ HTTP POST /restapi/v1.0/account/{accountId}/extension/{extensionId}/forwarding-n
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.post(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/forwarding-number`, createForwardingNumberRequest);
 ```
 
@@ -3309,29 +4816,39 @@ const r = await platform.post(`/restapi/v1.0/account/${accountId}/extension/${ex
 `createForwardingNumberRequest` is an object with the following properties:
 
 ```yaml
-phoneNumber:
-  type: string
-  description: Forwarding/Call flip phone number
-label:
-  type: string
-  description: Forwarding/Call flip number title
-type:
-  type: string
-  description: >-
-    Forwarding/Call flip phone type. If specified, 'label' attribute value is
-    ignored. The default value is 'Other'
-  enum:
-    - PhoneLine
-    - Home
-    - Mobile
-    - Work
-    - Other
-device:
-  description: >-
-    Reference to the other extension device. Applicable for 'PhoneLine' type
-    only. Cannot be specified together with 'phoneNumber' parameter.
-  $ref: '#/definitions/CreateForwardingNumberDeviceInfo'
-```
+{
+  "type": "object",
+  "properties": {
+    "phoneNumber": {
+      "type": "string",
+      "description": "Forwarding/Call flip phone number"
+    },
+    "label": {
+      "type": "string",
+      "description": "Forwarding/Call flip number title"
+    },
+    "type": {
+      "type": "string",
+      "description": "Forwarding/Call flip phone type. If specified, 'label' attribute value is ignored. The default value is 'Other'",
+      "enum": [
+        "PhoneLine",
+        "Home",
+        "Mobile",
+        "Work",
+        "Other"
+      ]
+    },
+    "device": {
+      "description": "Reference to the other extension device. Applicable for 'PhoneLine' type only. Cannot be specified together with 'phoneNumber' parameter.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Internal identifier of the other extension device"
+        }
+      }
+    }
+  }
+}```
 
 ## Load extension forwarding number
 
@@ -3340,9 +4857,9 @@ HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/forwarding-nu
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/forwarding-number/${forwardingNumberId}`);
 ```
 
@@ -3356,9 +4873,9 @@ HTTP PUT /restapi/v1.0/account/{accountId}/extension/{extensionId}/forwarding-nu
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.put(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/forwarding-number/${forwardingNumberId}`, updateForwardingNumberRequest);
 ```
 
@@ -3368,28 +4885,35 @@ const r = await platform.put(`/restapi/v1.0/account/${accountId}/extension/${ext
 `updateForwardingNumberRequest` is an object with the following properties:
 
 ```yaml
-phoneNumber:
-  type: string
-  description: Forwarding/Call flip phone number
-label:
-  type: string
-  description: Forwarding/Call flip number title
-flipNumber:
-  type: string
-  description: >-
-    Number assigned to the call flip phone number, corresponds to the shortcut
-    dial number
-type:
-  type: string
-  description: Forwarding phone number type
-  enum:
-    - Home
-    - Mobile
-    - Work
-    - PhoneLine
-    - Outage
-    - Other
-```
+{
+  "type": "object",
+  "properties": {
+    "phoneNumber": {
+      "type": "string",
+      "description": "Forwarding/Call flip phone number"
+    },
+    "label": {
+      "type": "string",
+      "description": "Forwarding/Call flip number title"
+    },
+    "flipNumber": {
+      "type": "string",
+      "description": "Number assigned to the call flip phone number, corresponds to the shortcut dial number"
+    },
+    "type": {
+      "type": "string",
+      "description": "Forwarding phone number type",
+      "enum": [
+        "Home",
+        "Mobile",
+        "Work",
+        "PhoneLine",
+        "Outage",
+        "Other"
+      ]
+    }
+  }
+}```
 
 ## Delete extension forwarding number
 
@@ -3398,9 +4922,9 @@ HTTP DELETE /restapi/v1.0/account/{accountId}/extension/{extensionId}/forwarding
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.delete(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/forwarding-number/${forwardingNumberId}`);
 ```
 
@@ -3414,9 +4938,9 @@ HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/answering-rul
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/answering-rule`);
 ```
 
@@ -3430,9 +4954,9 @@ HTTP POST /restapi/v1.0/account/{accountId}/extension/{extensionId}/answering-ru
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.post(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/answering-rule`, createAnsweringRuleRequest);
 ```
 
@@ -3442,85 +4966,507 @@ const r = await platform.post(`/restapi/v1.0/account/${accountId}/extension/${ex
 `createAnsweringRuleRequest` is an object with the following properties:
 
 ```yaml
-enabled:
-  type: boolean
-  description: Specifies if the rule is active or inactive. The default value is 'True'
-type:
-  type: string
-  description: Type of an answering rule. The 'Custom' value should be specified
-name:
-  type: string
-  description: Name of an answering rule specified by user
-callers:
-  type: array
-  description: >-
-    Answering rule will be applied when calls are received from the specified
-    caller(s)
-  items:
-    $ref: '#/definitions/CallersInfoRequest'
-calledNumbers:
-  type: array
-  description: Answering rules are applied when calling to selected number(s)
-  items:
-    $ref: '#/definitions/CalledNumberInfo'
-schedule:
-  description: Schedule when an answering rule should be applied
-  $ref: '#/definitions/ScheduleInfo'
-callHandlingAction:
-  type: string
-  description: Specifies how incoming calls are forwarded
-  enum:
-    - ForwardCalls
-    - UnconditionalForwarding
-    - AgentQueue
-    - TransferToExtension
-    - TakeMessagesOnly
-    - PlayAnnouncementOnly
-forwarding:
-  description: >-
-    Forwarding parameters. Returned if 'ForwardCalls' is specified in
-    'callHandlingAction'. These settings determine the forwarding numbers to
-    which the call will be forwarded
-  $ref: '#/definitions/ForwardingInfo'
-unconditionalForwarding:
-  description: >-
-    Unconditional forwarding parameters. Returned if 'UnconditionalForwarding'
-    is specified in 'callHandlingAction'
-  $ref: '#/definitions/UnconditionalForwardingInfo'
-queue:
-  description: >-
-    Queue settings applied for department (call queue) extension type, with the
-    'AgentQueue' value specified as a call handling action
-  $ref: '#/definitions/QueueInfo'
-transfer:
-  description: >-
-    Transfer settings applied for department (call queue) extension type, with
-    'TransferToExtension' call handling action
-  $ref: '#/definitions/TransferredExtensionInfo'
-voicemail:
-  description: Specifies whether to take a voicemail and who should do it
-  $ref: '#/definitions/VoicemailInfo'
-greetings:
-  type: array
-  description: >-
-    Greetings applied for an answering rule; only predefined greetings can be
-    applied, see Dictionary Greeting List
-  items:
-    $ref: '#/definitions/GreetingInfo'
-screening:
-  type: string
-  description: >-
-    Call screening status. 'Off' - no call screening; 'NoCallerId' - if caller
-    ID is missing, then callers are asked to say their name before connecting;
-    'UnknownCallerId' - if caller ID is not in contact list, then callers are
-    asked to say their name before connecting; 'Always' - the callers are always
-    asked to say their name before connecting. The default value is 'Off'
-  enum:
-    - 'Off'
-    - NoCallerId
-    - UnknownCallerId
-    - Always
-```
+{
+  "type": "object",
+  "required": [
+    "name",
+    "type"
+  ],
+  "properties": {
+    "enabled": {
+      "type": "boolean",
+      "description": "Specifies if the rule is active or inactive. The default value is 'True'"
+    },
+    "type": {
+      "type": "string",
+      "description": "Type of an answering rule. The 'Custom' value should be specified"
+    },
+    "name": {
+      "type": "string",
+      "description": "Name of an answering rule specified by user"
+    },
+    "callers": {
+      "type": "array",
+      "description": "Answering rule will be applied when calls are received from the specified caller(s)",
+      "items": {
+        "properties": {
+          "callerId": {
+            "type": "string",
+            "description": "Phone number of a caller"
+          },
+          "name": {
+            "type": "string",
+            "description": "Contact name of a caller"
+          }
+        }
+      }
+    },
+    "calledNumbers": {
+      "type": "array",
+      "description": "Answering rules are applied when calling to selected number(s)",
+      "items": {
+        "properties": {
+          "phoneNumber": {
+            "type": "string",
+            "description": "Called phone number"
+          }
+        }
+      }
+    },
+    "schedule": {
+      "description": "Schedule when an answering rule should be applied",
+      "properties": {
+        "weeklyRanges": {
+          "description": "Weekly schedule",
+          "properties": {
+            "monday": {
+              "type": "array",
+              "description": "Time intervals for a particular day",
+              "items": {
+                "properties": {
+                  "from": {
+                    "type": "string",
+                    "description": "Time in format hh:mm"
+                  },
+                  "to": {
+                    "type": "string",
+                    "description": "Time in format hh:mm"
+                  }
+                }
+              }
+            },
+            "tuesday": {
+              "type": "array",
+              "description": "Time intervals for a particular day",
+              "items": {
+                "properties": {
+                  "from": {
+                    "type": "string",
+                    "description": "Time in format hh:mm"
+                  },
+                  "to": {
+                    "type": "string",
+                    "description": "Time in format hh:mm"
+                  }
+                }
+              }
+            },
+            "wednesday": {
+              "type": "array",
+              "description": "Time intervals for a particular day",
+              "items": {
+                "properties": {
+                  "from": {
+                    "type": "string",
+                    "description": "Time in format hh:mm"
+                  },
+                  "to": {
+                    "type": "string",
+                    "description": "Time in format hh:mm"
+                  }
+                }
+              }
+            },
+            "thursday": {
+              "type": "array",
+              "description": "Time intervals for a particular day",
+              "items": {
+                "properties": {
+                  "from": {
+                    "type": "string",
+                    "description": "Time in format hh:mm"
+                  },
+                  "to": {
+                    "type": "string",
+                    "description": "Time in format hh:mm"
+                  }
+                }
+              }
+            },
+            "friday": {
+              "type": "array",
+              "description": "Time intervals for a particular day",
+              "items": {
+                "properties": {
+                  "from": {
+                    "type": "string",
+                    "description": "Time in format hh:mm"
+                  },
+                  "to": {
+                    "type": "string",
+                    "description": "Time in format hh:mm"
+                  }
+                }
+              }
+            },
+            "saturday": {
+              "type": "array",
+              "description": "Time intervals for a particular day",
+              "items": {
+                "properties": {
+                  "from": {
+                    "type": "string",
+                    "description": "Time in format hh:mm"
+                  },
+                  "to": {
+                    "type": "string",
+                    "description": "Time in format hh:mm"
+                  }
+                }
+              }
+            },
+            "sunday": {
+              "type": "array",
+              "description": "Time intervals for a particular day",
+              "items": {
+                "properties": {
+                  "from": {
+                    "type": "string",
+                    "description": "Time in format hh:mm"
+                  },
+                  "to": {
+                    "type": "string",
+                    "description": "Time in format hh:mm"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "ranges": {
+          "description": "Specific data ranges",
+          "type": "array",
+          "items": {
+            "properties": {
+              "from": {
+                "type": "string",
+                "description": "Starting datetime in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601), for example *2018-10-29T14:00:00*, *2018-10-29T14:00:00Z*, *2018-10-29T14:00:00+0100*"
+              },
+              "to": {
+                "type": "string",
+                "description": "Ending datetime in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601), for example *2018-10-29T14:00:00*, *2018-10-29T14:00:00Z*, *2018-10-29T14:00:00+0100*"
+              }
+            }
+          }
+        },
+        "ref": {
+          "type": "string",
+          "description": "The user's schedule specified for business hours or after hours; it can also be set/retrieved calling the corresponding method",
+          "enum": [
+            "BusinessHours",
+            "AfterHours"
+          ]
+        }
+      }
+    },
+    "callHandlingAction": {
+      "type": "string",
+      "description": "Specifies how incoming calls are forwarded",
+      "enum": [
+        "ForwardCalls",
+        "UnconditionalForwarding",
+        "AgentQueue",
+        "TransferToExtension",
+        "TakeMessagesOnly",
+        "PlayAnnouncementOnly"
+      ]
+    },
+    "forwarding": {
+      "description": "Forwarding parameters. Returned if 'ForwardCalls' is specified in 'callHandlingAction'. These settings determine the forwarding numbers to which the call will be forwarded",
+      "properties": {
+        "notifyMySoftPhones": {
+          "type": "boolean",
+          "description": "Specifies if the user's softphone(s) are notified before forwarding the incoming call to desk phones and forwarding numbers"
+        },
+        "notifyAdminSoftPhones": {
+          "type": "boolean",
+          "description": "Specifies if the administrator's softphone is notified before forwarding the incoming call to desk phones and forwarding numbers. The default value is 'False'"
+        },
+        "softPhonesRingCount": {
+          "type": "integer",
+          "description": "Number of rings before forwarding starts"
+        },
+        "ringingMode": {
+          "type": "string",
+          "description": "Specifies the order in which forwarding numbers ring. 'Sequentially' means that forwarding numbers are ringing one at a time, in order of priority. 'Simultaneously' means that forwarding numbers are ring all at the same time",
+          "enum": [
+            "Sequentially",
+            "Simultaneously"
+          ]
+        },
+        "rules": {
+          "type": "array",
+          "description": "Information on a call forwarding rule",
+          "items": {
+            "properties": {
+              "index": {
+                "type": "integer",
+                "description": "Forwarding number (or group) ordinal"
+              },
+              "ringCount": {
+                "type": "integer",
+                "description": "Number of rings for a forwarding number (or group)"
+              },
+              "enabled": {
+                "type": "boolean",
+                "description": "Forwarding number status. Returned only if `showInactiveNumbers` is set to `true`"
+              },
+              "forwardingNumbers": {
+                "type": "array",
+                "description": "Forwarding number (or group) data",
+                "items": {
+                  "properties": {
+                    "uri": {
+                      "type": "string",
+                      "description": "Link to a forwarding number resource"
+                    },
+                    "id": {
+                      "type": "string",
+                      "description": "Internal identifier of a forwarding number"
+                    },
+                    "phoneNumber": {
+                      "type": "string",
+                      "description": "Phone number to which the call is forwarded"
+                    },
+                    "label": {
+                      "type": "string",
+                      "description": "Title of a forwarding number"
+                    },
+                    "type": {
+                      "type": "string",
+                      "description": "Type of a forwarding number",
+                      "enum": [
+                        "Home",
+                        "Mobile",
+                        "Work",
+                        "PhoneLine",
+                        "Outage",
+                        "Other"
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "mobileTimeout": {
+          "type": "boolean",
+          "description": "Specifies if mobile timeout is activated for the rule"
+        }
+      }
+    },
+    "unconditionalForwarding": {
+      "description": "Unconditional forwarding parameters. Returned if 'UnconditionalForwarding' is specified in 'callHandlingAction'",
+      "properties": {
+        "phoneNumber": {
+          "type": "string",
+          "description": "Phone number to which the call is forwarded"
+        }
+      }
+    },
+    "queue": {
+      "description": "Queue settings applied for department (call queue) extension type, with the 'AgentQueue' value specified as a call handling action",
+      "properties": {
+        "transferMode": {
+          "type": "string",
+          "description": "Specifies how calls are transferred to group members",
+          "enum": [
+            "Rotating",
+            "Simultaneous",
+            "FixedOrder"
+          ]
+        },
+        "fixedOrderAgents": {
+          "type": "array",
+          "description": "Information on a call forwarding rule",
+          "items": {
+            "properties": {
+              "extension": {
+                "properties": {
+                  "id": {
+                    "type": "string",
+                    "description": "Internal identifier of an extension"
+                  },
+                  "uri": {
+                    "type": "string",
+                    "description": "Canonical URI of an extension"
+                  },
+                  "extensionNumber": {
+                    "type": "string",
+                    "description": "Number of department extension"
+                  },
+                  "partnerId": {
+                    "type": "string",
+                    "description": "For Partner Applications Internal identifier of an extension created by partner. The RingCentral supports the mapping of accounts and stores the corresponding account ID/extension ID for each partner ID of a client application. In request URIs partner IDs are accepted instead of regular RingCentral native IDs as path parameters using pid = XXX clause. Though in response URIs contain the corresponding account IDs and extension IDs. In all request and response bodies these values are reflected via partnerId attributes of account and extension"
+                  }
+                }
+              },
+              "index": {
+                "type": "integer",
+                "description": "Ordinal of an agent (call queue member)"
+              }
+            }
+          }
+        },
+        "holdAudioInterruptionMode": {
+          "type": "string",
+          "description": "Connecting audio interruption mode",
+          "enum": [
+            "Never",
+            "WhenMusicEnds",
+            "Periodically"
+          ]
+        },
+        "holdAudioInterruptionPeriod": {
+          "type": "integer",
+          "description": "Connecting audio interruption message period in seconds"
+        },
+        "agentTimeout": {
+          "type": "integer",
+          "description": "Maximum time in seconds to wait for a call queue member before trying the next member"
+        },
+        "wrapUpTime": {
+          "type": "integer",
+          "description": "Minimum post-call wrap up time in seconds before agent status is automatically set"
+        },
+        "holdTime": {
+          "type": "integer",
+          "description": "Maximum hold time in seconds to wait for an available call queue member"
+        },
+        "maxCallers": {
+          "type": "integer",
+          "description": "Maximum count of callers on hold"
+        },
+        "maxCallersAction": {
+          "type": "string",
+          "description": "Action which should be taken if count of callers on hold exceeds the maximum",
+          "enum": [
+            "Voicemail",
+            "Announcement"
+          ]
+        }
+      }
+    },
+    "transfer": {
+      "description": "Transfer settings applied for department (call queue) extension type, with 'TransferToExtension' call handling action",
+      "properties": {
+        "extension": {
+          "properties": {
+            "id": {
+              "type": "string",
+              "description": "Internal identifier of an extension"
+            },
+            "uri": {
+              "type": "string",
+              "description": "Canonical URI of an extension"
+            },
+            "extensionNumber": {
+              "type": "string",
+              "description": "Number of department extension"
+            },
+            "partnerId": {
+              "type": "string",
+              "description": "For Partner Applications Internal identifier of an extension created by partner. The RingCentral supports the mapping of accounts and stores the corresponding account ID/extension ID for each partner ID of a client application. In request URIs partner IDs are accepted instead of regular RingCentral native IDs as path parameters using pid = XXX clause. Though in response URIs contain the corresponding account IDs and extension IDs. In all request and response bodies these values are reflected via partnerId attributes of account and extension"
+            }
+          }
+        }
+      }
+    },
+    "voicemail": {
+      "description": "Specifies whether to take a voicemail and who should do it",
+      "properties": {
+        "enabled": {
+          "type": "boolean",
+          "description": "If 'True' then voicemails are allowed to be received"
+        },
+        "recipient": {
+          "description": "Recipient data",
+          "properties": {
+            "uri": {
+              "type": "string",
+              "description": "Link to a recipient extension resource"
+            },
+            "id": {
+              "type": "string",
+              "description": "Internal identifier of a recipient extension"
+            }
+          }
+        }
+      }
+    },
+    "greetings": {
+      "type": "array",
+      "description": "Greetings applied for an answering rule; only predefined greetings can be applied, see Dictionary Greeting List",
+      "items": {
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Type of a greeting, specifying the case when the greeting is played.",
+            "enum": [
+              "Introductory",
+              "Announcement",
+              "ConnectingMessage",
+              "ConnectingAudio",
+              "Voicemail",
+              "Unavailable",
+              "InterruptPrompt",
+              "HoldMusic",
+              "Custom",
+              "Company",
+              "BlockedCallersSpecific",
+              "BlockedCallersAll",
+              "BlockedNoCallerId",
+              "BlockedPayPhones",
+              "StartRecording",
+              "StopRecording",
+              "AutomaticRecording"
+            ]
+          },
+          "usageType": {
+            "type": "string",
+            "description": "Usage type of a greeting, specifying if the greeting is applied to user extension or department extension.",
+            "enum": [
+              "UserExtensionAnsweringRule",
+              "ExtensionAnsweringRule",
+              "DepartmentExtensionAnsweringRule",
+              "CompanyAnsweringRule",
+              "CompanyAfterHoursAnsweringRule",
+              "VoicemailExtensionAnsweringRule",
+              "AnnouncementExtensionAnsweringRule"
+            ]
+          },
+          "preset": {
+            "properties": {
+              "uri": {
+                "type": "string",
+                "description": "Link to a greeting resource"
+              },
+              "id": {
+                "type": "string",
+                "description": "Internal identifier of a greeting"
+              },
+              "name": {
+                "type": "string",
+                "description": "Name of a greeting"
+              }
+            }
+          }
+        }
+      }
+    },
+    "screening": {
+      "type": "string",
+      "description": "Call screening status. 'Off' - no call screening; 'NoCallerId' - if caller ID is missing, then callers are asked to say their name before connecting; 'UnknownCallerId' - if caller ID is not in contact list, then callers are asked to say their name before connecting; 'Always' - the callers are always asked to say their name before connecting. The default value is 'Off'",
+      "enum": [
+        "Off",
+        "NoCallerId",
+        "UnknownCallerId",
+        "Always"
+      ]
+    }
+  }
+}```
 
 ## Load answering rule
 
@@ -3529,9 +5475,9 @@ HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/answering-rul
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/answering-rule/${ruleId}`);
 ```
 
@@ -3545,9 +5491,9 @@ HTTP PUT /restapi/v1.0/account/{accountId}/extension/{extensionId}/answering-rul
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.put(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/answering-rule/${ruleId}`, updateAnsweringRuleRequest);
 ```
 
@@ -3557,80 +5503,467 @@ const r = await platform.put(`/restapi/v1.0/account/${accountId}/extension/${ext
 `updateAnsweringRuleRequest` is an object with the following properties:
 
 ```yaml
-forwarding:
-  description: >-
-    Forwarding parameters. Returned if 'ForwardCalls' is specified in
-    'callHandlingAction'. These settings determine the forwarding numbers to
-    which the call will be forwarded
-  $ref: '#/definitions/ForwardingInfoCreateRuleRequest'
-enabled:
-  type: boolean
-  description: Specifies if the rule is active or inactive. The default value is 'True'
-name:
-  type: string
-  description: Name of an answering rule specified by user
-callers:
-  type: array
-  description: >-
-    Answering rule will be applied when calls are received from the specified
-    caller(s)
-  items:
-    $ref: '#/definitions/CallersInfoRequest'
-calledNumbers:
-  type: array
-  description: Answering rules are applied when calling to selected number(s)
-  items:
-    $ref: '#/definitions/CalledNumberInfo'
-schedule:
-  description: Schedule when an answering rule should be applied
-  $ref: '#/definitions/ScheduleInfo'
-callHandlingAction:
-  type: string
-  description: Specifies how incoming calls are forwarded
-  enum:
-    - ForwardCalls
-    - UnconditionalForwarding
-    - AgentQueue
-    - TransferToExtension
-    - TakeMessagesOnly
-    - PlayAnnouncementOnly
-unconditionalForwarding:
-  description: >-
-    Unconditional forwarding parameters. Returned if 'UnconditionalForwarding'
-    is specified in 'callHandlingAction'
-  $ref: '#/definitions/UnconditionalForwardingInfo'
-queue:
-  description: >-
-    Queue settings applied for department (call queue) extension type, with the
-    'AgentQueue' value specified as a call handling action
-  $ref: '#/definitions/QueueInfo'
-voicemail:
-  description: Specifies whether to take a voicemail and who should do it
-  $ref: '#/definitions/VoicemailInfo'
-greetings:
-  type: array
-  description: >-
-    Greetings applied for an answering rule; only predefined greetings can be
-    applied, see Dictionary Greeting List
-  items:
-    $ref: '#/definitions/GreetingInfo'
-screening:
-  type: string
-  description: >-
-    Call screening status. 'Off' - no call screening; 'NoCallerId' - if caller
-    ID is missing, then callers are asked to say their name before connecting;
-    'UnknownCallerId' - if caller ID is not in contact list, then callers are
-    asked to say their name before connecting; 'Always' - the callers are always
-    asked to say their name before connecting. The default value is 'Off'
-  enum:
-    - 'Off'
-    - NoCallerId
-    - UnknownCallerId
-    - Always
-showInactiveNumbers:
-  type: boolean
-  description: Indicates whether inactive numbers should be returned or not.
-```
+{
+  "type": "object",
+  "properties": {
+    "forwarding": {
+      "description": "Forwarding parameters. Returned if 'ForwardCalls' is specified in 'callHandlingAction'. These settings determine the forwarding numbers to which the call will be forwarded",
+      "properties": {
+        "notifyMySoftPhones": {
+          "type": "boolean",
+          "description": "Specifies if the first ring on desktop/mobile apps is enabled. The default value is 'True'"
+        },
+        "notifyAdminSoftPhones": {
+          "type": "boolean",
+          "description": "Specifies if the administrator's softphone (desktop application) is notified before forwarding the incoming call to desk phones and forwarding numbers. The default value is 'True'"
+        },
+        "softPhonesRingCount": {
+          "type": "integer",
+          "default": 1,
+          "description": "Specifies delay between ring on apps and starting of a call forwarding"
+        },
+        "ringingMode": {
+          "type": "string",
+          "description": "Specifies the order in which forwarding numbers ring. 'Sequentially' means that forwarding numbers are ringing one at a time, in order of priority. 'Simultaneously' means that forwarding numbers are ringing all at the same time. The default value is 'Sequentially'",
+          "enum": [
+            "Sequentially",
+            "Simultaneously"
+          ]
+        },
+        "rules": {
+          "type": "array",
+          "description": "Information on a call forwarding rule",
+          "items": {
+            "properties": {
+              "index": {
+                "type": "integer",
+                "description": "Forwarding number (or group) ordinal. Not returned for inactive numbers"
+              },
+              "ringCount": {
+                "type": "integer",
+                "description": "Number of rings for a forwarding number (or group). For inactive numbers the default value ('4') is returned"
+              },
+              "enabled": {
+                "type": "boolean",
+                "description": "Phone number status"
+              },
+              "forwardingNumbers": {
+                "type": "array",
+                "description": "Forwarding number (or group) data",
+                "items": {
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "description": "Internal identifier of a forwarding number"
+                    },
+                    "type": {
+                      "type": "string",
+                      "description": "Forwarding phone number type",
+                      "enum": [
+                        "Home",
+                        "Mobile",
+                        "Work",
+                        "PhoneLine",
+                        "Outage",
+                        "Other"
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "mobileTimeout": {
+          "type": "boolean",
+          "description": "Specifies if mobile timeout is activated for the rule"
+        }
+      }
+    },
+    "enabled": {
+      "type": "boolean",
+      "description": "Specifies if the rule is active or inactive. The default value is 'True'"
+    },
+    "name": {
+      "type": "string",
+      "description": "Name of an answering rule specified by user"
+    },
+    "callers": {
+      "type": "array",
+      "description": "Answering rule will be applied when calls are received from the specified caller(s)",
+      "items": {
+        "properties": {
+          "callerId": {
+            "type": "string",
+            "description": "Phone number of a caller"
+          },
+          "name": {
+            "type": "string",
+            "description": "Contact name of a caller"
+          }
+        }
+      }
+    },
+    "calledNumbers": {
+      "type": "array",
+      "description": "Answering rules are applied when calling to selected number(s)",
+      "items": {
+        "properties": {
+          "phoneNumber": {
+            "type": "string",
+            "description": "Called phone number"
+          }
+        }
+      }
+    },
+    "schedule": {
+      "description": "Schedule when an answering rule should be applied",
+      "properties": {
+        "weeklyRanges": {
+          "description": "Weekly schedule",
+          "properties": {
+            "monday": {
+              "type": "array",
+              "description": "Time intervals for a particular day",
+              "items": {
+                "properties": {
+                  "from": {
+                    "type": "string",
+                    "description": "Time in format hh:mm"
+                  },
+                  "to": {
+                    "type": "string",
+                    "description": "Time in format hh:mm"
+                  }
+                }
+              }
+            },
+            "tuesday": {
+              "type": "array",
+              "description": "Time intervals for a particular day",
+              "items": {
+                "properties": {
+                  "from": {
+                    "type": "string",
+                    "description": "Time in format hh:mm"
+                  },
+                  "to": {
+                    "type": "string",
+                    "description": "Time in format hh:mm"
+                  }
+                }
+              }
+            },
+            "wednesday": {
+              "type": "array",
+              "description": "Time intervals for a particular day",
+              "items": {
+                "properties": {
+                  "from": {
+                    "type": "string",
+                    "description": "Time in format hh:mm"
+                  },
+                  "to": {
+                    "type": "string",
+                    "description": "Time in format hh:mm"
+                  }
+                }
+              }
+            },
+            "thursday": {
+              "type": "array",
+              "description": "Time intervals for a particular day",
+              "items": {
+                "properties": {
+                  "from": {
+                    "type": "string",
+                    "description": "Time in format hh:mm"
+                  },
+                  "to": {
+                    "type": "string",
+                    "description": "Time in format hh:mm"
+                  }
+                }
+              }
+            },
+            "friday": {
+              "type": "array",
+              "description": "Time intervals for a particular day",
+              "items": {
+                "properties": {
+                  "from": {
+                    "type": "string",
+                    "description": "Time in format hh:mm"
+                  },
+                  "to": {
+                    "type": "string",
+                    "description": "Time in format hh:mm"
+                  }
+                }
+              }
+            },
+            "saturday": {
+              "type": "array",
+              "description": "Time intervals for a particular day",
+              "items": {
+                "properties": {
+                  "from": {
+                    "type": "string",
+                    "description": "Time in format hh:mm"
+                  },
+                  "to": {
+                    "type": "string",
+                    "description": "Time in format hh:mm"
+                  }
+                }
+              }
+            },
+            "sunday": {
+              "type": "array",
+              "description": "Time intervals for a particular day",
+              "items": {
+                "properties": {
+                  "from": {
+                    "type": "string",
+                    "description": "Time in format hh:mm"
+                  },
+                  "to": {
+                    "type": "string",
+                    "description": "Time in format hh:mm"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "ranges": {
+          "description": "Specific data ranges",
+          "type": "array",
+          "items": {
+            "properties": {
+              "from": {
+                "type": "string",
+                "description": "Starting datetime in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601), for example *2018-10-29T14:00:00*, *2018-10-29T14:00:00Z*, *2018-10-29T14:00:00+0100*"
+              },
+              "to": {
+                "type": "string",
+                "description": "Ending datetime in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601), for example *2018-10-29T14:00:00*, *2018-10-29T14:00:00Z*, *2018-10-29T14:00:00+0100*"
+              }
+            }
+          }
+        },
+        "ref": {
+          "type": "string",
+          "description": "The user's schedule specified for business hours or after hours; it can also be set/retrieved calling the corresponding method",
+          "enum": [
+            "BusinessHours",
+            "AfterHours"
+          ]
+        }
+      }
+    },
+    "callHandlingAction": {
+      "type": "string",
+      "description": "Specifies how incoming calls are forwarded",
+      "enum": [
+        "ForwardCalls",
+        "UnconditionalForwarding",
+        "AgentQueue",
+        "TransferToExtension",
+        "TakeMessagesOnly",
+        "PlayAnnouncementOnly"
+      ]
+    },
+    "unconditionalForwarding": {
+      "description": "Unconditional forwarding parameters. Returned if 'UnconditionalForwarding' is specified in 'callHandlingAction'",
+      "properties": {
+        "phoneNumber": {
+          "type": "string",
+          "description": "Phone number to which the call is forwarded"
+        }
+      }
+    },
+    "queue": {
+      "description": "Queue settings applied for department (call queue) extension type, with the 'AgentQueue' value specified as a call handling action",
+      "properties": {
+        "transferMode": {
+          "type": "string",
+          "description": "Specifies how calls are transferred to group members",
+          "enum": [
+            "Rotating",
+            "Simultaneous",
+            "FixedOrder"
+          ]
+        },
+        "fixedOrderAgents": {
+          "type": "array",
+          "description": "Information on a call forwarding rule",
+          "items": {
+            "properties": {
+              "extension": {
+                "properties": {
+                  "id": {
+                    "type": "string",
+                    "description": "Internal identifier of an extension"
+                  },
+                  "uri": {
+                    "type": "string",
+                    "description": "Canonical URI of an extension"
+                  },
+                  "extensionNumber": {
+                    "type": "string",
+                    "description": "Number of department extension"
+                  },
+                  "partnerId": {
+                    "type": "string",
+                    "description": "For Partner Applications Internal identifier of an extension created by partner. The RingCentral supports the mapping of accounts and stores the corresponding account ID/extension ID for each partner ID of a client application. In request URIs partner IDs are accepted instead of regular RingCentral native IDs as path parameters using pid = XXX clause. Though in response URIs contain the corresponding account IDs and extension IDs. In all request and response bodies these values are reflected via partnerId attributes of account and extension"
+                  }
+                }
+              },
+              "index": {
+                "type": "integer",
+                "description": "Ordinal of an agent (call queue member)"
+              }
+            }
+          }
+        },
+        "holdAudioInterruptionMode": {
+          "type": "string",
+          "description": "Connecting audio interruption mode",
+          "enum": [
+            "Never",
+            "WhenMusicEnds",
+            "Periodically"
+          ]
+        },
+        "holdAudioInterruptionPeriod": {
+          "type": "integer",
+          "description": "Connecting audio interruption message period in seconds"
+        },
+        "agentTimeout": {
+          "type": "integer",
+          "description": "Maximum time in seconds to wait for a call queue member before trying the next member"
+        },
+        "wrapUpTime": {
+          "type": "integer",
+          "description": "Minimum post-call wrap up time in seconds before agent status is automatically set"
+        },
+        "holdTime": {
+          "type": "integer",
+          "description": "Maximum hold time in seconds to wait for an available call queue member"
+        },
+        "maxCallers": {
+          "type": "integer",
+          "description": "Maximum count of callers on hold"
+        },
+        "maxCallersAction": {
+          "type": "string",
+          "description": "Action which should be taken if count of callers on hold exceeds the maximum",
+          "enum": [
+            "Voicemail",
+            "Announcement"
+          ]
+        }
+      }
+    },
+    "voicemail": {
+      "description": "Specifies whether to take a voicemail and who should do it",
+      "properties": {
+        "enabled": {
+          "type": "boolean",
+          "description": "If 'True' then voicemails are allowed to be received"
+        },
+        "recipient": {
+          "description": "Recipient data",
+          "properties": {
+            "uri": {
+              "type": "string",
+              "description": "Link to a recipient extension resource"
+            },
+            "id": {
+              "type": "string",
+              "description": "Internal identifier of a recipient extension"
+            }
+          }
+        }
+      }
+    },
+    "greetings": {
+      "type": "array",
+      "description": "Greetings applied for an answering rule; only predefined greetings can be applied, see Dictionary Greeting List",
+      "items": {
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Type of a greeting, specifying the case when the greeting is played.",
+            "enum": [
+              "Introductory",
+              "Announcement",
+              "ConnectingMessage",
+              "ConnectingAudio",
+              "Voicemail",
+              "Unavailable",
+              "InterruptPrompt",
+              "HoldMusic",
+              "Custom",
+              "Company",
+              "BlockedCallersSpecific",
+              "BlockedCallersAll",
+              "BlockedNoCallerId",
+              "BlockedPayPhones",
+              "StartRecording",
+              "StopRecording",
+              "AutomaticRecording"
+            ]
+          },
+          "usageType": {
+            "type": "string",
+            "description": "Usage type of a greeting, specifying if the greeting is applied to user extension or department extension.",
+            "enum": [
+              "UserExtensionAnsweringRule",
+              "ExtensionAnsweringRule",
+              "DepartmentExtensionAnsweringRule",
+              "CompanyAnsweringRule",
+              "CompanyAfterHoursAnsweringRule",
+              "VoicemailExtensionAnsweringRule",
+              "AnnouncementExtensionAnsweringRule"
+            ]
+          },
+          "preset": {
+            "properties": {
+              "uri": {
+                "type": "string",
+                "description": "Link to a greeting resource"
+              },
+              "id": {
+                "type": "string",
+                "description": "Internal identifier of a greeting"
+              },
+              "name": {
+                "type": "string",
+                "description": "Name of a greeting"
+              }
+            }
+          }
+        }
+      }
+    },
+    "screening": {
+      "type": "string",
+      "description": "Call screening status. 'Off' - no call screening; 'NoCallerId' - if caller ID is missing, then callers are asked to say their name before connecting; 'UnknownCallerId' - if caller ID is not in contact list, then callers are asked to say their name before connecting; 'Always' - the callers are always asked to say their name before connecting. The default value is 'Off'",
+      "enum": [
+        "Off",
+        "NoCallerId",
+        "UnknownCallerId",
+        "Always"
+      ]
+    },
+    "showInactiveNumbers": {
+      "type": "boolean",
+      "description": "Indicates whether inactive numbers should be returned or not."
+    }
+  }
+}```
 
 ## Delete answering rule
 
@@ -3639,9 +5972,9 @@ HTTP DELETE /restapi/v1.0/account/{accountId}/extension/{extensionId}/answering-
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.delete(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/answering-rule/${ruleId}`);
 ```
 
@@ -3655,9 +5988,9 @@ HTTP POST /restapi/v1.0/account/{accountId}/answering-rule
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.post(`/restapi/v1.0/account/${accountId}/answering-rule`, companyAnsweringRuleRequest);
 ```
 
@@ -3666,61 +5999,285 @@ const r = await platform.post(`/restapi/v1.0/account/${accountId}/answering-rule
 `companyAnsweringRuleRequest` is an object with the following properties:
 
 ```yaml
-name:
-  type: string
-  description: >-
-    Name of an answering rule specified by user. Max number of symbols is 30.
-    The default value is 'My Rule N' where 'N' is the first free number
-enabled:
-  type: boolean
-  description: Specifies if the rule is active or inactive. The default value is 'True'
-  default: true
-type:
-  type: string
-  description: >-
-    Type of an answering rule, the default value is 'Custom' = ['BusinessHours',
-    'AfterHours', 'Custom']
-  enum:
-    - BusinessHours
-    - AfterHours
-    - Custom
-callers:
-  type: array
-  description: >-
-    Answering rule will be applied when calls are received from the specified
-    caller(s)
-  items:
-    $ref: '#/definitions/CompanyAnsweringRuleCallersInfoRequest'
-calledNumbers:
-  type: array
-  description: Answering rule will be applied when calling the specified number(s)
-  items:
-    $ref: '#/definitions/CompanyAnsweringRuleCalledNumberInfo'
-schedule:
-  description: Schedule when an answering rule should be applied
-  $ref: '#/definitions/CompanyAnsweringRuleScheduleInfoRequest'
-callHandlingAction:
-  type: string
-  description: >-
-    Specifies how incoming calls are forwarded. The default value is 'Operator'
-    'Operator' - play company greeting and forward to operator extension
-    'Disconnect' - play company greeting and disconnect 'Bypass' - bypass
-    greeting to go to selected extension = ['Operator', 'Disconnect', 'Bypass']
-  enum:
-    - Operator
-    - Disconnect
-    - Bypass
-extension:
-  description: Extension to which the call is forwarded in 'Bypass' mode
-  $ref: '#/definitions/CompanyAnsweringRuleCallersInfoRequest'
-greetings:
-  type: array
-  description: >-
-    Greetings applied for an answering rule; only predefined greetings can be
-    applied, see Dictionary Greeting List
-  items:
-    $ref: '#/definitions/GreetingInfo'
-```
+{
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Name of an answering rule specified by user. Max number of symbols is 30. The default value is 'My Rule N' where 'N' is the first free number"
+    },
+    "enabled": {
+      "type": "boolean",
+      "description": "Specifies if the rule is active or inactive. The default value is 'True'",
+      "default": true
+    },
+    "type": {
+      "type": "string",
+      "description": "Type of an answering rule, the default value is 'Custom' = ['BusinessHours', 'AfterHours', 'Custom']",
+      "enum": [
+        "BusinessHours",
+        "AfterHours",
+        "Custom"
+      ]
+    },
+    "callers": {
+      "type": "array",
+      "description": "Answering rule will be applied when calls are received from the specified caller(s)",
+      "items": {
+        "properties": {
+          "callerId": {
+            "type": "string",
+            "description": "Phone number of a caller"
+          },
+          "name": {
+            "type": "string",
+            "description": "Displayed name for a caller ID"
+          }
+        }
+      }
+    },
+    "calledNumbers": {
+      "type": "array",
+      "description": "Answering rule will be applied when calling the specified number(s)",
+      "items": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Internal identifier of an account phone number"
+          }
+        }
+      }
+    },
+    "schedule": {
+      "description": "Schedule when an answering rule should be applied",
+      "properties": {
+        "weeklyRanges": {
+          "description": "Weekly schedule. If specified, ranges cannot be specified",
+          "properties": {
+            "monday": {
+              "type": "array",
+              "description": "Time interval for a particular day",
+              "items": {
+                "properties": {
+                  "from": {
+                    "type": "string",
+                    "description": "Time in format hh:mm"
+                  },
+                  "to": {
+                    "type": "string",
+                    "description": "Time in format hh:mm"
+                  }
+                }
+              }
+            },
+            "tuesday": {
+              "type": "array",
+              "description": "Time interval for a particular day",
+              "items": {
+                "properties": {
+                  "from": {
+                    "type": "string",
+                    "description": "Time in format hh:mm"
+                  },
+                  "to": {
+                    "type": "string",
+                    "description": "Time in format hh:mm"
+                  }
+                }
+              }
+            },
+            "wednesday": {
+              "type": "array",
+              "description": "Time interval for a particular day",
+              "items": {
+                "properties": {
+                  "from": {
+                    "type": "string",
+                    "description": "Time in format hh:mm"
+                  },
+                  "to": {
+                    "type": "string",
+                    "description": "Time in format hh:mm"
+                  }
+                }
+              }
+            },
+            "thursday": {
+              "type": "array",
+              "description": "Time interval for a particular day",
+              "items": {
+                "properties": {
+                  "from": {
+                    "type": "string",
+                    "description": "Time in format hh:mm"
+                  },
+                  "to": {
+                    "type": "string",
+                    "description": "Time in format hh:mm"
+                  }
+                }
+              }
+            },
+            "friday": {
+              "type": "array",
+              "description": "Time interval for a particular day",
+              "items": {
+                "properties": {
+                  "from": {
+                    "type": "string",
+                    "description": "Time in format hh:mm"
+                  },
+                  "to": {
+                    "type": "string",
+                    "description": "Time in format hh:mm"
+                  }
+                }
+              }
+            },
+            "saturday": {
+              "type": "array",
+              "description": "Time interval for a particular day",
+              "items": {
+                "properties": {
+                  "from": {
+                    "type": "string",
+                    "description": "Time in format hh:mm"
+                  },
+                  "to": {
+                    "type": "string",
+                    "description": "Time in format hh:mm"
+                  }
+                }
+              }
+            },
+            "sunday": {
+              "type": "array",
+              "description": "Time interval for a particular day",
+              "items": {
+                "properties": {
+                  "from": {
+                    "type": "string",
+                    "description": "Time in format hh:mm"
+                  },
+                  "to": {
+                    "type": "string",
+                    "description": "Time in format hh:mm"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "ranges": {
+          "description": "Specific data ranges. If specified, weeklyRanges cannot be specified",
+          "type": "array",
+          "items": {
+            "properties": {
+              "from": {
+                "type": "string",
+                "description": "Starting datetime in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601), for example *2018-10-29T14:00:00*, *2018-10-29T14:00:00Z*, *2018-10-29T14:00:00+0100*"
+              },
+              "to": {
+                "type": "string",
+                "description": "Ending datetime in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601), for example *2018-10-29T14:00:00*, *2018-10-29T14:00:00Z*, *2018-10-29T14:00:00+0100*"
+              }
+            }
+          }
+        },
+        "ref": {
+          "type": "string",
+          "description": "Reference to Business Hours or After Hours schedule",
+          "enum": [
+            "BusinessHours",
+            "AfterHours"
+          ]
+        }
+      }
+    },
+    "callHandlingAction": {
+      "type": "string",
+      "description": "Specifies how incoming calls are forwarded. The default value is 'Operator' 'Operator' - play company greeting and forward to operator extension 'Disconnect' - play company greeting and disconnect 'Bypass' - bypass greeting to go to selected extension = ['Operator', 'Disconnect', 'Bypass']",
+      "enum": [
+        "Operator",
+        "Disconnect",
+        "Bypass"
+      ]
+    },
+    "extension": {
+      "description": "Extension to which the call is forwarded in 'Bypass' mode",
+      "properties": {
+        "callerId": {
+          "type": "string",
+          "description": "Phone number of a caller"
+        },
+        "name": {
+          "type": "string",
+          "description": "Displayed name for a caller ID"
+        }
+      }
+    },
+    "greetings": {
+      "type": "array",
+      "description": "Greetings applied for an answering rule; only predefined greetings can be applied, see Dictionary Greeting List",
+      "items": {
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Type of a greeting, specifying the case when the greeting is played.",
+            "enum": [
+              "Introductory",
+              "Announcement",
+              "ConnectingMessage",
+              "ConnectingAudio",
+              "Voicemail",
+              "Unavailable",
+              "InterruptPrompt",
+              "HoldMusic",
+              "Custom",
+              "Company",
+              "BlockedCallersSpecific",
+              "BlockedCallersAll",
+              "BlockedNoCallerId",
+              "BlockedPayPhones",
+              "StartRecording",
+              "StopRecording",
+              "AutomaticRecording"
+            ]
+          },
+          "usageType": {
+            "type": "string",
+            "description": "Usage type of a greeting, specifying if the greeting is applied to user extension or department extension.",
+            "enum": [
+              "UserExtensionAnsweringRule",
+              "ExtensionAnsweringRule",
+              "DepartmentExtensionAnsweringRule",
+              "CompanyAnsweringRule",
+              "CompanyAfterHoursAnsweringRule",
+              "VoicemailExtensionAnsweringRule",
+              "AnnouncementExtensionAnsweringRule"
+            ]
+          },
+          "preset": {
+            "properties": {
+              "uri": {
+                "type": "string",
+                "description": "Link to a greeting resource"
+              },
+              "id": {
+                "type": "string",
+                "description": "Internal identifier of a greeting"
+              },
+              "name": {
+                "type": "string",
+                "description": "Name of a greeting"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}```
 
 ## List company answering rule
 
@@ -3729,9 +6286,9 @@ HTTP GET /restapi/v1.0/account/{accountId}/answering-rule
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/answering-rule`);
 ```
 
@@ -3744,9 +6301,9 @@ HTTP GET /restapi/v1.0/account/{accountId}/answering-rule/{ruleId}
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/answering-rule/${ruleId}`);
 ```
 
@@ -3759,9 +6316,9 @@ HTTP PUT /restapi/v1.0/account/{accountId}/answering-rule/{ruleId}
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.put(`/restapi/v1.0/account/${accountId}/answering-rule/${ruleId}`, companyAnsweringRuleUpdate);
 ```
 
@@ -3770,52 +6327,276 @@ const r = await platform.put(`/restapi/v1.0/account/${accountId}/answering-rule/
 `companyAnsweringRuleUpdate` is an object with the following properties:
 
 ```yaml
-enabled:
-  type: boolean
-  description: Specifies if the rule is active or inactive. The default value is 'True'
-  default: true
-name:
-  type: string
-  description: >-
-    Name of an answering rule specified by user. Max number of symbols is 30.
-    The default value is 'My Rule N' where 'N' is the first free number
-callers:
-  type: array
-  description: >-
-    Answering rule will be applied when calls are received from the specified
-    caller(s)
-  items:
-    $ref: '#/definitions/CompanyAnsweringRuleCallersInfoRequest'
-calledNumbers:
-  type: array
-  description: Answering rule will be applied when calling the specified number(s)
-  items:
-    $ref: '#/definitions/CompanyAnsweringRuleCalledNumberInfo'
-schedule:
-  description: Schedule when an answering rule should be applied
-  $ref: '#/definitions/CompanyAnsweringRuleScheduleInfoRequest'
-callHandlingAction:
-  type: string
-  description: >-
-    Specifies how incoming calls are forwarded. The default value is 'Operator'
-    'Operator' - play company greeting and forward to operator extension
-    'Disconnect' - play company greeting and disconnect 'Bypass' - bypass
-    greeting to go to selected extension = ['Operator', 'Disconnect', 'Bypass']
-  enum:
-    - Operator
-    - Disconnect
-    - Bypass
-extension:
-  description: Extension to which the call is forwarded in 'Bypass' mode
-  $ref: '#/definitions/CompanyAnsweringRuleCallersInfoRequest'
-greetings:
-  type: array
-  description: >-
-    Greetings applied for an answering rule; only predefined greetings can be
-    applied, see Dictionary Greeting List
-  items:
-    $ref: '#/definitions/GreetingInfo'
-```
+{
+  "type": "object",
+  "properties": {
+    "enabled": {
+      "type": "boolean",
+      "description": "Specifies if the rule is active or inactive. The default value is 'True'",
+      "default": true
+    },
+    "name": {
+      "type": "string",
+      "description": "Name of an answering rule specified by user. Max number of symbols is 30. The default value is 'My Rule N' where 'N' is the first free number"
+    },
+    "callers": {
+      "type": "array",
+      "description": "Answering rule will be applied when calls are received from the specified caller(s)",
+      "items": {
+        "properties": {
+          "callerId": {
+            "type": "string",
+            "description": "Phone number of a caller"
+          },
+          "name": {
+            "type": "string",
+            "description": "Displayed name for a caller ID"
+          }
+        }
+      }
+    },
+    "calledNumbers": {
+      "type": "array",
+      "description": "Answering rule will be applied when calling the specified number(s)",
+      "items": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Internal identifier of an account phone number"
+          }
+        }
+      }
+    },
+    "schedule": {
+      "description": "Schedule when an answering rule should be applied",
+      "properties": {
+        "weeklyRanges": {
+          "description": "Weekly schedule. If specified, ranges cannot be specified",
+          "properties": {
+            "monday": {
+              "type": "array",
+              "description": "Time interval for a particular day",
+              "items": {
+                "properties": {
+                  "from": {
+                    "type": "string",
+                    "description": "Time in format hh:mm"
+                  },
+                  "to": {
+                    "type": "string",
+                    "description": "Time in format hh:mm"
+                  }
+                }
+              }
+            },
+            "tuesday": {
+              "type": "array",
+              "description": "Time interval for a particular day",
+              "items": {
+                "properties": {
+                  "from": {
+                    "type": "string",
+                    "description": "Time in format hh:mm"
+                  },
+                  "to": {
+                    "type": "string",
+                    "description": "Time in format hh:mm"
+                  }
+                }
+              }
+            },
+            "wednesday": {
+              "type": "array",
+              "description": "Time interval for a particular day",
+              "items": {
+                "properties": {
+                  "from": {
+                    "type": "string",
+                    "description": "Time in format hh:mm"
+                  },
+                  "to": {
+                    "type": "string",
+                    "description": "Time in format hh:mm"
+                  }
+                }
+              }
+            },
+            "thursday": {
+              "type": "array",
+              "description": "Time interval for a particular day",
+              "items": {
+                "properties": {
+                  "from": {
+                    "type": "string",
+                    "description": "Time in format hh:mm"
+                  },
+                  "to": {
+                    "type": "string",
+                    "description": "Time in format hh:mm"
+                  }
+                }
+              }
+            },
+            "friday": {
+              "type": "array",
+              "description": "Time interval for a particular day",
+              "items": {
+                "properties": {
+                  "from": {
+                    "type": "string",
+                    "description": "Time in format hh:mm"
+                  },
+                  "to": {
+                    "type": "string",
+                    "description": "Time in format hh:mm"
+                  }
+                }
+              }
+            },
+            "saturday": {
+              "type": "array",
+              "description": "Time interval for a particular day",
+              "items": {
+                "properties": {
+                  "from": {
+                    "type": "string",
+                    "description": "Time in format hh:mm"
+                  },
+                  "to": {
+                    "type": "string",
+                    "description": "Time in format hh:mm"
+                  }
+                }
+              }
+            },
+            "sunday": {
+              "type": "array",
+              "description": "Time interval for a particular day",
+              "items": {
+                "properties": {
+                  "from": {
+                    "type": "string",
+                    "description": "Time in format hh:mm"
+                  },
+                  "to": {
+                    "type": "string",
+                    "description": "Time in format hh:mm"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "ranges": {
+          "description": "Specific data ranges. If specified, weeklyRanges cannot be specified",
+          "type": "array",
+          "items": {
+            "properties": {
+              "from": {
+                "type": "string",
+                "description": "Starting datetime in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601), for example *2018-10-29T14:00:00*, *2018-10-29T14:00:00Z*, *2018-10-29T14:00:00+0100*"
+              },
+              "to": {
+                "type": "string",
+                "description": "Ending datetime in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601), for example *2018-10-29T14:00:00*, *2018-10-29T14:00:00Z*, *2018-10-29T14:00:00+0100*"
+              }
+            }
+          }
+        },
+        "ref": {
+          "type": "string",
+          "description": "Reference to Business Hours or After Hours schedule",
+          "enum": [
+            "BusinessHours",
+            "AfterHours"
+          ]
+        }
+      }
+    },
+    "callHandlingAction": {
+      "type": "string",
+      "description": "Specifies how incoming calls are forwarded. The default value is 'Operator' 'Operator' - play company greeting and forward to operator extension 'Disconnect' - play company greeting and disconnect 'Bypass' - bypass greeting to go to selected extension = ['Operator', 'Disconnect', 'Bypass']",
+      "enum": [
+        "Operator",
+        "Disconnect",
+        "Bypass"
+      ]
+    },
+    "extension": {
+      "description": "Extension to which the call is forwarded in 'Bypass' mode",
+      "properties": {
+        "callerId": {
+          "type": "string",
+          "description": "Phone number of a caller"
+        },
+        "name": {
+          "type": "string",
+          "description": "Displayed name for a caller ID"
+        }
+      }
+    },
+    "greetings": {
+      "type": "array",
+      "description": "Greetings applied for an answering rule; only predefined greetings can be applied, see Dictionary Greeting List",
+      "items": {
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Type of a greeting, specifying the case when the greeting is played.",
+            "enum": [
+              "Introductory",
+              "Announcement",
+              "ConnectingMessage",
+              "ConnectingAudio",
+              "Voicemail",
+              "Unavailable",
+              "InterruptPrompt",
+              "HoldMusic",
+              "Custom",
+              "Company",
+              "BlockedCallersSpecific",
+              "BlockedCallersAll",
+              "BlockedNoCallerId",
+              "BlockedPayPhones",
+              "StartRecording",
+              "StopRecording",
+              "AutomaticRecording"
+            ]
+          },
+          "usageType": {
+            "type": "string",
+            "description": "Usage type of a greeting, specifying if the greeting is applied to user extension or department extension.",
+            "enum": [
+              "UserExtensionAnsweringRule",
+              "ExtensionAnsweringRule",
+              "DepartmentExtensionAnsweringRule",
+              "CompanyAnsweringRule",
+              "CompanyAfterHoursAnsweringRule",
+              "VoicemailExtensionAnsweringRule",
+              "AnnouncementExtensionAnsweringRule"
+            ]
+          },
+          "preset": {
+            "properties": {
+              "uri": {
+                "type": "string",
+                "description": "Link to a greeting resource"
+              },
+              "id": {
+                "type": "string",
+                "description": "Internal identifier of a greeting"
+              },
+              "name": {
+                "type": "string",
+                "description": "Name of a greeting"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}```
 
 ## Delete company answering rule
 
@@ -3824,9 +6605,9 @@ HTTP DELETE /restapi/v1.0/account/{accountId}/answering-rule/{ruleId}
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.delete(`/restapi/v1.0/account/${accountId}/answering-rule/${ruleId}`);
 ```
 
@@ -3839,9 +6620,9 @@ HTTP GET /restapi/v1.0/dictionary/greeting
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.get('/restapi/v1.0/dictionary/greeting');
 ```
 
@@ -3853,9 +6634,9 @@ HTTP GET /restapi/v1.0/dictionary/greeting/{greetingId}
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.get(`/restapi/v1.0/dictionary/greeting/${greetingId}`);
 ```
 
@@ -3867,9 +6648,9 @@ HTTP POST /restapi/v1.0/account/{accountId}/greeting
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.post(`/restapi/v1.0/account/${accountId}/greeting`, customCompanyGreetingRequest);
 ```
 
@@ -3878,26 +6659,43 @@ const r = await platform.post(`/restapi/v1.0/account/${accountId}/greeting`, cus
 `customCompanyGreetingRequest` is an object with the following properties:
 
 ```yaml
-type:
-  type: string
-  description: Type of a greeting
-  enum:
-    - Company
-    - StartRecording
-    - StopRecording
-    - AutomaticRecording
-answeringRule:
-  description: Information on an answering rule that the greeting is applied to
-  $ref: '#/definitions/CustomCompanyGreetingAnsweringRuleInfo'
-language:
-  description: >-
-    Information on a greeting language. Supported for types 'StopRecording',
-    'StartRecording', 'AutomaticRecording'
-  $ref: '#/definitions/CustomCompanyGreetingLanguageInfoRequest'
-audio:
-  type: file
-  description: Custom greeting audio
-```
+{
+  "type": "object",
+  "properties": {
+    "type": {
+      "type": "string",
+      "description": "Type of a greeting",
+      "enum": [
+        "Company",
+        "StartRecording",
+        "StopRecording",
+        "AutomaticRecording"
+      ]
+    },
+    "answeringRule": {
+      "description": "Information on an answering rule that the greeting is applied to",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Internal identifier of an answering rule"
+        }
+      }
+    },
+    "language": {
+      "description": "Information on a greeting language. Supported for types 'StopRecording', 'StartRecording', 'AutomaticRecording'",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Internal identifier of a greeting language"
+        }
+      }
+    },
+    "audio": {
+      "type": "file",
+      "description": "Custom greeting audio"
+    }
+  }
+}```
 
 ## Create user custom greeting
 
@@ -3906,9 +6704,9 @@ HTTP POST /restapi/v1.0/account/{accountId}/extension/{extensionId}/greeting
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.post(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/greeting`, customGreetingRequest);
 ```
 
@@ -3918,24 +6716,37 @@ const r = await platform.post(`/restapi/v1.0/account/${accountId}/extension/${ex
 `customGreetingRequest` is an object with the following properties:
 
 ```yaml
-type:
-  type: string
-  description: 'Type of a greeting, specifying the case when the greeting is played.'
-  enum:
-    - Introductory
-    - Announcement
-    - ConnectingMessage
-    - ConnectingAudio
-    - Voicemail
-    - Unavailable
-    - HoldMusic
-answeringRule:
-  description: Information on an answering rule that the greeting is applied to
-  $ref: '#/definitions/CustomGreetingAnsweringRuleInfoRequest'
-audio:
-  type: file
-  description: Custom greeting audio
-```
+{
+  "type": "object",
+  "properties": {
+    "type": {
+      "type": "string",
+      "description": "Type of a greeting, specifying the case when the greeting is played.",
+      "enum": [
+        "Introductory",
+        "Announcement",
+        "ConnectingMessage",
+        "ConnectingAudio",
+        "Voicemail",
+        "Unavailable",
+        "HoldMusic"
+      ]
+    },
+    "answeringRule": {
+      "description": "Information on an answering rule that the greeting is applied to",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Internal identifier of an answering rule"
+        }
+      }
+    },
+    "audio": {
+      "type": "file",
+      "description": "Custom greeting audio"
+    }
+  }
+}```
 
 ## Load custom greeting
 
@@ -3944,9 +6755,9 @@ HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/greeting/{gre
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/greeting/${greetingId}`);
 ```
 
@@ -3960,9 +6771,9 @@ HTTP POST /restapi/v1.0/account/{accountId}/ivr-prompts
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.post(`/restapi/v1.0/account/${accountId}/ivr-prompts`);
 ```
 
@@ -3975,9 +6786,9 @@ HTTP GET /restapi/v1.0/account/{accountId}/ivr-prompts
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/ivr-prompts`);
 ```
 
@@ -3990,9 +6801,9 @@ HTTP GET /restapi/v1.0/account/{accountId}/ivr-prompts/{promptId}
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/ivr-prompts/${promptId}`);
 ```
 
@@ -4005,9 +6816,9 @@ HTTP DELETE /restapi/v1.0/account/{accountId}/ivr-prompts/{promptId}
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.delete(`/restapi/v1.0/account/${accountId}/ivr-prompts/${promptId}`);
 ```
 
@@ -4020,9 +6831,9 @@ HTTP PUT /restapi/v1.0/account/{accountId}/ivr-prompts/{promptId}
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.put(`/restapi/v1.0/account/${accountId}/ivr-prompts/${promptId}`);
 ```
 
@@ -4035,9 +6846,9 @@ HTTP GET /restapi/v1.0/account/{accountId}/ivr-prompts/{promptId}/content
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/ivr-prompts/${promptId}/content`);
 ```
 
@@ -4050,9 +6861,9 @@ HTTP POST /restapi/v1.0/account/{accountId}/ivr-menus
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.post(`/restapi/v1.0/account/${accountId}/ivr-menus`, iVRMenuInfo);
 ```
 
@@ -4061,27 +6872,121 @@ const r = await platform.post(`/restapi/v1.0/account/${accountId}/ivr-menus`, iV
 `iVRMenuInfo` is an object with the following properties:
 
 ```yaml
-id:
-  type: string
-  description: Internal identifier of an IVR Menu extension
-uri:
-  type: string
-  description: Link to an IVR Menu extension resource
-name:
-  type: string
-  description: First name of an IVR Menu user
-extensionNumber:
-  type: string
-  description: Number of an IVR Menu extension
-prompt:
-  description: Prompt metadata
-  $ref: '#/definitions/IVRMenuPromptInfo'
-actions:
-  type: array
-  description: Keys handling settings
-  items:
-    $ref: '#/definitions/IVRMenuActionsInfo'
-```
+{
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Internal identifier of an IVR Menu extension"
+    },
+    "uri": {
+      "type": "string",
+      "description": "Link to an IVR Menu extension resource"
+    },
+    "name": {
+      "type": "string",
+      "description": "First name of an IVR Menu user"
+    },
+    "extensionNumber": {
+      "type": "string",
+      "description": "Number of an IVR Menu extension"
+    },
+    "prompt": {
+      "description": "Prompt metadata",
+      "properties": {
+        "mode": {
+          "type": "string",
+          "description": "Prompt mode: custom media or text",
+          "enum": [
+            "Audio",
+            "TextToSpeech"
+          ]
+        },
+        "audio": {
+          "description": "For 'Audio' mode only. Prompt media reference",
+          "properties": {
+            "uri": {
+              "type": "string",
+              "description": "Link to a prompt language"
+            },
+            "id": {
+              "type": "string",
+              "description": "Internal identifier of a language"
+            },
+            "name": {
+              "type": "string",
+              "description": "Language name"
+            },
+            "localeCode": {
+              "type": "string",
+              "description": "Language locale code"
+            }
+          }
+        },
+        "text": {
+          "type": "string",
+          "description": "For 'TextToSpeech' mode only. Prompt text"
+        },
+        "language": {
+          "description": "For 'TextToSpeech' mode only. Prompt language metadata",
+          "properties": {
+            "uri": {
+              "type": "string",
+              "description": "Link to an prompt audio file"
+            },
+            "id": {
+              "type": "string",
+              "description": "Internal identifier of an prompt"
+            }
+          }
+        }
+      }
+    },
+    "actions": {
+      "type": "array",
+      "description": "Keys handling settings",
+      "items": {
+        "properties": {
+          "input": {
+            "type": "string",
+            "description": "Key. The following values are supported: numeric: '1' to '9' Star Hash NoInput "
+          },
+          "action": {
+            "type": "string",
+            "description": "Internal identifier of an answering rule",
+            "enum": [
+              "Connect",
+              "Voicemail",
+              "DialByName",
+              "Transfer",
+              "Repeat",
+              "ReturnToRoot",
+              "ReturnToPrevious",
+              "Disconnect"
+            ]
+          },
+          "extension": {
+            "description": "For 'Connect' or 'Voicemail' actions only. Extension reference",
+            "properties": {
+              "uri": {
+                "type": "string",
+                "description": "Link to an extension resource"
+              },
+              "id": {
+                "type": "string",
+                "description": "Internal identifier of an extension"
+              }
+            }
+          },
+          "phoneNumber": {
+            "type": "string",
+            "description": "For 'Transfer' action only. PSTN number in E.164 format"
+          }
+        }
+      }
+    }
+  }
+}```
 
 ## Load ivr menu
 
@@ -4090,9 +6995,9 @@ HTTP GET /restapi/v1.0/account/{accountId}/ivr-menus/{ivrMenuId}
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/ivr-menus/${ivrMenuId}`);
 ```
 
@@ -4105,9 +7010,9 @@ HTTP PUT /restapi/v1.0/account/{accountId}/ivr-menus/{ivrMenuId}
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.put(`/restapi/v1.0/account/${accountId}/ivr-menus/${ivrMenuId}`, iVRMenuInfo);
 ```
 
@@ -4116,27 +7021,121 @@ const r = await platform.put(`/restapi/v1.0/account/${accountId}/ivr-menus/${ivr
 `iVRMenuInfo` is an object with the following properties:
 
 ```yaml
-id:
-  type: string
-  description: Internal identifier of an IVR Menu extension
-uri:
-  type: string
-  description: Link to an IVR Menu extension resource
-name:
-  type: string
-  description: First name of an IVR Menu user
-extensionNumber:
-  type: string
-  description: Number of an IVR Menu extension
-prompt:
-  description: Prompt metadata
-  $ref: '#/definitions/IVRMenuPromptInfo'
-actions:
-  type: array
-  description: Keys handling settings
-  items:
-    $ref: '#/definitions/IVRMenuActionsInfo'
-```
+{
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Internal identifier of an IVR Menu extension"
+    },
+    "uri": {
+      "type": "string",
+      "description": "Link to an IVR Menu extension resource"
+    },
+    "name": {
+      "type": "string",
+      "description": "First name of an IVR Menu user"
+    },
+    "extensionNumber": {
+      "type": "string",
+      "description": "Number of an IVR Menu extension"
+    },
+    "prompt": {
+      "description": "Prompt metadata",
+      "properties": {
+        "mode": {
+          "type": "string",
+          "description": "Prompt mode: custom media or text",
+          "enum": [
+            "Audio",
+            "TextToSpeech"
+          ]
+        },
+        "audio": {
+          "description": "For 'Audio' mode only. Prompt media reference",
+          "properties": {
+            "uri": {
+              "type": "string",
+              "description": "Link to a prompt language"
+            },
+            "id": {
+              "type": "string",
+              "description": "Internal identifier of a language"
+            },
+            "name": {
+              "type": "string",
+              "description": "Language name"
+            },
+            "localeCode": {
+              "type": "string",
+              "description": "Language locale code"
+            }
+          }
+        },
+        "text": {
+          "type": "string",
+          "description": "For 'TextToSpeech' mode only. Prompt text"
+        },
+        "language": {
+          "description": "For 'TextToSpeech' mode only. Prompt language metadata",
+          "properties": {
+            "uri": {
+              "type": "string",
+              "description": "Link to an prompt audio file"
+            },
+            "id": {
+              "type": "string",
+              "description": "Internal identifier of an prompt"
+            }
+          }
+        }
+      }
+    },
+    "actions": {
+      "type": "array",
+      "description": "Keys handling settings",
+      "items": {
+        "properties": {
+          "input": {
+            "type": "string",
+            "description": "Key. The following values are supported: numeric: '1' to '9' Star Hash NoInput "
+          },
+          "action": {
+            "type": "string",
+            "description": "Internal identifier of an answering rule",
+            "enum": [
+              "Connect",
+              "Voicemail",
+              "DialByName",
+              "Transfer",
+              "Repeat",
+              "ReturnToRoot",
+              "ReturnToPrevious",
+              "Disconnect"
+            ]
+          },
+          "extension": {
+            "description": "For 'Connect' or 'Voicemail' actions only. Extension reference",
+            "properties": {
+              "uri": {
+                "type": "string",
+                "description": "Link to an extension resource"
+              },
+              "id": {
+                "type": "string",
+                "description": "Internal identifier of an extension"
+              }
+            }
+          },
+          "phoneNumber": {
+            "type": "string",
+            "description": "For 'Transfer' action only. PSTN number in E.164 format"
+          }
+        }
+      }
+    }
+  }
+}```
 
 ## Load call recording settings
 
@@ -4145,9 +7144,9 @@ HTTP GET /restapi/v1.0/account/{accountId}/call-recording
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/call-recording`);
 ```
 
@@ -4160,9 +7159,9 @@ HTTP PUT /restapi/v1.0/account/{accountId}/call-recording
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.put(`/restapi/v1.0/account/${accountId}/call-recording`, callRecordingSettingsResource);
 ```
 
@@ -4171,16 +7170,67 @@ const r = await platform.put(`/restapi/v1.0/account/${accountId}/call-recording`
 `callRecordingSettingsResource` is an object with the following properties:
 
 ```yaml
-onDemand:
-  $ref: '#/definitions/OnDemandResource'
-automatic:
-  $ref: '#/definitions/AutomaticRecordingResource'
-greetings:
-  type: array
-  description: Collection of Greeting Info
-  items:
-    $ref: '#/definitions/GreetingResource'
-```
+{
+  "type": "object",
+  "properties": {
+    "onDemand": {
+      "properties": {
+        "enabled": {
+          "type": "boolean",
+          "description": "Flag for controlling OnDemand Call Recording settings"
+        }
+      }
+    },
+    "automatic": {
+      "properties": {
+        "enabled": {
+          "type": "boolean",
+          "description": "Flag for controling Automatic Call Recording settings"
+        },
+        "outboundCallTones": {
+          "type": "boolean",
+          "description": "Flag for controlling 'Play Call Recording Announcement for Outbound Calls' settings"
+        },
+        "outboundCallAnnouncement": {
+          "type": "boolean",
+          "description": "Flag for controlling 'Play periodic tones for outbound calls' settings"
+        },
+        "allowMute": {
+          "type": "boolean",
+          "description": "Flag for controlling 'Allow mute in auto call recording' settings"
+        },
+        "extensionCount": {
+          "type": "integer",
+          "description": "Total amount of extension that are used in call recordings"
+        }
+      }
+    },
+    "greetings": {
+      "type": "array",
+      "description": "Collection of Greeting Info",
+      "items": {
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "StartRecording",
+              "StopRecording",
+              "AutomaticRecording"
+            ]
+          },
+          "mode": {
+            "type": "string",
+            "enum": [
+              "Default",
+              "Custom"
+            ],
+            "description": "'Default' value specifies that all greetings of that type (in all languages) are default, if at least one greeting (in any language) of the specified type is custom, then 'Custom' value is returned."
+          }
+        }
+      }
+    }
+  }
+}```
 
 ## List call recording extension settings
 
@@ -4189,9 +7239,9 @@ HTTP GET /restapi/v1.0/account/{accountId}/call-recording/extensions
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/call-recording/extensions`);
 ```
 
@@ -4204,9 +7254,9 @@ HTTP POST /restapi/v1.0/account/{accountId}/call-recording/bulk-assign
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.post(`/restapi/v1.0/account/${accountId}/call-recording/bulk-assign`, bulkAccountCallRecordingsResource);
 ```
 
@@ -4215,13 +7265,89 @@ const r = await platform.post(`/restapi/v1.0/account/${accountId}/call-recording
 `bulkAccountCallRecordingsResource` is an object with the following properties:
 
 ```yaml
-addedExtensions:
-  $ref: '#/definitions/CallRecordingExtensionResource'
-updatedExtensions:
-  $ref: '#/definitions/CallRecordingExtensionResource'
-removedExtensions:
-  $ref: '#/definitions/CallRecordingExtensionResource'
-```
+{
+  "type": "object",
+  "properties": {
+    "addedExtensions": {
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Internal identifier of an extension"
+        },
+        "uri": {
+          "type": "string"
+        },
+        "extensionNumber": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "callDirection": {
+          "type": "string",
+          "description": "Direction of call",
+          "enum": [
+            "Outbound",
+            "Inbound",
+            "All"
+          ]
+        }
+      }
+    },
+    "updatedExtensions": {
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Internal identifier of an extension"
+        },
+        "uri": {
+          "type": "string"
+        },
+        "extensionNumber": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "callDirection": {
+          "type": "string",
+          "description": "Direction of call",
+          "enum": [
+            "Outbound",
+            "Inbound",
+            "All"
+          ]
+        }
+      }
+    },
+    "removedExtensions": {
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Internal identifier of an extension"
+        },
+        "uri": {
+          "type": "string"
+        },
+        "extensionNumber": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "callDirection": {
+          "type": "string",
+          "description": "Direction of call",
+          "enum": [
+            "Outbound",
+            "Inbound",
+            "All"
+          ]
+        }
+      }
+    }
+  }
+}```
 
 ## List call recording custom greetings
 
@@ -4230,9 +7356,9 @@ HTTP GET /restapi/v1.0/account/{accountId}/call-recording/custom-greetings
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/call-recording/custom-greetings`);
 ```
 
@@ -4245,9 +7371,9 @@ HTTP DELETE /restapi/v1.0/account/{accountId}/call-recording/custom-greetings
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.delete(`/restapi/v1.0/account/${accountId}/call-recording/custom-greetings`);
 ```
 
@@ -4260,9 +7386,9 @@ HTTP DELETE /restapi/v1.0/account/{accountId}/call-recording/custom-greetings/{g
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.delete(`/restapi/v1.0/account/${accountId}/call-recording/custom-greetings/${greetingId}`);
 ```
 
@@ -4275,9 +7401,9 @@ HTTP POST /restapi/v1.0/client-info/sip-provision
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.post('/restapi/v1.0/client-info/sip-provision', createSipRegistrationRequest);
 ```
 
@@ -4285,17 +7411,54 @@ const r = await platform.post('/restapi/v1.0/client-info/sip-provision', createS
 `createSipRegistrationRequest` is an object with the following properties:
 
 ```yaml
-device:
-  type: array
-  description: Device unique description
-  items:
-    $ref: '#/definitions/DeviceInfoRequest'
-sipInfo:
-  type: array
-  description: SIP settings for device
-  items:
-    $ref: '#/definitions/SIPInfoRequest'
-```
+{
+  "type": "object",
+  "required": [
+    "device",
+    "sipInfo"
+  ],
+  "properties": {
+    "device": {
+      "type": "array",
+      "description": "Device unique description",
+      "items": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Device unique identifier, retrieved on previous session (if any)"
+          },
+          "appExternalId": {
+            "type": "string",
+            "description": "For iOS devices only Certificate name (used by iOS applications for APNS subscription)"
+          },
+          "computerName": {
+            "type": "string",
+            "description": "For SoftPhone only Computer name"
+          }
+        }
+      }
+    },
+    "sipInfo": {
+      "type": "array",
+      "description": "SIP settings for device",
+      "items": {
+        "properties": {
+          "transport": {
+            "type": "string",
+            "description": "Supported transport. SIP info will be returned for this transport if supported",
+            "enum": [
+              "UDP",
+              "TCP",
+              "TLS",
+              "WS",
+              "WSS"
+            ]
+          }
+        }
+      }
+    }
+  }
+}```
 
 ## List extension phone numbers
 
@@ -4304,9 +7467,9 @@ HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/phone-number
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/phone-number`);
 ```
 
@@ -4320,9 +7483,9 @@ HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}`);
 ```
 
@@ -4336,9 +7499,9 @@ HTTP PUT /restapi/v1.0/account/{accountId}/extension/{extensionId}
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.put(`/restapi/v1.0/account/${accountId}/extension/${extensionId}`, extensionUpdateRequest);
 ```
 
@@ -4348,49 +7511,231 @@ const r = await platform.put(`/restapi/v1.0/account/${accountId}/extension/${ext
 `extensionUpdateRequest` is an object with the following properties:
 
 ```yaml
-status:
-  type: string
-  enum:
-    - Disabled
-    - Enabled
-    - NotActivated
-statusInfo:
-  $ref: '#/definitions/ExtensionStatusInfo'
-reason:
-  type: string
-  description: Type of suspension
-comment:
-  type: string
-  description: Free Form user comment
-extensionNumber:
-  type: string
-  description: Extension number available
-contact:
-  $ref: '#/definitions/ContactInfoUpdateRequest'
-regionalSettings:
-  $ref: '#/definitions/ExtensionRegionalSettingRequest'
-setupWizardState:
-  type: string
-  enum:
-    - NotStarted
-    - Incomplete
-    - Completed
-partnerId:
-  type: string
-  description: ' Extension partner identifier'
-ivrPin:
-  type: string
-  description: IVR PIN
-password:
-  type: string
-  description: Password for extension
-callQueueInfo:
-  $ref: '#/definitions/CallQueueInfoRequest'
-  description: For Department extension type only. Call queue settings
-transition:
-  $ref: '#/definitions/UserTransitionInfo'
-  description: For NotActivated extensions only. Welcome email settings
-```
+{
+  "type": "object",
+  "properties": {
+    "status": {
+      "type": "string",
+      "enum": [
+        "Disabled",
+        "Enabled",
+        "NotActivated"
+      ]
+    },
+    "statusInfo": {
+      "properties": {
+        "comment": {
+          "type": "string",
+          "description": "A free-form user comment, describing the status change reason"
+        },
+        "reason": {
+          "type": "string",
+          "description": "Type of suspension",
+          "enum": [
+            "Voluntarily",
+            "Involuntarily"
+          ]
+        }
+      }
+    },
+    "reason": {
+      "type": "string",
+      "description": "Type of suspension"
+    },
+    "comment": {
+      "type": "string",
+      "description": "Free Form user comment"
+    },
+    "extensionNumber": {
+      "type": "string",
+      "description": "Extension number available"
+    },
+    "contact": {
+      "properties": {
+        "firstName": {
+          "type": "string",
+          "description": "For User extension type only. Extension user first name"
+        },
+        "lastName": {
+          "type": "string",
+          "description": "For User extension type only. Extension user last name"
+        },
+        "company": {
+          "type": "string",
+          "description": "Extension user company name"
+        },
+        "jobTitle": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string",
+          "description": "Email of extension user"
+        },
+        "businessPhone": {
+          "type": "string",
+          "description": "Extension user contact phone number in [E.164](https://www.itu.int/rec/T-REC-E.164-201011-I) format"
+        },
+        "mobilePhone": {
+          "type": "string",
+          "description": "Extension user mobile (**non** Toll Free) phone number in [E.164](https://www.itu.int/rec/T-REC-E.164-201011-I) (with '+' sign) format"
+        },
+        "businessAddress": {
+          "properties": {
+            "country": {
+              "type": "string",
+              "description": "Country name of an extension user company"
+            },
+            "state": {
+              "type": "string",
+              "description": "State/province name of an extension user company. Mandatory for the USA, UK and Canada"
+            },
+            "city": {
+              "type": "string",
+              "description": "City name of an extension user company"
+            },
+            "street": {
+              "type": "string",
+              "description": "Street address of an extension user company"
+            },
+            "zip": {
+              "type": "string",
+              "description": "Zip code of an extension user company"
+            }
+          }
+        },
+        "emailAsLoginName": {
+          "type": "boolean",
+          "description": " If 'True' then contact email is enabled as login name for this user. Please note that email should be unique in this case. The default value is 'False'"
+        },
+        "pronouncedName": {
+          "properties": {
+            "type": {
+              "type": "string",
+              "description": "Voice name type. 'Default' - default extension name; first name and last name specified in user profile; 'TextToSpeech' - custom text; user name spelled the way it sounds and specified by user; 'Recorded' - custom audio, user name recorded in user's own voice (supported only for extension retrieval)",
+              "enum": [
+                "Default",
+                "TextToSpeech",
+                "Recorded"
+              ]
+            },
+            "text": {
+              "type": "string",
+              "description": "Custom text"
+            }
+          }
+        },
+        "department": {
+          "type": "string",
+          "description": "Extension user department, if any"
+        }
+      }
+    },
+    "regionalSettings": {
+      "properties": {
+        "homeCountry": {
+          "properties": {
+            "id": {
+              "type": "string",
+              "description": "internal Identifier of a country"
+            }
+          }
+        },
+        "timezone": {
+          "properties": {
+            "id": {
+              "type": "string",
+              "description": "internal Identifier of a timezone"
+            }
+          }
+        },
+        "language": {
+          "properties": {
+            "id": {
+              "type": "string",
+              "description": "internal Identifier of a language"
+            }
+          }
+        },
+        "greetingLanguage": {
+          "properties": {
+            "id": {
+              "type": "string",
+              "description": "internal Identifier of a greeting language"
+            }
+          }
+        },
+        "formattingLocale": {
+          "properties": {
+            "id": {
+              "type": "string",
+              "description": "Internal Identifier of a formatting language"
+            }
+          }
+        },
+        "timeFormat": {
+          "type": "string",
+          "enum": [
+            "12h",
+            "24h"
+          ],
+          "default": "12h",
+          "description": "Time format setting"
+        }
+      }
+    },
+    "setupWizardState": {
+      "type": "string",
+      "enum": [
+        "NotStarted",
+        "Incomplete",
+        "Completed"
+      ]
+    },
+    "partnerId": {
+      "type": "string",
+      "description": " Extension partner identifier"
+    },
+    "ivrPin": {
+      "type": "string",
+      "description": "IVR PIN"
+    },
+    "password": {
+      "type": "string",
+      "description": "Password for extension"
+    },
+    "callQueueInfo": {
+      "description": "For Department extension type only. Call queue settings",
+      "properties": {
+        "slaGoal": {
+          "type": "integer",
+          "description": "Target percentage of calls that must be answered by agents within the service level time threshold"
+        },
+        "slaThresholdSeconds": {
+          "type": "integer"
+        },
+        "includeAbandonedCalls": {
+          "type": "boolean"
+        },
+        "abandonedThresholdSeconds": {
+          "type": "integer"
+        }
+      }
+    },
+    "transition": {
+      "description": "For NotActivated extensions only. Welcome email settings",
+      "properties": {
+        "sendWelcomeEmailsToUsers": {
+          "type": "boolean",
+          "description": "Specifies if an activation email is automatically sent to new users (Not Activated extensions) or not"
+        },
+        "sendWelcomeEmail": {
+          "type": "boolean",
+          "description": "Supported for account confirmation. Specifies whether welcome email is sent"
+        }
+      }
+    }
+  }
+}```
 
 ## Delete extension
 
@@ -4399,9 +7744,9 @@ HTTP DELETE /restapi/v1.0/account/{accountId}/extension/{extensionId}
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.delete(`/restapi/v1.0/account/${accountId}/extension/${extensionId}`);
 ```
 
@@ -4415,9 +7760,9 @@ HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/caller-id
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/caller-id`);
 ```
 
@@ -4431,9 +7776,9 @@ HTTP PUT /restapi/v1.0/account/{accountId}/extension/{extensionId}/caller-id
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.put(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/caller-id`, extensionCallerIdInfo);
 ```
 
@@ -4443,30 +7788,117 @@ const r = await platform.put(`/restapi/v1.0/account/${accountId}/extension/${ext
 `extensionCallerIdInfo` is an object with the following properties:
 
 ```yaml
-uri:
-  type: string
-  description: Canonical URL of a caller ID resource
-byDevice:
-  type: array
-  items:
-    $ref: '#/definitions/CallerIdByDevice'
-    description: Caller ID settings by device
-byFeature:
-  type: array
-  items:
-    $ref: '#/definitions/CallerIdByFeature'
-    description: Caller ID settings by feature
-extensionNameForOutboundCalls:
-  type: boolean
-  description: >-
-    If 'True', then user first name and last name will be used as caller ID when
-    making outbound calls from extension
-extensionNumberForInternalCalls:
-  type: boolean
-  description: >-
-    If 'True', then extension number will be used as caller ID when making
-    internal calls
-```
+{
+  "type": "object",
+  "properties": {
+    "uri": {
+      "type": "string",
+      "description": "Canonical URL of a caller ID resource"
+    },
+    "byDevice": {
+      "type": "array",
+      "items": {
+        "description": "Caller ID settings by device",
+        "properties": {
+          "device": {
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "Internal identifier of a device"
+              },
+              "uri": {
+                "type": "string",
+                "description": "Link to a device resource"
+              },
+              "phoneNumber": {
+                "type": "string",
+                "description": "Name of a device"
+              }
+            }
+          },
+          "callerId": {
+            "properties": {
+              "type": {
+                "type": "string",
+                "description": "If 'PhoneNumber' value is specified, then a certain phone number is shown as a caller ID when using this telephony feature. If 'Blocked' value is specified, then a caller ID is hidden. The value 'CurrentLocation' can be specified for 'RingOut' feature only. The default is 'PhoneNumber' = ['PhoneNumber', 'Blocked', 'CurrentLocation']"
+              },
+              "phoneInfo": {
+                "properties": {
+                  "id": {
+                    "type": "string",
+                    "description": "Internal identifier of a phone number"
+                  },
+                  "uri": {
+                    "type": "string",
+                    "description": "Link to a phone number resource"
+                  },
+                  "phoneNumber": {
+                    "type": "string",
+                    "description": "Phone number in [E.164](https://www.itu.int/rec/T-REC-E.164-201011-I) (with '+' sign) format"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "byFeature": {
+      "type": "array",
+      "items": {
+        "description": "Caller ID settings by feature",
+        "properties": {
+          "feature": {
+            "type": "string",
+            "enum": [
+              "RingOut",
+              "RingMe",
+              "CallFlip",
+              "FaxNumber",
+              "AdditionalSoftphone",
+              "Alternate",
+              "CommonPhone",
+              "MobileApp",
+              "Delegated"
+            ]
+          },
+          "callerId": {
+            "properties": {
+              "type": {
+                "type": "string",
+                "description": "If 'PhoneNumber' value is specified, then a certain phone number is shown as a caller ID when using this telephony feature. If 'Blocked' value is specified, then a caller ID is hidden. The value 'CurrentLocation' can be specified for 'RingOut' feature only. The default is 'PhoneNumber' = ['PhoneNumber', 'Blocked', 'CurrentLocation']"
+              },
+              "phoneInfo": {
+                "properties": {
+                  "id": {
+                    "type": "string",
+                    "description": "Internal identifier of a phone number"
+                  },
+                  "uri": {
+                    "type": "string",
+                    "description": "Link to a phone number resource"
+                  },
+                  "phoneNumber": {
+                    "type": "string",
+                    "description": "Phone number in [E.164](https://www.itu.int/rec/T-REC-E.164-201011-I) (with '+' sign) format"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "extensionNameForOutboundCalls": {
+      "type": "boolean",
+      "description": "If 'True', then user first name and last name will be used as caller ID when making outbound calls from extension"
+    },
+    "extensionNumberForInternalCalls": {
+      "type": "boolean",
+      "description": "If 'True', then extension number will be used as caller ID when making internal calls"
+    }
+  }
+}```
 
 ## List extension grants
 
@@ -4475,9 +7907,9 @@ HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/grant
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/grant`);
 ```
 
@@ -4491,9 +7923,9 @@ HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/notification-
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/notification-settings`);
 ```
 
@@ -4507,9 +7939,9 @@ HTTP PUT /restapi/v1.0/account/{accountId}/extension/{extensionId}/notification-
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.put(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/notification-settings`, notificationSettingsUpdateRequest);
 ```
 
@@ -4519,35 +7951,175 @@ const r = await platform.put(`/restapi/v1.0/account/${accountId}/extension/${ext
 `notificationSettingsUpdateRequest` is an object with the following properties:
 
 ```yaml
-emailAddresses:
-  type: array
-  items:
-    type: string
-  description: List of notification recipient email addresses
-smsEmailAddresses:
-  type: array
-  items:
-    type: string
-  description: List of notification recipient email addresses
-advancedMode:
-  type: boolean
-  description: >-
-    Specifies notifications settings mode. If 'True' then advanced mode is on,
-    it allows using different emails and/or phone numbers for each notification
-    type. If 'False' then basic mode is on. Advanced mode settings are returned
-    in both modes, if specified once, but if basic mode is switched on, they are
-    not applied 
-voicemails:
-  $ref: '#/definitions/VoicemailsInfo'
-inboundFaxes:
-  $ref: '#/definitions/InboundFaxesInfo'
-outboundFaxes:
-  $ref: '#/definitions/OutboundFaxesInfo'
-inboundTexts:
-  $ref: '#/definitions/InboundTextsInfo'
-missedCalls:
-  $ref: '#/definitions/MissedCallsInfo'
-```
+{
+  "type": "object",
+  "properties": {
+    "emailAddresses": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "List of notification recipient email addresses"
+    },
+    "smsEmailAddresses": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "List of notification recipient email addresses"
+    },
+    "advancedMode": {
+      "type": "boolean",
+      "description": "Specifies notifications settings mode. If 'True' then advanced mode is on, it allows using different emails and/or phone numbers for each notification type. If 'False' then basic mode is on. Advanced mode settings are returned in both modes, if specified once, but if basic mode is switched on, they are not applied "
+    },
+    "voicemails": {
+      "properties": {
+        "notifyByEmail": {
+          "type": "boolean",
+          "description": "Email notification flag"
+        },
+        "notifyBySms": {
+          "type": "boolean",
+          "description": "SMS notification flag"
+        },
+        "advancedEmailAddresses": {
+          "type": "array",
+          "description": "List of recipient email addresses for voicemail notifications. Returned if specified, in both modes (advanced/basic). Applied in advanced mode only",
+          "items": {
+            "type": "string"
+          }
+        },
+        "advancedSmsEmailAddresses": {
+          "type": "array",
+          "description": "List of recipient phone numbers for voicemail notifications. Returned if specified, in both modes (advanced/basic). Applied in advanced mode only",
+          "items": {
+            "type": "string"
+          }
+        },
+        "includeAttachment": {
+          "type": "boolean",
+          "description": "Indicates whether voicemail should be attached to email"
+        },
+        "markAsRead": {
+          "type": "boolean",
+          "description": "Indicates whether email should be automatically marked as read"
+        }
+      }
+    },
+    "inboundFaxes": {
+      "properties": {
+        "notifyByEmail": {
+          "type": "boolean",
+          "description": "Email notification flag"
+        },
+        "notifyBySms": {
+          "type": "boolean",
+          "description": "SMS notification flag"
+        },
+        "advancedEmailAddresses": {
+          "type": "array",
+          "description": "List of recipient email addresses for inbound fax notifications. Returned if specified, in both modes (advanced/basic). Applied in advanced mode only",
+          "items": {
+            "type": "string"
+          }
+        },
+        "advancedSmsEmailAddresses": {
+          "type": "array",
+          "description": "List of recipient phone numbers for inbound fax notifications. Returned if specified, in both modes (advanced/basic). Applied in advanced mode only",
+          "items": {
+            "type": "string"
+          }
+        },
+        "includeAttachment": {
+          "type": "boolean",
+          "description": "Indicates whether fax should be attached to email"
+        },
+        "markAsRead": {
+          "type": "boolean",
+          "description": "Indicates whether email should be automatically marked as read"
+        }
+      }
+    },
+    "outboundFaxes": {
+      "properties": {
+        "notifyByEmail": {
+          "type": "boolean",
+          "description": "Email notification flag"
+        },
+        "notifyBySms": {
+          "type": "boolean",
+          "description": "SMS notification flag"
+        },
+        "advancedEmailAddresses": {
+          "type": "array",
+          "description": "List of recipient email addresses for outbound fax notifications. Returned if specified, in both modes (advanced/basic). Applied in advanced mode only",
+          "items": {
+            "type": "string"
+          }
+        },
+        "advancedSmsEmailAddresses": {
+          "type": "array",
+          "description": "List of recipient phone numbers for outbound fax notifications. Returned if specified, in both modes (advanced/basic). Applied in advanced mode only",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "inboundTexts": {
+      "properties": {
+        "notifyByEmail": {
+          "type": "boolean",
+          "description": "Email notification flag"
+        },
+        "notifyBySms": {
+          "type": "boolean",
+          "description": "SMS notification flag"
+        },
+        "advancedEmailAddresses": {
+          "type": "array",
+          "description": "List of recipient email addresses for inbound text message notifications. Returned if specified, in both modes (advanced/basic). Applied in advanced mode only",
+          "items": {
+            "type": "string"
+          }
+        },
+        "advancedSmsEmailAddresses": {
+          "type": "array",
+          "description": "List of recipient phone numbers for inbound text message notifications. Returned if specified, in both modes (advanced/basic). Applied in advanced mode only",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "missedCalls": {
+      "properties": {
+        "notifyByEmail": {
+          "type": "boolean",
+          "description": "Email notification flag"
+        },
+        "notifyBySms": {
+          "type": "boolean",
+          "description": "SMS notification flag"
+        },
+        "advancedEmailAddresses": {
+          "type": "array",
+          "description": "List of recipient email addresses for missed call notifications. Returned if specified, in both modes (advanced/basic). Applied in advanced mode only",
+          "items": {
+            "type": "string"
+          }
+        },
+        "advancedSmsEmailAddresses": {
+          "type": "array",
+          "description": "List of recipient phone numbers for missed call notifications. Returned if specified, in both modes (advanced/basic). Applied in advanced mode only",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}```
 
 ## Download profile image
 
@@ -4556,9 +8128,9 @@ HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/profile-image
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/profile-image`);
 ```
 
@@ -4572,9 +8144,9 @@ HTTP POST /restapi/v1.0/account/{accountId}/extension/{extensionId}/profile-imag
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.post(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/profile-image`);
 ```
 
@@ -4588,9 +8160,9 @@ HTTP PUT /restapi/v1.0/account/{accountId}/extension/{extensionId}/profile-image
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.put(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/profile-image`);
 ```
 
@@ -4604,9 +8176,9 @@ HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/profile-image
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/profile-image/${scaleSize}`);
 ```
 
@@ -4620,9 +8192,9 @@ HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/conferencing
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/conferencing`);
 ```
 
@@ -4636,9 +8208,9 @@ HTTP PUT /restapi/v1.0/account/{accountId}/extension/{extensionId}/conferencing
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.put(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/conferencing`, updateConferencingInfoRequest);
 ```
 
@@ -4648,22 +8220,31 @@ const r = await platform.put(`/restapi/v1.0/account/${accountId}/extension/${ext
 `updateConferencingInfoRequest` is an object with the following properties:
 
 ```yaml
-phoneNumbers:
-  type: array
-  items:
-    $ref: '#/definitions/ConferencePhoneNumberInfo'
-  description: >-
-    Multiple dial-in phone numbers to connect to audio conference service,
-    relevant for user's brand. Each number is given with the country and
-    location information, in order to let the user choose the less expensive way
-    to connect to a conference. The first number in the list is the primary
-    conference number, that is default and domestic
-allowJoinBeforeHost:
-  type: boolean
-  description: >-
-    Determines if host user allows conference participants to join before the
-    host
-```
+{
+  "type": "object",
+  "properties": {
+    "phoneNumbers": {
+      "type": "array",
+      "items": {
+        "properties": {
+          "phoneNumber": {
+            "type": "string",
+            "description": "Dial-in phone number to connect to a conference"
+          },
+          "default": {
+            "type": "boolean",
+            "description": "'True' if the number is default for the conference. Default conference number is a domestic number that can be set by user (otherwise it is set by the system). Only one default number per country is allowed"
+          }
+        }
+      },
+      "description": "Multiple dial-in phone numbers to connect to audio conference service, relevant for user's brand. Each number is given with the country and location information, in order to let the user choose the less expensive way to connect to a conference. The first number in the list is the primary conference number, that is default and domestic"
+    },
+    "allowJoinBeforeHost": {
+      "type": "boolean",
+      "description": "Determines if host user allows conference participants to join before the host"
+    }
+  }
+}```
 
 ## Load account
 
@@ -4672,9 +8253,9 @@ HTTP GET /restapi/v1.0/account/{accountId}
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}`);
 ```
 
@@ -4687,9 +8268,9 @@ HTTP GET /restapi/v1.0/account/{accountId}/business-address
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/business-address`);
 ```
 
@@ -4702,9 +8283,9 @@ HTTP PUT /restapi/v1.0/account/{accountId}/business-address
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.put(`/restapi/v1.0/account/${accountId}/business-address`, modifyAccountBusinessAddressRequest);
 ```
 
@@ -4713,16 +8294,47 @@ const r = await platform.put(`/restapi/v1.0/account/${accountId}/business-addres
 `modifyAccountBusinessAddressRequest` is an object with the following properties:
 
 ```yaml
-company:
-  type: string
-  description: Company business name
-email:
-  type: string
-  description: Company business email address
-businessAddress:
-  description: Company business address
-  $ref: '#/definitions/BusinessAddressInfo'
-```
+{
+  "required": [
+    "businessAddress"
+  ],
+  "type": "object",
+  "properties": {
+    "company": {
+      "type": "string",
+      "description": "Company business name"
+    },
+    "email": {
+      "type": "string",
+      "description": "Company business email address"
+    },
+    "businessAddress": {
+      "description": "Company business address",
+      "properties": {
+        "country": {
+          "type": "string",
+          "description": "Name of a country"
+        },
+        "state": {
+          "type": "string",
+          "description": "Name of a state/province"
+        },
+        "city": {
+          "type": "string",
+          "description": "Name of a city"
+        },
+        "street": {
+          "type": "string",
+          "description": "Street address"
+        },
+        "zip": {
+          "type": "string",
+          "description": "Zip code"
+        }
+      }
+    }
+  }
+}```
 
 ## Load service info
 
@@ -4731,9 +8343,9 @@ HTTP GET /restapi/v1.0/account/{accountId}/service-info
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/service-info`);
 ```
 
@@ -4746,9 +8358,9 @@ HTTP GET /restapi/v1.0/dictionary/language
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.get('/restapi/v1.0/dictionary/language');
 ```
 
@@ -4760,9 +8372,9 @@ HTTP GET /restapi/v1.0/dictionary/language/{languageId}
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.get(`/restapi/v1.0/dictionary/language/${languageId}`);
 ```
 
@@ -4774,9 +8386,9 @@ HTTP GET /restapi/v1.0/dictionary/country
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.get('/restapi/v1.0/dictionary/country');
 ```
 
@@ -4788,9 +8400,9 @@ HTTP GET /restapi/v1.0/dictionary/country/{countryId}
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.get(`/restapi/v1.0/dictionary/country/${countryId}`);
 ```
 
@@ -4802,9 +8414,9 @@ HTTP GET /restapi/v1.0/dictionary/location
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.get('/restapi/v1.0/dictionary/location');
 ```
 
@@ -4816,9 +8428,9 @@ HTTP GET /restapi/v1.0/dictionary/state
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.get('/restapi/v1.0/dictionary/state');
 ```
 
@@ -4830,9 +8442,9 @@ HTTP GET /restapi/v1.0/dictionary/state/{stateId}
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.get(`/restapi/v1.0/dictionary/state/${stateId}`);
 ```
 
@@ -4844,9 +8456,9 @@ HTTP GET /restapi/v1.0/dictionary/timezone
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.get('/restapi/v1.0/dictionary/timezone');
 ```
 
@@ -4858,9 +8470,9 @@ HTTP GET /restapi/v1.0/dictionary/timezone/{timezoneId}
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.get(`/restapi/v1.0/dictionary/timezone/${timezoneId}`);
 ```
 
@@ -4872,9 +8484,9 @@ HTTP GET /restapi/v1.0/account/{accountId}/phone-number
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/phone-number`);
 ```
 
@@ -4887,9 +8499,9 @@ HTTP GET /restapi/v1.0/account/{accountId}/phone-number/{phoneNumberId}
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/phone-number/${phoneNumberId}`);
 ```
 
@@ -4902,9 +8514,9 @@ HTTP GET /restapi/v1.0/account/{accountId}/extension
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension`);
 ```
 
@@ -4917,9 +8529,9 @@ HTTP POST /restapi/v1.0/account/{accountId}/extension
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.post(`/restapi/v1.0/account/${accountId}/extension`, extensionCreationRequest);
 ```
 
@@ -4928,66 +8540,319 @@ const r = await platform.post(`/restapi/v1.0/account/${accountId}/extension`, ex
 `extensionCreationRequest` is an object with the following properties:
 
 ```yaml
-contact:
-  description: Contact Information
-  $ref: '#/definitions/ContactInfoCreationRequest'
-extensionNumber:
-  type: string
-  description: Number of extension
-password:
-  type: string
-  description: 'Password for extension. If not specified, the password is auto-generated'
-references:
-  type: array
-  description: List of non-RC internal identifiers assigned to an extension
-  items:
-    $ref: '#/definitions/ReferenceInfo'
-roles:
-  type: array
-  items:
-    $ref: '#/definitions/Roles'
-regionalSettings:
-  description: 'Extension region data (timezone, home country, language)'
-  $ref: '#/definitions/RegionalSettings'
-setupWizardState:
-  type: string
-  description: Specifies extension configuration wizard state (web service setup).
-  default: NotStarted
-  enum:
-    - NotStarted
-    - Incomplete
-    - Completed
-status:
-  type: string
-  description: Extension current state
-  enum:
-    - Enabled
-    - Disabled
-    - NotActivated
-    - Unassigned
-statusInfo:
-  description: 'Status information (reason, comment). For ''Disabled'' status only'
-  $ref: '#/definitions/ExtensionStatusInfo'
-type:
-  type: string
-  description: Extension type
-  enum:
-    - User
-    - VirtualUser
-    - DigitalUser
-    - Department
-    - Announcement
-    - Voicemail
-    - SharedLinesGroup
-    - PagingOnlyGroup
-    - ParkLocation
-hidden:
-  type: boolean
-  description: >-
-    Hides extension from showing in company directory. Supported for extensions
-    of User type only. For unassigned extensions the value is set to 'True' by
-    default. For assigned extensions the value is set to 'False' by default
-```
+{
+  "type": "object",
+  "required": [
+    "type",
+    "contact"
+  ],
+  "properties": {
+    "contact": {
+      "description": "Contact Information",
+      "properties": {
+        "firstName": {
+          "type": "string",
+          "description": "For User extension type only. Extension user first name"
+        },
+        "lastName": {
+          "type": "string",
+          "description": "For User extension type only. Extension user last name"
+        },
+        "company": {
+          "type": "string",
+          "description": "Extension user company name"
+        },
+        "jobTitle": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string",
+          "description": "Email of extension user"
+        },
+        "businessPhone": {
+          "type": "string",
+          "description": "Extension user contact phone number in [E.164](https://www.itu.int/rec/T-REC-E.164-201011-I) format"
+        },
+        "mobilePhone": {
+          "type": "string",
+          "description": "Extension user mobile (**non** Toll Free) phone number in [E.164](https://www.itu.int/rec/T-REC-E.164-201011-I) (with '+' sign) format"
+        },
+        "businessAddress": {
+          "properties": {
+            "country": {
+              "type": "string",
+              "description": "Country name of an extension user company"
+            },
+            "state": {
+              "type": "string",
+              "description": "State/province name of an extension user company. Mandatory for the USA, UK and Canada"
+            },
+            "city": {
+              "type": "string",
+              "description": "City name of an extension user company"
+            },
+            "street": {
+              "type": "string",
+              "description": "Street address of an extension user company"
+            },
+            "zip": {
+              "type": "string",
+              "description": "Zip code of an extension user company"
+            }
+          }
+        },
+        "emailAsLoginName": {
+          "type": "boolean",
+          "description": " If 'True' then contact email is enabled as login name for this user. Please note that email should be unique in this case. The default value is 'False'"
+        },
+        "pronouncedName": {
+          "properties": {
+            "type": {
+              "type": "string",
+              "description": "Voice name type. 'Default' - default extension name; first name and last name specified in user profile; 'TextToSpeech' - custom text; user name spelled the way it sounds and specified by user; 'Recorded' - custom audio, user name recorded in user's own voice (supported only for extension retrieval)",
+              "enum": [
+                "Default",
+                "TextToSpeech",
+                "Recorded"
+              ]
+            },
+            "text": {
+              "type": "string",
+              "description": "Custom text"
+            }
+          }
+        },
+        "department": {
+          "type": "string",
+          "description": "Extension user department, if any"
+        }
+      }
+    },
+    "extensionNumber": {
+      "type": "string",
+      "description": "Number of extension"
+    },
+    "password": {
+      "type": "string",
+      "description": "Password for extension. If not specified, the password is auto-generated"
+    },
+    "references": {
+      "type": "array",
+      "description": "List of non-RC internal identifiers assigned to an extension",
+      "items": {
+        "properties": {
+          "ref": {
+            "type": "string",
+            "description": "Non-RC identifier of an extension"
+          },
+          "type": {
+            "type": "string",
+            "description": "Type of external identifier",
+            "enum": [
+              "PartnerId",
+              "CustomerDirectoryId"
+            ]
+          }
+        }
+      }
+    },
+    "roles": {
+      "type": "array",
+      "items": {
+        "properties": {
+          "uri": {
+            "type": "string"
+          },
+          "id": {
+            "type": "string",
+            "description": "Internal identifier of a role"
+          }
+        }
+      }
+    },
+    "regionalSettings": {
+      "description": "Extension region data (timezone, home country, language)",
+      "properties": {
+        "homeCountry": {
+          "description": "Extension country information",
+          "properties": {
+            "id": {
+              "type": "string",
+              "description": "Internal identifier of a home country"
+            },
+            "uri": {
+              "type": "string",
+              "description": "Canonical URI of a home country"
+            },
+            "name": {
+              "type": "string",
+              "description": "Official name of a home country"
+            },
+            "isoCode": {
+              "type": "string",
+              "description": "ISO code of a country"
+            },
+            "callingCode": {
+              "type": "string",
+              "description": "Calling code of a country"
+            }
+          }
+        },
+        "timezone": {
+          "description": "Extension timezone information",
+          "properties": {
+            "id": {
+              "type": "string",
+              "description": "Internal identifier of a timezone"
+            },
+            "uri": {
+              "type": "string",
+              "description": "Canonical URI of a timezone"
+            },
+            "name": {
+              "type": "string",
+              "description": "Short name of a timezone"
+            },
+            "description": {
+              "type": "string",
+              "description": "Meaningful description of the timezone"
+            }
+          }
+        },
+        "language": {
+          "description": "User interface language data",
+          "properties": {
+            "id": {
+              "type": "string",
+              "description": "Internal identifier of a language"
+            },
+            "uri": {
+              "type": "string",
+              "description": "Canonical URI of a language"
+            },
+            "greeting": {
+              "type": "boolean",
+              "description": "Indicates whether a language is available as greeting language"
+            },
+            "formattingLocale": {
+              "type": "boolean",
+              "description": "Indicates whether a language is available as formatting locale"
+            },
+            "localeCode": {
+              "type": "string",
+              "description": "Localization code of a language"
+            },
+            "name": {
+              "type": "string",
+              "description": "Official name of a language"
+            },
+            "ui": {
+              "type": "boolean",
+              "description": "Indicates whether a language is available as UI language"
+            }
+          }
+        },
+        "greetingLanguage": {
+          "description": "Information on language used for telephony greetings",
+          "properties": {
+            "id": {
+              "type": "string",
+              "description": "Internal identifier of a greeting language"
+            },
+            "localeCode": {
+              "type": "string",
+              "description": "Localization code of a greeting language"
+            },
+            "name": {
+              "type": "string",
+              "description": "Official name of a greeting language"
+            }
+          }
+        },
+        "formattingLocale": {
+          "description": "Formatting language preferences for numbers, dates and currencies",
+          "properties": {
+            "id": {
+              "type": "string",
+              "description": "Internal identifier of a formatting language"
+            },
+            "localeCode": {
+              "type": "string",
+              "description": "Localization code of a formatting language"
+            },
+            "name": {
+              "type": "string"
+            }
+          }
+        },
+        "timeFormat": {
+          "type": "string",
+          "description": "Time format setting. The default value is '12h' = ['12h', '24h']",
+          "enum": [
+            "12h",
+            "24h"
+          ]
+        }
+      }
+    },
+    "setupWizardState": {
+      "type": "string",
+      "description": "Specifies extension configuration wizard state (web service setup).",
+      "default": "NotStarted",
+      "enum": [
+        "NotStarted",
+        "Incomplete",
+        "Completed"
+      ]
+    },
+    "status": {
+      "type": "string",
+      "description": "Extension current state",
+      "enum": [
+        "Enabled",
+        "Disabled",
+        "NotActivated",
+        "Unassigned"
+      ]
+    },
+    "statusInfo": {
+      "description": "Status information (reason, comment). For 'Disabled' status only",
+      "properties": {
+        "comment": {
+          "type": "string",
+          "description": "A free-form user comment, describing the status change reason"
+        },
+        "reason": {
+          "type": "string",
+          "description": "Type of suspension",
+          "enum": [
+            "Voluntarily",
+            "Involuntarily"
+          ]
+        }
+      }
+    },
+    "type": {
+      "type": "string",
+      "description": "Extension type",
+      "enum": [
+        "User",
+        "VirtualUser",
+        "DigitalUser",
+        "Department",
+        "Announcement",
+        "Voicemail",
+        "SharedLinesGroup",
+        "PagingOnlyGroup",
+        "ParkLocation"
+      ]
+    },
+    "hidden": {
+      "type": "boolean",
+      "description": "Hides extension from showing in company directory. Supported for extensions of User type only. For unassigned extensions the value is set to 'True' by default. For assigned extensions the value is set to 'False' by default"
+    }
+  }
+}```
 
 ## List templates
 
@@ -4996,9 +8861,9 @@ HTTP GET /restapi/v1.0/account/{accountId}/templates
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/templates`);
 ```
 
@@ -5011,9 +8876,9 @@ HTTP GET /restapi/v1.0/account/{accountId}/templates/{templateId}
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/templates/${templateId}`);
 ```
 
@@ -5026,9 +8891,9 @@ HTTP GET /restapi/v1.0/account/{accountId}/call-queues
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/call-queues`);
 ```
 
@@ -5041,9 +8906,9 @@ HTTP GET /restapi/v1.0/account/{accountId}/call-queues/{groupId}/members
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/call-queues/${groupId}/members`);
 ```
 
@@ -5056,9 +8921,9 @@ HTTP POST /restapi/v1.0/account/{accountId}/call-queues/{groupId}/bulk-assign
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.post(`/restapi/v1.0/account/${accountId}/call-queues/${groupId}/bulk-assign`, callQueueBulkAssignResource);
 ```
 
@@ -5067,15 +8932,23 @@ const r = await platform.post(`/restapi/v1.0/account/${accountId}/call-queues/${
 `callQueueBulkAssignResource` is an object with the following properties:
 
 ```yaml
-addedExtensionIds:
-  type: array
-  items:
-    type: string
-removedExtensionIds:
-  type: array
-  items:
-    type: string
-```
+{
+  "type": "object",
+  "properties": {
+    "addedExtensionIds": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "removedExtensionIds": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}```
 
 ## List department members
 
@@ -5084,9 +8957,9 @@ HTTP GET /restapi/v1.0/account/{accountId}/department/{departmentId}/members
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/department/${departmentId}/members`);
 ```
 
@@ -5099,9 +8972,9 @@ HTTP POST /restapi/v1.0/account/{accountId}/department/bulk-assign
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.post(`/restapi/v1.0/account/${accountId}/department/bulk-assign`, departmentBulkAssignResource);
 ```
 
@@ -5110,11 +8983,33 @@ const r = await platform.post(`/restapi/v1.0/account/${accountId}/department/bul
 `departmentBulkAssignResource` is an object with the following properties:
 
 ```yaml
-items:
-  type: array
-  items:
-    $ref: '#/definitions/BulkAssignItem'
-```
+{
+  "type": "object",
+  "properties": {
+    "items": {
+      "type": "array",
+      "items": {
+        "properties": {
+          "departmentId": {
+            "type": "string"
+          },
+          "addedExtensionIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "removedExtensionIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  }
+}```
 
 ## List paging group users
 
@@ -5123,9 +9018,9 @@ HTTP GET /restapi/v1.0/account/{accountId}/paging-only-groups/{pagingOnlyGroupId
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/paging-only-groups/${pagingOnlyGroupId}/users`);
 ```
 
@@ -5138,9 +9033,9 @@ HTTP GET /restapi/v1.0/account/{accountId}/paging-only-groups/{pagingOnlyGroupId
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/paging-only-groups/${pagingOnlyGroupId}/devices`);
 ```
 
@@ -5153,9 +9048,9 @@ HTTP POST /restapi/v1.0/account/{accountId}/paging-only-groups/{pagingOnlyGroupI
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.post(`/restapi/v1.0/account/${accountId}/paging-only-groups/${pagingOnlyGroupId}/bulk-assign`, editPagingGroupRequest);
 ```
 
@@ -5164,29 +9059,39 @@ const r = await platform.post(`/restapi/v1.0/account/${accountId}/paging-only-gr
 `editPagingGroupRequest` is an object with the following properties:
 
 ```yaml
-addedUserIds:
-  type: array
-  description: List of users that will be allowed to page a group specified
-  items:
-    type: string
-removedUserIds:
-  type: array
-  description: List of users that will be unallowed to page a group specified
-  items:
-    type: string
-addedDeviceIds:
-  type: array
-  description: List of account devices that will be assigned to a paging group specified
-  items:
-    type: string
-removedDeviceIds:
-  type: array
-  description: >-
-    List of account devices that will be unassigned from a paging group
-    specified
-  items:
-    type: string
-```
+{
+  "type": "object",
+  "properties": {
+    "addedUserIds": {
+      "type": "array",
+      "description": "List of users that will be allowed to page a group specified",
+      "items": {
+        "type": "string"
+      }
+    },
+    "removedUserIds": {
+      "type": "array",
+      "description": "List of users that will be unallowed to page a group specified",
+      "items": {
+        "type": "string"
+      }
+    },
+    "addedDeviceIds": {
+      "type": "array",
+      "description": "List of account devices that will be assigned to a paging group specified",
+      "items": {
+        "type": "string"
+      }
+    },
+    "removedDeviceIds": {
+      "type": "array",
+      "description": "List of account devices that will be unassigned from a paging group specified",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}```
 
 ## Create call monitoring group
 
@@ -5195,9 +9100,9 @@ HTTP POST /restapi/v1.0/account/{accountId}/call-monitoring-groups
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.post(`/restapi/v1.0/account/${accountId}/call-monitoring-groups`, createCallMonitoringGroupRequest);
 ```
 
@@ -5206,13 +9111,22 @@ const r = await platform.post(`/restapi/v1.0/account/${accountId}/call-monitorin
 `createCallMonitoringGroupRequest` is an object with the following properties:
 
 ```yaml
-id:
-  type: string
-  description: Internal identifier of a group
-name:
-  type: string
-  description: Name of a group
-```
+{
+  "type": "object",
+  "required": [
+    "name"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Internal identifier of a group"
+    },
+    "name": {
+      "type": "string",
+      "description": "Name of a group"
+    }
+  }
+}```
 
 ## List call monitoring groups
 
@@ -5221,9 +9135,9 @@ HTTP GET /restapi/v1.0/account/{accountId}/call-monitoring-groups
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/call-monitoring-groups`);
 ```
 
@@ -5236,9 +9150,9 @@ HTTP PUT /restapi/v1.0/account/{accountId}/call-monitoring-groups/{groupId}
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.put(`/restapi/v1.0/account/${accountId}/call-monitoring-groups/${groupId}`, createCallMonitoringGroupRequest);
 ```
 
@@ -5247,13 +9161,22 @@ const r = await platform.put(`/restapi/v1.0/account/${accountId}/call-monitoring
 `createCallMonitoringGroupRequest` is an object with the following properties:
 
 ```yaml
-id:
-  type: string
-  description: Internal identifier of a group
-name:
-  type: string
-  description: Name of a group
-```
+{
+  "type": "object",
+  "required": [
+    "name"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Internal identifier of a group"
+    },
+    "name": {
+      "type": "string",
+      "description": "Name of a group"
+    }
+  }
+}```
 
 ## Remove call monitoring group
 
@@ -5262,9 +9185,9 @@ HTTP DELETE /restapi/v1.0/account/{accountId}/call-monitoring-groups/{groupId}
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.delete(`/restapi/v1.0/account/${accountId}/call-monitoring-groups/${groupId}`);
 ```
 
@@ -5277,9 +9200,9 @@ HTTP GET /restapi/v1.0/account/{accountId}/call-monitoring-groups/{groupId}/memb
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/call-monitoring-groups/${groupId}/members`);
 ```
 
@@ -5292,9 +9215,9 @@ HTTP POST /restapi/v1.0/account/{accountId}/call-monitoring-groups/{groupId}/bul
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.post(`/restapi/v1.0/account/${accountId}/call-monitoring-groups/${groupId}/bulk-assign`, callMonitoringBulkAssign);
 ```
 
@@ -5303,19 +9226,74 @@ const r = await platform.post(`/restapi/v1.0/account/${accountId}/call-monitorin
 `callMonitoringBulkAssign` is an object with the following properties:
 
 ```yaml
-addedExtensions:
-  type: array
-  items:
-    $ref: '#/definitions/CallMonitoringExtensionUpdate'
-removedExtensions:
-  type: array
-  items:
-    $ref: '#/definitions/CallMonitoringExtensionUpdate'
-updatedExtensions:
-  type: array
-  items:
-    $ref: '#/definitions/CallMonitoringExtensionUpdate'
-```
+{
+  "type": "object",
+  "properties": {
+    "addedExtensions": {
+      "type": "array",
+      "items": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": " Only the following extension types are allowed: User, DigitalUser, VirtualUser, FaxUser, Limited"
+          },
+          "permissions": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "Monitoring",
+                "Monitored"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "removedExtensions": {
+      "type": "array",
+      "items": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": " Only the following extension types are allowed: User, DigitalUser, VirtualUser, FaxUser, Limited"
+          },
+          "permissions": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "Monitoring",
+                "Monitored"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "updatedExtensions": {
+      "type": "array",
+      "items": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": " Only the following extension types are allowed: User, DigitalUser, VirtualUser, FaxUser, Limited"
+          },
+          "permissions": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "Monitoring",
+                "Monitored"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}```
 
 ## Parse phone number
 
@@ -5324,9 +9302,9 @@ HTTP POST /restapi/v1.0/number-parser/parse
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.post('/restapi/v1.0/number-parser/parse', parsePhoneNumberRequest);
 ```
 
@@ -5334,15 +9312,18 @@ const r = await platform.post('/restapi/v1.0/number-parser/parse', parsePhoneNum
 `parsePhoneNumberRequest` is an object with the following properties:
 
 ```yaml
-originalStrings:
-  type: array
-  description: >-
-    Phone numbers passed in a string. The maximum value of phone numbers is
-    limited to 64. The maximum number of symbols in each phone number in a
-    string is 64
-  items:
-    type: string
-```
+{
+  "type": "object",
+  "properties": {
+    "originalStrings": {
+      "type": "array",
+      "description": "Phone numbers passed in a string. The maximum value of phone numbers is limited to 64. The maximum number of symbols in each phone number in a string is 64",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}```
 
 ## Load account device
 
@@ -5351,9 +9332,9 @@ HTTP GET /restapi/v1.0/account/{accountId}/device/{deviceId}
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/device/${deviceId}`);
 ```
 
@@ -5366,9 +9347,9 @@ HTTP PUT /restapi/v1.0/account/{accountId}/device/{deviceId}
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.put(`/restapi/v1.0/account/${accountId}/device/${deviceId}`, accountDeviceUpdate);
 ```
 
@@ -5377,23 +9358,74 @@ const r = await platform.put(`/restapi/v1.0/account/${accountId}/device/${device
 `accountDeviceUpdate` is an object with the following properties:
 
 ```yaml
-emergencyServiceAddress:
-  description: >-
-    Address for emergency cases. The same emergency address is assigned to all
-    numbers of a single device
-  $ref: '#/definitions/EmergencyAddressInfoRequest'
-extension:
-  description: Information on extension that the device is assigned to
-  $ref: '#/definitions/DeviceUpdateExtensionInfo'
-phoneLines:
-  description: Information on phone lines added to a device
-  $ref: '#/definitions/DeviceUpdatePhoneLinesInfo'
-useAsCommonPhone:
-  type: boolean
-  description: >-
-    Supported only for devices assigned to Limited extensions. If true, enables
-    users to log in to this phone as a common phone.
-```
+{
+  "type": "object",
+  "properties": {
+    "emergencyServiceAddress": {
+      "description": "Address for emergency cases. The same emergency address is assigned to all numbers of a single device",
+      "properties": {
+        "customerName": {
+          "type": "string",
+          "description": "Name of a customer"
+        },
+        "street": {
+          "type": "string",
+          "description": "Street address, line 1 - street address, P.O. box, company name, c/o"
+        },
+        "street2": {
+          "type": "string",
+          "description": "Street address, line 2 - apartment, suite, unit, building, floor, etc."
+        },
+        "city": {
+          "type": "string",
+          "description": "City name"
+        },
+        "zip": {
+          "type": "string",
+          "description": "Zip code"
+        },
+        "state": {
+          "type": "string",
+          "description": "State/province name"
+        },
+        "country": {
+          "type": "string",
+          "description": "Country name"
+        }
+      }
+    },
+    "extension": {
+      "description": "Information on extension that the device is assigned to",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Internal identifier of an extension"
+        }
+      }
+    },
+    "phoneLines": {
+      "description": "Information on phone lines added to a device",
+      "properties": {
+        "phoneLines": {
+          "type": "array",
+          "description": "Information on phone lines added to a device",
+          "items": {
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "Internal identifier of a phone number"
+              }
+            }
+          }
+        }
+      }
+    },
+    "useAsCommonPhone": {
+      "type": "boolean",
+      "description": "Supported only for devices assigned to Limited extensions. If true, enables users to log in to this phone as a common phone."
+    }
+  }
+}```
 
 ## List extension devices
 
@@ -5402,9 +9434,9 @@ HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/device
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/device`);
 ```
 
@@ -5418,9 +9450,9 @@ HTTP GET /scim/health
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.get('/scim/health');
 ```
 
@@ -5432,9 +9464,9 @@ HTTP GET /scim/v2/health
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.get('/scim/v2/health');
 ```
 
@@ -5446,9 +9478,9 @@ HTTP GET /scim/v2/ServiceProviderConfig
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.get('/scim/v2/ServiceProviderConfig');
 ```
 
@@ -5460,9 +9492,9 @@ HTTP GET /scim/v2/Users
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.get('/scim/v2/Users');
 ```
 
@@ -5474,9 +9506,9 @@ HTTP POST /scim/v2/Users
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.post('/scim/v2/Users', user);
 ```
 
@@ -5484,46 +9516,138 @@ const r = await platform.post('/scim/v2/Users', user);
 `user` is an object with the following properties:
 
 ```yaml
-active:
-  type: boolean
-  description: user status
-  default: false
-addresses:
-  type: array
-  items:
-    $ref: '#/definitions/UserAddress'
-emails:
-  type: array
-  items:
-    $ref: '#/definitions/Email'
-externalId:
-  type: string
-  description: external unique resource id defined by provisioning client
-id:
-  type: string
-  description: unique resource id defined by RingCentral
-name:
-  $ref: '#/definitions/Name'
-phoneNumbers:
-  type: array
-  items:
-    $ref: '#/definitions/PhoneNumber'
-photos:
-  type: array
-  items:
-    $ref: '#/definitions/Photo'
-schemas:
-  type: array
-  items:
-    type: string
-    enum:
-      - 'urn:ietf:params:scim:schemas:core:2.0:User'
-'urn:ietf:params:scim:schemas:extension:enterprise:2.0:User':
-  $ref: '#/definitions/EnterpriseUser'
-userName:
-  type: string
-  description: MUST be same as work type email address
-```
+{
+  "type": "object",
+  "required": [
+    "emails",
+    "name",
+    "schemas",
+    "userName"
+  ],
+  "properties": {
+    "active": {
+      "type": "boolean",
+      "description": "user status",
+      "default": false
+    },
+    "addresses": {
+      "type": "array",
+      "items": {
+        "properties": {
+          "country": {
+            "type": "string"
+          },
+          "locality": {
+            "type": "string"
+          },
+          "postalCode": {
+            "type": "string"
+          },
+          "region": {
+            "type": "string"
+          },
+          "streetAddress": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "work"
+            ]
+          }
+        }
+      }
+    },
+    "emails": {
+      "type": "array",
+      "items": {
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "work"
+            ]
+          },
+          "value": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "externalId": {
+      "type": "string",
+      "description": "external unique resource id defined by provisioning client"
+    },
+    "id": {
+      "type": "string",
+      "description": "unique resource id defined by RingCentral"
+    },
+    "name": {
+      "properties": {
+        "familyName": {
+          "type": "string"
+        },
+        "givenName": {
+          "type": "string"
+        }
+      }
+    },
+    "phoneNumbers": {
+      "type": "array",
+      "items": {
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "work",
+              "mobile",
+              "other"
+            ]
+          },
+          "value": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "photos": {
+      "type": "array",
+      "items": {
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "photo"
+            ]
+          },
+          "value": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "schemas": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "urn:ietf:params:scim:schemas:core:2.0:User"
+        ]
+      }
+    },
+    "urn:ietf:params:scim:schemas:extension:enterprise:2.0:User": {
+      "properties": {
+        "department": {
+          "type": "string"
+        }
+      }
+    },
+    "userName": {
+      "type": "string",
+      "description": "MUST be same as work type email address"
+    }
+  }
+}```
 
 ## Search via post2
 
@@ -5532,9 +9656,9 @@ HTTP POST /scim/v2/Users/.search
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.post('/scim/v2/Users/.search', searchRequest);
 ```
 
@@ -5542,24 +9666,34 @@ const r = await platform.post('/scim/v2/Users/.search', searchRequest);
 `searchRequest` is an object with the following properties:
 
 ```yaml
-count:
-  type: integer
-  format: int32
-  description: page size
-filter:
-  type: string
-  description: only support 'userName' or 'email' filter expressions for now
-schemas:
-  type: array
-  items:
-    type: string
-    enum:
-      - 'urn:ietf:params:scim:api:messages:2.0:SearchRequest'
-startIndex:
-  type: integer
-  format: int32
-  description: start index (1-based)
-```
+{
+  "type": "object",
+  "properties": {
+    "count": {
+      "type": "integer",
+      "format": "int32",
+      "description": "page size"
+    },
+    "filter": {
+      "type": "string",
+      "description": "only support 'userName' or 'email' filter expressions for now"
+    },
+    "schemas": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "urn:ietf:params:scim:api:messages:2.0:SearchRequest"
+        ]
+      }
+    },
+    "startIndex": {
+      "type": "integer",
+      "format": "int32",
+      "description": "start index (1-based)"
+    }
+  }
+}```
 
 ## Get user2
 
@@ -5568,9 +9702,9 @@ HTTP GET /scim/v2/Users/{id}
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.get(`/scim/v2/Users/${id}`);
 ```
 
@@ -5582,9 +9716,9 @@ HTTP PUT /scim/v2/Users/{id}
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.put(`/scim/v2/Users/${id}`, user);
 ```
 
@@ -5592,46 +9726,138 @@ const r = await platform.put(`/scim/v2/Users/${id}`, user);
 `user` is an object with the following properties:
 
 ```yaml
-active:
-  type: boolean
-  description: user status
-  default: false
-addresses:
-  type: array
-  items:
-    $ref: '#/definitions/UserAddress'
-emails:
-  type: array
-  items:
-    $ref: '#/definitions/Email'
-externalId:
-  type: string
-  description: external unique resource id defined by provisioning client
-id:
-  type: string
-  description: unique resource id defined by RingCentral
-name:
-  $ref: '#/definitions/Name'
-phoneNumbers:
-  type: array
-  items:
-    $ref: '#/definitions/PhoneNumber'
-photos:
-  type: array
-  items:
-    $ref: '#/definitions/Photo'
-schemas:
-  type: array
-  items:
-    type: string
-    enum:
-      - 'urn:ietf:params:scim:schemas:core:2.0:User'
-'urn:ietf:params:scim:schemas:extension:enterprise:2.0:User':
-  $ref: '#/definitions/EnterpriseUser'
-userName:
-  type: string
-  description: MUST be same as work type email address
-```
+{
+  "type": "object",
+  "required": [
+    "emails",
+    "name",
+    "schemas",
+    "userName"
+  ],
+  "properties": {
+    "active": {
+      "type": "boolean",
+      "description": "user status",
+      "default": false
+    },
+    "addresses": {
+      "type": "array",
+      "items": {
+        "properties": {
+          "country": {
+            "type": "string"
+          },
+          "locality": {
+            "type": "string"
+          },
+          "postalCode": {
+            "type": "string"
+          },
+          "region": {
+            "type": "string"
+          },
+          "streetAddress": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "work"
+            ]
+          }
+        }
+      }
+    },
+    "emails": {
+      "type": "array",
+      "items": {
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "work"
+            ]
+          },
+          "value": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "externalId": {
+      "type": "string",
+      "description": "external unique resource id defined by provisioning client"
+    },
+    "id": {
+      "type": "string",
+      "description": "unique resource id defined by RingCentral"
+    },
+    "name": {
+      "properties": {
+        "familyName": {
+          "type": "string"
+        },
+        "givenName": {
+          "type": "string"
+        }
+      }
+    },
+    "phoneNumbers": {
+      "type": "array",
+      "items": {
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "work",
+              "mobile",
+              "other"
+            ]
+          },
+          "value": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "photos": {
+      "type": "array",
+      "items": {
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "photo"
+            ]
+          },
+          "value": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "schemas": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "urn:ietf:params:scim:schemas:core:2.0:User"
+        ]
+      }
+    },
+    "urn:ietf:params:scim:schemas:extension:enterprise:2.0:User": {
+      "properties": {
+        "department": {
+          "type": "string"
+        }
+      }
+    },
+    "userName": {
+      "type": "string",
+      "description": "MUST be same as work type email address"
+    }
+  }
+}```
 
 ## Delete user2
 
@@ -5640,9 +9866,9 @@ HTTP DELETE /scim/v2/Users/{id}
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.delete(`/scim/v2/Users/${id}`);
 ```
 
@@ -5654,9 +9880,9 @@ HTTP PATCH /scim/v2/Users/{id}
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.patch(`/scim/v2/Users/${id}`, userPatch);
 ```
 
@@ -5664,18 +9890,47 @@ const r = await platform.patch(`/scim/v2/Users/${id}`, userPatch);
 `userPatch` is an object with the following properties:
 
 ```yaml
-Operations:
-  type: array
-  description: patch operations list
-  items:
-    $ref: '#/definitions/PatchOperation'
-schemas:
-  type: array
-  items:
-    type: string
-    enum:
-      - 'urn:ietf:params:scim:api:messages:2.0:PatchOp'
-```
+{
+  "type": "object",
+  "required": [
+    "Operations",
+    "schemas"
+  ],
+  "properties": {
+    "Operations": {
+      "type": "array",
+      "description": "patch operations list",
+      "items": {
+        "properties": {
+          "op": {
+            "type": "string",
+            "enum": [
+              "add",
+              "replace",
+              "remove"
+            ]
+          },
+          "path": {
+            "type": "string"
+          },
+          "value": {
+            "type": "string",
+            "description": "corresponding 'value' of that field specified by 'path'"
+          }
+        }
+      }
+    },
+    "schemas": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "urn:ietf:params:scim:api:messages:2.0:PatchOp"
+        ]
+      }
+    }
+  }
+}```
 
 ## Get call session status
 
@@ -5684,9 +9939,9 @@ HTTP GET /restapi/v1.0/account/{accountId}/telephony/sessions/{sessionId}
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/telephony/sessions/${sessionId}`);
 ```
 
@@ -5699,9 +9954,9 @@ HTTP DELETE /restapi/v1.0/account/{accountId}/telephony/sessions/{sessionId}
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.delete(`/restapi/v1.0/account/${accountId}/telephony/sessions/${sessionId}`);
 ```
 
@@ -5714,9 +9969,9 @@ HTTP POST /restapi/v1.0/account/{accountId}/telephony/sessions/{sessionId}/parti
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.post(`/restapi/v1.0/account/${accountId}/telephony/sessions/${sessionId}/parties/${partyId}/hold`);
 ```
 
@@ -5729,9 +9984,9 @@ HTTP POST /restapi/v1.0/account/{accountId}/telephony/sessions/{sessionId}/parti
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.post(`/restapi/v1.0/account/${accountId}/telephony/sessions/${sessionId}/parties/${partyId}/unhold`);
 ```
 
@@ -5744,9 +9999,9 @@ HTTP POST /restapi/v1.0/account/{accountId}/telephony/sessions/{sessionId}/parti
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.post(`/restapi/v1.0/account/${accountId}/telephony/sessions/${sessionId}/parties/${partyId}/reject`);
 ```
 
@@ -5759,9 +10014,9 @@ HTTP POST /restapi/v1.0/account/{accountId}/telephony/sessions/{sessionId}/parti
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.post(`/restapi/v1.0/account/${accountId}/telephony/sessions/${sessionId}/parties/${partyId}/transfer`, transferTarget);
 ```
 
@@ -5770,16 +10025,23 @@ const r = await platform.post(`/restapi/v1.0/account/${accountId}/telephony/sess
 `transferTarget` is an object with the following properties:
 
 ```yaml
-phoneNumber:
-  description: Phone number
-  type: string
-voicemail:
-  description: VM owner's extension id
-  type: string
-parkOrbit:
-  description: Park orbit id
-  type: string
-```
+{
+  "type": "object",
+  "properties": {
+    "phoneNumber": {
+      "description": "Phone number",
+      "type": "string"
+    },
+    "voicemail": {
+      "description": "VM owner's extension id",
+      "type": "string"
+    },
+    "parkOrbit": {
+      "description": "Park orbit id",
+      "type": "string"
+    }
+  }
+}```
 
 ## Forward call party
 
@@ -5788,9 +10050,9 @@ HTTP POST /restapi/v1.0/account/{accountId}/telephony/sessions/{sessionId}/parti
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.post(`/restapi/v1.0/account/${accountId}/telephony/sessions/${sessionId}/parties/${partyId}/forward`, forwardTarget);
 ```
 
@@ -5799,13 +10061,19 @@ const r = await platform.post(`/restapi/v1.0/account/${accountId}/telephony/sess
 `forwardTarget` is an object with the following properties:
 
 ```yaml
-phoneNumber:
-  description: Phone number
-  type: string
-voicemail:
-  description: VM owner's extension id
-  type: string
-```
+{
+  "type": "object",
+  "properties": {
+    "phoneNumber": {
+      "description": "Phone number",
+      "type": "string"
+    },
+    "voicemail": {
+      "description": "VM owner's extension id",
+      "type": "string"
+    }
+  }
+}```
 
 ## Call flip party
 
@@ -5814,9 +10082,9 @@ HTTP POST /restapi/v1.0/account/{accountId}/telephony/sessions/{sessionId}/parti
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.post(`/restapi/v1.0/account/${accountId}/telephony/sessions/${sessionId}/parties/${partyId}/flip`, callPartyFlip);
 ```
 
@@ -5825,10 +10093,15 @@ const r = await platform.post(`/restapi/v1.0/account/${accountId}/telephony/sess
 `callPartyFlip` is an object with the following properties:
 
 ```yaml
-callFlipId:
-  description: Call flip id
-  type: string
-```
+{
+  "type": "object",
+  "properties": {
+    "callFlipId": {
+      "description": "Call flip id",
+      "type": "string"
+    }
+  }
+}```
 
 ## Get call party status
 
@@ -5837,9 +10110,9 @@ HTTP GET /restapi/v1.0/account/{accountId}/telephony/sessions/{sessionId}/partie
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/telephony/sessions/${sessionId}/parties/${partyId}`);
 ```
 
@@ -5852,9 +10125,9 @@ HTTP PATCH /restapi/v1.0/account/{accountId}/telephony/sessions/{sessionId}/part
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.patch(`/restapi/v1.0/account/${accountId}/telephony/sessions/${sessionId}/parties/${partyId}`, partyUpdateRequest);
 ```
 
@@ -5863,10 +10136,24 @@ const r = await platform.patch(`/restapi/v1.0/account/${accountId}/telephony/ses
 `partyUpdateRequest` is an object with the following properties:
 
 ```yaml
-party:
-  description: Party update data
-  $ref: '#/definitions/PartyUpdateInfo'
-```
+{
+  "type": "object",
+  "properties": {
+    "party": {
+      "description": "Party update data",
+      "properties": {
+        "muted": {
+          "description": "True if the party is muted. False - otherwise",
+          "type": "boolean"
+        },
+        "standAlone": {
+          "description": "True if party is not connected to a session voice conference. False - otherwise",
+          "type": "boolean"
+        }
+      }
+    }
+  }
+}```
 
 ## Start call recording
 
@@ -5875,9 +10162,9 @@ HTTP POST /restapi/v1.0/account/{accountId}/telephony/sessions/{sessionId}/parti
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.post(`/restapi/v1.0/account/${accountId}/telephony/sessions/${sessionId}/parties/${partyId}/recordings`);
 ```
 
@@ -5890,9 +10177,9 @@ HTTP PATCH /restapi/v1.0/account/{accountId}/telephony/sessions/{sessionId}/part
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.patch(`/restapi/v1.0/account/${accountId}/telephony/sessions/${sessionId}/parties/${partyId}/recordings/${recordingId}`, callRecordingUpdate);
 ```
 
@@ -5901,10 +10188,15 @@ const r = await platform.patch(`/restapi/v1.0/account/${accountId}/telephony/ses
 `callRecordingUpdate` is an object with the following properties:
 
 ```yaml
-active:
-  description: Recording status
-  type: boolean
-```
+{
+  "type": "object",
+  "properties": {
+    "active": {
+      "description": "Recording status",
+      "type": "boolean"
+    }
+  }
+}```
 
 ## Get compliance archive stream
 
@@ -5913,9 +10205,9 @@ HTTP GET /restapi/v1.0/glip/data-export/{taskId}/archive/{archiveId}
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.get(`/restapi/v1.0/glip/data-export/${taskId}/archive/${archiveId}`);
 ```
 
@@ -5927,9 +10219,9 @@ HTTP POST /restapi/v1.0/glip/data-export
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.post('/restapi/v1.0/glip/data-export', createDataExportTaskRequest);
 ```
 
@@ -5937,35 +10229,33 @@ const r = await platform.post('/restapi/v1.0/glip/data-export', createDataExport
 `createDataExportTaskRequest` is an object with the following properties:
 
 ```yaml
-dateFrom:
-  type: string
-  description: >-
-    Starting time for data collection. The default value is current time minus
-    24 hours. If `dateTo` is not specified then its value is set to `dateFrom`
-    plus 24 hours. The specified time range should not be greater than 7 days
-dateTo:
-  type: string
-  description: >-
-    Ending time for data collection. The default value is current time. If
-    `dateFrom` is not specified then its value is set to `dateTo` minus 24
-    hours. The specified time range should not be greater than 7 days
-userIds:
-  type: array
-  description: >-
-    List of users which data is collected. The following data will be exported:
-    posts, tasks, events, etc. posted by the user(s); posts addressing the
-    user(s) via direct and @Mentions; tasks assigned to the listed user(s). The
-    list of 30 users per request is supported.
-  items:
-    type: string
-chatIds:
-  type: array
-  description: >-
-    List of chats from which the data (posts, files, tasks, events, notes, etc.)
-    will be collected
-  items:
-    type: string
-```
+{
+  "type": "object",
+  "properties": {
+    "dateFrom": {
+      "type": "string",
+      "description": "Starting time for data collection. The default value is current time minus 24 hours. If `dateTo` is not specified then its value is set to `dateFrom` plus 24 hours. The specified time range should not be greater than 7 days"
+    },
+    "dateTo": {
+      "type": "string",
+      "description": "Ending time for data collection. The default value is current time. If `dateFrom` is not specified then its value is set to `dateTo` minus 24 hours. The specified time range should not be greater than 7 days"
+    },
+    "userIds": {
+      "type": "array",
+      "description": "List of users which data is collected. The following data will be exported: posts, tasks, events, etc. posted by the user(s); posts addressing the user(s) via direct and @Mentions; tasks assigned to the listed user(s). The list of 30 users per request is supported.",
+      "items": {
+        "type": "string"
+      }
+    },
+    "chatIds": {
+      "type": "array",
+      "description": "List of chats from which the data (posts, files, tasks, events, notes, etc.) will be collected",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}```
 
 ## Load data export task
 
@@ -5974,9 +10264,9 @@ HTTP GET /restapi/v1.0/glip/data-export/{taskId}
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.get(`/restapi/v1.0/glip/data-export/${taskId}`);
 ```
 
@@ -5988,9 +10278,9 @@ HTTP POST /restapi/v1.0/account/{accountId}/message-store-report
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.post(`/restapi/v1.0/account/${accountId}/message-store-report`, createMessageStoreReportRequest);
 ```
 
@@ -5999,15 +10289,19 @@ const r = await platform.post(`/restapi/v1.0/account/${accountId}/message-store-
 `createMessageStoreReportRequest` is an object with the following properties:
 
 ```yaml
-dateFrom:
-  type: string
-  description: >-
-    Starting time for collecting messages. The default value equals to the
-    current time minus 24 hours
-dateTo:
-  type: string
-  description: Ending time for collecting messages. The default value is the current time
-```
+{
+  "type": "object",
+  "properties": {
+    "dateFrom": {
+      "type": "string",
+      "description": "Starting time for collecting messages. The default value equals to the current time minus 24 hours"
+    },
+    "dateTo": {
+      "type": "string",
+      "description": "Ending time for collecting messages. The default value is the current time"
+    }
+  }
+}```
 
 ## Load message store report task
 
@@ -6016,9 +10310,9 @@ HTTP GET /restapi/v1.0/account/{accountId}/message-store-report/{taskId}
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/message-store-report/${taskId}`);
 ```
 
@@ -6031,9 +10325,9 @@ HTTP GET /restapi/v1.0/account/{accountId}/message-store-report/{taskId}/archive
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/message-store-report/${taskId}/archive`);
 ```
 
@@ -6046,9 +10340,9 @@ HTTP GET /restapi/v1.0/account/{accountId}/message-store-report/{taskId}/archive
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/message-store-report/${taskId}/archive/${archiveId}`);
 ```
 
@@ -6061,9 +10355,9 @@ HTTP GET /restapi/v1.0/account/{accountId}/meeting-recordings
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/meeting-recordings`);
 ```
 
@@ -6076,9 +10370,9 @@ HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/meeting-recor
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/meeting-recordings`);
 ```
 
@@ -6092,9 +10386,9 @@ HTTP GET /restapi/oauth/authorize
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.get('/restapi/oauth/authorize');
 ```
 
@@ -6106,9 +10400,9 @@ HTTP POST /restapi/oauth/token
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.post('/restapi/oauth/token');
 ```
 
@@ -6120,8 +10414,8 @@ HTTP POST /restapi/oauth/revoke
 ```js
 const SDK = require('ringcentral');
 
-const rcsdk = new SDK({server: serverURL, appKey: clientId, appSecret: clientSecret});
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ username, extension, password });
+await platform.login({ 'username', 'extension', 'password' });
 const r = await platform.post('/restapi/oauth/revoke');
 ```

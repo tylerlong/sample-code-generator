@@ -4,7 +4,7 @@ import * as R from 'ramda'
 
 const doc = yaml.safeLoad(fs.readFileSync(process.env.SWAGGER_FILE_PATH, 'utf8'))
 
-const loadFullDefinition = name => {
+export const loadFullDefinition = name => {
   const model = R.clone(doc.definitions[name])
   Object.keys(model.properties).forEach(key => {
     const prop = model.properties[key]
@@ -19,5 +19,3 @@ const loadFullDefinition = name => {
   })
   return model
 }
-
-console.log(JSON.stringify(loadFullDefinition('CreateSMSMessage'), null, 2))
