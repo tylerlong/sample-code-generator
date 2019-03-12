@@ -1,12 +1,11 @@
 # RingCentral JS SDK code samples
 
-## Get all versions
+## Get All Versions
 
 HTTP GET /restapi
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -14,13 +13,12 @@ const r = await platform.get('/restapi');
 ```
 
 
-## Get api version
+## Get Api Version
 
 HTTP GET /restapi/{apiVersion}
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -29,13 +27,12 @@ const r = await platform.get(`/restapi/${apiVersion}`);
 
 - `apiVersion`'s default value is `v1.0`
 
-## Load api status
+## Load Api Status
 
 HTTP GET /restapi/v1.0/status
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -43,13 +40,12 @@ const r = await platform.get('/restapi/v1.0/status');
 ```
 
 
-## Load user call log
+## Load User Call Log
 
 HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/call-log
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -59,13 +55,12 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${ext
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-## Delete user call log
+## Delete User Call Log
 
 HTTP DELETE /restapi/v1.0/account/{accountId}/extension/{extensionId}/call-log
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -75,13 +70,12 @@ const r = await platform.delete(`/restapi/v1.0/account/${accountId}/extension/${
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-## Sync user call log
+## Sync User Call Log
 
 HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/call-log-sync
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -91,13 +85,12 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${ext
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-## Get call records
+## Get Call Records
 
 HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/call-log/{callRecordId}
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -107,13 +100,12 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${ext
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-## List extension active calls
+## List Extension Active Calls
 
 HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/active-calls
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -123,13 +115,12 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${ext
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-## Load company call log
+## Load Company Call Log
 
 HTTP GET /restapi/v1.0/account/{accountId}/call-log
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -138,13 +129,12 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/call-log`);
 
 - `accountId`'s default value is `~`
 
-## Load company call log record
+## Load Company Call Log Record
 
 HTTP GET /restapi/v1.0/account/{accountId}/call-log/{callRecordId}
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -153,13 +143,12 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/call-log/${call
 
 - `accountId`'s default value is `~`
 
-## List company active calls
+## List Company Active Calls
 
 HTTP GET /restapi/v1.0/account/{accountId}/active-calls
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -168,13 +157,12 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/active-calls`);
 
 - `accountId`'s default value is `~`
 
-## List call recordings
+## List Call Recordings
 
 HTTP GET /restapi/v1.0/account/{accountId}/recording/{recordingId}
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -183,13 +171,12 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/recording/${rec
 
 - `accountId`'s default value is `~`
 
-## List call recording data
+## List Call Recording Data
 
 HTTP GET /restapi/v1.0/account/{accountId}/recording/{recordingId}/content
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -198,13 +185,12 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/recording/${rec
 
 - `accountId`'s default value is `~`
 
-## Send sms
+## Send Sms
 
 HTTP POST /restapi/v1.0/account/{accountId}/extension/{extensionId}/sms
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -251,15 +237,15 @@ const r = await platform.post(`/restapi/v1.0/account/${accountId}/extension/${ex
       "description": "Text of a message. Max length is 1000 symbols (2-byte UTF-16 encoded). If a character is encoded in 4 bytes in UTF-16 it is treated as 2 characters, thus restricting the maximum message length to 500 symbols"
     }
   }
-}```
+}
+```
 
-## Create internal text message
+## Create Internal Text Message
 
 HTTP POST /restapi/v1.0/account/{accountId}/extension/{extensionId}/company-pager
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -312,15 +298,15 @@ const r = await platform.post(`/restapi/v1.0/account/${accountId}/extension/${ex
       }
     }
   }
-}```
+}
+```
 
-## Send fax message
+## Send Fax Message
 
 HTTP POST /restapi/v1.0/account/{accountId}/extension/{extensionId}/fax
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -387,13 +373,12 @@ const r = await platform.post(`/restapi/v1.0/account/${accountId}/extension/${ex
   }
 ]```
 
-## List fax cover pages
+## List Fax Cover Pages
 
 HTTP GET /restapi/v1.0/dictionary/fax-cover-page
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -401,13 +386,12 @@ const r = await platform.get('/restapi/v1.0/dictionary/fax-cover-page');
 ```
 
 
-## List messages
+## List Messages
 
 HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/message-store
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -417,13 +401,12 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${ext
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-## Delete messages by filter
+## Delete Messages By Filter
 
 HTTP DELETE /restapi/v1.0/account/{accountId}/extension/{extensionId}/message-store
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -433,13 +416,12 @@ const r = await platform.delete(`/restapi/v1.0/account/${accountId}/extension/${
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-## Load message
+## Load Message
 
 HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/message-store/{messageId}
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -449,13 +431,12 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${ext
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-## Update message
+## Update Message
 
 HTTP PUT /restapi/v1.0/account/{accountId}/extension/{extensionId}/message-store/{messageId}
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -480,15 +461,15 @@ const r = await platform.put(`/restapi/v1.0/account/${accountId}/extension/${ext
       ]
     }
   }
-}```
+}
+```
 
-## Delete message
+## Delete Message
 
 HTTP DELETE /restapi/v1.0/account/{accountId}/extension/{extensionId}/message-store/{messageId}
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -498,13 +479,12 @@ const r = await platform.delete(`/restapi/v1.0/account/${accountId}/extension/${
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-## Get message attachment by id
+## Get Message Attachment By Id
 
 HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/message-store/{messageId}/content/{attachmentId}
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -514,13 +494,12 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${ext
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-## Sync messages
+## Sync Messages
 
 HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/message-sync
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -530,13 +509,12 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${ext
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-## Load message store configuration
+## Load Message Store Configuration
 
 HTTP GET /restapi/v1.0/account/{accountId}/message-store-configuration
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -545,13 +523,12 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/message-store-c
 
 - `accountId`'s default value is `~`
 
-## Update message store configuration
+## Update Message Store Configuration
 
 HTTP PUT /restapi/v1.0/account/{accountId}/message-store-configuration
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -573,15 +550,15 @@ const r = await platform.put(`/restapi/v1.0/account/${accountId}/message-store-c
       "maximum": 90
     }
   }
-}```
+}
+```
 
-## Make ring out call
+## Make Ring Out Call
 
 HTTP POST /restapi/v1.0/account/{accountId}/extension/{extensionId}/ring-out
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -646,15 +623,15 @@ const r = await platform.post(`/restapi/v1.0/account/${accountId}/extension/${ex
       }
     }
   }
-}```
+}
+```
 
-## Get ring out call status
+## Get Ring Out Call Status
 
 HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/ring-out/{ringoutId}
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -664,13 +641,12 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${ext
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-## Cancel ring out call
+## Cancel Ring Out Call
 
 HTTP DELETE /restapi/v1.0/account/{accountId}/extension/{extensionId}/ring-out/{ringoutId}
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -680,13 +656,12 @@ const r = await platform.delete(`/restapi/v1.0/account/${accountId}/extension/${
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-## Make ring out call deprecated
+## Make Ring Out Call Deprecated
 
 HTTP POST /restapi/v1.0/account/{accountId}/extension/{extensionId}/ringout
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -751,15 +726,15 @@ const r = await platform.post(`/restapi/v1.0/account/${accountId}/extension/${ex
       }
     }
   }
-}```
+}
+```
 
-## Get ring out call status deprecated
+## Get Ring Out Call Status Deprecated
 
 HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/ringout/{ringoutId}
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -769,13 +744,12 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${ext
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-## Cancel ring out call deprecated
+## Cancel Ring Out Call Deprecated
 
 HTTP DELETE /restapi/v1.0/account/{accountId}/extension/{extensionId}/ringout/{ringoutId}
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -785,13 +759,12 @@ const r = await platform.delete(`/restapi/v1.0/account/${accountId}/extension/${
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-## List contacts
+## List Contacts
 
 HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/address-book/contact
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -801,13 +774,12 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${ext
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-## Create contact
+## Create Contact
 
 HTTP POST /restapi/v1.0/account/{accountId}/extension/{extensionId}/address-book/contact
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -984,15 +956,15 @@ const r = await platform.post(`/restapi/v1.0/account/${accountId}/extension/${ex
       "type": "string"
     }
   }
-}```
+}
+```
 
-## Load contact
+## Load Contact
 
 HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/address-book/contact/{contactId}
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -1002,13 +974,12 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${ext
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-## Update contact
+## Update Contact
 
 HTTP PUT /restapi/v1.0/account/{accountId}/extension/{extensionId}/address-book/contact/{contactId}
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -1185,15 +1156,15 @@ const r = await platform.put(`/restapi/v1.0/account/${accountId}/extension/${ext
       "type": "string"
     }
   }
-}```
+}
+```
 
-## Delete contact
+## Delete Contact
 
 HTTP DELETE /restapi/v1.0/account/{accountId}/extension/{extensionId}/address-book/contact/{contactId}
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -1203,13 +1174,12 @@ const r = await platform.delete(`/restapi/v1.0/account/${accountId}/extension/${
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-## Sync address book
+## Sync Address Book
 
 HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/address-book-sync
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -1219,13 +1189,12 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${ext
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-## List favorite contacts
+## List Favorite Contacts
 
 HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/favorite
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -1235,13 +1204,12 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${ext
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-## Update favorite contact list
+## Update Favorite Contact List
 
 HTTP PUT /restapi/v1.0/account/{accountId}/extension/{extensionId}/favorite
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -1282,15 +1250,15 @@ const r = await platform.put(`/restapi/v1.0/account/${accountId}/extension/${ext
       }
     }
   }
-}```
+}
+```
 
-## Search directory entries
+## Search Directory Entries
 
 HTTP POST /restapi/v1.0/account/{accountId}/directory/entries/search
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -1370,15 +1338,15 @@ const r = await platform.post(`/restapi/v1.0/account/${accountId}/directory/entr
       "type": "integer"
     }
   }
-}```
+}
+```
 
-## List directory entries
+## List Directory Entries
 
 HTTP GET /restapi/v1.0/account/{accountId}/directory/entries
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -1387,13 +1355,12 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/directory/entri
 
 - `accountId`'s default value is `~`
 
-## Load account federation
+## Load Account Federation
 
 HTTP GET /restapi/v1.0/account/{accountId}/directory/federation
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -1402,13 +1369,12 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/directory/feder
 
 - `accountId`'s default value is `~`
 
-## Get presence status
+## Get Presence Status
 
 HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/presence
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -1418,13 +1384,12 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${ext
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-## Update presence status
+## Update Presence Status
 
 HTTP PUT /restapi/v1.0/account/{accountId}/extension/{extensionId}/presence
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -1544,15 +1509,15 @@ const r = await platform.put(`/restapi/v1.0/account/${accountId}/extension/${ext
       }
     }
   }
-}```
+}
+```
 
-## Account presence
+## Account Presence
 
 HTTP GET /restapi/v1.0/account/{accountId}/presence
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -1561,13 +1526,12 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/presence`);
 
 - `accountId`'s default value is `~`
 
-## List glip chats
+## List Glip Chats
 
 HTTP GET /restapi/v1.0/glip/chats
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -1575,13 +1539,12 @@ const r = await platform.get('/restapi/v1.0/glip/chats');
 ```
 
 
-## Load glip chat
+## Load Glip Chat
 
 HTTP GET /restapi/v1.0/glip/chats/{chatId}
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -1589,13 +1552,12 @@ const r = await platform.get(`/restapi/v1.0/glip/chats/${chatId}`);
 ```
 
 
-## List glip conversations
+## List Glip Conversations
 
 HTTP GET /restapi/v1.0/glip/conversations
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -1603,13 +1565,12 @@ const r = await platform.get('/restapi/v1.0/glip/conversations');
 ```
 
 
-## Create glip conversation
+## Create Glip Conversation
 
 HTTP POST /restapi/v1.0/glip/conversations
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -1644,15 +1605,15 @@ const r = await platform.post('/restapi/v1.0/glip/conversations', glipPostMember
       }
     }
   }
-}```
+}
+```
 
-## Load glip conversation
+## Load Glip Conversation
 
 HTTP GET /restapi/v1.0/glip/conversations/{chatId}
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -1660,13 +1621,12 @@ const r = await platform.get(`/restapi/v1.0/glip/conversations/${chatId}`);
 ```
 
 
-## List glip teams
+## List Glip Teams
 
 HTTP GET /restapi/v1.0/glip/teams
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -1674,13 +1634,12 @@ const r = await platform.get('/restapi/v1.0/glip/teams');
 ```
 
 
-## Create glip team
+## Create Glip Team
 
 HTTP POST /restapi/v1.0/glip/teams
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -1727,15 +1686,15 @@ const r = await platform.post('/restapi/v1.0/glip/teams', glipPostTeamBody);
       }
     }
   }
-}```
+}
+```
 
-## Load glip team
+## Load Glip Team
 
 HTTP GET /restapi/v1.0/glip/teams/{chatId}
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -1743,13 +1702,12 @@ const r = await platform.get(`/restapi/v1.0/glip/teams/${chatId}`);
 ```
 
 
-## Update glip team
+## Update Glip Team
 
 HTTP PATCH /restapi/v1.0/glip/teams/{chatId}
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -1776,15 +1734,15 @@ const r = await platform.patch(`/restapi/v1.0/glip/teams/${chatId}`, glipPatchTe
       "description": "Team description."
     }
   }
-}```
+}
+```
 
-## Delete glip team
+## Delete Glip Team
 
 HTTP DELETE /restapi/v1.0/glip/teams/{chatId}
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -1792,13 +1750,12 @@ const r = await platform.delete(`/restapi/v1.0/glip/teams/${chatId}`);
 ```
 
 
-## Join glip team
+## Join Glip Team
 
 HTTP POST /restapi/v1.0/glip/teams/{chatId}/join
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -1806,13 +1763,12 @@ const r = await platform.post(`/restapi/v1.0/glip/teams/${chatId}/join`);
 ```
 
 
-## Leave glip team
+## Leave Glip Team
 
 HTTP POST /restapi/v1.0/glip/teams/{chatId}/leave
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -1820,13 +1776,12 @@ const r = await platform.post(`/restapi/v1.0/glip/teams/${chatId}/leave`);
 ```
 
 
-## Add glip team members
+## Add Glip Team Members
 
 HTTP POST /restapi/v1.0/glip/teams/{chatId}/add
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -1861,15 +1816,15 @@ const r = await platform.post(`/restapi/v1.0/glip/teams/${chatId}/add`, glipPost
       }
     }
   }
-}```
+}
+```
 
-## Remove glip team members
+## Remove Glip Team Members
 
 HTTP POST /restapi/v1.0/glip/teams/{chatId}/remove
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -1900,15 +1855,15 @@ const r = await platform.post(`/restapi/v1.0/glip/teams/${chatId}/remove`, glipP
       }
     }
   }
-}```
+}
+```
 
-## Archive glip team
+## Archive Glip Team
 
 HTTP POST /restapi/v1.0/glip/teams/{chatId}/archive
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -1916,13 +1871,12 @@ const r = await platform.post(`/restapi/v1.0/glip/teams/${chatId}/archive`);
 ```
 
 
-## Unarchive glip team
+## Unarchive Glip Team
 
 HTTP POST /restapi/v1.0/glip/teams/{chatId}/unarchive
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -1930,13 +1884,12 @@ const r = await platform.post(`/restapi/v1.0/glip/teams/${chatId}/unarchive`);
 ```
 
 
-## Load glip everyone
+## Load Glip Everyone
 
 HTTP GET /restapi/v1.0/glip/everyone
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -1944,13 +1897,12 @@ const r = await platform.get('/restapi/v1.0/glip/everyone');
 ```
 
 
-## Update glip everyone
+## Update Glip Everyone
 
 HTTP PATCH /restapi/v1.0/glip/everyone
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -1973,15 +1925,15 @@ const r = await platform.patch('/restapi/v1.0/glip/everyone', updateGlipEveryone
       "description": "Everyone chat description. Maximum number of characters supported is 1000"
     }
   }
-}```
+}
+```
 
-## List glip groups
+## List Glip Groups
 
 HTTP GET /restapi/v1.0/glip/groups
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -1989,13 +1941,12 @@ const r = await platform.get('/restapi/v1.0/glip/groups');
 ```
 
 
-## Create glip group
+## Create Glip Group
 
 HTTP POST /restapi/v1.0/glip/groups
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -2040,15 +1991,15 @@ const r = await platform.post('/restapi/v1.0/glip/groups', glipCreateGroup);
       "description": "Identifier(s) of group members. For 'PrivateChat' group type 2 members only are supported"
     }
   }
-}```
+}
+```
 
-## Load glip group
+## Load Glip Group
 
 HTTP GET /restapi/v1.0/glip/groups/{groupId}
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -2056,13 +2007,12 @@ const r = await platform.get(`/restapi/v1.0/glip/groups/${groupId}`);
 ```
 
 
-## Assign glip group members
+## Assign Glip Group Members
 
 HTTP POST /restapi/v1.0/glip/groups/{groupId}/bulk-assign
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -2098,15 +2048,15 @@ const r = await platform.post(`/restapi/v1.0/glip/groups/${groupId}/bulk-assign`
       "description": "List of users to be removed from a team"
     }
   }
-}```
+}
+```
 
-## List glip group posts
+## List Glip Group Posts
 
 HTTP GET /restapi/v1.0/glip/groups/{groupId}/posts
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -2114,13 +2064,12 @@ const r = await platform.get(`/restapi/v1.0/glip/groups/${groupId}/posts`);
 ```
 
 
-## Create glip group post
+## Create Glip Group Post
 
 HTTP POST /restapi/v1.0/glip/groups/{groupId}/posts
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -2294,15 +2243,15 @@ const r = await platform.post(`/restapi/v1.0/glip/groups/${groupId}/posts`, glip
       "description": "List of attachments to be posted"
     }
   }
-}```
+}
+```
 
-## Update glip post text
+## Update Glip Post Text
 
 HTTP PUT /restapi/v1.0/glip/groups/{groupId}/posts/{postId}/text
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -2310,13 +2259,12 @@ const r = await platform.put(`/restapi/v1.0/glip/groups/${groupId}/posts/${postI
 ```
 
 
-## List recent chats
+## List Recent Chats
 
 HTTP GET /restapi/v1.0/glip/recent/chats
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -2324,13 +2272,12 @@ const r = await platform.get('/restapi/v1.0/glip/recent/chats');
 ```
 
 
-## List favorite chats
+## List Favorite Chats
 
 HTTP GET /restapi/v1.0/glip/favorites
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -2338,13 +2285,12 @@ const r = await platform.get('/restapi/v1.0/glip/favorites');
 ```
 
 
-## Favorite glip chat
+## Favorite Glip Chat
 
 HTTP POST /restapi/v1.0/glip/chats/{chatId}/favorite
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -2352,13 +2298,12 @@ const r = await platform.post(`/restapi/v1.0/glip/chats/${chatId}/favorite`);
 ```
 
 
-## Unfavorite glip chat
+## Unfavorite Glip Chat
 
 HTTP POST /restapi/v1.0/glip/chats/{chatId}/unfavorite
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -2366,13 +2311,12 @@ const r = await platform.post(`/restapi/v1.0/glip/chats/${chatId}/unfavorite`);
 ```
 
 
-## Mark chat read
+## Mark Chat Read
 
 HTTP POST /restapi/v1.0/glip/chats/{chatId}/read
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -2380,13 +2324,12 @@ const r = await platform.post(`/restapi/v1.0/glip/chats/${chatId}/read`);
 ```
 
 
-## Mark chat unread
+## Mark Chat Unread
 
 HTTP POST /restapi/v1.0/glip/chats/{chatId}/unread
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -2394,13 +2337,12 @@ const r = await platform.post(`/restapi/v1.0/glip/chats/${chatId}/unread`);
 ```
 
 
-## List glip posts
+## List Glip Posts
 
 HTTP GET /restapi/v1.0/glip/posts
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -2408,13 +2350,12 @@ const r = await platform.get('/restapi/v1.0/glip/posts');
 ```
 
 
-## Create post
+## Create Post
 
 HTTP POST /restapi/v1.0/glip/posts
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -2588,15 +2529,15 @@ const r = await platform.post('/restapi/v1.0/glip/posts', glipCreatePost);
       "description": "List of attachments to be posted"
     }
   }
-}```
+}
+```
 
-## Create glip file
+## Create Glip File
 
 HTTP POST /restapi/v1.0/glip/files
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -2613,13 +2554,12 @@ const r = await platform.post('/restapi/v1.0/glip/files', formData);
 ```yaml
 []```
 
-## Create glip card
+## Create Glip Card
 
 HTTP POST /restapi/v1.0/glip/cards
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -2772,15 +2712,15 @@ const r = await platform.post('/restapi/v1.0/glip/cards', glipMessageAttachmentI
       "description": "Condition of ending an event"
     }
   }
-}```
+}
+```
 
-## Load glip card
+## Load Glip Card
 
 HTTP GET /restapi/v1.0/glip/cards/{cardId}
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -2788,13 +2728,12 @@ const r = await platform.get(`/restapi/v1.0/glip/cards/${cardId}`);
 ```
 
 
-## Update glip card
+## Update Glip Card
 
 HTTP PUT /restapi/v1.0/glip/cards/{cardId}
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -2947,15 +2886,15 @@ const r = await platform.put(`/restapi/v1.0/glip/cards/${cardId}`, glipMessageAt
       "description": "Condition of ending an event"
     }
   }
-}```
+}
+```
 
-## Delete glip card
+## Delete Glip Card
 
 HTTP DELETE /restapi/v1.0/glip/cards/{cardId}
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -2963,13 +2902,12 @@ const r = await platform.delete(`/restapi/v1.0/glip/cards/${cardId}`);
 ```
 
 
-## Load glip events
+## Load Glip Events
 
 HTTP GET /restapi/v1.0/glip/events
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -2977,13 +2915,12 @@ const r = await platform.get('/restapi/v1.0/glip/events');
 ```
 
 
-## Create event
+## Create Event
 
 HTTP POST /restapi/v1.0/glip/events
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -3081,15 +3018,15 @@ const r = await platform.post('/restapi/v1.0/glip/events', glipEventCreate);
       "description": "Event details"
     }
   }
-}```
+}
+```
 
-## Load event
+## Load Event
 
 HTTP GET /restapi/v1.0/glip/events/{eventId}
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -3097,13 +3034,12 @@ const r = await platform.get(`/restapi/v1.0/glip/events/${eventId}`);
 ```
 
 
-## Update event
+## Update Event
 
 HTTP PUT /restapi/v1.0/glip/events/{eventId}
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -3201,15 +3137,15 @@ const r = await platform.put(`/restapi/v1.0/glip/events/${eventId}`, glipEventCr
       "description": "Event details"
     }
   }
-}```
+}
+```
 
-## Delete event
+## Delete Event
 
 HTTP DELETE /restapi/v1.0/glip/events/{eventId}
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -3217,13 +3153,12 @@ const r = await platform.delete(`/restapi/v1.0/glip/events/${eventId}`);
 ```
 
 
-## Create eventby group id
+## Create Eventby Group Id
 
 HTTP POST /restapi/v1.0/glip/groups/{groupId}/events
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -3321,15 +3256,15 @@ const r = await platform.post(`/restapi/v1.0/glip/groups/${groupId}/events`, gli
       "description": "Event details"
     }
   }
-}```
+}
+```
 
-## List group events
+## List Group Events
 
 HTTP GET /restapi/v1.0/glip/groups/{groupId}/events
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -3337,13 +3272,12 @@ const r = await platform.get(`/restapi/v1.0/glip/groups/${groupId}/events`);
 ```
 
 
-## Load group notes
+## Load Group Notes
 
 HTTP GET /restapi/v1.0/glip/groups/{groupId}/notes
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -3351,13 +3285,12 @@ const r = await platform.get(`/restapi/v1.0/glip/groups/${groupId}/notes`);
 ```
 
 
-## Create group note
+## Create Group Note
 
 HTTP POST /restapi/v1.0/glip/groups/{groupId}/notes
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -3392,15 +3325,15 @@ const r = await platform.post(`/restapi/v1.0/glip/groups/${groupId}/notes`, glip
       "description": "Contents of a note"
     }
   }
-}```
+}
+```
 
-## Load user notes
+## Load User Notes
 
 HTTP GET /restapi/v1.0/glip/notes
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -3408,13 +3341,12 @@ const r = await platform.get('/restapi/v1.0/glip/notes');
 ```
 
 
-## Create user note
+## Create User Note
 
 HTTP POST /restapi/v1.0/glip/notes
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -3449,15 +3381,15 @@ const r = await platform.post('/restapi/v1.0/glip/notes', glipNoteCreate);
       "description": "Contents of a note"
     }
   }
-}```
+}
+```
 
-## Load user note
+## Load User Note
 
 HTTP GET /restapi/v1.0/glip/notes/{noteId}
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -3465,13 +3397,12 @@ const r = await platform.get(`/restapi/v1.0/glip/notes/${noteId}`);
 ```
 
 
-## Delete note
+## Delete Note
 
 HTTP DELETE /restapi/v1.0/glip/notes/{noteId}
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -3479,13 +3410,12 @@ const r = await platform.delete(`/restapi/v1.0/glip/notes/${noteId}`);
 ```
 
 
-## Patch note
+## Patch Note
 
 HTTP PATCH /restapi/v1.0/glip/notes/{noteId}
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -3520,15 +3450,15 @@ const r = await platform.patch(`/restapi/v1.0/glip/notes/${noteId}`, glipNoteCre
       "description": "Contents of a note"
     }
   }
-}```
+}
+```
 
-## Update note
+## Update Note
 
 HTTP PUT /restapi/v1.0/glip/notes/{noteId}
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -3563,15 +3493,15 @@ const r = await platform.put(`/restapi/v1.0/glip/notes/${noteId}`, glipNoteCreat
       "description": "Contents of a note"
     }
   }
-}```
+}
+```
 
-## Lock note
+## Lock Note
 
 HTTP POST /restapi/v1.0/glip/notes/{noteId}/lock
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -3579,13 +3509,12 @@ const r = await platform.post(`/restapi/v1.0/glip/notes/${noteId}/lock`);
 ```
 
 
-## Publish note
+## Publish Note
 
 HTTP POST /restapi/v1.0/glip/notes/{noteId}/publish
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -3593,13 +3522,12 @@ const r = await platform.post(`/restapi/v1.0/glip/notes/${noteId}/publish`);
 ```
 
 
-## Unlock note
+## Unlock Note
 
 HTTP POST /restapi/v1.0/glip/notes/{noteId}/unlock
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -3607,13 +3535,12 @@ const r = await platform.post(`/restapi/v1.0/glip/notes/${noteId}/unlock`);
 ```
 
 
-## Load glip person
+## Load Glip Person
 
 HTTP GET /restapi/v1.0/glip/persons/{personId}
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -3621,13 +3548,12 @@ const r = await platform.get(`/restapi/v1.0/glip/persons/${personId}`);
 ```
 
 
-## Load glip company
+## Load Glip Company
 
 HTTP GET /restapi/v1.0/glip/companies/{companyId}
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -3635,13 +3561,12 @@ const r = await platform.get(`/restapi/v1.0/glip/companies/${companyId}`);
 ```
 
 
-## Create glip group webhook
+## Create Glip Group Webhook
 
 HTTP POST /restapi/v1.0/glip/groups/{groupId}/webhooks
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -3649,13 +3574,12 @@ const r = await platform.post(`/restapi/v1.0/glip/groups/${groupId}/webhooks`);
 ```
 
 
-## List glip group webhooks
+## List Glip Group Webhooks
 
 HTTP GET /restapi/v1.0/glip/groups/{groupId}/webhooks
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -3663,13 +3587,12 @@ const r = await platform.get(`/restapi/v1.0/glip/groups/${groupId}/webhooks`);
 ```
 
 
-## List glip webhooks
+## List Glip Webhooks
 
 HTTP GET /restapi/v1.0/glip/webhooks
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -3677,13 +3600,12 @@ const r = await platform.get('/restapi/v1.0/glip/webhooks');
 ```
 
 
-## Load glip webhook
+## Load Glip Webhook
 
 HTTP GET /restapi/v1.0/glip/webhooks/{webhookId}
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -3691,13 +3613,12 @@ const r = await platform.get(`/restapi/v1.0/glip/webhooks/${webhookId}`);
 ```
 
 
-## Delete glip webhook
+## Delete Glip Webhook
 
 HTTP DELETE /restapi/v1.0/glip/webhooks/{webhookId}
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -3705,13 +3626,12 @@ const r = await platform.delete(`/restapi/v1.0/glip/webhooks/${webhookId}`);
 ```
 
 
-## Activate glip webhook
+## Activate Glip Webhook
 
 HTTP POST /restapi/v1.0/glip/webhooks/{webhookId}/activate
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -3719,13 +3639,12 @@ const r = await platform.post(`/restapi/v1.0/glip/webhooks/${webhookId}/activate
 ```
 
 
-## Suspend glip webhook
+## Suspend Glip Webhook
 
 HTTP POST /restapi/v1.0/glip/webhooks/{webhookId}/suspend
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -3733,13 +3652,12 @@ const r = await platform.post(`/restapi/v1.0/glip/webhooks/${webhookId}/suspend`
 ```
 
 
-## Load glip preferences
+## Load Glip Preferences
 
 HTTP GET /restapi/v1.0/glip/preferences
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -3747,13 +3665,12 @@ const r = await platform.get('/restapi/v1.0/glip/preferences');
 ```
 
 
-## List meetings
+## List Meetings
 
 HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/meeting
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -3763,13 +3680,12 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${ext
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-## Create meeting
+## Create Meeting
 
 HTTP POST /restapi/v1.0/account/{accountId}/extension/{extensionId}/meeting
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -3849,15 +3765,15 @@ const r = await platform.post(`/restapi/v1.0/account/${accountId}/extension/${ex
       }
     }
   }
-}```
+}
+```
 
-## Load meeting
+## Load Meeting
 
 HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/meeting/{meetingId}
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -3867,13 +3783,12 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${ext
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-## Update meeting
+## Update Meeting
 
 HTTP PUT /restapi/v1.0/account/{accountId}/extension/{extensionId}/meeting/{meetingId}
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -3953,15 +3868,15 @@ const r = await platform.put(`/restapi/v1.0/account/${accountId}/extension/${ext
       }
     }
   }
-}```
+}
+```
 
-## Delete meeting
+## Delete Meeting
 
 HTTP DELETE /restapi/v1.0/account/{accountId}/extension/{extensionId}/meeting/{meetingId}
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -3971,13 +3886,12 @@ const r = await platform.delete(`/restapi/v1.0/account/${accountId}/extension/${
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-## End meeting
+## End Meeting
 
 HTTP POST /restapi/v1.0/account/{accountId}/extension/{extensionId}/meeting/{meetingId}/end
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -3987,13 +3901,12 @@ const r = await platform.post(`/restapi/v1.0/account/${accountId}/extension/${ex
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-## Load meeting service info
+## Load Meeting Service Info
 
 HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/meeting/service-info
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -4003,13 +3916,12 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${ext
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-## List subscriptions
+## List Subscriptions
 
 HTTP GET /restapi/v1.0/subscription
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -4017,13 +3929,12 @@ const r = await platform.get('/restapi/v1.0/subscription');
 ```
 
 
-## Create subscription
+## Create Subscription
 
 HTTP POST /restapi/v1.0/subscription
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -4090,15 +4001,15 @@ const r = await platform.post('/restapi/v1.0/subscription', createSubscriptionRe
       "default": 604800
     }
   }
-}```
+}
+```
 
-## Load subscription
+## Load Subscription
 
 HTTP GET /restapi/v1.0/subscription/{subscriptionId}
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -4106,13 +4017,12 @@ const r = await platform.get(`/restapi/v1.0/subscription/${subscriptionId}`);
 ```
 
 
-## Update subscription
+## Update Subscription
 
 HTTP PUT /restapi/v1.0/subscription/{subscriptionId}
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -4178,15 +4088,15 @@ const r = await platform.put(`/restapi/v1.0/subscription/${subscriptionId}`, mod
       "default": 604800
     }
   }
-}```
+}
+```
 
-## Delete subscription
+## Delete Subscription
 
 HTTP DELETE /restapi/v1.0/subscription/{subscriptionId}
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -4194,13 +4104,12 @@ const r = await platform.delete(`/restapi/v1.0/subscription/${subscriptionId}`);
 ```
 
 
-## Renew subscription
+## Renew Subscription
 
 HTTP POST /restapi/v1.0/subscription/{subscriptionId}/renew
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -4208,13 +4117,12 @@ const r = await platform.post(`/restapi/v1.0/subscription/${subscriptionId}/rene
 ```
 
 
-## Get authorization profile
+## Get Authorization Profile
 
 HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/authz-profile
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -4224,13 +4132,12 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${ext
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-## Check user permission
+## Check User Permission
 
 HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/authz-profile/check
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -4240,13 +4147,12 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${ext
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-## Load user business hours
+## Load User Business Hours
 
 HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/business-hours
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -4256,13 +4162,12 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${ext
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-## Update user business hours
+## Update User Business Hours
 
 HTTP PUT /restapi/v1.0/account/{accountId}/extension/{extensionId}/business-hours
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -4404,15 +4309,15 @@ const r = await platform.put(`/restapi/v1.0/account/${accountId}/extension/${ext
       }
     }
   }
-}```
+}
+```
 
-## Load company business hours
+## Load Company Business Hours
 
 HTTP GET /restapi/v1.0/account/{accountId}/business-hours
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -4421,13 +4326,12 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/business-hours`
 
 - `accountId`'s default value is `~`
 
-## Update company business hours
+## Update Company Business Hours
 
 HTTP PUT /restapi/v1.0/account/{accountId}/business-hours
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -4600,15 +4504,15 @@ const r = await platform.put(`/restapi/v1.0/account/${accountId}/business-hours`
       }
     }
   }
-}```
+}
+```
 
-## Load call blocking settings
+## Load Call Blocking Settings
 
 HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/caller-blocking
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -4618,13 +4522,12 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${ext
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-## Update call blocking settings
+## Update Call Blocking Settings
 
 HTTP PUT /restapi/v1.0/account/{accountId}/extension/{extensionId}/caller-blocking
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -4695,15 +4598,15 @@ const r = await platform.put(`/restapi/v1.0/account/${accountId}/extension/${ext
       }
     }
   }
-}```
+}
+```
 
-## List blocked allowed phone number
+## List Blocked Allowed Phone Number
 
 HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/caller-blocking/phone-numbers
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -4713,13 +4616,12 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${ext
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-## Create blocked allowed phone number list
+## Create Blocked Allowed Phone Number List
 
 HTTP POST /restapi/v1.0/account/{accountId}/extension/{extensionId}/caller-blocking/phone-numbers
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -4754,15 +4656,15 @@ const r = await platform.post(`/restapi/v1.0/account/${accountId}/extension/${ex
       "default": "Blocked"
     }
   }
-}```
+}
+```
 
-## Create blocked allowed phone number lists
+## Create Blocked Allowed Phone Number Lists
 
 HTTP POST /restapi/v1.0/account/{accountId}/extension/{extensionId}/caller-blocking/phone-numbers/bulk-update
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -4772,13 +4674,12 @@ const r = await platform.post(`/restapi/v1.0/account/${accountId}/extension/${ex
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-## Load blocked allowed phone number
+## Load Blocked Allowed Phone Number
 
 HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/caller-blocking/phone-numbers/{blockedNumberId}
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -4788,13 +4689,12 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${ext
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-## Delete blocked allowed phone number
+## Delete Blocked Allowed Phone Number
 
 HTTP DELETE /restapi/v1.0/account/{accountId}/extension/{extensionId}/caller-blocking/phone-numbers/{blockedNumberId}
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -4804,13 +4704,12 @@ const r = await platform.delete(`/restapi/v1.0/account/${accountId}/extension/${
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-## Update blocked allowed phone number
+## Update Blocked Allowed Phone Number
 
 HTTP PUT /restapi/v1.0/account/{accountId}/extension/{extensionId}/caller-blocking/phone-numbers/{blockedNumberId}
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -4845,15 +4744,15 @@ const r = await platform.put(`/restapi/v1.0/account/${accountId}/extension/${ext
       "default": "Blocked"
     }
   }
-}```
+}
+```
 
-## List extension forwarding numbers
+## List Extension Forwarding Numbers
 
 HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/forwarding-number
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -4863,13 +4762,12 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${ext
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-## Create extension forwarding number
+## Create Extension Forwarding Number
 
 HTTP POST /restapi/v1.0/account/{accountId}/extension/{extensionId}/forwarding-number
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -4914,15 +4812,15 @@ const r = await platform.post(`/restapi/v1.0/account/${accountId}/extension/${ex
       }
     }
   }
-}```
+}
+```
 
-## Load extension forwarding number
+## Load Extension Forwarding Number
 
 HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/forwarding-number/{forwardingNumberId}
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -4932,13 +4830,12 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${ext
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-## Update extension forwarding number
+## Update Extension Forwarding Number
 
 HTTP PUT /restapi/v1.0/account/{accountId}/extension/{extensionId}/forwarding-number/{forwardingNumberId}
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -4979,15 +4876,15 @@ const r = await platform.put(`/restapi/v1.0/account/${accountId}/extension/${ext
       ]
     }
   }
-}```
+}
+```
 
-## Delete extension forwarding number
+## Delete Extension Forwarding Number
 
 HTTP DELETE /restapi/v1.0/account/{accountId}/extension/{extensionId}/forwarding-number/{forwardingNumberId}
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -4997,13 +4894,12 @@ const r = await platform.delete(`/restapi/v1.0/account/${accountId}/extension/${
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-## List answering rules
+## List Answering Rules
 
 HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/answering-rule
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -5013,13 +4909,12 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${ext
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-## Create answering rule
+## Create Answering Rule
 
 HTTP POST /restapi/v1.0/account/{accountId}/extension/{extensionId}/answering-rule
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -5532,15 +5427,15 @@ const r = await platform.post(`/restapi/v1.0/account/${accountId}/extension/${ex
       ]
     }
   }
-}```
+}
+```
 
-## Load answering rule
+## Load Answering Rule
 
 HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/answering-rule/{ruleId}
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -5550,13 +5445,12 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${ext
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-## Update answering rule
+## Update Answering Rule
 
 HTTP PUT /restapi/v1.0/account/{accountId}/extension/{extensionId}/answering-rule/{ruleId}
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -6029,15 +5923,15 @@ const r = await platform.put(`/restapi/v1.0/account/${accountId}/extension/${ext
       "description": "Indicates whether inactive numbers should be returned or not."
     }
   }
-}```
+}
+```
 
-## Delete answering rule
+## Delete Answering Rule
 
 HTTP DELETE /restapi/v1.0/account/{accountId}/extension/{extensionId}/answering-rule/{ruleId}
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -6047,13 +5941,12 @@ const r = await platform.delete(`/restapi/v1.0/account/${accountId}/extension/${
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-## Create company answering rule
+## Create Company Answering Rule
 
 HTTP POST /restapi/v1.0/account/{accountId}/answering-rule
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -6343,15 +6236,15 @@ const r = await platform.post(`/restapi/v1.0/account/${accountId}/answering-rule
       }
     }
   }
-}```
+}
+```
 
-## List company answering rule
+## List Company Answering Rule
 
 HTTP GET /restapi/v1.0/account/{accountId}/answering-rule
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -6360,13 +6253,12 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/answering-rule`
 
 - `accountId`'s default value is `~`
 
-## Load company answering rule
+## Load Company Answering Rule
 
 HTTP GET /restapi/v1.0/account/{accountId}/answering-rule/{ruleId}
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -6375,13 +6267,12 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/answering-rule/
 
 - `accountId`'s default value is `~`
 
-## Update company answering rule
+## Update Company Answering Rule
 
 HTTP PUT /restapi/v1.0/account/{accountId}/answering-rule/{ruleId}
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -6662,15 +6553,15 @@ const r = await platform.put(`/restapi/v1.0/account/${accountId}/answering-rule/
       }
     }
   }
-}```
+}
+```
 
-## Delete company answering rule
+## Delete Company Answering Rule
 
 HTTP DELETE /restapi/v1.0/account/{accountId}/answering-rule/{ruleId}
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -6679,13 +6570,12 @@ const r = await platform.delete(`/restapi/v1.0/account/${accountId}/answering-ru
 
 - `accountId`'s default value is `~`
 
-## List standard greetings
+## List Standard Greetings
 
 HTTP GET /restapi/v1.0/dictionary/greeting
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -6693,13 +6583,12 @@ const r = await platform.get('/restapi/v1.0/dictionary/greeting');
 ```
 
 
-## Load standard greeting
+## Load Standard Greeting
 
 HTTP GET /restapi/v1.0/dictionary/greeting/{greetingId}
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -6707,13 +6596,12 @@ const r = await platform.get(`/restapi/v1.0/dictionary/greeting/${greetingId}`);
 ```
 
 
-## Create company greeting
+## Create Company Greeting
 
 HTTP POST /restapi/v1.0/account/{accountId}/greeting
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -6761,15 +6649,15 @@ const r = await platform.post(`/restapi/v1.0/account/${accountId}/greeting`, cus
       "description": "Custom greeting audio"
     }
   }
-}```
+}
+```
 
-## Create user custom greeting
+## Create User Custom Greeting
 
 HTTP POST /restapi/v1.0/account/{accountId}/extension/{extensionId}/greeting
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -6812,15 +6700,15 @@ const r = await platform.post(`/restapi/v1.0/account/${accountId}/extension/${ex
       "description": "Custom greeting audio"
     }
   }
-}```
+}
+```
 
-## Load custom greeting
+## Load Custom Greeting
 
 HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/greeting/{greetingId}
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -6830,13 +6718,12 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${ext
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-## Create ivr prompt
+## Create Ivr Prompt
 
 HTTP POST /restapi/v1.0/account/{accountId}/ivr-prompts
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -6862,13 +6749,12 @@ const r = await platform.post(`/restapi/v1.0/account/${accountId}/ivr-prompts`, 
   }
 ]```
 
-## List ivr prompts
+## List Ivr Prompts
 
 HTTP GET /restapi/v1.0/account/{accountId}/ivr-prompts
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -6877,13 +6763,12 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/ivr-prompts`);
 
 - `accountId`'s default value is `~`
 
-## Load ivr prompt
+## Load Ivr Prompt
 
 HTTP GET /restapi/v1.0/account/{accountId}/ivr-prompts/{promptId}
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -6892,13 +6777,12 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/ivr-prompts/${p
 
 - `accountId`'s default value is `~`
 
-## Delete ivr prompt
+## Delete Ivr Prompt
 
 HTTP DELETE /restapi/v1.0/account/{accountId}/ivr-prompts/{promptId}
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -6907,13 +6791,12 @@ const r = await platform.delete(`/restapi/v1.0/account/${accountId}/ivr-prompts/
 
 - `accountId`'s default value is `~`
 
-## Update ivr prompt
+## Update Ivr Prompt
 
 HTTP PUT /restapi/v1.0/account/{accountId}/ivr-prompts/{promptId}
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -6922,13 +6805,12 @@ const r = await platform.put(`/restapi/v1.0/account/${accountId}/ivr-prompts/${p
 
 - `accountId`'s default value is `~`
 
-## Load ivr prompt content
+## Load Ivr Prompt Content
 
 HTTP GET /restapi/v1.0/account/{accountId}/ivr-prompts/{promptId}/content
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -6937,13 +6819,12 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/ivr-prompts/${p
 
 - `accountId`'s default value is `~`
 
-## Create ivr menu
+## Create Ivr Menu
 
 HTTP POST /restapi/v1.0/account/{accountId}/ivr-menus
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -7069,15 +6950,15 @@ const r = await platform.post(`/restapi/v1.0/account/${accountId}/ivr-menus`, iV
       }
     }
   }
-}```
+}
+```
 
-## Load ivr menu
+## Load Ivr Menu
 
 HTTP GET /restapi/v1.0/account/{accountId}/ivr-menus/{ivrMenuId}
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -7086,13 +6967,12 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/ivr-menus/${ivr
 
 - `accountId`'s default value is `~`
 
-## Update ivr menu
+## Update Ivr Menu
 
 HTTP PUT /restapi/v1.0/account/{accountId}/ivr-menus/{ivrMenuId}
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -7218,15 +7098,15 @@ const r = await platform.put(`/restapi/v1.0/account/${accountId}/ivr-menus/${ivr
       }
     }
   }
-}```
+}
+```
 
-## Load call recording settings
+## Load Call Recording Settings
 
 HTTP GET /restapi/v1.0/account/{accountId}/call-recording
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -7235,13 +7115,12 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/call-recording`
 
 - `accountId`'s default value is `~`
 
-## Update call recording settings
+## Update Call Recording Settings
 
 HTTP PUT /restapi/v1.0/account/{accountId}/call-recording
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -7313,15 +7192,15 @@ const r = await platform.put(`/restapi/v1.0/account/${accountId}/call-recording`
       }
     }
   }
-}```
+}
+```
 
-## List call recording extension settings
+## List Call Recording Extension Settings
 
 HTTP GET /restapi/v1.0/account/{accountId}/call-recording/extensions
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -7330,13 +7209,12 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/call-recording/
 
 - `accountId`'s default value is `~`
 
-## Update call recording extension settings
+## Update Call Recording Extension Settings
 
 HTTP POST /restapi/v1.0/account/{accountId}/call-recording/bulk-assign
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -7430,15 +7308,15 @@ const r = await platform.post(`/restapi/v1.0/account/${accountId}/call-recording
       }
     }
   }
-}```
+}
+```
 
-## List call recording custom greetings
+## List Call Recording Custom Greetings
 
 HTTP GET /restapi/v1.0/account/{accountId}/call-recording/custom-greetings
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -7447,13 +7325,12 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/call-recording/
 
 - `accountId`'s default value is `~`
 
-## Delete call recording custom greetings
+## Delete Call Recording Custom Greetings
 
 HTTP DELETE /restapi/v1.0/account/{accountId}/call-recording/custom-greetings
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -7462,13 +7339,12 @@ const r = await platform.delete(`/restapi/v1.0/account/${accountId}/call-recordi
 
 - `accountId`'s default value is `~`
 
-## Delete call recording custom greeting
+## Delete Call Recording Custom Greeting
 
 HTTP DELETE /restapi/v1.0/account/{accountId}/call-recording/custom-greetings/{greetingId}
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -7477,13 +7353,12 @@ const r = await platform.delete(`/restapi/v1.0/account/${accountId}/call-recordi
 
 - `accountId`'s default value is `~`
 
-## Create sip registration
+## Create Sip Registration
 
 HTTP POST /restapi/v1.0/client-info/sip-provision
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -7541,15 +7416,15 @@ const r = await platform.post('/restapi/v1.0/client-info/sip-provision', createS
       }
     }
   }
-}```
+}
+```
 
-## List extension phone numbers
+## List Extension Phone Numbers
 
 HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/phone-number
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -7559,13 +7434,12 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${ext
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-## Load extension info
+## Load Extension Info
 
 HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -7575,13 +7449,12 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${ext
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-## Update extension
+## Update Extension
 
 HTTP PUT /restapi/v1.0/account/{accountId}/extension/{extensionId}
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -7818,15 +7691,15 @@ const r = await platform.put(`/restapi/v1.0/account/${accountId}/extension/${ext
       }
     }
   }
-}```
+}
+```
 
-## Delete extension
+## Delete Extension
 
 HTTP DELETE /restapi/v1.0/account/{accountId}/extension/{extensionId}
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -7836,13 +7709,12 @@ const r = await platform.delete(`/restapi/v1.0/account/${accountId}/extension/${
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-## Load extension caller id
+## Load Extension Caller Id
 
 HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/caller-id
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -7852,13 +7724,12 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${ext
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-## Update extension caller id
+## Update Extension Caller Id
 
 HTTP PUT /restapi/v1.0/account/{accountId}/extension/{extensionId}/caller-id
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -7981,15 +7852,15 @@ const r = await platform.put(`/restapi/v1.0/account/${accountId}/extension/${ext
       "description": "If 'True', then extension number will be used as caller ID when making internal calls"
     }
   }
-}```
+}
+```
 
-## List extension grants
+## List Extension Grants
 
 HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/grant
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -7999,13 +7870,12 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${ext
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-## Load notification settings
+## Load Notification Settings
 
 HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/notification-settings
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -8015,13 +7885,12 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${ext
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-## Update notification settings
+## Update Notification Settings
 
 HTTP PUT /restapi/v1.0/account/{accountId}/extension/{extensionId}/notification-settings
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -8202,15 +8071,15 @@ const r = await platform.put(`/restapi/v1.0/account/${accountId}/extension/${ext
       }
     }
   }
-}```
+}
+```
 
-## Download profile image
+## Download Profile Image
 
 HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/profile-image
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -8220,13 +8089,12 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${ext
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-## Upload profile image
+## Upload Profile Image
 
 HTTP POST /restapi/v1.0/account/{accountId}/extension/{extensionId}/profile-image
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -8245,13 +8113,12 @@ const r = await platform.post(`/restapi/v1.0/account/${accountId}/extension/${ex
 ```yaml
 []```
 
-## Update profile image
+## Update Profile Image
 
 HTTP PUT /restapi/v1.0/account/{accountId}/extension/{extensionId}/profile-image
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -8270,13 +8137,12 @@ const r = await platform.put(`/restapi/v1.0/account/${accountId}/extension/${ext
 ```yaml
 []```
 
-## Download scaled pofile image
+## Download Scaled Pofile Image
 
 HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/profile-image/{scaleSize}
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -8286,13 +8152,12 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${ext
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-## Load conferencing info
+## Load Conferencing Info
 
 HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/conferencing
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -8302,13 +8167,12 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${ext
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-## Update conferencing info
+## Update Conferencing Info
 
 HTTP PUT /restapi/v1.0/account/{accountId}/extension/{extensionId}/conferencing
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -8345,15 +8209,15 @@ const r = await platform.put(`/restapi/v1.0/account/${accountId}/extension/${ext
       "description": "Determines if host user allows conference participants to join before the host"
     }
   }
-}```
+}
+```
 
-## Load account
+## Load Account
 
 HTTP GET /restapi/v1.0/account/{accountId}
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -8362,13 +8226,12 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}`);
 
 - `accountId`'s default value is `~`
 
-## Load account business address
+## Load Account Business Address
 
 HTTP GET /restapi/v1.0/account/{accountId}/business-address
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -8377,13 +8240,12 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/business-addres
 
 - `accountId`'s default value is `~`
 
-## Update account business address
+## Update Account Business Address
 
 HTTP PUT /restapi/v1.0/account/{accountId}/business-address
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -8435,15 +8297,15 @@ const r = await platform.put(`/restapi/v1.0/account/${accountId}/business-addres
       }
     }
   }
-}```
+}
+```
 
-## Load service info
+## Load Service Info
 
 HTTP GET /restapi/v1.0/account/{accountId}/service-info
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -8452,13 +8314,12 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/service-info`);
 
 - `accountId`'s default value is `~`
 
-## List languages
+## List Languages
 
 HTTP GET /restapi/v1.0/dictionary/language
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -8466,13 +8327,12 @@ const r = await platform.get('/restapi/v1.0/dictionary/language');
 ```
 
 
-## Load language
+## Load Language
 
 HTTP GET /restapi/v1.0/dictionary/language/{languageId}
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -8480,13 +8340,12 @@ const r = await platform.get(`/restapi/v1.0/dictionary/language/${languageId}`);
 ```
 
 
-## List countries
+## List Countries
 
 HTTP GET /restapi/v1.0/dictionary/country
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -8494,13 +8353,12 @@ const r = await platform.get('/restapi/v1.0/dictionary/country');
 ```
 
 
-## Load country
+## Load Country
 
 HTTP GET /restapi/v1.0/dictionary/country/{countryId}
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -8508,13 +8366,12 @@ const r = await platform.get(`/restapi/v1.0/dictionary/country/${countryId}`);
 ```
 
 
-## List locations
+## List Locations
 
 HTTP GET /restapi/v1.0/dictionary/location
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -8522,13 +8379,12 @@ const r = await platform.get('/restapi/v1.0/dictionary/location');
 ```
 
 
-## List states
+## List States
 
 HTTP GET /restapi/v1.0/dictionary/state
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -8536,13 +8392,12 @@ const r = await platform.get('/restapi/v1.0/dictionary/state');
 ```
 
 
-## Load state
+## Load State
 
 HTTP GET /restapi/v1.0/dictionary/state/{stateId}
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -8550,13 +8405,12 @@ const r = await platform.get(`/restapi/v1.0/dictionary/state/${stateId}`);
 ```
 
 
-## List timezones
+## List Timezones
 
 HTTP GET /restapi/v1.0/dictionary/timezone
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -8564,13 +8418,12 @@ const r = await platform.get('/restapi/v1.0/dictionary/timezone');
 ```
 
 
-## Load timezone
+## Load Timezone
 
 HTTP GET /restapi/v1.0/dictionary/timezone/{timezoneId}
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -8578,13 +8431,12 @@ const r = await platform.get(`/restapi/v1.0/dictionary/timezone/${timezoneId}`);
 ```
 
 
-## List account phone numbers
+## List Account Phone Numbers
 
 HTTP GET /restapi/v1.0/account/{accountId}/phone-number
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -8593,13 +8445,12 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/phone-number`);
 
 - `accountId`'s default value is `~`
 
-## Load account phone number
+## Load Account Phone Number
 
 HTTP GET /restapi/v1.0/account/{accountId}/phone-number/{phoneNumberId}
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -8608,13 +8459,12 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/phone-number/${
 
 - `accountId`'s default value is `~`
 
-## List extensions
+## List Extensions
 
 HTTP GET /restapi/v1.0/account/{accountId}/extension
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -8623,13 +8473,12 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension`);
 
 - `accountId`'s default value is `~`
 
-## Create extension
+## Create Extension
 
 HTTP POST /restapi/v1.0/account/{accountId}/extension
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -8953,15 +8802,15 @@ const r = await platform.post(`/restapi/v1.0/account/${accountId}/extension`, ex
       "description": "Hides extension from showing in company directory. Supported for extensions of User type only. For unassigned extensions the value is set to 'True' by default. For assigned extensions the value is set to 'False' by default"
     }
   }
-}```
+}
+```
 
-## List templates
+## List Templates
 
 HTTP GET /restapi/v1.0/account/{accountId}/templates
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -8970,13 +8819,12 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/templates`);
 
 - `accountId`'s default value is `~`
 
-## Load template
+## Load Template
 
 HTTP GET /restapi/v1.0/account/{accountId}/templates/{templateId}
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -8985,13 +8833,12 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/templates/${tem
 
 - `accountId`'s default value is `~`
 
-## List call queues
+## List Call Queues
 
 HTTP GET /restapi/v1.0/account/{accountId}/call-queues
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -9000,13 +8847,12 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/call-queues`);
 
 - `accountId`'s default value is `~`
 
-## List call queue members
+## List Call Queue Members
 
 HTTP GET /restapi/v1.0/account/{accountId}/call-queues/{groupId}/members
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -9015,13 +8861,12 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/call-queues/${g
 
 - `accountId`'s default value is `~`
 
-## Assign call queue members
+## Assign Call Queue Members
 
 HTTP POST /restapi/v1.0/account/{accountId}/call-queues/{groupId}/bulk-assign
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -9049,15 +8894,15 @@ const r = await platform.post(`/restapi/v1.0/account/${accountId}/call-queues/${
       }
     }
   }
-}```
+}
+```
 
-## List department members
+## List Department Members
 
 HTTP GET /restapi/v1.0/account/{accountId}/department/{departmentId}/members
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -9066,13 +8911,12 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/department/${de
 
 - `accountId`'s default value is `~`
 
-## Bulk assign departments
+## Bulk Assign Departments
 
 HTTP POST /restapi/v1.0/account/{accountId}/department/bulk-assign
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -9110,15 +8954,15 @@ const r = await platform.post(`/restapi/v1.0/account/${accountId}/department/bul
       }
     }
   }
-}```
+}
+```
 
-## List paging group users
+## List Paging Group Users
 
 HTTP GET /restapi/v1.0/account/{accountId}/paging-only-groups/{pagingOnlyGroupId}/users
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -9127,13 +8971,12 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/paging-only-gro
 
 - `accountId`'s default value is `~`
 
-## List paging group devices
+## List Paging Group Devices
 
 HTTP GET /restapi/v1.0/account/{accountId}/paging-only-groups/{pagingOnlyGroupId}/devices
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -9142,13 +8985,12 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/paging-only-gro
 
 - `accountId`'s default value is `~`
 
-## Bulk assign paging group
+## Bulk Assign Paging Group
 
 HTTP POST /restapi/v1.0/account/{accountId}/paging-only-groups/{pagingOnlyGroupId}/bulk-assign
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -9192,15 +9034,15 @@ const r = await platform.post(`/restapi/v1.0/account/${accountId}/paging-only-gr
       }
     }
   }
-}```
+}
+```
 
-## Create call monitoring group
+## Create Call Monitoring Group
 
 HTTP POST /restapi/v1.0/account/{accountId}/call-monitoring-groups
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -9227,15 +9069,15 @@ const r = await platform.post(`/restapi/v1.0/account/${accountId}/call-monitorin
       "description": "Name of a group"
     }
   }
-}```
+}
+```
 
-## List call monitoring groups
+## List Call Monitoring Groups
 
 HTTP GET /restapi/v1.0/account/{accountId}/call-monitoring-groups
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -9244,13 +9086,12 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/call-monitoring
 
 - `accountId`'s default value is `~`
 
-## Update call monitoring group
+## Update Call Monitoring Group
 
 HTTP PUT /restapi/v1.0/account/{accountId}/call-monitoring-groups/{groupId}
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -9277,15 +9118,15 @@ const r = await platform.put(`/restapi/v1.0/account/${accountId}/call-monitoring
       "description": "Name of a group"
     }
   }
-}```
+}
+```
 
-## Remove call monitoring group
+## Remove Call Monitoring Group
 
 HTTP DELETE /restapi/v1.0/account/{accountId}/call-monitoring-groups/{groupId}
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -9294,13 +9135,12 @@ const r = await platform.delete(`/restapi/v1.0/account/${accountId}/call-monitor
 
 - `accountId`'s default value is `~`
 
-## List call monitoring group members
+## List Call Monitoring Group Members
 
 HTTP GET /restapi/v1.0/account/{accountId}/call-monitoring-groups/{groupId}/members
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -9309,13 +9149,12 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/call-monitoring
 
 - `accountId`'s default value is `~`
 
-## Update call monitoring groups
+## Update Call Monitoring Groups
 
 HTTP POST /restapi/v1.0/account/{accountId}/call-monitoring-groups/{groupId}/bulk-assign
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -9394,15 +9233,15 @@ const r = await platform.post(`/restapi/v1.0/account/${accountId}/call-monitorin
       }
     }
   }
-}```
+}
+```
 
-## Parse phone number
+## Parse Phone Number
 
 HTTP POST /restapi/v1.0/number-parser/parse
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -9424,15 +9263,15 @@ const r = await platform.post('/restapi/v1.0/number-parser/parse', parsePhoneNum
       }
     }
   }
-}```
+}
+```
 
-## Load account device
+## Load Account Device
 
 HTTP GET /restapi/v1.0/account/{accountId}/device/{deviceId}
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -9441,13 +9280,12 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/device/${device
 
 - `accountId`'s default value is `~`
 
-## Update device
+## Update Device
 
 HTTP PUT /restapi/v1.0/account/{accountId}/device/{deviceId}
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -9526,15 +9364,15 @@ const r = await platform.put(`/restapi/v1.0/account/${accountId}/device/${device
       "description": "Supported only for devices assigned to Limited extensions. If true, enables users to log in to this phone as a common phone."
     }
   }
-}```
+}
+```
 
-## List extension devices
+## List Extension Devices
 
 HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/device
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -9544,13 +9382,12 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${ext
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-## Check health
+## Check Health
 
 HTTP GET /scim/health
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -9558,13 +9395,12 @@ const r = await platform.get('/scim/health');
 ```
 
 
-## Check health2
+## Check Health2
 
 HTTP GET /scim/v2/health
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -9572,13 +9408,12 @@ const r = await platform.get('/scim/v2/health');
 ```
 
 
-## Get service provider config2
+## Get Service Provider Config2
 
 HTTP GET /scim/v2/ServiceProviderConfig
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -9586,13 +9421,12 @@ const r = await platform.get('/scim/v2/ServiceProviderConfig');
 ```
 
 
-## Search via get2
+## Search Via Get2
 
 HTTP GET /scim/v2/Users
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -9600,13 +9434,12 @@ const r = await platform.get('/scim/v2/Users');
 ```
 
 
-## Create user2
+## Create User2
 
 HTTP POST /scim/v2/Users
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -9748,15 +9581,15 @@ const r = await platform.post('/scim/v2/Users', user);
       "description": "MUST be same as work type email address"
     }
   }
-}```
+}
+```
 
-## Search via post2
+## Search Via Post2
 
 HTTP POST /scim/v2/Users/.search
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -9794,15 +9627,15 @@ const r = await platform.post('/scim/v2/Users/.search', searchRequest);
       "description": "start index (1-based)"
     }
   }
-}```
+}
+```
 
-## Get user2
+## Get User2
 
 HTTP GET /scim/v2/Users/{id}
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -9810,13 +9643,12 @@ const r = await platform.get(`/scim/v2/Users/${id}`);
 ```
 
 
-## Replace user2
+## Replace User2
 
 HTTP PUT /scim/v2/Users/{id}
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -9958,15 +9790,15 @@ const r = await platform.put(`/scim/v2/Users/${id}`, user);
       "description": "MUST be same as work type email address"
     }
   }
-}```
+}
+```
 
-## Delete user2
+## Delete User2
 
 HTTP DELETE /scim/v2/Users/{id}
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -9974,13 +9806,12 @@ const r = await platform.delete(`/scim/v2/Users/${id}`);
 ```
 
 
-## Patch user2
+## Patch User2
 
 HTTP PATCH /scim/v2/Users/{id}
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -10031,15 +9862,15 @@ const r = await platform.patch(`/scim/v2/Users/${id}`, userPatch);
       }
     }
   }
-}```
+}
+```
 
-## Get call session status
+## Get Call Session Status
 
 HTTP GET /restapi/v1.0/account/{accountId}/telephony/sessions/{sessionId}
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -10048,13 +9879,12 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/telephony/sessi
 
 - `accountId`'s default value is `~`
 
-## Delete call session
+## Delete Call Session
 
 HTTP DELETE /restapi/v1.0/account/{accountId}/telephony/sessions/{sessionId}
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -10063,13 +9893,12 @@ const r = await platform.delete(`/restapi/v1.0/account/${accountId}/telephony/se
 
 - `accountId`'s default value is `~`
 
-## Hold call party
+## Hold Call Party
 
 HTTP POST /restapi/v1.0/account/{accountId}/telephony/sessions/{sessionId}/parties/{partyId}/hold
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -10078,13 +9907,12 @@ const r = await platform.post(`/restapi/v1.0/account/${accountId}/telephony/sess
 
 - `accountId`'s default value is `~`
 
-## Unhold call party
+## Unhold Call Party
 
 HTTP POST /restapi/v1.0/account/{accountId}/telephony/sessions/{sessionId}/parties/{partyId}/unhold
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -10093,13 +9921,12 @@ const r = await platform.post(`/restapi/v1.0/account/${accountId}/telephony/sess
 
 - `accountId`'s default value is `~`
 
-## Reject party
+## Reject Party
 
 HTTP POST /restapi/v1.0/account/{accountId}/telephony/sessions/{sessionId}/parties/{partyId}/reject
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -10108,13 +9935,12 @@ const r = await platform.post(`/restapi/v1.0/account/${accountId}/telephony/sess
 
 - `accountId`'s default value is `~`
 
-## Transfer call party
+## Transfer Call Party
 
 HTTP POST /restapi/v1.0/account/{accountId}/telephony/sessions/{sessionId}/parties/{partyId}/transfer
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -10142,15 +9968,15 @@ const r = await platform.post(`/restapi/v1.0/account/${accountId}/telephony/sess
       "type": "string"
     }
   }
-}```
+}
+```
 
-## Forward call party
+## Forward Call Party
 
 HTTP POST /restapi/v1.0/account/{accountId}/telephony/sessions/{sessionId}/parties/{partyId}/forward
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -10174,15 +10000,15 @@ const r = await platform.post(`/restapi/v1.0/account/${accountId}/telephony/sess
       "type": "string"
     }
   }
-}```
+}
+```
 
-## Call flip party
+## Call Flip Party
 
 HTTP POST /restapi/v1.0/account/{accountId}/telephony/sessions/{sessionId}/parties/{partyId}/flip
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -10202,15 +10028,15 @@ const r = await platform.post(`/restapi/v1.0/account/${accountId}/telephony/sess
       "type": "string"
     }
   }
-}```
+}
+```
 
-## Get call party status
+## Get Call Party Status
 
 HTTP GET /restapi/v1.0/account/{accountId}/telephony/sessions/{sessionId}/parties/{partyId}
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -10219,13 +10045,12 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/telephony/sessi
 
 - `accountId`'s default value is `~`
 
-## Update call party
+## Update Call Party
 
 HTTP PATCH /restapi/v1.0/account/{accountId}/telephony/sessions/{sessionId}/parties/{partyId}
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -10254,15 +10079,15 @@ const r = await platform.patch(`/restapi/v1.0/account/${accountId}/telephony/ses
       }
     }
   }
-}```
+}
+```
 
-## Start call recording
+## Start Call Recording
 
 HTTP POST /restapi/v1.0/account/{accountId}/telephony/sessions/{sessionId}/parties/{partyId}/recordings
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -10271,13 +10096,12 @@ const r = await platform.post(`/restapi/v1.0/account/${accountId}/telephony/sess
 
 - `accountId`'s default value is `~`
 
-## Pause resume call recording
+## Pause Resume Call Recording
 
 HTTP PATCH /restapi/v1.0/account/{accountId}/telephony/sessions/{sessionId}/parties/{partyId}/recordings/{recordingId}
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -10297,15 +10121,15 @@ const r = await platform.patch(`/restapi/v1.0/account/${accountId}/telephony/ses
       "type": "boolean"
     }
   }
-}```
+}
+```
 
-## Get compliance archive stream
+## Get Compliance Archive Stream
 
 HTTP GET /restapi/v1.0/glip/data-export/{taskId}/archive/{archiveId}
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -10313,13 +10137,12 @@ const r = await platform.get(`/restapi/v1.0/glip/data-export/${taskId}/archive/$
 ```
 
 
-## Create data export task
+## Create Data Export Task
 
 HTTP POST /restapi/v1.0/glip/data-export
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -10356,15 +10179,15 @@ const r = await platform.post('/restapi/v1.0/glip/data-export', createDataExport
       }
     }
   }
-}```
+}
+```
 
-## Load data export task
+## Load Data Export Task
 
 HTTP GET /restapi/v1.0/glip/data-export/{taskId}
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -10372,13 +10195,12 @@ const r = await platform.get(`/restapi/v1.0/glip/data-export/${taskId}`);
 ```
 
 
-## Create message store report
+## Create Message Store Report
 
 HTTP POST /restapi/v1.0/account/{accountId}/message-store-report
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -10402,15 +10224,15 @@ const r = await platform.post(`/restapi/v1.0/account/${accountId}/message-store-
       "description": "Ending time for collecting messages. The default value is the current time"
     }
   }
-}```
+}
+```
 
-## Load message store report task
+## Load Message Store Report Task
 
 HTTP GET /restapi/v1.0/account/{accountId}/message-store-report/{taskId}
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -10419,13 +10241,12 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/message-store-r
 
 - `accountId`'s default value is `~`
 
-## Load message store report archive
+## Load Message Store Report Archive
 
 HTTP GET /restapi/v1.0/account/{accountId}/message-store-report/{taskId}/archive
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -10434,13 +10255,12 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/message-store-r
 
 - `accountId`'s default value is `~`
 
-## Load message store report archive content
+## Load Message Store Report Archive Content
 
 HTTP GET /restapi/v1.0/account/{accountId}/message-store-report/{taskId}/archive/{archiveId}
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -10449,13 +10269,12 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/message-store-r
 
 - `accountId`'s default value is `~`
 
-## List account meeting recordings
+## List Account Meeting Recordings
 
 HTTP GET /restapi/v1.0/account/{accountId}/meeting-recordings
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -10464,13 +10283,12 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/meeting-recordi
 
 - `accountId`'s default value is `~`
 
-## List user meeting recordings
+## List User Meeting Recordings
 
 HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/meeting-recordings
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -10486,7 +10304,6 @@ HTTP GET /restapi/oauth/authorize
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -10589,13 +10406,12 @@ const r = await platform.get('/restapi/oauth/authorize', formData);
   }
 ]```
 
-## Get token
+## Get Token
 
 HTTP POST /restapi/oauth/token
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
@@ -10705,13 +10521,12 @@ const r = await platform.post('/restapi/oauth/token', formData);
   }
 ]```
 
-## Revoke token
+## Revoke Token
 
 HTTP POST /restapi/oauth/revoke
 
 ```js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });

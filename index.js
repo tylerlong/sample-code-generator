@@ -42,7 +42,7 @@ const r = await platform.${method}(${endpoint}, formData);`]
     result = [`const r = await platform.${method}(${endpoint}${params});`]
     if (bodyClass && bodyClass !== 'string') {
       result.push(`\n\`${bodyParam}\` is an object with the following definition:`)
-      result.push(`\n\`\`\`yaml\n${JSON.stringify(loadFullDefinition(bodyClass), null, 2)}\`\`\``)
+      result.push(`\n\`\`\`yaml\n${JSON.stringify(loadFullDefinition(bodyClass), null, 2)}\n\`\`\``)
     }
   }
   return result
@@ -52,13 +52,12 @@ const generateDoc = (path, method, operation) => {
   const codes = generateCodes(path, method, operation)
   const code = codes[0]
   const extraCode = codes.slice(1).join('\n')
-  let doc = `## ${changeCase.sentenceCase(operation.operationId)}
+  let doc = `## ${changeCase.titleCase(operation.operationId)}
 
 HTTP ${changeCase.upperCase(method)} ${path}
 
 \`\`\`js
 const SDK = require('ringcentral');
-
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
