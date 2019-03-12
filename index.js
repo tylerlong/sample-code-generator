@@ -36,8 +36,8 @@ const formData = new FormData();
 formData.append('body', Buffer.from(JSON.stringify(body)), { filename: 'request.json' });
 ${hasFileType ? `formData.append('attachment', fs.readFileSync('./test.png'), { filename: 'text.png', contentType: 'image/png' });` : ''}
 const r = await platform.${method}(${endpoint}, formData);`]
-    result.push(`\n\`body\` is an object with the following properties:`)
-    result.push(`\n\`\`\`yaml\n${JSON.stringify(operation.parameters.filter(p => p.in === 'formData' && p.type !== 'file' && !(p.items && p.items.type === 'file')), null, 2)}\`\`\``)
+    result.push(`\n\`body\` is an object with the following definition:`)
+    result.push(`\n\`\`\`yaml\n${JSON.stringify(loadFullDefinition(operation.parameters.filter(p => p.in === 'formData' && p.type !== 'file' && !(p.items && p.items.type === 'file'))), null, 2)}\n\`\`\``)
   } else {
     result = [`const r = await platform.${method}(${endpoint}${params});`]
     if (bodyClass && bodyClass !== 'string') {
@@ -82,7 +82,7 @@ ${code}
   return doc
 }
 
-let markdown = '# RingCentral JS SDK code samples'
+let markdown = '# RingCentral JavaScript SDK code samples'
 paths.forEach(path => {
   const methods = Object.keys(doc.paths[path])
   methods.forEach(method => {

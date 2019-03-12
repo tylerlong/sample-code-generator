@@ -1,4 +1,4 @@
-# RingCentral JS SDK code samples
+# RingCentral JavaScript SDK code samples
 
 ## Get All Versions
 
@@ -320,58 +320,60 @@ const r = await platform.post(`/restapi/v1.0/account/${accountId}/extension/${ex
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-`body` is an object with the following properties:
+`body` is an object with the following definition:
 
 ```yaml
-[
-  {
-    "name": "faxResolution",
-    "in": "formData",
-    "description": "Resolution of Fax",
-    "required": true,
-    "type": "string",
-    "enum": [
-      "High",
-      "Low"
-    ]
-  },
-  {
-    "name": "to",
-    "in": "formData",
-    "description": "To Phone Number",
-    "required": true,
-    "type": "array",
-    "items": {
-      "$ref": "#/definitions/MessageStoreCallerInfoRequest"
+{
+  "properties": {
+    "faxResolution": {
+      "in": "formData",
+      "description": "Resolution of Fax",
+      "required": true,
+      "type": "string",
+      "enum": [
+        "High",
+        "Low"
+      ]
+    },
+    "to": {
+      "in": "formData",
+      "description": "To Phone Number",
+      "required": true,
+      "type": "array",
+      "items": {
+        "properties": {
+          "phoneNumber": {
+            "type": "string",
+            "description": "Phone number in E.164 format"
+          }
+        }
+      }
+    },
+    "sendTime": {
+      "in": "formData",
+      "description": "Timestamp to send fax at. If not specified (current or the past), the fax is sent immediately",
+      "required": false,
+      "type": "string",
+      "format": "date-time"
+    },
+    "isoCode": {
+      "in": "formData",
+      "description": "ISO Code. e.g UK",
+      "type": "string"
+    },
+    "coverIndex": {
+      "in": "formData",
+      "description": "Cover page identifier. For the list of available cover page identifiers please call the method Fax Cover Pages. If not specified, the default cover page which is configured in 'Outbound Fax Settings' is attached",
+      "type": "integer"
+    },
+    "coverPageText": {
+      "in": "formData",
+      "description": "Cover page text, entered by the fax sender and printed on the cover page. Maximum length is limited to 1024 symbols",
+      "type": "string"
     }
-  },
-  {
-    "name": "sendTime",
-    "in": "formData",
-    "description": "Timestamp to send fax at. If not specified (current or the past), the fax is sent immediately",
-    "required": false,
-    "type": "string",
-    "format": "date-time"
-  },
-  {
-    "name": "isoCode",
-    "in": "formData",
-    "description": "ISO Code. e.g UK",
-    "type": "string"
-  },
-  {
-    "name": "coverIndex",
-    "in": "formData",
-    "description": "Cover page identifier. For the list of available cover page identifiers please call the method Fax Cover Pages. If not specified, the default cover page which is configured in 'Outbound Fax Settings' is attached",
-    "type": "integer"
-  },
-  {
-    "name": "coverPageText",
-    "in": "formData",
-    "description": "Cover page text, entered by the fax sender and printed on the cover page. Maximum length is limited to 1024 symbols",
-    "type": "string"
   }
-]```
+}
+```
 
 ## List Fax Cover Pages
 
@@ -2549,10 +2551,13 @@ const r = await platform.post('/restapi/v1.0/glip/files', formData);
 ```
 
 
-`body` is an object with the following properties:
+`body` is an object with the following definition:
 
 ```yaml
-[]```
+{
+  "properties": {}
+}
+```
 
 ## Create Glip Card
 
@@ -6736,18 +6741,20 @@ const r = await platform.post(`/restapi/v1.0/account/${accountId}/ivr-prompts`, 
 
 - `accountId`'s default value is `~`
 
-`body` is an object with the following properties:
+`body` is an object with the following definition:
 
 ```yaml
-[
-  {
-    "in": "formData",
-    "name": "name",
-    "type": "string",
-    "required": false,
-    "description": "Description of file contents."
+{
+  "properties": {
+    "name": {
+      "in": "formData",
+      "type": "string",
+      "required": false,
+      "description": "Description of file contents."
+    }
   }
-]```
+}
+```
 
 ## List Ivr Prompts
 
@@ -8108,10 +8115,13 @@ const r = await platform.post(`/restapi/v1.0/account/${accountId}/extension/${ex
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-`body` is an object with the following properties:
+`body` is an object with the following definition:
 
 ```yaml
-[]```
+{
+  "properties": {}
+}
+```
 
 ## Update Profile Image
 
@@ -8132,10 +8142,13 @@ const r = await platform.put(`/restapi/v1.0/account/${accountId}/extension/${ext
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-`body` is an object with the following properties:
+`body` is an object with the following definition:
 
 ```yaml
-[]```
+{
+  "properties": {}
+}
+```
 
 ## Download Scaled Pofile Image
 
@@ -10315,96 +10328,89 @@ const r = await platform.get('/restapi/oauth/authorize', formData);
 ```
 
 
-`body` is an object with the following properties:
+`body` is an object with the following definition:
 
 ```yaml
-[
-  {
-    "name": "response_type",
-    "required": true,
-    "in": "formData",
-    "type": "string",
-    "enum": [
-      "code",
-      "token"
-    ],
-    "description": "Determines authorization flow: **code** - Authorization Code, **token** - Implicit Grant"
-  },
-  {
-    "name": "redirect_uri",
-    "required": true,
-    "in": "formData",
-    "type": "string",
-    "description": "This is a callback URI which determines where the response is sent. The value of this parameter must exactly match one of the URIs you have provided for your app upon registration"
-  },
-  {
-    "name": "client_id",
-    "required": true,
-    "in": "formData",
-    "type": "string",
-    "description": "Identifier (key) of a client application"
-  },
-  {
-    "name": "state",
-    "type": "string",
-    "in": "formData",
-    "description": "Client state. Returned back to the client at the end of the flow"
-  },
-  {
-    "name": "brand_id",
-    "type": "string",
-    "in": "formData",
-    "description": "Brand identifier. If it is not provided in request, server will try to determine brand from client app profile. The default value is '1210' - RingCentral US"
-  },
-  {
-    "name": "display",
-    "type": "string",
-    "enum": [
-      "page",
-      "popup",
-      "touch",
-      "mobile"
-    ],
-    "in": "formData",
-    "description": "Style of login form. The default value is 'page'. The 'popup' and 'touch' values are featured for mobile applications"
-  },
-  {
-    "name": "prompt",
-    "type": "string",
-    "enum": [
-      "login",
-      "sso",
-      "consent"
-    ],
-    "in": "formData",
-    "description": "Specifies which login form will be displayed. Space-separated set of the following values: 'login' - official RingCentral login form, 'sso' - Single Sign-On login form, 'consent' - form to show the requested scope and prompt user for consent. Either 'login' or 'sso' (or both) must be specified. The default value is 'login&sso'"
-  },
-  {
-    "name": "localeId",
-    "type": "string",
-    "in": "formData",
-    "description": "Localization code of a language. Overwrites 'Accept-Language' header value"
-  },
-  {
-    "name": "ui_locales",
-    "type": "string",
-    "in": "formData",
-    "description": "Localization code of a language. Overwrites 'localeId' parameter value"
-  },
-  {
-    "name": "ui_options",
-    "type": "string",
-    "in": "formData",
-    "enum": [
-      "hide_logo",
-      "hide_tos",
-      "hide_remember_me",
-      "external_popup",
-      "old_ui"
-    ],
-    "description": "User interface options data"
+{
+  "properties": {
+    "response_type": {
+      "required": true,
+      "in": "formData",
+      "type": "string",
+      "enum": [
+        "code",
+        "token"
+      ],
+      "description": "Determines authorization flow: **code** - Authorization Code, **token** - Implicit Grant"
+    },
+    "redirect_uri": {
+      "required": true,
+      "in": "formData",
+      "type": "string",
+      "description": "This is a callback URI which determines where the response is sent. The value of this parameter must exactly match one of the URIs you have provided for your app upon registration"
+    },
+    "client_id": {
+      "required": true,
+      "in": "formData",
+      "type": "string",
+      "description": "Identifier (key) of a client application"
+    },
+    "state": {
+      "type": "string",
+      "in": "formData",
+      "description": "Client state. Returned back to the client at the end of the flow"
+    },
+    "brand_id": {
+      "type": "string",
+      "in": "formData",
+      "description": "Brand identifier. If it is not provided in request, server will try to determine brand from client app profile. The default value is '1210' - RingCentral US"
+    },
+    "display": {
+      "type": "string",
+      "enum": [
+        "page",
+        "popup",
+        "touch",
+        "mobile"
+      ],
+      "in": "formData",
+      "description": "Style of login form. The default value is 'page'. The 'popup' and 'touch' values are featured for mobile applications"
+    },
+    "prompt": {
+      "type": "string",
+      "enum": [
+        "login",
+        "sso",
+        "consent"
+      ],
+      "in": "formData",
+      "description": "Specifies which login form will be displayed. Space-separated set of the following values: 'login' - official RingCentral login form, 'sso' - Single Sign-On login form, 'consent' - form to show the requested scope and prompt user for consent. Either 'login' or 'sso' (or both) must be specified. The default value is 'login&sso'"
+    },
+    "localeId": {
+      "type": "string",
+      "in": "formData",
+      "description": "Localization code of a language. Overwrites 'Accept-Language' header value"
+    },
+    "ui_locales": {
+      "type": "string",
+      "in": "formData",
+      "description": "Localization code of a language. Overwrites 'localeId' parameter value"
+    },
+    "ui_options": {
+      "type": "string",
+      "in": "formData",
+      "enum": [
+        "hide_logo",
+        "hide_tos",
+        "hide_remember_me",
+        "external_popup",
+        "old_ui"
+      ],
+      "description": "User interface options data"
+    }
   }
-]```
+}
+```
 
 ## Get Token
 
@@ -10423,103 +10429,95 @@ const r = await platform.post('/restapi/oauth/token', formData);
 ```
 
 
-`body` is an object with the following properties:
+`body` is an object with the following definition:
 
 ```yaml
-[
-  {
-    "name": "username",
-    "in": "formData",
-    "description": "Phone number linked to an account or extension in E.164 format with or without leading '+' sign",
-    "required": false,
-    "type": "string"
-  },
-  {
-    "name": "password",
-    "in": "formData",
-    "description": "User's password",
-    "required": false,
-    "type": "string",
-    "format": "password"
-  },
-  {
-    "name": "extension",
-    "in": "formData",
-    "description": "Optional. Extension short number. If company number is specified as a username, and extension is not specified, the server will attempt to authenticate client as main company administrator",
-    "required": false,
-    "type": "string"
-  },
-  {
-    "name": "grant_type",
-    "in": "formData",
-    "description": "Grant type",
-    "required": false,
-    "type": "string",
-    "enum": [
-      "authorization_code",
-      "password",
-      "refresh_token",
-      "client_credentials"
-    ],
-    "default": "password"
-  },
-  {
-    "name": "access_token_ttl",
-    "in": "formData",
-    "description": "Access token lifetime in seconds",
-    "required": false,
-    "type": "integer",
-    "format": "int64",
-    "minimum": 600,
-    "maximum": 3600,
-    "default": 3600
-  },
-  {
-    "name": "refresh_token_ttl",
-    "in": "formData",
-    "description": "Refresh token lifetime in seconds",
-    "required": false,
-    "type": "integer",
-    "format": "int64",
-    "default": 604800,
-    "maximum": 604800
-  },
-  {
-    "name": "scope",
-    "in": "formData",
-    "description": "List of API permissions to be used with access token. Can be omitted when requesting all permissions defined during the application registration phase",
-    "required": false,
-    "type": "string"
-  },
-  {
-    "name": "refresh_token",
-    "in": "formData",
-    "description": "Previously issued refresh token. This is the only formData field used for the Refresh Token Flow.",
-    "required": false,
-    "type": "string"
-  },
-  {
-    "name": "endpoint_id",
-    "in": "formData",
-    "required": false,
-    "type": "string",
-    "description": "The unique identifier of a client application. If not specified, the previously specified or auto generated value is used by default"
-  },
-  {
-    "name": "code",
-    "in": "formData",
-    "required": false,
-    "type": "string",
-    "description": "The authorization code that the client previously received from the authorization server"
-  },
-  {
-    "name": "redirect_uri",
-    "in": "formData",
-    "required": false,
-    "type": "string",
-    "description": "The redirect URI in the token request must be an exact match of the redirect URI that was used when generating the authorization code"
+{
+  "properties": {
+    "username": {
+      "in": "formData",
+      "description": "Phone number linked to an account or extension in E.164 format with or without leading '+' sign",
+      "required": false,
+      "type": "string"
+    },
+    "password": {
+      "in": "formData",
+      "description": "User's password",
+      "required": false,
+      "type": "string",
+      "format": "password"
+    },
+    "extension": {
+      "in": "formData",
+      "description": "Optional. Extension short number. If company number is specified as a username, and extension is not specified, the server will attempt to authenticate client as main company administrator",
+      "required": false,
+      "type": "string"
+    },
+    "grant_type": {
+      "in": "formData",
+      "description": "Grant type",
+      "required": false,
+      "type": "string",
+      "enum": [
+        "authorization_code",
+        "password",
+        "refresh_token",
+        "client_credentials"
+      ],
+      "default": "password"
+    },
+    "access_token_ttl": {
+      "in": "formData",
+      "description": "Access token lifetime in seconds",
+      "required": false,
+      "type": "integer",
+      "format": "int64",
+      "minimum": 600,
+      "maximum": 3600,
+      "default": 3600
+    },
+    "refresh_token_ttl": {
+      "in": "formData",
+      "description": "Refresh token lifetime in seconds",
+      "required": false,
+      "type": "integer",
+      "format": "int64",
+      "default": 604800,
+      "maximum": 604800
+    },
+    "scope": {
+      "in": "formData",
+      "description": "List of API permissions to be used with access token. Can be omitted when requesting all permissions defined during the application registration phase",
+      "required": false,
+      "type": "string"
+    },
+    "refresh_token": {
+      "in": "formData",
+      "description": "Previously issued refresh token. This is the only formData field used for the Refresh Token Flow.",
+      "required": false,
+      "type": "string"
+    },
+    "endpoint_id": {
+      "in": "formData",
+      "required": false,
+      "type": "string",
+      "description": "The unique identifier of a client application. If not specified, the previously specified or auto generated value is used by default"
+    },
+    "code": {
+      "in": "formData",
+      "required": false,
+      "type": "string",
+      "description": "The authorization code that the client previously received from the authorization server"
+    },
+    "redirect_uri": {
+      "in": "formData",
+      "required": false,
+      "type": "string",
+      "description": "The redirect URI in the token request must be an exact match of the redirect URI that was used when generating the authorization code"
+    }
   }
-]```
+}
+```
 
 ## Revoke Token
 
@@ -10538,15 +10536,17 @@ const r = await platform.post('/restapi/oauth/revoke', formData);
 ```
 
 
-`body` is an object with the following properties:
+`body` is an object with the following definition:
 
 ```yaml
-[
-  {
-    "name": "token",
-    "in": "formData",
-    "description": "Active access or refresh token to be revoked",
-    "required": true,
-    "type": "string"
+{
+  "properties": {
+    "token": {
+      "in": "formData",
+      "description": "Active access or refresh token to be revoked",
+      "required": true,
+      "type": "string"
+    }
   }
-]```
+}
+```
