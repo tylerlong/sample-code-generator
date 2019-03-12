@@ -20,6 +20,8 @@ yarn generate
 
 ## todo
 
+- Support query parameters
+
 ```
 { tags: [ 'Posts' ],
   summary: 'Update Post',

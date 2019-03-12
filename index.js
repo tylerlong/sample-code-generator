@@ -28,10 +28,22 @@ const generateCodes = (path, method, operation) => {
     }
     params += `, ${bodyParam}`
   }
-  const result = [`const r = await platform.${method}(${endpoint}${params});`]
-  if (bodyClass && bodyClass !== 'string') {
-    result.push(`\n\`${bodyParam}\` is an object with the following properties:`)
-    result.push(`\n\`\`\`yaml\n${JSON.stringify(loadFullDefinition(bodyClass), null, 2)}\`\`\``)
+  let result
+  if (operation.parameters && operation.parameters.some(p => p.in === 'formData')) {
+    const hasFileType = operation.parameters.some(p => p.in === 'formData' && (p.type === 'file' || (p.items && p.items.type === 'file')))
+    result = [`const FormData = require('form-data');
+const formData = new FormData();
+formData.append('body', Buffer.from(JSON.stringify(body)), { filename: 'request.json' });
+${hasFileType ? `formData.append('attachment', fs.readFileSync('./test.png'), { filename: 'text.png', contentType: 'image/png' });` : ''}
+const r = await platform.${method}(${endpoint}, formData);`]
+    result.push(`\n\`body\` is an object with the following properties:`)
+    result.push(`\n\`\`\`yaml\n${JSON.stringify(operation.parameters.filter(p => p.in === 'formData' && p.type !== 'file' && !(p.items && p.items.type === 'file')), null, 2)}\`\`\``)
+  } else {
+    result = [`const r = await platform.${method}(${endpoint}${params});`]
+    if (bodyClass && bodyClass !== 'string') {
+      result.push(`\n\`${bodyParam}\` is an object with the following definition:`)
+      result.push(`\n\`\`\`yaml\n${JSON.stringify(loadFullDefinition(bodyClass), null, 2)}\`\`\``)
+    }
   }
   return result
 }
@@ -49,7 +61,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 ${code}
 \`\`\`
 `

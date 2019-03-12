@@ -9,7 +9,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.get('/restapi');
 ```
 
@@ -23,7 +23,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.get(`/restapi/${apiVersion}`);
 ```
 
@@ -38,7 +38,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.get('/restapi/v1.0/status');
 ```
 
@@ -52,7 +52,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/call-log`);
 ```
 
@@ -68,7 +68,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.delete(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/call-log`);
 ```
 
@@ -84,7 +84,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/call-log-sync`);
 ```
 
@@ -100,7 +100,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/call-log/${callRecordId}`);
 ```
 
@@ -116,7 +116,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/active-calls`);
 ```
 
@@ -132,7 +132,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/call-log`);
 ```
 
@@ -147,7 +147,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/call-log/${callRecordId}`);
 ```
 
@@ -162,7 +162,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/active-calls`);
 ```
 
@@ -177,7 +177,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/recording/${recordingId}`);
 ```
 
@@ -192,7 +192,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/recording/${recordingId}/content`);
 ```
 
@@ -207,14 +207,14 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.post(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/sms`, createSMSMessage);
 ```
 
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-`createSMSMessage` is an object with the following properties:
+`createSMSMessage` is an object with the following definition:
 
 ```yaml
 {
@@ -262,14 +262,14 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.post(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/company-pager`, createInternalTextMessageRequest);
 ```
 
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-`createInternalTextMessageRequest` is an object with the following properties:
+`createInternalTextMessageRequest` is an object with the following definition:
 
 ```yaml
 {
@@ -323,12 +323,69 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
-const r = await platform.post(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/fax`);
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
+const FormData = require('form-data');
+const formData = new FormData();
+formData.append('body', Buffer.from(JSON.stringify(body)), { filename: 'request.json' });
+formData.append('attachment', fs.readFileSync('./test.png'), { filename: 'text.png', contentType: 'image/png' });
+const r = await platform.post(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/fax`, formData);
 ```
 
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
+
+`body` is an object with the following properties:
+
+```yaml
+[
+  {
+    "name": "faxResolution",
+    "in": "formData",
+    "description": "Resolution of Fax",
+    "required": true,
+    "type": "string",
+    "enum": [
+      "High",
+      "Low"
+    ]
+  },
+  {
+    "name": "to",
+    "in": "formData",
+    "description": "To Phone Number",
+    "required": true,
+    "type": "array",
+    "items": {
+      "$ref": "#/definitions/MessageStoreCallerInfoRequest"
+    }
+  },
+  {
+    "name": "sendTime",
+    "in": "formData",
+    "description": "Timestamp to send fax at. If not specified (current or the past), the fax is sent immediately",
+    "required": false,
+    "type": "string",
+    "format": "date-time"
+  },
+  {
+    "name": "isoCode",
+    "in": "formData",
+    "description": "ISO Code. e.g UK",
+    "type": "string"
+  },
+  {
+    "name": "coverIndex",
+    "in": "formData",
+    "description": "Cover page identifier. For the list of available cover page identifiers please call the method Fax Cover Pages. If not specified, the default cover page which is configured in 'Outbound Fax Settings' is attached",
+    "type": "integer"
+  },
+  {
+    "name": "coverPageText",
+    "in": "formData",
+    "description": "Cover page text, entered by the fax sender and printed on the cover page. Maximum length is limited to 1024 symbols",
+    "type": "string"
+  }
+]```
 
 ## List fax cover pages
 
@@ -339,7 +396,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.get('/restapi/v1.0/dictionary/fax-cover-page');
 ```
 
@@ -353,7 +410,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/message-store`);
 ```
 
@@ -369,7 +426,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.delete(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/message-store`);
 ```
 
@@ -385,7 +442,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/message-store/${messageId}`);
 ```
 
@@ -401,14 +458,14 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.put(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/message-store/${messageId}`, updateMessageRequest);
 ```
 
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-`updateMessageRequest` is an object with the following properties:
+`updateMessageRequest` is an object with the following definition:
 
 ```yaml
 {
@@ -434,7 +491,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.delete(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/message-store/${messageId}`);
 ```
 
@@ -450,7 +507,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/message-store/${messageId}/content/${attachmentId}`);
 ```
 
@@ -466,7 +523,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/message-sync`);
 ```
 
@@ -482,7 +539,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/message-store-configuration`);
 ```
 
@@ -497,13 +554,13 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.put(`/restapi/v1.0/account/${accountId}/message-store-configuration`, messageStoreConfiguration);
 ```
 
 - `accountId`'s default value is `~`
 
-`messageStoreConfiguration` is an object with the following properties:
+`messageStoreConfiguration` is an object with the following definition:
 
 ```yaml
 {
@@ -527,14 +584,14 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.post(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/ring-out`, makeRingOutRequest);
 ```
 
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-`makeRingOutRequest` is an object with the following properties:
+`makeRingOutRequest` is an object with the following definition:
 
 ```yaml
 {
@@ -600,7 +657,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/ring-out/${ringoutId}`);
 ```
 
@@ -616,7 +673,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.delete(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/ring-out/${ringoutId}`);
 ```
 
@@ -632,14 +689,14 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.post(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/ringout`, makeRingOutRequest);
 ```
 
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-`makeRingOutRequest` is an object with the following properties:
+`makeRingOutRequest` is an object with the following definition:
 
 ```yaml
 {
@@ -705,7 +762,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/ringout/${ringoutId}`);
 ```
 
@@ -721,7 +778,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.delete(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/ringout/${ringoutId}`);
 ```
 
@@ -737,7 +794,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/address-book/contact`);
 ```
 
@@ -753,14 +810,14 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.post(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/address-book/contact`, personalContactResource);
 ```
 
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-`personalContactResource` is an object with the following properties:
+`personalContactResource` is an object with the following definition:
 
 ```yaml
 {
@@ -938,7 +995,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/address-book/contact/${contactId}`);
 ```
 
@@ -954,14 +1011,14 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.put(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/address-book/contact/${contactId}`, personalContactResource);
 ```
 
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-`personalContactResource` is an object with the following properties:
+`personalContactResource` is an object with the following definition:
 
 ```yaml
 {
@@ -1139,7 +1196,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.delete(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/address-book/contact/${contactId}`);
 ```
 
@@ -1155,7 +1212,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/address-book-sync`);
 ```
 
@@ -1171,7 +1228,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/favorite`);
 ```
 
@@ -1187,14 +1244,14 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.put(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/favorite`, favoriteCollection);
 ```
 
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-`favoriteCollection` is an object with the following properties:
+`favoriteCollection` is an object with the following definition:
 
 ```yaml
 {
@@ -1236,13 +1293,13 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.post(`/restapi/v1.0/account/${accountId}/directory/entries/search`, searchDirectoryEntriesRequest);
 ```
 
 - `accountId`'s default value is `~`
 
-`searchDirectoryEntriesRequest` is an object with the following properties:
+`searchDirectoryEntriesRequest` is an object with the following definition:
 
 ```yaml
 {
@@ -1324,7 +1381,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/directory/entries`);
 ```
 
@@ -1339,7 +1396,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/directory/federation`);
 ```
 
@@ -1354,7 +1411,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/presence`);
 ```
 
@@ -1370,14 +1427,14 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.put(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/presence`, presenceInfoResource);
 ```
 
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-`presenceInfoResource` is an object with the following properties:
+`presenceInfoResource` is an object with the following definition:
 
 ```yaml
 {
@@ -1498,7 +1555,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/presence`);
 ```
 
@@ -1513,7 +1570,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.get('/restapi/v1.0/glip/chats');
 ```
 
@@ -1527,7 +1584,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.get(`/restapi/v1.0/glip/chats/${chatId}`);
 ```
 
@@ -1541,7 +1598,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.get('/restapi/v1.0/glip/conversations');
 ```
 
@@ -1555,12 +1612,12 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.post('/restapi/v1.0/glip/conversations', glipPostMembersListBody);
 ```
 
 
-`glipPostMembersListBody` is an object with the following properties:
+`glipPostMembersListBody` is an object with the following definition:
 
 ```yaml
 {
@@ -1598,7 +1655,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.get(`/restapi/v1.0/glip/conversations/${chatId}`);
 ```
 
@@ -1612,7 +1669,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.get('/restapi/v1.0/glip/teams');
 ```
 
@@ -1626,12 +1683,12 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.post('/restapi/v1.0/glip/teams', glipPostTeamBody);
 ```
 
 
-`glipPostTeamBody` is an object with the following properties:
+`glipPostTeamBody` is an object with the following definition:
 
 ```yaml
 {
@@ -1681,7 +1738,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.get(`/restapi/v1.0/glip/teams/${chatId}`);
 ```
 
@@ -1695,12 +1752,12 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.patch(`/restapi/v1.0/glip/teams/${chatId}`, glipPatchTeamBody);
 ```
 
 
-`glipPatchTeamBody` is an object with the following properties:
+`glipPatchTeamBody` is an object with the following definition:
 
 ```yaml
 {
@@ -1730,7 +1787,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.delete(`/restapi/v1.0/glip/teams/${chatId}`);
 ```
 
@@ -1744,7 +1801,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.post(`/restapi/v1.0/glip/teams/${chatId}/join`);
 ```
 
@@ -1758,7 +1815,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.post(`/restapi/v1.0/glip/teams/${chatId}/leave`);
 ```
 
@@ -1772,12 +1829,12 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.post(`/restapi/v1.0/glip/teams/${chatId}/add`, glipPostMembersListBody);
 ```
 
 
-`glipPostMembersListBody` is an object with the following properties:
+`glipPostMembersListBody` is an object with the following definition:
 
 ```yaml
 {
@@ -1815,12 +1872,12 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.post(`/restapi/v1.0/glip/teams/${chatId}/remove`, glipPostMembersIdsListBody);
 ```
 
 
-`glipPostMembersIdsListBody` is an object with the following properties:
+`glipPostMembersIdsListBody` is an object with the following definition:
 
 ```yaml
 {
@@ -1854,7 +1911,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.post(`/restapi/v1.0/glip/teams/${chatId}/archive`);
 ```
 
@@ -1868,7 +1925,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.post(`/restapi/v1.0/glip/teams/${chatId}/unarchive`);
 ```
 
@@ -1882,7 +1939,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.get('/restapi/v1.0/glip/everyone');
 ```
 
@@ -1896,12 +1953,12 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.patch('/restapi/v1.0/glip/everyone', updateGlipEveryoneRequest);
 ```
 
 
-`updateGlipEveryoneRequest` is an object with the following properties:
+`updateGlipEveryoneRequest` is an object with the following definition:
 
 ```yaml
 {
@@ -1927,7 +1984,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.get('/restapi/v1.0/glip/groups');
 ```
 
@@ -1941,12 +1998,12 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.post('/restapi/v1.0/glip/groups', glipCreateGroup);
 ```
 
 
-`glipCreateGroup` is an object with the following properties:
+`glipCreateGroup` is an object with the following definition:
 
 ```yaml
 {
@@ -1994,7 +2051,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.get(`/restapi/v1.0/glip/groups/${groupId}`);
 ```
 
@@ -2008,12 +2065,12 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.post(`/restapi/v1.0/glip/groups/${groupId}/bulk-assign`, editGroupRequest);
 ```
 
 
-`editGroupRequest` is an object with the following properties:
+`editGroupRequest` is an object with the following definition:
 
 ```yaml
 {
@@ -2052,7 +2109,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.get(`/restapi/v1.0/glip/groups/${groupId}/posts`);
 ```
 
@@ -2066,12 +2123,12 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.post(`/restapi/v1.0/glip/groups/${groupId}/posts`, glipCreatePost);
 ```
 
 
-`glipCreatePost` is an object with the following properties:
+`glipCreatePost` is an object with the following definition:
 
 ```yaml
 {
@@ -2248,7 +2305,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.put(`/restapi/v1.0/glip/groups/${groupId}/posts/${postId}/text`, body);
 ```
 
@@ -2262,7 +2319,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.get('/restapi/v1.0/glip/recent/chats');
 ```
 
@@ -2276,7 +2333,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.get('/restapi/v1.0/glip/favorites');
 ```
 
@@ -2290,7 +2347,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.post(`/restapi/v1.0/glip/chats/${chatId}/favorite`);
 ```
 
@@ -2304,7 +2361,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.post(`/restapi/v1.0/glip/chats/${chatId}/unfavorite`);
 ```
 
@@ -2318,7 +2375,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.post(`/restapi/v1.0/glip/chats/${chatId}/read`);
 ```
 
@@ -2332,7 +2389,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.post(`/restapi/v1.0/glip/chats/${chatId}/unread`);
 ```
 
@@ -2346,7 +2403,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.get('/restapi/v1.0/glip/posts');
 ```
 
@@ -2360,12 +2417,12 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.post('/restapi/v1.0/glip/posts', glipCreatePost);
 ```
 
 
-`glipCreatePost` is an object with the following properties:
+`glipCreatePost` is an object with the following definition:
 
 ```yaml
 {
@@ -2542,10 +2599,19 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
-const r = await platform.post('/restapi/v1.0/glip/files');
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
+const FormData = require('form-data');
+const formData = new FormData();
+formData.append('body', Buffer.from(JSON.stringify(body)), { filename: 'request.json' });
+formData.append('attachment', fs.readFileSync('./test.png'), { filename: 'text.png', contentType: 'image/png' });
+const r = await platform.post('/restapi/v1.0/glip/files', formData);
 ```
 
+
+`body` is an object with the following properties:
+
+```yaml
+[]```
 
 ## Create glip card
 
@@ -2556,12 +2622,12 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.post('/restapi/v1.0/glip/cards', glipMessageAttachmentInfoRequest);
 ```
 
 
-`glipMessageAttachmentInfoRequest` is an object with the following properties:
+`glipMessageAttachmentInfoRequest` is an object with the following definition:
 
 ```yaml
 {
@@ -2717,7 +2783,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.get(`/restapi/v1.0/glip/cards/${cardId}`);
 ```
 
@@ -2731,12 +2797,12 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.put(`/restapi/v1.0/glip/cards/${cardId}`, glipMessageAttachmentInfoRequest);
 ```
 
 
-`glipMessageAttachmentInfoRequest` is an object with the following properties:
+`glipMessageAttachmentInfoRequest` is an object with the following definition:
 
 ```yaml
 {
@@ -2892,7 +2958,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.delete(`/restapi/v1.0/glip/cards/${cardId}`);
 ```
 
@@ -2906,7 +2972,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.get('/restapi/v1.0/glip/events');
 ```
 
@@ -2920,12 +2986,12 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.post('/restapi/v1.0/glip/events', glipEventCreate);
 ```
 
 
-`glipEventCreate` is an object with the following properties:
+`glipEventCreate` is an object with the following definition:
 
 ```yaml
 {
@@ -3026,7 +3092,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.get(`/restapi/v1.0/glip/events/${eventId}`);
 ```
 
@@ -3040,12 +3106,12 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.put(`/restapi/v1.0/glip/events/${eventId}`, glipEventCreate);
 ```
 
 
-`glipEventCreate` is an object with the following properties:
+`glipEventCreate` is an object with the following definition:
 
 ```yaml
 {
@@ -3146,7 +3212,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.delete(`/restapi/v1.0/glip/events/${eventId}`);
 ```
 
@@ -3160,12 +3226,12 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.post(`/restapi/v1.0/glip/groups/${groupId}/events`, glipEventCreate);
 ```
 
 
-`glipEventCreate` is an object with the following properties:
+`glipEventCreate` is an object with the following definition:
 
 ```yaml
 {
@@ -3266,7 +3332,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.get(`/restapi/v1.0/glip/groups/${groupId}/events`);
 ```
 
@@ -3280,7 +3346,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.get(`/restapi/v1.0/glip/groups/${groupId}/notes`);
 ```
 
@@ -3294,12 +3360,12 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.post(`/restapi/v1.0/glip/groups/${groupId}/notes`, glipNoteCreate);
 ```
 
 
-`glipNoteCreate` is an object with the following properties:
+`glipNoteCreate` is an object with the following definition:
 
 ```yaml
 {
@@ -3337,7 +3403,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.get('/restapi/v1.0/glip/notes');
 ```
 
@@ -3351,12 +3417,12 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.post('/restapi/v1.0/glip/notes', glipNoteCreate);
 ```
 
 
-`glipNoteCreate` is an object with the following properties:
+`glipNoteCreate` is an object with the following definition:
 
 ```yaml
 {
@@ -3394,7 +3460,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.get(`/restapi/v1.0/glip/notes/${noteId}`);
 ```
 
@@ -3408,7 +3474,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.delete(`/restapi/v1.0/glip/notes/${noteId}`);
 ```
 
@@ -3422,12 +3488,12 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.patch(`/restapi/v1.0/glip/notes/${noteId}`, glipNoteCreate);
 ```
 
 
-`glipNoteCreate` is an object with the following properties:
+`glipNoteCreate` is an object with the following definition:
 
 ```yaml
 {
@@ -3465,12 +3531,12 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.put(`/restapi/v1.0/glip/notes/${noteId}`, glipNoteCreate);
 ```
 
 
-`glipNoteCreate` is an object with the following properties:
+`glipNoteCreate` is an object with the following definition:
 
 ```yaml
 {
@@ -3508,7 +3574,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.post(`/restapi/v1.0/glip/notes/${noteId}/lock`);
 ```
 
@@ -3522,7 +3588,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.post(`/restapi/v1.0/glip/notes/${noteId}/publish`);
 ```
 
@@ -3536,7 +3602,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.post(`/restapi/v1.0/glip/notes/${noteId}/unlock`);
 ```
 
@@ -3550,7 +3616,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.get(`/restapi/v1.0/glip/persons/${personId}`);
 ```
 
@@ -3564,7 +3630,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.get(`/restapi/v1.0/glip/companies/${companyId}`);
 ```
 
@@ -3578,7 +3644,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.post(`/restapi/v1.0/glip/groups/${groupId}/webhooks`);
 ```
 
@@ -3592,7 +3658,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.get(`/restapi/v1.0/glip/groups/${groupId}/webhooks`);
 ```
 
@@ -3606,7 +3672,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.get('/restapi/v1.0/glip/webhooks');
 ```
 
@@ -3620,7 +3686,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.get(`/restapi/v1.0/glip/webhooks/${webhookId}`);
 ```
 
@@ -3634,7 +3700,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.delete(`/restapi/v1.0/glip/webhooks/${webhookId}`);
 ```
 
@@ -3648,7 +3714,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.post(`/restapi/v1.0/glip/webhooks/${webhookId}/activate`);
 ```
 
@@ -3662,7 +3728,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.post(`/restapi/v1.0/glip/webhooks/${webhookId}/suspend`);
 ```
 
@@ -3676,7 +3742,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.get('/restapi/v1.0/glip/preferences');
 ```
 
@@ -3690,7 +3756,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/meeting`);
 ```
 
@@ -3706,14 +3772,14 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.post(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/meeting`, meetingRequestResource);
 ```
 
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-`meetingRequestResource` is an object with the following properties:
+`meetingRequestResource` is an object with the following definition:
 
 ```yaml
 {
@@ -3794,7 +3860,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/meeting/${meetingId}`);
 ```
 
@@ -3810,14 +3876,14 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.put(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/meeting/${meetingId}`, meetingRequestResource);
 ```
 
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-`meetingRequestResource` is an object with the following properties:
+`meetingRequestResource` is an object with the following definition:
 
 ```yaml
 {
@@ -3898,7 +3964,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.delete(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/meeting/${meetingId}`);
 ```
 
@@ -3914,7 +3980,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.post(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/meeting/${meetingId}/end`);
 ```
 
@@ -3930,7 +3996,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/meeting/service-info`);
 ```
 
@@ -3946,7 +4012,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.get('/restapi/v1.0/subscription');
 ```
 
@@ -3960,12 +4026,12 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.post('/restapi/v1.0/subscription', createSubscriptionRequest);
 ```
 
 
-`createSubscriptionRequest` is an object with the following properties:
+`createSubscriptionRequest` is an object with the following definition:
 
 ```yaml
 {
@@ -4035,7 +4101,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.get(`/restapi/v1.0/subscription/${subscriptionId}`);
 ```
 
@@ -4049,12 +4115,12 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.put(`/restapi/v1.0/subscription/${subscriptionId}`, modifySubscriptionRequest);
 ```
 
 
-`modifySubscriptionRequest` is an object with the following properties:
+`modifySubscriptionRequest` is an object with the following definition:
 
 ```yaml
 {
@@ -4123,7 +4189,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.delete(`/restapi/v1.0/subscription/${subscriptionId}`);
 ```
 
@@ -4137,7 +4203,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.post(`/restapi/v1.0/subscription/${subscriptionId}/renew`);
 ```
 
@@ -4151,7 +4217,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/authz-profile`);
 ```
 
@@ -4167,7 +4233,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/authz-profile/check`);
 ```
 
@@ -4183,7 +4249,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/business-hours`);
 ```
 
@@ -4199,14 +4265,14 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.put(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/business-hours`, userBusinessHoursUpdateRequest);
 ```
 
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-`userBusinessHoursUpdateRequest` is an object with the following properties:
+`userBusinessHoursUpdateRequest` is an object with the following definition:
 
 ```yaml
 {
@@ -4349,7 +4415,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/business-hours`);
 ```
 
@@ -4364,13 +4430,13 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.put(`/restapi/v1.0/account/${accountId}/business-hours`, companyBusinessHoursUpdateRequest);
 ```
 
 - `accountId`'s default value is `~`
 
-`companyBusinessHoursUpdateRequest` is an object with the following properties:
+`companyBusinessHoursUpdateRequest` is an object with the following definition:
 
 ```yaml
 {
@@ -4545,7 +4611,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/caller-blocking`);
 ```
 
@@ -4561,14 +4627,14 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.put(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/caller-blocking`, callerBlockingSettingsUpdate);
 ```
 
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-`callerBlockingSettingsUpdate` is an object with the following properties:
+`callerBlockingSettingsUpdate` is an object with the following definition:
 
 ```yaml
 {
@@ -4640,7 +4706,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/caller-blocking/phone-numbers`);
 ```
 
@@ -4656,14 +4722,14 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.post(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/caller-blocking/phone-numbers`, addBlockedAllowedPhoneNumber);
 ```
 
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-`addBlockedAllowedPhoneNumber` is an object with the following properties:
+`addBlockedAllowedPhoneNumber` is an object with the following definition:
 
 ```yaml
 {
@@ -4699,7 +4765,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.post(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/caller-blocking/phone-numbers/bulk-update`);
 ```
 
@@ -4715,7 +4781,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/caller-blocking/phone-numbers/${blockedNumberId}`);
 ```
 
@@ -4731,7 +4797,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.delete(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/caller-blocking/phone-numbers/${blockedNumberId}`);
 ```
 
@@ -4747,14 +4813,14 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.put(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/caller-blocking/phone-numbers/${blockedNumberId}`, addBlockedAllowedPhoneNumber);
 ```
 
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-`addBlockedAllowedPhoneNumber` is an object with the following properties:
+`addBlockedAllowedPhoneNumber` is an object with the following definition:
 
 ```yaml
 {
@@ -4790,7 +4856,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/forwarding-number`);
 ```
 
@@ -4806,14 +4872,14 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.post(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/forwarding-number`, createForwardingNumberRequest);
 ```
 
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-`createForwardingNumberRequest` is an object with the following properties:
+`createForwardingNumberRequest` is an object with the following definition:
 
 ```yaml
 {
@@ -4859,7 +4925,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/forwarding-number/${forwardingNumberId}`);
 ```
 
@@ -4875,14 +4941,14 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.put(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/forwarding-number/${forwardingNumberId}`, updateForwardingNumberRequest);
 ```
 
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-`updateForwardingNumberRequest` is an object with the following properties:
+`updateForwardingNumberRequest` is an object with the following definition:
 
 ```yaml
 {
@@ -4924,7 +4990,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.delete(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/forwarding-number/${forwardingNumberId}`);
 ```
 
@@ -4940,7 +5006,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/answering-rule`);
 ```
 
@@ -4956,14 +5022,14 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.post(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/answering-rule`, createAnsweringRuleRequest);
 ```
 
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-`createAnsweringRuleRequest` is an object with the following properties:
+`createAnsweringRuleRequest` is an object with the following definition:
 
 ```yaml
 {
@@ -5477,7 +5543,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/answering-rule/${ruleId}`);
 ```
 
@@ -5493,14 +5559,14 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.put(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/answering-rule/${ruleId}`, updateAnsweringRuleRequest);
 ```
 
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-`updateAnsweringRuleRequest` is an object with the following properties:
+`updateAnsweringRuleRequest` is an object with the following definition:
 
 ```yaml
 {
@@ -5974,7 +6040,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.delete(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/answering-rule/${ruleId}`);
 ```
 
@@ -5990,13 +6056,13 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.post(`/restapi/v1.0/account/${accountId}/answering-rule`, companyAnsweringRuleRequest);
 ```
 
 - `accountId`'s default value is `~`
 
-`companyAnsweringRuleRequest` is an object with the following properties:
+`companyAnsweringRuleRequest` is an object with the following definition:
 
 ```yaml
 {
@@ -6288,7 +6354,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/answering-rule`);
 ```
 
@@ -6303,7 +6369,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/answering-rule/${ruleId}`);
 ```
 
@@ -6318,13 +6384,13 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.put(`/restapi/v1.0/account/${accountId}/answering-rule/${ruleId}`, companyAnsweringRuleUpdate);
 ```
 
 - `accountId`'s default value is `~`
 
-`companyAnsweringRuleUpdate` is an object with the following properties:
+`companyAnsweringRuleUpdate` is an object with the following definition:
 
 ```yaml
 {
@@ -6607,7 +6673,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.delete(`/restapi/v1.0/account/${accountId}/answering-rule/${ruleId}`);
 ```
 
@@ -6622,7 +6688,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.get('/restapi/v1.0/dictionary/greeting');
 ```
 
@@ -6636,7 +6702,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.get(`/restapi/v1.0/dictionary/greeting/${greetingId}`);
 ```
 
@@ -6650,13 +6716,13 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.post(`/restapi/v1.0/account/${accountId}/greeting`, customCompanyGreetingRequest);
 ```
 
 - `accountId`'s default value is `~`
 
-`customCompanyGreetingRequest` is an object with the following properties:
+`customCompanyGreetingRequest` is an object with the following definition:
 
 ```yaml
 {
@@ -6706,14 +6772,14 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.post(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/greeting`, customGreetingRequest);
 ```
 
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-`customGreetingRequest` is an object with the following properties:
+`customGreetingRequest` is an object with the following definition:
 
 ```yaml
 {
@@ -6757,7 +6823,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/greeting/${greetingId}`);
 ```
 
@@ -6773,11 +6839,28 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
-const r = await platform.post(`/restapi/v1.0/account/${accountId}/ivr-prompts`);
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
+const FormData = require('form-data');
+const formData = new FormData();
+formData.append('body', Buffer.from(JSON.stringify(body)), { filename: 'request.json' });
+formData.append('attachment', fs.readFileSync('./test.png'), { filename: 'text.png', contentType: 'image/png' });
+const r = await platform.post(`/restapi/v1.0/account/${accountId}/ivr-prompts`, formData);
 ```
 
 - `accountId`'s default value is `~`
+
+`body` is an object with the following properties:
+
+```yaml
+[
+  {
+    "in": "formData",
+    "name": "name",
+    "type": "string",
+    "required": false,
+    "description": "Description of file contents."
+  }
+]```
 
 ## List ivr prompts
 
@@ -6788,7 +6871,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/ivr-prompts`);
 ```
 
@@ -6803,7 +6886,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/ivr-prompts/${promptId}`);
 ```
 
@@ -6818,7 +6901,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.delete(`/restapi/v1.0/account/${accountId}/ivr-prompts/${promptId}`);
 ```
 
@@ -6833,7 +6916,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.put(`/restapi/v1.0/account/${accountId}/ivr-prompts/${promptId}`);
 ```
 
@@ -6848,7 +6931,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/ivr-prompts/${promptId}/content`);
 ```
 
@@ -6863,13 +6946,13 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.post(`/restapi/v1.0/account/${accountId}/ivr-menus`, iVRMenuInfo);
 ```
 
 - `accountId`'s default value is `~`
 
-`iVRMenuInfo` is an object with the following properties:
+`iVRMenuInfo` is an object with the following definition:
 
 ```yaml
 {
@@ -6997,7 +7080,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/ivr-menus/${ivrMenuId}`);
 ```
 
@@ -7012,13 +7095,13 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.put(`/restapi/v1.0/account/${accountId}/ivr-menus/${ivrMenuId}`, iVRMenuInfo);
 ```
 
 - `accountId`'s default value is `~`
 
-`iVRMenuInfo` is an object with the following properties:
+`iVRMenuInfo` is an object with the following definition:
 
 ```yaml
 {
@@ -7146,7 +7229,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/call-recording`);
 ```
 
@@ -7161,13 +7244,13 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.put(`/restapi/v1.0/account/${accountId}/call-recording`, callRecordingSettingsResource);
 ```
 
 - `accountId`'s default value is `~`
 
-`callRecordingSettingsResource` is an object with the following properties:
+`callRecordingSettingsResource` is an object with the following definition:
 
 ```yaml
 {
@@ -7241,7 +7324,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/call-recording/extensions`);
 ```
 
@@ -7256,13 +7339,13 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.post(`/restapi/v1.0/account/${accountId}/call-recording/bulk-assign`, bulkAccountCallRecordingsResource);
 ```
 
 - `accountId`'s default value is `~`
 
-`bulkAccountCallRecordingsResource` is an object with the following properties:
+`bulkAccountCallRecordingsResource` is an object with the following definition:
 
 ```yaml
 {
@@ -7358,7 +7441,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/call-recording/custom-greetings`);
 ```
 
@@ -7373,7 +7456,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.delete(`/restapi/v1.0/account/${accountId}/call-recording/custom-greetings`);
 ```
 
@@ -7388,7 +7471,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.delete(`/restapi/v1.0/account/${accountId}/call-recording/custom-greetings/${greetingId}`);
 ```
 
@@ -7403,12 +7486,12 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.post('/restapi/v1.0/client-info/sip-provision', createSipRegistrationRequest);
 ```
 
 
-`createSipRegistrationRequest` is an object with the following properties:
+`createSipRegistrationRequest` is an object with the following definition:
 
 ```yaml
 {
@@ -7469,7 +7552,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/phone-number`);
 ```
 
@@ -7485,7 +7568,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}`);
 ```
 
@@ -7501,14 +7584,14 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.put(`/restapi/v1.0/account/${accountId}/extension/${extensionId}`, extensionUpdateRequest);
 ```
 
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-`extensionUpdateRequest` is an object with the following properties:
+`extensionUpdateRequest` is an object with the following definition:
 
 ```yaml
 {
@@ -7746,7 +7829,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.delete(`/restapi/v1.0/account/${accountId}/extension/${extensionId}`);
 ```
 
@@ -7762,7 +7845,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/caller-id`);
 ```
 
@@ -7778,14 +7861,14 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.put(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/caller-id`, extensionCallerIdInfo);
 ```
 
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-`extensionCallerIdInfo` is an object with the following properties:
+`extensionCallerIdInfo` is an object with the following definition:
 
 ```yaml
 {
@@ -7909,7 +7992,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/grant`);
 ```
 
@@ -7925,7 +8008,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/notification-settings`);
 ```
 
@@ -7941,14 +8024,14 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.put(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/notification-settings`, notificationSettingsUpdateRequest);
 ```
 
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-`notificationSettingsUpdateRequest` is an object with the following properties:
+`notificationSettingsUpdateRequest` is an object with the following definition:
 
 ```yaml
 {
@@ -8130,7 +8213,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/profile-image`);
 ```
 
@@ -8146,12 +8229,21 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
-const r = await platform.post(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/profile-image`);
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
+const FormData = require('form-data');
+const formData = new FormData();
+formData.append('body', Buffer.from(JSON.stringify(body)), { filename: 'request.json' });
+formData.append('attachment', fs.readFileSync('./test.png'), { filename: 'text.png', contentType: 'image/png' });
+const r = await platform.post(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/profile-image`, formData);
 ```
 
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
+
+`body` is an object with the following properties:
+
+```yaml
+[]```
 
 ## Update profile image
 
@@ -8162,12 +8254,21 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
-const r = await platform.put(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/profile-image`);
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
+const FormData = require('form-data');
+const formData = new FormData();
+formData.append('body', Buffer.from(JSON.stringify(body)), { filename: 'request.json' });
+formData.append('attachment', fs.readFileSync('./test.png'), { filename: 'text.png', contentType: 'image/png' });
+const r = await platform.put(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/profile-image`, formData);
 ```
 
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
+
+`body` is an object with the following properties:
+
+```yaml
+[]```
 
 ## Download scaled pofile image
 
@@ -8178,7 +8279,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/profile-image/${scaleSize}`);
 ```
 
@@ -8194,7 +8295,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/conferencing`);
 ```
 
@@ -8210,14 +8311,14 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.put(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/conferencing`, updateConferencingInfoRequest);
 ```
 
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-`updateConferencingInfoRequest` is an object with the following properties:
+`updateConferencingInfoRequest` is an object with the following definition:
 
 ```yaml
 {
@@ -8255,7 +8356,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}`);
 ```
 
@@ -8270,7 +8371,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/business-address`);
 ```
 
@@ -8285,13 +8386,13 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.put(`/restapi/v1.0/account/${accountId}/business-address`, modifyAccountBusinessAddressRequest);
 ```
 
 - `accountId`'s default value is `~`
 
-`modifyAccountBusinessAddressRequest` is an object with the following properties:
+`modifyAccountBusinessAddressRequest` is an object with the following definition:
 
 ```yaml
 {
@@ -8345,7 +8446,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/service-info`);
 ```
 
@@ -8360,7 +8461,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.get('/restapi/v1.0/dictionary/language');
 ```
 
@@ -8374,7 +8475,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.get(`/restapi/v1.0/dictionary/language/${languageId}`);
 ```
 
@@ -8388,7 +8489,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.get('/restapi/v1.0/dictionary/country');
 ```
 
@@ -8402,7 +8503,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.get(`/restapi/v1.0/dictionary/country/${countryId}`);
 ```
 
@@ -8416,7 +8517,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.get('/restapi/v1.0/dictionary/location');
 ```
 
@@ -8430,7 +8531,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.get('/restapi/v1.0/dictionary/state');
 ```
 
@@ -8444,7 +8545,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.get(`/restapi/v1.0/dictionary/state/${stateId}`);
 ```
 
@@ -8458,7 +8559,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.get('/restapi/v1.0/dictionary/timezone');
 ```
 
@@ -8472,7 +8573,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.get(`/restapi/v1.0/dictionary/timezone/${timezoneId}`);
 ```
 
@@ -8486,7 +8587,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/phone-number`);
 ```
 
@@ -8501,7 +8602,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/phone-number/${phoneNumberId}`);
 ```
 
@@ -8516,7 +8617,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension`);
 ```
 
@@ -8531,13 +8632,13 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.post(`/restapi/v1.0/account/${accountId}/extension`, extensionCreationRequest);
 ```
 
 - `accountId`'s default value is `~`
 
-`extensionCreationRequest` is an object with the following properties:
+`extensionCreationRequest` is an object with the following definition:
 
 ```yaml
 {
@@ -8863,7 +8964,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/templates`);
 ```
 
@@ -8878,7 +8979,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/templates/${templateId}`);
 ```
 
@@ -8893,7 +8994,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/call-queues`);
 ```
 
@@ -8908,7 +9009,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/call-queues/${groupId}/members`);
 ```
 
@@ -8923,13 +9024,13 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.post(`/restapi/v1.0/account/${accountId}/call-queues/${groupId}/bulk-assign`, callQueueBulkAssignResource);
 ```
 
 - `accountId`'s default value is `~`
 
-`callQueueBulkAssignResource` is an object with the following properties:
+`callQueueBulkAssignResource` is an object with the following definition:
 
 ```yaml
 {
@@ -8959,7 +9060,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/department/${departmentId}/members`);
 ```
 
@@ -8974,13 +9075,13 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.post(`/restapi/v1.0/account/${accountId}/department/bulk-assign`, departmentBulkAssignResource);
 ```
 
 - `accountId`'s default value is `~`
 
-`departmentBulkAssignResource` is an object with the following properties:
+`departmentBulkAssignResource` is an object with the following definition:
 
 ```yaml
 {
@@ -9020,7 +9121,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/paging-only-groups/${pagingOnlyGroupId}/users`);
 ```
 
@@ -9035,7 +9136,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/paging-only-groups/${pagingOnlyGroupId}/devices`);
 ```
 
@@ -9050,13 +9151,13 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.post(`/restapi/v1.0/account/${accountId}/paging-only-groups/${pagingOnlyGroupId}/bulk-assign`, editPagingGroupRequest);
 ```
 
 - `accountId`'s default value is `~`
 
-`editPagingGroupRequest` is an object with the following properties:
+`editPagingGroupRequest` is an object with the following definition:
 
 ```yaml
 {
@@ -9102,13 +9203,13 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.post(`/restapi/v1.0/account/${accountId}/call-monitoring-groups`, createCallMonitoringGroupRequest);
 ```
 
 - `accountId`'s default value is `~`
 
-`createCallMonitoringGroupRequest` is an object with the following properties:
+`createCallMonitoringGroupRequest` is an object with the following definition:
 
 ```yaml
 {
@@ -9137,7 +9238,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/call-monitoring-groups`);
 ```
 
@@ -9152,13 +9253,13 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.put(`/restapi/v1.0/account/${accountId}/call-monitoring-groups/${groupId}`, createCallMonitoringGroupRequest);
 ```
 
 - `accountId`'s default value is `~`
 
-`createCallMonitoringGroupRequest` is an object with the following properties:
+`createCallMonitoringGroupRequest` is an object with the following definition:
 
 ```yaml
 {
@@ -9187,7 +9288,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.delete(`/restapi/v1.0/account/${accountId}/call-monitoring-groups/${groupId}`);
 ```
 
@@ -9202,7 +9303,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/call-monitoring-groups/${groupId}/members`);
 ```
 
@@ -9217,13 +9318,13 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.post(`/restapi/v1.0/account/${accountId}/call-monitoring-groups/${groupId}/bulk-assign`, callMonitoringBulkAssign);
 ```
 
 - `accountId`'s default value is `~`
 
-`callMonitoringBulkAssign` is an object with the following properties:
+`callMonitoringBulkAssign` is an object with the following definition:
 
 ```yaml
 {
@@ -9304,12 +9405,12 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.post('/restapi/v1.0/number-parser/parse', parsePhoneNumberRequest);
 ```
 
 
-`parsePhoneNumberRequest` is an object with the following properties:
+`parsePhoneNumberRequest` is an object with the following definition:
 
 ```yaml
 {
@@ -9334,7 +9435,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/device/${deviceId}`);
 ```
 
@@ -9349,13 +9450,13 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.put(`/restapi/v1.0/account/${accountId}/device/${deviceId}`, accountDeviceUpdate);
 ```
 
 - `accountId`'s default value is `~`
 
-`accountDeviceUpdate` is an object with the following properties:
+`accountDeviceUpdate` is an object with the following definition:
 
 ```yaml
 {
@@ -9436,7 +9537,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/device`);
 ```
 
@@ -9452,7 +9553,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.get('/scim/health');
 ```
 
@@ -9466,7 +9567,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.get('/scim/v2/health');
 ```
 
@@ -9480,7 +9581,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.get('/scim/v2/ServiceProviderConfig');
 ```
 
@@ -9494,7 +9595,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.get('/scim/v2/Users');
 ```
 
@@ -9508,12 +9609,12 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.post('/scim/v2/Users', user);
 ```
 
 
-`user` is an object with the following properties:
+`user` is an object with the following definition:
 
 ```yaml
 {
@@ -9658,12 +9759,12 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.post('/scim/v2/Users/.search', searchRequest);
 ```
 
 
-`searchRequest` is an object with the following properties:
+`searchRequest` is an object with the following definition:
 
 ```yaml
 {
@@ -9704,7 +9805,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.get(`/scim/v2/Users/${id}`);
 ```
 
@@ -9718,12 +9819,12 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.put(`/scim/v2/Users/${id}`, user);
 ```
 
 
-`user` is an object with the following properties:
+`user` is an object with the following definition:
 
 ```yaml
 {
@@ -9868,7 +9969,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.delete(`/scim/v2/Users/${id}`);
 ```
 
@@ -9882,12 +9983,12 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.patch(`/scim/v2/Users/${id}`, userPatch);
 ```
 
 
-`userPatch` is an object with the following properties:
+`userPatch` is an object with the following definition:
 
 ```yaml
 {
@@ -9941,7 +10042,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/telephony/sessions/${sessionId}`);
 ```
 
@@ -9956,7 +10057,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.delete(`/restapi/v1.0/account/${accountId}/telephony/sessions/${sessionId}`);
 ```
 
@@ -9971,7 +10072,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.post(`/restapi/v1.0/account/${accountId}/telephony/sessions/${sessionId}/parties/${partyId}/hold`);
 ```
 
@@ -9986,7 +10087,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.post(`/restapi/v1.0/account/${accountId}/telephony/sessions/${sessionId}/parties/${partyId}/unhold`);
 ```
 
@@ -10001,7 +10102,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.post(`/restapi/v1.0/account/${accountId}/telephony/sessions/${sessionId}/parties/${partyId}/reject`);
 ```
 
@@ -10016,13 +10117,13 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.post(`/restapi/v1.0/account/${accountId}/telephony/sessions/${sessionId}/parties/${partyId}/transfer`, transferTarget);
 ```
 
 - `accountId`'s default value is `~`
 
-`transferTarget` is an object with the following properties:
+`transferTarget` is an object with the following definition:
 
 ```yaml
 {
@@ -10052,13 +10153,13 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.post(`/restapi/v1.0/account/${accountId}/telephony/sessions/${sessionId}/parties/${partyId}/forward`, forwardTarget);
 ```
 
 - `accountId`'s default value is `~`
 
-`forwardTarget` is an object with the following properties:
+`forwardTarget` is an object with the following definition:
 
 ```yaml
 {
@@ -10084,13 +10185,13 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.post(`/restapi/v1.0/account/${accountId}/telephony/sessions/${sessionId}/parties/${partyId}/flip`, callPartyFlip);
 ```
 
 - `accountId`'s default value is `~`
 
-`callPartyFlip` is an object with the following properties:
+`callPartyFlip` is an object with the following definition:
 
 ```yaml
 {
@@ -10112,7 +10213,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/telephony/sessions/${sessionId}/parties/${partyId}`);
 ```
 
@@ -10127,13 +10228,13 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.patch(`/restapi/v1.0/account/${accountId}/telephony/sessions/${sessionId}/parties/${partyId}`, partyUpdateRequest);
 ```
 
 - `accountId`'s default value is `~`
 
-`partyUpdateRequest` is an object with the following properties:
+`partyUpdateRequest` is an object with the following definition:
 
 ```yaml
 {
@@ -10164,7 +10265,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.post(`/restapi/v1.0/account/${accountId}/telephony/sessions/${sessionId}/parties/${partyId}/recordings`);
 ```
 
@@ -10179,13 +10280,13 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.patch(`/restapi/v1.0/account/${accountId}/telephony/sessions/${sessionId}/parties/${partyId}/recordings/${recordingId}`, callRecordingUpdate);
 ```
 
 - `accountId`'s default value is `~`
 
-`callRecordingUpdate` is an object with the following properties:
+`callRecordingUpdate` is an object with the following definition:
 
 ```yaml
 {
@@ -10207,7 +10308,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.get(`/restapi/v1.0/glip/data-export/${taskId}/archive/${archiveId}`);
 ```
 
@@ -10221,12 +10322,12 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.post('/restapi/v1.0/glip/data-export', createDataExportTaskRequest);
 ```
 
 
-`createDataExportTaskRequest` is an object with the following properties:
+`createDataExportTaskRequest` is an object with the following definition:
 
 ```yaml
 {
@@ -10266,7 +10367,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.get(`/restapi/v1.0/glip/data-export/${taskId}`);
 ```
 
@@ -10280,13 +10381,13 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.post(`/restapi/v1.0/account/${accountId}/message-store-report`, createMessageStoreReportRequest);
 ```
 
 - `accountId`'s default value is `~`
 
-`createMessageStoreReportRequest` is an object with the following properties:
+`createMessageStoreReportRequest` is an object with the following definition:
 
 ```yaml
 {
@@ -10312,7 +10413,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/message-store-report/${taskId}`);
 ```
 
@@ -10327,7 +10428,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/message-store-report/${taskId}/archive`);
 ```
 
@@ -10342,7 +10443,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/message-store-report/${taskId}/archive/${archiveId}`);
 ```
 
@@ -10357,7 +10458,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/meeting-recordings`);
 ```
 
@@ -10372,7 +10473,7 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/meeting-recordings`);
 ```
 
@@ -10388,10 +10489,105 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
-const r = await platform.get('/restapi/oauth/authorize');
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
+const FormData = require('form-data');
+const formData = new FormData();
+formData.append('body', Buffer.from(JSON.stringify(body)), { filename: 'request.json' });
+
+const r = await platform.get('/restapi/oauth/authorize', formData);
 ```
 
+
+`body` is an object with the following properties:
+
+```yaml
+[
+  {
+    "name": "response_type",
+    "required": true,
+    "in": "formData",
+    "type": "string",
+    "enum": [
+      "code",
+      "token"
+    ],
+    "description": "Determines authorization flow: **code** - Authorization Code, **token** - Implicit Grant"
+  },
+  {
+    "name": "redirect_uri",
+    "required": true,
+    "in": "formData",
+    "type": "string",
+    "description": "This is a callback URI which determines where the response is sent. The value of this parameter must exactly match one of the URIs you have provided for your app upon registration"
+  },
+  {
+    "name": "client_id",
+    "required": true,
+    "in": "formData",
+    "type": "string",
+    "description": "Identifier (key) of a client application"
+  },
+  {
+    "name": "state",
+    "type": "string",
+    "in": "formData",
+    "description": "Client state. Returned back to the client at the end of the flow"
+  },
+  {
+    "name": "brand_id",
+    "type": "string",
+    "in": "formData",
+    "description": "Brand identifier. If it is not provided in request, server will try to determine brand from client app profile. The default value is '1210' - RingCentral US"
+  },
+  {
+    "name": "display",
+    "type": "string",
+    "enum": [
+      "page",
+      "popup",
+      "touch",
+      "mobile"
+    ],
+    "in": "formData",
+    "description": "Style of login form. The default value is 'page'. The 'popup' and 'touch' values are featured for mobile applications"
+  },
+  {
+    "name": "prompt",
+    "type": "string",
+    "enum": [
+      "login",
+      "sso",
+      "consent"
+    ],
+    "in": "formData",
+    "description": "Specifies which login form will be displayed. Space-separated set of the following values: 'login' - official RingCentral login form, 'sso' - Single Sign-On login form, 'consent' - form to show the requested scope and prompt user for consent. Either 'login' or 'sso' (or both) must be specified. The default value is 'login&sso'"
+  },
+  {
+    "name": "localeId",
+    "type": "string",
+    "in": "formData",
+    "description": "Localization code of a language. Overwrites 'Accept-Language' header value"
+  },
+  {
+    "name": "ui_locales",
+    "type": "string",
+    "in": "formData",
+    "description": "Localization code of a language. Overwrites 'localeId' parameter value"
+  },
+  {
+    "name": "ui_options",
+    "type": "string",
+    "in": "formData",
+    "enum": [
+      "hide_logo",
+      "hide_tos",
+      "hide_remember_me",
+      "external_popup",
+      "old_ui"
+    ],
+    "description": "User interface options data"
+  }
+]```
 
 ## Get token
 
@@ -10402,10 +10598,112 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
-const r = await platform.post('/restapi/oauth/token');
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
+const FormData = require('form-data');
+const formData = new FormData();
+formData.append('body', Buffer.from(JSON.stringify(body)), { filename: 'request.json' });
+
+const r = await platform.post('/restapi/oauth/token', formData);
 ```
 
+
+`body` is an object with the following properties:
+
+```yaml
+[
+  {
+    "name": "username",
+    "in": "formData",
+    "description": "Phone number linked to an account or extension in E.164 format with or without leading '+' sign",
+    "required": false,
+    "type": "string"
+  },
+  {
+    "name": "password",
+    "in": "formData",
+    "description": "User's password",
+    "required": false,
+    "type": "string",
+    "format": "password"
+  },
+  {
+    "name": "extension",
+    "in": "formData",
+    "description": "Optional. Extension short number. If company number is specified as a username, and extension is not specified, the server will attempt to authenticate client as main company administrator",
+    "required": false,
+    "type": "string"
+  },
+  {
+    "name": "grant_type",
+    "in": "formData",
+    "description": "Grant type",
+    "required": false,
+    "type": "string",
+    "enum": [
+      "authorization_code",
+      "password",
+      "refresh_token",
+      "client_credentials"
+    ],
+    "default": "password"
+  },
+  {
+    "name": "access_token_ttl",
+    "in": "formData",
+    "description": "Access token lifetime in seconds",
+    "required": false,
+    "type": "integer",
+    "format": "int64",
+    "minimum": 600,
+    "maximum": 3600,
+    "default": 3600
+  },
+  {
+    "name": "refresh_token_ttl",
+    "in": "formData",
+    "description": "Refresh token lifetime in seconds",
+    "required": false,
+    "type": "integer",
+    "format": "int64",
+    "default": 604800,
+    "maximum": 604800
+  },
+  {
+    "name": "scope",
+    "in": "formData",
+    "description": "List of API permissions to be used with access token. Can be omitted when requesting all permissions defined during the application registration phase",
+    "required": false,
+    "type": "string"
+  },
+  {
+    "name": "refresh_token",
+    "in": "formData",
+    "description": "Previously issued refresh token. This is the only formData field used for the Refresh Token Flow.",
+    "required": false,
+    "type": "string"
+  },
+  {
+    "name": "endpoint_id",
+    "in": "formData",
+    "required": false,
+    "type": "string",
+    "description": "The unique identifier of a client application. If not specified, the previously specified or auto generated value is used by default"
+  },
+  {
+    "name": "code",
+    "in": "formData",
+    "required": false,
+    "type": "string",
+    "description": "The authorization code that the client previously received from the authorization server"
+  },
+  {
+    "name": "redirect_uri",
+    "in": "formData",
+    "required": false,
+    "type": "string",
+    "description": "The redirect URI in the token request must be an exact match of the redirect URI that was used when generating the authorization code"
+  }
+]```
 
 ## Revoke token
 
@@ -10416,6 +10714,24 @@ const SDK = require('ringcentral');
 
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
-await platform.login({ 'username', 'extension', 'password' });
-const r = await platform.post('/restapi/oauth/revoke');
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
+const FormData = require('form-data');
+const formData = new FormData();
+formData.append('body', Buffer.from(JSON.stringify(body)), { filename: 'request.json' });
+
+const r = await platform.post('/restapi/oauth/revoke', formData);
 ```
+
+
+`body` is an object with the following properties:
+
+```yaml
+[
+  {
+    "name": "token",
+    "in": "formData",
+    "description": "Active access or refresh token to be revoked",
+    "required": true,
+    "type": "string"
+  }
+]```
