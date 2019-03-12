@@ -2545,19 +2545,11 @@ const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const FormData = require('form-data');
 const formData = new FormData();
-formData.append('body', Buffer.from(JSON.stringify(body)), { filename: 'request.json' });
+
 formData.append('attachment', fs.readFileSync('./test.png'), { filename: 'text.png', contentType: 'image/png' });
 const r = await platform.post('/restapi/v1.0/glip/files', formData);
 ```
 
-
-`body` is an object with the following definition:
-
-```yaml
-{
-  "properties": {}
-}
-```
 
 ## Create Glip Card
 
@@ -8107,21 +8099,13 @@ const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const FormData = require('form-data');
 const formData = new FormData();
-formData.append('body', Buffer.from(JSON.stringify(body)), { filename: 'request.json' });
+
 formData.append('attachment', fs.readFileSync('./test.png'), { filename: 'text.png', contentType: 'image/png' });
 const r = await platform.post(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/profile-image`, formData);
 ```
 
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
-
-`body` is an object with the following definition:
-
-```yaml
-{
-  "properties": {}
-}
-```
 
 ## Update Profile Image
 
@@ -8134,21 +8118,13 @@ const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const FormData = require('form-data');
 const formData = new FormData();
-formData.append('body', Buffer.from(JSON.stringify(body)), { filename: 'request.json' });
+
 formData.append('attachment', fs.readFileSync('./test.png'), { filename: 'text.png', contentType: 'image/png' });
 const r = await platform.put(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/profile-image`, formData);
 ```
 
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
-
-`body` is an object with the following definition:
-
-```yaml
-{
-  "properties": {}
-}
-```
 
 ## Download Scaled Pofile Image
 

@@ -31,13 +31,16 @@ const generateCodes = (path, method, operation) => {
   let result
   if (operation.parameters && operation.parameters.some(p => p.in === 'formData')) {
     const hasFileType = operation.parameters.some(p => p.in === 'formData' && (p.type === 'file' || (p.items && p.items.type === 'file')))
+    const formDataFields = operation.parameters.filter(p => p.in === 'formData' && p.type !== 'file' && !(p.items && p.items.type === 'file'))
     result = [`const FormData = require('form-data');
 const formData = new FormData();
-formData.append('body', Buffer.from(JSON.stringify(body)), { filename: 'request.json' });
+${formDataFields.length > 0 ? `formData.append('body', Buffer.from(JSON.stringify(body)), { filename: 'request.json' });` : ''}
 ${hasFileType ? `formData.append('attachment', fs.readFileSync('./test.png'), { filename: 'text.png', contentType: 'image/png' });` : ''}
 const r = await platform.${method}(${endpoint}, formData);`]
-    result.push(`\n\`body\` is an object with the following definition:`)
-    result.push(`\n\`\`\`yaml\n${JSON.stringify(loadFullDefinition(operation.parameters.filter(p => p.in === 'formData' && p.type !== 'file' && !(p.items && p.items.type === 'file'))), null, 2)}\n\`\`\``)
+    if (formDataFields.length > 0) {
+      result.push(`\n\`body\` is an object with the following definition:`)
+      result.push(`\n\`\`\`yaml\n${JSON.stringify(loadFullDefinition(formDataFields), null, 2)}\n\`\`\``)
+    }
   } else {
     result = [`const r = await platform.${method}(${endpoint}${params});`]
     if (bodyClass && bodyClass !== 'string') {
