@@ -25,13 +25,13 @@ const platform = rcsdk.platform();
     faxResolution: 'High'
   }
   formData.append('json', Buffer.from(JSON.stringify(body)),
-    { filename: 'request.json', contentType: 'application/json' })
+    { filename: 'request.json' })
 
   formData.append('attachment', Buffer.from('Hello world'),
-    { filename: 'text.txt', contentType: 'text/plain' })
+    { filename: 'text.txt' })
 
   formData.append('attachment', fs.readFileSync('./test.png'),
-    { filename: 'text.png', contentType: 'image/png' })
+    { filename: 'text.png' })
 
   const r = await platform.post(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/fax`, formData)
   console.log(r.json())
