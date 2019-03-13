@@ -1,0 +1,67 @@
+{
+  "type": "object",
+  "properties": {
+    "accounts": {
+      "type": "array",
+      "items": {
+        "properties": {
+          "companyName": {
+            "type": "string"
+          },
+          "conflictCount": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "federatedName": {
+            "type": "string"
+          },
+          "id": {
+            "type": "string"
+          },
+          "linkCreationTime": {
+            "type": "string"
+          },
+          "mainNumber": {
+            "properties": {
+              "formattedPhoneNumber": {
+                "type": "string"
+              },
+              "phoneNumber": {
+                "type": "string"
+              },
+              "type": {
+                "type": "string"
+              },
+              "label": {
+                "type": "string",
+                "description": "Custom user name of a phone number, if any"
+              },
+              "usageType": {
+                "type": "string",
+                "enum": [
+                  "MobileNumber",
+                  "ContactNumber",
+                  "DirectNumber",
+                  "ForwardedNumber"
+                ],
+                "description": "Usage type of a phone number"
+              }
+            }
+          }
+        }
+      }
+    },
+    "creationTime": {
+      "type": "string"
+    },
+    "displayName": {
+      "type": "string"
+    },
+    "id": {
+      "type": "string"
+    },
+    "lastModifiedTime": {
+      "type": "string"
+    }
+  }
+}

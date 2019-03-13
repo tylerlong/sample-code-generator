@@ -1,0 +1,48 @@
+{
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Internal identifier of a forwarding/call flip phone number"
+    },
+    "uri": {
+      "type": "string",
+      "description": "Canonical URI of a forwarding/call flip phone number"
+    },
+    "phoneNumber": {
+      "type": "string",
+      "description": "Forwarding/Call flip phone number"
+    },
+    "label": {
+      "type": "string",
+      "description": "Forwarding/Call flip number title"
+    },
+    "features": {
+      "type": "array",
+      "description": "Type of option this phone number is used for. Multiple values are accepted",
+      "items": {
+        "type": "string",
+        "enum": [
+          "CallFlip",
+          "CallForwarding"
+        ]
+      }
+    },
+    "flipNumber": {
+      "type": "integer",
+      "description": "Number assigned to the call flip phone number, corresponds to the shortcut dial number"
+    },
+    "type": {
+      "type": "string",
+      "description": "Forwarding phone number type",
+      "enum": [
+        "Home",
+        "Mobile",
+        "Work",
+        "PhoneLine",
+        "Outage",
+        "Other"
+      ]
+    }
+  }
+}

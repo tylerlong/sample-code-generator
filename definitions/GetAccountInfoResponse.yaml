@@ -1,0 +1,807 @@
+{
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Internal identifier of an account"
+    },
+    "uri": {
+      "type": "string",
+      "description": "Canonical URI of an account"
+    },
+    "mainNumber": {
+      "type": "string",
+      "description": "Main phone number of the current account"
+    },
+    "operator": {
+      "description": "Operator's extension information. This extension will receive all calls and messages intended for the operator",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64",
+          "description": "Internal identifier of an extension"
+        },
+        "uri": {
+          "type": "string",
+          "description": "Canonical URI of an extension"
+        },
+        "contact": {
+          "description": "Contact detailed information",
+          "properties": {
+            "firstName": {
+              "type": "string",
+              "description": "For User extension type only. Extension user first name"
+            },
+            "lastName": {
+              "type": "string",
+              "description": "For User extension type only. Extension user last name"
+            },
+            "company": {
+              "type": "string",
+              "description": "Extension user company name"
+            },
+            "jobTitle": {
+              "type": "string"
+            },
+            "email": {
+              "type": "string",
+              "description": "Email of extension user"
+            },
+            "businessPhone": {
+              "type": "string",
+              "description": "Extension user contact phone number in [E.164](https://www.itu.int/rec/T-REC-E.164-201011-I) (with '+' sign) format"
+            },
+            "mobilePhone": {
+              "type": "string",
+              "description": "Extension user mobile (**non** Toll Free) phone number in [E.164](https://www.itu.int/rec/T-REC-E.164-201011-I) (with '+' sign) format"
+            },
+            "businessAddress": {
+              "description": "Business address of extension user company",
+              "properties": {
+                "country": {
+                  "type": "string",
+                  "description": "Country name of an extension user company"
+                },
+                "state": {
+                  "type": "string",
+                  "description": "State/province name of an extension user company. Mandatory for the USA, UK and Canada"
+                },
+                "city": {
+                  "type": "string",
+                  "description": "City name of an extension user company"
+                },
+                "street": {
+                  "type": "string",
+                  "description": "Street address of an extension user company"
+                },
+                "zip": {
+                  "type": "string",
+                  "description": "Zip code of an extension user company"
+                }
+              }
+            },
+            "emailAsLoginName": {
+              "type": "boolean",
+              "description": "If 'True' then contact email is enabled as login name for this user. Please note that email should be unique in this case.",
+              "default": "False"
+            },
+            "pronouncedName": {
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "description": "Voice name type. 'Default' - default extension name; first name and last name specified in user profile; 'TextToSpeech' - custom text; user name spelled the way it sounds and specified by user; 'Recorded' - custom audio, user name recorded in user's own voice (supported only for extension retrieval)",
+                  "enum": [
+                    "Default",
+                    "TextToSpeech",
+                    "Recorded"
+                  ]
+                },
+                "text": {
+                  "type": "string",
+                  "description": "Custom text"
+                }
+              }
+            },
+            "department": {
+              "type": "string",
+              "description": "Extension user department, if any"
+            }
+          }
+        },
+        "departments": {
+          "type": "array",
+          "description": "Information on department extension(s), to which the requested extension belongs. Returned only for user extensions, members of department, requested by single extensionId",
+          "items": {
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "Internal identifier of a department extension"
+              },
+              "uri": {
+                "type": "string",
+                "description": "Canonical URI of a department extension"
+              },
+              "extensionNumber": {
+                "type": "string",
+                "description": "Number of a department extension"
+              }
+            }
+          }
+        },
+        "extensionNumber": {
+          "type": "string",
+          "description": "Number of department extension"
+        },
+        "name": {
+          "type": "string",
+          "description": "Extension user name"
+        },
+        "partnerId": {
+          "type": "string",
+          "description": "For Partner Applications Internal identifier of an extension created by partner. The RingCentral supports the mapping of accounts and stores the corresponding account ID/extension ID for each partner ID of a client application. In request URIs partner IDs are accepted instead of regular RingCentral native IDs as path parameters using pid = XXX clause. Though in response URIs contain the corresponding account IDs and extension IDs. In all request and response bodies these values are reflected via partnerId attributes of account and extension"
+        },
+        "permissions": {
+          "properties": {
+            "admin": {
+              "description": "Admin permission",
+              "properties": {
+                "enabled": {
+                  "type": "boolean",
+                  "description": "Specifies if a permission is enabled or not"
+                }
+              }
+            },
+            "internationalCalling": {
+              "description": "International Calling permission",
+              "properties": {
+                "enabled": {
+                  "type": "boolean",
+                  "description": "Specifies if a permission is enabled or not"
+                }
+              }
+            }
+          }
+        },
+        "profileImage": {
+          "description": "Information on profile image",
+          "properties": {
+            "uri": {
+              "type": "string",
+              "description": "Link to a profile image. If an image is not uploaded for an extension, only uri is returned"
+            },
+            "etag": {
+              "type": "string",
+              "description": "Identifier of an image"
+            },
+            "lastModified": {
+              "type": "string",
+              "format": "date-time",
+              "description": "The datetime when an image was last updated in ISO 8601 format, for example 2016-03-10T18:07:52.534Z"
+            },
+            "contentType": {
+              "type": "string",
+              "description": "The type of an image"
+            },
+            "scales": {
+              "type": "array",
+              "items": {
+                "properties": {
+                  "uri": {
+                    "type": "string"
+                  }
+                }
+              },
+              "description": "List of URIs to profile images in different dimensions"
+            }
+          }
+        },
+        "references": {
+          "type": "array",
+          "description": "List of non-RC internal identifiers assigned to an extension",
+          "items": {
+            "properties": {
+              "ref": {
+                "type": "string",
+                "description": "Non-RC identifier of an extension"
+              },
+              "type": {
+                "type": "string",
+                "description": "Type of external identifier",
+                "enum": [
+                  "PartnerId",
+                  "CustomerDirectoryId"
+                ]
+              }
+            }
+          }
+        },
+        "roles": {
+          "type": "array",
+          "items": {
+            "properties": {
+              "uri": {
+                "type": "string"
+              },
+              "id": {
+                "type": "string",
+                "description": "Internal identifier of a role"
+              }
+            }
+          }
+        },
+        "regionalSettings": {
+          "description": "Extension region data (timezone, home country, language)",
+          "properties": {
+            "homeCountry": {
+              "description": "Extension country information",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "description": "Internal identifier of a home country"
+                },
+                "uri": {
+                  "type": "string",
+                  "description": "Canonical URI of a home country"
+                },
+                "name": {
+                  "type": "string",
+                  "description": "Official name of a home country"
+                },
+                "isoCode": {
+                  "type": "string",
+                  "description": "ISO code of a country"
+                },
+                "callingCode": {
+                  "type": "string",
+                  "description": "Calling code of a country"
+                }
+              }
+            },
+            "timezone": {
+              "description": "Extension timezone information",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "description": "Internal identifier of a timezone"
+                },
+                "uri": {
+                  "type": "string",
+                  "description": "Canonical URI of a timezone"
+                },
+                "name": {
+                  "type": "string",
+                  "description": "Short name of a timezone"
+                },
+                "description": {
+                  "type": "string",
+                  "description": "Meaningful description of the timezone"
+                }
+              }
+            },
+            "language": {
+              "description": "User interface language data",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "description": "Internal identifier of a language"
+                },
+                "uri": {
+                  "type": "string",
+                  "description": "Canonical URI of a language"
+                },
+                "greeting": {
+                  "type": "boolean",
+                  "description": "Indicates whether a language is available as greeting language"
+                },
+                "formattingLocale": {
+                  "type": "boolean",
+                  "description": "Indicates whether a language is available as formatting locale"
+                },
+                "localeCode": {
+                  "type": "string",
+                  "description": "Localization code of a language"
+                },
+                "name": {
+                  "type": "string",
+                  "description": "Official name of a language"
+                },
+                "ui": {
+                  "type": "boolean",
+                  "description": "Indicates whether a language is available as UI language"
+                }
+              }
+            },
+            "greetingLanguage": {
+              "description": "Information on language used for telephony greetings",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "description": "Internal identifier of a greeting language"
+                },
+                "localeCode": {
+                  "type": "string",
+                  "description": "Localization code of a greeting language"
+                },
+                "name": {
+                  "type": "string",
+                  "description": "Official name of a greeting language"
+                }
+              }
+            },
+            "formattingLocale": {
+              "description": "Formatting language preferences for numbers, dates and currencies",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "description": "Internal identifier of a formatting language"
+                },
+                "localeCode": {
+                  "type": "string",
+                  "description": "Localization code of a formatting language"
+                },
+                "name": {
+                  "type": "string"
+                }
+              }
+            },
+            "timeFormat": {
+              "type": "string",
+              "description": "Time format setting. The default value is '12h' = ['12h', '24h']",
+              "enum": [
+                "12h",
+                "24h"
+              ]
+            }
+          }
+        },
+        "serviceFeatures": {
+          "type": "array",
+          "description": "Extension service features returned in response only when the logged-in user requests his/her own extension info, see also Extension Service Features",
+          "items": {
+            "properties": {
+              "enabled": {
+                "type": "boolean",
+                "description": "Feature status; shows feature availability for an extension"
+              },
+              "featureName": {
+                "type": "string",
+                "enum": [
+                  "AccountFederation",
+                  "Archiver",
+                  "AutomaticCallRecordingMute",
+                  "AutomaticInboundCallRecording",
+                  "AutomaticOutboundCallRecording",
+                  "BlockedMessageForwarding",
+                  "Calendar",
+                  "CallerIdControl",
+                  "CallForwarding",
+                  "CallPark",
+                  "CallParkLocations",
+                  "CallSupervision",
+                  "CallSwitch",
+                  "CallQualitySurvey",
+                  "Conferencing",
+                  "ConfigureDelegates",
+                  "DeveloperPortal",
+                  "DND",
+                  "DynamicConference",
+                  "EmergencyAddressAutoUpdate",
+                  "EmergencyCalling",
+                  "EncryptionAtRest",
+                  "ExternalDirectoryIntegration",
+                  "Fax",
+                  "FaxReceiving",
+                  "FreeSoftPhoneLines",
+                  "HDVoice",
+                  "HipaaCompliance",
+                  "Intercom",
+                  "InternationalCalling",
+                  "InternationalSMS",
+                  "LinkedSoftphoneLines",
+                  "MMS",
+                  "OnDemandCallRecording",
+                  "Pager",
+                  "PagerReceiving",
+                  "Paging",
+                  "PasswordAuth",
+                  "PromoMessage",
+                  "Reports",
+                  "Presence",
+                  "RCTeams",
+                  "RingOut",
+                  "SalesForce",
+                  "SingleExtensionUI",
+                  "SiteCodes",
+                  "SMS",
+                  "SMSReceiving",
+                  "SoftPhoneUpdate",
+                  "UserManagement",
+                  "VideoConferencing",
+                  "VoipCalling",
+                  "VoipCallingOnMobile",
+                  "Voicemail",
+                  "VoicemailToText",
+                  "WebPhone"
+                ],
+                "description": "Feature name"
+              },
+              "reason": {
+                "type": "string",
+                "description": "Reason of limitation for a particular service feature. Returned only if the enabled parameter value is 'False', see Service Feature Limitations and Reasons. When retrieving service features for an extension, the reasons for the limitations, if any, are returned in response"
+              }
+            }
+          }
+        },
+        "setupWizardState": {
+          "type": "string",
+          "description": "Specifies extension configuration wizard state (web service setup).",
+          "default": "NotStarted",
+          "enum": [
+            "NotStarted",
+            "Incomplete",
+            "Completed"
+          ]
+        },
+        "status": {
+          "type": "string",
+          "description": "Extension current state. If the status is 'Unassigned'. Returned for all extensions",
+          "enum": [
+            "Enabled",
+            "Disabled",
+            "NotActivated",
+            "Unassigned"
+          ]
+        },
+        "statusInfo": {
+          "description": "Status information (reason, comment). Returned for 'Disabled' status only",
+          "properties": {
+            "comment": {
+              "type": "string",
+              "description": "A free-form user comment, describing the status change reason"
+            },
+            "reason": {
+              "type": "string",
+              "description": "Type of suspension",
+              "enum": [
+                "Voluntarily",
+                "Involuntarily"
+              ]
+            }
+          }
+        },
+        "type": {
+          "type": "string",
+          "description": "Extension type",
+          "enum": [
+            "User",
+            "FaxUser",
+            "VirtualUser",
+            "DigitalUser",
+            "Department",
+            "Announcement",
+            "Voicemail",
+            "SharedLinesGroup",
+            "PagingOnlyGroup",
+            "IvrMenu",
+            "ApplicationExtension",
+            "ParkLocation"
+          ]
+        },
+        "callQueueExtensionInfo": {
+          "description": "For Department extension type only. Call queue settings",
+          "properties": {
+            "slaGoal": {
+              "type": "integer",
+              "description": "Target percentage of calls that must be answered by agents within the service level time threshold"
+            },
+            "slaThresholdSeconds": {
+              "type": "integer",
+              "description": "Period of time in seconds that is considered to be an acceptable service level"
+            },
+            "includeAbandonedCalls": {
+              "type": "boolean",
+              "description": "If 'True' abandoned calls (hanged up prior to being served) are included into service level calculation"
+            },
+            "abandonedThresholdSeconds": {
+              "type": "integer",
+              "description": "Period of time in seconds specifying abandoned calls duration - calls that are shorter will not be included into the calculation of service level.; zero value means that abandoned calls of any duration will be included into calculation"
+            }
+          }
+        },
+        "hidden": {
+          "type": "boolean",
+          "description": "Hides extension from showing in company directory. Supported for extensions of User type only"
+        }
+      }
+    },
+    "partnerId": {
+      "type": "string",
+      "description": "Additional account identifier, developed and applied by the client"
+    },
+    "serviceInfo": {
+      "description": "Account service information, including brand, service plan and billing plan",
+      "properties": {
+        "uri": {
+          "type": "string",
+          "description": "Canonical URI of a service info resource"
+        },
+        "billingPlan": {
+          "description": "Information on account billing plan",
+          "properties": {
+            "id": {
+              "type": "string",
+              "description": "Internal identifier of a billing plan"
+            },
+            "name": {
+              "type": "string",
+              "description": "Billing plan name"
+            },
+            "durationUnit": {
+              "type": "string",
+              "description": "Duration period",
+              "enum": [
+                "Month",
+                "Day"
+              ]
+            },
+            "duration": {
+              "type": "string",
+              "description": "Number of duration units"
+            },
+            "type": {
+              "type": "string",
+              "description": "Billing plan type",
+              "enum": [
+                "Initial",
+                "Regular",
+                "Suspended",
+                "Trial",
+                "TrialNoCC",
+                "Free"
+              ]
+            }
+          }
+        },
+        "brand": {
+          "description": "Information on account brand",
+          "properties": {
+            "id": {
+              "type": "string",
+              "description": "Internal identifier of a brand"
+            },
+            "name": {
+              "type": "string",
+              "description": "Brand name, for example  RingCentral UK ,  ClearFax "
+            },
+            "homeCountry": {
+              "description": "Home country information",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "description": "Internal identifier of a home country"
+                },
+                "uri": {
+                  "type": "string",
+                  "description": "Canonical URI of a home country"
+                },
+                "name": {
+                  "type": "string",
+                  "description": "Official name of a home country"
+                },
+                "isoCode": {
+                  "type": "string",
+                  "description": "ISO code of a country"
+                },
+                "callingCode": {
+                  "type": "string",
+                  "description": "Calling code of a country"
+                }
+              }
+            }
+          }
+        },
+        "servicePlan": {
+          "description": "Information on account service plan",
+          "properties": {
+            "id": {
+              "type": "string",
+              "description": "Internal identifier of a service plan"
+            },
+            "name": {
+              "type": "string",
+              "description": "Name of a service plan"
+            },
+            "edition": {
+              "type": "string",
+              "description": "Edition of a service plan"
+            }
+          }
+        },
+        "targetServicePlan": {
+          "description": "Information on account target service plan",
+          "properties": {
+            "id": {
+              "type": "string",
+              "description": "Internal identifier of a target service plan"
+            },
+            "name": {
+              "type": "string",
+              "description": "Name of a target service plan"
+            }
+          }
+        }
+      }
+    },
+    "setupWizardState": {
+      "type": "string",
+      "description": "Specifies account configuration wizard state (web service setup). The default value is 'NotStarted'",
+      "enum": [
+        "NotStarted",
+        "Incomplete",
+        "Completed"
+      ]
+    },
+    "status": {
+      "type": "string",
+      "description": "Status of the current account",
+      "enum": [
+        "Confirmed",
+        "Disabled"
+      ]
+    },
+    "statusInfo": {
+      "description": "Status information (reason, comment, lifetime). Returned for 'Disabled' status only",
+      "properties": {
+        "comment": {
+          "type": "string",
+          "description": "A free-form user comment, describing the status change reason"
+        },
+        "reason": {
+          "type": "string",
+          "description": "Type of suspension",
+          "enum": [
+            "Voluntarily",
+            "Involuntarily"
+          ]
+        },
+        "till": {
+          "type": "string",
+          "description": "Date until which the account will get deleted. The default value is 30 days since current date"
+        }
+      }
+    },
+    "regionalSettings": {
+      "description": "Account level region data (web service Auto-Receptionist settings)",
+      "properties": {
+        "homeCountry": {
+          "description": "Extension country information",
+          "properties": {
+            "id": {
+              "type": "string",
+              "description": "Internal identifier of a home country"
+            },
+            "uri": {
+              "type": "string",
+              "description": "Canonical URI of a home country"
+            },
+            "name": {
+              "type": "string",
+              "description": "Official name of a home country"
+            },
+            "isoCode": {
+              "type": "string",
+              "description": "ISO code of a country"
+            },
+            "callingCode": {
+              "type": "string",
+              "description": "Calling code of a country"
+            }
+          }
+        },
+        "timezone": {
+          "description": "Extension timezone information",
+          "properties": {
+            "id": {
+              "type": "string",
+              "description": "Internal identifier of a timezone"
+            },
+            "uri": {
+              "type": "string",
+              "description": "Canonical URI of a timezone"
+            },
+            "name": {
+              "type": "string",
+              "description": "Short name of a timezone"
+            },
+            "description": {
+              "type": "string",
+              "description": "Meaningful description of the timezone"
+            }
+          }
+        },
+        "language": {
+          "description": "User interface language data",
+          "properties": {
+            "id": {
+              "type": "string",
+              "description": "Internal identifier of a language"
+            },
+            "uri": {
+              "type": "string",
+              "description": "Canonical URI of a language"
+            },
+            "greeting": {
+              "type": "boolean",
+              "description": "Indicates whether a language is available as greeting language"
+            },
+            "formattingLocale": {
+              "type": "boolean",
+              "description": "Indicates whether a language is available as formatting locale"
+            },
+            "localeCode": {
+              "type": "string",
+              "description": "Localization code of a language"
+            },
+            "name": {
+              "type": "string",
+              "description": "Official name of a language"
+            },
+            "ui": {
+              "type": "boolean",
+              "description": "Indicates whether a language is available as UI language"
+            }
+          }
+        },
+        "greetingLanguage": {
+          "description": "Information on language used for telephony greetings",
+          "properties": {
+            "id": {
+              "type": "string",
+              "description": "Internal identifier of a greeting language"
+            },
+            "localeCode": {
+              "type": "string",
+              "description": "Localization code of a greeting language"
+            },
+            "name": {
+              "type": "string",
+              "description": "Official name of a greeting language"
+            }
+          }
+        },
+        "formattingLocale": {
+          "description": "Formatting language preferences for numbers, dates and currencies",
+          "properties": {
+            "id": {
+              "type": "string",
+              "description": "Internal identifier of a formatting language"
+            },
+            "localeCode": {
+              "type": "string",
+              "description": "Localization code of a formatting language"
+            },
+            "name": {
+              "type": "string"
+            }
+          }
+        },
+        "timeFormat": {
+          "type": "string",
+          "description": "Time format setting. The default value is '12h' = ['12h', '24h']",
+          "enum": [
+            "12h",
+            "24h"
+          ]
+        }
+      }
+    },
+    "federated": {
+      "description": "Specifies whether an account is included into any federation of accounts or not",
+      "type": "boolean"
+    },
+    "cfid": {
+      "type": "string",
+      "description": "Customer facing identifier. Returned for accounts with the turned off PBX features. Equals to main company number in [E.164](https://www.itu.int/rec/T-REC-E.164-201011-I) (without '+' sign)format"
+    }
+  }
+}

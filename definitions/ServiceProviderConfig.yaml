@@ -1,0 +1,105 @@
+{
+  "type": "object",
+  "properties": {
+    "authenticationSchemes": {
+      "properties": {
+        "authenticationSchemes": {
+          "type": "array",
+          "items": {
+            "properties": {
+              "description": {
+                "type": "string"
+              },
+              "documentationUrl": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "specUrl": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "bulk": {
+      "properties": {
+        "maxOperations": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "maxPayloadSize": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "supported": {
+          "type": "boolean",
+          "default": false
+        }
+      }
+    },
+    "changePassword": {
+      "properties": {
+        "supported": {
+          "type": "boolean",
+          "default": false
+        }
+      }
+    },
+    "etag": {
+      "properties": {
+        "supported": {
+          "type": "boolean",
+          "default": false
+        }
+      }
+    },
+    "filter": {
+      "properties": {
+        "maxResults": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "supported": {
+          "type": "boolean",
+          "default": false
+        }
+      }
+    },
+    "patch": {
+      "properties": {
+        "supported": {
+          "type": "boolean",
+          "default": false
+        }
+      }
+    },
+    "schemas": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "urn:ietf:params:scim:schemas:core:2.0:ServiceProviderConfig"
+        ]
+      }
+    },
+    "sort": {
+      "properties": {
+        "supported": {
+          "type": "boolean",
+          "default": false
+        }
+      }
+    },
+    "xmlDataFormat": {
+      "properties": {
+        "supported": {
+          "type": "boolean",
+          "default": false
+        }
+      }
+    }
+  }
+}

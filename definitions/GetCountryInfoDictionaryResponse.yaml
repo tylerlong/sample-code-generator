@@ -1,0 +1,45 @@
+{
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Internal identifier of a country"
+    },
+    "uri": {
+      "type": "string",
+      "description": "Canonical URI of a country"
+    },
+    "callingCode": {
+      "type": "string",
+      "description": "Country calling code defined by ITU-T recommendations [E.123](https://www.itu.int/rec/T-REC-E.123-200102-I/en) and [E.164](https://www.itu.int/rec/T-REC-E.164-201011-I)"
+    },
+    "emergencyCalling": {
+      "type": "boolean",
+      "description": "Emergency calling feature availability/emergency address requirement indicator"
+    },
+    "isoCode": {
+      "type": "string",
+      "description": "Country code according to the ISO standard, see [ISO 3166](https://www.iso.org/iso-3166-country-codes.html)"
+    },
+    "name": {
+      "type": "string",
+      "description": "Official name of a country"
+    },
+    "numberSelling": {
+      "type": "boolean",
+      "description": "Determines whether phone numbers are available for a country"
+    },
+    "loginAllowed": {
+      "type": "boolean",
+      "description": "Specifies whether login with the phone numbers of this country is enabled or not"
+    },
+    "signupAllowed": {
+      "type": "boolean",
+      "description": "Indicates whether signup/billing is allowed for a country"
+    },
+    "freeSoftphoneLine": {
+      "type": "boolean",
+      "description": "Specifies if free phone line for softphone is available for a country or not"
+    }
+  }
+}

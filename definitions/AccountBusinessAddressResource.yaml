@@ -1,0 +1,39 @@
+{
+  "type": "object",
+  "properties": {
+    "uri": {
+      "type": "string",
+      "format": "uri"
+    },
+    "businessAddress": {
+      "properties": {
+        "country": {
+          "type": "string",
+          "description": "Country name of an extension user company"
+        },
+        "state": {
+          "type": "string",
+          "description": "State/province name of an extension user company. Mandatory for the USA, UK and Canada"
+        },
+        "city": {
+          "type": "string",
+          "description": "City name of an extension user company"
+        },
+        "street": {
+          "type": "string",
+          "description": "Street address of an extension user company"
+        },
+        "zip": {
+          "type": "string",
+          "description": "Zip code of an extension user company"
+        }
+      }
+    },
+    "company": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    }
+  }
+}

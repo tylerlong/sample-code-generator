@@ -1,0 +1,173 @@
+{
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Internal identifier of an attachment"
+    },
+    "type": {
+      "type": "string",
+      "description": "Type of an attachment",
+      "enum": [
+        "Card",
+        "Event",
+        "Note"
+      ],
+      "default": "Card"
+    },
+    "fallback": {
+      "type": "string",
+      "description": "A string of default text that will be rendered in the case that the client does not support Interactive Messages"
+    },
+    "intro": {
+      "type": "string",
+      "description": "A pretext to the message"
+    },
+    "author": {
+      "description": "Information about the author",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Name of a message author"
+        },
+        "uri": {
+          "type": "string",
+          "description": "Link to an author's name"
+        },
+        "iconUri": {
+          "type": "string",
+          "description": "Link to an image displayed to the left of an author's name; sized 82x82px"
+        }
+      }
+    },
+    "title": {
+      "type": "string",
+      "description": "Message title"
+    },
+    "text": {
+      "type": "string",
+      "description": "A large string field (up to 1000 chars) to be displayed as the body of a message (Supports GlipDown)"
+    },
+    "imageUri": {
+      "type": "string",
+      "description": "url used to display a single image at the bottom of a message"
+    },
+    "thumbnailUri": {
+      "type": "string",
+      "description": "url used to display a thumbnail to the right of a message (82x82)"
+    },
+    "fields": {
+      "type": "array",
+      "description": "Information on navigation",
+      "items": {
+        "properties": {
+          "title": {
+            "type": "string",
+            "description": "Title of an individual field"
+          },
+          "value": {
+            "type": "string",
+            "description": "Value of an individual field (supports Markdown)"
+          },
+          "style": {
+            "type": "string",
+            "description": "Style of width span applied to a field",
+            "default": "Short",
+            "enum": [
+              "Short",
+              "Long"
+            ]
+          }
+        }
+      }
+    },
+    "footnote": {
+      "description": "Message Footer",
+      "properties": {
+        "text": {
+          "type": "string",
+          "description": "Text of a footer"
+        },
+        "iconUri": {
+          "type": "string",
+          "description": "Link to an icon displayed to the left of a footer; sized 32x32px"
+        },
+        "time": {
+          "type": "string",
+          "description": "Message creation datetime in ISO 8601 format including timezone, for example *2016-03-10T18:07:52.534Z*",
+          "format": "date-time"
+        }
+      }
+    },
+    "creatorId": {
+      "type": "string",
+      "description": "Internal identifier of a person created an event"
+    },
+    "startTime": {
+      "type": "string",
+      "description": "Datetime of starting an event"
+    },
+    "endTime": {
+      "type": "string",
+      "description": "Datetime of ending an event"
+    },
+    "allDay": {
+      "type": "boolean",
+      "description": "Indicates whether an event has some specific time slot or lasts for the whole day(s)",
+      "default": false
+    },
+    "recurrence": {
+      "type": "string",
+      "description": "Event recurrence settings.",
+      "enum": [
+        "None",
+        "Day",
+        "Weekday",
+        "Week",
+        "Month",
+        "Year"
+      ]
+    },
+    "endingCondition": {
+      "type": "string",
+      "description": "Condition of ending"
+    },
+    "endingAfter": {
+      "type": "integer",
+      "description": "Count of iterations. For periodic events only"
+    },
+    "endingOn": {
+      "type": "string",
+      "enum": [
+        "None",
+        "Count",
+        "Date"
+      ],
+      "default": "None",
+      "description": "Iterations end datetime for periodic events"
+    },
+    "color": {
+      "type": "string",
+      "description": "Hex color code specifying font color of Event title, including its presentation in Calendar; or the color of the side border of an interactive message of a Card",
+      "enum": [
+        "Black",
+        "Red",
+        "Orange",
+        "Yellow",
+        "Green",
+        "Blue",
+        "Purple",
+        "Magenta"
+      ],
+      "default": "Black"
+    },
+    "location": {
+      "type": "string",
+      "description": "Event location"
+    },
+    "description": {
+      "type": "string",
+      "description": "Event details"
+    }
+  }
+}

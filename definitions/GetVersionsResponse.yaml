@@ -1,0 +1,56 @@
+{
+  "type": "object",
+  "properties": {
+    "uri": {
+      "type": "string",
+      "description": "Canonical URI of the API version"
+    },
+    "apiVersions": {
+      "type": "array",
+      "description": "Full API version information: uri, number, release date",
+      "items": {
+        "properties": {
+          "uri": {
+            "type": "string",
+            "description": "Canonical URI of API versions"
+          },
+          "versionString": {
+            "type": "string",
+            "description": "Version of the RingCentral REST API"
+          },
+          "releaseDate": {
+            "type": "string",
+            "description": "Release date of this version"
+          },
+          "uriString": {
+            "type": "string",
+            "description": "URI part determining the current version"
+          }
+        }
+      }
+    },
+    "serverVersion": {
+      "type": "string",
+      "description": "Server version"
+    },
+    "serverRevision": {
+      "type": "string",
+      "description": "Server revision"
+    }
+  },
+  "example": {
+    "application/json": {
+      "uri": "https://platform.ringcentral.com/restapi",
+      "apiVersions": [
+        {
+          "uri": "https://platform.ringcentral.com/restapi/v1.0",
+          "versionString": "1.0.34",
+          "releaseDate": "2018-02-09T00:00:00.000Z",
+          "uriString": "v1.0"
+        }
+      ],
+      "serverVersion": "10.0.4.7854",
+      "serverRevision": "32f2a96b769c"
+    }
+  }
+}

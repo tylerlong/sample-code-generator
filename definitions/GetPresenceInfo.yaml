@@ -1,0 +1,158 @@
+{
+  "type": "object",
+  "properties": {
+    "uri": {
+      "type": "string",
+      "description": "Canonical URI of a presence info resource"
+    },
+    "allowSeeMyPresence": {
+      "type": "boolean",
+      "description": "If 'True' enables other extensions to see the extension presence status"
+    },
+    "dndStatus": {
+      "type": "string",
+      "description": "Extended DnD (Do not Disturb) status. Cannot be set for Department/Announcement/Voicemail (Take Messages Only)/Fax User/Shared Lines Group/Paging Only Group/IVR Menu/Application Extension/Park Location extensions. The 'DoNotAcceptDepartmentCalls' and 'TakeDepartmentCallsOnly' values are applicable only for extensions - members of a Department; if these values are set for department outsiders, the 400 Bad Request error code is returned. The 'TakeDepartmentCallsOnly' status can be set through the old RingCentral user interface and is available for some migrated accounts only.",
+      "enum": [
+        "TakeAllCalls",
+        "DoNotAcceptAnyCalls",
+        "DoNotAcceptDepartmentCalls",
+        "TakeDepartmentCallsOnly"
+      ]
+    },
+    "extension": {
+      "description": "Information on extension, for which this presence data is returned",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Internal identifier of an extension"
+        },
+        "uri": {
+          "type": "string",
+          "description": "Canonical URI of an extension"
+        },
+        "extensionNumber": {
+          "type": "string",
+          "description": "Extension number (usually 3 or 4 digits)"
+        }
+      }
+    },
+    "message": {
+      "type": "string",
+      "description": "Custom status message (as previously published by user)"
+    },
+    "pickUpCallsOnHold": {
+      "type": "boolean",
+      "description": "If 'True' enables the extension user to pick up a monitored line on hold"
+    },
+    "presenceStatus": {
+      "type": "string",
+      "description": "Aggregated presence status, calculated from a number of sources",
+      "enum": [
+        "Offline",
+        "Busy",
+        "Available"
+      ]
+    },
+    "ringOnMonitoredCall": {
+      "type": "boolean",
+      "description": "If 'True' enables to ring extension phone, if any user monitored by this extension is ringing"
+    },
+    "telephonyStatus": {
+      "type": "string",
+      "description": "Telephony presence status",
+      "enum": [
+        "NoCall",
+        "CallConnected",
+        "Ringing",
+        "OnHold",
+        "ParkedCall"
+      ]
+    },
+    "userStatus": {
+      "type": "string",
+      "description": "User-defined presence status (as previously published by the user)",
+      "enum": [
+        "Offline",
+        "Busy",
+        "Available"
+      ]
+    },
+    "meetingStatus": {
+      "type": "string",
+      "description": "RingCentral Meetings presence",
+      "enum": [
+        "Connected",
+        "Disconnected"
+      ]
+    },
+    "activeCalls": {
+      "type": "array",
+      "description": "Information on active calls",
+      "items": {
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "direction": {
+            "type": "string",
+            "enum": [
+              "Inbound",
+              "Outbound"
+            ]
+          },
+          "from": {
+            "type": "string",
+            "description": "Phone number or extension number of a caller. For GCM transport type '_from' property should be used"
+          },
+          "fromName": {
+            "type": "string",
+            "description": "Name of a caller"
+          },
+          "to": {
+            "type": "string",
+            "description": "Phone number or extension number of a callee"
+          },
+          "toName": {
+            "type": "string",
+            "description": "Name of a callee"
+          },
+          "startTime": {
+            "type": "string",
+            "description": "Time when the call is actually started"
+          },
+          "telephonyStatus": {
+            "type": "string"
+          },
+          "sipData": {
+            "properties": {
+              "callId": {
+                "type": "string"
+              },
+              "toTag": {
+                "type": "string"
+              },
+              "fromTag": {
+                "type": "string"
+              },
+              "remoteUri": {
+                "type": "string"
+              },
+              "localUri": {
+                "type": "string"
+              },
+              "rcSessionId": {
+                "type": "string"
+              }
+            }
+          },
+          "sessionId": {
+            "type": "string"
+          },
+          "terminationType": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

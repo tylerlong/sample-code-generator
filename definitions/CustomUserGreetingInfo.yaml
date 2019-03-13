@@ -1,0 +1,51 @@
+{
+  "type": "object",
+  "properties": {
+    "uri": {
+      "type": "string",
+      "description": "Link to a custom user greeting"
+    },
+    "id": {
+      "type": "string",
+      "description": "Internal identifier of a custom user greeting"
+    },
+    "type": {
+      "type": "string",
+      "description": "Type of a custom user greeting",
+      "enum": [
+        "Introductory",
+        "Announcement",
+        "ConnectingAudio",
+        "ConnectingMessage",
+        "Voicemail",
+        "Unavailable",
+        "HoldMusic"
+      ]
+    },
+    "contentType": {
+      "type": "string",
+      "description": "Content media type in WAV/MP3 format",
+      "enum": [
+        "WAV",
+        "MP3"
+      ]
+    },
+    "contentUri": {
+      "type": "string",
+      "description": "Link to a greeting content (audio file)"
+    },
+    "answeringRule": {
+      "description": "Information on an answering rule that the greeting is applied to",
+      "properties": {
+        "uri": {
+          "type": "string",
+          "description": "Canonical URI of an answering rule"
+        },
+        "id": {
+          "type": "string",
+          "description": "Internal identifier of an answering rule"
+        }
+      }
+    }
+  }
+}

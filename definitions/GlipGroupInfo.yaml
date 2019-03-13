@@ -1,0 +1,48 @@
+{
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Internal identifier of a group"
+    },
+    "type": {
+      "type": "string",
+      "description": "Type of a group. 'PrivateChat' is a group of 2 members. 'Group' is a chat of 2 and more participants, the membership cannot be changed after group creation. 'Team' is a chat of 1 and more participants, the membership can be modified in future. 'PersonalChat' is a private chat thread of a user",
+      "enum": [
+        "PrivateChat",
+        "Group",
+        "Team",
+        "PersonalChat"
+      ]
+    },
+    "isPublic": {
+      "type": "boolean",
+      "description": "For 'Team' group type only. Team access level"
+    },
+    "name": {
+      "type": "string",
+      "description": "For 'Team' group type only. Team name"
+    },
+    "description": {
+      "type": "string",
+      "description": "For 'Team' group type only. Team description"
+    },
+    "members": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Identifier(s) of group members"
+    },
+    "creationTime": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Group creation datetime in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format"
+    },
+    "lastModifiedTime": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Group last change datetime in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format"
+    }
+  }
+}

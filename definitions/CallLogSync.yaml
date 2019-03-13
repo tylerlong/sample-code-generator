@@ -1,0 +1,549 @@
+{
+  "type": "object",
+  "properties": {
+    "records": {
+      "type": "array",
+      "description": " List of call log records with synchronization information. For ISync the total number of returned records is limited to 250; this includes both new records and the old ones, specified by the recordCount parameter",
+      "items": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Internal identifier of a cal log record"
+          },
+          "uri": {
+            "type": "string",
+            "description": "Canonical URI of a call log record"
+          },
+          "sessionId": {
+            "type": "string",
+            "description": "Internal identifier of a call session"
+          },
+          "from": {
+            "description": "Caller information",
+            "properties": {
+              "phoneNumber": {
+                "type": "string",
+                "description": "Phone number of a party. Usually it is a plain number including country and area code like 18661234567. But sometimes it could be returned from database with some formatting applied, for example (866)123-4567. This property is filled in all cases where parties communicate by means of global phone numbers, for example when calling to direct numbers or sending/receiving SMS"
+              },
+              "extensionNumber": {
+                "type": "string",
+                "description": "Extension short number (usually 3 or 4 digits). This property is filled when parties communicate by means of short internal numbers, for example when calling to other extension or sending/receiving Company Pager message"
+              },
+              "location": {
+                "type": "string",
+                "description": "Contains party location (city, state) if one can be determined from phoneNumber. This property is filled only when phoneNumber is not empty and server can calculate location information from it (for example, this information is unavailable for US toll-free numbers)"
+              },
+              "name": {
+                "type": "string",
+                "description": "Symbolic name associated with a party. If the phone does not belong to the known extension, only the location is returned, the name is not determined then"
+              },
+              "device": {
+                "properties": {
+                  "id": {
+                    "type": "string",
+                    "description": "Internal identifier of a device"
+                  },
+                  "uri": {
+                    "type": "string",
+                    "description": "string to a device"
+                  }
+                }
+              }
+            }
+          },
+          "to": {
+            "description": "Callee information",
+            "properties": {
+              "phoneNumber": {
+                "type": "string",
+                "description": "Phone number of a party. Usually it is a plain number including country and area code like 18661234567. But sometimes it could be returned from database with some formatting applied, for example (866)123-4567. This property is filled in all cases where parties communicate by means of global phone numbers, for example when calling to direct numbers or sending/receiving SMS"
+              },
+              "extensionNumber": {
+                "type": "string",
+                "description": "Extension short number (usually 3 or 4 digits). This property is filled when parties communicate by means of short internal numbers, for example when calling to other extension or sending/receiving Company Pager message"
+              },
+              "location": {
+                "type": "string",
+                "description": "Contains party location (city, state) if one can be determined from phoneNumber. This property is filled only when phoneNumber is not empty and server can calculate location information from it (for example, this information is unavailable for US toll-free numbers)"
+              },
+              "name": {
+                "type": "string",
+                "description": "Symbolic name associated with a party. If the phone does not belong to the known extension, only the location is returned, the name is not determined then"
+              },
+              "device": {
+                "properties": {
+                  "id": {
+                    "type": "string",
+                    "description": "Internal identifier of a device"
+                  },
+                  "uri": {
+                    "type": "string",
+                    "description": "string to a device"
+                  }
+                }
+              }
+            }
+          },
+          "type": {
+            "type": "string",
+            "description": "Call type",
+            "enum": [
+              "Voice",
+              "Fax"
+            ]
+          },
+          "direction": {
+            "type": "string",
+            "description": "Call direction",
+            "enum": [
+              "Inbound",
+              "Outbound"
+            ]
+          },
+          "action": {
+            "type": "string",
+            "description": "Action description of the call operation",
+            "enum": [
+              "Unknown",
+              "Phone Call",
+              "Phone Login",
+              "Incoming Fax",
+              "Accept Call",
+              "FindMe",
+              "FollowMe",
+              "Outgoing Fax",
+              "Call Return",
+              "Calling Card",
+              "Ring Directly",
+              "RingOut Web",
+              "VoIP Call",
+              "RingOut PC",
+              "RingMe",
+              "Transfer",
+              "411 Info",
+              "Emergency",
+              "E911 Update",
+              "Support",
+              "RingOut Mobile"
+            ]
+          },
+          "result": {
+            "type": "string",
+            "description": "Status description of the call operation",
+            "enum": [
+              "Unknown",
+              "ResultInProgress",
+              "Missed",
+              "Call accepted",
+              "Voicemail",
+              "Rejected",
+              "Reply",
+              "Received",
+              "Receive Error",
+              "Fax on Demand",
+              "Partial Receive",
+              "Blocked",
+              "Call connected",
+              "No Answer",
+              "International Disabled",
+              "Busy",
+              "Send Error",
+              "Sent",
+              "No fax machine",
+              "ResultEmpty",
+              "Account",
+              "Suspended",
+              "Call Failed",
+              "Call Failure",
+              "Internal Error",
+              "IP Phone offline",
+              "Restricted Number",
+              "Wrong Number",
+              "Stopped",
+              "Hang up",
+              "Poor Line Quality",
+              "Partially Sent",
+              "International Restriction",
+              "Abandoned",
+              "Declined",
+              "Fax Receipt Error",
+              "Fax Send Error"
+            ]
+          },
+          "startTime": {
+            "type": "string",
+            "format": "date-time",
+            "description": "The call start datetime in ISO 8601 format including timezone, for example 2016-03-10T18:07:52.534Z"
+          },
+          "duration": {
+            "type": "integer",
+            "description": "Call duration in seconds"
+          },
+          "recording": {
+            "description": "Call recording data. Returned if the call is recorded, the withRecording parameter is set to 'True' in this case",
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "Internal identifier of the call recording"
+              },
+              "uri": {
+                "type": "string",
+                "description": "Link to the call recording metadata resource"
+              },
+              "type": {
+                "type": "string",
+                "description": "Indicates recording mode used",
+                "enum": [
+                  "Automatic",
+                  "OnDemand"
+                ]
+              },
+              "contentUri": {
+                "type": "string",
+                "description": "Link to the call recording binary content"
+              }
+            }
+          },
+          "lastModifiedTime": {
+            "type": "string",
+            "format": "date-time",
+            "description": "For 'Detailed' view only. The datetime when the call log record was modified in ISO 8601 format including timezone, for example 2016-03-10T18:07:52.534Z"
+          },
+          "transport": {
+            "type": "string",
+            "description": "For 'Detailed' view only. Call transport",
+            "enum": [
+              "PSTN",
+              "VoIP"
+            ]
+          },
+          "extension": {
+            "description": "Information about extension on whose behalf a call is initiated. For Secretary call log the Boss extension info is returned",
+            "properties": {
+              "uri": {
+                "type": "string",
+                "description": "Link to an extension on whose behalf a call is initiated"
+              },
+              "id": {
+                "type": "string",
+                "description": "Internal identifier of an extension on whose behalf a call is initiated"
+              }
+            }
+          },
+          "delegate": {
+            "description": "Information on a delegate extension that actually implemented a call action. For Secretary call log the field is returned if the current extension implemented a call. For Boss call log the field contains information on a Secretary extension which actually implemented a call on behalf of the current extension",
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "Internal identifier of a Secretary extension"
+              },
+              "name": {
+                "type": "string",
+                "description": "Custom name of a Secretary extension"
+              }
+            }
+          },
+          "legs": {
+            "type": "array",
+            "description": "For 'Detailed' view only. Leg description",
+            "items": {
+              "properties": {
+                "action": {
+                  "type": "string",
+                  "description": "Action description of the call operation",
+                  "enum": [
+                    "Unknown",
+                    "Phone Call",
+                    "Phone Login",
+                    "Incoming Fax",
+                    "Accept Call",
+                    "FindMe",
+                    "FollowMe",
+                    "Outgoing Fax",
+                    "Call Return",
+                    "Calling Card",
+                    "Ring Directly",
+                    "RingOut Web",
+                    "VoIP Call",
+                    "RingOut PC",
+                    "RingMe",
+                    "Transfer",
+                    "411 Info",
+                    "Emergency",
+                    "E911 Update",
+                    "Support",
+                    "RingOut Mobile"
+                  ]
+                },
+                "direction": {
+                  "type": "string",
+                  "description": "Call direction",
+                  "enum": [
+                    "Inbound",
+                    "Outbound"
+                  ]
+                },
+                "duration": {
+                  "type": "integer",
+                  "description": "Call duration in seconds"
+                },
+                "extension": {
+                  "description": "Information on extension",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "description": "Internal identifier of an extension"
+                    },
+                    "uri": {
+                      "type": "string",
+                      "description": "Canonical URI of an extension"
+                    }
+                  }
+                },
+                "legType": {
+                  "type": "string",
+                  "description": "Leg type",
+                  "enum": [
+                    "SipForwarding",
+                    "ServiceMinus2",
+                    "ServiceMinus3",
+                    "PstnToSip",
+                    "Accept",
+                    "FindMe",
+                    "FollowMe",
+                    "TestCall",
+                    "FaxSent",
+                    "CallBack",
+                    "CallingCard",
+                    "RingDirectly",
+                    "RingOutWebToSubscriber",
+                    "RingOutWebToCaller",
+                    "SipToPstnMetered",
+                    "RingOutClientToSubscriber",
+                    "RingOutClientToCaller",
+                    "RingMe",
+                    "TransferCall",
+                    "SipToPstnUnmetered",
+                    "RingOutDeviceToSubscriber",
+                    "RingOutDeviceToCaller",
+                    "RingOutOneLegToCaller",
+                    "ExtensionToExtension",
+                    "CallPark",
+                    "PagingServer",
+                    "Hunting",
+                    "OutgoingFreeSpDl",
+                    "ParkLocation",
+                    "ConferenceCall",
+                    "MobileApp",
+                    "MoveToConference",
+                    "Unknown"
+                  ]
+                },
+                "startTime": {
+                  "type": "string",
+                  "format": "date-time",
+                  "description": "The call start datetime in ISO 8601 format including timezone, for example 2016-03-10T18:07:52.534Z"
+                },
+                "type": {
+                  "type": "string",
+                  "description": "Call type",
+                  "enum": [
+                    "Voice",
+                    "Fax"
+                  ]
+                },
+                "result": {
+                  "type": "string",
+                  "description": "Status description of the call operation",
+                  "enum": [
+                    "Unknown",
+                    "ResultInProgress",
+                    "Missed",
+                    "Call accepted",
+                    "Voicemail",
+                    "Rejected",
+                    "Reply",
+                    "Received",
+                    "Receive Error",
+                    "Fax on Demand",
+                    "Partial Receive",
+                    "Blocked",
+                    "Call connected",
+                    "No Answer",
+                    "International Disabled",
+                    "Busy",
+                    "Send Error",
+                    "Sent",
+                    "No fax machine",
+                    "ResultEmpty",
+                    "Account",
+                    "Suspended",
+                    "Call Failed",
+                    "Call Failure",
+                    "Internal Error",
+                    "IP Phone offline",
+                    "Restricted Number",
+                    "Wrong Number",
+                    "Stopped",
+                    "Hang up",
+                    "Poor Line Quality",
+                    "Partially Sent",
+                    "International Restriction",
+                    "Abandoned",
+                    "Declined",
+                    "Fax Receipt Error",
+                    "Fax Send Error"
+                  ]
+                },
+                "from": {
+                  "description": "Caller information",
+                  "properties": {
+                    "phoneNumber": {
+                      "type": "string",
+                      "description": "Phone number of a party. Usually it is a plain number including country and area code like 18661234567. But sometimes it could be returned from database with some formatting applied, for example (866)123-4567. This property is filled in all cases where parties communicate by means of global phone numbers, for example when calling to direct numbers or sending/receiving SMS"
+                    },
+                    "extensionNumber": {
+                      "type": "string",
+                      "description": "Extension short number (usually 3 or 4 digits). This property is filled when parties communicate by means of short internal numbers, for example when calling to other extension or sending/receiving Company Pager message"
+                    },
+                    "location": {
+                      "type": "string",
+                      "description": "Contains party location (city, state) if one can be determined from phoneNumber. This property is filled only when phoneNumber is not empty and server can calculate location information from it (for example, this information is unavailable for US toll-free numbers)"
+                    },
+                    "name": {
+                      "type": "string",
+                      "description": "Symbolic name associated with a party. If the phone does not belong to the known extension, only the location is returned, the name is not determined then"
+                    },
+                    "device": {
+                      "properties": {
+                        "id": {
+                          "type": "string",
+                          "description": "Internal identifier of a device"
+                        },
+                        "uri": {
+                          "type": "string",
+                          "description": "string to a device"
+                        }
+                      }
+                    }
+                  }
+                },
+                "to": {
+                  "description": "Callee information",
+                  "properties": {
+                    "phoneNumber": {
+                      "type": "string",
+                      "description": "Phone number of a party. Usually it is a plain number including country and area code like 18661234567. But sometimes it could be returned from database with some formatting applied, for example (866)123-4567. This property is filled in all cases where parties communicate by means of global phone numbers, for example when calling to direct numbers or sending/receiving SMS"
+                    },
+                    "extensionNumber": {
+                      "type": "string",
+                      "description": "Extension short number (usually 3 or 4 digits). This property is filled when parties communicate by means of short internal numbers, for example when calling to other extension or sending/receiving Company Pager message"
+                    },
+                    "location": {
+                      "type": "string",
+                      "description": "Contains party location (city, state) if one can be determined from phoneNumber. This property is filled only when phoneNumber is not empty and server can calculate location information from it (for example, this information is unavailable for US toll-free numbers)"
+                    },
+                    "name": {
+                      "type": "string",
+                      "description": "Symbolic name associated with a party. If the phone does not belong to the known extension, only the location is returned, the name is not determined then"
+                    },
+                    "device": {
+                      "properties": {
+                        "id": {
+                          "type": "string",
+                          "description": "Internal identifier of a device"
+                        },
+                        "uri": {
+                          "type": "string",
+                          "description": "string to a device"
+                        }
+                      }
+                    }
+                  }
+                },
+                "transport": {
+                  "type": "string",
+                  "description": "Call transport",
+                  "enum": [
+                    "PSTN",
+                    "VoIP"
+                  ]
+                },
+                "recording": {
+                  "description": "Call recording data. Returned if the call is recorded",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "description": "Internal identifier of the call recording"
+                    },
+                    "uri": {
+                      "type": "string",
+                      "description": "Link to the call recording metadata resource"
+                    },
+                    "type": {
+                      "type": "string",
+                      "description": "Indicates recording mode used",
+                      "enum": [
+                        "Automatic",
+                        "OnDemand"
+                      ]
+                    },
+                    "contentUri": {
+                      "type": "string",
+                      "description": "Link to the call recording binary content"
+                    }
+                  }
+                },
+                "master": {
+                  "type": "boolean"
+                }
+              }
+            }
+          },
+          "message": {
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "Internal identifier of a message"
+              },
+              "type": {
+                "type": "string",
+                "description": "Type of a message"
+              },
+              "uri": {
+                "type": "string",
+                "description": "Link to a message resource"
+              }
+            }
+          },
+          "deleted": {
+            "type": "boolean",
+            "description": "Returned only if this call was deleted. Value is set to 'True' in this case"
+          }
+        }
+      }
+    },
+    "syncInfo": {
+      "description": "Sync information (type, token and time)",
+      "properties": {
+        "syncType": {
+          "type": "string",
+          "description": "Type of synchronization",
+          "enum": [
+            "FSync",
+            "ISync"
+          ]
+        },
+        "syncToken": {
+          "type": "string",
+          "description": "Synchronization token"
+        },
+        "syncTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "The last synchronization datetime in ISO 8601 format including timezone, for example 2016-03-10T18:07:52.534Z"
+        }
+      }
+    }
+  }
+}

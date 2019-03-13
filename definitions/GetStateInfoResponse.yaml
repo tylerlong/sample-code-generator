@@ -1,0 +1,34 @@
+{
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Internal identifier of a state"
+    },
+    "uri": {
+      "type": "string",
+      "description": "Canonical URI of a state"
+    },
+    "country": {
+      "description": "Information on a country the state belongs to",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Internal identifier of a state"
+        },
+        "uri": {
+          "type": "string",
+          "description": "Canonical URI of a state"
+        }
+      }
+    },
+    "isoCode": {
+      "type": "string",
+      "description": "Short code for a state (2-letter usually)"
+    },
+    "name": {
+      "type": "string",
+      "description": "Official name of a state"
+    }
+  }
+}

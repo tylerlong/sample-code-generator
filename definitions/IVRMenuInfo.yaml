@@ -1,0 +1,115 @@
+{
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Internal identifier of an IVR Menu extension"
+    },
+    "uri": {
+      "type": "string",
+      "description": "Link to an IVR Menu extension resource"
+    },
+    "name": {
+      "type": "string",
+      "description": "First name of an IVR Menu user"
+    },
+    "extensionNumber": {
+      "type": "string",
+      "description": "Number of an IVR Menu extension"
+    },
+    "prompt": {
+      "description": "Prompt metadata",
+      "properties": {
+        "mode": {
+          "type": "string",
+          "description": "Prompt mode: custom media or text",
+          "enum": [
+            "Audio",
+            "TextToSpeech"
+          ]
+        },
+        "audio": {
+          "description": "For 'Audio' mode only. Prompt media reference",
+          "properties": {
+            "uri": {
+              "type": "string",
+              "description": "Link to a prompt language"
+            },
+            "id": {
+              "type": "string",
+              "description": "Internal identifier of a language"
+            },
+            "name": {
+              "type": "string",
+              "description": "Language name"
+            },
+            "localeCode": {
+              "type": "string",
+              "description": "Language locale code"
+            }
+          }
+        },
+        "text": {
+          "type": "string",
+          "description": "For 'TextToSpeech' mode only. Prompt text"
+        },
+        "language": {
+          "description": "For 'TextToSpeech' mode only. Prompt language metadata",
+          "properties": {
+            "uri": {
+              "type": "string",
+              "description": "Link to an prompt audio file"
+            },
+            "id": {
+              "type": "string",
+              "description": "Internal identifier of an prompt"
+            }
+          }
+        }
+      }
+    },
+    "actions": {
+      "type": "array",
+      "description": "Keys handling settings",
+      "items": {
+        "properties": {
+          "input": {
+            "type": "string",
+            "description": "Key. The following values are supported: numeric: '1' to '9' Star Hash NoInput"
+          },
+          "action": {
+            "type": "string",
+            "description": "Internal identifier of an answering rule",
+            "enum": [
+              "Connect",
+              "Voicemail",
+              "DialByName",
+              "Transfer",
+              "Repeat",
+              "ReturnToRoot",
+              "ReturnToPrevious",
+              "Disconnect"
+            ]
+          },
+          "extension": {
+            "description": "For 'Connect' or 'Voicemail' actions only. Extension reference",
+            "properties": {
+              "uri": {
+                "type": "string",
+                "description": "Link to an extension resource"
+              },
+              "id": {
+                "type": "string",
+                "description": "Internal identifier of an extension"
+              }
+            }
+          },
+          "phoneNumber": {
+            "type": "string",
+            "description": "For 'Transfer' action only. PSTN number in E.164 format"
+          }
+        }
+      }
+    }
+  }
+}

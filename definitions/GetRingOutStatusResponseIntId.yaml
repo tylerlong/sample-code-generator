@@ -1,0 +1,72 @@
+{
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Internal identifier of a RingOut call"
+    },
+    "uri": {
+      "type": "string"
+    },
+    "status": {
+      "description": "RingOut status information",
+      "properties": {
+        "callStatus": {
+          "type": "string",
+          "description": "Status of a call",
+          "enum": [
+            "Invalid",
+            "Success",
+            "InProgress",
+            "Busy",
+            "NoAnswer",
+            "Rejected",
+            "GenericError",
+            "Finished",
+            "InternationalDisabled",
+            "DestinationBlocked",
+            "NotEnoughFunds",
+            "NoSuchUser"
+          ]
+        },
+        "callerStatus": {
+          "type": "string",
+          "description": "Status of a calling party",
+          "enum": [
+            "Invalid",
+            "Success",
+            "InProgress",
+            "Busy",
+            "NoAnswer",
+            "Rejected",
+            "GenericError",
+            "Finished",
+            "InternationalDisabled",
+            "DestinationBlocked",
+            "NotEnoughFunds",
+            "NoSuchUser"
+          ]
+        },
+        "calleeStatus": {
+          "type": "string",
+          "description": "Status of a called party",
+          "enum": [
+            "Invalid",
+            "Success",
+            "InProgress",
+            "Busy",
+            "NoAnswer",
+            "Rejected",
+            "GenericError",
+            "Finished",
+            "InternationalDisabled",
+            "DestinationBlocked",
+            "NotEnoughFunds",
+            "NoSuchUser"
+          ]
+        }
+      }
+    }
+  }
+}

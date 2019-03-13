@@ -1,0 +1,84 @@
+{
+  "type": "object",
+  "properties": {
+    "uri": {
+      "type": "string",
+      "format": "uri"
+    },
+    "supportUri": {
+      "type": "string"
+    },
+    "intlDialInNumbersUri": {
+      "type": "string"
+    },
+    "externalUserInfo": {
+      "properties": {
+        "uri": {
+          "type": "string",
+          "format": "uri"
+        },
+        "userId": {
+          "type": "string"
+        },
+        "accountId": {
+          "type": "string"
+        },
+        "userType": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "userToken": {
+          "type": "string"
+        }
+      }
+    },
+    "dialInNumbers": {
+      "type": "array",
+      "items": {
+        "properties": {
+          "phoneNumber": {
+            "type": "string"
+          },
+          "formattedNumber": {
+            "type": "string"
+          },
+          "location": {
+            "type": "string"
+          },
+          "country": {
+            "properties": {
+              "uri": {
+                "type": "string",
+                "format": "uri"
+              },
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "isoCode": {
+                "type": "string"
+              },
+              "callingCode": {
+                "type": "string"
+              },
+              "emergencyCalling": {
+                "type": "boolean",
+                "default": false
+              },
+              "numberSelling": {
+                "type": "boolean",
+                "default": false
+              },
+              "loginAllowed": {
+                "type": "boolean",
+                "default": false
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

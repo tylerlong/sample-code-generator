@@ -1,0 +1,133 @@
+{
+  "type": "object",
+  "required": [
+    "homeCountry",
+    "phoneNumbers"
+  ],
+  "properties": {
+    "uri": {
+      "type": "string",
+      "description": "Canonical URI of a resource"
+    },
+    "homeCountry": {
+      "type": "array",
+      "description": "Information on a user home country",
+      "items": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Internal identifier of a country"
+          },
+          "uri": {
+            "type": "string",
+            "description": "Canonical URI of a country"
+          },
+          "callingCode": {
+            "type": "string",
+            "description": "Country calling code defined by ITU-T recommendations E.123 and E.164, see Calling Codes"
+          },
+          "emergencyCalling": {
+            "type": "boolean",
+            "description": "Emergency calling feature availability/emergency address requirement indicator"
+          },
+          "isoCode": {
+            "type": "string",
+            "description": "Country code according to the ISO standard, see ISO 3166"
+          },
+          "name": {
+            "type": "string",
+            "description": "Official name of a country"
+          }
+        }
+      }
+    },
+    "phoneNumbers": {
+      "type": "array",
+      "description": "Parsed phone numbers data",
+      "items": {
+        "properties": {
+          "areaCode": {
+            "type": "string",
+            "description": "Area code of location. The portion of the [E.164](https://www.itu.int/rec/T-REC-E.164-201011-I) number that identifies a specific geographic region/numbering area of the national numbering plan (NANP); that can be summarized as `NPA-NXX-xxxx` and covers Canada, the United States, parts of the Caribbean Sea, and some Atlantic and Pacific islands. See [North American Numbering Plan] (https://en.wikipedia.org/wiki/North_American_Numbering_Plan) for details"
+          },
+          "country": {
+            "type": "array",
+            "description": "Information on a country the phone number belongs to",
+            "items": {
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "description": "Internal identifier of a country"
+                },
+                "uri": {
+                  "type": "string",
+                  "description": "Canonical URI of a country"
+                },
+                "callingCode": {
+                  "type": "string",
+                  "description": "Country calling code defined by ITU-T recommendations E.123 and E.164, see Calling Codes"
+                },
+                "emergencyCalling": {
+                  "type": "boolean",
+                  "description": "Emergency calling feature availability/emergency address requirement indicator"
+                },
+                "isoCode": {
+                  "type": "string",
+                  "description": "Country code according to the ISO standard, see ISO 3166"
+                },
+                "name": {
+                  "type": "string",
+                  "description": "Official name of a country"
+                }
+              }
+            }
+          },
+          "dialable": {
+            "type": "string",
+            "description": "Dialing format of a phone number"
+          },
+          "e164": {
+            "type": "string",
+            "description": "Phone number [E.164](https://www.itu.int/rec/T-REC-E.164-201011-I) format"
+          },
+          "formattedInternational": {
+            "type": "string",
+            "description": "International format of a phone number"
+          },
+          "formattedNational": {
+            "type": "string",
+            "description": "Domestic format of a phone number"
+          },
+          "originalString": {
+            "type": "string",
+            "description": "One of the numbers to be parsed, passed as a string in response"
+          },
+          "special": {
+            "type": "boolean",
+            "description": "'True' if the number is in a special format (for example N11 code)"
+          },
+          "normalized": {
+            "type": "string",
+            "description": "Phone number [E.164](https://www.itu.int/rec/T-REC-E.164-201011-I) format without plus sign ('+')"
+          },
+          "tollFree": {
+            "type": "boolean",
+            "description": "Specifies if a phone number is toll free or not"
+          },
+          "subAddress": {
+            "type": "string",
+            "description": "Sub-Address. The portion of the number that identifies a subscriber into the subscriber internal (non-public) network."
+          },
+          "subscriberNumber": {
+            "type": "string",
+            "description": " Subscriber number. The portion of the [E.164](https://www.itu.int/rec/T-REC-E.164-201011-I) number that identifies a subscriber in a network or numbering area."
+          },
+          "dtmfPostfix": {
+            "type": "string",
+            "description": "DTMF (Dual Tone Multi-Frequency) postfix"
+          }
+        }
+      }
+    }
+  }
+}

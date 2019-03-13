@@ -1,0 +1,21 @@
+{
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Internal identifier of a timezone"
+    },
+    "uri": {
+      "type": "string",
+      "description": "Canonical URI of a timezone"
+    },
+    "name": {
+      "type": "string",
+      "description": "Short name of a timezone"
+    },
+    "description": {
+      "type": "string",
+      "description": "Description of a timezone"
+    }
+  }
+}

@@ -1,0 +1,160 @@
+{
+  "type": "object",
+  "properties": {
+    "paging": {
+      "properties": {
+        "page": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "totalPages": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "perPage": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "totalElements": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "pageStart": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "pageEnd": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "records": {
+      "type": "array",
+      "items": {
+        "properties": {
+          "account": {
+            "properties": {
+              "companyName": {
+                "type": "string"
+              },
+              "federatedName": {
+                "type": "string"
+              },
+              "id": {
+                "type": "string"
+              },
+              "mainNumber": {
+                "properties": {
+                  "formattedPhoneNumber": {
+                    "type": "string"
+                  },
+                  "phoneNumber": {
+                    "type": "string"
+                  },
+                  "type": {
+                    "type": "string"
+                  },
+                  "label": {
+                    "type": "string",
+                    "description": "Custom user name of a phone number, if any"
+                  },
+                  "usageType": {
+                    "type": "string",
+                    "enum": [
+                      "MobileNumber",
+                      "ContactNumber",
+                      "DirectNumber",
+                      "ForwardedNumber"
+                    ],
+                    "description": "Usage type of a phone number"
+                  }
+                }
+              }
+            }
+          },
+          "department": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "extensionNumber": {
+            "type": "string"
+          },
+          "firstName": {
+            "type": "string"
+          },
+          "id": {
+            "type": "string"
+          },
+          "lastName": {
+            "type": "string"
+          },
+          "jobTitle": {
+            "type": "string"
+          },
+          "phoneNumbers": {
+            "type": "array",
+            "items": {
+              "properties": {
+                "formattedPhoneNumber": {
+                  "type": "string"
+                },
+                "phoneNumber": {
+                  "type": "string"
+                },
+                "type": {
+                  "type": "string"
+                },
+                "label": {
+                  "type": "string",
+                  "description": "Custom user name of a phone number, if any"
+                },
+                "usageType": {
+                  "type": "string",
+                  "enum": [
+                    "MobileNumber",
+                    "ContactNumber",
+                    "DirectNumber",
+                    "ForwardedNumber"
+                  ],
+                  "description": "Usage type of a phone number"
+                }
+              }
+            }
+          },
+          "profileImage": {
+            "properties": {
+              "etag": {
+                "type": "string"
+              },
+              "uri": {
+                "type": "string"
+              }
+            }
+          },
+          "site": {
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "code": {
+                "type": "string"
+              }
+            }
+          },
+          "status": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

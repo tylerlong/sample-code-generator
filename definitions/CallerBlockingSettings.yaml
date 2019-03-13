@@ -1,0 +1,59 @@
+{
+  "type": "object",
+  "description": "Returns the lists of blocked and allowed phone numbers",
+  "properties": {
+    "mode": {
+      "type": "string",
+      "enum": [
+        "Specific",
+        "All"
+      ],
+      "description": "Call blocking options: either specific or all calls and faxes"
+    },
+    "noCallerId": {
+      "description": " Determines how to handle calls with no caller ID in 'Specific' mode",
+      "type": "string",
+      "enum": [
+        "BlockCallsAndFaxes",
+        "BlockFaxes",
+        "Allow"
+      ]
+    },
+    "payPhones": {
+      "type": "string",
+      "enum": [
+        "Block",
+        "Allow"
+      ],
+      "description": "Blocking settings for pay phones"
+    },
+    "greetings": {
+      "type": "array",
+      "description": "List of greetings played for blocked callers",
+      "items": {
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Type of a greeting"
+          },
+          "preset": {
+            "properties": {
+              "uri": {
+                "type": "string",
+                "description": "Link to a greeting resource"
+              },
+              "id": {
+                "type": "string",
+                "description": "Internal identifier of a greeting"
+              },
+              "name": {
+                "type": "string",
+                "description": "Name of a greeting"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

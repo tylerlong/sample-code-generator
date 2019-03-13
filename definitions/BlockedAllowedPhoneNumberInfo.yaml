@@ -1,0 +1,30 @@
+{
+  "type": "object",
+  "description": "Information on a blocked/allowed phone number",
+  "properties": {
+    "uri": {
+      "type": "string",
+      "description": "Link to a blocked/allowed phone number"
+    },
+    "id": {
+      "type": "string",
+      "description": "Internal identifier of a blocked/allowed phone number"
+    },
+    "phoneNumber": {
+      "type": "string",
+      "description": "A blocked/allowed phone number in [E.164](https://www.itu.int/rec/T-REC-E.164-201011-I) format"
+    },
+    "label": {
+      "type": "string",
+      "description": "Custom name of a blocked/allowed phone number"
+    },
+    "status": {
+      "type": "string",
+      "description": "Status of a phone number",
+      "enum": [
+        "Blocked",
+        "Allowed"
+      ]
+    }
+  }
+}

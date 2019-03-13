@@ -1,0 +1,178 @@
+{
+  "type": "object",
+  "properties": {
+    "Resources": {
+      "type": "array",
+      "description": "user list",
+      "items": {
+        "properties": {
+          "active": {
+            "type": "boolean",
+            "description": "user status",
+            "default": false
+          },
+          "addresses": {
+            "type": "array",
+            "items": {
+              "properties": {
+                "country": {
+                  "type": "string"
+                },
+                "locality": {
+                  "type": "string"
+                },
+                "postalCode": {
+                  "type": "string"
+                },
+                "region": {
+                  "type": "string"
+                },
+                "streetAddress": {
+                  "type": "string"
+                },
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "work"
+                  ]
+                }
+              }
+            }
+          },
+          "emails": {
+            "type": "array",
+            "items": {
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "work"
+                  ]
+                },
+                "value": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "externalId": {
+            "type": "string",
+            "description": "external unique resource id defined by provisioning client"
+          },
+          "id": {
+            "type": "string",
+            "description": "unique resource id defined by RingCentral"
+          },
+          "name": {
+            "properties": {
+              "familyName": {
+                "type": "string"
+              },
+              "givenName": {
+                "type": "string"
+              }
+            }
+          },
+          "phoneNumbers": {
+            "type": "array",
+            "items": {
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "work",
+                    "mobile",
+                    "other"
+                  ]
+                },
+                "value": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "photos": {
+            "type": "array",
+            "items": {
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "photo"
+                  ]
+                },
+                "value": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "schemas": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "urn:ietf:params:scim:schemas:core:2.0:User"
+              ]
+            }
+          },
+          "urn:ietf:params:scim:schemas:extension:enterprise:2.0:User": {
+            "properties": {
+              "department": {
+                "type": "string"
+              }
+            }
+          },
+          "userName": {
+            "type": "string",
+            "description": "MUST be same as work type email address"
+          },
+          "meta": {
+            "properties": {
+              "created": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "lastModified": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "location": {
+                "type": "string",
+                "description": "resource location URI"
+              },
+              "resourceType": {
+                "type": "string",
+                "enum": [
+                  "User",
+                  "Group"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "itemsPerPage": {
+      "type": "integer",
+      "format": "int64"
+    },
+    "schemas": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "urn:ietf:params:scim:api:messages:2.0:ListResponse"
+        ]
+      }
+    },
+    "startIndex": {
+      "type": "integer",
+      "format": "int64"
+    },
+    "totalResults": {
+      "type": "integer",
+      "format": "int64"
+    }
+  }
+}

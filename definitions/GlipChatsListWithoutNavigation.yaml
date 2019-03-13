@@ -1,0 +1,61 @@
+{
+  "type": "object",
+  "required": [
+    "records"
+  ],
+  "properties": {
+    "records": {
+      "type": "array",
+      "items": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Internal identifier of a chat"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "Everyone",
+              "Team",
+              "Group",
+              "Direct",
+              "Personal"
+            ],
+            "description": "Type of a chat"
+          },
+          "public": {
+            "type": "boolean",
+            "description": "For 'Team' chat type only. Team access level."
+          },
+          "name": {
+            "type": "string",
+            "description": "For 'Team','Everyone' chats types only. Chat name."
+          },
+          "description": {
+            "type": "string",
+            "description": "For 'Team','Everyone' chats types only. Chat description."
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "Active",
+              "Archived"
+            ],
+            "description": "For 'Team' chat type only. Team status."
+          },
+          "creationTime": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Chat creation datetime in ISO 8601 format"
+          },
+          "lastModifiedTime": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Chat last change datetime in ISO 8601 format"
+          }
+        }
+      },
+      "description": "List of chats"
+    }
+  }
+}

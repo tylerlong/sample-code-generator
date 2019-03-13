@@ -1,0 +1,53 @@
+{
+  "type": "object",
+  "properties": {
+    "uri": {
+      "type": "string",
+      "format": "uri"
+    },
+    "permissions": {
+      "type": "array",
+      "items": {
+        "properties": {
+          "permission": {
+            "properties": {
+              "uri": {
+                "type": "string",
+                "format": "uri"
+              },
+              "id": {
+                "type": "string"
+              },
+              "siteCompatible": {
+                "type": "string",
+                "enum": [
+                  "Compatible",
+                  "Incompatible",
+                  "Independent"
+                ],
+                "description": "Site compatibility flag set for permission"
+              }
+            }
+          },
+          "effectiveRole": {
+            "properties": {
+              "uri": {
+                "type": "string",
+                "format": "uri"
+              },
+              "id": {
+                "type": "string"
+              }
+            }
+          },
+          "scopes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  }
+}

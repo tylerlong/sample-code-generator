@@ -1,0 +1,105 @@
+{
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Internal identifier of a phone number"
+    },
+    "country": {
+      "description": "Brief information on a phone number country",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Internal identifier of a home country"
+        },
+        "uri": {
+          "type": "string",
+          "description": "Canonical URI of a home country"
+        },
+        "name": {
+          "type": "string",
+          "description": "Official name of a home country"
+        },
+        "isoCode": {
+          "type": "string",
+          "description": "ISO code of a country"
+        },
+        "callingCode": {
+          "type": "string",
+          "description": "Calling code of a country"
+        }
+      }
+    },
+    "extension": {
+      "description": "Information on the extension, to which the phone number is assigned. Returned only for the request of Account phone number list",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Internal identifier of an extension"
+        },
+        "uri": {
+          "type": "string",
+          "description": "Canonical URI of an extension"
+        },
+        "extensionNumber": {
+          "type": "string",
+          "description": "Number of department extension"
+        },
+        "partnerId": {
+          "type": "string",
+          "description": "For Partner Applications Internal identifier of an extension created by partner. The RingCentral supports the mapping of accounts and stores the corresponding account ID/extension ID for each partner ID of a client application. In request URIs partner IDs are accepted instead of regular RingCentral native IDs as path parameters using pid = XXX clause. Though in response URIs contain the corresponding account IDs and extension IDs. In all request and response bodies these values are reflected via partnerId attributes of account and extension"
+        }
+      }
+    },
+    "label": {
+      "type": "string",
+      "description": "Custom user name of a phone number, if any"
+    },
+    "location": {
+      "type": "string",
+      "description": "Location (City, State). Filled for local US numbers"
+    },
+    "paymentType": {
+      "type": "string",
+      "description": "Payment type. 'External' is returned for forwarded numbers which are not terminated in the RingCentral phone system",
+      "enum": [
+        "External",
+        "TollFree",
+        "Local"
+      ]
+    },
+    "phoneNumber": {
+      "type": "string",
+      "description": "Phone number"
+    },
+    "status": {
+      "type": "string",
+      "description": "Status of a phone number. If the value is 'Normal', the phone number is ready to be used. Otherwise it is an external number not yet ported to RingCentral"
+    },
+    "type": {
+      "type": "string",
+      "description": "Phone number type",
+      "enum": [
+        "VoiceFax",
+        "FaxOnly",
+        "VoiceOnly"
+      ]
+    },
+    "usageType": {
+      "type": "string",
+      "description": "Usage type of a phone number",
+      "enum": [
+        "MainCompanyNumber",
+        "AdditionalCompanyNumber",
+        "CompanyNumber",
+        "DirectNumber",
+        "CompanyFaxNumber",
+        "ForwardedNumber",
+        "ForwardedCompanyNumber",
+        "ContactCenterNumber",
+        "ConferencingNumber",
+        "MeetingsNumber"
+      ]
+    }
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Internal identifier of a message store report task"
+    },
+    "uri": {
+      "type": "string",
+      "description": "Link to a task"
+    },
+    "status": {
+      "description": "Status of a message store report task",
+      "type": "string",
+      "enum": [
+        "Accepted",
+        "Pending",
+        "InProgress",
+        "AttemptFailed",
+        "Failed",
+        "Completed",
+        "Cancelled"
+      ]
+    },
+    "accountId": {
+      "type": "string",
+      "description": "Internal identifier of an account"
+    },
+    "extensionId": {
+      "type": "string",
+      "description": "Internal identifier of an extension"
+    },
+    "creationTime": {
+      "type": "string",
+      "description": "Task creation time"
+    },
+    "lastModifiedTime": {
+      "type": "string",
+      "description": "Time of the last task modification"
+    },
+    "dateTo": {
+      "type": "string",
+      "description": "Ending time for collecting messages"
+    },
+    "dateFrom": {
+      "type": "string",
+      "description": "Starting time for collecting messages"
+    }
+  }
+}

@@ -1,0 +1,198 @@
+{
+  "type": "object",
+  "required": [
+    "navigation",
+    "paging",
+    "records"
+  ],
+  "properties": {
+    "records": {
+      "type": "array",
+      "description": "List of phone numbers",
+      "items": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Internal identifier of a phone number"
+          },
+          "country": {
+            "description": "Brief information on a phone number country",
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "Internal identifier of a home country"
+              },
+              "uri": {
+                "type": "string",
+                "description": "Canonical URI of a home country"
+              },
+              "name": {
+                "type": "string",
+                "description": "Official name of a home country"
+              },
+              "isoCode": {
+                "type": "string",
+                "description": "ISO code of a country"
+              },
+              "callingCode": {
+                "type": "string",
+                "description": "Calling code of a country"
+              }
+            }
+          },
+          "extension": {
+            "description": "Information on the extension, to which the phone number is assigned. Returned only for the request of Account phone number list",
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "Internal identifier of an extension"
+              },
+              "uri": {
+                "type": "string",
+                "description": "Canonical URI of an extension"
+              },
+              "extensionNumber": {
+                "type": "string",
+                "description": "Number of department extension"
+              },
+              "partnerId": {
+                "type": "string",
+                "description": "For Partner Applications Internal identifier of an extension created by partner. The RingCentral supports the mapping of accounts and stores the corresponding account ID/extension ID for each partner ID of a client application. In request URIs partner IDs are accepted instead of regular RingCentral native IDs as path parameters using pid = XXX clause. Though in response URIs contain the corresponding account IDs and extension IDs. In all request and response bodies these values are reflected via partnerId attributes of account and extension"
+              }
+            }
+          },
+          "label": {
+            "type": "string",
+            "description": "Custom user name of a phone number, if any"
+          },
+          "location": {
+            "type": "string",
+            "description": "Location (City, State). Filled for local US numbers"
+          },
+          "paymentType": {
+            "type": "string",
+            "description": "Payment type. 'External' is returned for forwarded numbers which are not terminated in the RingCentral phone system",
+            "enum": [
+              "External",
+              "TollFree",
+              "Local"
+            ]
+          },
+          "phoneNumber": {
+            "type": "string",
+            "description": "Phone number"
+          },
+          "status": {
+            "type": "string",
+            "description": "Status of a phone number. If the value is 'Normal', the phone number is ready to be used. Otherwise it is an external number not yet ported to RingCentral"
+          },
+          "type": {
+            "type": "string",
+            "description": "Phone number type",
+            "enum": [
+              "VoiceFax",
+              "FaxOnly",
+              "VoiceOnly"
+            ]
+          },
+          "usageType": {
+            "type": "string",
+            "description": "Usage type of a phone number",
+            "enum": [
+              "MainCompanyNumber",
+              "AdditionalCompanyNumber",
+              "CompanyNumber",
+              "DirectNumber",
+              "CompanyFaxNumber",
+              "ForwardedNumber",
+              "ForwardedCompanyNumber",
+              "ContactCenterNumber",
+              "ConferencingNumber"
+            ]
+          },
+          "features": {
+            "type": "array",
+            "description": "List of features of a phone number",
+            "items": {
+              "type": "string",
+              "enum": [
+                "CallerId",
+                "SmsSender",
+                "MmsSender",
+                "InternationalSmsSender",
+                "TollFreeSmsSender",
+                "Delegated"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "navigation": {
+      "description": "Information on navigation",
+      "properties": {
+        "firstPage": {
+          "description": "Canonical URI for the first page of the list",
+          "properties": {
+            "uri": {
+              "type": "string"
+            }
+          }
+        },
+        "nextPage": {
+          "description": "Canonical URI for the next page of the list",
+          "properties": {
+            "uri": {
+              "type": "string"
+            }
+          }
+        },
+        "previousPage": {
+          "description": "Canonical URI for the previous page of the list",
+          "properties": {
+            "uri": {
+              "type": "string"
+            }
+          }
+        },
+        "lastPage": {
+          "description": "Canonical URI for the last page of the list",
+          "properties": {
+            "uri": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "paging": {
+      "description": "Information on paging",
+      "properties": {
+        "page": {
+          "type": "integer",
+          "description": "The current page number. 1-indexed, so the first page is 1 by default. May be omitted if result is empty (because non-existent page was specified or perPage=0 was requested)"
+        },
+        "perPage": {
+          "type": "integer",
+          "description": "Current page size, describes how many items are in each page. Default value is 100. Maximum value is 1000. If perPage value in the request is greater than 1000, the maximum value (1000) is applied"
+        },
+        "pageStart": {
+          "type": "integer",
+          "description": "The zero-based number of the first element on the current page. Omitted if the page is omitted or result is empty"
+        },
+        "pageEnd": {
+          "type": "integer",
+          "description": "The zero-based index of the last element on the current page. Omitted if the page is omitted or result is empty"
+        },
+        "totalPages": {
+          "type": "integer",
+          "description": "The total number of pages in a dataset. May be omitted for some resources due to performance reasons"
+        },
+        "totalElements": {
+          "type": "integer",
+          "description": "The total number of elements in a dataset. May be omitted for some resource due to performance reasons"
+        }
+      }
+    }
+  }
+}

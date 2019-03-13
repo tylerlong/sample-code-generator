@@ -1,0 +1,167 @@
+{
+  "type": "object",
+  "properties": {
+    "uri": {
+      "type": "string",
+      "description": "Canonical URI of a business-hours resource "
+    },
+    "schedule": {
+      "description": "Schedule when an answering rule is applied",
+      "properties": {
+        "weeklyRanges": {
+          "properties": {
+            "monday": {
+              "type": "array",
+              "description": "Time intervals for a particular day",
+              "items": {
+                "properties": {
+                  "from": {
+                    "type": "string",
+                    "description": "Time in format hh:mm"
+                  },
+                  "to": {
+                    "type": "string",
+                    "description": "Time in format hh:mm"
+                  }
+                }
+              }
+            },
+            "tuesday": {
+              "type": "array",
+              "description": "Time intervals for a particular day",
+              "items": {
+                "properties": {
+                  "from": {
+                    "type": "string",
+                    "description": "Time in format hh:mm"
+                  },
+                  "to": {
+                    "type": "string",
+                    "description": "Time in format hh:mm"
+                  }
+                }
+              }
+            },
+            "wednesday": {
+              "type": "array",
+              "description": "Time intervals for a particular day",
+              "items": {
+                "properties": {
+                  "from": {
+                    "type": "string",
+                    "description": "Time in format hh:mm"
+                  },
+                  "to": {
+                    "type": "string",
+                    "description": "Time in format hh:mm"
+                  }
+                }
+              }
+            },
+            "thursday": {
+              "type": "array",
+              "description": "Time intervals for a particular day",
+              "items": {
+                "properties": {
+                  "from": {
+                    "type": "string",
+                    "description": "Time in format hh:mm"
+                  },
+                  "to": {
+                    "type": "string",
+                    "description": "Time in format hh:mm"
+                  }
+                }
+              }
+            },
+            "friday": {
+              "type": "array",
+              "description": "Time intervals for a particular day",
+              "items": {
+                "properties": {
+                  "from": {
+                    "type": "string",
+                    "description": "Time in format hh:mm"
+                  },
+                  "to": {
+                    "type": "string",
+                    "description": "Time in format hh:mm"
+                  }
+                }
+              }
+            },
+            "saturday": {
+              "type": "array",
+              "description": "Time intervals for a particular day",
+              "items": {
+                "properties": {
+                  "from": {
+                    "type": "string",
+                    "description": "Time in format hh:mm"
+                  },
+                  "to": {
+                    "type": "string",
+                    "description": "Time in format hh:mm"
+                  }
+                }
+              }
+            },
+            "sunday": {
+              "type": "array",
+              "description": "Time intervals for a particular day",
+              "items": {
+                "properties": {
+                  "from": {
+                    "type": "string",
+                    "description": "Time in format hh:mm"
+                  },
+                  "to": {
+                    "type": "string",
+                    "description": "Time in format hh:mm"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "example": {
+    "uri": "https.../restapi/v1.0/account/401800045008/business-hours",
+    "schedule": {
+      "weeklyRanges": {
+        "wednesday": [
+          {
+            "from": "09:00",
+            "to": "18:00"
+          }
+        ],
+        "friday": [
+          {
+            "from": "09:00",
+            "to": "18:00"
+          }
+        ],
+        "tuesday": [
+          {
+            "from": "09:00",
+            "to": "18:00"
+          }
+        ],
+        "monday": [
+          {
+            "from": "09:00",
+            "to": "18:00"
+          }
+        ],
+        "thursday": [
+          {
+            "from": "09:00",
+            "to": "18:00"
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Internal identifier of a group"
+    },
+    "name": {
+      "type": "string",
+      "description": "Name of a group"
+    }
+  }
+}

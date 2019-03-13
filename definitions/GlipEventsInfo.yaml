@@ -1,0 +1,103 @@
+{
+  "type": "object",
+  "properties": {
+    "records": {
+      "type": "array",
+      "items": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Internal identifier of an event"
+          },
+          "creatorId": {
+            "type": "string",
+            "description": "Internal identifier of a person created an event"
+          },
+          "title": {
+            "type": "string",
+            "description": "Event title"
+          },
+          "startTime": {
+            "type": "string",
+            "description": "Datetime of starting an event"
+          },
+          "endTime": {
+            "type": "string",
+            "description": "Datetime of ending an event"
+          },
+          "allDay": {
+            "type": "boolean",
+            "description": "Indicates whether an event has some specific time slot or lasts for the whole day(s)",
+            "default": false
+          },
+          "recurrence": {
+            "type": "string",
+            "description": "Event recurrence settings",
+            "enum": [
+              "None",
+              "Day",
+              "Weekday",
+              "Week",
+              "Month",
+              "Year"
+            ]
+          },
+          "endingCondition": {
+            "type": "string",
+            "description": "Condition of ending"
+          },
+          "endingAfter": {
+            "type": "integer",
+            "description": "Count of iterations. For periodic events only"
+          },
+          "endingOn": {
+            "type": "string",
+            "enum": [
+              "None",
+              "Count",
+              "Date"
+            ],
+            "default": "None",
+            "description": "Iterations end datetime for periodic events"
+          },
+          "color": {
+            "type": "string",
+            "description": "Hex color code, specifying font color of Event title (including its presentation in Calendar)",
+            "enum": [
+              "Black",
+              "Red",
+              "Orange",
+              "Yellow",
+              "Green",
+              "Blue",
+              "Purple",
+              "Magenta"
+            ],
+            "default": "Black"
+          },
+          "location": {
+            "type": "string",
+            "description": "Event location"
+          },
+          "description": {
+            "type": "string",
+            "description": "Event details"
+          }
+        }
+      },
+      "description": "List of events created by the current user"
+    },
+    "navigation": {
+      "properties": {
+        "prevPageToken": {
+          "type": "string",
+          "description": "Previous page token. To get previous page, user should pass one of returned token in next request and, in turn, required page will be returned with new tokens"
+        },
+        "nextPageToken": {
+          "type": "string",
+          "description": "Next page token. To get next page, user should pass one of returned token in next request and, in turn, required page will be returned with new tokens"
+        }
+      }
+    }
+  }
+}

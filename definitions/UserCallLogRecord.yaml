@@ -1,0 +1,129 @@
+{
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Internal identifier of a cal log record"
+    },
+    "uri": {
+      "type": "string",
+      "description": "Canonical URI of a call log record"
+    },
+    "sessionId": {
+      "type": "string",
+      "description": "Internal identifier of a call session"
+    },
+    "from": {
+      "properties": {
+        "phoneNumber": {
+          "type": "string",
+          "description": "Phone number of a party. Usually it is a plain number including country and area code like 18661234567. But sometimes it could be returned from database with some formatting applied, for example (866)123-4567. This property is filled in all cases where parties communicate by means of global phone numbers, for example when calling to direct numbers or sending/receiving SMS"
+        },
+        "extensionNumber": {
+          "type": "string",
+          "description": "Extension short number (usually 3 or 4 digits). This property is filled when parties communicate by means of short internal numbers, for example when calling to other extension or sending/receiving Company Pager message"
+        },
+        "location": {
+          "type": "string",
+          "description": "Contains party location (city, state) if one can be determined from phoneNumber. This property is filled only when phoneNumber is not empty and server can calculate location information from it (for example, this information is unavailable for US toll-free numbers)"
+        },
+        "name": {
+          "type": "string",
+          "description": "Symbolic name associated with a party. If the phone does not belong to the known extension, only the location is returned, the name is not determined then"
+        },
+        "device": {
+          "properties": {
+            "id": {
+              "type": "string",
+              "description": "Internal identifier of a device"
+            },
+            "uri": {
+              "type": "string",
+              "description": "string to a device"
+            }
+          }
+        }
+      }
+    },
+    "to": {
+      "properties": {
+        "phoneNumber": {
+          "type": "string",
+          "description": "Phone number of a party. Usually it is a plain number including country and area code like 18661234567. But sometimes it could be returned from database with some formatting applied, for example (866)123-4567. This property is filled in all cases where parties communicate by means of global phone numbers, for example when calling to direct numbers or sending/receiving SMS"
+        },
+        "extensionNumber": {
+          "type": "string",
+          "description": "Extension short number (usually 3 or 4 digits). This property is filled when parties communicate by means of short internal numbers, for example when calling to other extension or sending/receiving Company Pager message"
+        },
+        "location": {
+          "type": "string",
+          "description": "Contains party location (city, state) if one can be determined from phoneNumber. This property is filled only when phoneNumber is not empty and server can calculate location information from it (for example, this information is unavailable for US toll-free numbers)"
+        },
+        "name": {
+          "type": "string",
+          "description": "Symbolic name associated with a party. If the phone does not belong to the known extension, only the location is returned, the name is not determined then"
+        },
+        "device": {
+          "properties": {
+            "id": {
+              "type": "string",
+              "description": "Internal identifier of a device"
+            },
+            "uri": {
+              "type": "string",
+              "description": "string to a device"
+            }
+          }
+        }
+      }
+    },
+    "type": {
+      "type": "string",
+      "description": "Call type = ['Voice', 'Fax']",
+      "enum": [
+        "Voice",
+        "Fax"
+      ]
+    },
+    "direction": {
+      "type": "string",
+      "description": "Call direction",
+      "enum": [
+        "Inbound",
+        "Outbound"
+      ]
+    },
+    "startTime": {
+      "type": "string",
+      "description": "The call start datetime in ISO 8601 format including timezone, for example 2016-03-10T18:07:52.534Z"
+    },
+    "duration": {
+      "type": "integer",
+      "description": "Call duration in seconds"
+    },
+    "recording": {
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Internal identifier of the call recording"
+        },
+        "uri": {
+          "type": "string",
+          "description": "Link to the call recording metadata resource"
+        },
+        "type": {
+          "type": "string",
+          "description": "Indicates recording mode used",
+          "enum": [
+            "Automatic",
+            "OnDemand"
+          ]
+        },
+        "contentUri": {
+          "type": "string",
+          "description": "Link to the call recording binary content"
+        }
+      }
+    }
+  }
+}

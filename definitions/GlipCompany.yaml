@@ -1,0 +1,30 @@
+{
+  "type": "object",
+  "required": [
+    "id",
+    "creationTime",
+    "lastModifiedTime"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Internal identifier of an RC account/Glip company, or tilde (~) to indicate a company the current user belongs to"
+    },
+    "name": {
+      "type": "string",
+      "description": "Name of a company"
+    },
+    "domain": {
+      "type": "string",
+      "description": "Domain name of a company"
+    },
+    "creationTime": {
+      "type": "string",
+      "description": "Datetime of creation in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format"
+    },
+    "lastModifiedTime": {
+      "type": "string",
+      "description": "Datetime of last modification in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format"
+    }
+  }
+}

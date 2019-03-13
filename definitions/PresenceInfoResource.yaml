@@ -1,0 +1,108 @@
+{
+  "type": "object",
+  "properties": {
+    "userStatus": {
+      "type": "string",
+      "enum": [
+        "Offline",
+        "Busy",
+        "Available"
+      ]
+    },
+    "dndStatus": {
+      "type": "string",
+      "enum": [
+        "TakeAllCalls",
+        "DoNotAcceptDepartmentCalls",
+        "TakeDepartmentCallsOnly",
+        "DoNotAcceptAnyCalls",
+        "Unknown"
+      ]
+    },
+    "message": {
+      "type": "string",
+      "minLength": 0,
+      "maxLength": 75
+    },
+    "allowSeeMyPresence": {
+      "type": "boolean",
+      "default": false
+    },
+    "ringOnMonitoredCall": {
+      "type": "boolean",
+      "default": false
+    },
+    "pickUpCallsOnHold": {
+      "type": "boolean",
+      "default": false
+    },
+    "activeCalls": {
+      "type": "array",
+      "items": {
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "direction": {
+            "type": "string",
+            "enum": [
+              "Inbound",
+              "Outbound"
+            ]
+          },
+          "from": {
+            "type": "string",
+            "description": "Phone number or extension number of a caller. For GCM transport type '_from' property should be used"
+          },
+          "fromName": {
+            "type": "string",
+            "description": "Name of a caller"
+          },
+          "to": {
+            "type": "string",
+            "description": "Phone number or extension number of a callee"
+          },
+          "toName": {
+            "type": "string",
+            "description": "Name of a callee"
+          },
+          "startTime": {
+            "type": "string",
+            "description": "Time when the call is actually started"
+          },
+          "telephonyStatus": {
+            "type": "string"
+          },
+          "sipData": {
+            "properties": {
+              "callId": {
+                "type": "string"
+              },
+              "toTag": {
+                "type": "string"
+              },
+              "fromTag": {
+                "type": "string"
+              },
+              "remoteUri": {
+                "type": "string"
+              },
+              "localUri": {
+                "type": "string"
+              },
+              "rcSessionId": {
+                "type": "string"
+              }
+            }
+          },
+          "sessionId": {
+            "type": "string"
+          },
+          "terminationType": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

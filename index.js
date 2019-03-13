@@ -113,8 +113,8 @@ ${code}
       doc += '\nYou can get response binary data by `const buffer = await r.response().buffer()`'
     } else {
       doc += '\nYou can get response json data by `const responseBody = await r.json()`'
-      doc += '\n`responseBody` is is an object with the following definition:'
-      doc += `\n\`\`\`yaml\n${JSON.stringify(loadFullDefinition(responseType), null, 2)}\n\`\`\``
+      doc += `\n\`responseBody\` is an object with [this definition](./definitions/${responseType}.yaml)`
+      fs.writeFileSync(`./definitions/${responseType}.yaml`, JSON.stringify(loadFullDefinition(responseType), null, 2))
     }
   } else {
     doc += '\nResponse body is empty'

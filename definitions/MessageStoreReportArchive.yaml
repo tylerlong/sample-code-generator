@@ -1,0 +1,20 @@
+{
+  "type": "object",
+  "properties": {
+    "records": {
+      "type": "array",
+      "items": {
+        "properties": {
+          "size": {
+            "type": "integer",
+            "description": "Archive size in bytes"
+          },
+          "uri": {
+            "type": "string",
+            "description": "Link for archive download"
+          }
+        }
+      }
+    }
+  }
+}

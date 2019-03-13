@@ -1,0 +1,402 @@
+{
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Internal identifier of a device"
+    },
+    "uri": {
+      "type": "string",
+      "description": "Canonical URI of a device"
+    },
+    "sku": {
+      "type": "string",
+      "description": "Device identification number (stock keeping unit) in the format TP-ID [-AT-AC], where TP is device type (HP for RC HardPhone, DV for all other devices including softphone); ID - device model ID; AT -addon type ID; AC - addon count (if any). For example 'HP-56-2-2'"
+    },
+    "type": {
+      "type": "string",
+      "description": "Device type",
+      "default": "HardPhone",
+      "enum": [
+        "SoftPhone",
+        "OtherPhone",
+        "HardPhone"
+      ]
+    },
+    "name": {
+      "type": "string",
+      "description": "Device name. Mandatory if ordering  SoftPhone  or  OtherPhone . Optional for  HardPhone . If not specified for HardPhone, then device model  name is used as device  name"
+    },
+    "serial": {
+      "type": "string",
+      "description": "Serial number for HardPhone (is returned only when the phone is shipped and provisioned); endpoint_id for softphone and mobile applications"
+    },
+    "computerName": {
+      "type": "string",
+      "description": "PC name for softphone"
+    },
+    "model": {
+      "description": "HardPhone model information",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Addon identifier. For HardPhones of certain types, which are compatible with this addon identifier"
+        },
+        "name": {
+          "type": "string",
+          "description": "Device name"
+        },
+        "addons": {
+          "description": "Addons description",
+          "type": "array",
+          "items": {
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "count": {
+                "type": "string",
+                "format": "int32"
+              }
+            }
+          }
+        },
+        "features": {
+          "description": "Device feature or multiple features supported",
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "BLA",
+              "Intercom",
+              "Paging"
+            ]
+          }
+        }
+      }
+    },
+    "extension": {
+      "description": "This attribute can be omitted for unassigned devices",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64",
+          "description": "Internal identifier of an extension"
+        },
+        "uri": {
+          "type": "string",
+          "description": "Canonical URI of an extension"
+        },
+        "extensionNumber": {
+          "type": "string",
+          "description": "Number of department extension"
+        },
+        "partnerId": {
+          "type": "string",
+          "description": "For Partner Applications Internal identifier of an extension created by partner. The RingCentral supports the mapping of accounts and stores the corresponding account ID/extension ID for each partner ID of a client application. In request URIs partner IDs are accepted instead of regular RingCentral native IDs as path parameters using pid = XXX clause. Though in response URIs contain the corresponding account IDs and extension IDs. In all request and response bodies these values are reflected via partnerId attributes of account and extension"
+        }
+      }
+    },
+    "emergencyServiceAddress": {
+      "description": "Address for emergency cases. The same emergency address is assigned to all the numbers of one device",
+      "properties": {
+        "customerName": {
+          "type": "string",
+          "description": "Name of a customer"
+        },
+        "street": {
+          "type": "string",
+          "description": "Street address, line 1 - street address, P.O. box, company name, c/o"
+        },
+        "street2": {
+          "type": "string",
+          "description": "Street address, line 2 - apartment, suite, unit, building, floor, etc."
+        },
+        "city": {
+          "type": "string",
+          "description": "City name"
+        },
+        "zip": {
+          "type": "string",
+          "description": "Zip code"
+        },
+        "state": {
+          "type": "string",
+          "description": "State/province name"
+        },
+        "stateId": {
+          "type": "string",
+          "description": "Internal identifier of a state"
+        },
+        "stateIsoCode": {
+          "type": "string",
+          "description": "ISO code of a state"
+        },
+        "stateName": {
+          "type": "string",
+          "description": "Full name of a state"
+        },
+        "countryId": {
+          "type": "string",
+          "description": "Internal identifier of a country"
+        },
+        "countryIsoCode": {
+          "type": "string",
+          "description": "ISO code of a country"
+        },
+        "country": {
+          "type": "string",
+          "description": "Country name"
+        },
+        "countryName": {
+          "type": "string",
+          "description": "Full name of a country"
+        }
+      }
+    },
+    "phoneLines": {
+      "description": "Phone lines information",
+      "type": "array",
+      "items": {
+        "properties": {
+          "lineType": {
+            "type": "string",
+            "description": "Type of phone line",
+            "enum": [
+              "Standalone",
+              "StandaloneFree",
+              "BlaPrimary",
+              "BlaSecondary"
+            ]
+          },
+          "phoneInfo": {
+            "description": "Phone number information",
+            "properties": {
+              "id": {
+                "type": "integer",
+                "format": "int64",
+                "description": "Internal identifier of a phone number"
+              },
+              "country": {
+                "description": "Brief information on a phone number country",
+                "properties": {
+                  "id": {
+                    "type": "string",
+                    "description": "Internal identifier of a home country"
+                  },
+                  "uri": {
+                    "type": "string",
+                    "description": "Canonical URI of a home country"
+                  },
+                  "name": {
+                    "type": "string",
+                    "description": "Official name of a home country"
+                  }
+                }
+              },
+              "extension": {
+                "description": "Information on the extension, to which the phone number is assigned. Returned only for the request of Account phone number list",
+                "properties": {
+                  "id": {
+                    "type": "string",
+                    "description": "Internal identifier of an extension"
+                  },
+                  "uri": {
+                    "type": "string",
+                    "description": "Canonical URI of an extension"
+                  },
+                  "extensionNumber": {
+                    "type": "string",
+                    "description": "Number of department extension"
+                  },
+                  "partnerId": {
+                    "type": "string",
+                    "description": "For Partner Applications Internal identifier of an extension created by partner. The RingCentral supports the mapping of accounts and stores the corresponding account ID/extension ID for each partner ID of a client application. In request URIs partner IDs are accepted instead of regular RingCentral native IDs as path parameters using pid = XXX clause. Though in response URIs contain the corresponding account IDs and extension IDs. In all request and response bodies these values are reflected via partnerId attributes of account and extension"
+                  }
+                }
+              },
+              "label": {
+                "type": "string",
+                "description": "Custom user name of a phone number, if any"
+              },
+              "location": {
+                "type": "string",
+                "description": "Location (City, State). Filled for local US numbers"
+              },
+              "paymentType": {
+                "type": "string",
+                "description": "Payment type. 'External' is returned for forwarded numbers which are not terminated in the RingCentral phone system",
+                "enum": [
+                  "External",
+                  "TollFree",
+                  "Local"
+                ]
+              },
+              "phoneNumber": {
+                "type": "string",
+                "description": "Phone number"
+              },
+              "status": {
+                "type": "string",
+                "description": "Status of a phone number. If the value is 'Normal', the phone number is ready to be used. Otherwise it is an external number not yet ported to RingCentral"
+              },
+              "type": {
+                "type": "string",
+                "description": "Phone number type",
+                "enum": [
+                  "VoiceFax",
+                  "FaxOnly",
+                  "VoiceOnly"
+                ]
+              },
+              "usageType": {
+                "type": "string",
+                "description": "Usage type of the phone number",
+                "enum": [
+                  "MainCompanyNumber",
+                  "AdditionalCompanyNumber",
+                  "CompanyNumber",
+                  "DirectNumber",
+                  "CompanyFaxNumber",
+                  "ForwardedNumber",
+                  "ForwardedCompanyNumber",
+                  "ContactCenterNumber"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "shipping": {
+      "description": "Shipping information, according to which devices (in case of HardPhone ) or e911 stickers (in case of  SoftPhone  and  OtherPhone ) will be delivered to the customer",
+      "properties": {
+        "status": {
+          "type": "string",
+          "description": "Shipping status of the order item. It is set to 'Initial' when the order is submitted. Then it is changed to 'Accepted' when a distributor starts processing the order. Finally it is changed to Shipped which means that distributor has shipped the device.",
+          "enum": [
+            "Initial",
+            "Accepted",
+            "Shipped"
+          ]
+        },
+        "carrier": {
+          "type": "string",
+          "description": "Shipping carrier name. Appears only if the device status is 'Shipped'"
+        },
+        "trackingNumber": {
+          "type": "string",
+          "description": "Carrier-specific tracking number. Appears only if the device status is 'Shipped'"
+        },
+        "method": {
+          "description": "Shipping method information",
+          "properties": {
+            "id": {
+              "type": "string",
+              "description": "Method identifier. The default value is 1 (Ground)",
+              "enum": [
+                "1",
+                "2",
+                "3"
+              ]
+            },
+            "name": {
+              "type": "string",
+              "description": "Method name, corresponding to the identifier",
+              "enum": [
+                "Ground",
+                "2 Day",
+                "Overnight"
+              ]
+            }
+          }
+        },
+        "address": {
+          "description": "Shipping address for the order. If it coincides with the Emergency Service Address, then can be omitted. By default the same value as the emergencyServiceAddress. Multiple addresses can be specified; in case an order contains several devices, they can be delivered to different addresses",
+          "properties": {
+            "customerName": {
+              "type": "string",
+              "description": "Name of a receiver"
+            },
+            "street": {
+              "type": "string",
+              "description": "Street address, line 1 - street address, P.O. box, company name, c/o"
+            },
+            "street2": {
+              "type": "string",
+              "description": "Street address, line 2 - apartment, suite, unit, building, floor, etc."
+            },
+            "city": {
+              "type": "string",
+              "description": "City name"
+            },
+            "state": {
+              "type": "string",
+              "description": "State/province name"
+            },
+            "stateId": {
+              "type": "string",
+              "description": "Internal identifier of a state"
+            },
+            "stateIsoCode": {
+              "type": "string",
+              "description": "ISO code of a state"
+            },
+            "stateName": {
+              "type": "string",
+              "description": "Full name of a state"
+            },
+            "countryId": {
+              "type": "string",
+              "description": "Internal identifier of a country"
+            },
+            "countryIsoCode": {
+              "type": "string",
+              "description": "ISO code of a country"
+            },
+            "country": {
+              "type": "string",
+              "description": "Country name"
+            },
+            "countryName": {
+              "type": "string",
+              "description": "Full name of a country"
+            },
+            "zip": {
+              "type": "string",
+              "description": "Zip code"
+            }
+          }
+        }
+      }
+    },
+    "boxBillingId": {
+      "type": "integer",
+      "description": "Box billing identifier of a device. Applicable only for HardPhones. It is an alternative way to identify the device to be ordered. EitherT? model  structure, or  boxBillingId  must be specified forT?HardPhone"
+    },
+    "useAsCommonPhone": {
+      "type": "boolean",
+      "description": "Supported only for devices assigned to Limited extensions. If true, enables users to log in to this phone as a common phone."
+    },
+    "inCompanyNet": {
+      "type": "boolean",
+      "description": "Network location status. 'True' if the device is located in the configured corporate network (On-Net); 'False' for Off-Net location. Parameter is not returned if `EmergencyAddressAutoUpdate` feature is not enabled for the account/user, or if device network location is not determined"
+    },
+    "site": {
+      "description": "Site data",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Internal identifier of a site"
+        },
+        "name": {
+          "type": "string",
+          "description": "Name of a site"
+        }
+      }
+    }
+  }
+}

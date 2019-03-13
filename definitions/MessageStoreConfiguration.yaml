@@ -1,0 +1,11 @@
+{
+  "type": "object",
+  "properties": {
+    "retentionPeriod": {
+      "type": "integer",
+      "description": "Retention policy setting, specifying how long to keep messages; the supported value range is 7-90 days",
+      "minimum": 7,
+      "maximum": 90
+    }
+  }
+}

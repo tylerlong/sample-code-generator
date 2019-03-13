@@ -1,0 +1,121 @@
+{
+  "type": "object",
+  "properties": {
+    "uri": {
+      "type": "string",
+      "description": "Canonical URI of the account Service Info resource"
+    },
+    "servicePlanName": {
+      "type": "string",
+      "description": "Account Service Plan name"
+    },
+    "serviceFeatures": {
+      "type": "array",
+      "description": "Service features information, see Service Feature List",
+      "items": {
+        "properties": {
+          "featureName": {
+            "type": "string",
+            "description": "Feature name",
+            "enum": [
+              "AccountFederation",
+              "Archiver",
+              "AutomaticCallRecordingMute",
+              "AutomaticInboundCallRecording",
+              "AutomaticOutboundCallRecording",
+              "BlockedMessageForwarding",
+              "Calendar",
+              "CallerIdControl",
+              "CallForwarding",
+              "CallPark",
+              "CallParkLocations",
+              "CallSupervision",
+              "CallSwitch",
+              "CallQualitySurvey",
+              "Conferencing",
+              "ConfigureDelegates",
+              "DeveloperPortal",
+              "DND",
+              "DynamicConference",
+              "EmergencyAddressAutoUpdate",
+              "EmergencyCalling",
+              "EncryptionAtRest",
+              "ExternalDirectoryIntegration",
+              "Fax",
+              "FaxReceiving",
+              "FreeSoftPhoneLines",
+              "HDVoice",
+              "HipaaCompliance",
+              "Intercom",
+              "InternationalCalling",
+              "InternationalSMS",
+              "LinkedSoftphoneLines",
+              "MMS",
+              "OnDemandCallRecording",
+              "Pager",
+              "PagerReceiving",
+              "Paging",
+              "PasswordAuth",
+              "PromoMessage",
+              "Reports",
+              "Presence",
+              "RCTeams",
+              "RingOut",
+              "SalesForce",
+              "SingleExtensionUI",
+              "SiteCodes",
+              "SMS",
+              "SMSReceiving",
+              "SoftPhoneUpdate",
+              "UserManagement",
+              "VideoConferencing",
+              "VoipCalling",
+              "VoipCallingOnMobile",
+              "Voicemail",
+              "VoicemailToText",
+              "WebPhone"
+            ]
+          },
+          "enabled": {
+            "type": "boolean",
+            "description": "Feature status, shows feature availability for the extension"
+          }
+        }
+      }
+    },
+    "limits": {
+      "description": "Limits which are effective for the account",
+      "properties": {
+        "freeSoftPhoneLinesPerExtension": {
+          "type": "integer",
+          "description": "Max number of free softphone phone lines per user extension"
+        },
+        "meetingSize": {
+          "type": "integer",
+          "description": "Max number of participants in RingCentral meeting hosted by this account's user"
+        },
+        "cloudRecordingStorage": {
+          "type": "integer",
+          "description": "Meetings recording cloud storage limitaion in Gb"
+        },
+        "maxMonitoredExtensionsPerUser": {
+          "type": "integer",
+          "description": "Max number of extensions which can be included in the list of users monitored for Presence"
+        },
+        "maxExtensionNumberLength": {
+          "type": "integer",
+          "description": "Max length of extension numbers of an account; depends on account type",
+          "default": 5
+        },
+        "siteCodeLength": {
+          "type": "integer",
+          "description": "Length of a site code"
+        },
+        "shortExtensionNumberLength": {
+          "type": "integer",
+          "description": "Length of a short extension number"
+        }
+      }
+    }
+  }
+}

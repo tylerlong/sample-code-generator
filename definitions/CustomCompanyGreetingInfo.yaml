@@ -1,0 +1,69 @@
+{
+  "type": "object",
+  "properties": {
+    "uri": {
+      "type": "string",
+      "description": "Link to an extension custom greeting"
+    },
+    "id": {
+      "type": "string",
+      "description": "Internal identifier of an answering rule"
+    },
+    "type": {
+      "type": "string",
+      "description": "Type of a company greeting",
+      "enum": [
+        "Company",
+        "StartRecording",
+        "StopRecording",
+        "AutomaticRecording"
+      ]
+    },
+    "contentType": {
+      "type": "string",
+      "description": "Content media type in WAV/MP3 format",
+      "enum": [
+        "WAV",
+        "MP3"
+      ]
+    },
+    "contentUri": {
+      "type": "string",
+      "description": "Link to a greeting content (audio file)"
+    },
+    "answeringRule": {
+      "description": "Information on an answering rule that the greeting is applied to",
+      "properties": {
+        "uri": {
+          "type": "string",
+          "description": "Canonical URI of an answering rule"
+        },
+        "id": {
+          "type": "string",
+          "description": "Internal identifier of an answering rule"
+        }
+      }
+    },
+    "language": {
+      "description": "Information on a greeting language. Supported for types 'StopRecording', 'StartRecording', 'AutomaticRecording'",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Internal identifier of a greeting language"
+        },
+        "uri": {
+          "type": "string",
+          "description": "Link to a greeting language"
+        },
+        "name": {
+          "type": "string",
+          "description": "Name of a greeting language"
+        },
+        "localeCode": {
+          "type": "string",
+          "description": "Locale code of a greeting language"
+        }
+      }
+    }
+  }
+}

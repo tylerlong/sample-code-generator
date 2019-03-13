@@ -1,0 +1,206 @@
+{
+  "type": "object",
+  "properties": {
+    "uri": {
+      "type": "string",
+      "format": "uri"
+    },
+    "records": {
+      "type": "array",
+      "items": {
+        "properties": {
+          "uri": {
+            "type": "string",
+            "format": "uri"
+          },
+          "availability": {
+            "type": "string",
+            "enum": [
+              "Alive",
+              "Deleted",
+              "Purged"
+            ]
+          },
+          "id": {
+            "type": "string"
+          },
+          "firstName": {
+            "type": "string"
+          },
+          "lastName": {
+            "type": "string"
+          },
+          "middleName": {
+            "type": "string"
+          },
+          "birthday": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "notes": {
+            "type": "string"
+          },
+          "webPage": {
+            "type": "string"
+          },
+          "company": {
+            "type": "string"
+          },
+          "jobTitle": {
+            "type": "string"
+          },
+          "nickName": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "email2": {
+            "type": "string"
+          },
+          "email3": {
+            "type": "string"
+          },
+          "homeAddress": {
+            "properties": {
+              "country": {
+                "type": "string",
+                "description": "Country name of extension user company. Not returned for Address Book"
+              },
+              "state": {
+                "type": "string",
+                "description": "State/province name of extension user company"
+              },
+              "city": {
+                "type": "string",
+                "description": "City name of extension user company"
+              },
+              "street": {
+                "type": "string",
+                "description": "Street address of extension user company"
+              },
+              "zip": {
+                "type": "string",
+                "description": "Zip code of extension user company"
+              }
+            }
+          },
+          "otherAddress": {
+            "properties": {
+              "country": {
+                "type": "string",
+                "description": "Country name of extension user company. Not returned for Address Book"
+              },
+              "state": {
+                "type": "string",
+                "description": "State/province name of extension user company"
+              },
+              "city": {
+                "type": "string",
+                "description": "City name of extension user company"
+              },
+              "street": {
+                "type": "string",
+                "description": "Street address of extension user company"
+              },
+              "zip": {
+                "type": "string",
+                "description": "Zip code of extension user company"
+              }
+            }
+          },
+          "homePhone": {
+            "type": "string"
+          },
+          "homePhone2": {
+            "type": "string"
+          },
+          "mobilePhone": {
+            "type": "string"
+          },
+          "businessPhone": {
+            "type": "string"
+          },
+          "callbackPhone": {
+            "type": "string"
+          },
+          "carPhone": {
+            "type": "string"
+          },
+          "companyPhone": {
+            "type": "string"
+          },
+          "otherPhone": {
+            "type": "string"
+          },
+          "businessFax": {
+            "type": "string"
+          },
+          "otherFax": {
+            "type": "string"
+          },
+          "businessAddress": {
+            "properties": {
+              "country": {
+                "type": "string",
+                "description": "Country name of extension user company. Not returned for Address Book"
+              },
+              "state": {
+                "type": "string",
+                "description": "State/province name of extension user company"
+              },
+              "city": {
+                "type": "string",
+                "description": "City name of extension user company"
+              },
+              "street": {
+                "type": "string",
+                "description": "Street address of extension user company"
+              },
+              "zip": {
+                "type": "string",
+                "description": "Zip code of extension user company"
+              }
+            }
+          },
+          "assistantPhone": {
+            "type": "string"
+          },
+          "businessPhone2": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "syncInfo": {
+      "properties": {
+        "syncType": {
+          "type": "string",
+          "enum": [
+            "FSync",
+            "ISync"
+          ]
+        },
+        "syncToken": {
+          "type": "string"
+        },
+        "syncTime": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "olderRecordsExist": {
+          "type": "boolean",
+          "default": false
+        }
+      }
+    },
+    "nextPageId": {
+      "type": "integer",
+      "format": "int64"
+    },
+    "nextPageUri": {
+      "type": "string",
+      "format": "uri"
+    }
+  }
+}

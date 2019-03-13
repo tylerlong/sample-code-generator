@@ -1,0 +1,510 @@
+{
+  "type": "object",
+  "properties": {
+    "uri": {
+      "type": "string",
+      "description": "Canonical URI to an answering rule resource"
+    },
+    "id": {
+      "type": "string",
+      "description": "Internal identifier of an answering rule"
+    },
+    "type": {
+      "type": "string",
+      "description": "Type of an answering rule",
+      "enum": [
+        "BusinessHours",
+        "AfterHours",
+        "Custom"
+      ]
+    },
+    "name": {
+      "type": "string",
+      "description": "Name of an answering rule specified by user"
+    },
+    "enabled": {
+      "type": "boolean",
+      "description": "Specifies if an answering rule is active or inactive"
+    },
+    "schedule": {
+      "description": "Schedule when an answering rule should be applied",
+      "properties": {
+        "weeklyRanges": {
+          "description": "Weekly schedule",
+          "properties": {
+            "monday": {
+              "type": "array",
+              "description": "Time intervals for a particular day",
+              "items": {
+                "properties": {
+                  "from": {
+                    "type": "string",
+                    "description": "Time in format hh:mm"
+                  },
+                  "to": {
+                    "type": "string",
+                    "description": "Time in format hh:mm"
+                  }
+                }
+              }
+            },
+            "tuesday": {
+              "type": "array",
+              "description": "Time intervals for a particular day",
+              "items": {
+                "properties": {
+                  "from": {
+                    "type": "string",
+                    "description": "Time in format hh:mm"
+                  },
+                  "to": {
+                    "type": "string",
+                    "description": "Time in format hh:mm"
+                  }
+                }
+              }
+            },
+            "wednesday": {
+              "type": "array",
+              "description": "Time intervals for a particular day",
+              "items": {
+                "properties": {
+                  "from": {
+                    "type": "string",
+                    "description": "Time in format hh:mm"
+                  },
+                  "to": {
+                    "type": "string",
+                    "description": "Time in format hh:mm"
+                  }
+                }
+              }
+            },
+            "thursday": {
+              "type": "array",
+              "description": "Time intervals for a particular day",
+              "items": {
+                "properties": {
+                  "from": {
+                    "type": "string",
+                    "description": "Time in format hh:mm"
+                  },
+                  "to": {
+                    "type": "string",
+                    "description": "Time in format hh:mm"
+                  }
+                }
+              }
+            },
+            "friday": {
+              "type": "array",
+              "description": "Time intervals for a particular day",
+              "items": {
+                "properties": {
+                  "from": {
+                    "type": "string",
+                    "description": "Time in format hh:mm"
+                  },
+                  "to": {
+                    "type": "string",
+                    "description": "Time in format hh:mm"
+                  }
+                }
+              }
+            },
+            "saturday": {
+              "type": "array",
+              "description": "Time intervals for a particular day",
+              "items": {
+                "properties": {
+                  "from": {
+                    "type": "string",
+                    "description": "Time in format hh:mm"
+                  },
+                  "to": {
+                    "type": "string",
+                    "description": "Time in format hh:mm"
+                  }
+                }
+              }
+            },
+            "sunday": {
+              "type": "array",
+              "description": "Time intervals for a particular day",
+              "items": {
+                "properties": {
+                  "from": {
+                    "type": "string",
+                    "description": "Time in format hh:mm"
+                  },
+                  "to": {
+                    "type": "string",
+                    "description": "Time in format hh:mm"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "ranges": {
+          "description": "Specific data ranges",
+          "type": "array",
+          "items": {
+            "properties": {
+              "from": {
+                "type": "string",
+                "description": "Starting datetime in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601), for example *2018-10-29T14:00:00*, *2018-10-29T14:00:00Z*, *2018-10-29T14:00:00+0100*"
+              },
+              "to": {
+                "type": "string",
+                "description": "Ending datetime in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601), for example *2018-10-29T14:00:00*, *2018-10-29T14:00:00Z*, *2018-10-29T14:00:00+0100*"
+              }
+            }
+          }
+        },
+        "ref": {
+          "type": "string",
+          "description": "The user's schedule specified for business hours or after hours; it can also be set/retrieved calling the corresponding method",
+          "enum": [
+            "BusinessHours",
+            "AfterHours"
+          ]
+        }
+      }
+    },
+    "calledNumbers": {
+      "type": "array",
+      "description": "Answering rules are applied when calling to selected number(s)",
+      "items": {
+        "properties": {
+          "phoneNumber": {
+            "type": "string",
+            "description": "Called phone number"
+          }
+        }
+      }
+    },
+    "callers": {
+      "type": "array",
+      "description": "Answering rules are applied when calls are received from specified caller(s)",
+      "items": {
+        "properties": {
+          "callerId": {
+            "type": "string",
+            "description": "Phone number of a caller"
+          },
+          "name": {
+            "type": "string",
+            "description": "Contact name of a caller"
+          }
+        }
+      }
+    },
+    "callHandlingAction": {
+      "type": "string",
+      "description": "Specifies how incoming calls are forwarded",
+      "enum": [
+        "ForwardCalls",
+        "UnconditionalForwarding",
+        "AgentQueue",
+        "TransferToExtension",
+        "TakeMessagesOnly",
+        "PlayAnnouncementOnly"
+      ]
+    },
+    "forwarding": {
+      "description": "Forwarding parameters. Returned if 'ForwardCalls' is specified in 'callHandlingAction'. These settings determine the forwarding numbers to which the call will be forwarded",
+      "properties": {
+        "notifyMySoftPhones": {
+          "type": "boolean",
+          "description": "Specifies if the user's softphone(s) are notified before forwarding the incoming call to desk phones and forwarding numbers"
+        },
+        "notifyAdminSoftPhones": {
+          "type": "boolean",
+          "description": "Specifies if the administrator's softphone is notified before forwarding the incoming call to desk phones and forwarding numbers. The default value is 'False'"
+        },
+        "softPhonesRingCount": {
+          "type": "integer",
+          "description": "Number of rings before forwarding starts"
+        },
+        "ringingMode": {
+          "type": "string",
+          "description": "Specifies the order in which forwarding numbers ring. 'Sequentially' means that forwarding numbers are ringing one at a time, in order of priority. 'Simultaneously' means that forwarding numbers are ring all at the same time",
+          "enum": [
+            "Sequentially",
+            "Simultaneously"
+          ]
+        },
+        "rules": {
+          "type": "array",
+          "description": "Information on a call forwarding rule",
+          "items": {
+            "properties": {
+              "index": {
+                "type": "integer",
+                "description": "Forwarding number (or group) ordinal"
+              },
+              "ringCount": {
+                "type": "integer",
+                "description": "Number of rings for a forwarding number (or group)"
+              },
+              "enabled": {
+                "type": "boolean",
+                "description": "Forwarding number status. Returned only if `showInactiveNumbers` is set to `true`"
+              },
+              "forwardingNumbers": {
+                "type": "array",
+                "description": "Forwarding number (or group) data",
+                "items": {
+                  "properties": {
+                    "uri": {
+                      "type": "string",
+                      "description": "Link to a forwarding number resource"
+                    },
+                    "id": {
+                      "type": "string",
+                      "description": "Internal identifier of a forwarding number"
+                    },
+                    "phoneNumber": {
+                      "type": "string",
+                      "description": "Phone number to which the call is forwarded"
+                    },
+                    "label": {
+                      "type": "string",
+                      "description": "Title of a forwarding number"
+                    },
+                    "type": {
+                      "type": "string",
+                      "description": "Type of a forwarding number",
+                      "enum": [
+                        "Home",
+                        "Mobile",
+                        "Work",
+                        "PhoneLine",
+                        "Outage",
+                        "Other"
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "mobileTimeout": {
+          "type": "boolean",
+          "description": "Specifies if mobile timeout is activated for the rule"
+        }
+      }
+    },
+    "unconditionalForwarding": {
+      "description": "Unconditional forwarding parameters. Returned if 'UnconditionalForwarding' is specified in 'callHandlingAction'",
+      "properties": {
+        "phoneNumber": {
+          "type": "string",
+          "description": "Phone number to which the call is forwarded"
+        }
+      }
+    },
+    "queue": {
+      "description": "Queue settings applied for department (call queue) extension type, with the 'AgentQueue' value specified as a call handling action",
+      "properties": {
+        "transferMode": {
+          "type": "string",
+          "description": "Specifies how calls are transferred to group members",
+          "enum": [
+            "Rotating",
+            "Simultaneous",
+            "FixedOrder"
+          ]
+        },
+        "fixedOrderAgents": {
+          "type": "array",
+          "description": "Information on a call forwarding rule",
+          "items": {
+            "properties": {
+              "extension": {
+                "properties": {
+                  "id": {
+                    "type": "string",
+                    "description": "Internal identifier of an extension"
+                  },
+                  "uri": {
+                    "type": "string",
+                    "description": "Canonical URI of an extension"
+                  },
+                  "extensionNumber": {
+                    "type": "string",
+                    "description": "Number of department extension"
+                  },
+                  "partnerId": {
+                    "type": "string",
+                    "description": "For Partner Applications Internal identifier of an extension created by partner. The RingCentral supports the mapping of accounts and stores the corresponding account ID/extension ID for each partner ID of a client application. In request URIs partner IDs are accepted instead of regular RingCentral native IDs as path parameters using pid = XXX clause. Though in response URIs contain the corresponding account IDs and extension IDs. In all request and response bodies these values are reflected via partnerId attributes of account and extension"
+                  }
+                }
+              },
+              "index": {
+                "type": "integer",
+                "description": "Ordinal of an agent (call queue member)"
+              }
+            }
+          }
+        },
+        "holdAudioInterruptionMode": {
+          "type": "string",
+          "description": "Connecting audio interruption mode",
+          "enum": [
+            "Never",
+            "WhenMusicEnds",
+            "Periodically"
+          ]
+        },
+        "holdAudioInterruptionPeriod": {
+          "type": "integer",
+          "description": "Connecting audio interruption message period in seconds"
+        },
+        "agentTimeout": {
+          "type": "integer",
+          "description": "Maximum time in seconds to wait for a call queue member before trying the next member"
+        },
+        "wrapUpTime": {
+          "type": "integer",
+          "description": "Minimum post-call wrap up time in seconds before agent status is automatically set"
+        },
+        "holdTime": {
+          "type": "integer",
+          "description": "Maximum hold time in seconds to wait for an available call queue member"
+        },
+        "maxCallers": {
+          "type": "integer",
+          "description": "Maximum count of callers on hold"
+        },
+        "maxCallersAction": {
+          "type": "string",
+          "description": "Action which should be taken if count of callers on hold exceeds the maximum",
+          "enum": [
+            "Voicemail",
+            "Announcement"
+          ]
+        }
+      }
+    },
+    "transfer": {
+      "description": "Transfer settings applied for department (call queue) extension type, with 'TransferToExtension' call handling action",
+      "properties": {
+        "extension": {
+          "properties": {
+            "id": {
+              "type": "string",
+              "description": "Internal identifier of an extension"
+            },
+            "uri": {
+              "type": "string",
+              "description": "Canonical URI of an extension"
+            },
+            "extensionNumber": {
+              "type": "string",
+              "description": "Number of department extension"
+            },
+            "partnerId": {
+              "type": "string",
+              "description": "For Partner Applications Internal identifier of an extension created by partner. The RingCentral supports the mapping of accounts and stores the corresponding account ID/extension ID for each partner ID of a client application. In request URIs partner IDs are accepted instead of regular RingCentral native IDs as path parameters using pid = XXX clause. Though in response URIs contain the corresponding account IDs and extension IDs. In all request and response bodies these values are reflected via partnerId attributes of account and extension"
+            }
+          }
+        }
+      }
+    },
+    "voicemail": {
+      "description": "Specifies whether to take a voicemail and who should do it",
+      "properties": {
+        "enabled": {
+          "type": "boolean",
+          "description": "If 'True' then voicemails are allowed to be received"
+        },
+        "recipient": {
+          "description": "Recipient data",
+          "properties": {
+            "uri": {
+              "type": "string",
+              "description": "Link to a recipient extension resource"
+            },
+            "id": {
+              "type": "string",
+              "description": "Internal identifier of a recipient extension"
+            }
+          }
+        }
+      }
+    },
+    "greetings": {
+      "type": "array",
+      "description": "Greetings applied for an answering rule; only predefined greetings can be applied, see Dictionary Greeting List",
+      "items": {
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Type of a greeting, specifying the case when the greeting is played.",
+            "enum": [
+              "Introductory",
+              "Announcement",
+              "ConnectingMessage",
+              "ConnectingAudio",
+              "Voicemail",
+              "Unavailable",
+              "InterruptPrompt",
+              "HoldMusic",
+              "Custom",
+              "Company",
+              "BlockedCallersSpecific",
+              "BlockedCallersAll",
+              "BlockedNoCallerId",
+              "BlockedPayPhones",
+              "StartRecording",
+              "StopRecording",
+              "AutomaticRecording"
+            ]
+          },
+          "usageType": {
+            "type": "string",
+            "description": "Usage type of a greeting, specifying if the greeting is applied to user extension or department extension.",
+            "enum": [
+              "UserExtensionAnsweringRule",
+              "ExtensionAnsweringRule",
+              "DepartmentExtensionAnsweringRule",
+              "CompanyAnsweringRule",
+              "CompanyAfterHoursAnsweringRule",
+              "VoicemailExtensionAnsweringRule",
+              "AnnouncementExtensionAnsweringRule"
+            ]
+          },
+          "preset": {
+            "properties": {
+              "uri": {
+                "type": "string",
+                "description": "Link to a greeting resource"
+              },
+              "id": {
+                "type": "string",
+                "description": "Internal identifier of a greeting"
+              },
+              "name": {
+                "type": "string",
+                "description": "Name of a greeting"
+              }
+            }
+          }
+        }
+      }
+    },
+    "screening": {
+      "type": "string",
+      "description": "Call screening status. 'Off' - no call screening; 'NoCallerId' - if caller ID is missing, then callers are asked to say their name before connecting; 'UnknownCallerId' - if caller ID is not in contact list, then callers are asked to say their name before connecting; 'Always' - the callers are always asked to say their name before connecting. The default value is 'Off'",
+      "enum": [
+        "Off",
+        "NoCallerId",
+        "UnknownCallerId",
+        "Always"
+      ]
+    }
+  }
+}

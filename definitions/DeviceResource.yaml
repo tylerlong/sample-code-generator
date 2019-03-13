@@ -1,0 +1,1052 @@
+{
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Internal identifier of a device"
+    },
+    "uri": {
+      "type": "string",
+      "format": "uri",
+      "description": "Canonical URI of a device"
+    },
+    "sku": {
+      "type": "string",
+      "description": "Device identification number (stock keeping unit) in the format TP-ID [-AT-AC], where TP is device type (HP for RC HardPhone, DV for all other devices including softphone); ID - device model ID; AT -addon type ID; AC - addon count (if any). For example 'HP-56-2-2'"
+    },
+    "type": {
+      "type": "string",
+      "description": "Device type",
+      "default": "HardPhone",
+      "enum": [
+        "HardPhone",
+        "SoftPhone",
+        "OtherPhone",
+        "Paging",
+        "WebPhone"
+      ]
+    },
+    "status": {
+      "type": "string",
+      "description": "Status of a device",
+      "enum": [
+        "Online",
+        "Offline"
+      ]
+    },
+    "name": {
+      "type": "string",
+      "description": "Device name. Mandatory if ordering SoftPhone or OtherPhone . Optional for HardPhone . If not specified for HardPhone, then device model name is used as device name"
+    },
+    "serial": {
+      "type": "string",
+      "description": "Serial number for HardPhone (is returned only when the phone is shipped and provisioned); endpoint_id for softphone and mobile applications"
+    },
+    "computerName": {
+      "type": "string",
+      "description": "PC name for softphone"
+    },
+    "model": {
+      "description": "HardPhone model information",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Addon identifier. For HardPhones of certain types, which are compatible with this addon identifier"
+        },
+        "name": {
+          "type": "string",
+          "description": "Device name"
+        },
+        "addons": {
+          "description": "Addons description",
+          "type": "array",
+          "items": {
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "count": {
+                "type": "string",
+                "format": "int32"
+              }
+            }
+          }
+        },
+        "features": {
+          "description": "Device feature or multiple features supported",
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "BLA",
+              "Intercom",
+              "Paging"
+            ]
+          }
+        }
+      }
+    },
+    "extension": {
+      "description": "This attribute can be omitted for unassigned devices",
+      "properties": {
+        "uri": {
+          "type": "string",
+          "format": "uri"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "partnerId": {
+          "type": "string",
+          "minLength": 0,
+          "maxLength": 128,
+          "pattern": "^[\\p{Alnum}\\.\\-_]*$"
+        },
+        "extensionNumber": {
+          "type": "string"
+        },
+        "loginName": {
+          "type": "string"
+        },
+        "contact": {
+          "properties": {
+            "firstName": {
+              "type": "string",
+              "description": "For User extension type only. Extension user first name"
+            },
+            "lastName": {
+              "type": "string",
+              "description": "For User extension type only. Extension user last name"
+            },
+            "company": {
+              "type": "string",
+              "description": "Extension user company name"
+            },
+            "email": {
+              "type": "string",
+              "description": "Email of extension user"
+            },
+            "businessPhone": {
+              "type": "string",
+              "description": "Extension user contact phone number"
+            },
+            "businessAddress": {
+              "description": "Business address of extension user company",
+              "properties": {
+                "country": {
+                  "type": "string",
+                  "description": "Country name of extension user company. Not returned for Address Book"
+                },
+                "state": {
+                  "type": "string",
+                  "description": "State/province name of extension user company"
+                },
+                "city": {
+                  "type": "string",
+                  "description": "City name of extension user company"
+                },
+                "street": {
+                  "type": "string",
+                  "description": "Street address of extension user company"
+                },
+                "zip": {
+                  "type": "string",
+                  "description": "Zip code of extension user company"
+                }
+              }
+            }
+          }
+        },
+        "references": {
+          "type": "array",
+          "items": {
+            "properties": {
+              "type": {
+                "type": "string",
+                "enum": [
+                  "PartnerId",
+                  "CustomerDirectoryId"
+                ]
+              },
+              "ref": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "name": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string",
+          "enum": [
+            "Unknown",
+            "User",
+            "Department",
+            "Announcement",
+            "Voicemail",
+            "DigitalUser",
+            "VirtualUser",
+            "FaxUser",
+            "PagingOnly",
+            "SharedLinesGroup",
+            "IvrMenu",
+            "ApplicationExtension",
+            "ParkLocation"
+          ]
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "Enabled",
+            "Disabled",
+            "Frozen",
+            "NotActivated",
+            "Unassigned"
+          ]
+        },
+        "statusInfo": {
+          "properties": {
+            "reason": {
+              "type": "string"
+            },
+            "till": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "comment": {
+              "type": "string"
+            }
+          }
+        },
+        "departments": {
+          "type": "array",
+          "items": {
+            "properties": {
+              "uri": {
+                "type": "string",
+                "format": "uri"
+              },
+              "id": {
+                "type": "string"
+              },
+              "extensionNumber": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "serviceFeatures": {
+          "type": "array",
+          "items": {
+            "properties": {
+              "featureName": {
+                "type": "string"
+              },
+              "enabled": {
+                "type": "boolean",
+                "default": false
+              },
+              "reason": {
+                "type": "string",
+                "enum": [
+                  "Available",
+                  "AccountTypeLimitation",
+                  "ExtensionTypeLimitation",
+                  "AccountLimitation",
+                  "ExtensionLimitation",
+                  "InsufficientPermissions",
+                  "ApplicationLimitation"
+                ]
+              }
+            }
+          }
+        },
+        "regionalSettings": {
+          "properties": {
+            "timezone": {
+              "properties": {
+                "uri": {
+                  "type": "string",
+                  "format": "uri"
+                },
+                "id": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                }
+              }
+            },
+            "homeCountry": {
+              "properties": {
+                "uri": {
+                  "type": "string",
+                  "format": "uri"
+                },
+                "id": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "isoCode": {
+                  "type": "string"
+                },
+                "callingCode": {
+                  "type": "string"
+                },
+                "emergencyCalling": {
+                  "type": "boolean",
+                  "default": false
+                },
+                "numberSelling": {
+                  "type": "boolean",
+                  "default": false
+                },
+                "loginAllowed": {
+                  "type": "boolean",
+                  "default": false
+                }
+              }
+            },
+            "language": {
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "localeCode": {
+                  "type": "string"
+                }
+              }
+            },
+            "greetingLanguage": {
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "localeCode": {
+                  "type": "string"
+                }
+              }
+            },
+            "formattingLocale": {
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "localeCode": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "setupWizardState": {
+          "type": "string",
+          "enum": [
+            "NotStarted",
+            "Incomplete",
+            "Completed",
+            "Unknown"
+          ]
+        },
+        "permissions": {
+          "properties": {
+            "uri": {
+              "type": "string",
+              "format": "uri"
+            },
+            "admin": {
+              "properties": {
+                "enabled": {
+                  "type": "boolean",
+                  "default": false
+                }
+              }
+            },
+            "internationalCalling": {
+              "properties": {
+                "enabled": {
+                  "type": "boolean",
+                  "default": false
+                }
+              }
+            },
+            "freeSoftPhoneDigitalLine": {
+              "properties": {
+                "enabled": {
+                  "type": "boolean",
+                  "default": false
+                }
+              }
+            }
+          }
+        },
+        "password": {
+          "type": "string"
+        },
+        "ivrPin": {
+          "type": "string"
+        },
+        "profileImage": {
+          "properties": {
+            "uri": {
+              "type": "string",
+              "format": "uri"
+            },
+            "etag": {
+              "type": "string"
+            },
+            "contentType": {
+              "type": "string"
+            },
+            "lastModified": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "scales": {
+              "type": "array",
+              "items": {
+                "properties": {
+                  "uri": {
+                    "type": "string",
+                    "format": "uri"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "phoneLines": {
+      "description": "Phone lines information",
+      "type": "array",
+      "items": {
+        "properties": {
+          "lineType": {
+            "type": "string",
+            "enum": [
+              "Unknown",
+              "Standalone",
+              "StandaloneFree",
+              "BlaPrimary",
+              "BlaSecondary",
+              "BLF"
+            ]
+          },
+          "phoneInfo": {
+            "properties": {
+              "id": {
+                "type": "integer",
+                "format": "int64",
+                "description": "Internal identifier of a phone number"
+              },
+              "country": {
+                "description": "Brief information on a phone number country",
+                "properties": {
+                  "uri": {
+                    "type": "string",
+                    "format": "uri"
+                  },
+                  "id": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  },
+                  "isoCode": {
+                    "type": "string"
+                  },
+                  "callingCode": {
+                    "type": "string"
+                  },
+                  "emergencyCalling": {
+                    "type": "boolean",
+                    "default": false
+                  },
+                  "numberSelling": {
+                    "type": "boolean",
+                    "default": false
+                  },
+                  "loginAllowed": {
+                    "type": "boolean",
+                    "default": false
+                  }
+                }
+              },
+              "extension": {
+                "description": "Information on an extension to which the phone number is assigned",
+                "properties": {
+                  "uri": {
+                    "type": "string",
+                    "format": "uri"
+                  },
+                  "id": {
+                    "type": "string"
+                  },
+                  "partnerId": {
+                    "type": "string",
+                    "minLength": 0,
+                    "maxLength": 128,
+                    "pattern": "^[\\p{Alnum}\\.\\-_]*$"
+                  },
+                  "extensionNumber": {
+                    "type": "string"
+                  },
+                  "loginName": {
+                    "type": "string"
+                  },
+                  "contact": {
+                    "properties": {
+                      "firstName": {
+                        "type": "string",
+                        "description": "For User extension type only. Extension user first name"
+                      },
+                      "lastName": {
+                        "type": "string",
+                        "description": "For User extension type only. Extension user last name"
+                      },
+                      "company": {
+                        "type": "string",
+                        "description": "Extension user company name"
+                      },
+                      "email": {
+                        "type": "string",
+                        "description": "Email of extension user"
+                      },
+                      "businessPhone": {
+                        "type": "string",
+                        "description": "Extension user contact phone number"
+                      },
+                      "businessAddress": {
+                        "description": "Business address of extension user company",
+                        "properties": {
+                          "country": {
+                            "type": "string",
+                            "description": "Country name of extension user company. Not returned for Address Book"
+                          },
+                          "state": {
+                            "type": "string",
+                            "description": "State/province name of extension user company"
+                          },
+                          "city": {
+                            "type": "string",
+                            "description": "City name of extension user company"
+                          },
+                          "street": {
+                            "type": "string",
+                            "description": "Street address of extension user company"
+                          },
+                          "zip": {
+                            "type": "string",
+                            "description": "Zip code of extension user company"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "references": {
+                    "type": "array",
+                    "items": {
+                      "properties": {
+                        "type": {
+                          "type": "string",
+                          "enum": [
+                            "PartnerId",
+                            "CustomerDirectoryId"
+                          ]
+                        },
+                        "ref": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  },
+                  "name": {
+                    "type": "string"
+                  },
+                  "type": {
+                    "type": "string",
+                    "enum": [
+                      "Unknown",
+                      "User",
+                      "Department",
+                      "Announcement",
+                      "Voicemail",
+                      "DigitalUser",
+                      "VirtualUser",
+                      "FaxUser",
+                      "PagingOnly",
+                      "SharedLinesGroup",
+                      "IvrMenu",
+                      "ApplicationExtension",
+                      "ParkLocation"
+                    ]
+                  },
+                  "status": {
+                    "type": "string",
+                    "enum": [
+                      "Enabled",
+                      "Disabled",
+                      "Frozen",
+                      "NotActivated",
+                      "Unassigned"
+                    ]
+                  },
+                  "statusInfo": {
+                    "properties": {
+                      "reason": {
+                        "type": "string"
+                      },
+                      "till": {
+                        "type": "string",
+                        "format": "date-time"
+                      },
+                      "comment": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "departments": {
+                    "type": "array",
+                    "items": {
+                      "properties": {
+                        "uri": {
+                          "type": "string",
+                          "format": "uri"
+                        },
+                        "id": {
+                          "type": "string"
+                        },
+                        "extensionNumber": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  },
+                  "serviceFeatures": {
+                    "type": "array",
+                    "items": {
+                      "properties": {
+                        "featureName": {
+                          "type": "string"
+                        },
+                        "enabled": {
+                          "type": "boolean",
+                          "default": false
+                        },
+                        "reason": {
+                          "type": "string",
+                          "enum": [
+                            "Available",
+                            "AccountTypeLimitation",
+                            "ExtensionTypeLimitation",
+                            "AccountLimitation",
+                            "ExtensionLimitation",
+                            "InsufficientPermissions",
+                            "ApplicationLimitation"
+                          ]
+                        }
+                      }
+                    }
+                  },
+                  "regionalSettings": {
+                    "properties": {
+                      "timezone": {
+                        "properties": {
+                          "uri": {
+                            "type": "string",
+                            "format": "uri"
+                          },
+                          "id": {
+                            "type": "string"
+                          },
+                          "name": {
+                            "type": "string"
+                          },
+                          "description": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "homeCountry": {
+                        "properties": {
+                          "uri": {
+                            "type": "string",
+                            "format": "uri"
+                          },
+                          "id": {
+                            "type": "string"
+                          },
+                          "name": {
+                            "type": "string"
+                          },
+                          "isoCode": {
+                            "type": "string"
+                          },
+                          "callingCode": {
+                            "type": "string"
+                          },
+                          "emergencyCalling": {
+                            "type": "boolean",
+                            "default": false
+                          },
+                          "numberSelling": {
+                            "type": "boolean",
+                            "default": false
+                          },
+                          "loginAllowed": {
+                            "type": "boolean",
+                            "default": false
+                          }
+                        }
+                      },
+                      "language": {
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "name": {
+                            "type": "string"
+                          },
+                          "localeCode": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "greetingLanguage": {
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "name": {
+                            "type": "string"
+                          },
+                          "localeCode": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "formattingLocale": {
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "name": {
+                            "type": "string"
+                          },
+                          "localeCode": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "setupWizardState": {
+                    "type": "string",
+                    "enum": [
+                      "NotStarted",
+                      "Incomplete",
+                      "Completed",
+                      "Unknown"
+                    ]
+                  },
+                  "permissions": {
+                    "properties": {
+                      "uri": {
+                        "type": "string",
+                        "format": "uri"
+                      },
+                      "admin": {
+                        "properties": {
+                          "enabled": {
+                            "type": "boolean",
+                            "default": false
+                          }
+                        }
+                      },
+                      "internationalCalling": {
+                        "properties": {
+                          "enabled": {
+                            "type": "boolean",
+                            "default": false
+                          }
+                        }
+                      },
+                      "freeSoftPhoneDigitalLine": {
+                        "properties": {
+                          "enabled": {
+                            "type": "boolean",
+                            "default": false
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "password": {
+                    "type": "string"
+                  },
+                  "ivrPin": {
+                    "type": "string"
+                  },
+                  "profileImage": {
+                    "properties": {
+                      "uri": {
+                        "type": "string",
+                        "format": "uri"
+                      },
+                      "etag": {
+                        "type": "string"
+                      },
+                      "contentType": {
+                        "type": "string"
+                      },
+                      "lastModified": {
+                        "type": "string",
+                        "format": "date-time"
+                      },
+                      "scales": {
+                        "type": "array",
+                        "items": {
+                          "properties": {
+                            "uri": {
+                              "type": "string",
+                              "format": "uri"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "label": {
+                "type": "string",
+                "description": "Custom user name of a phone number, if any"
+              },
+              "location": {
+                "type": "string",
+                "description": "Location (City, State). Filled for local US numbers"
+              },
+              "paymentType": {
+                "type": "string",
+                "description": "Payment type. 'External' is returned for forwarded numbers which are not terminated in the RingCentral phone system = ['External', 'TollFree', 'Local'],",
+                "enum": [
+                  "External",
+                  "TollFree",
+                  "Local"
+                ]
+              },
+              "phoneNumber": {
+                "type": "string",
+                "description": "Phone number",
+                "minLength": 0,
+                "maxLength": 128
+              },
+              "status": {
+                "type": "string",
+                "description": "Status of a phone number. If the value is 'Normal', the phone number is ready to be used. Otherwise it is an external number not yet ported to RingCentral ,"
+              },
+              "usageType": {
+                "type": "string",
+                "enum": [
+                  "CompanyNumber",
+                  "MainCompanyNumber",
+                  "AdditionalCompanyNumber",
+                  "DirectNumber",
+                  "CompanyFaxNumber",
+                  "ForwardedNumber",
+                  "ForwardedCompanyNumber",
+                  "ContactCenterNumber"
+                ]
+              },
+              "type": {
+                "type": "string",
+                "description": "Type of a phone number",
+                "enum": [
+                  "VoiceFax",
+                  "FaxOnly",
+                  "VoiceOnly"
+                ]
+              }
+            }
+          },
+          "emergencyAddress": {
+            "properties": {
+              "required": {
+                "type": "boolean",
+                "description": " 'True' if specifying of emergency address is required"
+              },
+              "localOnly": {
+                "type": "boolean",
+                "description": " 'True' if only local emergency address can be specified"
+              }
+            }
+          }
+        }
+      }
+    },
+    "emergencyServiceAddress": {
+      "description": " Address for emergency cases. The same emergency address is assigned to all numbers of a single device ,",
+      "properties": {
+        "street": {
+          "type": "string"
+        },
+        "street2": {
+          "type": "string"
+        },
+        "city": {
+          "type": "string"
+        },
+        "zip": {
+          "type": "string"
+        },
+        "customerName": {
+          "type": "string"
+        },
+        "state": {
+          "type": "string",
+          "description": "State/province name"
+        },
+        "stateId": {
+          "type": "string",
+          "description": "Internal identifier of a state"
+        },
+        "stateIsoCode": {
+          "type": "string",
+          "description": "ISO code of a state"
+        },
+        "stateName": {
+          "type": "string",
+          "description": "Full name of a state"
+        },
+        "countryId": {
+          "type": "string",
+          "description": "Internal identifier of a country"
+        },
+        "countryIsoCode": {
+          "type": "string",
+          "description": "ISO code of a country"
+        },
+        "country": {
+          "type": "string",
+          "description": "Country name"
+        },
+        "countryName": {
+          "type": "string",
+          "description": "Full name of a country"
+        }
+      }
+    },
+    "shipping": {
+      "description": "Shipping information, according to which devices (in case of HardPhone ) or e911 stickers (in case of SoftPhone and OtherPhone ) will be delivered to the customer",
+      "properties": {
+        "address": {
+          "properties": {
+            "street": {
+              "type": "string"
+            },
+            "street2": {
+              "type": "string"
+            },
+            "city": {
+              "type": "string"
+            },
+            "zip": {
+              "type": "string"
+            },
+            "customerName": {
+              "type": "string"
+            },
+            "state": {
+              "type": "string",
+              "description": "State/province name"
+            },
+            "stateId": {
+              "type": "string",
+              "description": "Internal identifier of a state"
+            },
+            "stateIsoCode": {
+              "type": "string",
+              "description": "ISO code of a state"
+            },
+            "stateName": {
+              "type": "string",
+              "description": "Full name of a state"
+            },
+            "countryId": {
+              "type": "string",
+              "description": "Internal identifier of a country"
+            },
+            "countryIsoCode": {
+              "type": "string",
+              "description": "ISO code of a country"
+            },
+            "country": {
+              "type": "string",
+              "description": "Country name"
+            },
+            "countryName": {
+              "type": "string",
+              "description": "Full name of a country"
+            }
+          }
+        },
+        "method": {
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "name": {
+              "type": "string"
+            }
+          }
+        },
+        "status": {
+          "type": "string"
+        },
+        "carrier": {
+          "type": "string"
+        },
+        "trackingNumber": {
+          "type": "string"
+        }
+      }
+    },
+    "boxBillingId": {
+      "type": "integer",
+      "description": "Box billing identifier of a device. Applicable only for HardPhones. It is an alternative way to identify the device to be ordered. Either model structure, or boxBillingId must be specified for HardPhone"
+    },
+    "linePooling": {
+      "type": "string",
+      "description": "Pooling type of a deviceHost - device with standalone paid phone line which can be linked to Glip/Softphone instanceGuest - device with a linked phone lineNone - device without a phone line or with specific line (free, BLA, etc.) = ['Host', 'Guest', 'None']",
+      "enum": [
+        "Host",
+        "Guest",
+        "None"
+      ]
+    },
+    "useAsCommonPhone": {
+      "type": "boolean",
+      "description": "Supported only for devices assigned to Limited extensions. If true, enables users to log in to this phone as a common phone."
+    }
+  }
+}

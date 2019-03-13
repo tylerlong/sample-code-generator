@@ -1,0 +1,21 @@
+{
+  "type": "object",
+  "required": [
+    "id",
+    "contentUri"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Internal identifier of a file"
+    },
+    "contentUri": {
+      "type": "string",
+      "description": "Link to binary content"
+    },
+    "name": {
+      "type": "string",
+      "description": "Name of a file"
+    }
+  }
+}

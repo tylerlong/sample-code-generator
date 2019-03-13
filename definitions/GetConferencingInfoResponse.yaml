@@ -1,0 +1,86 @@
+{
+  "type": "object",
+  "properties": {
+    "uri": {
+      "type": "string",
+      "description": "Canonical URI of a conferencing"
+    },
+    "allowJoinBeforeHost": {
+      "type": "boolean",
+      "description": "Determines if host user allows conference participants to join before the host"
+    },
+    "hostCode": {
+      "type": "string",
+      "description": "Access code for a host user"
+    },
+    "mode": {
+      "type": "string",
+      "description": "Internal parameter specifying conferencing engine"
+    },
+    "participantCode": {
+      "type": "string",
+      "description": "Access code for any participant"
+    },
+    "phoneNumber": {
+      "type": "string",
+      "description": "Primary conference phone number for user's home country returned in [E.164](https://www.itu.int/rec/T-REC-E.164-201011-I) format"
+    },
+    "tapToJoinUri": {
+      "type": "string",
+      "description": "Short URL leading to the service web page Tap to Join for audio conference bridge"
+    },
+    "phoneNumbers": {
+      "type": "array",
+      "description": "List of multiple dial-in phone numbers to connect to audio conference service, relevant for user's brand. Each number is given with the country and location information, in order to let the user choose the less expensive way to connect to a conference. The first number in the list is the primary conference number, that is default and domestic",
+      "items": {
+        "properties": {
+          "country": {
+            "description": "Information on a home country of a conference phone number",
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "Internal identifier of a country"
+              },
+              "uri": {
+                "type": "string",
+                "description": "Canonical URI of a country"
+              },
+              "callingCode": {
+                "type": "string",
+                "description": "Country calling code defined by ITU-T recommendations [E.123](https://www.itu.int/rec/T-REC-E.123-200102-I/en) and [E.164](https://www.itu.int/rec/T-REC-E.164-201011-I)"
+              },
+              "emergencyCalling": {
+                "type": "boolean",
+                "description": "Emergency calling feature availability/emergency address requirement indicator"
+              },
+              "isoCode": {
+                "type": "string",
+                "description": "Country code according to the ISO standard, see [ISO 3166](https://www.iso.org/iso-3166-country-codes.html)"
+              },
+              "name": {
+                "type": "string",
+                "description": "Official name of a country"
+              }
+            }
+          },
+          "default": {
+            "type": "boolean",
+            "description": "'True' if the number is default for the conference. Default conference number is a domestic number that can be set by user (otherwise it is set by the system). Only one default number per country is allowed"
+          },
+          "hasGreeting": {
+            "type": "boolean",
+            "description": "'True' if the greeting message is played on this number"
+          },
+          "location": {
+            "type": "string",
+            "description": "Location (city, region, state) of a conference phone number"
+          },
+          "phoneNumber": {
+            "type": "string",
+            "description": "Dial-in phone number to connect to a conference"
+          }
+        }
+      }
+    }
+  }
+}

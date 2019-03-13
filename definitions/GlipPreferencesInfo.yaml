@@ -1,0 +1,22 @@
+{
+  "type": "object",
+  "properties": {
+    "chats": {
+      "properties": {
+        "maxCount": {
+          "type": "integer",
+          "default": 10
+        },
+        "leftRailMode": {
+          "type": "string",
+          "default": "CombineAllChatTypes",
+          "enum": [
+            "SeparateAllChatTypes",
+            "SeparateConversationsAndTeams",
+            "CombineAllChatTypes"
+          ]
+        }
+      }
+    }
+  }
+}

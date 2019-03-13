@@ -1,0 +1,25 @@
+{
+  "type": "object",
+  "properties": {
+    "uri": {
+      "type": "string",
+      "description": "Internal identifier of a prompt"
+    },
+    "id": {
+      "type": "string",
+      "description": "Link to a prompt metadata"
+    },
+    "contentType": {
+      "type": "string",
+      "description": "Type of a prompt media content"
+    },
+    "contentUri": {
+      "type": "string",
+      "description": "Link to a prompt media content"
+    },
+    "filename": {
+      "type": "string",
+      "description": "Name of a prompt"
+    }
+  }
+}

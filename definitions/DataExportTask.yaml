@@ -1,0 +1,47 @@
+{
+  "type": "object",
+  "properties": {
+    "uri": {
+      "type": "string",
+      "description": "Canonical URI of a task"
+    },
+    "id": {
+      "type": "string",
+      "description": "Internal identifier of a task"
+    },
+    "creationTime": {
+      "type": "string",
+      "description": "Task creation datetime"
+    },
+    "lastModifiedTime": {
+      "type": "string",
+      "description": "Task last modification datetime"
+    },
+    "status": {
+      "type": "string",
+      "description": "Task status",
+      "enum": [
+        "Accepted",
+        "InProgress",
+        "Completed",
+        "Failed"
+      ]
+    },
+    "result": {
+      "type": "array",
+      "items": {
+        "properties": {
+          "size": {
+            "type": "integer",
+            "description": "Size of the collected data archive in bytes"
+          },
+          "uri": {
+            "type": "string",
+            "description": "Canonical URI for downloading an archive"
+          }
+        }
+      },
+      "description": "Data collection archives. Returned by task ID"
+    }
+  }
+}

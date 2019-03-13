@@ -1,0 +1,173 @@
+{
+  "type": "object",
+  "properties": {
+    "uri": {
+      "type": "string",
+      "description": "Canonical URI of notifications settings resource"
+    },
+    "emailAddresses": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "List of notification recipient email addresses"
+    },
+    "smsEmailAddresses": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "List of notification recipient email addresses"
+    },
+    "advancedMode": {
+      "type": "boolean",
+      "description": "Specifies notifications settings mode. If 'True' then advanced mode is on, it allows using different emails and/or phone numbers for each notification type. If 'False' then basic mode is on. Advanced mode settings are returned in both modes, if specified once, but if basic mode is switched on, they are not applied"
+    },
+    "voicemails": {
+      "properties": {
+        "notifyByEmail": {
+          "type": "boolean",
+          "description": "Email notification flag"
+        },
+        "notifyBySms": {
+          "type": "boolean",
+          "description": "SMS notification flag"
+        },
+        "advancedEmailAddresses": {
+          "type": "array",
+          "description": "List of recipient email addresses for voicemail notifications. Returned if specified, in both modes (advanced/basic). Applied in advanced mode only",
+          "items": {
+            "type": "string"
+          }
+        },
+        "advancedSmsEmailAddresses": {
+          "type": "array",
+          "description": "List of recipient phone numbers for voicemail notifications. Returned if specified, in both modes (advanced/basic). Applied in advanced mode only",
+          "items": {
+            "type": "string"
+          }
+        },
+        "includeAttachment": {
+          "type": "boolean",
+          "description": "Indicates whether voicemail should be attached to email"
+        },
+        "markAsRead": {
+          "type": "boolean",
+          "description": "Indicates whether email should be automatically marked as read"
+        }
+      }
+    },
+    "inboundFaxes": {
+      "properties": {
+        "notifyByEmail": {
+          "type": "boolean",
+          "description": "Email notification flag"
+        },
+        "notifyBySms": {
+          "type": "boolean",
+          "description": "SMS notification flag"
+        },
+        "advancedEmailAddresses": {
+          "type": "array",
+          "description": "List of recipient email addresses for inbound fax notifications. Returned if specified, in both modes (advanced/basic). Applied in advanced mode only",
+          "items": {
+            "type": "string"
+          }
+        },
+        "advancedSmsEmailAddresses": {
+          "type": "array",
+          "description": "List of recipient phone numbers for inbound fax notifications. Returned if specified, in both modes (advanced/basic). Applied in advanced mode only",
+          "items": {
+            "type": "string"
+          }
+        },
+        "includeAttachment": {
+          "type": "boolean",
+          "description": "Indicates whether fax should be attached to email"
+        },
+        "markAsRead": {
+          "type": "boolean",
+          "description": "Indicates whether email should be automatically marked as read"
+        }
+      }
+    },
+    "outboundFaxes": {
+      "properties": {
+        "notifyByEmail": {
+          "type": "boolean",
+          "description": "Email notification flag"
+        },
+        "notifyBySms": {
+          "type": "boolean",
+          "description": "SMS notification flag"
+        },
+        "advancedEmailAddresses": {
+          "type": "array",
+          "description": "List of recipient email addresses for outbound fax notifications. Returned if specified, in both modes (advanced/basic). Applied in advanced mode only",
+          "items": {
+            "type": "string"
+          }
+        },
+        "advancedSmsEmailAddresses": {
+          "type": "array",
+          "description": "List of recipient phone numbers for outbound fax notifications. Returned if specified, in both modes (advanced/basic). Applied in advanced mode only",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "inboundTexts": {
+      "properties": {
+        "notifyByEmail": {
+          "type": "boolean",
+          "description": "Email notification flag"
+        },
+        "notifyBySms": {
+          "type": "boolean",
+          "description": "SMS notification flag"
+        },
+        "advancedEmailAddresses": {
+          "type": "array",
+          "description": "List of recipient email addresses for inbound text message notifications. Returned if specified, in both modes (advanced/basic). Applied in advanced mode only",
+          "items": {
+            "type": "string"
+          }
+        },
+        "advancedSmsEmailAddresses": {
+          "type": "array",
+          "description": "List of recipient phone numbers for inbound text message notifications. Returned if specified, in both modes (advanced/basic). Applied in advanced mode only",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "missedCalls": {
+      "properties": {
+        "notifyByEmail": {
+          "type": "boolean",
+          "description": "Email notification flag"
+        },
+        "notifyBySms": {
+          "type": "boolean",
+          "description": "SMS notification flag"
+        },
+        "advancedEmailAddresses": {
+          "type": "array",
+          "description": "List of recipient email addresses for missed call notifications. Returned if specified, in both modes (advanced/basic). Applied in advanced mode only",
+          "items": {
+            "type": "string"
+          }
+        },
+        "advancedSmsEmailAddresses": {
+          "type": "array",
+          "description": "List of recipient phone numbers for missed call notifications. Returned if specified, in both modes (advanced/basic). Applied in advanced mode only",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

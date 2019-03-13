@@ -1,0 +1,288 @@
+{
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Internal identifier of an answering rule"
+    },
+    "uri": {
+      "type": "string",
+      "description": "Canonical URI of an answering rule"
+    },
+    "enabled": {
+      "type": "boolean",
+      "description": "Specifies if the rule is active or inactive. The default value is 'True'",
+      "default": true
+    },
+    "type": {
+      "type": "string",
+      "description": "Type of an answering rule",
+      "enum": [
+        "BusinessHours",
+        "AfterHours",
+        "Custom"
+      ],
+      "default": "Custom"
+    },
+    "name": {
+      "type": "string",
+      "description": "Name of an answering rule specified by user. Max number of symbols is 30. The default value is 'My Rule N' where 'N' is the first free number"
+    },
+    "callers": {
+      "type": "array",
+      "description": "Answering rule will be applied when calls are received from the specified caller(s)",
+      "items": {
+        "properties": {
+          "callerId": {
+            "type": "string",
+            "description": "Phone number of a caller"
+          },
+          "name": {
+            "type": "string",
+            "description": "Displayed name for a caller ID"
+          }
+        }
+      }
+    },
+    "calledNumbers": {
+      "type": "array",
+      "description": "Answering rule will be applied when calling the specified number(s)",
+      "items": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Internal identifier of an account phone number"
+          }
+        }
+      }
+    },
+    "schedule": {
+      "description": "Schedule when an answering rule should be applied",
+      "properties": {
+        "weeklyRanges": {
+          "description": "Weekly schedule. If specified, ranges cannot be specified",
+          "properties": {
+            "monday": {
+              "type": "array",
+              "description": "Time interval for a particular day",
+              "items": {
+                "properties": {
+                  "from": {
+                    "type": "string",
+                    "description": "Time in format hh:mm"
+                  },
+                  "to": {
+                    "type": "string",
+                    "description": "Time in format hh:mm"
+                  }
+                }
+              }
+            },
+            "tuesday": {
+              "type": "array",
+              "description": "Time interval for a particular day",
+              "items": {
+                "properties": {
+                  "from": {
+                    "type": "string",
+                    "description": "Time in format hh:mm"
+                  },
+                  "to": {
+                    "type": "string",
+                    "description": "Time in format hh:mm"
+                  }
+                }
+              }
+            },
+            "wednesday": {
+              "type": "array",
+              "description": "Time interval for a particular day",
+              "items": {
+                "properties": {
+                  "from": {
+                    "type": "string",
+                    "description": "Time in format hh:mm"
+                  },
+                  "to": {
+                    "type": "string",
+                    "description": "Time in format hh:mm"
+                  }
+                }
+              }
+            },
+            "thursday": {
+              "type": "array",
+              "description": "Time interval for a particular day",
+              "items": {
+                "properties": {
+                  "from": {
+                    "type": "string",
+                    "description": "Time in format hh:mm"
+                  },
+                  "to": {
+                    "type": "string",
+                    "description": "Time in format hh:mm"
+                  }
+                }
+              }
+            },
+            "friday": {
+              "type": "array",
+              "description": "Time interval for a particular day",
+              "items": {
+                "properties": {
+                  "from": {
+                    "type": "string",
+                    "description": "Time in format hh:mm"
+                  },
+                  "to": {
+                    "type": "string",
+                    "description": "Time in format hh:mm"
+                  }
+                }
+              }
+            },
+            "saturday": {
+              "type": "array",
+              "description": "Time interval for a particular day",
+              "items": {
+                "properties": {
+                  "from": {
+                    "type": "string",
+                    "description": "Time in format hh:mm"
+                  },
+                  "to": {
+                    "type": "string",
+                    "description": "Time in format hh:mm"
+                  }
+                }
+              }
+            },
+            "sunday": {
+              "type": "array",
+              "description": "Time interval for a particular day",
+              "items": {
+                "properties": {
+                  "from": {
+                    "type": "string",
+                    "description": "Time in format hh:mm"
+                  },
+                  "to": {
+                    "type": "string",
+                    "description": "Time in format hh:mm"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "ranges": {
+          "description": "Specific data ranges. If specified, weeklyRanges cannot be specified",
+          "type": "array",
+          "items": {
+            "properties": {
+              "from": {
+                "type": "string",
+                "description": "Starting datetime in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601), for example *2018-10-29T14:00:00*, *2018-10-29T14:00:00Z*, *2018-10-29T14:00:00+0100*"
+              },
+              "to": {
+                "type": "string",
+                "description": "Ending datetime in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601), for example *2018-10-29T14:00:00*, *2018-10-29T14:00:00Z*, *2018-10-29T14:00:00+0100*"
+              }
+            }
+          }
+        },
+        "ref": {
+          "type": "string",
+          "description": "Reference to Business Hours or After Hours schedule = ['BusinessHours', 'AfterHours']",
+          "enum": [
+            "BusinessHours",
+            "AfterHours"
+          ]
+        }
+      }
+    },
+    "callHandlingAction": {
+      "type": "string",
+      "description": "Specifies how incoming calls are forwarded. The default value is 'Operator' 'Operator' - play company greeting and forward to operator extension 'Disconnect' - play company greeting and disconnect 'Bypass' - bypass greeting to go to selected extension = ['Operator', 'Disconnect', 'Bypass']",
+      "enum": [
+        "Operator",
+        "Disconnect",
+        "Bypass"
+      ]
+    },
+    "extension": {
+      "description": "Extension to which the call is forwarded in 'Bypass' mode",
+      "properties": {
+        "callerId": {
+          "type": "string",
+          "description": "Phone number of a caller"
+        },
+        "name": {
+          "type": "string",
+          "description": "Displayed name for a caller ID"
+        }
+      }
+    },
+    "greetings": {
+      "type": "array",
+      "description": "Greetings applied for an answering rule; only predefined greetings can be applied, see Dictionary Greeting List",
+      "items": {
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Type of a greeting, specifying the case when the greeting is played.",
+            "enum": [
+              "Introductory",
+              "Announcement",
+              "ConnectingMessage",
+              "ConnectingAudio",
+              "Voicemail",
+              "Unavailable",
+              "InterruptPrompt",
+              "HoldMusic",
+              "Custom",
+              "Company",
+              "BlockedCallersSpecific",
+              "BlockedCallersAll",
+              "BlockedNoCallerId",
+              "BlockedPayPhones",
+              "StartRecording",
+              "StopRecording",
+              "AutomaticRecording"
+            ]
+          },
+          "usageType": {
+            "type": "string",
+            "description": "Usage type of a greeting, specifying if the greeting is applied to user extension or department extension.",
+            "enum": [
+              "UserExtensionAnsweringRule",
+              "ExtensionAnsweringRule",
+              "DepartmentExtensionAnsweringRule",
+              "CompanyAnsweringRule",
+              "CompanyAfterHoursAnsweringRule",
+              "VoicemailExtensionAnsweringRule",
+              "AnnouncementExtensionAnsweringRule"
+            ]
+          },
+          "preset": {
+            "properties": {
+              "uri": {
+                "type": "string",
+                "description": "Link to a greeting resource"
+              },
+              "id": {
+                "type": "string",
+                "description": "Internal identifier of a greeting"
+              },
+              "name": {
+                "type": "string",
+                "description": "Name of a greeting"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

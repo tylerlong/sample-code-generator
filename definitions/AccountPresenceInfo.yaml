@@ -1,0 +1,236 @@
+{
+  "type": "object",
+  "properties": {
+    "uri": {
+      "type": "string",
+      "description": "Canonical URI of account presence resource"
+    },
+    "records": {
+      "type": "array",
+      "description": "List of Prompts",
+      "items": {
+        "properties": {
+          "uri": {
+            "type": "string",
+            "description": "Canonical URI of a presence info resource"
+          },
+          "allowSeeMyPresence": {
+            "type": "boolean",
+            "description": "If 'True' enables other extensions to see the extension presence status"
+          },
+          "dndStatus": {
+            "type": "string",
+            "description": "Extended DnD (Do not Disturb) status. Cannot be set for Department/Announcement/Voicemail (Take Messages Only)/Fax User/Shared Lines Group/Paging Only Group/IVR Menu/Application Extension/Park Location extensions. The 'DoNotAcceptDepartmentCalls' and 'TakeDepartmentCallsOnly' values are applicable only for extensions - members of a Department; if these values are set for department outsiders, the 400 Bad Request error code is returned. The 'TakeDepartmentCallsOnly' status can be set through the old RingCentral user interface and is available for some migrated accounts only.",
+            "enum": [
+              "TakeAllCalls",
+              "DoNotAcceptAnyCalls",
+              "DoNotAcceptDepartmentCalls",
+              "TakeDepartmentCallsOnly"
+            ]
+          },
+          "extension": {
+            "description": "Information on extension, for which this presence data is returned",
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "Internal identifier of an extension"
+              },
+              "uri": {
+                "type": "string",
+                "description": "Canonical URI of an extension"
+              },
+              "extensionNumber": {
+                "type": "string",
+                "description": "Extension number (usually 3 or 4 digits)"
+              }
+            }
+          },
+          "message": {
+            "type": "string",
+            "description": "Custom status message (as previously published by user)"
+          },
+          "pickUpCallsOnHold": {
+            "type": "boolean",
+            "description": "If 'True' enables the extension user to pick up a monitored line on hold"
+          },
+          "presenceStatus": {
+            "type": "string",
+            "description": "Aggregated presence status, calculated from a number of sources",
+            "enum": [
+              "Offline",
+              "Busy",
+              "Available"
+            ]
+          },
+          "ringOnMonitoredCall": {
+            "type": "boolean",
+            "description": "If 'True' enables to ring extension phone, if any user monitored by this extension is ringing"
+          },
+          "telephonyStatus": {
+            "type": "string",
+            "description": "Telephony presence status",
+            "enum": [
+              "NoCall",
+              "CallConnected",
+              "Ringing",
+              "OnHold",
+              "ParkedCall"
+            ]
+          },
+          "userStatus": {
+            "type": "string",
+            "description": "User-defined presence status (as previously published by the user)",
+            "enum": [
+              "Offline",
+              "Busy",
+              "Available"
+            ]
+          },
+          "meetingStatus": {
+            "type": "string",
+            "description": "RingCentral Meetings presence",
+            "enum": [
+              "Connected",
+              "Disconnected"
+            ]
+          },
+          "activeCalls": {
+            "type": "array",
+            "description": "Information on active calls",
+            "items": {
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "direction": {
+                  "type": "string",
+                  "enum": [
+                    "Inbound",
+                    "Outbound"
+                  ]
+                },
+                "from": {
+                  "type": "string",
+                  "description": "Phone number or extension number of a caller. For GCM transport type '_from' property should be used"
+                },
+                "fromName": {
+                  "type": "string",
+                  "description": "Name of a caller"
+                },
+                "to": {
+                  "type": "string",
+                  "description": "Phone number or extension number of a callee"
+                },
+                "toName": {
+                  "type": "string",
+                  "description": "Name of a callee"
+                },
+                "startTime": {
+                  "type": "string",
+                  "description": "Time when the call is actually started"
+                },
+                "telephonyStatus": {
+                  "type": "string"
+                },
+                "sipData": {
+                  "properties": {
+                    "callId": {
+                      "type": "string"
+                    },
+                    "toTag": {
+                      "type": "string"
+                    },
+                    "fromTag": {
+                      "type": "string"
+                    },
+                    "remoteUri": {
+                      "type": "string"
+                    },
+                    "localUri": {
+                      "type": "string"
+                    },
+                    "rcSessionId": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "sessionId": {
+                  "type": "string"
+                },
+                "terminationType": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "navigation": {
+      "description": "Information on navigation",
+      "properties": {
+        "firstPage": {
+          "description": "Canonical URI for the first page of the list",
+          "properties": {
+            "uri": {
+              "type": "string"
+            }
+          }
+        },
+        "nextPage": {
+          "description": "Canonical URI for the next page of the list",
+          "properties": {
+            "uri": {
+              "type": "string"
+            }
+          }
+        },
+        "previousPage": {
+          "description": "Canonical URI for the previous page of the list",
+          "properties": {
+            "uri": {
+              "type": "string"
+            }
+          }
+        },
+        "lastPage": {
+          "description": "Canonical URI for the last page of the list",
+          "properties": {
+            "uri": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "paging": {
+      "description": "Information on paging",
+      "properties": {
+        "page": {
+          "type": "integer",
+          "description": "The current page number. 1-indexed, so the first page is 1 by default. May be omitted if result is empty (because non-existent page was specified or perPage=0 was requested)"
+        },
+        "perPage": {
+          "type": "integer",
+          "description": "Current page size, describes how many items are in each page. Default value is 100. Maximum value is 1000. If perPage value in the request is greater than 1000, the maximum value (1000) is applied"
+        },
+        "pageStart": {
+          "type": "integer",
+          "description": "The zero-based number of the first element on the current page. Omitted if the page is omitted or result is empty"
+        },
+        "pageEnd": {
+          "type": "integer",
+          "description": "The zero-based index of the last element on the current page. Omitted if the page is omitted or result is empty"
+        },
+        "totalPages": {
+          "type": "integer",
+          "description": "The total number of pages in a dataset. May be omitted for some resources due to performance reasons"
+        },
+        "totalElements": {
+          "type": "integer",
+          "description": "The total number of elements in a dataset. May be omitted for some resource due to performance reasons"
+        }
+      }
+    }
+  }
+}

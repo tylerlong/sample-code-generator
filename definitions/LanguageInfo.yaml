@@ -1,0 +1,33 @@
+{
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Internal identifier of a language"
+    },
+    "uri": {
+      "type": "string",
+      "description": "Canonical URI of a language"
+    },
+    "greeting": {
+      "type": "boolean",
+      "description": "Indicates whether a language is available as greeting language"
+    },
+    "formattingLocale": {
+      "type": "boolean",
+      "description": "Indicates whether a language is available as formatting locale"
+    },
+    "localeCode": {
+      "type": "string",
+      "description": "Localization code of a language"
+    },
+    "name": {
+      "type": "string",
+      "description": "Official name of a language"
+    },
+    "ui": {
+      "type": "boolean",
+      "description": "Indicates whether a language is available as UI language"
+    }
+  }
+}

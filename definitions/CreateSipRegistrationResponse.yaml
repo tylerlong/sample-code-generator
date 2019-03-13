@@ -1,0 +1,98 @@
+{
+  "type": "object",
+  "required": [
+    "sipFlags",
+    "sipInfo"
+  ],
+  "properties": {
+    "pollingInterval": {
+      "type": "integer",
+      "description": "Suggested interval in seconds to periodically call SIP-provision API and update the local cache"
+    },
+    "sipErrorCodes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "sipInfo": {
+      "type": "array",
+      "description": "SIP settings for device",
+      "items": {
+        "properties": {
+          "username": {
+            "type": "string",
+            "description": "User credentials"
+          },
+          "password": {
+            "type": "string",
+            "description": "User password"
+          },
+          "authorizationId": {
+            "type": "string",
+            "description": "Identifier for SIP authorization"
+          },
+          "domain": {
+            "type": "string",
+            "description": "SIP domain"
+          },
+          "outboundProxy": {
+            "type": "string",
+            "description": "SIP outbound proxy"
+          },
+          "transport": {
+            "type": "string",
+            "description": "Preferred transport. SIP info will be returned for this transport if supported",
+            "enum": [
+              "UDP",
+              "TCP",
+              "TLS",
+              "WS",
+              "WSS"
+            ]
+          },
+          "certificate": {
+            "type": "string",
+            "description": "For TLS transport only Base64 encoded certificate"
+          },
+          "switchBackInterval": {
+            "type": "integer",
+            "description": "The interval in seconds after which the app must try to switch back to primary proxy if it was previously switched to backup. If this parameter is not returned, the app must stay on backup proxy and try to switch to primary proxy after the next SIP-provision call."
+          }
+        }
+      }
+    },
+    "sipFlags": {
+      "type": "array",
+      "description": "SIP flags data",
+      "items": {
+        "properties": {
+          "voipFeatureEnabled": {
+            "type": "string",
+            "description": "If 'True' VoIP calling feature is enabled",
+            "enum": [
+              "True",
+              "False"
+            ]
+          },
+          "voipCountryBlocked": {
+            "type": "string",
+            "description": "If 'True' the request is sent from IP address of a country blocked for VoIP calling",
+            "enum": [
+              "True",
+              "False"
+            ]
+          },
+          "outboundCallsEnabled": {
+            "type": "string",
+            "description": "If 'True' outbound calls are enabled",
+            "enum": [
+              "True",
+              "False"
+            ]
+          }
+        }
+      }
+    }
+  }
+}

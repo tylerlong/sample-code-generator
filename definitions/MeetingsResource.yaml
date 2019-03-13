@@ -1,0 +1,158 @@
+{
+  "type": "object",
+  "properties": {
+    "uri": {
+      "type": "string",
+      "format": "uri"
+    },
+    "records": {
+      "type": "array",
+      "items": {
+        "properties": {
+          "uri": {
+            "type": "string",
+            "format": "uri"
+          },
+          "uuid": {
+            "type": "string"
+          },
+          "id": {
+            "type": "string"
+          },
+          "topic": {
+            "type": "string"
+          },
+          "meetingType": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          },
+          "links": {
+            "properties": {
+              "startUri": {
+                "type": "string"
+              },
+              "joinUri": {
+                "type": "string"
+              }
+            }
+          },
+          "schedule": {
+            "properties": {
+              "startTime": {
+                "type": "string"
+              },
+              "durationInMinutes": {
+                "type": "integer",
+                "format": "int32"
+              },
+              "timeZone": {
+                "properties": {
+                  "uri": {
+                    "type": "string",
+                    "format": "uri"
+                  },
+                  "id": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  },
+                  "description": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "allowJoinBeforeHost": {
+            "type": "boolean",
+            "default": false
+          },
+          "startHostVideo": {
+            "type": "boolean",
+            "default": false
+          },
+          "startParticipantsVideo": {
+            "type": "boolean",
+            "default": false
+          },
+          "audioOptions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "paging": {
+      "properties": {
+        "page": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "totalPages": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "perPage": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "totalElements": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "pageStart": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "pageEnd": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "navigation": {
+      "properties": {
+        "nextPage": {
+          "properties": {
+            "uri": {
+              "type": "string",
+              "format": "uri"
+            }
+          }
+        },
+        "previousPage": {
+          "properties": {
+            "uri": {
+              "type": "string",
+              "format": "uri"
+            }
+          }
+        },
+        "firstPage": {
+          "properties": {
+            "uri": {
+              "type": "string",
+              "format": "uri"
+            }
+          }
+        },
+        "lastPage": {
+          "properties": {
+            "uri": {
+              "type": "string",
+              "format": "uri"
+            }
+          }
+        }
+      }
+    }
+  }
+}

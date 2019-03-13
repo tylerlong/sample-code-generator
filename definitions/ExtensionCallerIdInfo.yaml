@@ -1,0 +1,111 @@
+{
+  "type": "object",
+  "properties": {
+    "uri": {
+      "type": "string",
+      "description": "Canonical URL of a caller ID resource"
+    },
+    "byDevice": {
+      "type": "array",
+      "items": {
+        "description": "Caller ID settings by device",
+        "properties": {
+          "device": {
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "Internal identifier of a device"
+              },
+              "uri": {
+                "type": "string",
+                "description": "Link to a device resource"
+              },
+              "phoneNumber": {
+                "type": "string",
+                "description": "Name of a device"
+              }
+            }
+          },
+          "callerId": {
+            "properties": {
+              "type": {
+                "type": "string",
+                "description": "If 'PhoneNumber' value is specified, then a certain phone number is shown as a caller ID when using this telephony feature. If 'Blocked' value is specified, then a caller ID is hidden. The value 'CurrentLocation' can be specified for 'RingOut' feature only. The default is 'PhoneNumber' = ['PhoneNumber', 'Blocked', 'CurrentLocation']"
+              },
+              "phoneInfo": {
+                "properties": {
+                  "id": {
+                    "type": "string",
+                    "description": "Internal identifier of a phone number"
+                  },
+                  "uri": {
+                    "type": "string",
+                    "description": "Link to a phone number resource"
+                  },
+                  "phoneNumber": {
+                    "type": "string",
+                    "description": "Phone number in [E.164](https://www.itu.int/rec/T-REC-E.164-201011-I) (with '+' sign) format"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "byFeature": {
+      "type": "array",
+      "items": {
+        "description": "Caller ID settings by feature",
+        "properties": {
+          "feature": {
+            "type": "string",
+            "enum": [
+              "RingOut",
+              "RingMe",
+              "CallFlip",
+              "FaxNumber",
+              "AdditionalSoftphone",
+              "Alternate",
+              "CommonPhone",
+              "MobileApp",
+              "Delegated"
+            ]
+          },
+          "callerId": {
+            "properties": {
+              "type": {
+                "type": "string",
+                "description": "If 'PhoneNumber' value is specified, then a certain phone number is shown as a caller ID when using this telephony feature. If 'Blocked' value is specified, then a caller ID is hidden. The value 'CurrentLocation' can be specified for 'RingOut' feature only. The default is 'PhoneNumber' = ['PhoneNumber', 'Blocked', 'CurrentLocation']"
+              },
+              "phoneInfo": {
+                "properties": {
+                  "id": {
+                    "type": "string",
+                    "description": "Internal identifier of a phone number"
+                  },
+                  "uri": {
+                    "type": "string",
+                    "description": "Link to a phone number resource"
+                  },
+                  "phoneNumber": {
+                    "type": "string",
+                    "description": "Phone number in [E.164](https://www.itu.int/rec/T-REC-E.164-201011-I) (with '+' sign) format"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "extensionNameForOutboundCalls": {
+      "type": "boolean",
+      "description": "If 'True', then user first name and last name will be used as caller ID when making outbound calls from extension"
+    },
+    "extensionNumberForInternalCalls": {
+      "type": "boolean",
+      "description": "If 'True', then extension number will be used as caller ID when making internal calls"
+    }
+  }
+}

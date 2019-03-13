@@ -1,0 +1,46 @@
+{
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Internal identifier of a team"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "Team"
+      ],
+      "description": "Type of a chat"
+    },
+    "public": {
+      "type": "boolean",
+      "description": "Team access level"
+    },
+    "name": {
+      "type": "string",
+      "description": "Team name"
+    },
+    "description": {
+      "type": "string",
+      "description": "Team description"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "Active",
+        "Archived"
+      ],
+      "description": "Team status"
+    },
+    "creationTime": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Team creation datetime in ISO 8601 format"
+    },
+    "lastModifiedTime": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Team last change datetime in ISO 8601 format"
+    }
+  }
+}

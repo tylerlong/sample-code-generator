@@ -1,0 +1,118 @@
+{
+  "type": "object",
+  "required": [
+    "deliveryMode"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Internal identifier of a subscription"
+    },
+    "uri": {
+      "type": "string",
+      "description": "Canonical URI of a subscription"
+    },
+    "eventFilters": {
+      "type": "array",
+      "description": "Collection of API resources (message-store/presence/detailed presence) corresponding to events the user is subscribed to",
+      "items": {
+        "type": "string"
+      }
+    },
+    "disabledFilters": {
+      "type": "array",
+      "description": "Collection of API resources (message-store/presence/detailed presence) corresponding to events the user is not subscribed to due to certain limitations",
+      "items": {
+        "properties": {
+          "filter": {
+            "type": "string",
+            "description": "Event filter that is disabled for the user"
+          },
+          "reason": {
+            "type": "string",
+            "description": "Reason why the filter is disabled for the user"
+          },
+          "message": {
+            "type": "string",
+            "description": "Error message"
+          }
+        }
+      }
+    },
+    "expirationTime": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Subscription expiration datetime in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format including timezone, for example 2016-03-10T18:07:52.534Z"
+    },
+    "expiresIn": {
+      "type": "integer",
+      "description": "Subscription lifetime in seconds",
+      "default": 900
+    },
+    "status": {
+      "type": "string",
+      "description": "Subscription status",
+      "enum": [
+        "Active",
+        "Suspended",
+        "Blacklisted"
+      ]
+    },
+    "creationTime": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Subscription creation datetime in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format including timezone, for example 2016-03-10T18:07:52.534Z"
+    },
+    "deliveryMode": {
+      "description": "Delivery mode data",
+      "properties": {
+        "transportType": {
+          "type": "string",
+          "description": "Notifications transportation provider name. 'APNS' (Apple Push Notifications Service)",
+          "enum": [
+            "PubNub",
+            "APNS",
+            "PubNub/APNS/VoIP"
+          ]
+        },
+        "encryption": {
+          "type": "boolean",
+          "description": "Optional parameter. Specifies if the message will be encrypted or not. For APNS transport type the value is always  false"
+        },
+        "address": {
+          "type": "string",
+          "description": "PubNub channel name. For APNS transport type - internal identifier of a device  device_token"
+        },
+        "subscriberKey": {
+          "type": "string",
+          "description": "PubNub subscriber credentials required to subscribe to the channel"
+        },
+        "secretKey": {
+          "type": "string",
+          "description": "PubNub subscriber credentials required to subscribe to the channel. Optional (for PubNub transport type only)"
+        },
+        "encryptionAlgorithm": {
+          "type": "string",
+          "description": "Encryption algorithm 'AES' (for PubNub transport type only)"
+        },
+        "encryptionKey": {
+          "type": "string",
+          "description": "Key for notification message decryption (for PubNub transport type only)"
+        }
+      }
+    },
+    "blacklistedData": {
+      "properties": {
+        "blacklistedAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Time of adding subscrition to a black list in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format including timezone, for example *2016-03-10T18:07:52.534Z*"
+        },
+        "reason": {
+          "type": "string",
+          "description": "Reason of adding subscrition to a black list"
+        }
+      }
+    }
+  }
+}

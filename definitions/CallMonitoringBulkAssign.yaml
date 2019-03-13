@@ -1,0 +1,68 @@
+{
+  "type": "object",
+  "properties": {
+    "addedExtensions": {
+      "type": "array",
+      "items": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": " Only the following extension types are allowed: User, DigitalUser, VirtualUser, FaxUser, Limited"
+          },
+          "permissions": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "Monitoring",
+                "Monitored"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "removedExtensions": {
+      "type": "array",
+      "items": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": " Only the following extension types are allowed: User, DigitalUser, VirtualUser, FaxUser, Limited"
+          },
+          "permissions": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "Monitoring",
+                "Monitored"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "updatedExtensions": {
+      "type": "array",
+      "items": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": " Only the following extension types are allowed: User, DigitalUser, VirtualUser, FaxUser, Limited"
+          },
+          "permissions": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "Monitoring",
+                "Monitored"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Internal identifier of a call recording"
+    },
+    "active": {
+      "description": "Call recording status",
+      "type": "boolean"
+    }
+  }
+}

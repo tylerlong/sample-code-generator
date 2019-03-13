@@ -1,0 +1,131 @@
+{
+  "type": "object",
+  "properties": {
+    "uri": {
+      "type": "string",
+      "description": "Canonical URI of a business-hours resource"
+    },
+    "schedule": {
+      "description": "Schedule when an answering rule is applied",
+      "properties": {
+        "weeklyRanges": {
+          "description": "Weekly schedule",
+          "properties": {
+            "monday": {
+              "type": "array",
+              "description": "Time intervals for a particular day",
+              "items": {
+                "properties": {
+                  "from": {
+                    "type": "string",
+                    "description": "Time in format hh:mm"
+                  },
+                  "to": {
+                    "type": "string",
+                    "description": "Time in format hh:mm"
+                  }
+                }
+              }
+            },
+            "tuesday": {
+              "type": "array",
+              "description": "Time intervals for a particular day",
+              "items": {
+                "properties": {
+                  "from": {
+                    "type": "string",
+                    "description": "Time in format hh:mm"
+                  },
+                  "to": {
+                    "type": "string",
+                    "description": "Time in format hh:mm"
+                  }
+                }
+              }
+            },
+            "wednesday": {
+              "type": "array",
+              "description": "Time intervals for a particular day",
+              "items": {
+                "properties": {
+                  "from": {
+                    "type": "string",
+                    "description": "Time in format hh:mm"
+                  },
+                  "to": {
+                    "type": "string",
+                    "description": "Time in format hh:mm"
+                  }
+                }
+              }
+            },
+            "thursday": {
+              "type": "array",
+              "description": "Time intervals for a particular day",
+              "items": {
+                "properties": {
+                  "from": {
+                    "type": "string",
+                    "description": "Time in format hh:mm"
+                  },
+                  "to": {
+                    "type": "string",
+                    "description": "Time in format hh:mm"
+                  }
+                }
+              }
+            },
+            "friday": {
+              "type": "array",
+              "description": "Time intervals for a particular day",
+              "items": {
+                "properties": {
+                  "from": {
+                    "type": "string",
+                    "description": "Time in format hh:mm"
+                  },
+                  "to": {
+                    "type": "string",
+                    "description": "Time in format hh:mm"
+                  }
+                }
+              }
+            },
+            "saturday": {
+              "type": "array",
+              "description": "Time intervals for a particular day",
+              "items": {
+                "properties": {
+                  "from": {
+                    "type": "string",
+                    "description": "Time in format hh:mm"
+                  },
+                  "to": {
+                    "type": "string",
+                    "description": "Time in format hh:mm"
+                  }
+                }
+              }
+            },
+            "sunday": {
+              "type": "array",
+              "description": "Time intervals for a particular day",
+              "items": {
+                "properties": {
+                  "from": {
+                    "type": "string",
+                    "description": "Time in format hh:mm"
+                  },
+                  "to": {
+                    "type": "string",
+                    "description": "Time in format hh:mm"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

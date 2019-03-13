@@ -1,0 +1,61 @@
+{
+  "type": "object",
+  "properties": {
+    "onDemand": {
+      "properties": {
+        "enabled": {
+          "type": "boolean",
+          "description": "Flag for controlling OnDemand Call Recording settings"
+        }
+      }
+    },
+    "automatic": {
+      "properties": {
+        "enabled": {
+          "type": "boolean",
+          "description": "Flag for controling Automatic Call Recording settings"
+        },
+        "outboundCallTones": {
+          "type": "boolean",
+          "description": "Flag for controlling 'Play Call Recording Announcement for Outbound Calls' settings"
+        },
+        "outboundCallAnnouncement": {
+          "type": "boolean",
+          "description": "Flag for controlling 'Play periodic tones for outbound calls' settings"
+        },
+        "allowMute": {
+          "type": "boolean",
+          "description": "Flag for controlling 'Allow mute in auto call recording' settings"
+        },
+        "extensionCount": {
+          "type": "integer",
+          "description": "Total amount of extension that are used in call recordings"
+        }
+      }
+    },
+    "greetings": {
+      "type": "array",
+      "description": "Collection of Greeting Info",
+      "items": {
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "StartRecording",
+              "StopRecording",
+              "AutomaticRecording"
+            ]
+          },
+          "mode": {
+            "type": "string",
+            "enum": [
+              "Default",
+              "Custom"
+            ],
+            "description": "'Default' value specifies that all greetings of that type (in all languages) are default, if at least one greeting (in any language) of the specified type is custom, then 'Custom' value is returned."
+          }
+        }
+      }
+    }
+  }
+}
