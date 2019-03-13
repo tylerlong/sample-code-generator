@@ -1033,7 +1033,7 @@
     },
     "boxBillingId": {
       "type": "integer",
-      "description": "Box billing identifier of a device. Applicable only for HardPhones. It is an alternative way to identify the device to be ordered. Either model structure, or boxBillingId must be specified for HardPhone"
+      "description": "Box billing identifier of a device. Applicable only for HardPhones. It is an alternative way to identify the device to be ordered. Either  model structure, or boxBillingId must be specified for HardPhone"
     },
     "linePooling": {
       "type": "string",

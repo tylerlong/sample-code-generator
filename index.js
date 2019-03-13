@@ -7,7 +7,7 @@ import { loadFullDefinition, getResponseType } from './utils'
 
 const doc = yaml.safeLoad(fs.readFileSync(process.env.SWAGGER_FILE_PATH, 'utf8'))
 
-const paths = Object.keys(doc.paths)
+const paths = Object.keys(doc.paths).sort()
 
 const generateCodes = (path, method, operation) => {
   let endpoint

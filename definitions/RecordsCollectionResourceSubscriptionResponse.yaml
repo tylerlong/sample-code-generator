@@ -82,11 +82,11 @@
               },
               "encryption": {
                 "type": "boolean",
-                "description": "Optional parameter. Specifies if the message will be encrypted or not. For APNS transport type the value is always  false"
+                "description": "Optional parameter. Specifies if the message will be encrypted or not. For APNS transport type the value is always  false "
               },
               "address": {
                 "type": "string",
-                "description": "PubNub channel name. For APNS transport type - internal identifier of a device  device_token"
+                "description": "PubNub channel name. For APNS transport type - internal identifier of a device  device_token "
               },
               "subscriberKey": {
                 "type": "string",

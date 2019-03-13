@@ -25,7 +25,7 @@
     },
     "name": {
       "type": "string",
-      "description": "Device name. Mandatory if ordering  SoftPhone  or  OtherPhone . Optional for  HardPhone . If not specified for HardPhone, then device model  name is used as device  name"
+      "description": "Device name. Mandatory if ordering  SoftPhone  or  OtherPhone . Optional for  HardPhone . If not specified for HardPhone, then device  model  name is used as device  name "
     },
     "serial": {
       "type": "string",
@@ -272,7 +272,7 @@
       }
     },
     "shipping": {
-      "description": "Shipping information, according to which devices (in case of HardPhone ) or e911 stickers (in case of  SoftPhone  and  OtherPhone ) will be delivered to the customer",
+      "description": "Shipping information, according to which devices (in case of  HardPhone ) or e911 stickers (in case of  SoftPhone  and  OtherPhone ) will be delivered to the customer",
       "properties": {
         "status": {
           "type": "string",
