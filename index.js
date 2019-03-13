@@ -64,6 +64,7 @@ const r = await platform.${method}(${endpoint}${params.map(p => `, ${p}`).join('
     result.push(`\n\`${operationId}Parameters\` is an **optional** object with the following definition:`)
     result.push(`\n\`\`\`yaml\n${JSON.stringify(loadFullDefinition(queryParams), null, 2)}\n\`\`\``)
   }
+  result = result.map(code => code.replace(/\n{2,}/g, '\n'))
   return result
 }
 

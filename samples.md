@@ -3829,7 +3829,6 @@ const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const FormData = require('form-data');
 const formData = new FormData();
-
 formData.append('attachment', fs.readFileSync('./test.png'), { filename: 'text.png' });
 const r = await platform.post('/restapi/v1.0/glip/files', formData, createGlipFileParameters);
 ```
@@ -9784,7 +9783,6 @@ const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const FormData = require('form-data');
 const formData = new FormData();
-
 formData.append('attachment', fs.readFileSync('./test.png'), { filename: 'text.png' });
 const r = await platform.post(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/profile-image`, formData);
 ```
@@ -9803,7 +9801,6 @@ const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const FormData = require('form-data');
 const formData = new FormData();
-
 formData.append('attachment', fs.readFileSync('./test.png'), { filename: 'text.png' });
 const r = await platform.put(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/profile-image`, formData);
 ```
