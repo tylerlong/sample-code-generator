@@ -3829,7 +3829,7 @@ const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const FormData = require('form-data');
 const formData = new FormData();
-formData.append('attachment', fs.readFileSync('./test.png'), { filename: 'text.png' });
+formData.append('body', fs.readFileSync('./test.png'), { filename: 'text.png' });
 const r = await platform.post('/restapi/v1.0/glip/files', formData, createGlipFileParameters);
 ```
 
@@ -8209,7 +8209,7 @@ await platform.login({ username: 'username', extension: 'extension', password: '
 const FormData = require('form-data');
 const formData = new FormData();
 formData.append('body', Buffer.from(JSON.stringify(body)), { filename: 'request.json' });
-formData.append('attachment', fs.readFileSync('./test.png'), { filename: 'text.png' });
+formData.append('audio', fs.readFileSync('./test.mp3'), { filename: 'text.mp3' });
 const r = await platform.post(`/restapi/v1.0/account/${accountId}/greeting`, formData, customCompanyGreetingRequest);
 ```
 
@@ -8264,7 +8264,7 @@ await platform.login({ username: 'username', extension: 'extension', password: '
 const FormData = require('form-data');
 const formData = new FormData();
 formData.append('body', Buffer.from(JSON.stringify(body)), { filename: 'request.json' });
-formData.append('attachment', fs.readFileSync('./test.png'), { filename: 'text.png' });
+formData.append('audio', fs.readFileSync('./test.mp3'), { filename: 'text.mp3' });
 const r = await platform.post(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/greeting`, formData, customGreetingRequest);
 ```
 
@@ -9781,7 +9781,7 @@ const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const FormData = require('form-data');
 const formData = new FormData();
-formData.append('attachment', fs.readFileSync('./test.png'), { filename: 'text.png' });
+formData.append('image', fs.readFileSync('./test.png'), { filename: 'text.png' });
 const r = await platform.post(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/profile-image`, formData);
 ```
 
@@ -9799,7 +9799,7 @@ const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
 const FormData = require('form-data');
 const formData = new FormData();
-formData.append('attachment', fs.readFileSync('./test.png'), { filename: 'text.png' });
+formData.append('image', fs.readFileSync('./test.png'), { filename: 'text.png' });
 const r = await platform.put(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/profile-image`, formData);
 ```
 

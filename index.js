@@ -38,19 +38,20 @@ const generateCodes = (path, method, operation) => {
   let result
   if (operation.consumes && operation.consumes[0].startsWith('multipart/')) {
     params.unshift('formData')
-    let hasFileType = operation.parameters.some(p => p.in === 'formData' && (p.type === 'file' || (p.items && p.items.type === 'file')))
+    let fileFields = operation.parameters.filter(p => p.in === 'formData' && (p.type === 'file' || (p.items && p.items.type === 'file'))).map(p => p.name)
     let formDataFields = operation.parameters.filter(p => p.in === 'formData' && p.type !== 'file' && !(p.items && p.items.type === 'file'))
     const body = (operation.parameters || []).filter(p => p.in === 'body' && p.schema && p.schema['$ref'])[0]
     if (body) {
       bodyClass = R.last(body.schema['$ref'].split('/'))
       const properties = doc.definitions[bodyClass].properties
-      hasFileType = Object.keys(properties).some(key => properties[key].type === 'file')
+      fileFields = Object.keys(properties).filter(key => properties[key].type === 'file')
       formDataFields = Object.keys(properties).filter(key => properties[key].type !== 'file').map(key => Object.assign({ name: key }, properties[key]))
     }
+    fileFields = fileFields.map(name => name.endsWith('s') ? name.substring(0, name.length - 1) : name)
     result = [`const FormData = require('form-data');
 const formData = new FormData();
 ${formDataFields.length > 0 ? `formData.append('body', Buffer.from(JSON.stringify(body)), { filename: 'request.json' });` : ''}
-${hasFileType ? `formData.append('attachment', fs.readFileSync('./test.png'), { filename: 'text.png' });` : ''}
+${fileFields.map(name => `formData.append('${name}', fs.readFileSync('./test.${name === 'audio' ? 'mp3' : 'png'}'), { filename: 'text.${name === 'audio' ? 'mp3' : 'png'}' });`).join('\n')}
 const r = await platform.${method}(${endpoint}${params.map(p => `, ${p}`).join('')});`]
     if (formDataFields.length > 0) {
       result.push(`\n\`body\` is an object with the following definition:`)
