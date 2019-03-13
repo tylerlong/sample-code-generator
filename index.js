@@ -112,8 +112,8 @@ ${code}
     if (responseType === 'byte[]') {
       doc += '\n\nYou can get response binary data by `const buffer = await r.response().buffer()`'
     } else {
-      doc += '\n\nYou can get response json data by `const responseBody = await r.json()`'
-      doc += `\n\n- \`responseBody\` is an object with [this definition](./definitions/${responseType}.yaml)`
+      doc += '\n\nYou can get response json data by `const json = await r.json()`'
+      doc += `\n\n- \`json\` is an object with [this definition](./definitions/${responseType}.yaml)`
       fs.writeFileSync(`./definitions/${responseType}.yaml`, JSON.stringify(loadFullDefinition(responseType), null, 2))
     }
   } else {
