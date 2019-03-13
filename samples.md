@@ -8206,16 +8206,19 @@ const SDK = require('ringcentral');
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
-const r = await platform.post(`/restapi/v1.0/account/${accountId}/greeting`, customCompanyGreetingRequest);
+const FormData = require('form-data');
+const formData = new FormData();
+formData.append('body', Buffer.from(JSON.stringify(body)), { filename: 'request.json' });
+formData.append('attachment', fs.readFileSync('./test.png'), { filename: 'text.png' });
+const r = await platform.post(`/restapi/v1.0/account/${accountId}/greeting`, formData, customCompanyGreetingRequest);
 ```
 
 - `accountId`'s default value is `~`
 
-`customCompanyGreetingRequest` is an object with the following definition:
+`body` is an object with the following definition:
 
 ```yaml
 {
-  "type": "object",
   "properties": {
     "type": {
       "type": "string",
@@ -8244,10 +8247,6 @@ const r = await platform.post(`/restapi/v1.0/account/${accountId}/greeting`, cus
           "description": "Internal identifier of a greeting language"
         }
       }
-    },
-    "audio": {
-      "type": "file",
-      "description": "Custom greeting audio"
     }
   }
 }
@@ -8262,17 +8261,20 @@ const SDK = require('ringcentral');
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
-const r = await platform.post(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/greeting`, customGreetingRequest);
+const FormData = require('form-data');
+const formData = new FormData();
+formData.append('body', Buffer.from(JSON.stringify(body)), { filename: 'request.json' });
+formData.append('attachment', fs.readFileSync('./test.png'), { filename: 'text.png' });
+const r = await platform.post(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/greeting`, formData, customGreetingRequest);
 ```
 
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-`customGreetingRequest` is an object with the following definition:
+`body` is an object with the following definition:
 
 ```yaml
 {
-  "type": "object",
   "properties": {
     "type": {
       "type": "string",
@@ -8295,10 +8297,6 @@ const r = await platform.post(`/restapi/v1.0/account/${accountId}/extension/${ex
           "description": "Internal identifier of an answering rule"
         }
       }
-    },
-    "audio": {
-      "type": "file",
-      "description": "Custom greeting audio"
     }
   }
 }

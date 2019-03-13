@@ -36,10 +36,17 @@ const generateCodes = (path, method, operation) => {
     params.unshift(bodyParam)
   }
   let result
-  if (operation.parameters && operation.parameters.some(p => p.in === 'formData')) {
+  if (operation.consumes && operation.consumes[0].startsWith('multipart/')) {
     params.unshift('formData')
-    const hasFileType = operation.parameters.some(p => p.in === 'formData' && (p.type === 'file' || (p.items && p.items.type === 'file')))
-    const formDataFields = operation.parameters.filter(p => p.in === 'formData' && p.type !== 'file' && !(p.items && p.items.type === 'file'))
+    let hasFileType = operation.parameters.some(p => p.in === 'formData' && (p.type === 'file' || (p.items && p.items.type === 'file')))
+    let formDataFields = operation.parameters.filter(p => p.in === 'formData' && p.type !== 'file' && !(p.items && p.items.type === 'file'))
+    const body = (operation.parameters || []).filter(p => p.in === 'body' && p.schema && p.schema['$ref'])[0]
+    if (body) {
+      bodyClass = R.last(body.schema['$ref'].split('/'))
+      const properties = doc.definitions[bodyClass].properties
+      hasFileType = Object.keys(properties).some(key => properties[key].type === 'file')
+      formDataFields = Object.keys(properties).filter(key => properties[key].type !== 'file').map(key => Object.assign({ name: key }, properties[key]))
+    }
     result = [`const FormData = require('form-data');
 const formData = new FormData();
 ${formDataFields.length > 0 ? `formData.append('body', Buffer.from(JSON.stringify(body)), { filename: 'request.json' });` : ''}
