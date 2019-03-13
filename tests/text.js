@@ -21,12 +21,9 @@ const platform = rcsdk.platform();
 
   const newText = uuidv1()
 
-  r = await platform.send({
-    method: 'PUT',
-    url: `/restapi/v1.0/glip/groups/${groupId}/posts/${postId}/text`,
-    headers: { 'Content-Type': 'text/plain' },
-    body: newText
-  })
+  r = await platform.put(`/restapi/v1.0/glip/groups/${groupId}/posts/${postId}/text`, newText, {},
+    { headers: { 'Content-Type': 'text/plain' } }
+  )
   console.log(await r.response().text())
   await platform.logout()
 })()

@@ -50,12 +50,7 @@ const r = await platform.${method}(${endpoint}${params.map(p => `, ${p}`).join('
       result.push(`\n\`\`\`yaml\n${JSON.stringify(loadFullDefinition(formDataFields), null, 2)}\n\`\`\``)
     }
   } else if (operation.consumes && operation.consumes[0].startsWith('text/')) {
-    result = [`const r = await platform.send({
-  method: '${changeCase.upperCase(method)}',
-  url: ${endpoint},
-  headers: { 'Content-Type': 'text/plain' },
-  body: text
-});`]
+    result = [`const r = await platform.${method}(${endpoint}, text, {}, { headers: { 'Content-Type': 'text/plain' } });`]
     result.push(`\n- \`text\` is a string`)
   } else {
     result = [`const r = await platform.${method}(${endpoint}${params.map(p => `, ${p}`).join('')});`]
