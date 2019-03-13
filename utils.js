@@ -29,3 +29,16 @@ export const loadFullDefinition = name => {
   })
   return model
 }
+
+export const getResponseType = responses => {
+  const responseSchema = (responses[200] || responses[201] || responses[202] || responses[204] || responses[205] || responses[302] || responses.default).schema
+  let responseType
+  if (responseSchema) {
+    if (responseSchema.type === 'string' && responseSchema.format === 'binary') {
+      responseType = 'byte[]'
+    } else if (responseSchema['$ref']) {
+      responseType = R.last(responseSchema['$ref'].split('/'))
+    }
+  }
+  return responseType
+}

@@ -16,8 +16,3 @@ Edit `.env` file to specify the path to swagger spec file.
 ```
 yarn generate
 ```
-
-
-## todo
-
-- show response type information

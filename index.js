@@ -3,7 +3,7 @@ import yaml from 'js-yaml'
 import changeCase from 'change-case'
 import * as R from 'ramda'
 
-import { loadFullDefinition } from './utils'
+import { loadFullDefinition, getResponseType } from './utils'
 
 const doc = yaml.safeLoad(fs.readFileSync(process.env.SWAGGER_FILE_PATH, 'utf8'))
 
@@ -106,6 +106,18 @@ ${code}
   }
   if (extraCode.length > 0) {
     doc += `\n${extraCode}`
+  }
+  const responseType = getResponseType(operation.responses)
+  if (responseType) {
+    if (responseType === 'byte[]') {
+      doc += '\nYou can get response binary data by `const buffer = await r.response().buffer()`'
+    } else {
+      doc += '\nYou can get response json data by `const responseBody = await r.json()`'
+      doc += '\n`responseBody` is is an object with the following definition:'
+      doc += `\n\`\`\`yaml\n${JSON.stringify(loadFullDefinition(responseType), null, 2)}\n\`\`\``
+    }
+  } else {
+    doc += '\nResponse body is empty'
   }
   return doc
 }
