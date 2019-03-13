@@ -110,14 +110,14 @@ ${code}
   const responseType = getResponseType(operation.responses)
   if (responseType) {
     if (responseType === 'byte[]') {
-      doc += '\nYou can get response binary data by `const buffer = await r.response().buffer()`'
+      doc += '\n\nYou can get response binary data by `const buffer = await r.response().buffer()`'
     } else {
-      doc += '\nYou can get response json data by `const responseBody = await r.json()`'
+      doc += '\n\nYou can get response json data by `const responseBody = await r.json()`'
       doc += `\n\n- \`responseBody\` is an object with [this definition](./definitions/${responseType}.yaml)`
       fs.writeFileSync(`./definitions/${responseType}.yaml`, JSON.stringify(loadFullDefinition(responseType), null, 2))
     }
   } else {
-    doc += '\nResponse body is empty'
+    doc += '\n\nResponse body is empty'
   }
   return doc
 }
