@@ -29,11 +29,8 @@ const platform = rcsdk.platform();
   formData.append('attachment', fs.readFileSync('./test.mp3'),
     { filename: 'test.mp3' })
 
-  try {
-    r = await platform.post('/restapi/v1.0/account/~/extension/~/greeting', formData)
-    console.log(await r.json())
-  } catch (e) {
-    console.log(e.apiResponse.response()._raw.toString())
-  }
+  r = await platform.post('/restapi/v1.0/account/~/extension/~/greeting', formData)
+  console.log(await r.json())
+
   await platform.logout()
 })()
