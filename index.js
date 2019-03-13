@@ -43,7 +43,7 @@ const generateCodes = (path, method, operation) => {
     result = [`const FormData = require('form-data');
 const formData = new FormData();
 ${formDataFields.length > 0 ? `formData.append('body', Buffer.from(JSON.stringify(body)), { filename: 'request.json' });` : ''}
-${hasFileType ? `formData.append('attachment', fs.readFileSync('./test.png'), { filename: 'text.png', contentType: 'image/png' });` : ''}
+${hasFileType ? `formData.append('attachment', fs.readFileSync('./test.png'), { filename: 'text.png' });` : ''}
 const r = await platform.${method}(${endpoint}${params.map(p => `, ${p}`).join('')});`]
     if (formDataFields.length > 0) {
       result.push(`\n\`body\` is an object with the following definition:`)

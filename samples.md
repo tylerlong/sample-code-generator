@@ -824,7 +824,7 @@ await platform.login({ username: 'username', extension: 'extension', password: '
 const FormData = require('form-data');
 const formData = new FormData();
 formData.append('body', Buffer.from(JSON.stringify(body)), { filename: 'request.json' });
-formData.append('attachment', fs.readFileSync('./test.png'), { filename: 'text.png', contentType: 'image/png' });
+formData.append('attachment', fs.readFileSync('./test.png'), { filename: 'text.png' });
 const r = await platform.post(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/fax`, formData);
 ```
 
@@ -3835,7 +3835,7 @@ await platform.login({ username: 'username', extension: 'extension', password: '
 const FormData = require('form-data');
 const formData = new FormData();
 
-formData.append('attachment', fs.readFileSync('./test.png'), { filename: 'text.png', contentType: 'image/png' });
+formData.append('attachment', fs.readFileSync('./test.png'), { filename: 'text.png' });
 const r = await platform.post('/restapi/v1.0/glip/files', formData, createGlipFileParameters);
 ```
 
@@ -8337,7 +8337,7 @@ await platform.login({ username: 'username', extension: 'extension', password: '
 const FormData = require('form-data');
 const formData = new FormData();
 formData.append('body', Buffer.from(JSON.stringify(body)), { filename: 'request.json' });
-formData.append('attachment', fs.readFileSync('./test.png'), { filename: 'text.png', contentType: 'image/png' });
+formData.append('attachment', fs.readFileSync('./test.png'), { filename: 'text.png' });
 const r = await platform.post(`/restapi/v1.0/account/${accountId}/ivr-prompts`, formData);
 ```
 
@@ -8522,7 +8522,7 @@ const r = await platform.post(`/restapi/v1.0/account/${accountId}/ivr-menus`, iV
         "properties": {
           "input": {
             "type": "string",
-            "description": "Key. The following values are supported: numeric: '1' to '9' Star Hash NoInput "
+            "description": "Key. The following values are supported: numeric: '1' to '9' Star Hash NoInput"
           },
           "action": {
             "type": "string",
@@ -8670,7 +8670,7 @@ const r = await platform.put(`/restapi/v1.0/account/${accountId}/ivr-menus/${ivr
         "properties": {
           "input": {
             "type": "string",
-            "description": "Key. The following values are supported: numeric: '1' to '9' Star Hash NoInput "
+            "description": "Key. The following values are supported: numeric: '1' to '9' Star Hash NoInput"
           },
           "action": {
             "type": "string",
@@ -9611,7 +9611,7 @@ const r = await platform.put(`/restapi/v1.0/account/${accountId}/extension/${ext
     },
     "advancedMode": {
       "type": "boolean",
-      "description": "Specifies notifications settings mode. If 'True' then advanced mode is on, it allows using different emails and/or phone numbers for each notification type. If 'False' then basic mode is on. Advanced mode settings are returned in both modes, if specified once, but if basic mode is switched on, they are not applied "
+      "description": "Specifies notifications settings mode. If 'True' then advanced mode is on, it allows using different emails and/or phone numbers for each notification type. If 'False' then basic mode is on. Advanced mode settings are returned in both modes, if specified once, but if basic mode is switched on, they are not applied"
     },
     "voicemails": {
       "properties": {
@@ -9790,7 +9790,7 @@ await platform.login({ username: 'username', extension: 'extension', password: '
 const FormData = require('form-data');
 const formData = new FormData();
 
-formData.append('attachment', fs.readFileSync('./test.png'), { filename: 'text.png', contentType: 'image/png' });
+formData.append('attachment', fs.readFileSync('./test.png'), { filename: 'text.png' });
 const r = await platform.post(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/profile-image`, formData);
 ```
 
@@ -9809,7 +9809,7 @@ await platform.login({ username: 'username', extension: 'extension', password: '
 const FormData = require('form-data');
 const formData = new FormData();
 
-formData.append('attachment', fs.readFileSync('./test.png'), { filename: 'text.png', contentType: 'image/png' });
+formData.append('attachment', fs.readFileSync('./test.png'), { filename: 'text.png' });
 const r = await platform.put(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/profile-image`, formData);
 ```
 
@@ -12199,14 +12199,14 @@ const r = await platform.delete(`/restapi/v1.0/account/${accountId}/telephony/se
 
 ## Hold Call Party
 
-HTTP POST /restapi/v1.0/account/{accountId}/telephony/sessions/{sessionId}/parties/{partyId}/hold
+HTTP POST /restapi/v1.0/account/{accountId}/telephony/sessions/{sessionId}/x/{partyId}/hold
 
 ```js
 const SDK = require('ringcentral');
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
-const r = await platform.post(`/restapi/v1.0/account/${accountId}/telephony/sessions/${sessionId}/parties/${partyId}/hold`);
+const r = await platform.post(`/restapi/v1.0/account/${accountId}/telephony/sessions/${sessionId}/x/${partyId}/hold`);
 ```
 
 - `accountId`'s default value is `~`

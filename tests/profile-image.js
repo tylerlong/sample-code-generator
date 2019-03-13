@@ -17,8 +17,7 @@ const platform = rcsdk.platform();
 
   var formData = new FormData()
   const fileBuffer = fs.readFileSync('./test.png')
-  formData.append('image', fileBuffer,
-    { filename: 'test.png', contentType: 'image/png' })
+  formData.append('image', fileBuffer, { filename: 'test.png' })
 
   let r = await platform.post('/restapi/v1.0/account/~/extension/~/profile-image', formData)
   console.log((await r.response().buffer()).length)
