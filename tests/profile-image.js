@@ -15,22 +15,13 @@ const platform = rcsdk.platform();
     password: process.env.RINGCENTRAL_PASSWORD
   })
 
-  let r = await platform.get('/restapi/v1.0/account/~/extension/~/answering-rule')
-  const answeringRule = r.json().records[0]
-
   var formData = new FormData()
-  var body = {
-    type: 'Voicemail',
-    answeringRule: { id: answeringRule.id }
-  }
-  formData.append('body', Buffer.from(JSON.stringify(body)),
-    { filename: 'request.json' })
+  const fileBuffer = fs.readFileSync('./test.png')
+  formData.append('image', fileBuffer,
+    { filename: 'test.png', contentType: 'image/png' })
 
-  formData.append('audio', fs.readFileSync('./test.mp3'),
-    { filename: 'test.mp3' })
-
-  r = await platform.post('/restapi/v1.0/account/~/extension/~/greeting', formData)
-  console.log(await r.json())
+  const r = await platform.post('/restapi/v1.0/account/~/extension/~/profile-image', formData)
+  console.log((await r.response().buffer()).length)
 
   await platform.logout()
 })()
