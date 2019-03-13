@@ -13,7 +13,7 @@ const r = await platform.get('/restapi');
 ```
 
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/GetVersionsResponse.yaml)
 
@@ -31,7 +31,7 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}`);
 
 - `accountId`'s default value is `~`
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/GetAccountInfoResponse.yaml)
 
@@ -125,7 +125,7 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/active-calls`, 
 }
 ```
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/ActiveCallsResponse.yaml)
 
@@ -427,7 +427,7 @@ const r = await platform.post(`/restapi/v1.0/account/${accountId}/answering-rule
 }
 ```
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/CompanyAnsweringRuleInfo.yaml)
 
@@ -445,7 +445,7 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/answering-rule`
 
 - `accountId`'s default value is `~`
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/CompanyAnsweringRuleList.yaml)
 
@@ -463,7 +463,7 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/answering-rule/
 
 - `accountId`'s default value is `~`
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/CompanyAnsweringRuleInfo.yaml)
 
@@ -756,7 +756,7 @@ const r = await platform.put(`/restapi/v1.0/account/${accountId}/answering-rule/
 }
 ```
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/CompanyAnsweringRuleInfo.yaml)
 
@@ -790,7 +790,7 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/business-addres
 
 - `accountId`'s default value is `~`
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/AccountBusinessAddressResource.yaml)
 
@@ -854,7 +854,7 @@ const r = await platform.put(`/restapi/v1.0/account/${accountId}/business-addres
 }
 ```
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/AccountBusinessAddressResource.yaml)
 
@@ -872,7 +872,7 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/business-hours`
 
 - `accountId`'s default value is `~`
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/CompanyBusinessHours.yaml)
 
@@ -1057,7 +1057,7 @@ const r = await platform.put(`/restapi/v1.0/account/${accountId}/business-hours`
 }
 ```
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/CompanyBusinessHours.yaml)
 
@@ -1175,7 +1175,7 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/call-log`, load
 }
 ```
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/AccountCallLogResponse.yaml)
 
@@ -1193,7 +1193,7 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/call-log/${call
 
 - `accountId`'s default value is `~`
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/CompanyCallLogRecord.yaml)
 
@@ -1232,7 +1232,7 @@ const r = await platform.post(`/restapi/v1.0/account/${accountId}/call-monitorin
 }
 ```
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/CallMonitoringGroup.yaml)
 
@@ -1278,7 +1278,7 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/call-monitoring
 }
 ```
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/CallMonitoringGroups.yaml)
 
@@ -1317,7 +1317,7 @@ const r = await platform.put(`/restapi/v1.0/account/${accountId}/call-monitoring
 }
 ```
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/CallMonitoringGroup.yaml)
 
@@ -1424,7 +1424,7 @@ const r = await platform.post(`/restapi/v1.0/account/${accountId}/call-monitorin
 }
 ```
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/CallMonitoringBulkAssign.yaml)
 
@@ -1465,7 +1465,7 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/call-monitoring
 }
 ```
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/CallMonitoringGroupMemberList.yaml)
 
@@ -1511,7 +1511,7 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/call-queues`, l
 }
 ```
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/CallQueues.yaml)
 
@@ -1590,7 +1590,7 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/call-queues/${g
 }
 ```
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/CallQueueMembers.yaml)
 
@@ -1608,7 +1608,7 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/call-recording`
 
 - `accountId`'s default value is `~`
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/CallRecordingSettingsResource.yaml)
 
@@ -1692,7 +1692,7 @@ const r = await platform.put(`/restapi/v1.0/account/${accountId}/call-recording`
 }
 ```
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/CallRecordingSettingsResource.yaml)
 
@@ -1833,7 +1833,7 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/call-recording/
 }
 ```
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/CallRecordingCustomGreetings.yaml)
 
@@ -1970,7 +1970,7 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/department/${de
 }
 ```
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/DepartmentMemberList.yaml)
 
@@ -1988,7 +1988,7 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/device/${device
 
 - `accountId`'s default value is `~`
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/GetDeviceInfoResponse.yaml)
 
@@ -2079,7 +2079,7 @@ const r = await platform.put(`/restapi/v1.0/account/${accountId}/device/${device
 }
 ```
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/DeviceResource.yaml)
 
@@ -2151,7 +2151,7 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/directory/entri
 }
 ```
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/DirectoryResource.yaml)
 
@@ -2243,7 +2243,7 @@ const r = await platform.post(`/restapi/v1.0/account/${accountId}/directory/entr
 }
 ```
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/DirectoryResource.yaml)
 
@@ -2261,7 +2261,7 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/directory/feder
 
 - `accountId`'s default value is `~`
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/FederationResource.yaml)
 
@@ -2360,7 +2360,7 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension`, lis
 }
 ```
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/GetExtensionListResponse.yaml)
 
@@ -2696,7 +2696,7 @@ const r = await platform.post(`/restapi/v1.0/account/${accountId}/extension`, ex
 }
 ```
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/ExtensionCreationResponse.yaml)
 
@@ -2715,7 +2715,7 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${ext
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/GetExtensionInfoResponse.yaml)
 
@@ -2964,7 +2964,7 @@ const r = await platform.put(`/restapi/v1.0/account/${accountId}/extension/${ext
 }
 ```
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/GetExtensionInfoResponse.yaml)
 
@@ -3062,7 +3062,7 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${ext
 }
 ```
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/ActiveCallsResponse.yaml)
 
@@ -3122,7 +3122,7 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${ext
 }
 ```
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/AddressBookSync.yaml)
 
@@ -3194,7 +3194,7 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${ext
 }
 ```
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/ContactList.yaml)
 
@@ -3398,7 +3398,7 @@ const r = await platform.post(`/restapi/v1.0/account/${accountId}/extension/${ex
 }
 ```
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/PersonalContactResource.yaml)
 
@@ -3417,7 +3417,7 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${ext
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/PersonalContactResource.yaml)
 
@@ -3621,7 +3621,7 @@ const r = await platform.put(`/restapi/v1.0/account/${accountId}/extension/${ext
 }
 ```
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/PersonalContactResource.yaml)
 
@@ -3678,7 +3678,7 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${ext
 }
 ```
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/UserAnsweringRuleList.yaml)
 
@@ -4203,7 +4203,7 @@ const r = await platform.post(`/restapi/v1.0/account/${accountId}/extension/${ex
 }
 ```
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/AnsweringRuleInfo.yaml)
 
@@ -4238,7 +4238,7 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${ext
 }
 ```
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/AnsweringRuleInfo.yaml)
 
@@ -4723,7 +4723,7 @@ const r = await platform.put(`/restapi/v1.0/account/${accountId}/extension/${ext
 }
 ```
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/AnsweringRuleInfo.yaml)
 
@@ -4759,7 +4759,7 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${ext
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/AuthProfileResource.yaml)
 
@@ -4797,7 +4797,7 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${ext
 }
 ```
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/AuthProfileCheckResource.yaml)
 
@@ -4816,7 +4816,7 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${ext
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/GetUserBusinessHoursResponse.yaml)
 
@@ -4970,7 +4970,7 @@ const r = await platform.put(`/restapi/v1.0/account/${accountId}/extension/${ext
 }
 ```
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/UserBusinessHoursUpdateResponse.yaml)
 
@@ -5117,7 +5117,7 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${ext
 }
 ```
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/UserCallLogResponse.yaml)
 
@@ -5278,7 +5278,7 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${ext
 }
 ```
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/CallLogSync.yaml)
 
@@ -5317,7 +5317,7 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${ext
 }
 ```
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/UserCallLogRecord.yaml)
 
@@ -5336,7 +5336,7 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${ext
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/CallerBlockingSettings.yaml)
 
@@ -5419,7 +5419,7 @@ const r = await platform.put(`/restapi/v1.0/account/${accountId}/extension/${ext
 }
 ```
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/CallerBlockingSettings.yaml)
 
@@ -5466,7 +5466,7 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${ext
 }
 ```
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/BlockedAllowedPhoneNumbersList.yaml)
 
@@ -5513,7 +5513,7 @@ const r = await platform.post(`/restapi/v1.0/account/${accountId}/extension/${ex
 }
 ```
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/BlockedAllowedPhoneNumberInfo.yaml)
 
@@ -5549,7 +5549,7 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${ext
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/BlockedAllowedPhoneNumberInfo.yaml)
 
@@ -5613,7 +5613,7 @@ const r = await platform.put(`/restapi/v1.0/account/${accountId}/extension/${ext
 }
 ```
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/BlockedAllowedPhoneNumberInfo.yaml)
 
@@ -5632,7 +5632,7 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${ext
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/ExtensionCallerIdInfo.yaml)
 
@@ -5767,7 +5767,7 @@ const r = await platform.put(`/restapi/v1.0/account/${accountId}/extension/${ext
 }
 ```
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/ExtensionCallerIdInfo.yaml)
 
@@ -5832,7 +5832,7 @@ const r = await platform.post(`/restapi/v1.0/account/${accountId}/extension/${ex
 }
 ```
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/GetMessageInfoResponse.yaml)
 
@@ -5866,7 +5866,7 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${ext
 }
 ```
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/GetConferencingInfoResponse.yaml)
 
@@ -5915,7 +5915,7 @@ const r = await platform.put(`/restapi/v1.0/account/${accountId}/extension/${ext
 }
 ```
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/GetConferencingInfoResponse.yaml)
 
@@ -5965,7 +5965,7 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${ext
 }
 ```
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/GetExtensionDevicesResponse.yaml)
 
@@ -6111,7 +6111,7 @@ const r = await platform.post(`/restapi/v1.0/account/${accountId}/extension/${ex
 }
 ```
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/FaxResponse.yaml)
 
@@ -6153,7 +6153,7 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${ext
 }
 ```
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/GetExtensionForwardingNumberListResponse.yaml)
 
@@ -6210,7 +6210,7 @@ const r = await platform.post(`/restapi/v1.0/account/${accountId}/extension/${ex
 }
 ```
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/ForwardingNumberInfo.yaml)
 
@@ -6229,7 +6229,7 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${ext
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/ForwardingNumberResource.yaml)
 
@@ -6282,7 +6282,7 @@ const r = await platform.put(`/restapi/v1.0/account/${accountId}/extension/${ext
 }
 ```
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/ForwardingNumberInfo.yaml)
 
@@ -6339,7 +6339,7 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${ext
 }
 ```
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/GetExtensionGrantListResponse.yaml)
 
@@ -6393,7 +6393,7 @@ const r = await platform.post(`/restapi/v1.0/account/${accountId}/extension/${ex
 }
 ```
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/CustomCompanyGreetingInfo.yaml)
 
@@ -6412,7 +6412,7 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${ext
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/CustomUserGreetingInfo.yaml)
 
@@ -6431,7 +6431,7 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${ext
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/MeetingsResource.yaml)
 
@@ -6581,7 +6581,7 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${ext
 }
 ```
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/ListMeetingRecordingsResponse.yaml)
 
@@ -6600,7 +6600,7 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${ext
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/MeetingServiceInfoResource.yaml)
 
@@ -6619,7 +6619,7 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${ext
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/MeetingResponseResource.yaml)
 
@@ -6711,7 +6711,7 @@ const r = await platform.put(`/restapi/v1.0/account/${accountId}/extension/${ext
 }
 ```
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/MeetingResponseResource.yaml)
 
@@ -6879,7 +6879,7 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${ext
 }
 ```
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/GetMessageList.yaml)
 
@@ -6955,7 +6955,7 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${ext
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/GetMessageInfoResponse.yaml)
 
@@ -6992,7 +6992,7 @@ const r = await platform.put(`/restapi/v1.0/account/${accountId}/extension/${ext
 }
 ```
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/GetMessageInfoResponse.yaml)
 
@@ -7179,7 +7179,7 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${ext
 }
 ```
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/GetMessageSyncResponse.yaml)
 
@@ -7198,7 +7198,7 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${ext
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/NotificationSettings.yaml)
 
@@ -7391,7 +7391,7 @@ const r = await platform.put(`/restapi/v1.0/account/${accountId}/extension/${ext
 }
 ```
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/NotificationSettings.yaml)
 
@@ -7450,7 +7450,7 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${ext
 }
 ```
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/GetExtensionPhoneNumbersResponse.yaml)
 
@@ -7490,7 +7490,7 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${ext
 }
 ```
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/GetPresenceInfo.yaml)
 
@@ -7622,7 +7622,7 @@ const r = await platform.put(`/restapi/v1.0/account/${accountId}/extension/${ext
 }
 ```
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/PresenceInfoResource.yaml)
 
@@ -7773,7 +7773,7 @@ const r = await platform.post(`/restapi/v1.0/account/${accountId}/extension/${ex
 }
 ```
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/GetRingOutStatusResponse.yaml)
 
@@ -7792,7 +7792,7 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${ext
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/GetRingOutStatusResponse.yaml)
 
@@ -7886,7 +7886,7 @@ const r = await platform.post(`/restapi/v1.0/account/${accountId}/extension/${ex
 }
 ```
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/GetRingOutStatusResponseIntId.yaml)
 
@@ -7905,7 +7905,7 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${ext
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/GetRingOutStatusResponse.yaml)
 
@@ -7981,7 +7981,7 @@ const r = await platform.post(`/restapi/v1.0/account/${accountId}/extension/${ex
 }
 ```
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/GetMessageInfoResponse.yaml)
 
@@ -8040,7 +8040,7 @@ const r = await platform.post(`/restapi/v1.0/account/${accountId}/greeting`, for
 }
 ```
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/CustomCompanyGreetingInfo.yaml)
 
@@ -8178,7 +8178,7 @@ const r = await platform.post(`/restapi/v1.0/account/${accountId}/ivr-menus`, iV
 }
 ```
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/IVRMenuInfo.yaml)
 
@@ -8196,7 +8196,7 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/ivr-menus/${ivr
 
 - `accountId`'s default value is `~`
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/IVRMenuInfo.yaml)
 
@@ -8334,7 +8334,7 @@ const r = await platform.put(`/restapi/v1.0/account/${accountId}/ivr-menus/${ivr
 }
 ```
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/IVRMenuInfo.yaml)
 
@@ -8371,7 +8371,7 @@ const r = await platform.post(`/restapi/v1.0/account/${accountId}/ivr-prompts`, 
 }
 ```
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/PromptInfo.yaml)
 
@@ -8389,7 +8389,7 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/ivr-prompts`);
 
 - `accountId`'s default value is `~`
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/IVRPrompts.yaml)
 
@@ -8407,7 +8407,7 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/ivr-prompts/${p
 
 - `accountId`'s default value is `~`
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/PromptInfo.yaml)
 
@@ -8514,7 +8514,7 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/meeting-recordi
 }
 ```
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/ListMeetingRecordingsResponse.yaml)
 
@@ -8532,7 +8532,7 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/message-store-c
 
 - `accountId`'s default value is `~`
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/MessageStoreConfiguration.yaml)
 
@@ -8566,7 +8566,7 @@ const r = await platform.put(`/restapi/v1.0/account/${accountId}/message-store-c
 }
 ```
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/MessageStoreConfiguration.yaml)
 
@@ -8602,7 +8602,7 @@ const r = await platform.post(`/restapi/v1.0/account/${accountId}/message-store-
 }
 ```
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/MessageStoreReport.yaml)
 
@@ -8620,7 +8620,7 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/message-store-r
 
 - `accountId`'s default value is `~`
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/MessageStoreReport.yaml)
 
@@ -8638,7 +8638,7 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/message-store-r
 
 - `accountId`'s default value is `~`
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/MessageStoreReportArchive.yaml)
 
@@ -8749,7 +8749,7 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/paging-only-gro
 }
 ```
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/PagingOnlyGroupDevices.yaml)
 
@@ -8790,7 +8790,7 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/paging-only-gro
 }
 ```
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/PagingOnlyGroupUsers.yaml)
 
@@ -8853,7 +8853,7 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/phone-number`, 
 }
 ```
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/AccountPhoneNumbers.yaml)
 
@@ -8871,7 +8871,7 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/phone-number/${
 
 - `accountId`'s default value is `~`
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/CompanyPhoneNumberInfo.yaml)
 
@@ -8924,7 +8924,7 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/presence`, acco
 }
 ```
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/AccountPresenceInfo.yaml)
 
@@ -8942,7 +8942,7 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/recording/${rec
 
 - `accountId`'s default value is `~`
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/GetCallRecordingResponse.yaml)
 
@@ -8976,7 +8976,7 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/service-info`);
 
 - `accountId`'s default value is `~`
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/GetServiceInfoResponse.yaml)
 
@@ -9015,7 +9015,7 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/telephony/sessi
 }
 ```
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/CallSessionObject.yaml)
 
@@ -9049,7 +9049,7 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/telephony/sessi
 
 - `accountId`'s default value is `~`
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/CallParty.yaml)
 
@@ -9090,7 +9090,7 @@ const r = await platform.patch(`/restapi/v1.0/account/${accountId}/telephony/ses
 }
 ```
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/CallParty.yaml)
 
@@ -9156,7 +9156,7 @@ const r = await platform.post(`/restapi/v1.0/account/${accountId}/telephony/sess
 }
 ```
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/CallParty.yaml)
 
@@ -9174,7 +9174,7 @@ const r = await platform.post(`/restapi/v1.0/account/${accountId}/telephony/sess
 
 - `accountId`'s default value is `~`
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/CallParty.yaml)
 
@@ -9238,7 +9238,7 @@ const r = await platform.patch(`/restapi/v1.0/account/${accountId}/telephony/ses
 }
 ```
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/CallRecording.yaml)
 
@@ -9294,7 +9294,7 @@ const r = await platform.post(`/restapi/v1.0/account/${accountId}/telephony/sess
 }
 ```
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/CallParty.yaml)
 
@@ -9312,7 +9312,7 @@ const r = await platform.post(`/restapi/v1.0/account/${accountId}/telephony/sess
 
 - `accountId`'s default value is `~`
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/CallParty.yaml)
 
@@ -9355,7 +9355,7 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/templates`, lis
 }
 ```
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/UserTemplates.yaml)
 
@@ -9373,7 +9373,7 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/templates/${tem
 
 - `accountId`'s default value is `~`
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/TemplateInfo.yaml)
 
@@ -9443,7 +9443,7 @@ const r = await platform.post('/restapi/v1.0/client-info/sip-provision', createS
 }
 ```
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/CreateSipRegistrationResponse.yaml)
 
@@ -9507,7 +9507,7 @@ const r = await platform.get('/restapi/v1.0/dictionary/country', listCountriesPa
 }
 ```
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/GetCountryListResponse.yaml)
 
@@ -9524,7 +9524,7 @@ const r = await platform.get(`/restapi/v1.0/dictionary/country/${countryId}`);
 ```
 
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/GetCountryInfoDictionaryResponse.yaml)
 
@@ -9564,7 +9564,7 @@ const r = await platform.get('/restapi/v1.0/dictionary/fax-cover-page', listFaxC
 }
 ```
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/ListFaxCoverPagesResponse.yaml)
 
@@ -9634,7 +9634,7 @@ const r = await platform.get('/restapi/v1.0/dictionary/greeting', listStandardGr
 }
 ```
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/DictionaryGreetingList.yaml)
 
@@ -9651,7 +9651,7 @@ const r = await platform.get(`/restapi/v1.0/dictionary/greeting/${greetingId}`);
 ```
 
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/DictionaryGreetingInfo.yaml)
 
@@ -9668,7 +9668,7 @@ const r = await platform.get('/restapi/v1.0/dictionary/language');
 ```
 
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/LanguageList.yaml)
 
@@ -9685,7 +9685,7 @@ const r = await platform.get(`/restapi/v1.0/dictionary/language/${languageId}`);
 ```
 
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/LanguageInfo.yaml)
 
@@ -9751,7 +9751,7 @@ const r = await platform.get('/restapi/v1.0/dictionary/location', listLocationsP
 }
 ```
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/GetLocationListResponse.yaml)
 
@@ -9810,7 +9810,7 @@ const r = await platform.get('/restapi/v1.0/dictionary/state', listStatesParamet
 }
 ```
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/GetStateListResponse.yaml)
 
@@ -9827,7 +9827,7 @@ const r = await platform.get(`/restapi/v1.0/dictionary/state/${stateId}`);
 ```
 
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/GetStateInfoResponse.yaml)
 
@@ -9867,7 +9867,7 @@ const r = await platform.get('/restapi/v1.0/dictionary/timezone', listTimezonesP
 }
 ```
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/GetTimezoneListResponse.yaml)
 
@@ -9907,7 +9907,7 @@ const r = await platform.get(`/restapi/v1.0/dictionary/timezone/${timezoneId}`, 
 }
 ```
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/GetTimezoneInfoResponse.yaml)
 
@@ -10086,7 +10086,7 @@ const r = await platform.post('/restapi/v1.0/glip/cards', glipMessageAttachmentI
 }
 ```
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/GlipMessageAttachmentInfo.yaml)
 
@@ -10103,7 +10103,7 @@ const r = await platform.get(`/restapi/v1.0/glip/cards/${cardId}`);
 ```
 
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/GlipMessageAttachmentInfo.yaml)
 
@@ -10338,7 +10338,7 @@ const r = await platform.get('/restapi/v1.0/glip/chats', listGlipChatsParameters
 }
 ```
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/GlipChatsList.yaml)
 
@@ -10355,7 +10355,7 @@ const r = await platform.get(`/restapi/v1.0/glip/chats/${chatId}`);
 ```
 
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/GlipChatInfo.yaml)
 
@@ -10432,7 +10432,7 @@ const r = await platform.get(`/restapi/v1.0/glip/companies/${companyId}`);
 ```
 
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/GlipCompany.yaml)
 
@@ -10472,7 +10472,7 @@ const r = await platform.get('/restapi/v1.0/glip/conversations', listGlipConvers
 }
 ```
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/GlipConversationsList.yaml)
 
@@ -10519,7 +10519,7 @@ const r = await platform.post('/restapi/v1.0/glip/conversations', glipPostMember
 }
 ```
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/GlipConversationInfo.yaml)
 
@@ -10536,7 +10536,7 @@ const r = await platform.get(`/restapi/v1.0/glip/conversations/${chatId}`);
 ```
 
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/GlipConversationInfo.yaml)
 
@@ -10585,7 +10585,7 @@ const r = await platform.post('/restapi/v1.0/glip/data-export', createDataExport
 }
 ```
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/DataExportTask.yaml)
 
@@ -10602,7 +10602,7 @@ const r = await platform.get(`/restapi/v1.0/glip/data-export/${taskId}`);
 ```
 
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/DataExportTask.yaml)
 
@@ -10657,7 +10657,7 @@ const r = await platform.get('/restapi/v1.0/glip/events', loadGlipEventsParamete
 }
 ```
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/GlipEventsInfo.yaml)
 
@@ -10767,7 +10767,7 @@ const r = await platform.post('/restapi/v1.0/glip/events', glipEventCreate);
 }
 ```
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/GlipEventInfo.yaml)
 
@@ -10784,7 +10784,7 @@ const r = await platform.get(`/restapi/v1.0/glip/events/${eventId}`);
 ```
 
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/GlipEventInfo.yaml)
 
@@ -10894,7 +10894,7 @@ const r = await platform.put(`/restapi/v1.0/glip/events/${eventId}`, glipEventCr
 }
 ```
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/GlipEventInfo.yaml)
 
@@ -10926,7 +10926,7 @@ const r = await platform.get('/restapi/v1.0/glip/everyone');
 ```
 
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/GlipEveryoneInfo.yaml)
 
@@ -10961,7 +10961,7 @@ const r = await platform.patch('/restapi/v1.0/glip/everyone', updateGlipEveryone
 }
 ```
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/GlipEveryoneInfo.yaml)
 
@@ -10995,7 +10995,7 @@ const r = await platform.get('/restapi/v1.0/glip/favorites', listFavoriteChatsPa
 }
 ```
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/GlipChatsListWithoutNavigation.yaml)
 
@@ -11036,7 +11036,7 @@ const r = await platform.post('/restapi/v1.0/glip/files', formData, createGlipFi
 }
 ```
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/PostGlipFile.yaml)
 
@@ -11088,7 +11088,7 @@ const r = await platform.get('/restapi/v1.0/glip/groups', listGlipGroupsParamete
 }
 ```
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/GlipGroupList.yaml)
 
@@ -11145,7 +11145,7 @@ const r = await platform.post('/restapi/v1.0/glip/groups', glipCreateGroup);
 }
 ```
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/GlipGroupInfo.yaml)
 
@@ -11162,7 +11162,7 @@ const r = await platform.get(`/restapi/v1.0/glip/groups/${groupId}`);
 ```
 
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/GlipGroupInfo.yaml)
 
@@ -11210,7 +11210,7 @@ const r = await platform.post(`/restapi/v1.0/glip/groups/${groupId}/bulk-assign`
 }
 ```
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/GlipGroupInfo.yaml)
 
@@ -11320,7 +11320,7 @@ const r = await platform.post(`/restapi/v1.0/glip/groups/${groupId}/events`, gli
 }
 ```
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/GlipEventInfo.yaml)
 
@@ -11337,7 +11337,7 @@ const r = await platform.get(`/restapi/v1.0/glip/groups/${groupId}/events`);
 ```
 
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/GlipEventInfo.yaml)
 
@@ -11394,7 +11394,7 @@ const r = await platform.get(`/restapi/v1.0/glip/groups/${groupId}/notes`, loadG
 }
 ```
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/GlipNotesInfo.yaml)
 
@@ -11441,7 +11441,7 @@ const r = await platform.post(`/restapi/v1.0/glip/groups/${groupId}/notes`, glip
 }
 ```
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/GlipNoteInfo.yaml)
 
@@ -11481,7 +11481,7 @@ const r = await platform.get(`/restapi/v1.0/glip/groups/${groupId}/posts`, listG
 }
 ```
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/GlipPosts.yaml)
 
@@ -11667,7 +11667,7 @@ const r = await platform.post(`/restapi/v1.0/glip/groups/${groupId}/posts`, glip
 }
 ```
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/GlipPostInfo.yaml)
 
@@ -11701,7 +11701,7 @@ const r = await platform.post(`/restapi/v1.0/glip/groups/${groupId}/webhooks`);
 ```
 
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/GlipWebhookInfo.yaml)
 
@@ -11718,7 +11718,7 @@ const r = await platform.get(`/restapi/v1.0/glip/groups/${groupId}/webhooks`);
 ```
 
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/GlipWebhookList.yaml)
 
@@ -11768,7 +11768,7 @@ const r = await platform.get('/restapi/v1.0/glip/notes', loadUserNotesParameters
 }
 ```
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/GlipNotesInfo.yaml)
 
@@ -11815,7 +11815,7 @@ const r = await platform.post('/restapi/v1.0/glip/notes', glipNoteCreate);
 }
 ```
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/GlipNoteInfo.yaml)
 
@@ -11832,7 +11832,7 @@ const r = await platform.get(`/restapi/v1.0/glip/notes/${noteId}`);
 ```
 
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/GlipNotesInfo.yaml)
 
@@ -11909,7 +11909,7 @@ const r = await platform.patch(`/restapi/v1.0/glip/notes/${noteId}`, glipNoteCre
 }
 ```
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/GlipNoteInfo.yaml)
 
@@ -11956,7 +11956,7 @@ const r = await platform.put(`/restapi/v1.0/glip/notes/${noteId}`, glipNoteCreat
 }
 ```
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/GlipNoteInfo.yaml)
 
@@ -11973,7 +11973,7 @@ const r = await platform.post(`/restapi/v1.0/glip/notes/${noteId}/lock`);
 ```
 
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/GlipNoteInfo.yaml)
 
@@ -11990,7 +11990,7 @@ const r = await platform.post(`/restapi/v1.0/glip/notes/${noteId}/publish`);
 ```
 
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/GlipNoteInfo.yaml)
 
@@ -12007,7 +12007,7 @@ const r = await platform.post(`/restapi/v1.0/glip/notes/${noteId}/unlock`);
 ```
 
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/GlipNoteInfo.yaml)
 
@@ -12024,7 +12024,7 @@ const r = await platform.get(`/restapi/v1.0/glip/persons/${personId}`);
 ```
 
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/GlipPersonInfo.yaml)
 
@@ -12071,7 +12071,7 @@ const r = await platform.get('/restapi/v1.0/glip/posts', listGlipPostsParameters
 }
 ```
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/GlipPosts.yaml)
 
@@ -12257,7 +12257,7 @@ const r = await platform.post('/restapi/v1.0/glip/posts', glipCreatePost);
 }
 ```
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/GlipPostInfo.yaml)
 
@@ -12274,7 +12274,7 @@ const r = await platform.get('/restapi/v1.0/glip/preferences');
 ```
 
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/GlipPreferencesInfo.yaml)
 
@@ -12325,7 +12325,7 @@ const r = await platform.get('/restapi/v1.0/glip/recent/chats', listRecentChatsP
 }
 ```
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/GlipChatsListWithoutNavigation.yaml)
 
@@ -12365,7 +12365,7 @@ const r = await platform.get('/restapi/v1.0/glip/teams', listGlipTeamsParameters
 }
 ```
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/GlipTeamsList.yaml)
 
@@ -12424,7 +12424,7 @@ const r = await platform.post('/restapi/v1.0/glip/teams', glipPostTeamBody);
 }
 ```
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/GlipTeamInfo.yaml)
 
@@ -12441,7 +12441,7 @@ const r = await platform.get(`/restapi/v1.0/glip/teams/${chatId}`);
 ```
 
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/GlipTeamInfo.yaml)
 
@@ -12480,7 +12480,7 @@ const r = await platform.patch(`/restapi/v1.0/glip/teams/${chatId}`, glipPatchTe
 }
 ```
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/GlipTeamInfo.yaml)
 
@@ -12658,7 +12658,7 @@ const r = await platform.get('/restapi/v1.0/glip/webhooks');
 ```
 
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/GlipWebhookList.yaml)
 
@@ -12675,7 +12675,7 @@ const r = await platform.get(`/restapi/v1.0/glip/webhooks/${webhookId}`);
 ```
 
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/GlipWebhookList.yaml)
 
@@ -12775,7 +12775,7 @@ const r = await platform.post('/restapi/v1.0/number-parser/parse', parsePhoneNum
 }
 ```
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/ParsePhoneNumberResponse.yaml)
 
@@ -12807,7 +12807,7 @@ const r = await platform.get('/restapi/v1.0/subscription');
 ```
 
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/RecordsCollectionResourceSubscriptionResponse.yaml)
 
@@ -12886,7 +12886,7 @@ const r = await platform.post('/restapi/v1.0/subscription', createSubscriptionRe
 }
 ```
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/SubscriptionInfo.yaml)
 
@@ -12903,7 +12903,7 @@ const r = await platform.get(`/restapi/v1.0/subscription/${subscriptionId}`);
 ```
 
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/SubscriptionInfo.yaml)
 
@@ -12996,7 +12996,7 @@ const r = await platform.put(`/restapi/v1.0/subscription/${subscriptionId}`, mod
 }
 ```
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/SubscriptionInfo.yaml)
 
@@ -13028,7 +13028,7 @@ const r = await platform.post(`/restapi/v1.0/subscription/${subscriptionId}/rene
 ```
 
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/SubscriptionInfo.yaml)
 
@@ -13046,7 +13046,7 @@ const r = await platform.get(`/restapi/${apiVersion}`);
 
 - `apiVersion`'s default value is `v1.0`
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/GetVersionResponse.yaml)
 
@@ -13078,7 +13078,7 @@ const r = await platform.get('/scim/v2/ServiceProviderConfig');
 ```
 
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/ServiceProviderConfig.yaml)
 
@@ -13126,7 +13126,7 @@ const r = await platform.get('/scim/v2/Users', searchViaGet2Parameters);
 }
 ```
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/UserSearchResponse.yaml)
 
@@ -13280,7 +13280,7 @@ const r = await platform.post('/scim/v2/Users', user);
 }
 ```
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/UserResponse.yaml)
 
@@ -13330,7 +13330,7 @@ const r = await platform.post('/scim/v2/Users/.search', searchRequest);
 }
 ```
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/UserSearchResponse.yaml)
 
@@ -13347,7 +13347,7 @@ const r = await platform.get(`/scim/v2/Users/${id}`);
 ```
 
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/UserResponse.yaml)
 
@@ -13501,7 +13501,7 @@ const r = await platform.put(`/scim/v2/Users/${id}`, user);
 }
 ```
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/UserResponse.yaml)
 
@@ -13579,7 +13579,7 @@ const r = await platform.patch(`/scim/v2/Users/${id}`, userPatch);
 }
 ```
 
-You can get response json data by `const json = await r.json()`
+You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/UserResponse.yaml)
 
