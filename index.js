@@ -82,7 +82,7 @@ const generateDoc = (path, method, operation) => {
   const extraCode = codes.slice(1).join('\n')
   let doc = `## ${operation.summary || changeCase.titleCase(operation.operationId)}
 
-HTTP ${changeCase.upperCase(method)} ${path}
+HTTP ${changeCase.upperCase(method)} \`${path}\`
 
 \`\`\`js
 const SDK = require('ringcentral');

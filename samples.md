@@ -2,7 +2,7 @@
 
 ## Get API Versions
 
-HTTP GET /restapi
+HTTP GET `/restapi`
 
 ```js
 const SDK = require('ringcentral');
@@ -19,7 +19,7 @@ You can get response json data by `const json = r.json()`
 
 ## Get Company Info
 
-HTTP GET /restapi/v1.0/account/{accountId}
+HTTP GET `/restapi/v1.0/account/{accountId}`
 
 ```js
 const SDK = require('ringcentral');
@@ -37,7 +37,7 @@ You can get response json data by `const json = r.json()`
 
 ## Get Company Active Calls
 
-HTTP GET /restapi/v1.0/account/{accountId}/active-calls
+HTTP GET `/restapi/v1.0/account/{accountId}/active-calls`
 
 ```js
 const SDK = require('ringcentral');
@@ -131,7 +131,7 @@ You can get response json data by `const json = r.json()`
 
 ## Create Company Call Handling Rule
 
-HTTP POST /restapi/v1.0/account/{accountId}/answering-rule
+HTTP POST `/restapi/v1.0/account/{accountId}/answering-rule`
 
 ```js
 const SDK = require('ringcentral');
@@ -433,7 +433,7 @@ You can get response json data by `const json = r.json()`
 
 ## Get Company Call Handling Rules
 
-HTTP GET /restapi/v1.0/account/{accountId}/answering-rule
+HTTP GET `/restapi/v1.0/account/{accountId}/answering-rule`
 
 ```js
 const SDK = require('ringcentral');
@@ -451,7 +451,7 @@ You can get response json data by `const json = r.json()`
 
 ## Get Company Call Handling Rule
 
-HTTP GET /restapi/v1.0/account/{accountId}/answering-rule/{ruleId}
+HTTP GET `/restapi/v1.0/account/{accountId}/answering-rule/{ruleId}`
 
 ```js
 const SDK = require('ringcentral');
@@ -469,7 +469,7 @@ You can get response json data by `const json = r.json()`
 
 ## Update Company Call Handling Rule
 
-HTTP PUT /restapi/v1.0/account/{accountId}/answering-rule/{ruleId}
+HTTP PUT `/restapi/v1.0/account/{accountId}/answering-rule/{ruleId}`
 
 ```js
 const SDK = require('ringcentral');
@@ -762,7 +762,7 @@ You can get response json data by `const json = r.json()`
 
 ## Delete Company Call Handling Rule
 
-HTTP DELETE /restapi/v1.0/account/{accountId}/answering-rule/{ruleId}
+HTTP DELETE `/restapi/v1.0/account/{accountId}/answering-rule/{ruleId}`
 
 ```js
 const SDK = require('ringcentral');
@@ -778,7 +778,7 @@ Response body is empty
 
 ## Get Company Business Address
 
-HTTP GET /restapi/v1.0/account/{accountId}/business-address
+HTTP GET `/restapi/v1.0/account/{accountId}/business-address`
 
 ```js
 const SDK = require('ringcentral');
@@ -796,7 +796,7 @@ You can get response json data by `const json = r.json()`
 
 ## Update Company Business Address
 
-HTTP PUT /restapi/v1.0/account/{accountId}/business-address
+HTTP PUT `/restapi/v1.0/account/{accountId}/business-address`
 
 ```js
 const SDK = require('ringcentral');
@@ -860,7 +860,7 @@ You can get response json data by `const json = r.json()`
 
 ## Get Company Business Hours
 
-HTTP GET /restapi/v1.0/account/{accountId}/business-hours
+HTTP GET `/restapi/v1.0/account/{accountId}/business-hours`
 
 ```js
 const SDK = require('ringcentral');
@@ -878,7 +878,7 @@ You can get response json data by `const json = r.json()`
 
 ## Update Company Business Hours
 
-HTTP PUT /restapi/v1.0/account/{accountId}/business-hours
+HTTP PUT `/restapi/v1.0/account/{accountId}/business-hours`
 
 ```js
 const SDK = require('ringcentral');
@@ -1063,7 +1063,7 @@ You can get response json data by `const json = r.json()`
 
 ## Get Company Call Log Records
 
-HTTP GET /restapi/v1.0/account/{accountId}/call-log
+HTTP GET `/restapi/v1.0/account/{accountId}/call-log`
 
 ```js
 const SDK = require('ringcentral');
@@ -1181,7 +1181,7 @@ You can get response json data by `const json = r.json()`
 
 ## Get Company Call Log Record(s)
 
-HTTP GET /restapi/v1.0/account/{accountId}/call-log/{callRecordId}
+HTTP GET `/restapi/v1.0/account/{accountId}/call-log/{callRecordId}`
 
 ```js
 const SDK = require('ringcentral');
@@ -1199,7 +1199,7 @@ You can get response json data by `const json = r.json()`
 
 ## Create Call Monitoring Group
 
-HTTP POST /restapi/v1.0/account/{accountId}/call-monitoring-groups
+HTTP POST `/restapi/v1.0/account/{accountId}/call-monitoring-groups`
 
 ```js
 const SDK = require('ringcentral');
@@ -1238,7 +1238,7 @@ You can get response json data by `const json = r.json()`
 
 ## Get Call Monitoring Groups
 
-HTTP GET /restapi/v1.0/account/{accountId}/call-monitoring-groups
+HTTP GET `/restapi/v1.0/account/{accountId}/call-monitoring-groups`
 
 ```js
 const SDK = require('ringcentral');
@@ -1284,7 +1284,7 @@ You can get response json data by `const json = r.json()`
 
 ## Updates Call Monitoring Group
 
-HTTP PUT /restapi/v1.0/account/{accountId}/call-monitoring-groups/{groupId}
+HTTP PUT `/restapi/v1.0/account/{accountId}/call-monitoring-groups/{groupId}`
 
 ```js
 const SDK = require('ringcentral');
@@ -1323,7 +1323,7 @@ You can get response json data by `const json = r.json()`
 
 ## Remove Given Call Monitoring Group
 
-HTTP DELETE /restapi/v1.0/account/{accountId}/call-monitoring-groups/{groupId}
+HTTP DELETE `/restapi/v1.0/account/{accountId}/call-monitoring-groups/{groupId}`
 
 ```js
 const SDK = require('ringcentral');
@@ -1339,7 +1339,7 @@ Response body is empty
 
 ## Edit Call Monitoring Group
 
-HTTP POST /restapi/v1.0/account/{accountId}/call-monitoring-groups/{groupId}/bulk-assign
+HTTP POST `/restapi/v1.0/account/{accountId}/call-monitoring-groups/{groupId}/bulk-assign`
 
 ```js
 const SDK = require('ringcentral');
@@ -1430,7 +1430,7 @@ You can get response json data by `const json = r.json()`
 
 ## Get Call Monitoring Group Members
 
-HTTP GET /restapi/v1.0/account/{accountId}/call-monitoring-groups/{groupId}/members
+HTTP GET `/restapi/v1.0/account/{accountId}/call-monitoring-groups/{groupId}/members`
 
 ```js
 const SDK = require('ringcentral');
@@ -1471,7 +1471,7 @@ You can get response json data by `const json = r.json()`
 
 ## Get Call Queues
 
-HTTP GET /restapi/v1.0/account/{accountId}/call-queues
+HTTP GET `/restapi/v1.0/account/{accountId}/call-queues`
 
 ```js
 const SDK = require('ringcentral');
@@ -1517,7 +1517,7 @@ You can get response json data by `const json = r.json()`
 
 ## Edit Call Queue Members
 
-HTTP POST /restapi/v1.0/account/{accountId}/call-queues/{groupId}/bulk-assign
+HTTP POST `/restapi/v1.0/account/{accountId}/call-queues/{groupId}/bulk-assign`
 
 ```js
 const SDK = require('ringcentral');
@@ -1555,7 +1555,7 @@ Response body is empty
 
 ## Get Call Queue Members
 
-HTTP GET /restapi/v1.0/account/{accountId}/call-queues/{groupId}/members
+HTTP GET `/restapi/v1.0/account/{accountId}/call-queues/{groupId}/members`
 
 ```js
 const SDK = require('ringcentral');
@@ -1596,7 +1596,7 @@ You can get response json data by `const json = r.json()`
 
 ## Get Call Recording Settings
 
-HTTP GET /restapi/v1.0/account/{accountId}/call-recording
+HTTP GET `/restapi/v1.0/account/{accountId}/call-recording`
 
 ```js
 const SDK = require('ringcentral');
@@ -1614,7 +1614,7 @@ You can get response json data by `const json = r.json()`
 
 ## Update Call Recording Settings
 
-HTTP PUT /restapi/v1.0/account/{accountId}/call-recording
+HTTP PUT `/restapi/v1.0/account/{accountId}/call-recording`
 
 ```js
 const SDK = require('ringcentral');
@@ -1698,7 +1698,7 @@ You can get response json data by `const json = r.json()`
 
 ## Update Call Recording Extension Settings
 
-HTTP POST /restapi/v1.0/account/{accountId}/call-recording/bulk-assign
+HTTP POST `/restapi/v1.0/account/{accountId}/call-recording/bulk-assign`
 
 ```js
 const SDK = require('ringcentral');
@@ -1802,7 +1802,7 @@ Response body is empty
 
 ## [Beta] Get Call Recording Custom Greetings
 
-HTTP GET /restapi/v1.0/account/{accountId}/call-recording/custom-greetings
+HTTP GET `/restapi/v1.0/account/{accountId}/call-recording/custom-greetings`
 
 ```js
 const SDK = require('ringcentral');
@@ -1839,7 +1839,7 @@ You can get response json data by `const json = r.json()`
 
 ## Delete Call Recording Custom Greetings
 
-HTTP DELETE /restapi/v1.0/account/{accountId}/call-recording/custom-greetings
+HTTP DELETE `/restapi/v1.0/account/{accountId}/call-recording/custom-greetings`
 
 ```js
 const SDK = require('ringcentral');
@@ -1855,7 +1855,7 @@ Response body is empty
 
 ## Delete Call Recording Custom Greeting
 
-HTTP DELETE /restapi/v1.0/account/{accountId}/call-recording/custom-greetings/{greetingId}
+HTTP DELETE `/restapi/v1.0/account/{accountId}/call-recording/custom-greetings/{greetingId}`
 
 ```js
 const SDK = require('ringcentral');
@@ -1871,7 +1871,7 @@ Response body is empty
 
 ## Get Call Recording Extension Settings
 
-HTTP GET /restapi/v1.0/account/{accountId}/call-recording/extensions
+HTTP GET `/restapi/v1.0/account/{accountId}/call-recording/extensions`
 
 ```js
 const SDK = require('ringcentral');
@@ -1887,7 +1887,7 @@ Response body is empty
 
 ## Edit Department Members
 
-HTTP POST /restapi/v1.0/account/{accountId}/department/bulk-assign
+HTTP POST `/restapi/v1.0/account/{accountId}/department/bulk-assign`
 
 ```js
 const SDK = require('ringcentral');
@@ -1935,7 +1935,7 @@ Response body is empty
 
 ## Get Department Member List
 
-HTTP GET /restapi/v1.0/account/{accountId}/department/{departmentId}/members
+HTTP GET `/restapi/v1.0/account/{accountId}/department/{departmentId}/members`
 
 ```js
 const SDK = require('ringcentral');
@@ -1976,7 +1976,7 @@ You can get response json data by `const json = r.json()`
 
 ## Get Device Info
 
-HTTP GET /restapi/v1.0/account/{accountId}/device/{deviceId}
+HTTP GET `/restapi/v1.0/account/{accountId}/device/{deviceId}`
 
 ```js
 const SDK = require('ringcentral');
@@ -1994,7 +1994,7 @@ You can get response json data by `const json = r.json()`
 
 ## Update Device
 
-HTTP PUT /restapi/v1.0/account/{accountId}/device/{deviceId}
+HTTP PUT `/restapi/v1.0/account/{accountId}/device/{deviceId}`
 
 ```js
 const SDK = require('ringcentral');
@@ -2085,7 +2085,7 @@ You can get response json data by `const json = r.json()`
 
 ## Get Company Directory Entries
 
-HTTP GET /restapi/v1.0/account/{accountId}/directory/entries
+HTTP GET `/restapi/v1.0/account/{accountId}/directory/entries`
 
 ```js
 const SDK = require('ringcentral');
@@ -2157,7 +2157,7 @@ You can get response json data by `const json = r.json()`
 
 ## Search Company Directory Entries
 
-HTTP POST /restapi/v1.0/account/{accountId}/directory/entries/search
+HTTP POST `/restapi/v1.0/account/{accountId}/directory/entries/search`
 
 ```js
 const SDK = require('ringcentral');
@@ -2249,7 +2249,7 @@ You can get response json data by `const json = r.json()`
 
 ## Get Account Federation
 
-HTTP GET /restapi/v1.0/account/{accountId}/directory/federation
+HTTP GET `/restapi/v1.0/account/{accountId}/directory/federation`
 
 ```js
 const SDK = require('ringcentral');
@@ -2267,7 +2267,7 @@ You can get response json data by `const json = r.json()`
 
 ## Get Extension List
 
-HTTP GET /restapi/v1.0/account/{accountId}/extension
+HTTP GET `/restapi/v1.0/account/{accountId}/extension`
 
 ```js
 const SDK = require('ringcentral');
@@ -2366,7 +2366,7 @@ You can get response json data by `const json = r.json()`
 
 ## Create Extension
 
-HTTP POST /restapi/v1.0/account/{accountId}/extension
+HTTP POST `/restapi/v1.0/account/{accountId}/extension`
 
 ```js
 const SDK = require('ringcentral');
@@ -2702,7 +2702,7 @@ You can get response json data by `const json = r.json()`
 
 ## Get Extension Info
 
-HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}
+HTTP GET `/restapi/v1.0/account/{accountId}/extension/{extensionId}`
 
 ```js
 const SDK = require('ringcentral');
@@ -2721,7 +2721,7 @@ You can get response json data by `const json = r.json()`
 
 ## Update Extension
 
-HTTP PUT /restapi/v1.0/account/{accountId}/extension/{extensionId}
+HTTP PUT `/restapi/v1.0/account/{accountId}/extension/{extensionId}`
 
 ```js
 const SDK = require('ringcentral');
@@ -2970,7 +2970,7 @@ You can get response json data by `const json = r.json()`
 
 ## Delete Extension
 
-HTTP DELETE /restapi/v1.0/account/{accountId}/extension/{extensionId}
+HTTP DELETE `/restapi/v1.0/account/{accountId}/extension/{extensionId}`
 
 ```js
 const SDK = require('ringcentral');
@@ -2987,7 +2987,7 @@ Response body is empty
 
 ## Get User Active Calls
 
-HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/active-calls
+HTTP GET `/restapi/v1.0/account/{accountId}/extension/{extensionId}/active-calls`
 
 ```js
 const SDK = require('ringcentral');
@@ -3068,7 +3068,7 @@ You can get response json data by `const json = r.json()`
 
 ## Address Book Synchronization
 
-HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/address-book-sync
+HTTP GET `/restapi/v1.0/account/{accountId}/extension/{extensionId}/address-book-sync`
 
 ```js
 const SDK = require('ringcentral');
@@ -3128,7 +3128,7 @@ You can get response json data by `const json = r.json()`
 
 ## Get Contact List
 
-HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/address-book/contact
+HTTP GET `/restapi/v1.0/account/{accountId}/extension/{extensionId}/address-book/contact`
 
 ```js
 const SDK = require('ringcentral');
@@ -3200,7 +3200,7 @@ You can get response json data by `const json = r.json()`
 
 ## Create Contact
 
-HTTP POST /restapi/v1.0/account/{accountId}/extension/{extensionId}/address-book/contact
+HTTP POST `/restapi/v1.0/account/{accountId}/extension/{extensionId}/address-book/contact`
 
 ```js
 const SDK = require('ringcentral');
@@ -3404,7 +3404,7 @@ You can get response json data by `const json = r.json()`
 
 ## Get Contact(s)
 
-HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/address-book/contact/{contactId}
+HTTP GET `/restapi/v1.0/account/{accountId}/extension/{extensionId}/address-book/contact/{contactId}`
 
 ```js
 const SDK = require('ringcentral');
@@ -3423,7 +3423,7 @@ You can get response json data by `const json = r.json()`
 
 ## Update Contact(s)
 
-HTTP PUT /restapi/v1.0/account/{accountId}/extension/{extensionId}/address-book/contact/{contactId}
+HTTP PUT `/restapi/v1.0/account/{accountId}/extension/{extensionId}/address-book/contact/{contactId}`
 
 ```js
 const SDK = require('ringcentral');
@@ -3627,7 +3627,7 @@ You can get response json data by `const json = r.json()`
 
 ## Delete Contact(s)
 
-HTTP DELETE /restapi/v1.0/account/{accountId}/extension/{extensionId}/address-book/contact/{contactId}
+HTTP DELETE `/restapi/v1.0/account/{accountId}/extension/{extensionId}/address-book/contact/{contactId}`
 
 ```js
 const SDK = require('ringcentral');
@@ -3644,7 +3644,7 @@ Response body is empty
 
 ## Get Call Handling Rules
 
-HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/answering-rule
+HTTP GET `/restapi/v1.0/account/{accountId}/extension/{extensionId}/answering-rule`
 
 ```js
 const SDK = require('ringcentral');
@@ -3684,7 +3684,7 @@ You can get response json data by `const json = r.json()`
 
 ## Create Custom Call Handling Rules
 
-HTTP POST /restapi/v1.0/account/{accountId}/extension/{extensionId}/answering-rule
+HTTP POST `/restapi/v1.0/account/{accountId}/extension/{extensionId}/answering-rule`
 
 ```js
 const SDK = require('ringcentral');
@@ -4209,7 +4209,7 @@ You can get response json data by `const json = r.json()`
 
 ## Get Call Handling Rule
 
-HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/answering-rule/{ruleId}
+HTTP GET `/restapi/v1.0/account/{accountId}/extension/{extensionId}/answering-rule/{ruleId}`
 
 ```js
 const SDK = require('ringcentral');
@@ -4244,7 +4244,7 @@ You can get response json data by `const json = r.json()`
 
 ## Update Custom Call Handling Rule
 
-HTTP PUT /restapi/v1.0/account/{accountId}/extension/{extensionId}/answering-rule/{ruleId}
+HTTP PUT `/restapi/v1.0/account/{accountId}/extension/{extensionId}/answering-rule/{ruleId}`
 
 ```js
 const SDK = require('ringcentral');
@@ -4729,7 +4729,7 @@ You can get response json data by `const json = r.json()`
 
 ## Delete Call Handling Rule
 
-HTTP DELETE /restapi/v1.0/account/{accountId}/extension/{extensionId}/answering-rule/{ruleId}
+HTTP DELETE `/restapi/v1.0/account/{accountId}/extension/{extensionId}/answering-rule/{ruleId}`
 
 ```js
 const SDK = require('ringcentral');
@@ -4746,7 +4746,7 @@ Response body is empty
 
 ## Get User Permissions
 
-HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/authz-profile
+HTTP GET `/restapi/v1.0/account/{accountId}/extension/{extensionId}/authz-profile`
 
 ```js
 const SDK = require('ringcentral');
@@ -4765,7 +4765,7 @@ You can get response json data by `const json = r.json()`
 
 ## Check User Permissions
 
-HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/authz-profile/check
+HTTP GET `/restapi/v1.0/account/{accountId}/extension/{extensionId}/authz-profile/check`
 
 ```js
 const SDK = require('ringcentral');
@@ -4803,7 +4803,7 @@ You can get response json data by `const json = r.json()`
 
 ## Get User Business Hours
 
-HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/business-hours
+HTTP GET `/restapi/v1.0/account/{accountId}/extension/{extensionId}/business-hours`
 
 ```js
 const SDK = require('ringcentral');
@@ -4822,7 +4822,7 @@ You can get response json data by `const json = r.json()`
 
 ## Update User Business Hours
 
-HTTP PUT /restapi/v1.0/account/{accountId}/extension/{extensionId}/business-hours
+HTTP PUT `/restapi/v1.0/account/{accountId}/extension/{extensionId}/business-hours`
 
 ```js
 const SDK = require('ringcentral');
@@ -4976,7 +4976,7 @@ You can get response json data by `const json = r.json()`
 
 ## Get User Call Log Records
 
-HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/call-log
+HTTP GET `/restapi/v1.0/account/{accountId}/extension/{extensionId}/call-log`
 
 ```js
 const SDK = require('ringcentral');
@@ -5123,7 +5123,7 @@ You can get response json data by `const json = r.json()`
 
 ## Delete User Call Log Records
 
-HTTP DELETE /restapi/v1.0/account/{accountId}/extension/{extensionId}/call-log
+HTTP DELETE `/restapi/v1.0/account/{accountId}/extension/{extensionId}/call-log`
 
 ```js
 const SDK = require('ringcentral');
@@ -5198,7 +5198,7 @@ Response body is empty
 
 ## Sync User Call Log
 
-HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/call-log-sync
+HTTP GET `/restapi/v1.0/account/{accountId}/extension/{extensionId}/call-log-sync`
 
 ```js
 const SDK = require('ringcentral');
@@ -5284,7 +5284,7 @@ You can get response json data by `const json = r.json()`
 
 ## Get User Call Record(s)
 
-HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/call-log/{callRecordId}
+HTTP GET `/restapi/v1.0/account/{accountId}/extension/{extensionId}/call-log/{callRecordId}`
 
 ```js
 const SDK = require('ringcentral');
@@ -5323,7 +5323,7 @@ You can get response json data by `const json = r.json()`
 
 ## Get Caller Blocking Settings
 
-HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/caller-blocking
+HTTP GET `/restapi/v1.0/account/{accountId}/extension/{extensionId}/caller-blocking`
 
 ```js
 const SDK = require('ringcentral');
@@ -5342,7 +5342,7 @@ You can get response json data by `const json = r.json()`
 
 ## Update Caller Blocking Settings
 
-HTTP PUT /restapi/v1.0/account/{accountId}/extension/{extensionId}/caller-blocking
+HTTP PUT `/restapi/v1.0/account/{accountId}/extension/{extensionId}/caller-blocking`
 
 ```js
 const SDK = require('ringcentral');
@@ -5425,7 +5425,7 @@ You can get response json data by `const json = r.json()`
 
 ## Get Blocked/Allowed Numbers
 
-HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/caller-blocking/phone-numbers
+HTTP GET `/restapi/v1.0/account/{accountId}/extension/{extensionId}/caller-blocking/phone-numbers`
 
 ```js
 const SDK = require('ringcentral');
@@ -5472,7 +5472,7 @@ You can get response json data by `const json = r.json()`
 
 ## Add Blocked/Allowed Number
 
-HTTP POST /restapi/v1.0/account/{accountId}/extension/{extensionId}/caller-blocking/phone-numbers
+HTTP POST `/restapi/v1.0/account/{accountId}/extension/{extensionId}/caller-blocking/phone-numbers`
 
 ```js
 const SDK = require('ringcentral');
@@ -5519,7 +5519,7 @@ You can get response json data by `const json = r.json()`
 
 ## Add/Remove Blocked or Allowed Numbers using bulk request
 
-HTTP POST /restapi/v1.0/account/{accountId}/extension/{extensionId}/caller-blocking/phone-numbers/bulk-update
+HTTP POST `/restapi/v1.0/account/{accountId}/extension/{extensionId}/caller-blocking/phone-numbers/bulk-update`
 
 ```js
 const SDK = require('ringcentral');
@@ -5536,7 +5536,7 @@ Response body is empty
 
 ## Get Blocked/Allowed Number
 
-HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/caller-blocking/phone-numbers/{blockedNumberId}
+HTTP GET `/restapi/v1.0/account/{accountId}/extension/{extensionId}/caller-blocking/phone-numbers/{blockedNumberId}`
 
 ```js
 const SDK = require('ringcentral');
@@ -5555,7 +5555,7 @@ You can get response json data by `const json = r.json()`
 
 ## Delete Blocked Number
 
-HTTP DELETE /restapi/v1.0/account/{accountId}/extension/{extensionId}/caller-blocking/phone-numbers/{blockedNumberId}
+HTTP DELETE `/restapi/v1.0/account/{accountId}/extension/{extensionId}/caller-blocking/phone-numbers/{blockedNumberId}`
 
 ```js
 const SDK = require('ringcentral');
@@ -5572,7 +5572,7 @@ Response body is empty
 
 ## Update Blocked/Allowed Number
 
-HTTP PUT /restapi/v1.0/account/{accountId}/extension/{extensionId}/caller-blocking/phone-numbers/{blockedNumberId}
+HTTP PUT `/restapi/v1.0/account/{accountId}/extension/{extensionId}/caller-blocking/phone-numbers/{blockedNumberId}`
 
 ```js
 const SDK = require('ringcentral');
@@ -5619,7 +5619,7 @@ You can get response json data by `const json = r.json()`
 
 ## Get Extension Caller ID
 
-HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/caller-id
+HTTP GET `/restapi/v1.0/account/{accountId}/extension/{extensionId}/caller-id`
 
 ```js
 const SDK = require('ringcentral');
@@ -5638,7 +5638,7 @@ You can get response json data by `const json = r.json()`
 
 ## Update Extension Caller ID
 
-HTTP PUT /restapi/v1.0/account/{accountId}/extension/{extensionId}/caller-id
+HTTP PUT `/restapi/v1.0/account/{accountId}/extension/{extensionId}/caller-id`
 
 ```js
 const SDK = require('ringcentral');
@@ -5773,7 +5773,7 @@ You can get response json data by `const json = r.json()`
 
 ## Create Internal Text Message
 
-HTTP POST /restapi/v1.0/account/{accountId}/extension/{extensionId}/company-pager
+HTTP POST `/restapi/v1.0/account/{accountId}/extension/{extensionId}/company-pager`
 
 ```js
 const SDK = require('ringcentral');
@@ -5838,7 +5838,7 @@ You can get response json data by `const json = r.json()`
 
 ## Get User Conferencing Settings
 
-HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/conferencing
+HTTP GET `/restapi/v1.0/account/{accountId}/extension/{extensionId}/conferencing`
 
 ```js
 const SDK = require('ringcentral');
@@ -5872,7 +5872,7 @@ You can get response json data by `const json = r.json()`
 
 ## Update User Conferencing Settings
 
-HTTP PUT /restapi/v1.0/account/{accountId}/extension/{extensionId}/conferencing
+HTTP PUT `/restapi/v1.0/account/{accountId}/extension/{extensionId}/conferencing`
 
 ```js
 const SDK = require('ringcentral');
@@ -5921,7 +5921,7 @@ You can get response json data by `const json = r.json()`
 
 ## Get User Device Info
 
-HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/device
+HTTP GET `/restapi/v1.0/account/{accountId}/extension/{extensionId}/device`
 
 ```js
 const SDK = require('ringcentral');
@@ -5971,7 +5971,7 @@ You can get response json data by `const json = r.json()`
 
 ## Get Favorite Contact List
 
-HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/favorite
+HTTP GET `/restapi/v1.0/account/{accountId}/extension/{extensionId}/favorite`
 
 ```js
 const SDK = require('ringcentral');
@@ -5988,7 +5988,7 @@ Response body is empty
 
 ## Update Favorite Contact List
 
-HTTP PUT /restapi/v1.0/account/{accountId}/extension/{extensionId}/favorite
+HTTP PUT `/restapi/v1.0/account/{accountId}/extension/{extensionId}/favorite`
 
 ```js
 const SDK = require('ringcentral');
@@ -6039,7 +6039,7 @@ Response body is empty
 
 ## Create Fax Message
 
-HTTP POST /restapi/v1.0/account/{accountId}/extension/{extensionId}/fax
+HTTP POST `/restapi/v1.0/account/{accountId}/extension/{extensionId}/fax`
 
 ```js
 const SDK = require('ringcentral');
@@ -6117,7 +6117,7 @@ You can get response json data by `const json = r.json()`
 
 ## Get Forwarding Numbers
 
-HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/forwarding-number
+HTTP GET `/restapi/v1.0/account/{accountId}/extension/{extensionId}/forwarding-number`
 
 ```js
 const SDK = require('ringcentral');
@@ -6159,7 +6159,7 @@ You can get response json data by `const json = r.json()`
 
 ## Create Forwarding Numbers
 
-HTTP POST /restapi/v1.0/account/{accountId}/extension/{extensionId}/forwarding-number
+HTTP POST `/restapi/v1.0/account/{accountId}/extension/{extensionId}/forwarding-number`
 
 ```js
 const SDK = require('ringcentral');
@@ -6216,7 +6216,7 @@ You can get response json data by `const json = r.json()`
 
 ## Get Forwarding Number
 
-HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/forwarding-number/{forwardingNumberId}
+HTTP GET `/restapi/v1.0/account/{accountId}/extension/{extensionId}/forwarding-number/{forwardingNumberId}`
 
 ```js
 const SDK = require('ringcentral');
@@ -6235,7 +6235,7 @@ You can get response json data by `const json = r.json()`
 
 ## Update Forwarding Numbers
 
-HTTP PUT /restapi/v1.0/account/{accountId}/extension/{extensionId}/forwarding-number/{forwardingNumberId}
+HTTP PUT `/restapi/v1.0/account/{accountId}/extension/{extensionId}/forwarding-number/{forwardingNumberId}`
 
 ```js
 const SDK = require('ringcentral');
@@ -6288,7 +6288,7 @@ You can get response json data by `const json = r.json()`
 
 ## Delete Forwarding Number
 
-HTTP DELETE /restapi/v1.0/account/{accountId}/extension/{extensionId}/forwarding-number/{forwardingNumberId}
+HTTP DELETE `/restapi/v1.0/account/{accountId}/extension/{extensionId}/forwarding-number/{forwardingNumberId}`
 
 ```js
 const SDK = require('ringcentral');
@@ -6305,7 +6305,7 @@ Response body is empty
 
 ## Get Extension Grants
 
-HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/grant
+HTTP GET `/restapi/v1.0/account/{accountId}/extension/{extensionId}/grant`
 
 ```js
 const SDK = require('ringcentral');
@@ -6345,7 +6345,7 @@ You can get response json data by `const json = r.json()`
 
 ## Create User Custom Greeting
 
-HTTP POST /restapi/v1.0/account/{accountId}/extension/{extensionId}/greeting
+HTTP POST `/restapi/v1.0/account/{accountId}/extension/{extensionId}/greeting`
 
 ```js
 const SDK = require('ringcentral');
@@ -6399,7 +6399,7 @@ You can get response json data by `const json = r.json()`
 
 ## Get Custom Greeting Info
 
-HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/greeting/{greetingId}
+HTTP GET `/restapi/v1.0/account/{accountId}/extension/{extensionId}/greeting/{greetingId}`
 
 ```js
 const SDK = require('ringcentral');
@@ -6418,7 +6418,7 @@ You can get response json data by `const json = r.json()`
 
 ## Get Scheduled Meetings
 
-HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/meeting
+HTTP GET `/restapi/v1.0/account/{accountId}/extension/{extensionId}/meeting`
 
 ```js
 const SDK = require('ringcentral');
@@ -6437,7 +6437,7 @@ You can get response json data by `const json = r.json()`
 
 ## Create Meetings
 
-HTTP POST /restapi/v1.0/account/{accountId}/extension/{extensionId}/meeting
+HTTP POST `/restapi/v1.0/account/{accountId}/extension/{extensionId}/meeting`
 
 ```js
 const SDK = require('ringcentral');
@@ -6527,7 +6527,7 @@ Response body is empty
 
 ## Get User Meeting Recordings
 
-HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/meeting-recordings
+HTTP GET `/restapi/v1.0/account/{accountId}/extension/{extensionId}/meeting-recordings`
 
 ```js
 const SDK = require('ringcentral');
@@ -6587,7 +6587,7 @@ You can get response json data by `const json = r.json()`
 
 ## Get Meeting Service Info
 
-HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/meeting/service-info
+HTTP GET `/restapi/v1.0/account/{accountId}/extension/{extensionId}/meeting/service-info`
 
 ```js
 const SDK = require('ringcentral');
@@ -6606,7 +6606,7 @@ You can get response json data by `const json = r.json()`
 
 ## Get Meeting Info
 
-HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/meeting/{meetingId}
+HTTP GET `/restapi/v1.0/account/{accountId}/extension/{extensionId}/meeting/{meetingId}`
 
 ```js
 const SDK = require('ringcentral');
@@ -6625,7 +6625,7 @@ You can get response json data by `const json = r.json()`
 
 ## Update Meeting
 
-HTTP PUT /restapi/v1.0/account/{accountId}/extension/{extensionId}/meeting/{meetingId}
+HTTP PUT `/restapi/v1.0/account/{accountId}/extension/{extensionId}/meeting/{meetingId}`
 
 ```js
 const SDK = require('ringcentral');
@@ -6717,7 +6717,7 @@ You can get response json data by `const json = r.json()`
 
 ## Delete Meeting
 
-HTTP DELETE /restapi/v1.0/account/{accountId}/extension/{extensionId}/meeting/{meetingId}
+HTTP DELETE `/restapi/v1.0/account/{accountId}/extension/{extensionId}/meeting/{meetingId}`
 
 ```js
 const SDK = require('ringcentral');
@@ -6734,7 +6734,7 @@ Response body is empty
 
 ## End Meeting
 
-HTTP POST /restapi/v1.0/account/{accountId}/extension/{extensionId}/meeting/{meetingId}/end
+HTTP POST `/restapi/v1.0/account/{accountId}/extension/{extensionId}/meeting/{meetingId}/end`
 
 ```js
 const SDK = require('ringcentral');
@@ -6751,7 +6751,7 @@ Response body is empty
 
 ## Get Message List
 
-HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/message-store
+HTTP GET `/restapi/v1.0/account/{accountId}/extension/{extensionId}/message-store`
 
 ```js
 const SDK = require('ringcentral');
@@ -6885,7 +6885,7 @@ You can get response json data by `const json = r.json()`
 
 ## Delete Conversation(s)
 
-HTTP DELETE /restapi/v1.0/account/{accountId}/extension/{extensionId}/message-store
+HTTP DELETE `/restapi/v1.0/account/{accountId}/extension/{extensionId}/message-store`
 
 ```js
 const SDK = require('ringcentral');
@@ -6942,7 +6942,7 @@ Response body is empty
 
 ## Get Message(s)
 
-HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/message-store/{messageId}
+HTTP GET `/restapi/v1.0/account/{accountId}/extension/{extensionId}/message-store/{messageId}`
 
 ```js
 const SDK = require('ringcentral');
@@ -6961,7 +6961,7 @@ You can get response json data by `const json = r.json()`
 
 ## Update Message(s)
 
-HTTP PUT /restapi/v1.0/account/{accountId}/extension/{extensionId}/message-store/{messageId}
+HTTP PUT `/restapi/v1.0/account/{accountId}/extension/{extensionId}/message-store/{messageId}`
 
 ```js
 const SDK = require('ringcentral');
@@ -6998,7 +6998,7 @@ You can get response json data by `const json = r.json()`
 
 ## Delete Message(s)
 
-HTTP DELETE /restapi/v1.0/account/{accountId}/extension/{extensionId}/message-store/{messageId}
+HTTP DELETE `/restapi/v1.0/account/{accountId}/extension/{extensionId}/message-store/{messageId}`
 
 ```js
 const SDK = require('ringcentral');
@@ -7037,7 +7037,7 @@ Response body is empty
 
 ## Get Message Attachment
 
-HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/message-store/{messageId}/content/{attachmentId}
+HTTP GET `/restapi/v1.0/account/{accountId}/extension/{extensionId}/message-store/{messageId}/content/{attachmentId}`
 
 ```js
 const SDK = require('ringcentral');
@@ -7074,7 +7074,7 @@ You can get response binary data by `const buffer = await r.response().buffer()`
 
 ## Sync Messages
 
-HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/message-sync
+HTTP GET `/restapi/v1.0/account/{accountId}/extension/{extensionId}/message-sync`
 
 ```js
 const SDK = require('ringcentral');
@@ -7185,7 +7185,7 @@ You can get response json data by `const json = r.json()`
 
 ## Get Notification Settings
 
-HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/notification-settings
+HTTP GET `/restapi/v1.0/account/{accountId}/extension/{extensionId}/notification-settings`
 
 ```js
 const SDK = require('ringcentral');
@@ -7204,7 +7204,7 @@ You can get response json data by `const json = r.json()`
 
 ## Update Notification Settings
 
-HTTP PUT /restapi/v1.0/account/{accountId}/extension/{extensionId}/notification-settings
+HTTP PUT `/restapi/v1.0/account/{accountId}/extension/{extensionId}/notification-settings`
 
 ```js
 const SDK = require('ringcentral');
@@ -7397,7 +7397,7 @@ You can get response json data by `const json = r.json()`
 
 ## Get Extension Phone Number List
 
-HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/phone-number
+HTTP GET `/restapi/v1.0/account/{accountId}/extension/{extensionId}/phone-number`
 
 ```js
 const SDK = require('ringcentral');
@@ -7456,7 +7456,7 @@ You can get response json data by `const json = r.json()`
 
 ## Get User Status
 
-HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/presence
+HTTP GET `/restapi/v1.0/account/{accountId}/extension/{extensionId}/presence`
 
 ```js
 const SDK = require('ringcentral');
@@ -7496,7 +7496,7 @@ You can get response json data by `const json = r.json()`
 
 ## Update User Status
 
-HTTP PUT /restapi/v1.0/account/{accountId}/extension/{extensionId}/presence
+HTTP PUT `/restapi/v1.0/account/{accountId}/extension/{extensionId}/presence`
 
 ```js
 const SDK = require('ringcentral');
@@ -7628,7 +7628,7 @@ You can get response json data by `const json = r.json()`
 
 ## Get User Profile Image
 
-HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/profile-image
+HTTP GET `/restapi/v1.0/account/{accountId}/extension/{extensionId}/profile-image`
 
 ```js
 const SDK = require('ringcentral');
@@ -7645,7 +7645,7 @@ You can get response binary data by `const buffer = await r.response().buffer()`
 
 ## Upload User Profile Image
 
-HTTP POST /restapi/v1.0/account/{accountId}/extension/{extensionId}/profile-image
+HTTP POST `/restapi/v1.0/account/{accountId}/extension/{extensionId}/profile-image`
 
 ```js
 const SDK = require('ringcentral');
@@ -7665,7 +7665,7 @@ You can get response binary data by `const buffer = await r.response().buffer()`
 
 ## Update User Profile Image
 
-HTTP PUT /restapi/v1.0/account/{accountId}/extension/{extensionId}/profile-image
+HTTP PUT `/restapi/v1.0/account/{accountId}/extension/{extensionId}/profile-image`
 
 ```js
 const SDK = require('ringcentral');
@@ -7685,7 +7685,7 @@ You can get response binary data by `const buffer = await r.response().buffer()`
 
 ## Get Extension Profile Image (Scaled)
 
-HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/profile-image/{scaleSize}
+HTTP GET `/restapi/v1.0/account/{accountId}/extension/{extensionId}/profile-image/{scaleSize}`
 
 ```js
 const SDK = require('ringcentral');
@@ -7702,7 +7702,7 @@ You can get response binary data by `const buffer = await r.response().buffer()`
 
 ## Make RingOut Call
 
-HTTP POST /restapi/v1.0/account/{accountId}/extension/{extensionId}/ring-out
+HTTP POST `/restapi/v1.0/account/{accountId}/extension/{extensionId}/ring-out`
 
 ```js
 const SDK = require('ringcentral');
@@ -7779,7 +7779,7 @@ You can get response json data by `const json = r.json()`
 
 ##  Get RingOut Call Status
 
-HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/ring-out/{ringoutId}
+HTTP GET `/restapi/v1.0/account/{accountId}/extension/{extensionId}/ring-out/{ringoutId}`
 
 ```js
 const SDK = require('ringcentral');
@@ -7798,7 +7798,7 @@ You can get response json data by `const json = r.json()`
 
 ## Cancel RingOut Call
 
-HTTP DELETE /restapi/v1.0/account/{accountId}/extension/{extensionId}/ring-out/{ringoutId}
+HTTP DELETE `/restapi/v1.0/account/{accountId}/extension/{extensionId}/ring-out/{ringoutId}`
 
 ```js
 const SDK = require('ringcentral');
@@ -7815,7 +7815,7 @@ Response body is empty
 
 ## Make RingOut Call
 
-HTTP POST /restapi/v1.0/account/{accountId}/extension/{extensionId}/ringout
+HTTP POST `/restapi/v1.0/account/{accountId}/extension/{extensionId}/ringout`
 
 ```js
 const SDK = require('ringcentral');
@@ -7892,7 +7892,7 @@ You can get response json data by `const json = r.json()`
 
 ## Get RingOut Call Status
 
-HTTP GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/ringout/{ringoutId}
+HTTP GET `/restapi/v1.0/account/{accountId}/extension/{extensionId}/ringout/{ringoutId}`
 
 ```js
 const SDK = require('ringcentral');
@@ -7911,7 +7911,7 @@ You can get response json data by `const json = r.json()`
 
 ## Cancel RingOut Call
 
-HTTP DELETE /restapi/v1.0/account/{accountId}/extension/{extensionId}/ringout/{ringoutId}
+HTTP DELETE `/restapi/v1.0/account/{accountId}/extension/{extensionId}/ringout/{ringoutId}`
 
 ```js
 const SDK = require('ringcentral');
@@ -7928,7 +7928,7 @@ Response body is empty
 
 ## Create SMS Message
 
-HTTP POST /restapi/v1.0/account/{accountId}/extension/{extensionId}/sms
+HTTP POST `/restapi/v1.0/account/{accountId}/extension/{extensionId}/sms`
 
 ```js
 const SDK = require('ringcentral');
@@ -7987,7 +7987,7 @@ You can get response json data by `const json = r.json()`
 
 ## Create Custom Company Greeting
 
-HTTP POST /restapi/v1.0/account/{accountId}/greeting
+HTTP POST `/restapi/v1.0/account/{accountId}/greeting`
 
 ```js
 const SDK = require('ringcentral');
@@ -8046,7 +8046,7 @@ You can get response json data by `const json = r.json()`
 
 ## Create IVR Menu
 
-HTTP POST /restapi/v1.0/account/{accountId}/ivr-menus
+HTTP POST `/restapi/v1.0/account/{accountId}/ivr-menus`
 
 ```js
 const SDK = require('ringcentral');
@@ -8184,7 +8184,7 @@ You can get response json data by `const json = r.json()`
 
 ## Get IVR Menu
 
-HTTP GET /restapi/v1.0/account/{accountId}/ivr-menus/{ivrMenuId}
+HTTP GET `/restapi/v1.0/account/{accountId}/ivr-menus/{ivrMenuId}`
 
 ```js
 const SDK = require('ringcentral');
@@ -8202,7 +8202,7 @@ You can get response json data by `const json = r.json()`
 
 ## Update IVR Menu
 
-HTTP PUT /restapi/v1.0/account/{accountId}/ivr-menus/{ivrMenuId}
+HTTP PUT `/restapi/v1.0/account/{accountId}/ivr-menus/{ivrMenuId}`
 
 ```js
 const SDK = require('ringcentral');
@@ -8340,7 +8340,7 @@ You can get response json data by `const json = r.json()`
 
 ## Create IVR Prompts
 
-HTTP POST /restapi/v1.0/account/{accountId}/ivr-prompts
+HTTP POST `/restapi/v1.0/account/{accountId}/ivr-prompts`
 
 ```js
 const SDK = require('ringcentral');
@@ -8377,7 +8377,7 @@ You can get response json data by `const json = r.json()`
 
 ## Get IVR Prompts
 
-HTTP GET /restapi/v1.0/account/{accountId}/ivr-prompts
+HTTP GET `/restapi/v1.0/account/{accountId}/ivr-prompts`
 
 ```js
 const SDK = require('ringcentral');
@@ -8395,7 +8395,7 @@ You can get response json data by `const json = r.json()`
 
 ## Get IVR Prompt
 
-HTTP GET /restapi/v1.0/account/{accountId}/ivr-prompts/{promptId}
+HTTP GET `/restapi/v1.0/account/{accountId}/ivr-prompts/{promptId}`
 
 ```js
 const SDK = require('ringcentral');
@@ -8413,7 +8413,7 @@ You can get response json data by `const json = r.json()`
 
 ## Delete IVR Prompt
 
-HTTP DELETE /restapi/v1.0/account/{accountId}/ivr-prompts/{promptId}
+HTTP DELETE `/restapi/v1.0/account/{accountId}/ivr-prompts/{promptId}`
 
 ```js
 const SDK = require('ringcentral');
@@ -8429,7 +8429,7 @@ Response body is empty
 
 ## Update IVR Prompt
 
-HTTP PUT /restapi/v1.0/account/{accountId}/ivr-prompts/{promptId}
+HTTP PUT `/restapi/v1.0/account/{accountId}/ivr-prompts/{promptId}`
 
 ```js
 const SDK = require('ringcentral');
@@ -8445,7 +8445,7 @@ Response body is empty
 
 ## Get IVR Prompt Content
 
-HTTP GET /restapi/v1.0/account/{accountId}/ivr-prompts/{promptId}/content
+HTTP GET `/restapi/v1.0/account/{accountId}/ivr-prompts/{promptId}/content`
 
 ```js
 const SDK = require('ringcentral');
@@ -8461,7 +8461,7 @@ Response body is empty
 
 ## Get Account Meeting Recordings
 
-HTTP GET /restapi/v1.0/account/{accountId}/meeting-recordings
+HTTP GET `/restapi/v1.0/account/{accountId}/meeting-recordings`
 
 ```js
 const SDK = require('ringcentral');
@@ -8520,7 +8520,7 @@ You can get response json data by `const json = r.json()`
 
 ## Get Message Store Configuration
 
-HTTP GET /restapi/v1.0/account/{accountId}/message-store-configuration
+HTTP GET `/restapi/v1.0/account/{accountId}/message-store-configuration`
 
 ```js
 const SDK = require('ringcentral');
@@ -8538,7 +8538,7 @@ You can get response json data by `const json = r.json()`
 
 ## Update Message Store Configuration
 
-HTTP PUT /restapi/v1.0/account/{accountId}/message-store-configuration
+HTTP PUT `/restapi/v1.0/account/{accountId}/message-store-configuration`
 
 ```js
 const SDK = require('ringcentral');
@@ -8572,7 +8572,7 @@ You can get response json data by `const json = r.json()`
 
 ## Create Message Store Report
 
-HTTP POST /restapi/v1.0/account/{accountId}/message-store-report
+HTTP POST `/restapi/v1.0/account/{accountId}/message-store-report`
 
 ```js
 const SDK = require('ringcentral');
@@ -8608,7 +8608,7 @@ You can get response json data by `const json = r.json()`
 
 ## Get Message Store Report Task
 
-HTTP GET /restapi/v1.0/account/{accountId}/message-store-report/{taskId}
+HTTP GET `/restapi/v1.0/account/{accountId}/message-store-report/{taskId}`
 
 ```js
 const SDK = require('ringcentral');
@@ -8626,7 +8626,7 @@ You can get response json data by `const json = r.json()`
 
 ## Get Message Store Report Archive
 
-HTTP GET /restapi/v1.0/account/{accountId}/message-store-report/{taskId}/archive
+HTTP GET `/restapi/v1.0/account/{accountId}/message-store-report/{taskId}/archive`
 
 ```js
 const SDK = require('ringcentral');
@@ -8644,7 +8644,7 @@ You can get response json data by `const json = r.json()`
 
 ## Get Message Store Report Archive Content
 
-HTTP GET /restapi/v1.0/account/{accountId}/message-store-report/{taskId}/archive/{archiveId}
+HTTP GET `/restapi/v1.0/account/{accountId}/message-store-report/{taskId}/archive/{archiveId}`
 
 ```js
 const SDK = require('ringcentral');
@@ -8660,7 +8660,7 @@ Response body is empty
 
 ## Edit Paging Group Users and Devices
 
-HTTP POST /restapi/v1.0/account/{accountId}/paging-only-groups/{pagingOnlyGroupId}/bulk-assign
+HTTP POST `/restapi/v1.0/account/{accountId}/paging-only-groups/{pagingOnlyGroupId}/bulk-assign`
 
 ```js
 const SDK = require('ringcentral');
@@ -8714,7 +8714,7 @@ Response body is empty
 
 ## Get Paging Only Group Devices
 
-HTTP GET /restapi/v1.0/account/{accountId}/paging-only-groups/{pagingOnlyGroupId}/devices
+HTTP GET `/restapi/v1.0/account/{accountId}/paging-only-groups/{pagingOnlyGroupId}/devices`
 
 ```js
 const SDK = require('ringcentral');
@@ -8755,7 +8755,7 @@ You can get response json data by `const json = r.json()`
 
 ## Get Paging Only Group Users
 
-HTTP GET /restapi/v1.0/account/{accountId}/paging-only-groups/{pagingOnlyGroupId}/users
+HTTP GET `/restapi/v1.0/account/{accountId}/paging-only-groups/{pagingOnlyGroupId}/users`
 
 ```js
 const SDK = require('ringcentral');
@@ -8796,7 +8796,7 @@ You can get response json data by `const json = r.json()`
 
 ## Get Company Phone Number List
 
-HTTP GET /restapi/v1.0/account/{accountId}/phone-number
+HTTP GET `/restapi/v1.0/account/{accountId}/phone-number`
 
 ```js
 const SDK = require('ringcentral');
@@ -8859,7 +8859,7 @@ You can get response json data by `const json = r.json()`
 
 ## Get Phone Number
 
-HTTP GET /restapi/v1.0/account/{accountId}/phone-number/{phoneNumberId}
+HTTP GET `/restapi/v1.0/account/{accountId}/phone-number/{phoneNumberId}`
 
 ```js
 const SDK = require('ringcentral');
@@ -8877,7 +8877,7 @@ You can get response json data by `const json = r.json()`
 
 ## Get User Presence Statuses List
 
-HTTP GET /restapi/v1.0/account/{accountId}/presence
+HTTP GET `/restapi/v1.0/account/{accountId}/presence`
 
 ```js
 const SDK = require('ringcentral');
@@ -8930,7 +8930,7 @@ You can get response json data by `const json = r.json()`
 
 ## Get Call Recording(s)
 
-HTTP GET /restapi/v1.0/account/{accountId}/recording/{recordingId}
+HTTP GET `/restapi/v1.0/account/{accountId}/recording/{recordingId}`
 
 ```js
 const SDK = require('ringcentral');
@@ -8948,7 +8948,7 @@ You can get response json data by `const json = r.json()`
 
 ## Get Call Recordings Data
 
-HTTP GET /restapi/v1.0/account/{accountId}/recording/{recordingId}/content
+HTTP GET `/restapi/v1.0/account/{accountId}/recording/{recordingId}/content`
 
 ```js
 const SDK = require('ringcentral');
@@ -8964,7 +8964,7 @@ You can get response binary data by `const buffer = await r.response().buffer()`
 
 ## Get Account Service Info [Beta]
 
-HTTP GET /restapi/v1.0/account/{accountId}/service-info
+HTTP GET `/restapi/v1.0/account/{accountId}/service-info`
 
 ```js
 const SDK = require('ringcentral');
@@ -8982,7 +8982,7 @@ You can get response json data by `const json = r.json()`
 
 ## Get Call Session Status
 
-HTTP GET /restapi/v1.0/account/{accountId}/telephony/sessions/{sessionId}
+HTTP GET `/restapi/v1.0/account/{accountId}/telephony/sessions/{sessionId}`
 
 ```js
 const SDK = require('ringcentral');
@@ -9021,7 +9021,7 @@ You can get response json data by `const json = r.json()`
 
 ## Drop Call Session
 
-HTTP DELETE /restapi/v1.0/account/{accountId}/telephony/sessions/{sessionId}
+HTTP DELETE `/restapi/v1.0/account/{accountId}/telephony/sessions/{sessionId}`
 
 ```js
 const SDK = require('ringcentral');
@@ -9037,7 +9037,7 @@ Response body is empty
 
 ## Get Call Party Status
 
-HTTP GET /restapi/v1.0/account/{accountId}/telephony/sessions/{sessionId}/parties/{partyId}
+HTTP GET `/restapi/v1.0/account/{accountId}/telephony/sessions/{sessionId}/parties/{partyId}`
 
 ```js
 const SDK = require('ringcentral');
@@ -9055,7 +9055,7 @@ You can get response json data by `const json = r.json()`
 
 ## Update Call Party
 
-HTTP PATCH /restapi/v1.0/account/{accountId}/telephony/sessions/{sessionId}/parties/{partyId}
+HTTP PATCH `/restapi/v1.0/account/{accountId}/telephony/sessions/{sessionId}/parties/{partyId}`
 
 ```js
 const SDK = require('ringcentral');
@@ -9096,7 +9096,7 @@ You can get response json data by `const json = r.json()`
 
 ## Call Flip on Party
 
-HTTP POST /restapi/v1.0/account/{accountId}/telephony/sessions/{sessionId}/parties/{partyId}/flip
+HTTP POST `/restapi/v1.0/account/{accountId}/telephony/sessions/{sessionId}/parties/{partyId}/flip`
 
 ```js
 const SDK = require('ringcentral');
@@ -9126,7 +9126,7 @@ Response body is empty
 
 ## Forward Call Party
 
-HTTP POST /restapi/v1.0/account/{accountId}/telephony/sessions/{sessionId}/parties/{partyId}/forward
+HTTP POST `/restapi/v1.0/account/{accountId}/telephony/sessions/{sessionId}/parties/{partyId}/forward`
 
 ```js
 const SDK = require('ringcentral');
@@ -9162,7 +9162,7 @@ You can get response json data by `const json = r.json()`
 
 ## Hold Call Party
 
-HTTP POST /restapi/v1.0/account/{accountId}/telephony/sessions/{sessionId}/parties/{partyId}/hold
+HTTP POST `/restapi/v1.0/account/{accountId}/telephony/sessions/{sessionId}/parties/{partyId}/hold`
 
 ```js
 const SDK = require('ringcentral');
@@ -9180,7 +9180,7 @@ You can get response json data by `const json = r.json()`
 
 ## Starts new call recording in a party
 
-HTTP POST /restapi/v1.0/account/{accountId}/telephony/sessions/{sessionId}/parties/{partyId}/recordings
+HTTP POST `/restapi/v1.0/account/{accountId}/telephony/sessions/{sessionId}/parties/{partyId}/recordings`
 
 ```js
 const SDK = require('ringcentral');
@@ -9196,7 +9196,7 @@ Response body is empty
 
 ## Pause/Resume Recording
 
-HTTP PATCH /restapi/v1.0/account/{accountId}/telephony/sessions/{sessionId}/parties/{partyId}/recordings/{recordingId}
+HTTP PATCH `/restapi/v1.0/account/{accountId}/telephony/sessions/{sessionId}/parties/{partyId}/recordings/{recordingId}`
 
 ```js
 const SDK = require('ringcentral');
@@ -9244,7 +9244,7 @@ You can get response json data by `const json = r.json()`
 
 ## Reject Call Party
 
-HTTP POST /restapi/v1.0/account/{accountId}/telephony/sessions/{sessionId}/parties/{partyId}/reject
+HTTP POST `/restapi/v1.0/account/{accountId}/telephony/sessions/{sessionId}/parties/{partyId}/reject`
 
 ```js
 const SDK = require('ringcentral');
@@ -9260,7 +9260,7 @@ Response body is empty
 
 ## Transfer Call Party
 
-HTTP POST /restapi/v1.0/account/{accountId}/telephony/sessions/{sessionId}/parties/{partyId}/transfer
+HTTP POST `/restapi/v1.0/account/{accountId}/telephony/sessions/{sessionId}/parties/{partyId}/transfer`
 
 ```js
 const SDK = require('ringcentral');
@@ -9300,7 +9300,7 @@ You can get response json data by `const json = r.json()`
 
 ## Unhold Call Party
 
-HTTP POST /restapi/v1.0/account/{accountId}/telephony/sessions/{sessionId}/parties/{partyId}/unhold
+HTTP POST `/restapi/v1.0/account/{accountId}/telephony/sessions/{sessionId}/parties/{partyId}/unhold`
 
 ```js
 const SDK = require('ringcentral');
@@ -9318,7 +9318,7 @@ You can get response json data by `const json = r.json()`
 
 ## Get Templates
 
-HTTP GET /restapi/v1.0/account/{accountId}/templates
+HTTP GET `/restapi/v1.0/account/{accountId}/templates`
 
 ```js
 const SDK = require('ringcentral');
@@ -9361,7 +9361,7 @@ You can get response json data by `const json = r.json()`
 
 ## Get Template
 
-HTTP GET /restapi/v1.0/account/{accountId}/templates/{templateId}
+HTTP GET `/restapi/v1.0/account/{accountId}/templates/{templateId}`
 
 ```js
 const SDK = require('ringcentral');
@@ -9379,7 +9379,7 @@ You can get response json data by `const json = r.json()`
 
 ## Register SIP Device
 
-HTTP POST /restapi/v1.0/client-info/sip-provision
+HTTP POST `/restapi/v1.0/client-info/sip-provision`
 
 ```js
 const SDK = require('ringcentral');
@@ -9449,7 +9449,7 @@ You can get response json data by `const json = r.json()`
 
 ## Get Country List
 
-HTTP GET /restapi/v1.0/dictionary/country
+HTTP GET `/restapi/v1.0/dictionary/country`
 
 ```js
 const SDK = require('ringcentral');
@@ -9513,7 +9513,7 @@ You can get response json data by `const json = r.json()`
 
 ## Get Country
 
-HTTP GET /restapi/v1.0/dictionary/country/{countryId}
+HTTP GET `/restapi/v1.0/dictionary/country/{countryId}`
 
 ```js
 const SDK = require('ringcentral');
@@ -9530,7 +9530,7 @@ You can get response json data by `const json = r.json()`
 
 ## Get Available Fax Cover Pages
 
-HTTP GET /restapi/v1.0/dictionary/fax-cover-page
+HTTP GET `/restapi/v1.0/dictionary/fax-cover-page`
 
 ```js
 const SDK = require('ringcentral');
@@ -9570,7 +9570,7 @@ You can get response json data by `const json = r.json()`
 
 ## Get Standard Greetings
 
-HTTP GET /restapi/v1.0/dictionary/greeting
+HTTP GET `/restapi/v1.0/dictionary/greeting`
 
 ```js
 const SDK = require('ringcentral');
@@ -9640,7 +9640,7 @@ You can get response json data by `const json = r.json()`
 
 ## Get Greeting Info
 
-HTTP GET /restapi/v1.0/dictionary/greeting/{greetingId}
+HTTP GET `/restapi/v1.0/dictionary/greeting/{greetingId}`
 
 ```js
 const SDK = require('ringcentral');
@@ -9657,7 +9657,7 @@ You can get response json data by `const json = r.json()`
 
 ## Get Language List
 
-HTTP GET /restapi/v1.0/dictionary/language
+HTTP GET `/restapi/v1.0/dictionary/language`
 
 ```js
 const SDK = require('ringcentral');
@@ -9674,7 +9674,7 @@ You can get response json data by `const json = r.json()`
 
 ## Get Language
 
-HTTP GET /restapi/v1.0/dictionary/language/{languageId}
+HTTP GET `/restapi/v1.0/dictionary/language/{languageId}`
 
 ```js
 const SDK = require('ringcentral');
@@ -9691,7 +9691,7 @@ You can get response json data by `const json = r.json()`
 
 ## Get Location List
 
-HTTP GET /restapi/v1.0/dictionary/location
+HTTP GET `/restapi/v1.0/dictionary/location`
 
 ```js
 const SDK = require('ringcentral');
@@ -9757,7 +9757,7 @@ You can get response json data by `const json = r.json()`
 
 ## Get State List
 
-HTTP GET /restapi/v1.0/dictionary/state
+HTTP GET `/restapi/v1.0/dictionary/state`
 
 ```js
 const SDK = require('ringcentral');
@@ -9816,7 +9816,7 @@ You can get response json data by `const json = r.json()`
 
 ## Get State
 
-HTTP GET /restapi/v1.0/dictionary/state/{stateId}
+HTTP GET `/restapi/v1.0/dictionary/state/{stateId}`
 
 ```js
 const SDK = require('ringcentral');
@@ -9833,7 +9833,7 @@ You can get response json data by `const json = r.json()`
 
 ## Get Timezone List
 
-HTTP GET /restapi/v1.0/dictionary/timezone
+HTTP GET `/restapi/v1.0/dictionary/timezone`
 
 ```js
 const SDK = require('ringcentral');
@@ -9873,7 +9873,7 @@ You can get response json data by `const json = r.json()`
 
 ## Get Timezone
 
-HTTP GET /restapi/v1.0/dictionary/timezone/{timezoneId}
+HTTP GET `/restapi/v1.0/dictionary/timezone/{timezoneId}`
 
 ```js
 const SDK = require('ringcentral');
@@ -9913,7 +9913,7 @@ You can get response json data by `const json = r.json()`
 
 ## Create Card
 
-HTTP POST /restapi/v1.0/glip/cards
+HTTP POST `/restapi/v1.0/glip/cards`
 
 ```js
 const SDK = require('ringcentral');
@@ -10092,7 +10092,7 @@ You can get response json data by `const json = r.json()`
 
 ## Get Card
 
-HTTP GET /restapi/v1.0/glip/cards/{cardId}
+HTTP GET `/restapi/v1.0/glip/cards/{cardId}`
 
 ```js
 const SDK = require('ringcentral');
@@ -10109,7 +10109,7 @@ You can get response json data by `const json = r.json()`
 
 ## Update Card
 
-HTTP PUT /restapi/v1.0/glip/cards/{cardId}
+HTTP PUT `/restapi/v1.0/glip/cards/{cardId}`
 
 ```js
 const SDK = require('ringcentral');
@@ -10272,7 +10272,7 @@ Response body is empty
 
 ## Delete Card
 
-HTTP DELETE /restapi/v1.0/glip/cards/{cardId}
+HTTP DELETE `/restapi/v1.0/glip/cards/{cardId}`
 
 ```js
 const SDK = require('ringcentral');
@@ -10287,7 +10287,7 @@ Response body is empty
 
 ## Get Chat List
 
-HTTP GET /restapi/v1.0/glip/chats
+HTTP GET `/restapi/v1.0/glip/chats`
 
 ```js
 const SDK = require('ringcentral');
@@ -10344,7 +10344,7 @@ You can get response json data by `const json = r.json()`
 
 ## Get Chat
 
-HTTP GET /restapi/v1.0/glip/chats/{chatId}
+HTTP GET `/restapi/v1.0/glip/chats/{chatId}`
 
 ```js
 const SDK = require('ringcentral');
@@ -10361,7 +10361,7 @@ You can get response json data by `const json = r.json()`
 
 ## Add Chat to Favorites
 
-HTTP POST /restapi/v1.0/glip/chats/{chatId}/favorite
+HTTP POST `/restapi/v1.0/glip/chats/{chatId}/favorite`
 
 ```js
 const SDK = require('ringcentral');
@@ -10376,7 +10376,7 @@ Response body is empty
 
 ## Mark Chat as Read
 
-HTTP POST /restapi/v1.0/glip/chats/{chatId}/read
+HTTP POST `/restapi/v1.0/glip/chats/{chatId}/read`
 
 ```js
 const SDK = require('ringcentral');
@@ -10391,7 +10391,7 @@ Response body is empty
 
 ## Remove Chat from Favorites
 
-HTTP POST /restapi/v1.0/glip/chats/{chatId}/unfavorite
+HTTP POST `/restapi/v1.0/glip/chats/{chatId}/unfavorite`
 
 ```js
 const SDK = require('ringcentral');
@@ -10406,7 +10406,7 @@ Response body is empty
 
 ## Mark Chat as Unread
 
-HTTP POST /restapi/v1.0/glip/chats/{chatId}/unread
+HTTP POST `/restapi/v1.0/glip/chats/{chatId}/unread`
 
 ```js
 const SDK = require('ringcentral');
@@ -10421,7 +10421,7 @@ Response body is empty
 
 ## Get Company Info
 
-HTTP GET /restapi/v1.0/glip/companies/{companyId}
+HTTP GET `/restapi/v1.0/glip/companies/{companyId}`
 
 ```js
 const SDK = require('ringcentral');
@@ -10438,7 +10438,7 @@ You can get response json data by `const json = r.json()`
 
 ## Get User Conversation List
 
-HTTP GET /restapi/v1.0/glip/conversations
+HTTP GET `/restapi/v1.0/glip/conversations`
 
 ```js
 const SDK = require('ringcentral');
@@ -10478,7 +10478,7 @@ You can get response json data by `const json = r.json()`
 
 ## Create/Open Chat
 
-HTTP POST /restapi/v1.0/glip/conversations
+HTTP POST `/restapi/v1.0/glip/conversations`
 
 ```js
 const SDK = require('ringcentral');
@@ -10525,7 +10525,7 @@ You can get response json data by `const json = r.json()`
 
 ## Get Conversation
 
-HTTP GET /restapi/v1.0/glip/conversations/{chatId}
+HTTP GET `/restapi/v1.0/glip/conversations/{chatId}`
 
 ```js
 const SDK = require('ringcentral');
@@ -10542,7 +10542,7 @@ You can get response json data by `const json = r.json()`
 
 ## Create Data Export Task
 
-HTTP POST /restapi/v1.0/glip/data-export
+HTTP POST `/restapi/v1.0/glip/data-export`
 
 ```js
 const SDK = require('ringcentral');
@@ -10591,7 +10591,7 @@ You can get response json data by `const json = r.json()`
 
 ## Get Data Export Task
 
-HTTP GET /restapi/v1.0/glip/data-export/{taskId}
+HTTP GET `/restapi/v1.0/glip/data-export/{taskId}`
 
 ```js
 const SDK = require('ringcentral');
@@ -10608,7 +10608,7 @@ You can get response json data by `const json = r.json()`
 
 ## Get Glip Data Archive
 
-HTTP GET /restapi/v1.0/glip/data-export/{taskId}/archive/{archiveId}
+HTTP GET `/restapi/v1.0/glip/data-export/{taskId}/archive/{archiveId}`
 
 ```js
 const SDK = require('ringcentral');
@@ -10623,7 +10623,7 @@ Response body is empty
 
 ## Get User Events List
 
-HTTP GET /restapi/v1.0/glip/events
+HTTP GET `/restapi/v1.0/glip/events`
 
 ```js
 const SDK = require('ringcentral');
@@ -10663,7 +10663,7 @@ You can get response json data by `const json = r.json()`
 
 ## Create Event
 
-HTTP POST /restapi/v1.0/glip/events
+HTTP POST `/restapi/v1.0/glip/events`
 
 ```js
 const SDK = require('ringcentral');
@@ -10773,7 +10773,7 @@ You can get response json data by `const json = r.json()`
 
 ## Get Event
 
-HTTP GET /restapi/v1.0/glip/events/{eventId}
+HTTP GET `/restapi/v1.0/glip/events/{eventId}`
 
 ```js
 const SDK = require('ringcentral');
@@ -10790,7 +10790,7 @@ You can get response json data by `const json = r.json()`
 
 ## Update Event
 
-HTTP PUT /restapi/v1.0/glip/events/{eventId}
+HTTP PUT `/restapi/v1.0/glip/events/{eventId}`
 
 ```js
 const SDK = require('ringcentral');
@@ -10900,7 +10900,7 @@ You can get response json data by `const json = r.json()`
 
 ## Delete Event
 
-HTTP DELETE /restapi/v1.0/glip/events/{eventId}
+HTTP DELETE `/restapi/v1.0/glip/events/{eventId}`
 
 ```js
 const SDK = require('ringcentral');
@@ -10915,7 +10915,7 @@ Response body is empty
 
 ## Get Everyone Chat Info
 
-HTTP GET /restapi/v1.0/glip/everyone
+HTTP GET `/restapi/v1.0/glip/everyone`
 
 ```js
 const SDK = require('ringcentral');
@@ -10932,7 +10932,7 @@ You can get response json data by `const json = r.json()`
 
 ## Update Everyone Сhat Info
 
-HTTP PATCH /restapi/v1.0/glip/everyone
+HTTP PATCH `/restapi/v1.0/glip/everyone`
 
 ```js
 const SDK = require('ringcentral');
@@ -10967,7 +10967,7 @@ You can get response json data by `const json = r.json()`
 
 ## Get Favorite Chats
 
-HTTP GET /restapi/v1.0/glip/favorites
+HTTP GET `/restapi/v1.0/glip/favorites`
 
 ```js
 const SDK = require('ringcentral');
@@ -11001,7 +11001,7 @@ You can get response json data by `const json = r.json()`
 
 ## Upload File
 
-HTTP POST /restapi/v1.0/glip/files
+HTTP POST `/restapi/v1.0/glip/files`
 
 ```js
 const SDK = require('ringcentral');
@@ -11042,7 +11042,7 @@ You can get response json data by `const json = r.json()`
 
 ## Get User Groups
 
-HTTP GET /restapi/v1.0/glip/groups
+HTTP GET `/restapi/v1.0/glip/groups`
 
 ```js
 const SDK = require('ringcentral');
@@ -11094,7 +11094,7 @@ You can get response json data by `const json = r.json()`
 
 ## Create Group
 
-HTTP POST /restapi/v1.0/glip/groups
+HTTP POST `/restapi/v1.0/glip/groups`
 
 ```js
 const SDK = require('ringcentral');
@@ -11151,7 +11151,7 @@ You can get response json data by `const json = r.json()`
 
 ## Get Group
 
-HTTP GET /restapi/v1.0/glip/groups/{groupId}
+HTTP GET `/restapi/v1.0/glip/groups/{groupId}`
 
 ```js
 const SDK = require('ringcentral');
@@ -11168,7 +11168,7 @@ You can get response json data by `const json = r.json()`
 
 ## Edit Group Members
 
-HTTP POST /restapi/v1.0/glip/groups/{groupId}/bulk-assign
+HTTP POST `/restapi/v1.0/glip/groups/{groupId}/bulk-assign`
 
 ```js
 const SDK = require('ringcentral');
@@ -11216,7 +11216,7 @@ You can get response json data by `const json = r.json()`
 
 ## Create Event by Group ID
 
-HTTP POST /restapi/v1.0/glip/groups/{groupId}/events
+HTTP POST `/restapi/v1.0/glip/groups/{groupId}/events`
 
 ```js
 const SDK = require('ringcentral');
@@ -11326,7 +11326,7 @@ You can get response json data by `const json = r.json()`
 
 ## Get Group Events
 
-HTTP GET /restapi/v1.0/glip/groups/{groupId}/events
+HTTP GET `/restapi/v1.0/glip/groups/{groupId}/events`
 
 ```js
 const SDK = require('ringcentral');
@@ -11343,7 +11343,7 @@ You can get response json data by `const json = r.json()`
 
 ## Get Group Notes
 
-HTTP GET /restapi/v1.0/glip/groups/{groupId}/notes
+HTTP GET `/restapi/v1.0/glip/groups/{groupId}/notes`
 
 ```js
 const SDK = require('ringcentral');
@@ -11400,7 +11400,7 @@ You can get response json data by `const json = r.json()`
 
 ## Create Group Note
 
-HTTP POST /restapi/v1.0/glip/groups/{groupId}/notes
+HTTP POST `/restapi/v1.0/glip/groups/{groupId}/notes`
 
 ```js
 const SDK = require('ringcentral');
@@ -11447,7 +11447,7 @@ You can get response json data by `const json = r.json()`
 
 ## Get Group Posts
 
-HTTP GET /restapi/v1.0/glip/groups/{groupId}/posts
+HTTP GET `/restapi/v1.0/glip/groups/{groupId}/posts`
 
 ```js
 const SDK = require('ringcentral');
@@ -11487,7 +11487,7 @@ You can get response json data by `const json = r.json()`
 
 ## Create Post in Group
 
-HTTP POST /restapi/v1.0/glip/groups/{groupId}/posts
+HTTP POST `/restapi/v1.0/glip/groups/{groupId}/posts`
 
 ```js
 const SDK = require('ringcentral');
@@ -11673,7 +11673,7 @@ You can get response json data by `const json = r.json()`
 
 ## Update Post
 
-HTTP PUT /restapi/v1.0/glip/groups/{groupId}/posts/{postId}/text
+HTTP PUT `/restapi/v1.0/glip/groups/{groupId}/posts/{postId}/text`
 
 ```js
 const SDK = require('ringcentral');
@@ -11690,7 +11690,7 @@ Response body is empty
 
 ## Create Webhook in Group
 
-HTTP POST /restapi/v1.0/glip/groups/{groupId}/webhooks
+HTTP POST `/restapi/v1.0/glip/groups/{groupId}/webhooks`
 
 ```js
 const SDK = require('ringcentral');
@@ -11707,7 +11707,7 @@ You can get response json data by `const json = r.json()`
 
 ## Get Webhooks in Group
 
-HTTP GET /restapi/v1.0/glip/groups/{groupId}/webhooks
+HTTP GET `/restapi/v1.0/glip/groups/{groupId}/webhooks`
 
 ```js
 const SDK = require('ringcentral');
@@ -11724,7 +11724,7 @@ You can get response json data by `const json = r.json()`
 
 ## Get User Notes
 
-HTTP GET /restapi/v1.0/glip/notes
+HTTP GET `/restapi/v1.0/glip/notes`
 
 ```js
 const SDK = require('ringcentral');
@@ -11774,7 +11774,7 @@ You can get response json data by `const json = r.json()`
 
 ## Create User Note
 
-HTTP POST /restapi/v1.0/glip/notes
+HTTP POST `/restapi/v1.0/glip/notes`
 
 ```js
 const SDK = require('ringcentral');
@@ -11821,7 +11821,7 @@ You can get response json data by `const json = r.json()`
 
 ## Get Note
 
-HTTP GET /restapi/v1.0/glip/notes/{noteId}
+HTTP GET `/restapi/v1.0/glip/notes/{noteId}`
 
 ```js
 const SDK = require('ringcentral');
@@ -11838,7 +11838,7 @@ You can get response json data by `const json = r.json()`
 
 ## Delete Note
 
-HTTP DELETE /restapi/v1.0/glip/notes/{noteId}
+HTTP DELETE `/restapi/v1.0/glip/notes/{noteId}`
 
 ```js
 const SDK = require('ringcentral');
@@ -11853,7 +11853,7 @@ Response body is empty
 
 ## Patch Note
 
-HTTP PATCH /restapi/v1.0/glip/notes/{noteId}
+HTTP PATCH `/restapi/v1.0/glip/notes/{noteId}`
 
 ```js
 const SDK = require('ringcentral');
@@ -11915,7 +11915,7 @@ You can get response json data by `const json = r.json()`
 
 ## Update Note
 
-HTTP PUT /restapi/v1.0/glip/notes/{noteId}
+HTTP PUT `/restapi/v1.0/glip/notes/{noteId}`
 
 ```js
 const SDK = require('ringcentral');
@@ -11962,7 +11962,7 @@ You can get response json data by `const json = r.json()`
 
 ## Lock Note
 
-HTTP POST /restapi/v1.0/glip/notes/{noteId}/lock
+HTTP POST `/restapi/v1.0/glip/notes/{noteId}/lock`
 
 ```js
 const SDK = require('ringcentral');
@@ -11979,7 +11979,7 @@ You can get response json data by `const json = r.json()`
 
 ## Publish Note
 
-HTTP POST /restapi/v1.0/glip/notes/{noteId}/publish
+HTTP POST `/restapi/v1.0/glip/notes/{noteId}/publish`
 
 ```js
 const SDK = require('ringcentral');
@@ -11996,7 +11996,7 @@ You can get response json data by `const json = r.json()`
 
 ## Unlock Note
 
-HTTP POST /restapi/v1.0/glip/notes/{noteId}/unlock
+HTTP POST `/restapi/v1.0/glip/notes/{noteId}/unlock`
 
 ```js
 const SDK = require('ringcentral');
@@ -12013,7 +12013,7 @@ You can get response json data by `const json = r.json()`
 
 ## Get Person
 
-HTTP GET /restapi/v1.0/glip/persons/{personId}
+HTTP GET `/restapi/v1.0/glip/persons/{personId}`
 
 ```js
 const SDK = require('ringcentral');
@@ -12030,7 +12030,7 @@ You can get response json data by `const json = r.json()`
 
 ## Get Posts
 
-HTTP GET /restapi/v1.0/glip/posts
+HTTP GET `/restapi/v1.0/glip/posts`
 
 ```js
 const SDK = require('ringcentral');
@@ -12077,7 +12077,7 @@ You can get response json data by `const json = r.json()`
 
 ## Create Post
 
-HTTP POST /restapi/v1.0/glip/posts
+HTTP POST `/restapi/v1.0/glip/posts`
 
 ```js
 const SDK = require('ringcentral');
@@ -12263,7 +12263,7 @@ You can get response json data by `const json = r.json()`
 
 ## Get User Preferences
 
-HTTP GET /restapi/v1.0/glip/preferences
+HTTP GET `/restapi/v1.0/glip/preferences`
 
 ```js
 const SDK = require('ringcentral');
@@ -12280,7 +12280,7 @@ You can get response json data by `const json = r.json()`
 
 ## Get Recent Chats
 
-HTTP GET /restapi/v1.0/glip/recent/chats
+HTTP GET `/restapi/v1.0/glip/recent/chats`
 
 ```js
 const SDK = require('ringcentral');
@@ -12331,7 +12331,7 @@ You can get response json data by `const json = r.json()`
 
 ## Get Team List
 
-HTTP GET /restapi/v1.0/glip/teams
+HTTP GET `/restapi/v1.0/glip/teams`
 
 ```js
 const SDK = require('ringcentral');
@@ -12371,7 +12371,7 @@ You can get response json data by `const json = r.json()`
 
 ## Create Team
 
-HTTP POST /restapi/v1.0/glip/teams
+HTTP POST `/restapi/v1.0/glip/teams`
 
 ```js
 const SDK = require('ringcentral');
@@ -12430,7 +12430,7 @@ You can get response json data by `const json = r.json()`
 
 ## Get Team
 
-HTTP GET /restapi/v1.0/glip/teams/{chatId}
+HTTP GET `/restapi/v1.0/glip/teams/{chatId}`
 
 ```js
 const SDK = require('ringcentral');
@@ -12447,7 +12447,7 @@ You can get response json data by `const json = r.json()`
 
 ## Update Team
 
-HTTP PATCH /restapi/v1.0/glip/teams/{chatId}
+HTTP PATCH `/restapi/v1.0/glip/teams/{chatId}`
 
 ```js
 const SDK = require('ringcentral');
@@ -12486,7 +12486,7 @@ You can get response json data by `const json = r.json()`
 
 ## Delete Team
 
-HTTP DELETE /restapi/v1.0/glip/teams/{chatId}
+HTTP DELETE `/restapi/v1.0/glip/teams/{chatId}`
 
 ```js
 const SDK = require('ringcentral');
@@ -12501,7 +12501,7 @@ Response body is empty
 
 ## Add Team Members
 
-HTTP POST /restapi/v1.0/glip/teams/{chatId}/add
+HTTP POST `/restapi/v1.0/glip/teams/{chatId}/add`
 
 ```js
 const SDK = require('ringcentral');
@@ -12546,7 +12546,7 @@ Response body is empty
 
 ## Archive Team
 
-HTTP POST /restapi/v1.0/glip/teams/{chatId}/archive
+HTTP POST `/restapi/v1.0/glip/teams/{chatId}/archive`
 
 ```js
 const SDK = require('ringcentral');
@@ -12561,7 +12561,7 @@ Response body is empty
 
 ## Join Team
 
-HTTP POST /restapi/v1.0/glip/teams/{chatId}/join
+HTTP POST `/restapi/v1.0/glip/teams/{chatId}/join`
 
 ```js
 const SDK = require('ringcentral');
@@ -12576,7 +12576,7 @@ Response body is empty
 
 ## Leave Team
 
-HTTP POST /restapi/v1.0/glip/teams/{chatId}/leave
+HTTP POST `/restapi/v1.0/glip/teams/{chatId}/leave`
 
 ```js
 const SDK = require('ringcentral');
@@ -12591,7 +12591,7 @@ Response body is empty
 
 ## Remove Members from Team
 
-HTTP POST /restapi/v1.0/glip/teams/{chatId}/remove
+HTTP POST `/restapi/v1.0/glip/teams/{chatId}/remove`
 
 ```js
 const SDK = require('ringcentral');
@@ -12632,7 +12632,7 @@ Response body is empty
 
 ## Unarchive Team
 
-HTTP POST /restapi/v1.0/glip/teams/{chatId}/unarchive
+HTTP POST `/restapi/v1.0/glip/teams/{chatId}/unarchive`
 
 ```js
 const SDK = require('ringcentral');
@@ -12647,7 +12647,7 @@ Response body is empty
 
 ## Get Webhooks
 
-HTTP GET /restapi/v1.0/glip/webhooks
+HTTP GET `/restapi/v1.0/glip/webhooks`
 
 ```js
 const SDK = require('ringcentral');
@@ -12664,7 +12664,7 @@ You can get response json data by `const json = r.json()`
 
 ## Get Webhook
 
-HTTP GET /restapi/v1.0/glip/webhooks/{webhookId}
+HTTP GET `/restapi/v1.0/glip/webhooks/{webhookId}`
 
 ```js
 const SDK = require('ringcentral');
@@ -12681,7 +12681,7 @@ You can get response json data by `const json = r.json()`
 
 ## Delete Webhook
 
-HTTP DELETE /restapi/v1.0/glip/webhooks/{webhookId}
+HTTP DELETE `/restapi/v1.0/glip/webhooks/{webhookId}`
 
 ```js
 const SDK = require('ringcentral');
@@ -12696,7 +12696,7 @@ Response body is empty
 
 ## Activate Webhook
 
-HTTP POST /restapi/v1.0/glip/webhooks/{webhookId}/activate
+HTTP POST `/restapi/v1.0/glip/webhooks/{webhookId}/activate`
 
 ```js
 const SDK = require('ringcentral');
@@ -12711,7 +12711,7 @@ Response body is empty
 
 ## Suspend Webhook
 
-HTTP POST /restapi/v1.0/glip/webhooks/{webhookId}/suspend
+HTTP POST `/restapi/v1.0/glip/webhooks/{webhookId}/suspend`
 
 ```js
 const SDK = require('ringcentral');
@@ -12726,7 +12726,7 @@ Response body is empty
 
 ## Parse Phone Number [Beta]
 
-HTTP POST /restapi/v1.0/number-parser/parse
+HTTP POST `/restapi/v1.0/number-parser/parse`
 
 ```js
 const SDK = require('ringcentral');
@@ -12781,7 +12781,7 @@ You can get response json data by `const json = r.json()`
 
 ## Get Service Status
 
-HTTP GET /restapi/v1.0/status
+HTTP GET `/restapi/v1.0/status`
 
 ```js
 const SDK = require('ringcentral');
@@ -12796,7 +12796,7 @@ Response body is empty
 
 ## Get Subscriptions
 
-HTTP GET /restapi/v1.0/subscription
+HTTP GET `/restapi/v1.0/subscription`
 
 ```js
 const SDK = require('ringcentral');
@@ -12813,7 +12813,7 @@ You can get response json data by `const json = r.json()`
 
 ## Create Subscription
 
-HTTP POST /restapi/v1.0/subscription
+HTTP POST `/restapi/v1.0/subscription`
 
 ```js
 const SDK = require('ringcentral');
@@ -12892,7 +12892,7 @@ You can get response json data by `const json = r.json()`
 
 ## Get Subscription
 
-HTTP GET /restapi/v1.0/subscription/{subscriptionId}
+HTTP GET `/restapi/v1.0/subscription/{subscriptionId}`
 
 ```js
 const SDK = require('ringcentral');
@@ -12909,7 +12909,7 @@ You can get response json data by `const json = r.json()`
 
 ## Renew Subscription / Update Event Filters
 
-HTTP PUT /restapi/v1.0/subscription/{subscriptionId}
+HTTP PUT `/restapi/v1.0/subscription/{subscriptionId}`
 
 ```js
 const SDK = require('ringcentral');
@@ -13002,7 +13002,7 @@ You can get response json data by `const json = r.json()`
 
 ## Cancel Subscription
 
-HTTP DELETE /restapi/v1.0/subscription/{subscriptionId}
+HTTP DELETE `/restapi/v1.0/subscription/{subscriptionId}`
 
 ```js
 const SDK = require('ringcentral');
@@ -13017,7 +13017,7 @@ Response body is empty
 
 ## Renew Subscription
 
-HTTP POST /restapi/v1.0/subscription/{subscriptionId}/renew
+HTTP POST `/restapi/v1.0/subscription/{subscriptionId}/renew`
 
 ```js
 const SDK = require('ringcentral');
@@ -13034,7 +13034,7 @@ You can get response json data by `const json = r.json()`
 
 ## Get Version Info
 
-HTTP GET /restapi/{apiVersion}
+HTTP GET `/restapi/{apiVersion}`
 
 ```js
 const SDK = require('ringcentral');
@@ -13052,7 +13052,7 @@ You can get response json data by `const json = r.json()`
 
 ## check health
 
-HTTP GET /scim/health
+HTTP GET `/scim/health`
 
 ```js
 const SDK = require('ringcentral');
@@ -13067,7 +13067,7 @@ Response body is empty
 
 ## Get Service Provider Configuration
 
-HTTP GET /scim/v2/ServiceProviderConfig
+HTTP GET `/scim/v2/ServiceProviderConfig`
 
 ```js
 const SDK = require('ringcentral');
@@ -13084,7 +13084,7 @@ You can get response json data by `const json = r.json()`
 
 ## Search or List Users
 
-HTTP GET /scim/v2/Users
+HTTP GET `/scim/v2/Users`
 
 ```js
 const SDK = require('ringcentral');
@@ -13132,7 +13132,7 @@ You can get response json data by `const json = r.json()`
 
 ## Create User
 
-HTTP POST /scim/v2/Users
+HTTP POST `/scim/v2/Users`
 
 ```js
 const SDK = require('ringcentral');
@@ -13286,7 +13286,7 @@ You can get response json data by `const json = r.json()`
 
 ## Search or List Users
 
-HTTP POST /scim/v2/Users/.search
+HTTP POST `/scim/v2/Users/.search`
 
 ```js
 const SDK = require('ringcentral');
@@ -13336,7 +13336,7 @@ You can get response json data by `const json = r.json()`
 
 ## Get User
 
-HTTP GET /scim/v2/Users/{id}
+HTTP GET `/scim/v2/Users/{id}`
 
 ```js
 const SDK = require('ringcentral');
@@ -13353,7 +13353,7 @@ You can get response json data by `const json = r.json()`
 
 ## Update/Replace User
 
-HTTP PUT /scim/v2/Users/{id}
+HTTP PUT `/scim/v2/Users/{id}`
 
 ```js
 const SDK = require('ringcentral');
@@ -13507,7 +13507,7 @@ You can get response json data by `const json = r.json()`
 
 ## Delete User
 
-HTTP DELETE /scim/v2/Users/{id}
+HTTP DELETE `/scim/v2/Users/{id}`
 
 ```js
 const SDK = require('ringcentral');
@@ -13522,7 +13522,7 @@ Response body is empty
 
 ## Update/Patch User
 
-HTTP PATCH /scim/v2/Users/{id}
+HTTP PATCH `/scim/v2/Users/{id}`
 
 ```js
 const SDK = require('ringcentral');
@@ -13585,7 +13585,7 @@ You can get response json data by `const json = r.json()`
 
 ## check health
 
-HTTP GET /scim/v2/health
+HTTP GET `/scim/v2/health`
 
 ```js
 const SDK = require('ringcentral');
