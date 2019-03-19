@@ -119,6 +119,7 @@ ${code}
   } else {
     doc += '\n\nResponse body is empty'
   }
+  doc += `\n\n[Try it out](https://developer.ringcentral.com/api-reference#${operation.tags[0].replace(/ /g, '-')}-${operation.operationId}) in API Explorer.`
   return doc
 }
 
