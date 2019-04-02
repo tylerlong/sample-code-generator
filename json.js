@@ -1,25 +1,26 @@
 import fs from 'fs'
 
-const regexp = new RegExp('HTTP (GET|PUT|DELETE|POST|PATCH) `(.+?)`\\n\\n```(?:js|cs)\\n(.+?)\\n```', 'sg')
-const regexp2 = new RegExp('HTTP (GET|PUT|DELETE|POST|PATCH) `(.+?)`\\n\\n```(?:js|cs)\\n(.+?)\\n```', 's')
+const regexStr = 'HTTP (GET|PUT|DELETE|POST|PATCH) `(.+?)`\n\n```(?:js|cs)\n(.+?)\n```'
+const regexp = new RegExp(regexStr, 'sg')
+const regexp2 = new RegExp(regexStr, 's')
 
-const g = markdown => {
+const parseMarkdown = markdown => {
   const list = markdown.match(regexp)
   const result = {}
   list.forEach(s => {
     const m = s.match(regexp2)
-    if (!result[m[2]]) {
-      result[m[2]] = {}
+    const [, method, endpoint, code] = m
+    if (!result[endpoint]) {
+      result[endpoint] = {}
     }
-    result[m[2]][m[1]] = m[3]
+    result[endpoint][method] = code
   })
   return result
 }
 const jsMarkdown = fs.readFileSync(process.env.JAVASCRIPT_MARKDOWN_PATH, 'utf-8')
-const jsResult = g(jsMarkdown)
+const jsResult = parseMarkdown(jsMarkdown)
 const csMarkdown = fs.readFileSync(process.env.CSHARP_MARKDOWN_PATH, 'utf-8')
-const csResult = g(csMarkdown)
-console.log(csResult)
+const csResult = parseMarkdown(csMarkdown)
 
 const result = {
   javascript: jsResult,
