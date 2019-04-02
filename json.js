@@ -3,8 +3,8 @@ import fs from 'fs'
 const regexp = new RegExp('HTTP (GET|PUT|DELETE|POST|PATCH) `(.+?)`\\n\\n```(?:js|cs)\\n(.+?)\\n```', 'sg')
 const regexp2 = new RegExp('HTTP (GET|PUT|DELETE|POST|PATCH) `(.+?)`\\n\\n```(?:js|cs)\\n(.+?)\\n```', 's')
 
-const g = (markdown, language) => {
-  const list = jsMarkdown.match(regexp)
+const g = markdown => {
+  const list = markdown.match(regexp)
   const result = {}
   list.forEach(s => {
     const m = s.match(regexp2)
@@ -16,9 +16,10 @@ const g = (markdown, language) => {
   return result
 }
 const jsMarkdown = fs.readFileSync(process.env.JAVASCRIPT_MARKDOWN_PATH, 'utf-8')
-const jsResult = g(jsMarkdown, 'javascript')
+const jsResult = g(jsMarkdown)
 const csMarkdown = fs.readFileSync(process.env.CSHARP_MARKDOWN_PATH, 'utf-8')
-const csResult = g(csMarkdown, 'csharp')
+const csResult = g(csMarkdown)
+console.log(csResult)
 
 const result = {
   javascript: jsResult,

@@ -624,625 +624,605 @@
   },
   "csharp": {
     "/restapi": {
-      "GET": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.get('/restapi');"
+      "GET": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi().List();\n}"
     },
-    "/restapi/v1.0/account/{accountId}": {
-      "GET": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.get(`/restapi/v1.0/account/${accountId}`);"
+    "/restapi/oauth/revoke": {
+      "POST": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi().Oauth().Revoke().Post(revokeTokenRequest);\n}"
     },
-    "/restapi/v1.0/account/{accountId}/active-calls": {
-      "GET": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.get(`/restapi/v1.0/account/${accountId}/active-calls`, listCompanyActiveCallsParameters);"
-    },
-    "/restapi/v1.0/account/{accountId}/answering-rule": {
-      "POST": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.post(`/restapi/v1.0/account/${accountId}/answering-rule`, companyAnsweringRuleRequest);",
-      "GET": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.get(`/restapi/v1.0/account/${accountId}/answering-rule`);"
-    },
-    "/restapi/v1.0/account/{accountId}/answering-rule/{ruleId}": {
-      "GET": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.get(`/restapi/v1.0/account/${accountId}/answering-rule/${ruleId}`);",
-      "PUT": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.put(`/restapi/v1.0/account/${accountId}/answering-rule/${ruleId}`, companyAnsweringRuleUpdate);",
-      "DELETE": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.delete(`/restapi/v1.0/account/${accountId}/answering-rule/${ruleId}`);"
-    },
-    "/restapi/v1.0/account/{accountId}/business-address": {
-      "GET": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.get(`/restapi/v1.0/account/${accountId}/business-address`);",
-      "PUT": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.put(`/restapi/v1.0/account/${accountId}/business-address`, modifyAccountBusinessAddressRequest);"
-    },
-    "/restapi/v1.0/account/{accountId}/business-hours": {
-      "GET": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.get(`/restapi/v1.0/account/${accountId}/business-hours`);",
-      "PUT": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.put(`/restapi/v1.0/account/${accountId}/business-hours`, companyBusinessHoursUpdateRequest);"
-    },
-    "/restapi/v1.0/account/{accountId}/call-log": {
-      "GET": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.get(`/restapi/v1.0/account/${accountId}/call-log`, loadCompanyCallLogParameters);"
-    },
-    "/restapi/v1.0/account/{accountId}/call-log/{callRecordId}": {
-      "GET": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.get(`/restapi/v1.0/account/${accountId}/call-log/${callRecordId}`);"
-    },
-    "/restapi/v1.0/account/{accountId}/call-monitoring-groups": {
-      "POST": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.post(`/restapi/v1.0/account/${accountId}/call-monitoring-groups`, createCallMonitoringGroupRequest);",
-      "GET": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.get(`/restapi/v1.0/account/${accountId}/call-monitoring-groups`, listCallMonitoringGroupsParameters);"
-    },
-    "/restapi/v1.0/account/{accountId}/call-monitoring-groups/{groupId}": {
-      "PUT": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.put(`/restapi/v1.0/account/${accountId}/call-monitoring-groups/${groupId}`, createCallMonitoringGroupRequest);",
-      "DELETE": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.delete(`/restapi/v1.0/account/${accountId}/call-monitoring-groups/${groupId}`);"
-    },
-    "/restapi/v1.0/account/{accountId}/call-monitoring-groups/{groupId}/bulk-assign": {
-      "POST": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.post(`/restapi/v1.0/account/${accountId}/call-monitoring-groups/${groupId}/bulk-assign`, callMonitoringBulkAssign);"
-    },
-    "/restapi/v1.0/account/{accountId}/call-monitoring-groups/{groupId}/members": {
-      "GET": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.get(`/restapi/v1.0/account/${accountId}/call-monitoring-groups/${groupId}/members`, listCallMonitoringGroupMembersParameters);"
-    },
-    "/restapi/v1.0/account/{accountId}/call-queues": {
-      "GET": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.get(`/restapi/v1.0/account/${accountId}/call-queues`, listCallQueuesParameters);"
-    },
-    "/restapi/v1.0/account/{accountId}/call-queues/{groupId}/bulk-assign": {
-      "POST": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.post(`/restapi/v1.0/account/${accountId}/call-queues/${groupId}/bulk-assign`, callQueueBulkAssignResource);"
-    },
-    "/restapi/v1.0/account/{accountId}/call-queues/{groupId}/members": {
-      "GET": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.get(`/restapi/v1.0/account/${accountId}/call-queues/${groupId}/members`, listCallQueueMembersParameters);"
-    },
-    "/restapi/v1.0/account/{accountId}/call-recording": {
-      "GET": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.get(`/restapi/v1.0/account/${accountId}/call-recording`);",
-      "PUT": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.put(`/restapi/v1.0/account/${accountId}/call-recording`, callRecordingSettingsResource);"
-    },
-    "/restapi/v1.0/account/{accountId}/call-recording/bulk-assign": {
-      "POST": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.post(`/restapi/v1.0/account/${accountId}/call-recording/bulk-assign`, bulkAccountCallRecordingsResource);"
-    },
-    "/restapi/v1.0/account/{accountId}/call-recording/custom-greetings": {
-      "GET": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.get(`/restapi/v1.0/account/${accountId}/call-recording/custom-greetings`, listCallRecordingCustomGreetingsParameters);",
-      "DELETE": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.delete(`/restapi/v1.0/account/${accountId}/call-recording/custom-greetings`);"
-    },
-    "/restapi/v1.0/account/{accountId}/call-recording/custom-greetings/{greetingId}": {
-      "DELETE": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.delete(`/restapi/v1.0/account/${accountId}/call-recording/custom-greetings/${greetingId}`);"
-    },
-    "/restapi/v1.0/account/{accountId}/call-recording/extensions": {
-      "GET": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.get(`/restapi/v1.0/account/${accountId}/call-recording/extensions`);"
-    },
-    "/restapi/v1.0/account/{accountId}/department/bulk-assign": {
-      "POST": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.post(`/restapi/v1.0/account/${accountId}/department/bulk-assign`, departmentBulkAssignResource);"
-    },
-    "/restapi/v1.0/account/{accountId}/department/{departmentId}/members": {
-      "GET": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.get(`/restapi/v1.0/account/${accountId}/department/${departmentId}/members`, listDepartmentMembersParameters);"
-    },
-    "/restapi/v1.0/account/{accountId}/device/{deviceId}": {
-      "GET": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.get(`/restapi/v1.0/account/${accountId}/device/${deviceId}`);",
-      "PUT": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.put(`/restapi/v1.0/account/${accountId}/device/${deviceId}`, accountDeviceUpdate);"
-    },
-    "/restapi/v1.0/account/{accountId}/directory/entries": {
-      "GET": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.get(`/restapi/v1.0/account/${accountId}/directory/entries`, listDirectoryEntriesParameters);"
-    },
-    "/restapi/v1.0/account/{accountId}/directory/entries/search": {
-      "POST": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.post(`/restapi/v1.0/account/${accountId}/directory/entries/search`, searchDirectoryEntriesRequest);"
-    },
-    "/restapi/v1.0/account/{accountId}/directory/federation": {
-      "GET": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.get(`/restapi/v1.0/account/${accountId}/directory/federation`);"
-    },
-    "/restapi/v1.0/account/{accountId}/extension": {
-      "GET": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.get(`/restapi/v1.0/account/${accountId}/extension`, listExtensionsParameters);",
-      "POST": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.post(`/restapi/v1.0/account/${accountId}/extension`, extensionCreationRequest);"
-    },
-    "/restapi/v1.0/account/{accountId}/extension/{extensionId}": {
-      "GET": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}`);",
-      "PUT": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.put(`/restapi/v1.0/account/${accountId}/extension/${extensionId}`, extensionUpdateRequest);",
-      "DELETE": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.delete(`/restapi/v1.0/account/${accountId}/extension/${extensionId}`);"
-    },
-    "/restapi/v1.0/account/{accountId}/extension/{extensionId}/active-calls": {
-      "GET": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/active-calls`, listExtensionActiveCallsParameters);"
-    },
-    "/restapi/v1.0/account/{accountId}/extension/{extensionId}/address-book-sync": {
-      "GET": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/address-book-sync`, syncAddressBookParameters);"
-    },
-    "/restapi/v1.0/account/{accountId}/extension/{extensionId}/address-book/contact": {
-      "GET": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/address-book/contact`, listContactsParameters);",
-      "POST": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.post(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/address-book/contact`, personalContactResource, createContactParameters);"
-    },
-    "/restapi/v1.0/account/{accountId}/extension/{extensionId}/address-book/contact/{contactId}": {
-      "GET": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/address-book/contact/${contactId}`);",
-      "PUT": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.put(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/address-book/contact/${contactId}`, personalContactResource, updateContactParameters);",
-      "DELETE": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.delete(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/address-book/contact/${contactId}`);"
-    },
-    "/restapi/v1.0/account/{accountId}/extension/{extensionId}/answering-rule": {
-      "GET": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/answering-rule`, listAnsweringRulesParameters);",
-      "POST": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.post(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/answering-rule`, createAnsweringRuleRequest);"
-    },
-    "/restapi/v1.0/account/{accountId}/extension/{extensionId}/answering-rule/{ruleId}": {
-      "GET": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/answering-rule/${ruleId}`, loadAnsweringRuleParameters);",
-      "PUT": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.put(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/answering-rule/${ruleId}`, updateAnsweringRuleRequest);",
-      "DELETE": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.delete(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/answering-rule/${ruleId}`);"
-    },
-    "/restapi/v1.0/account/{accountId}/extension/{extensionId}/authz-profile": {
-      "GET": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/authz-profile`);"
-    },
-    "/restapi/v1.0/account/{accountId}/extension/{extensionId}/authz-profile/check": {
-      "GET": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/authz-profile/check`, checkUserPermissionParameters);"
-    },
-    "/restapi/v1.0/account/{accountId}/extension/{extensionId}/business-hours": {
-      "GET": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/business-hours`);",
-      "PUT": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.put(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/business-hours`, userBusinessHoursUpdateRequest);"
-    },
-    "/restapi/v1.0/account/{accountId}/extension/{extensionId}/call-log": {
-      "GET": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/call-log`, loadUserCallLogParameters);",
-      "DELETE": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.delete(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/call-log`, deleteUserCallLogParameters);"
-    },
-    "/restapi/v1.0/account/{accountId}/extension/{extensionId}/call-log-sync": {
-      "GET": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/call-log-sync`, syncUserCallLogParameters);"
-    },
-    "/restapi/v1.0/account/{accountId}/extension/{extensionId}/call-log/{callRecordId}": {
-      "GET": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/call-log/${callRecordId}`, getCallRecordsParameters);"
-    },
-    "/restapi/v1.0/account/{accountId}/extension/{extensionId}/caller-blocking": {
-      "GET": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/caller-blocking`);",
-      "PUT": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.put(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/caller-blocking`, callerBlockingSettingsUpdate);"
-    },
-    "/restapi/v1.0/account/{accountId}/extension/{extensionId}/caller-blocking/phone-numbers": {
-      "GET": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/caller-blocking/phone-numbers`, listBlockedAllowedPhoneNumberParameters);",
-      "POST": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.post(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/caller-blocking/phone-numbers`, addBlockedAllowedPhoneNumber);"
-    },
-    "/restapi/v1.0/account/{accountId}/extension/{extensionId}/caller-blocking/phone-numbers/bulk-update": {
-      "POST": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.post(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/caller-blocking/phone-numbers/bulk-update`);"
-    },
-    "/restapi/v1.0/account/{accountId}/extension/{extensionId}/caller-blocking/phone-numbers/{blockedNumberId}": {
-      "GET": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/caller-blocking/phone-numbers/${blockedNumberId}`);",
-      "DELETE": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.delete(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/caller-blocking/phone-numbers/${blockedNumberId}`);",
-      "PUT": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.put(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/caller-blocking/phone-numbers/${blockedNumberId}`, addBlockedAllowedPhoneNumber);"
-    },
-    "/restapi/v1.0/account/{accountId}/extension/{extensionId}/caller-id": {
-      "GET": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/caller-id`);",
-      "PUT": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.put(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/caller-id`, extensionCallerIdInfo);"
-    },
-    "/restapi/v1.0/account/{accountId}/extension/{extensionId}/company-pager": {
-      "POST": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.post(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/company-pager`, createInternalTextMessageRequest);"
-    },
-    "/restapi/v1.0/account/{accountId}/extension/{extensionId}/conferencing": {
-      "GET": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/conferencing`, loadConferencingInfoParameters);",
-      "PUT": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.put(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/conferencing`, updateConferencingInfoRequest);"
-    },
-    "/restapi/v1.0/account/{accountId}/extension/{extensionId}/device": {
-      "GET": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/device`, listExtensionDevicesParameters);"
-    },
-    "/restapi/v1.0/account/{accountId}/extension/{extensionId}/favorite": {
-      "GET": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/favorite`);",
-      "PUT": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.put(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/favorite`, favoriteCollection);"
-    },
-    "/restapi/v1.0/account/{accountId}/extension/{extensionId}/fax": {
-      "POST": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst FormData = require('form-data');\nconst formData = new FormData();\nformData.append('body', Buffer.from(JSON.stringify(body)), { filename: 'request.json' });\nformData.append('attachment', fs.readFileSync('./test.png'), { filename: 'text.png' });\nconst r = await platform.post(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/fax`, formData);"
-    },
-    "/restapi/v1.0/account/{accountId}/extension/{extensionId}/forwarding-number": {
-      "GET": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/forwarding-number`, listExtensionForwardingNumbersParameters);",
-      "POST": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.post(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/forwarding-number`, createForwardingNumberRequest);"
-    },
-    "/restapi/v1.0/account/{accountId}/extension/{extensionId}/forwarding-number/{forwardingNumberId}": {
-      "GET": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/forwarding-number/${forwardingNumberId}`);",
-      "PUT": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.put(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/forwarding-number/${forwardingNumberId}`, updateForwardingNumberRequest);",
-      "DELETE": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.delete(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/forwarding-number/${forwardingNumberId}`);"
-    },
-    "/restapi/v1.0/account/{accountId}/extension/{extensionId}/grant": {
-      "GET": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/grant`, listExtensionGrantsParameters);"
-    },
-    "/restapi/v1.0/account/{accountId}/extension/{extensionId}/greeting": {
-      "POST": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst FormData = require('form-data');\nconst formData = new FormData();\nformData.append('body', Buffer.from(JSON.stringify(body)), { filename: 'request.json' });\nformData.append('audio', fs.readFileSync('./test.mp3'), { filename: 'text.mp3' });\nconst r = await platform.post(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/greeting`, formData, customGreetingRequest);"
-    },
-    "/restapi/v1.0/account/{accountId}/extension/{extensionId}/greeting/{greetingId}": {
-      "GET": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/greeting/${greetingId}`);"
-    },
-    "/restapi/v1.0/account/{accountId}/extension/{extensionId}/meeting": {
-      "GET": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/meeting`);",
-      "POST": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.post(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/meeting`, meetingRequestResource);"
-    },
-    "/restapi/v1.0/account/{accountId}/extension/{extensionId}/meeting-recordings": {
-      "GET": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/meeting-recordings`, listUserMeetingRecordingsParameters);"
-    },
-    "/restapi/v1.0/account/{accountId}/extension/{extensionId}/meeting/service-info": {
-      "GET": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/meeting/service-info`);"
-    },
-    "/restapi/v1.0/account/{accountId}/extension/{extensionId}/meeting/{meetingId}": {
-      "GET": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/meeting/${meetingId}`);",
-      "PUT": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.put(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/meeting/${meetingId}`, meetingRequestResource);",
-      "DELETE": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.delete(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/meeting/${meetingId}`);"
-    },
-    "/restapi/v1.0/account/{accountId}/extension/{extensionId}/meeting/{meetingId}/end": {
-      "POST": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.post(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/meeting/${meetingId}/end`);"
-    },
-    "/restapi/v1.0/account/{accountId}/extension/{extensionId}/message-store": {
-      "GET": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/message-store`, listMessagesParameters);",
-      "DELETE": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.delete(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/message-store`, deleteMessagesByFilterParameters);"
-    },
-    "/restapi/v1.0/account/{accountId}/extension/{extensionId}/message-store/{messageId}": {
-      "GET": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/message-store/${messageId}`);",
-      "PUT": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.put(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/message-store/${messageId}`, updateMessageRequest);",
-      "DELETE": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.delete(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/message-store/${messageId}`, deleteMessageParameters);"
-    },
-    "/restapi/v1.0/account/{accountId}/extension/{extensionId}/message-store/{messageId}/content/{attachmentId}": {
-      "GET": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/message-store/${messageId}/content/${attachmentId}`, getMessageAttachmentByIdParameters);"
-    },
-    "/restapi/v1.0/account/{accountId}/extension/{extensionId}/message-sync": {
-      "GET": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/message-sync`, syncMessagesParameters);"
-    },
-    "/restapi/v1.0/account/{accountId}/extension/{extensionId}/notification-settings": {
-      "GET": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/notification-settings`);",
-      "PUT": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.put(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/notification-settings`, notificationSettingsUpdateRequest);"
-    },
-    "/restapi/v1.0/account/{accountId}/extension/{extensionId}/phone-number": {
-      "GET": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/phone-number`, listExtensionPhoneNumbersParameters);"
-    },
-    "/restapi/v1.0/account/{accountId}/extension/{extensionId}/presence": {
-      "GET": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/presence`, getPresenceStatusParameters);",
-      "PUT": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.put(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/presence`, presenceInfoResource);"
-    },
-    "/restapi/v1.0/account/{accountId}/extension/{extensionId}/profile-image": {
-      "GET": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/profile-image`);",
-      "POST": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst FormData = require('form-data');\nconst formData = new FormData();\nformData.append('image', fs.readFileSync('./test.png'), { filename: 'text.png' });\nconst r = await platform.post(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/profile-image`, formData);",
-      "PUT": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst FormData = require('form-data');\nconst formData = new FormData();\nformData.append('image', fs.readFileSync('./test.png'), { filename: 'text.png' });\nconst r = await platform.put(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/profile-image`, formData);"
-    },
-    "/restapi/v1.0/account/{accountId}/extension/{extensionId}/profile-image/{scaleSize}": {
-      "GET": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/profile-image/${scaleSize}`);"
-    },
-    "/restapi/v1.0/account/{accountId}/extension/{extensionId}/ring-out": {
-      "POST": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.post(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/ring-out`, makeRingOutRequest);"
-    },
-    "/restapi/v1.0/account/{accountId}/extension/{extensionId}/ring-out/{ringoutId}": {
-      "GET": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/ring-out/${ringoutId}`);",
-      "DELETE": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.delete(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/ring-out/${ringoutId}`);"
-    },
-    "/restapi/v1.0/account/{accountId}/extension/{extensionId}/ringout": {
-      "POST": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.post(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/ringout`, makeRingOutRequest);"
-    },
-    "/restapi/v1.0/account/{accountId}/extension/{extensionId}/ringout/{ringoutId}": {
-      "GET": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/ringout/${ringoutId}`);",
-      "DELETE": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.delete(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/ringout/${ringoutId}`);"
-    },
-    "/restapi/v1.0/account/{accountId}/extension/{extensionId}/sms": {
-      "POST": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.post(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/sms`, createSMSMessage);"
-    },
-    "/restapi/v1.0/account/{accountId}/greeting": {
-      "POST": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst FormData = require('form-data');\nconst formData = new FormData();\nformData.append('body', Buffer.from(JSON.stringify(body)), { filename: 'request.json' });\nformData.append('audio', fs.readFileSync('./test.mp3'), { filename: 'text.mp3' });\nconst r = await platform.post(`/restapi/v1.0/account/${accountId}/greeting`, formData, customCompanyGreetingRequest);"
-    },
-    "/restapi/v1.0/account/{accountId}/ivr-menus": {
-      "POST": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.post(`/restapi/v1.0/account/${accountId}/ivr-menus`, iVRMenuInfo);"
-    },
-    "/restapi/v1.0/account/{accountId}/ivr-menus/{ivrMenuId}": {
-      "GET": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.get(`/restapi/v1.0/account/${accountId}/ivr-menus/${ivrMenuId}`);",
-      "PUT": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.put(`/restapi/v1.0/account/${accountId}/ivr-menus/${ivrMenuId}`, iVRMenuInfo);"
-    },
-    "/restapi/v1.0/account/{accountId}/ivr-prompts": {
-      "POST": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst FormData = require('form-data');\nconst formData = new FormData();\nformData.append('body', Buffer.from(JSON.stringify(body)), { filename: 'request.json' });\nformData.append('attachment', fs.readFileSync('./test.png'), { filename: 'text.png' });\nconst r = await platform.post(`/restapi/v1.0/account/${accountId}/ivr-prompts`, formData);",
-      "GET": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.get(`/restapi/v1.0/account/${accountId}/ivr-prompts`);"
-    },
-    "/restapi/v1.0/account/{accountId}/ivr-prompts/{promptId}": {
-      "GET": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.get(`/restapi/v1.0/account/${accountId}/ivr-prompts/${promptId}`);",
-      "DELETE": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.delete(`/restapi/v1.0/account/${accountId}/ivr-prompts/${promptId}`);",
-      "PUT": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.put(`/restapi/v1.0/account/${accountId}/ivr-prompts/${promptId}`);"
-    },
-    "/restapi/v1.0/account/{accountId}/ivr-prompts/{promptId}/content": {
-      "GET": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.get(`/restapi/v1.0/account/${accountId}/ivr-prompts/${promptId}/content`);"
-    },
-    "/restapi/v1.0/account/{accountId}/meeting-recordings": {
-      "GET": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.get(`/restapi/v1.0/account/${accountId}/meeting-recordings`, listAccountMeetingRecordingsParameters);"
-    },
-    "/restapi/v1.0/account/{accountId}/message-store-configuration": {
-      "GET": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.get(`/restapi/v1.0/account/${accountId}/message-store-configuration`);",
-      "PUT": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.put(`/restapi/v1.0/account/${accountId}/message-store-configuration`, messageStoreConfiguration);"
-    },
-    "/restapi/v1.0/account/{accountId}/message-store-report": {
-      "POST": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.post(`/restapi/v1.0/account/${accountId}/message-store-report`, createMessageStoreReportRequest);"
-    },
-    "/restapi/v1.0/account/{accountId}/message-store-report/{taskId}": {
-      "GET": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.get(`/restapi/v1.0/account/${accountId}/message-store-report/${taskId}`);"
-    },
-    "/restapi/v1.0/account/{accountId}/message-store-report/{taskId}/archive": {
-      "GET": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.get(`/restapi/v1.0/account/${accountId}/message-store-report/${taskId}/archive`);"
-    },
-    "/restapi/v1.0/account/{accountId}/message-store-report/{taskId}/archive/{archiveId}": {
-      "GET": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.get(`/restapi/v1.0/account/${accountId}/message-store-report/${taskId}/archive/${archiveId}`);"
-    },
-    "/restapi/v1.0/account/{accountId}/paging-only-groups/{pagingOnlyGroupId}/bulk-assign": {
-      "POST": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.post(`/restapi/v1.0/account/${accountId}/paging-only-groups/${pagingOnlyGroupId}/bulk-assign`, editPagingGroupRequest);"
-    },
-    "/restapi/v1.0/account/{accountId}/paging-only-groups/{pagingOnlyGroupId}/devices": {
-      "GET": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.get(`/restapi/v1.0/account/${accountId}/paging-only-groups/${pagingOnlyGroupId}/devices`, listPagingGroupDevicesParameters);"
-    },
-    "/restapi/v1.0/account/{accountId}/paging-only-groups/{pagingOnlyGroupId}/users": {
-      "GET": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.get(`/restapi/v1.0/account/${accountId}/paging-only-groups/${pagingOnlyGroupId}/users`, listPagingGroupUsersParameters);"
-    },
-    "/restapi/v1.0/account/{accountId}/phone-number": {
-      "GET": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.get(`/restapi/v1.0/account/${accountId}/phone-number`, listAccountPhoneNumbersParameters);"
-    },
-    "/restapi/v1.0/account/{accountId}/phone-number/{phoneNumberId}": {
-      "GET": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.get(`/restapi/v1.0/account/${accountId}/phone-number/${phoneNumberId}`);"
-    },
-    "/restapi/v1.0/account/{accountId}/presence": {
-      "GET": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.get(`/restapi/v1.0/account/${accountId}/presence`, accountPresenceParameters);"
-    },
-    "/restapi/v1.0/account/{accountId}/recording/{recordingId}": {
-      "GET": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.get(`/restapi/v1.0/account/${accountId}/recording/${recordingId}`);"
-    },
-    "/restapi/v1.0/account/{accountId}/recording/{recordingId}/content": {
-      "GET": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.get(`/restapi/v1.0/account/${accountId}/recording/${recordingId}/content`);"
-    },
-    "/restapi/v1.0/account/{accountId}/service-info": {
-      "GET": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.get(`/restapi/v1.0/account/${accountId}/service-info`);"
-    },
-    "/restapi/v1.0/account/{accountId}/telephony/sessions/{sessionId}": {
-      "GET": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.get(`/restapi/v1.0/account/${accountId}/telephony/sessions/${sessionId}`, getCallSessionStatusParameters);",
-      "DELETE": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.delete(`/restapi/v1.0/account/${accountId}/telephony/sessions/${sessionId}`);"
-    },
-    "/restapi/v1.0/account/{accountId}/telephony/sessions/{sessionId}/parties/{partyId}": {
-      "GET": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.get(`/restapi/v1.0/account/${accountId}/telephony/sessions/${sessionId}/parties/${partyId}`);",
-      "PATCH": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.patch(`/restapi/v1.0/account/${accountId}/telephony/sessions/${sessionId}/parties/${partyId}`, partyUpdateRequest);"
-    },
-    "/restapi/v1.0/account/{accountId}/telephony/sessions/{sessionId}/parties/{partyId}/flip": {
-      "POST": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.post(`/restapi/v1.0/account/${accountId}/telephony/sessions/${sessionId}/parties/${partyId}/flip`, callPartyFlip);"
-    },
-    "/restapi/v1.0/account/{accountId}/telephony/sessions/{sessionId}/parties/{partyId}/forward": {
-      "POST": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.post(`/restapi/v1.0/account/${accountId}/telephony/sessions/${sessionId}/parties/${partyId}/forward`, forwardTarget);"
-    },
-    "/restapi/v1.0/account/{accountId}/telephony/sessions/{sessionId}/parties/{partyId}/hold": {
-      "POST": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.post(`/restapi/v1.0/account/${accountId}/telephony/sessions/${sessionId}/parties/${partyId}/hold`);"
-    },
-    "/restapi/v1.0/account/{accountId}/telephony/sessions/{sessionId}/parties/{partyId}/recordings": {
-      "POST": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.post(`/restapi/v1.0/account/${accountId}/telephony/sessions/${sessionId}/parties/${partyId}/recordings`);"
-    },
-    "/restapi/v1.0/account/{accountId}/telephony/sessions/{sessionId}/parties/{partyId}/recordings/{recordingId}": {
-      "PATCH": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.patch(`/restapi/v1.0/account/${accountId}/telephony/sessions/${sessionId}/parties/${partyId}/recordings/${recordingId}`, callRecordingUpdate, pauseResumeCallRecordingParameters);"
-    },
-    "/restapi/v1.0/account/{accountId}/telephony/sessions/{sessionId}/parties/{partyId}/reject": {
-      "POST": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.post(`/restapi/v1.0/account/${accountId}/telephony/sessions/${sessionId}/parties/${partyId}/reject`);"
-    },
-    "/restapi/v1.0/account/{accountId}/telephony/sessions/{sessionId}/parties/{partyId}/transfer": {
-      "POST": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.post(`/restapi/v1.0/account/${accountId}/telephony/sessions/${sessionId}/parties/${partyId}/transfer`, transferTarget);"
-    },
-    "/restapi/v1.0/account/{accountId}/telephony/sessions/{sessionId}/parties/{partyId}/unhold": {
-      "POST": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.post(`/restapi/v1.0/account/${accountId}/telephony/sessions/${sessionId}/parties/${partyId}/unhold`);"
-    },
-    "/restapi/v1.0/account/{accountId}/templates": {
-      "GET": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.get(`/restapi/v1.0/account/${accountId}/templates`, listTemplatesParameters);"
-    },
-    "/restapi/v1.0/account/{accountId}/templates/{templateId}": {
-      "GET": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.get(`/restapi/v1.0/account/${accountId}/templates/${templateId}`);"
-    },
-    "/restapi/v1.0/client-info/sip-provision": {
-      "POST": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.post('/restapi/v1.0/client-info/sip-provision', createSipRegistrationRequest);"
-    },
-    "/restapi/v1.0/dictionary/country": {
-      "GET": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.get('/restapi/v1.0/dictionary/country', listCountriesParameters);"
-    },
-    "/restapi/v1.0/dictionary/country/{countryId}": {
-      "GET": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.get(`/restapi/v1.0/dictionary/country/${countryId}`);"
-    },
-    "/restapi/v1.0/dictionary/fax-cover-page": {
-      "GET": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.get('/restapi/v1.0/dictionary/fax-cover-page', listFaxCoverPagesParameters);"
-    },
-    "/restapi/v1.0/dictionary/greeting": {
-      "GET": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.get('/restapi/v1.0/dictionary/greeting', listStandardGreetingsParameters);"
-    },
-    "/restapi/v1.0/dictionary/greeting/{greetingId}": {
-      "GET": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.get(`/restapi/v1.0/dictionary/greeting/${greetingId}`);"
-    },
-    "/restapi/v1.0/dictionary/language": {
-      "GET": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.get('/restapi/v1.0/dictionary/language');"
-    },
-    "/restapi/v1.0/dictionary/language/{languageId}": {
-      "GET": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.get(`/restapi/v1.0/dictionary/language/${languageId}`);"
-    },
-    "/restapi/v1.0/dictionary/location": {
-      "GET": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.get('/restapi/v1.0/dictionary/location', listLocationsParameters);"
-    },
-    "/restapi/v1.0/dictionary/state": {
-      "GET": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.get('/restapi/v1.0/dictionary/state', listStatesParameters);"
-    },
-    "/restapi/v1.0/dictionary/state/{stateId}": {
-      "GET": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.get(`/restapi/v1.0/dictionary/state/${stateId}`);"
-    },
-    "/restapi/v1.0/dictionary/timezone": {
-      "GET": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.get('/restapi/v1.0/dictionary/timezone', listTimezonesParameters);"
-    },
-    "/restapi/v1.0/dictionary/timezone/{timezoneId}": {
-      "GET": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.get(`/restapi/v1.0/dictionary/timezone/${timezoneId}`, loadTimezoneParameters);"
-    },
-    "/restapi/v1.0/glip/cards": {
-      "POST": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.post('/restapi/v1.0/glip/cards', glipMessageAttachmentInfoRequest, createGlipCardParameters);"
-    },
-    "/restapi/v1.0/glip/cards/{cardId}": {
-      "GET": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.get(`/restapi/v1.0/glip/cards/${cardId}`);",
-      "PUT": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.put(`/restapi/v1.0/glip/cards/${cardId}`, glipMessageAttachmentInfoRequest);",
-      "DELETE": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.delete(`/restapi/v1.0/glip/cards/${cardId}`);"
-    },
-    "/restapi/v1.0/glip/chats": {
-      "GET": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.get('/restapi/v1.0/glip/chats', listGlipChatsParameters);"
-    },
-    "/restapi/v1.0/glip/chats/{chatId}": {
-      "GET": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.get(`/restapi/v1.0/glip/chats/${chatId}`);"
-    },
-    "/restapi/v1.0/glip/chats/{chatId}/favorite": {
-      "POST": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.post(`/restapi/v1.0/glip/chats/${chatId}/favorite`);"
-    },
-    "/restapi/v1.0/glip/chats/{chatId}/read": {
-      "POST": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.post(`/restapi/v1.0/glip/chats/${chatId}/read`);"
-    },
-    "/restapi/v1.0/glip/chats/{chatId}/unfavorite": {
-      "POST": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.post(`/restapi/v1.0/glip/chats/${chatId}/unfavorite`);"
-    },
-    "/restapi/v1.0/glip/chats/{chatId}/unread": {
-      "POST": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.post(`/restapi/v1.0/glip/chats/${chatId}/unread`);"
-    },
-    "/restapi/v1.0/glip/companies/{companyId}": {
-      "GET": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.get(`/restapi/v1.0/glip/companies/${companyId}`);"
-    },
-    "/restapi/v1.0/glip/conversations": {
-      "GET": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.get('/restapi/v1.0/glip/conversations', listGlipConversationsParameters);",
-      "POST": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.post('/restapi/v1.0/glip/conversations', glipPostMembersListBody);"
-    },
-    "/restapi/v1.0/glip/conversations/{chatId}": {
-      "GET": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.get(`/restapi/v1.0/glip/conversations/${chatId}`);"
-    },
-    "/restapi/v1.0/glip/data-export": {
-      "POST": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.post('/restapi/v1.0/glip/data-export', createDataExportTaskRequest);"
-    },
-    "/restapi/v1.0/glip/data-export/{taskId}": {
-      "GET": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.get(`/restapi/v1.0/glip/data-export/${taskId}`);"
-    },
-    "/restapi/v1.0/glip/data-export/{taskId}/archive/{archiveId}": {
-      "GET": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.get(`/restapi/v1.0/glip/data-export/${taskId}/archive/${archiveId}`);"
-    },
-    "/restapi/v1.0/glip/events": {
-      "GET": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.get('/restapi/v1.0/glip/events', loadGlipEventsParameters);",
-      "POST": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.post('/restapi/v1.0/glip/events', glipEventCreate);"
-    },
-    "/restapi/v1.0/glip/events/{eventId}": {
-      "GET": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.get(`/restapi/v1.0/glip/events/${eventId}`);",
-      "PUT": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.put(`/restapi/v1.0/glip/events/${eventId}`, glipEventCreate);",
-      "DELETE": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.delete(`/restapi/v1.0/glip/events/${eventId}`);"
-    },
-    "/restapi/v1.0/glip/everyone": {
-      "GET": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.get('/restapi/v1.0/glip/everyone');",
-      "PATCH": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.patch('/restapi/v1.0/glip/everyone', updateGlipEveryoneRequest);"
-    },
-    "/restapi/v1.0/glip/favorites": {
-      "GET": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.get('/restapi/v1.0/glip/favorites', listFavoriteChatsParameters);"
-    },
-    "/restapi/v1.0/glip/files": {
-      "POST": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst FormData = require('form-data');\nconst formData = new FormData();\nformData.append('body', fs.readFileSync('./test.png'), { filename: 'text.png' });\nconst r = await platform.post('/restapi/v1.0/glip/files', formData, createGlipFileParameters);"
-    },
-    "/restapi/v1.0/glip/groups": {
-      "GET": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.get('/restapi/v1.0/glip/groups', listGlipGroupsParameters);",
-      "POST": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.post('/restapi/v1.0/glip/groups', glipCreateGroup);"
-    },
-    "/restapi/v1.0/glip/groups/{groupId}": {
-      "GET": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.get(`/restapi/v1.0/glip/groups/${groupId}`);"
-    },
-    "/restapi/v1.0/glip/groups/{groupId}/bulk-assign": {
-      "POST": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.post(`/restapi/v1.0/glip/groups/${groupId}/bulk-assign`, editGroupRequest);"
-    },
-    "/restapi/v1.0/glip/groups/{groupId}/events": {
-      "POST": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.post(`/restapi/v1.0/glip/groups/${groupId}/events`, glipEventCreate);",
-      "GET": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.get(`/restapi/v1.0/glip/groups/${groupId}/events`);"
-    },
-    "/restapi/v1.0/glip/groups/{groupId}/notes": {
-      "GET": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.get(`/restapi/v1.0/glip/groups/${groupId}/notes`, loadGroupNotesParameters);",
-      "POST": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.post(`/restapi/v1.0/glip/groups/${groupId}/notes`, glipNoteCreate);"
-    },
-    "/restapi/v1.0/glip/groups/{groupId}/posts": {
-      "GET": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.get(`/restapi/v1.0/glip/groups/${groupId}/posts`, listGlipGroupPostsParameters);",
-      "POST": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.post(`/restapi/v1.0/glip/groups/${groupId}/posts`, glipCreatePost);"
-    },
-    "/restapi/v1.0/glip/groups/{groupId}/posts/{postId}/text": {
-      "PUT": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.put(`/restapi/v1.0/glip/groups/${groupId}/posts/${postId}/text`, text, {}, { headers: { 'Content-Type': 'text/plain' } });"
-    },
-    "/restapi/v1.0/glip/groups/{groupId}/webhooks": {
-      "POST": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.post(`/restapi/v1.0/glip/groups/${groupId}/webhooks`);",
-      "GET": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.get(`/restapi/v1.0/glip/groups/${groupId}/webhooks`);"
-    },
-    "/restapi/v1.0/glip/notes": {
-      "GET": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.get('/restapi/v1.0/glip/notes', loadUserNotesParameters);",
-      "POST": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.post('/restapi/v1.0/glip/notes', glipNoteCreate);"
-    },
-    "/restapi/v1.0/glip/notes/{noteId}": {
-      "GET": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.get(`/restapi/v1.0/glip/notes/${noteId}`);",
-      "DELETE": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.delete(`/restapi/v1.0/glip/notes/${noteId}`);",
-      "PATCH": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.patch(`/restapi/v1.0/glip/notes/${noteId}`, glipNoteCreate, patchNoteParameters);",
-      "PUT": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.put(`/restapi/v1.0/glip/notes/${noteId}`, glipNoteCreate);"
-    },
-    "/restapi/v1.0/glip/notes/{noteId}/lock": {
-      "POST": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.post(`/restapi/v1.0/glip/notes/${noteId}/lock`);"
-    },
-    "/restapi/v1.0/glip/notes/{noteId}/publish": {
-      "POST": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.post(`/restapi/v1.0/glip/notes/${noteId}/publish`);"
-    },
-    "/restapi/v1.0/glip/notes/{noteId}/unlock": {
-      "POST": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.post(`/restapi/v1.0/glip/notes/${noteId}/unlock`);"
-    },
-    "/restapi/v1.0/glip/persons/{personId}": {
-      "GET": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.get(`/restapi/v1.0/glip/persons/${personId}`);"
-    },
-    "/restapi/v1.0/glip/posts": {
-      "GET": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.get('/restapi/v1.0/glip/posts', listGlipPostsParameters);",
-      "POST": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.post('/restapi/v1.0/glip/posts', glipCreatePost);"
-    },
-    "/restapi/v1.0/glip/preferences": {
-      "GET": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.get('/restapi/v1.0/glip/preferences');"
-    },
-    "/restapi/v1.0/glip/recent/chats": {
-      "GET": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.get('/restapi/v1.0/glip/recent/chats', listRecentChatsParameters);"
-    },
-    "/restapi/v1.0/glip/teams": {
-      "GET": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.get('/restapi/v1.0/glip/teams', listGlipTeamsParameters);",
-      "POST": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.post('/restapi/v1.0/glip/teams', glipPostTeamBody);"
-    },
-    "/restapi/v1.0/glip/teams/{chatId}": {
-      "GET": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.get(`/restapi/v1.0/glip/teams/${chatId}`);",
-      "PATCH": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.patch(`/restapi/v1.0/glip/teams/${chatId}`, glipPatchTeamBody);",
-      "DELETE": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.delete(`/restapi/v1.0/glip/teams/${chatId}`);"
-    },
-    "/restapi/v1.0/glip/teams/{chatId}/add": {
-      "POST": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.post(`/restapi/v1.0/glip/teams/${chatId}/add`, glipPostMembersListBody);"
-    },
-    "/restapi/v1.0/glip/teams/{chatId}/archive": {
-      "POST": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.post(`/restapi/v1.0/glip/teams/${chatId}/archive`);"
-    },
-    "/restapi/v1.0/glip/teams/{chatId}/join": {
-      "POST": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.post(`/restapi/v1.0/glip/teams/${chatId}/join`);"
-    },
-    "/restapi/v1.0/glip/teams/{chatId}/leave": {
-      "POST": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.post(`/restapi/v1.0/glip/teams/${chatId}/leave`);"
-    },
-    "/restapi/v1.0/glip/teams/{chatId}/remove": {
-      "POST": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.post(`/restapi/v1.0/glip/teams/${chatId}/remove`, glipPostMembersIdsListBody);"
-    },
-    "/restapi/v1.0/glip/teams/{chatId}/unarchive": {
-      "POST": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.post(`/restapi/v1.0/glip/teams/${chatId}/unarchive`);"
-    },
-    "/restapi/v1.0/glip/webhooks": {
-      "GET": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.get('/restapi/v1.0/glip/webhooks');"
-    },
-    "/restapi/v1.0/glip/webhooks/{webhookId}": {
-      "GET": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.get(`/restapi/v1.0/glip/webhooks/${webhookId}`);",
-      "DELETE": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.delete(`/restapi/v1.0/glip/webhooks/${webhookId}`);"
-    },
-    "/restapi/v1.0/glip/webhooks/{webhookId}/activate": {
-      "POST": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.post(`/restapi/v1.0/glip/webhooks/${webhookId}/activate`);"
-    },
-    "/restapi/v1.0/glip/webhooks/{webhookId}/suspend": {
-      "POST": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.post(`/restapi/v1.0/glip/webhooks/${webhookId}/suspend`);"
-    },
-    "/restapi/v1.0/number-parser/parse": {
-      "POST": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.post('/restapi/v1.0/number-parser/parse', parsePhoneNumberRequest, parsePhoneNumberParameters);"
-    },
-    "/restapi/v1.0/status": {
-      "GET": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.get('/restapi/v1.0/status');"
-    },
-    "/restapi/v1.0/subscription": {
-      "GET": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.get('/restapi/v1.0/subscription');",
-      "POST": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.post('/restapi/v1.0/subscription', createSubscriptionRequest);"
-    },
-    "/restapi/v1.0/subscription/{subscriptionId}": {
-      "GET": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.get(`/restapi/v1.0/subscription/${subscriptionId}`);",
-      "PUT": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.put(`/restapi/v1.0/subscription/${subscriptionId}`, modifySubscriptionRequest, updateSubscriptionParameters);",
-      "DELETE": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.delete(`/restapi/v1.0/subscription/${subscriptionId}`);"
-    },
-    "/restapi/v1.0/subscription/{subscriptionId}/renew": {
-      "POST": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.post(`/restapi/v1.0/subscription/${subscriptionId}/renew`);"
+    "/restapi/oauth/token": {
+      "POST": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi().Oauth().Token().Post(getTokenRequest);\n}"
     },
     "/restapi/{apiVersion}": {
-      "GET": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.get(`/restapi/${apiVersion}`);"
+      "GET": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Get();\n}"
     },
-    "/scim/health": {
-      "GET": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.get('/scim/health');"
+    "/restapi/v1.0/account/{accountId}": {
+      "GET": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).Get();\n}"
+    },
+    "/restapi/v1.0/account/{accountId}/active-calls": {
+      "GET": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).ActiveCalls().Get(listCompanyActiveCallsParameters);\n}"
+    },
+    "/restapi/v1.0/account/{accountId}/answering-rule": {
+      "POST": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).AnsweringRule().Post(companyAnsweringRuleRequest);\n}",
+      "GET": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).AnsweringRule().List();\n}"
+    },
+    "/restapi/v1.0/account/{accountId}/answering-rule/{ruleId}": {
+      "GET": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).AnsweringRule(ruleId).Get();\n}",
+      "PUT": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).AnsweringRule(ruleId).Put(companyAnsweringRuleUpdate);\n}",
+      "DELETE": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).AnsweringRule(ruleId).Delete();\n}"
+    },
+    "/restapi/v1.0/account/{accountId}/business-address": {
+      "GET": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).BusinessAddress().Get();\n}",
+      "PUT": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).BusinessAddress().Put(modifyAccountBusinessAddressRequest);\n}"
+    },
+    "/restapi/v1.0/account/{accountId}/business-hours": {
+      "GET": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).BusinessHours().Get();\n}",
+      "PUT": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).BusinessHours().Put(companyBusinessHoursUpdateRequest);\n}"
+    },
+    "/restapi/v1.0/account/{accountId}/call-log": {
+      "GET": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).CallLog().List(loadCompanyCallLogParameters);\n}"
+    },
+    "/restapi/v1.0/account/{accountId}/call-log/{callRecordId}": {
+      "GET": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).CallLog(callRecordId).Get();\n}"
+    },
+    "/restapi/v1.0/account/{accountId}/call-monitoring-groups": {
+      "POST": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).CallMonitoringGroups().Post(createCallMonitoringGroupRequest);\n}",
+      "GET": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).CallMonitoringGroups().Get(listCallMonitoringGroupsParameters);\n}"
+    },
+    "/restapi/v1.0/account/{accountId}/call-monitoring-groups/{groupId}": {
+      "PUT": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).CallMonitoringGroups(groupId).Put(createCallMonitoringGroupRequest);\n}",
+      "DELETE": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).CallMonitoringGroups(groupId).Delete();\n}"
+    },
+    "/restapi/v1.0/account/{accountId}/call-monitoring-groups/{groupId}/bulk-assign": {
+      "POST": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).CallMonitoringGroups(groupId).BulkAssign().Post(callMonitoringBulkAssign);\n}"
+    },
+    "/restapi/v1.0/account/{accountId}/call-monitoring-groups/{groupId}/members": {
+      "GET": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).CallMonitoringGroups(groupId).Members().Get(listCallMonitoringGroupMembersParameters);\n}"
+    },
+    "/restapi/v1.0/account/{accountId}/call-queues": {
+      "GET": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).CallQueues().Get(listCallQueuesParameters);\n}"
+    },
+    "/restapi/v1.0/account/{accountId}/call-queues/{groupId}/bulk-assign": {
+      "POST": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).CallQueues(groupId).BulkAssign().Post(callQueueBulkAssignResource);\n}"
+    },
+    "/restapi/v1.0/account/{accountId}/call-queues/{groupId}/members": {
+      "GET": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).CallQueues(groupId).Members().Get(listCallQueueMembersParameters);\n}"
+    },
+    "/restapi/v1.0/account/{accountId}/call-recording": {
+      "GET": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).CallRecording().Get();\n}",
+      "PUT": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).CallRecording().Put(callRecordingSettingsResource);\n}"
+    },
+    "/restapi/v1.0/account/{accountId}/call-recording/bulk-assign": {
+      "POST": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).CallRecording().BulkAssign().Post(bulkAccountCallRecordingsResource);\n}"
+    },
+    "/restapi/v1.0/account/{accountId}/call-recording/custom-greetings": {
+      "GET": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).CallRecording().CustomGreetings().Get(listCallRecordingCustomGreetingsParameters);\n}"
+    },
+    "/restapi/v1.0/account/{accountId}/call-recording/custom-greetings/{greetingId}": {
+      "DELETE": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).CallRecording().CustomGreetings(greetingId).Delete();\n}"
+    },
+    "/restapi/v1.0/account/{accountId}/call-recording/extensions": {
+      "GET": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).CallRecording().Extensions().Get();\n}"
+    },
+    "/restapi/v1.0/account/{accountId}/department/bulk-assign": {
+      "POST": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).Department().BulkAssign().Post(departmentBulkAssignResource);\n}"
+    },
+    "/restapi/v1.0/account/{accountId}/department/{departmentId}/members": {
+      "GET": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).Department(departmentId).Members().Get(listDepartmentMembersParameters);\n}"
+    },
+    "/restapi/v1.0/account/{accountId}/device/{deviceId}": {
+      "GET": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).Device(deviceId).Get(loadAccountDeviceParameters);\n}",
+      "PUT": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).Device(deviceId).Put(accountDeviceUpdate);\n}"
+    },
+    "/restapi/v1.0/account/{accountId}/directory/entries": {
+      "GET": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).Directory().Entries().Get(listDirectoryEntriesParameters);\n}"
+    },
+    "/restapi/v1.0/account/{accountId}/directory/entries/search": {
+      "POST": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).Directory().Entries().Search().Post(searchDirectoryEntriesRequest);\n}"
+    },
+    "/restapi/v1.0/account/{accountId}/directory/federation": {
+      "GET": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).Directory().Federation().Get();\n}"
+    },
+    "/restapi/v1.0/account/{accountId}/extension": {
+      "GET": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).Extension().List(listExtensionsParameters);\n}",
+      "POST": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).Extension().Post(extensionCreationRequest);\n}"
+    },
+    "/restapi/v1.0/account/{accountId}/extension/{extensionId}": {
+      "GET": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).Extension(extensionId).Get();\n}",
+      "PUT": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).Extension(extensionId).Put(extensionUpdateRequest);\n}",
+      "DELETE": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).Extension(extensionId).Delete();\n}"
+    },
+    "/restapi/v1.0/account/{accountId}/extension/{extensionId}/active-calls": {
+      "GET": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).Extension(extensionId).ActiveCalls().Get(listExtensionActiveCallsParameters);\n}"
+    },
+    "/restapi/v1.0/account/{accountId}/extension/{extensionId}/address-book-sync": {
+      "GET": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).Extension(extensionId).AddressBookSync().Get(syncAddressBookParameters);\n}"
+    },
+    "/restapi/v1.0/account/{accountId}/extension/{extensionId}/address-book/contact": {
+      "GET": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).Extension(extensionId).AddressBook().Contact().List(listContactsParameters);\n}",
+      "POST": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).Extension(extensionId).AddressBook().Contact().Post(personalContactResource, createContactParameters);\n}"
+    },
+    "/restapi/v1.0/account/{accountId}/extension/{extensionId}/address-book/contact/{contactId}": {
+      "GET": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).Extension(extensionId).AddressBook().Contact(contactId).Get();\n}",
+      "PUT": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).Extension(extensionId).AddressBook().Contact(contactId).Put(personalContactResource, updateContactParameters);\n}",
+      "DELETE": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).Extension(extensionId).AddressBook().Contact(contactId).Delete();\n}"
+    },
+    "/restapi/v1.0/account/{accountId}/extension/{extensionId}/answering-rule": {
+      "GET": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).Extension(extensionId).AnsweringRule().List(listAnsweringRulesParameters);\n}",
+      "POST": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).Extension(extensionId).AnsweringRule().Post(createAnsweringRuleRequest);\n}"
+    },
+    "/restapi/v1.0/account/{accountId}/extension/{extensionId}/answering-rule/{ruleId}": {
+      "GET": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).Extension(extensionId).AnsweringRule(ruleId).Get(loadAnsweringRuleParameters);\n}",
+      "PUT": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).Extension(extensionId).AnsweringRule(ruleId).Put(updateAnsweringRuleRequest);\n}",
+      "DELETE": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).Extension(extensionId).AnsweringRule(ruleId).Delete();\n}"
+    },
+    "/restapi/v1.0/account/{accountId}/extension/{extensionId}/authz-profile": {
+      "GET": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).Extension(extensionId).AuthzProfile().Get();\n}"
+    },
+    "/restapi/v1.0/account/{accountId}/extension/{extensionId}/authz-profile/check": {
+      "GET": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).Extension(extensionId).AuthzProfile().Check().Get(checkUserPermissionParameters);\n}"
+    },
+    "/restapi/v1.0/account/{accountId}/extension/{extensionId}/business-hours": {
+      "GET": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).Extension(extensionId).BusinessHours().Get();\n}",
+      "PUT": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).Extension(extensionId).BusinessHours().Put(userBusinessHoursUpdateRequest);\n}"
+    },
+    "/restapi/v1.0/account/{accountId}/extension/{extensionId}/call-log": {
+      "GET": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).Extension(extensionId).CallLog().List(loadUserCallLogParameters);\n}",
+      "DELETE": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).Extension(extensionId).CallLog().Delete(deleteUserCallLogParameters);\n}"
+    },
+    "/restapi/v1.0/account/{accountId}/extension/{extensionId}/call-log-sync": {
+      "GET": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).Extension(extensionId).CallLogSync().Get(syncUserCallLogParameters);\n}"
+    },
+    "/restapi/v1.0/account/{accountId}/extension/{extensionId}/call-log/{callRecordId}": {
+      "GET": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).Extension(extensionId).CallLog(callRecordId).Get(getUserCallRecordParameters);\n}"
+    },
+    "/restapi/v1.0/account/{accountId}/extension/{extensionId}/caller-blocking": {
+      "GET": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).Extension(extensionId).CallerBlocking().Get();\n}",
+      "PUT": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).Extension(extensionId).CallerBlocking().Put(callerBlockingSettingsUpdate);\n}"
+    },
+    "/restapi/v1.0/account/{accountId}/extension/{extensionId}/caller-blocking/phone-numbers": {
+      "GET": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).Extension(extensionId).CallerBlocking().PhoneNumbers().List(listBlockedAllowedPhoneNumberParameters);\n}",
+      "POST": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).Extension(extensionId).CallerBlocking().PhoneNumbers().Post(addBlockedAllowedPhoneNumber);\n}"
+    },
+    "/restapi/v1.0/account/{accountId}/extension/{extensionId}/caller-blocking/phone-numbers/{blockedNumberId}": {
+      "GET": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).Extension(extensionId).CallerBlocking().PhoneNumbers(blockedNumberId).Get();\n}",
+      "DELETE": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).Extension(extensionId).CallerBlocking().PhoneNumbers(blockedNumberId).Delete();\n}",
+      "PUT": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).Extension(extensionId).CallerBlocking().PhoneNumbers(blockedNumberId).Put(addBlockedAllowedPhoneNumber);\n}"
+    },
+    "/restapi/v1.0/account/{accountId}/extension/{extensionId}/caller-id": {
+      "GET": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).Extension(extensionId).CallerId().Get();\n}",
+      "PUT": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).Extension(extensionId).CallerId().Put(extensionCallerIdInfo);\n}"
+    },
+    "/restapi/v1.0/account/{accountId}/extension/{extensionId}/company-pager": {
+      "POST": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).Extension(extensionId).CompanyPager().Post(createInternalTextMessageRequest);\n}"
+    },
+    "/restapi/v1.0/account/{accountId}/extension/{extensionId}/conferencing": {
+      "GET": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).Extension(extensionId).Conferencing().Get(loadConferencingInfoParameters);\n}",
+      "PUT": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).Extension(extensionId).Conferencing().Put(updateConferencingInfoRequest);\n}"
+    },
+    "/restapi/v1.0/account/{accountId}/extension/{extensionId}/device": {
+      "GET": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).Extension(extensionId).Device().Get(listExtensionDevicesParameters);\n}"
+    },
+    "/restapi/v1.0/account/{accountId}/extension/{extensionId}/favorite": {
+      "GET": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).Extension(extensionId).Favorite().Get();\n}",
+      "PUT": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).Extension(extensionId).Favorite().Put(favoriteCollection);\n}"
+    },
+    "/restapi/v1.0/account/{accountId}/extension/{extensionId}/fax": {
+      "POST": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).Extension(extensionId).Fax().Post(sendFaxMessageRequest);\n}"
+    },
+    "/restapi/v1.0/account/{accountId}/extension/{extensionId}/forwarding-number": {
+      "GET": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).Extension(extensionId).ForwardingNumber().List(listExtensionForwardingNumbersParameters);\n}",
+      "POST": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).Extension(extensionId).ForwardingNumber().Post(createForwardingNumberRequest);\n}"
+    },
+    "/restapi/v1.0/account/{accountId}/extension/{extensionId}/forwarding-number/{forwardingNumberId}": {
+      "GET": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).Extension(extensionId).ForwardingNumber(forwardingNumberId).Get();\n}",
+      "PUT": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).Extension(extensionId).ForwardingNumber(forwardingNumberId).Put(updateForwardingNumberRequest);\n}",
+      "DELETE": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).Extension(extensionId).ForwardingNumber(forwardingNumberId).Delete();\n}"
+    },
+    "/restapi/v1.0/account/{accountId}/extension/{extensionId}/grant": {
+      "GET": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).Extension(extensionId).Grant().Get(listExtensionGrantsParameters);\n}"
+    },
+    "/restapi/v1.0/account/{accountId}/extension/{extensionId}/greeting": {
+      "POST": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).Extension(extensionId).Greeting().Post(createUserCustomGreetingRequest);\n}"
+    },
+    "/restapi/v1.0/account/{accountId}/extension/{extensionId}/greeting/{greetingId}": {
+      "GET": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).Extension(extensionId).Greeting(greetingId).Get();\n}"
+    },
+    "/restapi/v1.0/account/{accountId}/extension/{extensionId}/meeting": {
+      "GET": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).Extension(extensionId).Meeting().List();\n}",
+      "POST": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).Extension(extensionId).Meeting().Post(meetingRequestResource);\n}"
+    },
+    "/restapi/v1.0/account/{accountId}/extension/{extensionId}/meeting/service-info": {
+      "GET": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).Extension(extensionId).Meeting().ServiceInfo().Get();\n}"
+    },
+    "/restapi/v1.0/account/{accountId}/extension/{extensionId}/meeting/{meetingId}": {
+      "GET": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).Extension(extensionId).Meeting(meetingId).Get();\n}",
+      "PUT": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).Extension(extensionId).Meeting(meetingId).Put(meetingRequestResource);\n}",
+      "DELETE": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).Extension(extensionId).Meeting(meetingId).Delete();\n}"
+    },
+    "/restapi/v1.0/account/{accountId}/extension/{extensionId}/meeting/{meetingId}/end": {
+      "POST": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).Extension(extensionId).Meeting(meetingId).End().Post();\n}"
+    },
+    "/restapi/v1.0/account/{accountId}/extension/{extensionId}/message-store": {
+      "GET": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).Extension(extensionId).MessageStore().List(listMessagesParameters);\n}"
+    },
+    "/restapi/v1.0/account/{accountId}/extension/{extensionId}/message-store/{messageId}": {
+      "GET": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).Extension(extensionId).MessageStore(messageId).Get();\n}",
+      "PUT": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).Extension(extensionId).MessageStore(messageId).Put(updateMessageRequest);\n}",
+      "DELETE": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).Extension(extensionId).MessageStore(messageId).Delete(deleteMessageParameters);\n}"
+    },
+    "/restapi/v1.0/account/{accountId}/extension/{extensionId}/message-store/{messageId}/content/{attachmentId}": {
+      "GET": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).Extension(extensionId).MessageStore(messageId).Content(attachmentId).Get(getMessageAttachmentByIdParameters);\n}"
+    },
+    "/restapi/v1.0/account/{accountId}/extension/{extensionId}/message-sync": {
+      "GET": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).Extension(extensionId).MessageSync().Get(syncMessagesParameters);\n}"
+    },
+    "/restapi/v1.0/account/{accountId}/extension/{extensionId}/notification-settings": {
+      "GET": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).Extension(extensionId).NotificationSettings().Get();\n}",
+      "PUT": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).Extension(extensionId).NotificationSettings().Put(notificationSettingsUpdateRequest);\n}"
+    },
+    "/restapi/v1.0/account/{accountId}/extension/{extensionId}/phone-number": {
+      "GET": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).Extension(extensionId).PhoneNumber().Get(listExtensionPhoneNumbersParameters);\n}"
+    },
+    "/restapi/v1.0/account/{accountId}/extension/{extensionId}/presence": {
+      "GET": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).Extension(extensionId).Presence().Get(getPresenceStatusParameters);\n}",
+      "PUT": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).Extension(extensionId).Presence().Put(presenceInfoResource);\n}"
+    },
+    "/restapi/v1.0/account/{accountId}/extension/{extensionId}/profile-image": {
+      "GET": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).Extension(extensionId).ProfileImage().List();\n}",
+      "POST": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).Extension(extensionId).ProfileImage().Post(uploadProfileImageRequest);\n}",
+      "PUT": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).Extension(extensionId).ProfileImage().Put(updateProfileImageRequest);\n}"
+    },
+    "/restapi/v1.0/account/{accountId}/extension/{extensionId}/profile-image/{scaleSize}": {
+      "GET": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).Extension(extensionId).ProfileImage(scaleSize).Get();\n}"
+    },
+    "/restapi/v1.0/account/{accountId}/extension/{extensionId}/ring-out": {
+      "POST": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).Extension(extensionId).RingOut().Post(makeRingOutRequest);\n}"
+    },
+    "/restapi/v1.0/account/{accountId}/extension/{extensionId}/ring-out/{ringoutId}": {
+      "GET": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).Extension(extensionId).RingOut(ringoutId).Get();\n}",
+      "DELETE": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).Extension(extensionId).RingOut(ringoutId).Delete();\n}"
+    },
+    "/restapi/v1.0/account/{accountId}/extension/{extensionId}/sms": {
+      "POST": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).Extension(extensionId).Sms().Post(createSmsMessage);\n}"
+    },
+    "/restapi/v1.0/account/{accountId}/greeting": {
+      "POST": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).Greeting().Post(createCompanyGreetingRequest);\n}"
+    },
+    "/restapi/v1.0/account/{accountId}/ivr-menus": {
+      "POST": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).IvrMenus().Post(ivrMenuInfo);\n}"
+    },
+    "/restapi/v1.0/account/{accountId}/ivr-menus/{ivrMenuId}": {
+      "GET": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).IvrMenus(ivrMenuId).Get();\n}",
+      "PUT": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).IvrMenus(ivrMenuId).Put(ivrMenuInfo);\n}"
+    },
+    "/restapi/v1.0/account/{accountId}/ivr-prompts": {
+      "POST": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).IvrPrompts().Post(createIvrPromptRequest);\n}",
+      "GET": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).IvrPrompts().List();\n}"
+    },
+    "/restapi/v1.0/account/{accountId}/ivr-prompts/{promptId}": {
+      "GET": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).IvrPrompts(promptId).Get();\n}",
+      "DELETE": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).IvrPrompts(promptId).Delete();\n}",
+      "PUT": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).IvrPrompts(promptId).Put();\n}"
+    },
+    "/restapi/v1.0/account/{accountId}/ivr-prompts/{promptId}/content": {
+      "GET": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).IvrPrompts(promptId).Content().Get();\n}"
+    },
+    "/restapi/v1.0/account/{accountId}/message-store-configuration": {
+      "GET": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).MessageStoreConfiguration().Get();\n}",
+      "PUT": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).MessageStoreConfiguration().Put(messageStoreConfiguration);\n}"
+    },
+    "/restapi/v1.0/account/{accountId}/message-store-report": {
+      "POST": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).MessageStoreReport().Post(createMessageStoreReportRequest);\n}"
+    },
+    "/restapi/v1.0/account/{accountId}/message-store-report/{taskId}": {
+      "GET": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).MessageStoreReport(taskId).Get();\n}"
+    },
+    "/restapi/v1.0/account/{accountId}/message-store-report/{taskId}/archive": {
+      "GET": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).MessageStoreReport(taskId).Archive().List();\n}"
+    },
+    "/restapi/v1.0/account/{accountId}/message-store-report/{taskId}/archive/{archiveId}": {
+      "GET": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).MessageStoreReport(taskId).Archive(archiveId).Get();\n}"
+    },
+    "/restapi/v1.0/account/{accountId}/paging-only-groups/{pagingOnlyGroupId}/bulk-assign": {
+      "POST": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).PagingOnlyGroups(pagingOnlyGroupId).BulkAssign().Post(editPagingGroupRequest);\n}"
+    },
+    "/restapi/v1.0/account/{accountId}/paging-only-groups/{pagingOnlyGroupId}/devices": {
+      "GET": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).PagingOnlyGroups(pagingOnlyGroupId).Devices().Get(listPagingGroupDevicesParameters);\n}"
+    },
+    "/restapi/v1.0/account/{accountId}/paging-only-groups/{pagingOnlyGroupId}/users": {
+      "GET": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).PagingOnlyGroups(pagingOnlyGroupId).Users().Get(listPagingGroupUsersParameters);\n}"
+    },
+    "/restapi/v1.0/account/{accountId}/phone-number": {
+      "GET": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).PhoneNumber().List(listAccountPhoneNumbersParameters);\n}"
+    },
+    "/restapi/v1.0/account/{accountId}/phone-number/{phoneNumberId}": {
+      "GET": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).PhoneNumber(phoneNumberId).Get();\n}"
+    },
+    "/restapi/v1.0/account/{accountId}/presence": {
+      "GET": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).Presence().Get(accountPresenceParameters);\n}"
+    },
+    "/restapi/v1.0/account/{accountId}/recording/{recordingId}": {
+      "GET": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).Recording(recordingId).Get();\n}"
+    },
+    "/restapi/v1.0/account/{accountId}/recording/{recordingId}/content": {
+      "GET": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).Recording(recordingId).Content().Get();\n}"
+    },
+    "/restapi/v1.0/account/{accountId}/service-info": {
+      "GET": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).ServiceInfo().Get();\n}"
+    },
+    "/restapi/v1.0/account/{accountId}/telephony/call-out": {
+      "POST": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).Telephony().CallOut().Post(makeCallOutRequest);\n}"
+    },
+    "/restapi/v1.0/account/{accountId}/telephony/sessions/{sessionId}": {
+      "GET": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).Telephony().Sessions(sessionId).Get(getCallSessionStatusParameters);\n}",
+      "DELETE": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).Telephony().Sessions(sessionId).Delete();\n}"
+    },
+    "/restapi/v1.0/account/{accountId}/telephony/sessions/{sessionId}/parties/{partyId}": {
+      "GET": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).Telephony().Sessions(sessionId).Parties(partyId).Get();\n}",
+      "PATCH": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).Telephony().Sessions(sessionId).Parties(partyId).Patch(partyUpdateRequest);\n}"
+    },
+    "/restapi/v1.0/account/{accountId}/telephony/sessions/{sessionId}/parties/{partyId}/flip": {
+      "POST": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).Telephony().Sessions(sessionId).Parties(partyId).Flip().Post(callPartyFlip);\n}"
+    },
+    "/restapi/v1.0/account/{accountId}/telephony/sessions/{sessionId}/parties/{partyId}/forward": {
+      "POST": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).Telephony().Sessions(sessionId).Parties(partyId).Forward().Post(forwardTarget);\n}"
+    },
+    "/restapi/v1.0/account/{accountId}/telephony/sessions/{sessionId}/parties/{partyId}/hold": {
+      "POST": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).Telephony().Sessions(sessionId).Parties(partyId).Hold().Post();\n}"
+    },
+    "/restapi/v1.0/account/{accountId}/telephony/sessions/{sessionId}/parties/{partyId}/recordings": {
+      "POST": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).Telephony().Sessions(sessionId).Parties(partyId).Recordings().Post();\n}"
+    },
+    "/restapi/v1.0/account/{accountId}/telephony/sessions/{sessionId}/parties/{partyId}/recordings/{recordingId}": {
+      "PATCH": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).Telephony().Sessions(sessionId).Parties(partyId).Recordings(recordingId).Patch(callRecordingUpdate, pauseResumeCallRecordingParameters);\n}"
+    },
+    "/restapi/v1.0/account/{accountId}/telephony/sessions/{sessionId}/parties/{partyId}/reject": {
+      "POST": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).Telephony().Sessions(sessionId).Parties(partyId).Reject().Post();\n}"
+    },
+    "/restapi/v1.0/account/{accountId}/telephony/sessions/{sessionId}/parties/{partyId}/transfer": {
+      "POST": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).Telephony().Sessions(sessionId).Parties(partyId).Transfer().Post(transferTarget);\n}"
+    },
+    "/restapi/v1.0/account/{accountId}/telephony/sessions/{sessionId}/parties/{partyId}/unhold": {
+      "POST": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).Telephony().Sessions(sessionId).Parties(partyId).Unhold().Post();\n}"
+    },
+    "/restapi/v1.0/account/{accountId}/telephony/sessions/{sessionId}/supervise": {
+      "POST": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).Telephony().Sessions(sessionId).Supervise().Post(superviseCallSessionRequest);\n}"
+    },
+    "/restapi/v1.0/account/{accountId}/templates": {
+      "GET": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).Templates().List(listTemplatesParameters);\n}"
+    },
+    "/restapi/v1.0/account/{accountId}/templates/{templateId}": {
+      "GET": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Account(accountId).Templates(templateId).Get();\n}"
+    },
+    "/restapi/v1.0/client-info/sip-provision": {
+      "POST": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).ClientInfo().SipProvision().Post(createSipRegistrationRequest);\n}"
+    },
+    "/restapi/v1.0/dictionary/country": {
+      "GET": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Dictionary().Country().List(listCountriesParameters);\n}"
+    },
+    "/restapi/v1.0/dictionary/country/{countryId}": {
+      "GET": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Dictionary().Country(countryId).Get();\n}"
+    },
+    "/restapi/v1.0/dictionary/fax-cover-page": {
+      "GET": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Dictionary().FaxCoverPage().Get(listFaxCoverPagesParameters);\n}"
+    },
+    "/restapi/v1.0/dictionary/greeting": {
+      "GET": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Dictionary().Greeting().List(listStandardGreetingsParameters);\n}"
+    },
+    "/restapi/v1.0/dictionary/greeting/{greetingId}": {
+      "GET": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Dictionary().Greeting(greetingId).Get();\n}"
+    },
+    "/restapi/v1.0/dictionary/language": {
+      "GET": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Dictionary().Language().List();\n}"
+    },
+    "/restapi/v1.0/dictionary/language/{languageId}": {
+      "GET": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Dictionary().Language(languageId).Get();\n}"
+    },
+    "/restapi/v1.0/dictionary/location": {
+      "GET": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Dictionary().Location().Get(listLocationsParameters);\n}"
+    },
+    "/restapi/v1.0/dictionary/state": {
+      "GET": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Dictionary().State().List(listStatesParameters);\n}"
+    },
+    "/restapi/v1.0/dictionary/state/{stateId}": {
+      "GET": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Dictionary().State(stateId).Get();\n}"
+    },
+    "/restapi/v1.0/dictionary/timezone": {
+      "GET": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Dictionary().Timezone().List(listTimezonesParameters);\n}"
+    },
+    "/restapi/v1.0/dictionary/timezone/{timezoneId}": {
+      "GET": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Dictionary().Timezone(timezoneId).Get(loadTimezoneParameters);\n}"
+    },
+    "/restapi/v1.0/glip/cards": {
+      "POST": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Glip().Cards().Post(glipMessageAttachmentInfoRequest, createGlipCardParameters);\n}"
+    },
+    "/restapi/v1.0/glip/cards/{cardId}": {
+      "GET": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Glip().Cards(cardId).Get();\n}",
+      "PUT": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Glip().Cards(cardId).Put(glipMessageAttachmentInfoRequest);\n}",
+      "DELETE": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Glip().Cards(cardId).Delete();\n}"
+    },
+    "/restapi/v1.0/glip/chats": {
+      "GET": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Glip().Chats().List(listGlipChatsParameters);\n}"
+    },
+    "/restapi/v1.0/glip/chats/{chatId}": {
+      "GET": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Glip().Chats(chatId).Get();\n}"
+    },
+    "/restapi/v1.0/glip/chats/{chatId}/favorite": {
+      "POST": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Glip().Chats(chatId).Favorite().Post();\n}"
+    },
+    "/restapi/v1.0/glip/chats/{chatId}/posts": {
+      "GET": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Glip().Chats(chatId).Posts().List(loadGlipPostsParameters);\n}",
+      "POST": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Glip().Chats(chatId).Posts().Post(glipPostPostBody);\n}"
+    },
+    "/restapi/v1.0/glip/chats/{chatId}/posts/{postId}": {
+      "GET": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Glip().Chats(chatId).Posts(postId).Get();\n}",
+      "PATCH": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Glip().Chats(chatId).Posts(postId).Patch(glipPatchPostBody);\n}",
+      "DELETE": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Glip().Chats(chatId).Posts(postId).Delete();\n}"
+    },
+    "/restapi/v1.0/glip/chats/{chatId}/read": {
+      "POST": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Glip().Chats(chatId).Read().Post();\n}"
+    },
+    "/restapi/v1.0/glip/chats/{chatId}/unfavorite": {
+      "POST": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Glip().Chats(chatId).Unfavorite().Post();\n}"
+    },
+    "/restapi/v1.0/glip/chats/{chatId}/unread": {
+      "POST": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Glip().Chats(chatId).Unread().Post();\n}"
+    },
+    "/restapi/v1.0/glip/companies/{companyId}": {
+      "GET": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Glip().Companies(companyId).Get();\n}"
+    },
+    "/restapi/v1.0/glip/conversations": {
+      "GET": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Glip().Conversations().List(listGlipConversationsParameters);\n}",
+      "POST": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Glip().Conversations().Post(createGlipConversationRequest);\n}"
+    },
+    "/restapi/v1.0/glip/conversations/{chatId}": {
+      "GET": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Glip().Conversations(chatId).Get();\n}"
+    },
+    "/restapi/v1.0/glip/data-export": {
+      "POST": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Glip().DataExport().Post(createDataExportTaskRequest);\n}"
+    },
+    "/restapi/v1.0/glip/data-export/{taskId}": {
+      "GET": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Glip().DataExport(taskId).Get();\n}"
+    },
+    "/restapi/v1.0/glip/data-export/{taskId}/archive/{archiveId}": {
+      "GET": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Glip().DataExport(taskId).Archive(archiveId).Get();\n}"
+    },
+    "/restapi/v1.0/glip/events": {
+      "GET": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Glip().Events().List(loadGlipEventsParameters);\n}",
+      "POST": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Glip().Events().Post(glipEventCreate);\n}"
+    },
+    "/restapi/v1.0/glip/events/{eventId}": {
+      "GET": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Glip().Events(eventId).Get();\n}",
+      "PUT": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Glip().Events(eventId).Put(glipEventCreate);\n}",
+      "DELETE": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Glip().Events(eventId).Delete();\n}"
+    },
+    "/restapi/v1.0/glip/everyone": {
+      "GET": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Glip().Everyone().Get();\n}",
+      "PATCH": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Glip().Everyone().Patch(updateGlipEveryoneRequest);\n}"
+    },
+    "/restapi/v1.0/glip/favorites": {
+      "GET": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Glip().Favorites().Get(listFavoriteChatsParameters);\n}"
+    },
+    "/restapi/v1.0/glip/files": {
+      "POST": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Glip().Files().Post(createGlipFileRequest, createGlipFileParameters);\n}"
+    },
+    "/restapi/v1.0/glip/groups": {
+      "GET": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Glip().Groups().List(listGlipGroupsParameters);\n}",
+      "POST": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Glip().Groups().Post(glipCreateGroup);\n}"
+    },
+    "/restapi/v1.0/glip/groups/{groupId}": {
+      "GET": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Glip().Groups(groupId).Get();\n}"
+    },
+    "/restapi/v1.0/glip/groups/{groupId}/bulk-assign": {
+      "POST": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Glip().Groups(groupId).BulkAssign().Post(editGroupRequest);\n}"
+    },
+    "/restapi/v1.0/glip/groups/{groupId}/events": {
+      "POST": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Glip().Groups(groupId).Events().Post(glipEventCreate);\n}",
+      "GET": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Glip().Groups(groupId).Events().Get();\n}"
+    },
+    "/restapi/v1.0/glip/groups/{groupId}/posts": {
+      "GET": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Glip().Groups(groupId).Posts().Get(listGlipGroupPostsParameters);\n}",
+      "POST": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Glip().Groups(groupId).Posts().Post(glipCreatePost);\n}"
+    },
+    "/restapi/v1.0/glip/groups/{groupId}/posts/{postId}/text": {
+      "PUT": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Glip().Groups(groupId).Posts(postId).Text().Put(string);\n}"
+    },
+    "/restapi/v1.0/glip/groups/{groupId}/webhooks": {
+      "POST": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Glip().Groups(groupId).Webhooks().Post();\n}",
+      "GET": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Glip().Groups(groupId).Webhooks().Get();\n}"
+    },
+    "/restapi/v1.0/glip/persons/{personId}": {
+      "GET": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Glip().Persons(personId).Get();\n}"
+    },
+    "/restapi/v1.0/glip/posts": {
+      "GET": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Glip().Posts().Get(listGlipPostsParameters);\n}",
+      "POST": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Glip().Posts().Post(glipCreatePost);\n}"
+    },
+    "/restapi/v1.0/glip/preferences": {
+      "GET": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Glip().Preferences().Get();\n}"
+    },
+    "/restapi/v1.0/glip/recent/chats": {
+      "GET": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Glip().Recent().Chats().Get(listRecentChatsParameters);\n}"
+    },
+    "/restapi/v1.0/glip/teams": {
+      "GET": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Glip().Teams().List(listGlipTeamsParameters);\n}",
+      "POST": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Glip().Teams().Post(glipPostTeamBody);\n}"
+    },
+    "/restapi/v1.0/glip/teams/{chatId}": {
+      "GET": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Glip().Teams(chatId).Get();\n}",
+      "PATCH": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Glip().Teams(chatId).Patch(glipPatchTeamBody);\n}",
+      "DELETE": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Glip().Teams(chatId).Delete();\n}"
+    },
+    "/restapi/v1.0/glip/teams/{chatId}/add": {
+      "POST": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Glip().Teams(chatId).Add().Post(glipPostMembersListBody);\n}"
+    },
+    "/restapi/v1.0/glip/teams/{chatId}/archive": {
+      "POST": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Glip().Teams(chatId).Archive().Post();\n}"
+    },
+    "/restapi/v1.0/glip/teams/{chatId}/join": {
+      "POST": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Glip().Teams(chatId).Join().Post();\n}"
+    },
+    "/restapi/v1.0/glip/teams/{chatId}/leave": {
+      "POST": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Glip().Teams(chatId).Leave().Post();\n}"
+    },
+    "/restapi/v1.0/glip/teams/{chatId}/remove": {
+      "POST": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Glip().Teams(chatId).Remove().Post(glipPostMembersIdsListBody);\n}"
+    },
+    "/restapi/v1.0/glip/teams/{chatId}/unarchive": {
+      "POST": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Glip().Teams(chatId).Unarchive().Post();\n}"
+    },
+    "/restapi/v1.0/glip/webhooks": {
+      "GET": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Glip().Webhooks().List();\n}"
+    },
+    "/restapi/v1.0/glip/webhooks/{webhookId}": {
+      "GET": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Glip().Webhooks(webhookId).Get();\n}",
+      "DELETE": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Glip().Webhooks(webhookId).Delete();\n}"
+    },
+    "/restapi/v1.0/glip/webhooks/{webhookId}/activate": {
+      "POST": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Glip().Webhooks(webhookId).Activate().Post();\n}"
+    },
+    "/restapi/v1.0/glip/webhooks/{webhookId}/suspend": {
+      "POST": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Glip().Webhooks(webhookId).Suspend().Post();\n}"
+    },
+    "/restapi/v1.0/number-parser/parse": {
+      "POST": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).NumberParser().Parse().Post(parsePhoneNumberRequest, parsePhoneNumberParameters);\n}"
+    },
+    "/restapi/v1.0/number-porting/verify-number": {
+      "POST": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).NumberPorting().VerifyNumber().Post(numberPortingVerifyNumberRequest);\n}"
+    },
+    "/restapi/v1.0/status": {
+      "GET": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Status().Get();\n}"
+    },
+    "/restapi/v1.0/subscription": {
+      "GET": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Subscription().List();\n}",
+      "POST": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Subscription().Post(createSubscriptionRequest);\n}"
+    },
+    "/restapi/v1.0/subscription/{subscriptionId}": {
+      "GET": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Subscription(subscriptionId).Get();\n}",
+      "PUT": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Subscription(subscriptionId).Put(modifySubscriptionRequest, updateSubscriptionParameters);\n}",
+      "DELETE": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Subscription(subscriptionId).Delete();\n}"
+    },
+    "/restapi/v1.0/subscription/{subscriptionId}/renew": {
+      "POST": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Restapi(apiVersion).Subscription(subscriptionId).Renew().Post();\n}"
     },
     "/scim/v2/ServiceProviderConfig": {
-      "GET": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.get('/scim/v2/ServiceProviderConfig');"
+      "GET": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Scim(version).ServiceProviderConfig().Get();\n}"
     },
     "/scim/v2/Users": {
-      "GET": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.get('/scim/v2/Users', searchViaGet2Parameters);",
-      "POST": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.post('/scim/v2/Users', user);"
+      "GET": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Scim(version).Users().List(searchViaGet2Parameters);\n}",
+      "POST": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Scim(version).Users().Post(user);\n}"
     },
     "/scim/v2/Users/.search": {
-      "POST": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.post('/scim/v2/Users/.search', searchRequest);"
+      "POST": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Scim(version).Users().DotSearch().Post(searchRequest);\n}"
     },
     "/scim/v2/Users/{id}": {
-      "GET": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.get(`/scim/v2/Users/${id}`);",
-      "PUT": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.put(`/scim/v2/Users/${id}`, user);",
-      "DELETE": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.delete(`/scim/v2/Users/${id}`);",
-      "PATCH": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.patch(`/scim/v2/Users/${id}`, userPatch);"
+      "GET": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Scim(version).Users(id).Get();\n}",
+      "PUT": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Scim(version).Users(id).Put(user);\n}",
+      "DELETE": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Scim(version).Users(id).Delete();\n}",
+      "PATCH": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Scim(version).Users(id).Patch(userPatch);\n}"
     },
     "/scim/v2/health": {
-      "GET": "const SDK = require('ringcentral');\nconst rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});\nconst platform = rcsdk.platform();\nawait platform.login({ username: 'username', extension: 'extension', password: 'password' });\nconst r = await platform.get('/scim/v2/health');"
+      "GET": "using (var rc = new RestClient(\"clientID\", \"clientSecret\", \"serverURL\"))\n{\n    await rc.Authorize(\"username\", \"extension\", \"password\");\n    var result = await rc.Scim(version).Health().Get();\n}"
     }
   }
 }
