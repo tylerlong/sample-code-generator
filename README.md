@@ -16,3 +16,10 @@ Edit `.env` file to specify the path to swagger spec file.
 ```
 yarn generate
 ```
+
+
+## Generate json format sample code
+
+```
+yarn json
+```
