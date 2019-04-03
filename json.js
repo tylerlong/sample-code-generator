@@ -1,6 +1,7 @@
 import fs from 'fs'
+import * as R from 'ramda'
 
-const regexStr = 'HTTP (GET|PUT|DELETE|POST|PATCH) `(.+?)`\n\n```(?:js|cs)\n(.+?)\n```'
+const regexStr = 'HTTP (?:GET|PUT|DELETE|POST|PATCH) `(?:.+?)`\n\n```(?:js|cs)\n(.+?)\n```.+?\\[Try it out\\]\\(https://developer\\.ringcentral\\.com/api-reference#(.+?)\\) in API Explorer'
 const regexp = new RegExp(regexStr, 'sg')
 const regexp2 = new RegExp(regexStr, 's')
 
@@ -9,11 +10,8 @@ const parseMarkdown = markdown => {
   const result = {}
   list.forEach(s => {
     const m = s.match(regexp2)
-    const [, method, endpoint, code] = m
-    if (!result[endpoint]) {
-      result[endpoint] = {}
-    }
-    result[endpoint][method] = code
+    const [, code, anchor] = m
+    result[R.last(anchor.split('-'))] = code
   })
   return result
 }
