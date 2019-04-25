@@ -8,163 +8,212 @@
         "properties": {
           "uri": {
             "type": "string",
-            "format": "uri"
+            "description": "Canonical URI of the contact",
+            "example": "https://platform.ringcentral.com/restapi/v1.0/account/230919004/extension/230919004/address-book/contact/623045004"
           },
           "availability": {
             "type": "string",
+            "description": "This property has a special meaning only on Address Book Sync (e.g. a contact can be `Deleted`). For simple contact list reading it has always the default value - `Alive`",
             "enum": [
               "Alive",
               "Deleted",
               "Purged"
             ]
           },
+          "email": {
+            "type": "string",
+            "description": "Email of the contact",
+            "example": "charlie.williams@example.com"
+          },
           "id": {
             "type": "string"
           },
+          "notes": {
+            "type": "string",
+            "description": "Notes for the contact",
+            "example": "#1 Customer"
+          },
+          "company": {
+            "type": "string",
+            "description": "Company name of the contact",
+            "example": "Example, Inc."
+          },
           "firstName": {
-            "type": "string"
+            "type": "string",
+            "description": "First name of the contact",
+            "example": "Charlie"
           },
           "lastName": {
-            "type": "string"
+            "type": "string",
+            "description": "Last name of the contact",
+            "example": "Williams"
           },
-          "middleName": {
-            "type": "string"
+          "jobTitle": {
+            "type": "string",
+            "description": "Job title of the contact",
+            "example": "CEO"
           },
           "birthday": {
             "type": "string",
-            "format": "date-time"
-          },
-          "notes": {
-            "type": "string"
+            "format": "date-time",
+            "description": "Date of birth of the contact"
           },
           "webPage": {
-            "type": "string"
+            "type": "string",
+            "description": "The contact home page URL",
+            "example": "http://www.example.com"
           },
-          "company": {
-            "type": "string"
-          },
-          "jobTitle": {
-            "type": "string"
+          "middleName": {
+            "type": "string",
+            "description": "Middle name of the contact",
+            "example": "J"
           },
           "nickName": {
-            "type": "string"
-          },
-          "email": {
-            "type": "string"
+            "type": "string",
+            "description": "Nick name of the contact",
+            "example": "The Boss"
           },
           "email2": {
-            "type": "string"
+            "type": "string",
+            "description": "2nd email of the contact",
+            "example": "charlie-example@gmail.com"
           },
           "email3": {
-            "type": "string"
+            "type": "string",
+            "description": "3rd email of the contact",
+            "example": "theboss-example@hotmail.com"
           },
-          "homeAddress": {
+          "homePhone": {
+            "type": "string",
+            "description": "Home phone number of the contact in e.164 (with \"+\") format",
+            "example": "+15551234567"
+          },
+          "homePhone2": {
+            "type": "string",
+            "description": "2nd home phone number of the contact in e.164 (with \"+\") format",
+            "example": "+15551234567"
+          },
+          "businessPhone": {
+            "type": "string",
+            "description": "Business phone of the contact in e.164 (with \"+\") format",
+            "example": "+15551234567"
+          },
+          "businessPhone2": {
+            "type": "string",
+            "description": "2nd business phone of the contact in e.164 (with \"+\") format",
+            "example": "+15551234567"
+          },
+          "mobilePhone": {
+            "type": "string",
+            "description": "Mobile phone of the contact in e.164 (with \"+\") format",
+            "example": "+15551234567"
+          },
+          "businessFax": {
+            "type": "string",
+            "description": "Business fax number of the contact in e.164 (with \"+\") format",
+            "example": "+15551234567"
+          },
+          "companyPhone": {
+            "type": "string",
+            "description": "Company number of the contact in e.164 (with \"+\") format",
+            "example": "+15551234567"
+          },
+          "assistantPhone": {
+            "type": "string",
+            "description": "Phone number of the contact assistant in e.164 (with \"+\") format",
+            "example": "+15551234567"
+          },
+          "carPhone": {
+            "type": "string",
+            "description": "Car phone number of the contact in e.164 (with \"+\") format",
+            "example": "+15551234567"
+          },
+          "otherPhone": {
+            "type": "string",
+            "description": "Other phone number of the contact in e.164 (with \"+\") format",
+            "example": "+15551234567"
+          },
+          "otherFax": {
+            "type": "string",
+            "description": "Other fax number of the contact in e.164 (with \"+\") format",
+            "example": "+15551234567"
+          },
+          "callbackPhone": {
+            "type": "string",
+            "description": "Callback phone number of the contact in e.164 (with \"+\") format",
+            "example": "+15551234567"
+          },
+          "businessAddress": {
             "properties": {
-              "country": {
+              "street": {
                 "type": "string",
-                "description": "Country name of extension user company. Not returned for Address Book"
-              },
-              "state": {
-                "type": "string",
-                "description": "State/province name of extension user company"
+                "description": "Street address",
+                "example": "20 Davis Dr."
               },
               "city": {
                 "type": "string",
-                "description": "City name of extension user company"
+                "description": "City name",
+                "example": "Belmont"
               },
-              "street": {
+              "state": {
                 "type": "string",
-                "description": "Street address of extension user company"
+                "description": "State/province name",
+                "example": "CA"
               },
               "zip": {
                 "type": "string",
-                "description": "Zip code of extension user company"
+                "description": "Zip/Postal code",
+                "example": "94002"
+              }
+            }
+          },
+          "homeAddress": {
+            "properties": {
+              "street": {
+                "type": "string",
+                "description": "Street address",
+                "example": "20 Davis Dr."
+              },
+              "city": {
+                "type": "string",
+                "description": "City name",
+                "example": "Belmont"
+              },
+              "state": {
+                "type": "string",
+                "description": "State/province name",
+                "example": "CA"
+              },
+              "zip": {
+                "type": "string",
+                "description": "Zip/Postal code",
+                "example": "94002"
               }
             }
           },
           "otherAddress": {
             "properties": {
-              "country": {
+              "street": {
                 "type": "string",
-                "description": "Country name of extension user company. Not returned for Address Book"
-              },
-              "state": {
-                "type": "string",
-                "description": "State/province name of extension user company"
+                "description": "Street address",
+                "example": "20 Davis Dr."
               },
               "city": {
                 "type": "string",
-                "description": "City name of extension user company"
-              },
-              "street": {
-                "type": "string",
-                "description": "Street address of extension user company"
-              },
-              "zip": {
-                "type": "string",
-                "description": "Zip code of extension user company"
-              }
-            }
-          },
-          "homePhone": {
-            "type": "string"
-          },
-          "homePhone2": {
-            "type": "string"
-          },
-          "mobilePhone": {
-            "type": "string"
-          },
-          "businessPhone": {
-            "type": "string"
-          },
-          "callbackPhone": {
-            "type": "string"
-          },
-          "carPhone": {
-            "type": "string"
-          },
-          "companyPhone": {
-            "type": "string"
-          },
-          "otherPhone": {
-            "type": "string"
-          },
-          "businessFax": {
-            "type": "string"
-          },
-          "otherFax": {
-            "type": "string"
-          },
-          "businessAddress": {
-            "properties": {
-              "country": {
-                "type": "string",
-                "description": "Country name of extension user company. Not returned for Address Book"
+                "description": "City name",
+                "example": "Belmont"
               },
               "state": {
                 "type": "string",
-                "description": "State/province name of extension user company"
-              },
-              "city": {
-                "type": "string",
-                "description": "City name of extension user company"
-              },
-              "street": {
-                "type": "string",
-                "description": "Street address of extension user company"
+                "description": "State/province name",
+                "example": "CA"
               },
               "zip": {
                 "type": "string",
-                "description": "Zip code of extension user company"
+                "description": "Zip/Postal code",
+                "example": "94002"
               }
             }
-          },
-          "assistantPhone": {
-            "type": "string"
-          },
-          "businessPhone2": {
-            "type": "string"
           }
         }
       }

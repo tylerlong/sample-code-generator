@@ -1,0 +1,32 @@
+{
+  "type": "object",
+  "properties": {
+    "records": {
+      "type": "array",
+      "items": {
+        "properties": {
+          "phoneNumber": {
+            "type": "string",
+            "description": "The verified phone number."
+          },
+          "isBillingNumber": {
+            "type": "boolean",
+            "description": "Is phone number billing phone number or not."
+          },
+          "validationStatus": {
+            "type": "string",
+            "description": "The result of phone number validation, can or not be ported the phone number.",
+            "enum": [
+              "Success",
+              "Failure"
+            ]
+          },
+          "reason": {
+            "type": "string",
+            "description": "The reason why the corresponding phone number can`t be ported."
+          }
+        }
+      }
+    }
+  }
+}

@@ -83,12 +83,18 @@
             "type": "string"
           },
           "firstName": {
-            "type": "string"
-          },
-          "id": {
-            "type": "string"
+            "type": "string",
+            "description": "First name of a contact, for user extensions only"
           },
           "lastName": {
+            "type": "string",
+            "description": "Last name of a contact, for user extensions only"
+          },
+          "name": {
+            "type": "string",
+            "description": "Name of a contact, for non-user extensions"
+          },
+          "id": {
             "type": "string"
           },
           "jobTitle": {

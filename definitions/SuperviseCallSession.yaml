@@ -1,0 +1,148 @@
+{
+  "type": "object",
+  "properties": {
+    "from": {
+      "description": "Information about a call party that monitors a call",
+      "properties": {
+        "phoneNumber": {
+          "description": "Phone number of a party",
+          "type": "string"
+        },
+        "extensionId": {
+          "description": "Internal identifier of an extension",
+          "type": "string"
+        },
+        "name": {
+          "description": "Displayed name of a party",
+          "type": "string"
+        },
+        "deviceId": {
+          "description": "Internal identifier of a device",
+          "type": "string"
+        }
+      }
+    },
+    "to": {
+      "description": "Information about a call party that is monitored",
+      "properties": {
+        "phoneNumber": {
+          "description": "Phone number of a party",
+          "type": "string"
+        },
+        "extensionId": {
+          "description": "Internal identifier of an extension",
+          "type": "string"
+        },
+        "name": {
+          "description": "Displayed name of a party",
+          "type": "string"
+        },
+        "deviceId": {
+          "description": "Internal identifier of a device",
+          "type": "string"
+        }
+      }
+    },
+    "direction": {
+      "type": "string",
+      "description": "Direction of a call",
+      "enum": [
+        "Outbound",
+        "Inbound"
+      ]
+    },
+    "id": {
+      "type": "string",
+      "description": "Internal identifier of a party that monitors a call"
+    },
+    "muted": {
+      "type": "boolean",
+      "description": "Specifies if a call party is muted"
+    },
+    "owner": {
+      "type": "object",
+      "description": "",
+      "properties": {
+        "accountId": {
+          "description": "Internal identifier of an account",
+          "type": "string"
+        },
+        "extensionId": {
+          "description": "Internal identifier of an extension",
+          "type": "string"
+        }
+      }
+    },
+    "standAlone": {
+      "type": "boolean",
+      "description": "Specifies if a device is stand-alone"
+    },
+    "status": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "description": "Status code of a call",
+          "type": "string",
+          "enum": [
+            "Setup",
+            "Proceeding",
+            "Answered",
+            "Disconnected",
+            "Gone",
+            "Parked",
+            "Hold",
+            "VoiceMail",
+            "FaxReceive",
+            "Tds",
+            "VoiceMailScreening"
+          ]
+        },
+        "peerId": {
+          "description": "Peer session / party data. Valid in Gone state only",
+          "properties": {
+            "sessionId": {
+              "type": "string"
+            },
+            "partyId": {
+              "type": "string"
+            }
+          }
+        },
+        "reason": {
+          "description": "Reason of call termination. For 'Disconnected' code only",
+          "type": "string",
+          "enum": [
+            "Pickup",
+            "Supervising",
+            "TakeOver",
+            "Timeout",
+            "BlindTransfer",
+            "RccTransfer",
+            "AttendedTransfer",
+            "CallerInputRedirect",
+            "CallFlip",
+            "ParkLocation",
+            "DtmfTransfer",
+            "AgentAnswered",
+            "AgentDropped",
+            "Rejected",
+            "Cancelled",
+            "InternalError",
+            "NoAnswer",
+            "TargetBusy",
+            "InvalidNumber",
+            "InternationalDisabled",
+            "DestinationBlocked",
+            "NotEnoughFunds",
+            "NoSuchUser",
+            "CallRedirected"
+          ]
+        },
+        "description": {
+          "description": "Optional message",
+          "type": "string"
+        }
+      }
+    }
+  }
+}

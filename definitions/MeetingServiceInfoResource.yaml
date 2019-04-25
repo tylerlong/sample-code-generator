@@ -29,6 +29,12 @@
         },
         "userToken": {
           "type": "string"
+        },
+        "hostKey": {
+          "type": "string"
+        },
+        "personalMeetingId": {
+          "type": "string"
         }
       }
     },

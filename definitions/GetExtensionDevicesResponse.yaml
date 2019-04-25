@@ -164,6 +164,18 @@
               "countryName": {
                 "type": "string",
                 "description": "Full name of a country"
+              },
+              "syncStatus": {
+                "type": "string",
+                "description": "Resulting status of emergency address synchronization. Returned for 'Get Device Info' request if `syncEmergencyAddress` parameter is set to 'True'",
+                "enum": [
+                  "Verified",
+                  "Updated",
+                  "Deleted",
+                  "NotRequired",
+                  "Unsupported",
+                  "Failed"
+                ]
               }
             }
           },

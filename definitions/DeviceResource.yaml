@@ -137,25 +137,25 @@
             "businessAddress": {
               "description": "Business address of extension user company",
               "properties": {
-                "country": {
+                "street": {
                   "type": "string",
-                  "description": "Country name of extension user company. Not returned for Address Book"
-                },
-                "state": {
-                  "type": "string",
-                  "description": "State/province name of extension user company"
+                  "description": "Street address",
+                  "example": "20 Davis Dr."
                 },
                 "city": {
                   "type": "string",
-                  "description": "City name of extension user company"
+                  "description": "City name",
+                  "example": "Belmont"
                 },
-                "street": {
+                "state": {
                   "type": "string",
-                  "description": "Street address of extension user company"
+                  "description": "State/province name",
+                  "example": "CA"
                 },
                 "zip": {
                   "type": "string",
-                  "description": "Zip code of extension user company"
+                  "description": "Zip/Postal code",
+                  "example": "94002"
                 }
               }
             }
@@ -539,25 +539,25 @@
                       "businessAddress": {
                         "description": "Business address of extension user company",
                         "properties": {
-                          "country": {
+                          "street": {
                             "type": "string",
-                            "description": "Country name of extension user company. Not returned for Address Book"
-                          },
-                          "state": {
-                            "type": "string",
-                            "description": "State/province name of extension user company"
+                            "description": "Street address",
+                            "example": "20 Davis Dr."
                           },
                           "city": {
                             "type": "string",
-                            "description": "City name of extension user company"
+                            "description": "City name",
+                            "example": "Belmont"
                           },
-                          "street": {
+                          "state": {
                             "type": "string",
-                            "description": "Street address of extension user company"
+                            "description": "State/province name",
+                            "example": "CA"
                           },
                           "zip": {
                             "type": "string",
-                            "description": "Zip code of extension user company"
+                            "description": "Zip/Postal code",
+                            "example": "94002"
                           }
                         }
                       }
@@ -886,6 +886,10 @@
                   "FaxOnly",
                   "VoiceOnly"
                 ]
+              },
+              "reservationId": {
+                "type": "string",
+                "description": "Internal identifier of a phone number reservation; encoded data including reservation type (by brand, by account, by session), particular brand/account/session data, and reservation date and time"
               }
             }
           },

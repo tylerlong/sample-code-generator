@@ -62,11 +62,13 @@
               "RCTeams",
               "RingOut",
               "SalesForce",
+              "SharedLines",
               "SingleExtensionUI",
               "SiteCodes",
               "SMS",
               "SMSReceiving",
               "SoftPhoneUpdate",
+              "TelephonySessions",
               "UserManagement",
               "VideoConferencing",
               "VoipCalling",
@@ -104,7 +106,7 @@
         },
         "maxExtensionNumberLength": {
           "type": "integer",
-          "description": "Max length of extension numbers of an account; depends on account type",
+          "description": "Max length of extension numbers of an account; the supported value is up to 8 symbols, depends on account type",
           "default": 5
         },
         "siteCodeLength": {

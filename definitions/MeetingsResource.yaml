@@ -28,6 +28,9 @@
           "password": {
             "type": "string"
           },
+          "h323Password": {
+            "type": "string"
+          },
           "status": {
             "type": "string"
           },
@@ -66,6 +69,14 @@
                     "type": "string"
                   }
                 }
+              }
+            }
+          },
+          "host": {
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "Internal identifier of an extension which is assigned to be a meeting host. The default value is currently logged-in extension identifier"
               }
             }
           },

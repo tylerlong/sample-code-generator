@@ -1,74 +1,29 @@
 {
   "type": "object",
-  "required": [
-    "navigation",
-    "paging",
-    "records"
-  ],
   "properties": {
+    "uri": {
+      "type": "string",
+      "description": "Link to call recording extension list resource"
+    },
     "records": {
       "type": "array",
-      "description": "List of extension grants with details",
       "items": {
         "properties": {
+          "id": {
+            "type": "string",
+            "description": "Internal identifier of an extension"
+          },
           "uri": {
             "type": "string",
-            "description": "Canonical URI of a grant"
+            "description": "Link to an extension resource"
           },
-          "extension": {
-            "description": "Extension information",
-            "properties": {
-              "id": {
-                "type": "string",
-                "description": "Internal identifier of an extension"
-              },
-              "uri": {
-                "type": "string",
-                "description": "Canonical URI of an extension"
-              },
-              "extensionNumber": {
-                "type": "string",
-                "description": "Extension short number (usually 3 or 4 digits)"
-              },
-              "type": {
-                "type": "string",
-                "description": "Extension type",
-                "enum": [
-                  "User",
-                  "Fax User",
-                  "VirtualUser",
-                  "DigitalUser",
-                  "Department",
-                  "Announcement",
-                  "Voicemail",
-                  "SharedLinesGroup",
-                  "PagingOnly",
-                  "IvrMenu",
-                  "ApplicationExtension",
-                  "Park Location"
-                ]
-              }
-            }
+          "extensionNumber": {
+            "type": "string",
+            "description": "Number of an extension"
           },
-          "callPickup": {
-            "type": "boolean",
-            "description": "Specifies if picking up of other extensions' calls is allowed for the extension. If 'Presence' feature is disabled for the given extension, the flag is not returned"
-          },
-          "callMonitoring": {
-            "type": "boolean",
-            "description": "Specifies if monitoring of other extensions' calls is allowed for the extension. If 'CallMonitoring' feature is disabled for the given extension, the flag is not returned"
-          },
-          "callOnBehalfOf": {
-            "type": "boolean",
-            "description": "Specifies whether the current extension is able to make or receive calls on behalf of the user referenced in extension object"
-          },
-          "callDelegation": {
-            "type": "boolean",
-            "description": "Specifies whether the current extension can delegate a call to the user referenced in extension object"
-          },
-          "groupPaging": {
-            "type": "boolean",
-            "description": "Specifies whether the current extension is allowed to call Paging Only group referenced to in extension object"
+          "name": {
+            "type": "string",
+            "description": "Name of an extension"
           }
         }
       }

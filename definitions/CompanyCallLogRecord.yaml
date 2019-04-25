@@ -95,6 +95,10 @@
         "Outbound"
       ]
     },
+    "deleted": {
+      "type": "boolean",
+      "description": "Indicates whether the record is deleted. Returned for deleted records, for ISync requests"
+    },
     "action": {
       "type": "string",
       "description": "Action description of the call operation",

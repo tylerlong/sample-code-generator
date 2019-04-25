@@ -2,24 +2,24 @@
   "type": "object",
   "properties": {
     "authenticationSchemes": {
-      "properties": {
-        "authenticationSchemes": {
-          "type": "array",
-          "items": {
-            "properties": {
-              "description": {
-                "type": "string"
-              },
-              "documentationUrl": {
-                "type": "string"
-              },
-              "name": {
-                "type": "string"
-              },
-              "specUrl": {
-                "type": "string"
-              }
-            }
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "description": {
+            "type": "string"
+          },
+          "documentationUri": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "specUri": {
+            "type": "string"
+          },
+          "primary": {
+            "type": "boolean"
           }
         }
       }

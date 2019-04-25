@@ -17,7 +17,7 @@ You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/GetVersionsResponse.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#API-Info-getAllVersions) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#API-Info-readAPIVersions) in API Explorer.
 
 ## Get Company Info
 
@@ -1094,12 +1094,12 @@ const SDK = require('ringcentral');
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
-const r = await platform.get(`/restapi/v1.0/account/${accountId}/call-log`, loadCompanyCallLogParameters);
+const r = await platform.get(`/restapi/v1.0/account/${accountId}/call-log`, readCompanyCallLogParameters);
 ```
 
 - `accountId`'s default value is `~`
 
-`loadCompanyCallLogParameters` is an **optional** object with the following definition:
+`readCompanyCallLogParameters` is an **optional** object with the following definition:
 
 ```yaml
 {
@@ -1161,6 +1161,16 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/call-log`, load
       "required": false,
       "type": "boolean"
     },
+    "recordingType": {
+      "in": "query",
+      "description": "Type of a call recording. If not specified, then calls without recordings are also returned",
+      "type": "string",
+      "enum": [
+        "Automatic",
+        "OnDemand",
+        "All"
+      ]
+    },
     "dateFrom": {
       "in": "query",
       "description": "The start datetime for resulting records in ISO 8601 format including timezone, for example 2016-03-10T18:07:52.534Z. The default value is dateTo minus 24 hours",
@@ -1203,7 +1213,7 @@ You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/AccountCallLogResponse.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#Call-Log-loadCompanyCallLog) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Call-Log-readCompanyCallLog) in API Explorer.
 
 ## Get Company Call Log Record(s)
 
@@ -1223,7 +1233,7 @@ You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/CompanyCallLogRecord.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#Call-Log-loadCompanyCallLogRecord) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Call-Log-readCompanyCallRecord) in API Explorer.
 
 ## Create Call Monitoring Group
 
@@ -1393,48 +1403,6 @@ const r = await platform.post(`/restapi/v1.0/account/${accountId}/call-monitorin
 {
   "type": "object",
   "properties": {
-    "addedExtensions": {
-      "type": "array",
-      "items": {
-        "properties": {
-          "id": {
-            "type": "string",
-            "description": " Only the following extension types are allowed: User, DigitalUser, VirtualUser, FaxUser, Limited"
-          },
-          "permissions": {
-            "type": "array",
-            "items": {
-              "type": "string",
-              "enum": [
-                "Monitoring",
-                "Monitored"
-              ]
-            }
-          }
-        }
-      }
-    },
-    "removedExtensions": {
-      "type": "array",
-      "items": {
-        "properties": {
-          "id": {
-            "type": "string",
-            "description": " Only the following extension types are allowed: User, DigitalUser, VirtualUser, FaxUser, Limited"
-          },
-          "permissions": {
-            "type": "array",
-            "items": {
-              "type": "string",
-              "enum": [
-                "Monitoring",
-                "Monitored"
-              ]
-            }
-          }
-        }
-      }
-    },
     "updatedExtensions": {
       "type": "array",
       "items": {
@@ -1444,6 +1412,7 @@ const r = await platform.post(`/restapi/v1.0/account/${accountId}/call-monitorin
             "description": " Only the following extension types are allowed: User, DigitalUser, VirtualUser, FaxUser, Limited"
           },
           "permissions": {
+            "description": "Set of call monitoring group permissions granted to the specified extension. In order to remove the specified extension from a call monitoring group use an empty value",
             "type": "array",
             "items": {
               "type": "string",
@@ -1460,9 +1429,7 @@ const r = await platform.post(`/restapi/v1.0/account/${accountId}/call-monitorin
 }
 ```
 
-You can get response json data by `const json = r.json()`
-
-- `json` is an object with [this definition](./definitions/CallMonitoringBulkAssign.yaml)
+Response body is empty
 
 [Try it out](https://developer.ringcentral.com/api-reference#Account-Provisioning-updateCallMonitoringGroups) in API Explorer.
 
@@ -1746,7 +1713,7 @@ You can get response json data by `const json = r.json()`
 
 [Try it out](https://developer.ringcentral.com/api-reference#Call-Handling-Settings-updateCallRecordingSettings) in API Explorer.
 
-## Update Call Recording Extension Settings
+## Update Call Recording Extension List
 
 HTTP POST `/restapi/v1.0/account/{accountId}/call-recording/bulk-assign`
 
@@ -1850,9 +1817,9 @@ const r = await platform.post(`/restapi/v1.0/account/${accountId}/call-recording
 
 Response body is empty
 
-[Try it out](https://developer.ringcentral.com/api-reference#Call-Handling-Settings-updateCallRecordingExtensionSettings) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Call-Handling-Settings-updateCallRecordingExtensionList) in API Explorer.
 
-## [Beta] Get Call Recording Custom Greetings
+## Get Call Recording Custom Greetings
 
 HTTP GET `/restapi/v1.0/account/{accountId}/call-recording/custom-greetings`
 
@@ -1927,7 +1894,7 @@ Response body is empty
 
 [Try it out](https://developer.ringcentral.com/api-reference#Call-Handling-Settings-deleteCallRecordingCustomGreeting) in API Explorer.
 
-## Get Call Recording Extension Settings
+## Get Call Recording Extension List
 
 HTTP GET `/restapi/v1.0/account/{accountId}/call-recording/extensions`
 
@@ -1941,9 +1908,11 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/call-recording/
 
 - `accountId`'s default value is `~`
 
-Response body is empty
+You can get response json data by `const json = r.json()`
 
-[Try it out](https://developer.ringcentral.com/api-reference#Call-Handling-Settings-listCallRecordingExtensionSettings) in API Explorer.
+- `json` is an object with [this definition](./definitions/CallRecordingExtensions.yaml)
+
+[Try it out](https://developer.ringcentral.com/api-reference#Call-Handling-Settings-listCallRecordingExtensions) in API Explorer.
 
 ## Edit Department Members
 
@@ -2047,10 +2016,25 @@ const SDK = require('ringcentral');
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
-const r = await platform.get(`/restapi/v1.0/account/${accountId}/device/${deviceId}`);
+const r = await platform.get(`/restapi/v1.0/account/${accountId}/device/${deviceId}`, loadAccountDeviceParameters);
 ```
 
 - `accountId`'s default value is `~`
+
+`loadAccountDeviceParameters` is an **optional** object with the following definition:
+
+```yaml
+{
+  "properties": {
+    "syncEmergencyAddress": {
+      "in": "query",
+      "description": "Specifies if emergency address should be synchronized or not",
+      "type": "boolean",
+      "default": false
+    }
+  }
+}
+```
 
 You can get response json data by `const json = r.json()`
 
@@ -2175,7 +2159,7 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/directory/entri
       "description": "If 'True' then contacts of all accounts in federation are returned. If 'False' then only contacts of the current account are returned, and account section is eliminated in this case",
       "required": false,
       "type": "string",
-      "default": "true"
+      "default": true
     },
     "type": {
       "in": "query",
@@ -2319,6 +2303,26 @@ You can get response json data by `const json = r.json()`
 
 [Try it out](https://developer.ringcentral.com/api-reference#Company-Contacts-searchDirectoryEntries) in API Explorer.
 
+## Get Corporate Directory Entry
+
+HTTP GET `/restapi/v1.0/account/{accountId}/directory/entries/{entryId}`
+
+```js
+const SDK = require('ringcentral');
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
+const platform = rcsdk.platform();
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
+const r = await platform.get(`/restapi/v1.0/account/${accountId}/directory/entries/${entryId}`);
+```
+
+- `accountId`'s default value is `~`
+
+You can get response json data by `const json = r.json()`
+
+- `json` is an object with [this definition](./definitions/ContactResource.yaml)
+
+[Try it out](https://developer.ringcentral.com/api-reference#Company-Contacts-readDirectoryEntry) in API Explorer.
+
 ## Get Account Federation
 
 HTTP GET `/restapi/v1.0/account/{accountId}/directory/federation`
@@ -2337,7 +2341,7 @@ You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/FederationResource.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#Company-Contacts-loadAccountFederation) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Company-Contacts-readAccountFederation) in API Explorer.
 
 ## Get Extension List
 
@@ -3028,15 +3032,18 @@ const r = await platform.put(`/restapi/v1.0/account/${accountId}/extension/${ext
       }
     },
     "transition": {
-      "description": "For NotActivated extensions only. Welcome email settings",
-      "properties": {
-        "sendWelcomeEmailsToUsers": {
-          "type": "boolean",
-          "description": "Specifies if an activation email is automatically sent to new users (Not Activated extensions) or not"
-        },
-        "sendWelcomeEmail": {
-          "type": "boolean",
-          "description": "Supported for account confirmation. Specifies whether welcome email is sent"
+      "type": "array",
+      "items": {
+        "description": "For NotActivated extensions only. Welcome email settings",
+        "properties": {
+          "sendWelcomeEmailsToUsers": {
+            "type": "boolean",
+            "description": "Specifies if an activation email is automatically sent to new users (Not Activated extensions) or not"
+          },
+          "sendWelcomeEmail": {
+            "type": "boolean",
+            "description": "Supported for account confirmation. Specifies whether welcome email is sent"
+          }
         }
       }
     }
@@ -3297,177 +3304,209 @@ const SDK = require('ringcentral');
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
-const r = await platform.post(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/address-book/contact`, personalContactResource, createContactParameters);
+const r = await platform.post(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/address-book/contact`, personalContactRequest, createContactParameters);
 ```
 
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-`personalContactResource` is an object with the following definition:
+`personalContactRequest` is an object with the following definition:
 
 ```yaml
 {
   "type": "object",
   "properties": {
-    "uri": {
-      "type": "string",
-      "format": "uri"
-    },
-    "availability": {
-      "type": "string",
-      "enum": [
-        "Alive",
-        "Deleted",
-        "Purged"
-      ]
-    },
-    "id": {
-      "type": "string"
-    },
     "firstName": {
-      "type": "string"
+      "type": "string",
+      "description": "First name of the contact",
+      "example": "Charlie"
     },
     "lastName": {
-      "type": "string"
+      "type": "string",
+      "description": "Last name of the contact",
+      "example": "Williams"
     },
     "middleName": {
-      "type": "string"
+      "type": "string",
+      "description": "Middle name of the contact",
+      "example": "J"
+    },
+    "nickName": {
+      "type": "string",
+      "description": "Nick name of the contact",
+      "example": "The Boss"
+    },
+    "company": {
+      "type": "string",
+      "description": "Company name of the contact",
+      "example": "Example, Inc."
+    },
+    "jobTitle": {
+      "type": "string",
+      "description": "Job title of the contact",
+      "example": "CEO"
+    },
+    "email": {
+      "type": "string",
+      "description": "Email of the contact",
+      "example": "charlie.williams@example.com"
+    },
+    "email2": {
+      "type": "string",
+      "description": "2nd email of the contact",
+      "example": "charlie-example@gmail.com"
+    },
+    "email3": {
+      "type": "string",
+      "description": "3rd email of the contact",
+      "example": "theboss-example@hotmail.com"
     },
     "birthday": {
       "type": "string",
-      "format": "date-time"
-    },
-    "notes": {
-      "type": "string"
+      "format": "date-time",
+      "description": "Date of birth of the contact"
     },
     "webPage": {
-      "type": "string"
+      "type": "string",
+      "description": "The contact home page URL",
+      "example": "http://www.example.com"
     },
-    "company": {
-      "type": "string"
+    "notes": {
+      "type": "string",
+      "description": "Notes for the contact",
+      "example": "#1 Customer"
     },
-    "jobTitle": {
-      "type": "string"
+    "homePhone": {
+      "type": "string",
+      "description": "Home phone number of the contact in e.164 (with \"+\") format",
+      "example": "+15551234567"
     },
-    "nickName": {
-      "type": "string"
+    "homePhone2": {
+      "type": "string",
+      "description": "2nd home phone number of the contact in e.164 (with \"+\") format",
+      "example": "+15551234567"
     },
-    "email": {
-      "type": "string"
+    "businessPhone": {
+      "type": "string",
+      "description": "Business phone of the contact in e.164 (with \"+\") format",
+      "example": "+15551234567"
     },
-    "email2": {
-      "type": "string"
+    "businessPhone2": {
+      "type": "string",
+      "description": "2nd business phone of the contact in e.164 (with \"+\") format",
+      "example": "+15551234567"
     },
-    "email3": {
-      "type": "string"
+    "mobilePhone": {
+      "type": "string",
+      "description": "Mobile phone of the contact in e.164 (with \"+\") format",
+      "example": "+15551234567"
+    },
+    "businessFax": {
+      "type": "string",
+      "description": "Business fax number of the contact in e.164 (with \"+\") format",
+      "example": "+15551234567"
+    },
+    "companyPhone": {
+      "type": "string",
+      "description": "Company number of the contact in e.164 (with \"+\") format",
+      "example": "+15551234567"
+    },
+    "assistantPhone": {
+      "type": "string",
+      "description": "Phone number of the contact assistant in e.164 (with \"+\") format",
+      "example": "+15551234567"
+    },
+    "carPhone": {
+      "type": "string",
+      "description": "Car phone number of the contact in e.164 (with \"+\") format",
+      "example": "+15551234567"
+    },
+    "otherPhone": {
+      "type": "string",
+      "description": "Other phone number of the contact in e.164 (with \"+\") format",
+      "example": "+15551234567"
+    },
+    "otherFax": {
+      "type": "string",
+      "description": "Other fax number of the contact in e.164 (with \"+\") format",
+      "example": "+15551234567"
+    },
+    "callbackPhone": {
+      "type": "string",
+      "description": "Callback phone number of the contact in e.164 (with \"+\") format",
+      "example": "+15551234567"
     },
     "homeAddress": {
       "properties": {
-        "country": {
+        "street": {
           "type": "string",
-          "description": "Country name of extension user company. Not returned for Address Book"
-        },
-        "state": {
-          "type": "string",
-          "description": "State/province name of extension user company"
+          "description": "Street address",
+          "example": "20 Davis Dr."
         },
         "city": {
           "type": "string",
-          "description": "City name of extension user company"
+          "description": "City name",
+          "example": "Belmont"
         },
-        "street": {
+        "state": {
           "type": "string",
-          "description": "Street address of extension user company"
+          "description": "State/province name",
+          "example": "CA"
         },
         "zip": {
           "type": "string",
-          "description": "Zip code of extension user company"
+          "description": "Zip/Postal code",
+          "example": "94002"
+        }
+      }
+    },
+    "businessAddress": {
+      "properties": {
+        "street": {
+          "type": "string",
+          "description": "Street address",
+          "example": "20 Davis Dr."
+        },
+        "city": {
+          "type": "string",
+          "description": "City name",
+          "example": "Belmont"
+        },
+        "state": {
+          "type": "string",
+          "description": "State/province name",
+          "example": "CA"
+        },
+        "zip": {
+          "type": "string",
+          "description": "Zip/Postal code",
+          "example": "94002"
         }
       }
     },
     "otherAddress": {
       "properties": {
-        "country": {
+        "street": {
           "type": "string",
-          "description": "Country name of extension user company. Not returned for Address Book"
-        },
-        "state": {
-          "type": "string",
-          "description": "State/province name of extension user company"
+          "description": "Street address",
+          "example": "20 Davis Dr."
         },
         "city": {
           "type": "string",
-          "description": "City name of extension user company"
-        },
-        "street": {
-          "type": "string",
-          "description": "Street address of extension user company"
-        },
-        "zip": {
-          "type": "string",
-          "description": "Zip code of extension user company"
-        }
-      }
-    },
-    "homePhone": {
-      "type": "string"
-    },
-    "homePhone2": {
-      "type": "string"
-    },
-    "mobilePhone": {
-      "type": "string"
-    },
-    "businessPhone": {
-      "type": "string"
-    },
-    "callbackPhone": {
-      "type": "string"
-    },
-    "carPhone": {
-      "type": "string"
-    },
-    "companyPhone": {
-      "type": "string"
-    },
-    "otherPhone": {
-      "type": "string"
-    },
-    "businessFax": {
-      "type": "string"
-    },
-    "otherFax": {
-      "type": "string"
-    },
-    "businessAddress": {
-      "properties": {
-        "country": {
-          "type": "string",
-          "description": "Country name of extension user company. Not returned for Address Book"
+          "description": "City name",
+          "example": "Belmont"
         },
         "state": {
           "type": "string",
-          "description": "State/province name of extension user company"
-        },
-        "city": {
-          "type": "string",
-          "description": "City name of extension user company"
-        },
-        "street": {
-          "type": "string",
-          "description": "Street address of extension user company"
+          "description": "State/province name",
+          "example": "CA"
         },
         "zip": {
           "type": "string",
-          "description": "Zip code of extension user company"
+          "description": "Zip/Postal code",
+          "example": "94002"
         }
       }
-    },
-    "assistantPhone": {
-      "type": "string"
-    },
-    "businessPhone2": {
-      "type": "string"
     }
   }
 }
@@ -3494,7 +3533,7 @@ You can get response json data by `const json = r.json()`
 
 [Try it out](https://developer.ringcentral.com/api-reference#User-Contacts-createContact) in API Explorer.
 
-## Get Contact(s)
+## Get Contact
 
 HTTP GET `/restapi/v1.0/account/{accountId}/extension/{extensionId}/address-book/contact/{contactId}`
 
@@ -3513,9 +3552,9 @@ You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/PersonalContactResource.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#User-Contacts-loadContact) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#User-Contacts-readContact) in API Explorer.
 
-## Update Contact(s)
+## Update Contact
 
 HTTP PUT `/restapi/v1.0/account/{accountId}/extension/{extensionId}/address-book/contact/{contactId}`
 
@@ -3524,177 +3563,209 @@ const SDK = require('ringcentral');
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
-const r = await platform.put(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/address-book/contact/${contactId}`, personalContactResource, updateContactParameters);
+const r = await platform.put(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/address-book/contact/${contactId}`, personalContactRequest, updateContactParameters);
 ```
 
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-`personalContactResource` is an object with the following definition:
+`personalContactRequest` is an object with the following definition:
 
 ```yaml
 {
   "type": "object",
   "properties": {
-    "uri": {
-      "type": "string",
-      "format": "uri"
-    },
-    "availability": {
-      "type": "string",
-      "enum": [
-        "Alive",
-        "Deleted",
-        "Purged"
-      ]
-    },
-    "id": {
-      "type": "string"
-    },
     "firstName": {
-      "type": "string"
+      "type": "string",
+      "description": "First name of the contact",
+      "example": "Charlie"
     },
     "lastName": {
-      "type": "string"
+      "type": "string",
+      "description": "Last name of the contact",
+      "example": "Williams"
     },
     "middleName": {
-      "type": "string"
+      "type": "string",
+      "description": "Middle name of the contact",
+      "example": "J"
+    },
+    "nickName": {
+      "type": "string",
+      "description": "Nick name of the contact",
+      "example": "The Boss"
+    },
+    "company": {
+      "type": "string",
+      "description": "Company name of the contact",
+      "example": "Example, Inc."
+    },
+    "jobTitle": {
+      "type": "string",
+      "description": "Job title of the contact",
+      "example": "CEO"
+    },
+    "email": {
+      "type": "string",
+      "description": "Email of the contact",
+      "example": "charlie.williams@example.com"
+    },
+    "email2": {
+      "type": "string",
+      "description": "2nd email of the contact",
+      "example": "charlie-example@gmail.com"
+    },
+    "email3": {
+      "type": "string",
+      "description": "3rd email of the contact",
+      "example": "theboss-example@hotmail.com"
     },
     "birthday": {
       "type": "string",
-      "format": "date-time"
-    },
-    "notes": {
-      "type": "string"
+      "format": "date-time",
+      "description": "Date of birth of the contact"
     },
     "webPage": {
-      "type": "string"
+      "type": "string",
+      "description": "The contact home page URL",
+      "example": "http://www.example.com"
     },
-    "company": {
-      "type": "string"
+    "notes": {
+      "type": "string",
+      "description": "Notes for the contact",
+      "example": "#1 Customer"
     },
-    "jobTitle": {
-      "type": "string"
+    "homePhone": {
+      "type": "string",
+      "description": "Home phone number of the contact in e.164 (with \"+\") format",
+      "example": "+15551234567"
     },
-    "nickName": {
-      "type": "string"
+    "homePhone2": {
+      "type": "string",
+      "description": "2nd home phone number of the contact in e.164 (with \"+\") format",
+      "example": "+15551234567"
     },
-    "email": {
-      "type": "string"
+    "businessPhone": {
+      "type": "string",
+      "description": "Business phone of the contact in e.164 (with \"+\") format",
+      "example": "+15551234567"
     },
-    "email2": {
-      "type": "string"
+    "businessPhone2": {
+      "type": "string",
+      "description": "2nd business phone of the contact in e.164 (with \"+\") format",
+      "example": "+15551234567"
     },
-    "email3": {
-      "type": "string"
+    "mobilePhone": {
+      "type": "string",
+      "description": "Mobile phone of the contact in e.164 (with \"+\") format",
+      "example": "+15551234567"
+    },
+    "businessFax": {
+      "type": "string",
+      "description": "Business fax number of the contact in e.164 (with \"+\") format",
+      "example": "+15551234567"
+    },
+    "companyPhone": {
+      "type": "string",
+      "description": "Company number of the contact in e.164 (with \"+\") format",
+      "example": "+15551234567"
+    },
+    "assistantPhone": {
+      "type": "string",
+      "description": "Phone number of the contact assistant in e.164 (with \"+\") format",
+      "example": "+15551234567"
+    },
+    "carPhone": {
+      "type": "string",
+      "description": "Car phone number of the contact in e.164 (with \"+\") format",
+      "example": "+15551234567"
+    },
+    "otherPhone": {
+      "type": "string",
+      "description": "Other phone number of the contact in e.164 (with \"+\") format",
+      "example": "+15551234567"
+    },
+    "otherFax": {
+      "type": "string",
+      "description": "Other fax number of the contact in e.164 (with \"+\") format",
+      "example": "+15551234567"
+    },
+    "callbackPhone": {
+      "type": "string",
+      "description": "Callback phone number of the contact in e.164 (with \"+\") format",
+      "example": "+15551234567"
     },
     "homeAddress": {
       "properties": {
-        "country": {
+        "street": {
           "type": "string",
-          "description": "Country name of extension user company. Not returned for Address Book"
-        },
-        "state": {
-          "type": "string",
-          "description": "State/province name of extension user company"
+          "description": "Street address",
+          "example": "20 Davis Dr."
         },
         "city": {
           "type": "string",
-          "description": "City name of extension user company"
+          "description": "City name",
+          "example": "Belmont"
         },
-        "street": {
+        "state": {
           "type": "string",
-          "description": "Street address of extension user company"
+          "description": "State/province name",
+          "example": "CA"
         },
         "zip": {
           "type": "string",
-          "description": "Zip code of extension user company"
+          "description": "Zip/Postal code",
+          "example": "94002"
+        }
+      }
+    },
+    "businessAddress": {
+      "properties": {
+        "street": {
+          "type": "string",
+          "description": "Street address",
+          "example": "20 Davis Dr."
+        },
+        "city": {
+          "type": "string",
+          "description": "City name",
+          "example": "Belmont"
+        },
+        "state": {
+          "type": "string",
+          "description": "State/province name",
+          "example": "CA"
+        },
+        "zip": {
+          "type": "string",
+          "description": "Zip/Postal code",
+          "example": "94002"
         }
       }
     },
     "otherAddress": {
       "properties": {
-        "country": {
+        "street": {
           "type": "string",
-          "description": "Country name of extension user company. Not returned for Address Book"
-        },
-        "state": {
-          "type": "string",
-          "description": "State/province name of extension user company"
+          "description": "Street address",
+          "example": "20 Davis Dr."
         },
         "city": {
           "type": "string",
-          "description": "City name of extension user company"
-        },
-        "street": {
-          "type": "string",
-          "description": "Street address of extension user company"
-        },
-        "zip": {
-          "type": "string",
-          "description": "Zip code of extension user company"
-        }
-      }
-    },
-    "homePhone": {
-      "type": "string"
-    },
-    "homePhone2": {
-      "type": "string"
-    },
-    "mobilePhone": {
-      "type": "string"
-    },
-    "businessPhone": {
-      "type": "string"
-    },
-    "callbackPhone": {
-      "type": "string"
-    },
-    "carPhone": {
-      "type": "string"
-    },
-    "companyPhone": {
-      "type": "string"
-    },
-    "otherPhone": {
-      "type": "string"
-    },
-    "businessFax": {
-      "type": "string"
-    },
-    "otherFax": {
-      "type": "string"
-    },
-    "businessAddress": {
-      "properties": {
-        "country": {
-          "type": "string",
-          "description": "Country name of extension user company. Not returned for Address Book"
+          "description": "City name",
+          "example": "Belmont"
         },
         "state": {
           "type": "string",
-          "description": "State/province name of extension user company"
-        },
-        "city": {
-          "type": "string",
-          "description": "City name of extension user company"
-        },
-        "street": {
-          "type": "string",
-          "description": "Street address of extension user company"
+          "description": "State/province name",
+          "example": "CA"
         },
         "zip": {
           "type": "string",
-          "description": "Zip code of extension user company"
+          "description": "Zip/Postal code",
+          "example": "94002"
         }
       }
-    },
-    "assistantPhone": {
-      "type": "string"
-    },
-    "businessPhone2": {
-      "type": "string"
     }
   }
 }
@@ -3721,7 +3792,7 @@ You can get response json data by `const json = r.json()`
 
 [Try it out](https://developer.ringcentral.com/api-reference#User-Contacts-updateContact) in API Explorer.
 
-## Delete Contact(s)
+## Delete Contact
 
 HTTP DELETE `/restapi/v1.0/account/{accountId}/extension/{extensionId}/address-book/contact/{contactId}`
 
@@ -3760,6 +3831,18 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${ext
 ```yaml
 {
   "properties": {
+    "view": {
+      "in": "query",
+      "required": false,
+      "type": "string",
+      "default": "Simple"
+    },
+    "enabledOnly": {
+      "in": "query",
+      "required": false,
+      "type": "string",
+      "default": "false"
+    },
     "page": {
       "in": "query",
       "required": false,
@@ -5099,13 +5182,13 @@ const SDK = require('ringcentral');
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
-const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/call-log`, loadUserCallLogParameters);
+const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/call-log`, readUserCallLogParameters);
 ```
 
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-`loadUserCallLogParameters` is an **optional** object with the following definition:
+`readUserCallLogParameters` is an **optional** object with the following definition:
 
 ```yaml
 {
@@ -5190,9 +5273,20 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${ext
     },
     "withRecording": {
       "in": "query",
-      "description": "**Deprecated**. Supported for compatibility reasons only. `true` if only recorded calls are returned. The default value is `false`. If both `withRecording` and `recordingType` are specified, `withRecording` is ignored",
+      "description": "**Deprecated**. Supported for compatibility reasons. `True` if only recorded calls are returned. If both `withRecording` and `recordingType` are specified, then `withRecording` is ignored",
+      "default": false,
       "required": false,
       "type": "boolean"
+    },
+    "recordingType": {
+      "in": "query",
+      "description": "Type of a call recording. If not specified, then calls without recordings are also returned",
+      "type": "string",
+      "enum": [
+        "Automatic",
+        "OnDemand",
+        "All"
+      ]
     },
     "dateTo": {
       "in": "query",
@@ -5237,9 +5331,9 @@ You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/UserCallLogResponse.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#Call-Log-loadUserCallLog) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Call-Log-readUserCallLog) in API Explorer.
 
-## Delete User Call Log Records
+## Delete User Call Log
 
 HTTP DELETE `/restapi/v1.0/account/{accountId}/extension/{extensionId}/call-log`
 
@@ -5393,6 +5487,13 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${ext
         "Simple",
         "Detailed"
       ]
+    },
+    "showDeleted": {
+      "in": "query",
+      "description": "Supproted for ISync. If 'True' then deleted call records are returned",
+      "default": false,
+      "required": false,
+      "type": "boolean"
     }
   }
 }
@@ -5404,7 +5505,7 @@ You can get response json data by `const json = r.json()`
 
 [Try it out](https://developer.ringcentral.com/api-reference#Call-Log-syncUserCallLog) in API Explorer.
 
-## Get User Call Record(s)
+## Get User Call Record
 
 HTTP GET `/restapi/v1.0/account/{accountId}/extension/{extensionId}/call-log/{callRecordId}`
 
@@ -5413,13 +5514,13 @@ const SDK = require('ringcentral');
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
-const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/call-log/${callRecordId}`, getCallRecordsParameters);
+const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/call-log/${callRecordId}`, readUserCallRecordParameters);
 ```
 
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-`getCallRecordsParameters` is an **optional** object with the following definition:
+`readUserCallRecordParameters` is an **optional** object with the following definition:
 
 ```yaml
 {
@@ -5443,7 +5544,7 @@ You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/UserCallLogRecord.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#Call-Log-getCallRecords) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Call-Log-readUserCallRecord) in API Explorer.
 
 ## Get Caller Blocking Settings
 
@@ -5648,25 +5749,6 @@ You can get response json data by `const json = r.json()`
 - `json` is an object with [this definition](./definitions/BlockedAllowedPhoneNumberInfo.yaml)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Call-Handling-Settings-createBlockedAllowedPhoneNumberList) in API Explorer.
-
-## Add/Remove Blocked or Allowed Numbers using bulk request
-
-HTTP POST `/restapi/v1.0/account/{accountId}/extension/{extensionId}/caller-blocking/phone-numbers/bulk-update`
-
-```js
-const SDK = require('ringcentral');
-const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
-const platform = rcsdk.platform();
-await platform.login({ username: 'username', extension: 'extension', password: 'password' });
-const r = await platform.post(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/caller-blocking/phone-numbers/bulk-update`);
-```
-
-- `accountId`'s default value is `~`
-- `extensionId`'s default value is `~`
-
-Response body is empty
-
-[Try it out](https://developer.ringcentral.com/api-reference#Call-Handling-Settings-createBlockedAllowedPhoneNumberLists) in API Explorer.
 
 ## Get Blocked/Allowed Number
 
@@ -6220,7 +6302,7 @@ const r = await platform.post(`/restapi/v1.0/account/${accountId}/extension/${ex
     "faxResolution": {
       "in": "formData",
       "description": "Resolution of Fax",
-      "required": true,
+      "required": false,
       "type": "string",
       "enum": [
         "High",
@@ -6271,7 +6353,7 @@ You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/FaxResponse.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#Fax-sendFaxMessage) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Fax-createFaxMessage) in API Explorer.
 
 ## Get Forwarding Numbers
 
@@ -6525,8 +6607,8 @@ await platform.login({ username: 'username', extension: 'extension', password: '
 const FormData = require('form-data');
 const formData = new FormData();
 formData.append('body', Buffer.from(JSON.stringify(body)), { filename: 'request.json' });
-formData.append('audio', fs.readFileSync('./test.mp3'), { filename: 'text.mp3' });
-const r = await platform.post(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/greeting`, formData, customGreetingRequest);
+formData.append('binary', fs.readFileSync('./test.png'), { filename: 'text.png' });
+const r = await platform.post(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/greeting`, formData);
 ```
 
 - `accountId`'s default value is `~`
@@ -6538,6 +6620,7 @@ const r = await platform.post(`/restapi/v1.0/account/${accountId}/extension/${ex
 {
   "properties": {
     "type": {
+      "in": "formData",
       "type": "string",
       "description": "Type of a greeting, specifying the case when the greeting is played.",
       "enum": [
@@ -6548,14 +6631,14 @@ const r = await platform.post(`/restapi/v1.0/account/${accountId}/extension/${ex
         "Voicemail",
         "Unavailable",
         "HoldMusic"
-      ]
+      ],
+      "required": true
     },
     "answeringRule": {
-      "description": "Information on an answering rule that the greeting is applied to",
+      "in": "formData",
       "properties": {
         "id": {
-          "type": "string",
-          "description": "Internal identifier of an answering rule"
+          "type": "string"
         }
       }
     }
@@ -6565,7 +6648,7 @@ const r = await platform.post(`/restapi/v1.0/account/${accountId}/extension/${ex
 
 You can get response json data by `const json = r.json()`
 
-- `json` is an object with [this definition](./definitions/CustomCompanyGreetingInfo.yaml)
+- `json` is an object with [this definition](./definitions/CustomUserGreetingInfo.yaml)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Call-Handling-Settings-createUserCustomGreeting) in API Explorer.
 
@@ -6689,6 +6772,9 @@ const r = await platform.post(`/restapi/v1.0/account/${accountId}/extension/${ex
       "type": "boolean",
       "default": false
     },
+    "usePersonalMeetingId": {
+      "type": "boolean"
+    },
     "audioOptions": {
       "type": "array",
       "items": {
@@ -6699,71 +6785,11 @@ const r = await platform.post(`/restapi/v1.0/account/${accountId}/extension/${ex
 }
 ```
 
-Response body is empty
-
-[Try it out](https://developer.ringcentral.com/api-reference#Upcoming-Meetings-createMeeting) in API Explorer.
-
-## Get User Meeting Recordings
-
-HTTP GET `/restapi/v1.0/account/{accountId}/extension/{extensionId}/meeting-recordings`
-
-```js
-const SDK = require('ringcentral');
-const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
-const platform = rcsdk.platform();
-await platform.login({ username: 'username', extension: 'extension', password: 'password' });
-const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/meeting-recordings`, listUserMeetingRecordingsParameters);
-```
-
-- `accountId`'s default value is `~`
-- `extensionId`'s default value is `~`
-
-`listUserMeetingRecordingsParameters` is an **optional** object with the following definition:
-
-```yaml
-{
-  "properties": {
-    "meetingId": {
-      "description": "Internal identifier of a meeting. Either `meetingId` or `meetingStartTime`/`meetingEndTime` can be specified",
-      "in": "query",
-      "required": false,
-      "type": "string"
-    },
-    "meetingStartTimeFrom": {
-      "description": "Recordings of meetings started after the time specified will be returned. Either `meetingId` or `meetingStartTime`/`meetingEndTime` can be specified",
-      "in": "query",
-      "required": false,
-      "type": "string"
-    },
-    "meetingStartTimeTo": {
-      "description": "Recordings of meetings started before the time specified will be returned. The default value is current time. Either `meetingId` or `meetingStartTime`/`meetingEndTime` can be specified",
-      "in": "query",
-      "required": false,
-      "type": "string"
-    },
-    "page": {
-      "description": "Page number",
-      "in": "query",
-      "required": false,
-      "type": "integer"
-    },
-    "perPage": {
-      "description": "Number of items per page. The `max` value is supported to indicate the maximum size - 300",
-      "default": 100,
-      "maximum": 300,
-      "in": "query",
-      "required": false,
-      "type": "integer"
-    }
-  }
-}
-```
-
 You can get response json data by `const json = r.json()`
 
-- `json` is an object with [this definition](./definitions/ListMeetingRecordingsResponse.yaml)
+- `json` is an object with [this definition](./definitions/MeetingResponseResource.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#Meeting-Recordings-listUserMeetingRecordings) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Upcoming-Meetings-createMeeting) in API Explorer.
 
 ## Get Meeting Service Info
 
@@ -6885,6 +6911,9 @@ const r = await platform.put(`/restapi/v1.0/account/${accountId}/extension/${ext
       "type": "boolean",
       "default": false
     },
+    "usePersonalMeetingId": {
+      "type": "boolean"
+    },
     "audioOptions": {
       "type": "array",
       "items": {
@@ -6938,6 +6967,48 @@ const r = await platform.post(`/restapi/v1.0/account/${accountId}/extension/${ex
 Response body is empty
 
 [Try it out](https://developer.ringcentral.com/api-reference#Active-Meetings-endMeeting) in API Explorer.
+
+## Get Assistants
+
+HTTP GET `/restapi/v1.0/account/{accountId}/extension/{extensionId}/meetings-configuration/assistants`
+
+```js
+const SDK = require('ringcentral');
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
+const platform = rcsdk.platform();
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
+const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/meetings-configuration/assistants`);
+```
+
+- `accountId`'s default value is `~`
+- `extensionId`'s default value is `~`
+
+You can get response json data by `const json = r.json()`
+
+- `json` is an object with [this definition](./definitions/AssistantsResource.yaml)
+
+[Try it out](https://developer.ringcentral.com/api-reference#Meetings-Configuration-loadAssistants) in API Explorer.
+
+## Get Assisted Users
+
+HTTP GET `/restapi/v1.0/account/{accountId}/extension/{extensionId}/meetings-configuration/assisted`
+
+```js
+const SDK = require('ringcentral');
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
+const platform = rcsdk.platform();
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
+const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/meetings-configuration/assisted`);
+```
+
+- `accountId`'s default value is `~`
+- `extensionId`'s default value is `~`
+
+You can get response json data by `const json = r.json()`
+
+- `json` is an object with [this definition](./definitions/AssistedUsersResource.yaml)
+
+[Try it out](https://developer.ringcentral.com/api-reference#Meetings-Configuration-loadAssistedUsers) in API Explorer.
 
 ## Get Message List
 
@@ -7075,7 +7146,7 @@ You can get response json data by `const json = r.json()`
 
 [Try it out](https://developer.ringcentral.com/api-reference#Fax-listMessages) in API Explorer.
 
-## Delete Conversation(s)
+## Delete Conversation
 
 HTTP DELETE `/restapi/v1.0/account/{accountId}/extension/{extensionId}/message-store`
 
@@ -7084,13 +7155,13 @@ const SDK = require('ringcentral');
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
-const r = await platform.delete(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/message-store`, deleteMessagesByFilterParameters);
+const r = await platform.delete(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/message-store`, deleteMessageByFilterParameters);
 ```
 
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-`deleteMessagesByFilterParameters` is an **optional** object with the following definition:
+`deleteMessageByFilterParameters` is an **optional** object with the following definition:
 
 ```yaml
 {
@@ -7132,9 +7203,9 @@ const r = await platform.delete(`/restapi/v1.0/account/${accountId}/extension/${
 
 Response body is empty
 
-[Try it out](https://developer.ringcentral.com/api-reference#Fax-deleteMessagesByFilter) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Fax-deleteMessageByFilter) in API Explorer.
 
-## Get Message(s)
+## Get Message
 
 HTTP GET `/restapi/v1.0/account/{accountId}/extension/{extensionId}/message-store/{messageId}`
 
@@ -7153,7 +7224,7 @@ You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/GetMessageInfoResponse.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#Fax-loadMessage) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Fax-readMessage) in API Explorer.
 
 ## Update Message(s)
 
@@ -7194,7 +7265,7 @@ You can get response json data by `const json = r.json()`
 
 [Try it out](https://developer.ringcentral.com/api-reference#Fax-updateMessage) in API Explorer.
 
-## Delete Message(s)
+## Delete Message
 
 HTTP DELETE `/restapi/v1.0/account/{accountId}/extension/{extensionId}/message-store/{messageId}`
 
@@ -7235,7 +7306,7 @@ Response body is empty
 
 [Try it out](https://developer.ringcentral.com/api-reference#Fax-deleteMessage) in API Explorer.
 
-## Get Message Attachment
+## Get Message Content
 
 HTTP GET `/restapi/v1.0/account/{accountId}/extension/{extensionId}/message-store/{messageId}/content/{attachmentId}`
 
@@ -7244,13 +7315,13 @@ const SDK = require('ringcentral');
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
-const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/message-store/${messageId}/content/${attachmentId}`, getMessageAttachmentByIdParameters);
+const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/message-store/${messageId}/content/${attachmentId}`, readMessageContentParameters);
 ```
 
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-`getMessageAttachmentByIdParameters` is an **optional** object with the following definition:
+`readMessageContentParameters` is an **optional** object with the following definition:
 
 ```yaml
 {
@@ -7272,7 +7343,7 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${ext
 
 You can get response binary data by `const buffer = await r.response().buffer()`
 
-[Try it out](https://developer.ringcentral.com/api-reference#Fax-getMessageAttachmentById) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Fax-readMessageContent) in API Explorer.
 
 ## Sync Messages
 
@@ -7664,7 +7735,7 @@ You can get response json data by `const json = r.json()`
 
 [Try it out](https://developer.ringcentral.com/api-reference#Phone-Numbers-listExtensionPhoneNumbers) in API Explorer.
 
-## Get User Status
+## Get User Presence Status
 
 HTTP GET `/restapi/v1.0/account/{accountId}/extension/{extensionId}/presence`
 
@@ -7673,13 +7744,13 @@ const SDK = require('ringcentral');
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
-const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/presence`, getPresenceStatusParameters);
+const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/presence`, readUserPresenceStatusParameters);
 ```
 
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-`getPresenceStatusParameters` is an **optional** object with the following definition:
+`readUserPresenceStatusParameters` is an **optional** object with the following definition:
 
 ```yaml
 {
@@ -7704,9 +7775,9 @@ You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/GetPresenceInfo.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#Presence-getPresenceStatus) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Presence-readUserPresenceStatus) in API Explorer.
 
-## Update User Status
+## Update User Presence Status
 
 HTTP PUT `/restapi/v1.0/account/{accountId}/extension/{extensionId}/presence`
 
@@ -7838,7 +7909,7 @@ You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/PresenceInfoResource.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#Presence-updatePresenceStatus) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Presence-updateUserPresenceStatus) in API Explorer.
 
 ## Get User Profile Image
 
@@ -7857,7 +7928,7 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${ext
 
 You can get response binary data by `const buffer = await r.response().buffer()`
 
-[Try it out](https://developer.ringcentral.com/api-reference#User-Settings-downloadProfileImage) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#User-Settings-loadProfileImage) in API Explorer.
 
 ## Upload User Profile Image
 
@@ -7877,9 +7948,9 @@ const r = await platform.post(`/restapi/v1.0/account/${accountId}/extension/${ex
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-You can get response binary data by `const buffer = await r.response().buffer()`
+Response body is empty
 
-[Try it out](https://developer.ringcentral.com/api-reference#User-Settings-uploadProfileImage) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#User-Settings-createProfileImage) in API Explorer.
 
 ## Update User Profile Image
 
@@ -7899,11 +7970,11 @@ const r = await platform.put(`/restapi/v1.0/account/${accountId}/extension/${ext
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-You can get response binary data by `const buffer = await r.response().buffer()`
+Response body is empty
 
 [Try it out](https://developer.ringcentral.com/api-reference#User-Settings-updateProfileImage) in API Explorer.
 
-## Get Extension Profile Image (Scaled)
+## Get User Profile Image (Scaled)
 
 HTTP GET `/restapi/v1.0/account/{accountId}/extension/{extensionId}/profile-image/{scaleSize}`
 
@@ -7920,7 +7991,7 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${ext
 
 You can get response binary data by `const buffer = await r.response().buffer()`
 
-[Try it out](https://developer.ringcentral.com/api-reference#User-Settings-downloadScaledPofileImage) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#User-Settings-loadScaledPofileImage) in API Explorer.
 
 ## Make RingOut Call
 
@@ -7999,9 +8070,9 @@ You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/GetRingOutStatusResponse.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#RingOut-makeRingOutCall) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#RingOut-createRingOutCall) in API Explorer.
 
-##  Get RingOut Call Status
+## Get RingOut Call Status
 
 HTTP GET `/restapi/v1.0/account/{accountId}/extension/{extensionId}/ring-out/{ringoutId}`
 
@@ -8020,7 +8091,7 @@ You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/GetRingOutStatusResponse.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#RingOut-getRingOutCallStatus) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#RingOut-readRingOutCallStatus) in API Explorer.
 
 ## Cancel RingOut Call
 
@@ -8039,7 +8110,7 @@ const r = await platform.delete(`/restapi/v1.0/account/${accountId}/extension/${
 
 Response body is empty
 
-[Try it out](https://developer.ringcentral.com/api-reference#RingOut-cancelRingOutCall) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#RingOut-deleteRingOutCall) in API Explorer.
 
 ## Make RingOut Call
 
@@ -8118,7 +8189,7 @@ You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/GetRingOutStatusResponseIntId.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#RingOut-makeRingOutCallDeprecated) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#RingOut-createRingOutCallDeprecated) in API Explorer.
 
 ## Get RingOut Call Status
 
@@ -8139,7 +8210,7 @@ You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/GetRingOutStatusResponse.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#RingOut-getRingOutCallStatusDeprecated) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#RingOut-readRingOutCallStatusDeprecated) in API Explorer.
 
 ## Cancel RingOut Call
 
@@ -8158,9 +8229,9 @@ const r = await platform.delete(`/restapi/v1.0/account/${accountId}/extension/${
 
 Response body is empty
 
-[Try it out](https://developer.ringcentral.com/api-reference#RingOut-cancelRingOutCallDeprecated) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#RingOut-deleteRingOutCallDeprecated) in API Explorer.
 
-## Create SMS Message
+## Create SMS/MMS Message
 
 HTTP POST `/restapi/v1.0/account/{accountId}/extension/{extensionId}/sms`
 
@@ -8219,7 +8290,7 @@ You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/GetMessageInfoResponse.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#SMS-and-MMS-sendSMS) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#SMS-and-MMS-createSMSMessage) in API Explorer.
 
 ## Create Custom Company Greeting
 
@@ -8233,8 +8304,8 @@ await platform.login({ username: 'username', extension: 'extension', password: '
 const FormData = require('form-data');
 const formData = new FormData();
 formData.append('body', Buffer.from(JSON.stringify(body)), { filename: 'request.json' });
-formData.append('audio', fs.readFileSync('./test.mp3'), { filename: 'text.mp3' });
-const r = await platform.post(`/restapi/v1.0/account/${accountId}/greeting`, formData, customCompanyGreetingRequest);
+formData.append('binary', fs.readFileSync('./test.png'), { filename: 'text.png' });
+const r = await platform.post(`/restapi/v1.0/account/${accountId}/greeting`, formData);
 ```
 
 - `accountId`'s default value is `~`
@@ -8245,30 +8316,22 @@ const r = await platform.post(`/restapi/v1.0/account/${accountId}/greeting`, for
 {
   "properties": {
     "type": {
+      "in": "formData",
       "type": "string",
-      "description": "Type of a greeting",
+      "description": "Type of a greeting, specifying the case when the greeting is played.",
       "enum": [
         "Company",
         "StartRecording",
         "StopRecording",
         "AutomaticRecording"
-      ]
+      ],
+      "required": true
     },
     "answeringRule": {
-      "description": "Information on an answering rule that the greeting is applied to",
+      "in": "formData",
       "properties": {
         "id": {
-          "type": "string",
-          "description": "Internal identifier of an answering rule"
-        }
-      }
-    },
-    "language": {
-      "description": "Information on a greeting language. Supported for types 'StopRecording', 'StartRecording', 'AutomaticRecording'",
-      "properties": {
-        "id": {
-          "type": "string",
-          "description": "Internal identifier of a greeting language"
+          "type": "string"
         }
       }
     }
@@ -8715,67 +8778,6 @@ Response body is empty
 
 [Try it out](https://developer.ringcentral.com/api-reference#Call-Handling-Settings-loadIvrPromptContent) in API Explorer.
 
-## Get Account Meeting Recordings
-
-HTTP GET `/restapi/v1.0/account/{accountId}/meeting-recordings`
-
-```js
-const SDK = require('ringcentral');
-const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
-const platform = rcsdk.platform();
-await platform.login({ username: 'username', extension: 'extension', password: 'password' });
-const r = await platform.get(`/restapi/v1.0/account/${accountId}/meeting-recordings`, listAccountMeetingRecordingsParameters);
-```
-
-- `accountId`'s default value is `~`
-
-`listAccountMeetingRecordingsParameters` is an **optional** object with the following definition:
-
-```yaml
-{
-  "properties": {
-    "meetingId": {
-      "description": "Internal identifier of a meeting. Either `meetingId` or `meetingStartTime`/`meetingEndTime` can be specified",
-      "in": "query",
-      "required": false,
-      "type": "string"
-    },
-    "meetingStartTimeFrom": {
-      "description": "Recordings of meetings started after the time specified will be returned. Either `meetingId` or `meetingStartTime`/`meetingEndTime` can be specified",
-      "in": "query",
-      "required": false,
-      "type": "string"
-    },
-    "meetingStartTimeTo": {
-      "description": "Recordings of meetings started before the time specified will be returned. The default value is current time. Either `meetingId` or `meetingStartTime`/`meetingEndTime` can be specified",
-      "in": "query",
-      "required": false,
-      "type": "string"
-    },
-    "page": {
-      "description": "Page number",
-      "in": "query",
-      "required": false,
-      "type": "integer"
-    },
-    "perPage": {
-      "description": "Number of items per page. The `max` value is supported to indicate the maximum size - 300",
-      "default": 100,
-      "maximum": 300,
-      "in": "query",
-      "required": false,
-      "type": "integer"
-    }
-  }
-}
-```
-
-You can get response json data by `const json = r.json()`
-
-- `json` is an object with [this definition](./definitions/ListMeetingRecordingsResponse.yaml)
-
-[Try it out](https://developer.ringcentral.com/api-reference#Meeting-Recordings-listAccountMeetingRecordings) in API Explorer.
-
 ## Get Message Store Configuration
 
 HTTP GET `/restapi/v1.0/account/{accountId}/message-store-configuration`
@@ -8794,7 +8796,7 @@ You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/MessageStoreConfiguration.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#Message-Store-Configuration-loadMessageStoreConfiguration) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Message-Store-Configuration-readMessageStoreConfiguration) in API Explorer.
 
 ## Update Message Store Configuration
 
@@ -9155,7 +9157,7 @@ You can get response json data by `const json = r.json()`
 
 [Try it out](https://developer.ringcentral.com/api-reference#Phone-Numbers-loadAccountPhoneNumber) in API Explorer.
 
-## Get User Presence Statuses List
+## Get User Presence Status List
 
 HTTP GET `/restapi/v1.0/account/{accountId}/presence`
 
@@ -9164,12 +9166,12 @@ const SDK = require('ringcentral');
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
-const r = await platform.get(`/restapi/v1.0/account/${accountId}/presence`, accountPresenceParameters);
+const r = await platform.get(`/restapi/v1.0/account/${accountId}/presence`, readAccountPresenceParameters);
 ```
 
 - `accountId`'s default value is `~`
 
-`accountPresenceParameters` is an **optional** object with the following definition:
+`readAccountPresenceParameters` is an **optional** object with the following definition:
 
 ```yaml
 {
@@ -9208,9 +9210,9 @@ You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/AccountPresenceInfo.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#Presence-accountPresence) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Presence-readAccountPresence) in API Explorer.
 
-## Get Call Recording(s)
+## Get Call Recording
 
 HTTP GET `/restapi/v1.0/account/{accountId}/recording/{recordingId}`
 
@@ -9228,7 +9230,7 @@ You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/GetCallRecordingResponse.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#Call-Log-listCallRecordings) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Call-Log-readCallRecording) in API Explorer.
 
 ## Get Call Recordings Data
 
@@ -9248,7 +9250,7 @@ You can get response binary data by `const buffer = await r.response().buffer()`
 
 [Try it out](https://developer.ringcentral.com/api-reference#Call-Log-listCallRecordingData) in API Explorer.
 
-## Get Account Service Info [Beta]
+## Get Account Service Info
 
 HTTP GET `/restapi/v1.0/account/{accountId}/service-info`
 
@@ -9267,6 +9269,63 @@ You can get response json data by `const json = r.json()`
 - `json` is an object with [this definition](./definitions/GetServiceInfoResponse.yaml)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Company-Settings-loadServiceInfo) in API Explorer.
+
+## Create CallOut Call Session
+
+HTTP POST `/restapi/v1.0/account/{accountId}/telephony/call-out`
+
+```js
+const SDK = require('ringcentral');
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
+const platform = rcsdk.platform();
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
+const r = await platform.post(`/restapi/v1.0/account/${accountId}/telephony/call-out`, makeCallOutRequest);
+```
+
+- `accountId`'s default value is `~`
+
+`makeCallOutRequest` is an object with the following definition:
+
+```yaml
+{
+  "type": "object",
+  "required": [
+    "from",
+    "to"
+  ],
+  "properties": {
+    "from": {
+      "properties": {
+        "deviceId": {
+          "description": "Internal identifier of a device",
+          "type": "string",
+          "example": "59474004"
+        }
+      }
+    },
+    "to": {
+      "properties": {
+        "phoneNumber": {
+          "description": "Phone number in E.164 format",
+          "type": "string",
+          "example": "+16502223366"
+        },
+        "extensionNumber": {
+          "type": "string",
+          "description": "Extension number",
+          "example": "103"
+        }
+      }
+    }
+  }
+}
+```
+
+You can get response json data by `const json = r.json()`
+
+- `json` is an object with [this definition](./definitions/CallSession.yaml)
+
+[Try it out](https://developer.ringcentral.com/api-reference#Call-Control-createCallOutCallSession) in API Explorer.
 
 ## Get Call Session Status
 
@@ -9307,7 +9366,7 @@ You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/CallSessionObject.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#Call-Control-[Beta]-getCallSessionStatus) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Call-Control-getCallSessionStatus) in API Explorer.
 
 ## Drop Call Session
 
@@ -9325,7 +9384,7 @@ const r = await platform.delete(`/restapi/v1.0/account/${accountId}/telephony/se
 
 Response body is empty
 
-[Try it out](https://developer.ringcentral.com/api-reference#Call-Control-[Beta]-deleteCallSession) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Call-Control-deleteCallSession) in API Explorer.
 
 ## Get Call Party Status
 
@@ -9345,7 +9404,7 @@ You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/CallParty.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#Call-Control-[Beta]-getCallPartyStatus) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Call-Control-getCallPartyStatus) in API Explorer.
 
 ## Update Call Party
 
@@ -9388,7 +9447,7 @@ You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/CallParty.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#Call-Control-[Beta]-updateCallParty) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Call-Control-updateCallParty) in API Explorer.
 
 ## Call Flip on Party
 
@@ -9420,7 +9479,7 @@ const r = await platform.post(`/restapi/v1.0/account/${accountId}/telephony/sess
 
 Response body is empty
 
-[Try it out](https://developer.ringcentral.com/api-reference#Call-Control-[Beta]-callFlipParty) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Call-Control-callFlipParty) in API Explorer.
 
 ## Forward Call Party
 
@@ -9458,7 +9517,7 @@ You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/CallParty.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#Call-Control-[Beta]-forwardCallParty) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Call-Control-forwardCallParty) in API Explorer.
 
 ## Hold Call Party
 
@@ -9478,9 +9537,9 @@ You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/CallParty.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#Call-Control-[Beta]-holdCallParty) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Call-Control-holdCallParty) in API Explorer.
 
-## Starts new call recording in a party
+## Create Recording
 
 HTTP POST `/restapi/v1.0/account/{accountId}/telephony/sessions/{sessionId}/parties/{partyId}/recordings`
 
@@ -9496,7 +9555,7 @@ const r = await platform.post(`/restapi/v1.0/account/${accountId}/telephony/sess
 
 Response body is empty
 
-[Try it out](https://developer.ringcentral.com/api-reference#Call-Control-[Beta]-startCallRecording) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Call-Control-startCallRecording) in API Explorer.
 
 ## Pause/Resume Recording
 
@@ -9546,7 +9605,7 @@ You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/CallRecording.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#Call-Control-[Beta]-pauseResumeCallRecording) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Call-Control-pauseResumeCallRecording) in API Explorer.
 
 ## Reject Call Party
 
@@ -9564,7 +9623,7 @@ const r = await platform.post(`/restapi/v1.0/account/${accountId}/telephony/sess
 
 Response body is empty
 
-[Try it out](https://developer.ringcentral.com/api-reference#Call-Control-[Beta]-rejectParty) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Call-Control-rejectParty) in API Explorer.
 
 ## Transfer Call Party
 
@@ -9606,7 +9665,7 @@ You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/CallParty.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#Call-Control-[Beta]-transferCallParty) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Call-Control-transferCallParty) in API Explorer.
 
 ## Unhold Call Party
 
@@ -9626,9 +9685,62 @@ You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/CallParty.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#Call-Control-[Beta]-unholdCallParty) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Call-Control-unholdCallParty) in API Explorer.
 
-## Get Templates
+## Supervise Call
+
+HTTP POST `/restapi/v1.0/account/{accountId}/telephony/sessions/{sessionId}/supervise`
+
+```js
+const SDK = require('ringcentral');
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
+const platform = rcsdk.platform();
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
+const r = await platform.post(`/restapi/v1.0/account/${accountId}/telephony/sessions/${sessionId}/supervise`, superviseCallSessionRequest);
+```
+
+- `accountId`'s default value is `~`
+
+`superviseCallSessionRequest` is an object with the following definition:
+
+```yaml
+{
+  "type": "object",
+  "required": [
+    "mode",
+    "deviceId",
+    "extensionNumber"
+  ],
+  "properties": {
+    "mode": {
+      "type": "string",
+      "description": "Supervising mode",
+      "enum": [
+        "Listen"
+      ],
+      "example": "Listen"
+    },
+    "deviceId": {
+      "type": "string",
+      "description": "Internal identifier of a supervisor's device",
+      "example": "191888004"
+    },
+    "extensionNumber": {
+      "type": "string",
+      "description": "Extension number of a user that will be monitored",
+      "example": "102"
+    }
+  }
+}
+```
+
+You can get response json data by `const json = r.json()`
+
+- `json` is an object with [this definition](./definitions/SuperviseCallSession.yaml)
+
+[Try it out](https://developer.ringcentral.com/api-reference#Call-Control-superviseCallSession) in API Explorer.
+
+## Get User Templates
 
 HTTP GET `/restapi/v1.0/account/{accountId}/templates`
 
@@ -9637,12 +9749,12 @@ const SDK = require('ringcentral');
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
-const r = await platform.get(`/restapi/v1.0/account/${accountId}/templates`, listTemplatesParameters);
+const r = await platform.get(`/restapi/v1.0/account/${accountId}/templates`, listUserTemplatesParameters);
 ```
 
 - `accountId`'s default value is `~`
 
-`listTemplatesParameters` is an **optional** object with the following definition:
+`listUserTemplatesParameters` is an **optional** object with the following definition:
 
 ```yaml
 {
@@ -9671,9 +9783,9 @@ You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/UserTemplates.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#Account-Provisioning-listTemplates) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Account-Provisioning-listUserTemplates) in API Explorer.
 
-## Get Template
+## Get User Template
 
 HTTP GET `/restapi/v1.0/account/{accountId}/templates/{templateId}`
 
@@ -9691,7 +9803,7 @@ You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/TemplateInfo.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#Account-Provisioning-loadTemplate) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Account-Provisioning-loadUserTemplate) in API Explorer.
 
 ## Register SIP Device
 
@@ -9850,7 +9962,7 @@ You can get response json data by `const json = r.json()`
 
 [Try it out](https://developer.ringcentral.com/api-reference#Regional-Settings-loadCountry) in API Explorer.
 
-## Get Available Fax Cover Pages
+## Get Fax Cover Page List
 
 HTTP GET `/restapi/v1.0/dictionary/fax-cover-page`
 
@@ -10043,15 +10155,12 @@ const r = await platform.get('/restapi/v1.0/dictionary/location', listLocationsP
       "in": "query",
       "description": "Sorts results by the property specified",
       "required": false,
-      "type": "array",
-      "items": {
-        "type": "string",
-        "enum": [
-          "Npa",
-          "City"
-        ]
-      },
-      "collectionFormat": "multi"
+      "default": "City",
+      "type": "string",
+      "enum": [
+        "Npa",
+        "City"
+      ]
     },
     "page": {
       "in": "query",
@@ -10292,18 +10401,7 @@ const r = await platform.post('/restapi/v1.0/glip/cards', glipMessageAttachmentI
     },
     "color": {
       "type": "string",
-      "description": "Hex color code specifying font color of Event title, including its presentation in Calendar; or the color of the side border of an interactive message of a Card",
-      "enum": [
-        "Black",
-        "Red",
-        "Orange",
-        "Yellow",
-        "Green",
-        "Blue",
-        "Purple",
-        "Magenta"
-      ],
-      "default": "Black"
+      "description": "Color of Event title, including its presentation in Calendar; or the color of the side border of an interactive message of a Card. The default color is 'Black'"
     },
     "intro": {
       "type": "string",
@@ -10492,18 +10590,7 @@ const r = await platform.put(`/restapi/v1.0/glip/cards/${cardId}`, glipMessageAt
     },
     "color": {
       "type": "string",
-      "description": "Hex color code specifying font color of Event title, including its presentation in Calendar; or the color of the side border of an interactive message of a Card",
-      "enum": [
-        "Black",
-        "Red",
-        "Orange",
-        "Yellow",
-        "Green",
-        "Blue",
-        "Purple",
-        "Magenta"
-      ],
-      "default": "Black"
+      "description": "Color of Event title, including its presentation in Calendar; or the color of the side border of an interactive message of a Card. The default color is 'Black'"
     },
     "intro": {
       "type": "string",
@@ -10635,7 +10722,7 @@ Response body is empty
 
 [Try it out](https://developer.ringcentral.com/api-reference#Posts-deleteGlipCard) in API Explorer.
 
-## Get Chat List
+## Get Chats
 
 HTTP GET `/restapi/v1.0/glip/chats`
 
@@ -10730,6 +10817,170 @@ Response body is empty
 
 [Try it out](https://developer.ringcentral.com/api-reference#Chats-favoriteGlipChat) in API Explorer.
 
+## Get Posts
+
+HTTP GET `/restapi/v1.0/glip/chats/{chatId}/posts`
+
+```js
+const SDK = require('ringcentral');
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
+const platform = rcsdk.platform();
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
+const r = await platform.get(`/restapi/v1.0/glip/chats/${chatId}/posts`, loadGlipPostsParameters);
+```
+
+
+`loadGlipPostsParameters` is an **optional** object with the following definition:
+
+```yaml
+{
+  "properties": {
+    "recordCount": {
+      "in": "query",
+      "description": "Max number of posts to be fetched by one request (Not more than 250).",
+      "required": false,
+      "type": "integer",
+      "default": 30,
+      "maximum": 250
+    },
+    "pageToken": {
+      "in": "query",
+      "description": "Pagination token.",
+      "required": false,
+      "type": "string"
+    }
+  }
+}
+```
+
+You can get response json data by `const json = r.json()`
+
+- `json` is an object with [this definition](./definitions/GlipPostsList.yaml)
+
+[Try it out](https://developer.ringcentral.com/api-reference#Posts-loadGlipPosts) in API Explorer.
+
+## Create Post
+
+HTTP POST `/restapi/v1.0/glip/chats/{chatId}/posts`
+
+```js
+const SDK = require('ringcentral');
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
+const platform = rcsdk.platform();
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
+const r = await platform.post(`/restapi/v1.0/glip/chats/${chatId}/posts`, glipPostPostBody);
+```
+
+
+`glipPostPostBody` is an object with the following definition:
+
+```yaml
+{
+  "type": "object",
+  "required": [
+    "text"
+  ],
+  "properties": {
+    "text": {
+      "type": "string",
+      "description": "Post text."
+    },
+    "attachments": {
+      "description": "Identifier(s) of attachments.",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Internal identifier of an attachment"
+          },
+          "type": {
+            "type": "string",
+            "description": "Attachment type"
+          }
+        }
+      }
+    }
+  }
+}
+```
+
+You can get response json data by `const json = r.json()`
+
+- `json` is an object with [this definition](./definitions/GlipPostInfo.yaml)
+
+[Try it out](https://developer.ringcentral.com/api-reference#Posts-createGlipPost) in API Explorer.
+
+## Get Post
+
+HTTP GET `/restapi/v1.0/glip/chats/{chatId}/posts/{postId}`
+
+```js
+const SDK = require('ringcentral');
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
+const platform = rcsdk.platform();
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
+const r = await platform.get(`/restapi/v1.0/glip/chats/${chatId}/posts/${postId}`);
+```
+
+
+You can get response json data by `const json = r.json()`
+
+- `json` is an object with [this definition](./definitions/GlipPostInfo.yaml)
+
+[Try it out](https://developer.ringcentral.com/api-reference#Posts-loadGlipPost) in API Explorer.
+
+## Update Post
+
+HTTP PATCH `/restapi/v1.0/glip/chats/{chatId}/posts/{postId}`
+
+```js
+const SDK = require('ringcentral');
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
+const platform = rcsdk.platform();
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
+const r = await platform.patch(`/restapi/v1.0/glip/chats/${chatId}/posts/${postId}`, glipPatchPostBody);
+```
+
+
+`glipPatchPostBody` is an object with the following definition:
+
+```yaml
+{
+  "type": "object",
+  "properties": {
+    "text": {
+      "type": "string",
+      "description": "Post text."
+    }
+  }
+}
+```
+
+You can get response json data by `const json = r.json()`
+
+- `json` is an object with [this definition](./definitions/GlipPostInfo.yaml)
+
+[Try it out](https://developer.ringcentral.com/api-reference#Posts-updateGlipPost) in API Explorer.
+
+## Delete Post
+
+HTTP DELETE `/restapi/v1.0/glip/chats/{chatId}/posts/{postId}`
+
+```js
+const SDK = require('ringcentral');
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
+const platform = rcsdk.platform();
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
+const r = await platform.delete(`/restapi/v1.0/glip/chats/${chatId}/posts/${postId}`);
+```
+
+
+Response body is empty
+
+[Try it out](https://developer.ringcentral.com/api-reference#Posts-deleteGlipPost) in API Explorer.
+
 ## Mark Chat as Read
 
 HTTP POST `/restapi/v1.0/glip/chats/{chatId}/read`
@@ -10800,7 +11051,7 @@ You can get response json data by `const json = r.json()`
 
 [Try it out](https://developer.ringcentral.com/api-reference#Glip-Profile-loadGlipCompany) in API Explorer.
 
-## Get User Conversation List
+## Get Conversations
 
 HTTP GET `/restapi/v1.0/glip/conversations`
 
@@ -10842,7 +11093,7 @@ You can get response json data by `const json = r.json()`
 
 [Try it out](https://developer.ringcentral.com/api-reference#Chats-listGlipConversations) in API Explorer.
 
-## Create/Open Chat
+## Create/Open Conversation
 
 HTTP POST `/restapi/v1.0/glip/conversations`
 
@@ -10851,11 +11102,11 @@ const SDK = require('ringcentral');
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
-const r = await platform.post('/restapi/v1.0/glip/conversations', glipPostMembersListBody);
+const r = await platform.post('/restapi/v1.0/glip/conversations', createGlipConversationRequest);
 ```
 
 
-`glipPostMembersListBody` is an object with the following definition:
+`createGlipConversationRequest` is an object with the following definition:
 
 ```yaml
 {
@@ -10865,7 +11116,7 @@ const r = await platform.post('/restapi/v1.0/glip/conversations', glipPostMember
   ],
   "properties": {
     "members": {
-      "description": "Identifier(s) of chat members.",
+      "description": "Identifier(s) of chat member(s). The maximum supported number of IDs is 15. User's own ID is optional. If `members` section is omitted then 'Personal' chat will be returned  ",
       "type": "array",
       "items": {
         "type": "object",
@@ -11120,7 +11371,7 @@ const r = await platform.post('/restapi/v1.0/glip/events', glipEventCreate);
     },
     "color": {
       "type": "string",
-      "description": "Hex color code, specifying font color of Event title (including its presentation in Calendar)",
+      "description": "Color of Event title (including its presentation in Calendar)",
       "enum": [
         "Black",
         "Red",
@@ -11251,7 +11502,7 @@ const r = await platform.put(`/restapi/v1.0/glip/events/${eventId}`, glipEventCr
     },
     "color": {
       "type": "string",
-      "description": "Hex color code, specifying font color of Event title (including its presentation in Calendar)",
+      "description": "Color of Event title (including its presentation in Calendar)",
       "enum": [
         "Black",
         "Red",
@@ -11299,7 +11550,7 @@ Response body is empty
 
 [Try it out](https://developer.ringcentral.com/api-reference#Events-deleteEvent) in API Explorer.
 
-## Get Everyone Chat Info
+## Get Everyone Chat
 
 HTTP GET `/restapi/v1.0/glip/everyone`
 
@@ -11318,7 +11569,7 @@ You can get response json data by `const json = r.json()`
 
 [Try it out](https://developer.ringcentral.com/api-reference#Chats-loadGlipEveryone) in API Explorer.
 
-## Update Everyone Сhat Info
+## Update Everyone Сhat
 
 HTTP PATCH `/restapi/v1.0/glip/everyone`
 
@@ -11390,49 +11641,6 @@ You can get response json data by `const json = r.json()`
 - `json` is an object with [this definition](./definitions/GlipChatsListWithoutNavigation.yaml)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Chats-listFavoriteChats) in API Explorer.
-
-## Upload File
-
-HTTP POST `/restapi/v1.0/glip/files`
-
-```js
-const SDK = require('ringcentral');
-const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
-const platform = rcsdk.platform();
-await platform.login({ username: 'username', extension: 'extension', password: 'password' });
-const FormData = require('form-data');
-const formData = new FormData();
-formData.append('body', fs.readFileSync('./test.png'), { filename: 'text.png' });
-const r = await platform.post('/restapi/v1.0/glip/files', formData, createGlipFileParameters);
-```
-
-
-`createGlipFileParameters` is an **optional** object with the following definition:
-
-```yaml
-{
-  "properties": {
-    "groupId": {
-      "type": "integer",
-      "in": "query",
-      "description": "Internal identifier of a group to which the post with attachement will be added to",
-      "required": false
-    },
-    "name": {
-      "type": "string",
-      "in": "query",
-      "description": "Name of a file attached",
-      "required": false
-    }
-  }
-}
-```
-
-You can get response json data by `const json = r.json()`
-
-- `json` is an object with [this definition](./definitions/PostGlipFile.yaml)
-
-[Try it out](https://developer.ringcentral.com/api-reference#Posts-createGlipFile) in API Explorer.
 
 ## Get User Groups
 
@@ -11697,7 +11905,7 @@ const r = await platform.post(`/restapi/v1.0/glip/groups/${groupId}/events`, gli
     },
     "color": {
       "type": "string",
-      "description": "Hex color code, specifying font color of Event title (including its presentation in Calendar)",
+      "description": "Color of Event title (including its presentation in Calendar)",
       "enum": [
         "Black",
         "Red",
@@ -11746,114 +11954,6 @@ You can get response json data by `const json = r.json()`
 - `json` is an object with [this definition](./definitions/GlipEventInfo.yaml)
 
 [Try it out](https://developer.ringcentral.com/api-reference#Events-listGroupEvents) in API Explorer.
-
-## Get Group Notes
-
-HTTP GET `/restapi/v1.0/glip/groups/{groupId}/notes`
-
-```js
-const SDK = require('ringcentral');
-const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
-const platform = rcsdk.platform();
-await platform.login({ username: 'username', extension: 'extension', password: 'password' });
-const r = await platform.get(`/restapi/v1.0/glip/groups/${groupId}/notes`, loadGroupNotesParameters);
-```
-
-
-`loadGroupNotesParameters` is an **optional** object with the following definition:
-
-```yaml
-{
-  "properties": {
-    "recordCount": {
-      "in": "query",
-      "description": "Number of groups to be fetched by one request, the maximum value is 250, the default is 30",
-      "required": false,
-      "type": "integer",
-      "default": 30,
-      "maximum": 250
-    },
-    "pageToken": {
-      "in": "query",
-      "description": "Token of a page to be returned",
-      "required": false,
-      "type": "string"
-    },
-    "status": {
-      "in": "query",
-      "description": "Status of notes to be fetched. If not specified all notes are returned",
-      "required": false,
-      "type": "string",
-      "enum": [
-        "Active",
-        "Draft",
-        "Unknown"
-      ]
-    },
-    "creatorId": {
-      "in": "query",
-      "description": "Internal identifier of a note author",
-      "required": false,
-      "type": "string"
-    }
-  }
-}
-```
-
-You can get response json data by `const json = r.json()`
-
-- `json` is an object with [this definition](./definitions/GlipNotesInfo.yaml)
-
-[Try it out](https://developer.ringcentral.com/api-reference#Notes-loadGroupNotes) in API Explorer.
-
-## Create Group Note
-
-HTTP POST `/restapi/v1.0/glip/groups/{groupId}/notes`
-
-```js
-const SDK = require('ringcentral');
-const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
-const platform = rcsdk.platform();
-await platform.login({ username: 'username', extension: 'extension', password: 'password' });
-const r = await platform.post(`/restapi/v1.0/glip/groups/${groupId}/notes`, glipNoteCreate);
-```
-
-
-`glipNoteCreate` is an object with the following definition:
-
-```yaml
-{
-  "type": "object",
-  "required": [
-    "title"
-  ],
-  "properties": {
-    "title": {
-      "type": "string",
-      "description": "Title of a note"
-    },
-    "status": {
-      "type": "string",
-      "description": "If a note should be immediately published then pass 'Active' value. This doesn't create a new post in the current group but as a result the note can be read by members of this group",
-      "default": "Draft",
-      "enum": [
-        "Active",
-        "Draft"
-      ]
-    },
-    "body": {
-      "type": "string",
-      "description": "Contents of a note"
-    }
-  }
-}
-```
-
-You can get response json data by `const json = r.json()`
-
-- `json` is an object with [this definition](./definitions/GlipNoteInfo.yaml)
-
-[Try it out](https://developer.ringcentral.com/api-reference#Notes-createGroupNote) in API Explorer.
 
 ## Get Group Posts
 
@@ -11953,18 +12053,7 @@ const r = await platform.post(`/restapi/v1.0/glip/groups/${groupId}/posts`, glip
           },
           "color": {
             "type": "string",
-            "description": "Hex color code specifying font color of Event title, including its presentation in Calendar; or the color of the side border of an interactive message of a Card",
-            "enum": [
-              "Black",
-              "Red",
-              "Orange",
-              "Yellow",
-              "Green",
-              "Blue",
-              "Purple",
-              "Magenta"
-            ],
-            "default": "Black"
+            "description": "Color of Event title, including its presentation in Calendar; or the color of the side border of an interactive message of a Card. The default color is 'Black'"
           },
           "intro": {
             "type": "string",
@@ -12142,313 +12231,6 @@ You can get response json data by `const json = r.json()`
 
 [Try it out](https://developer.ringcentral.com/api-reference#Glip-Webhooks-listGlipGroupWebhooks) in API Explorer.
 
-## Get User Notes
-
-HTTP GET `/restapi/v1.0/glip/notes`
-
-```js
-const SDK = require('ringcentral');
-const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
-const platform = rcsdk.platform();
-await platform.login({ username: 'username', extension: 'extension', password: 'password' });
-const r = await platform.get('/restapi/v1.0/glip/notes', loadUserNotesParameters);
-```
-
-
-`loadUserNotesParameters` is an **optional** object with the following definition:
-
-```yaml
-{
-  "properties": {
-    "status": {
-      "in": "query",
-      "description": "Status of notes to be fetched. If not specified all notes are returned",
-      "required": false,
-      "type": "string",
-      "enum": [
-        "Active",
-        "Draft"
-      ]
-    },
-    "recordCount": {
-      "in": "query",
-      "description": "Number of groups to be fetched by one request. The maximum value is 250, by default - 30.",
-      "required": false,
-      "type": "integer",
-      "default": 30,
-      "maximum": 250
-    },
-    "pageToken": {
-      "in": "query",
-      "description": "Token of a page to be returned",
-      "required": false,
-      "type": "string"
-    }
-  }
-}
-```
-
-You can get response json data by `const json = r.json()`
-
-- `json` is an object with [this definition](./definitions/GlipNotesInfo.yaml)
-
-[Try it out](https://developer.ringcentral.com/api-reference#Notes-loadUserNotes) in API Explorer.
-
-## Create User Note
-
-HTTP POST `/restapi/v1.0/glip/notes`
-
-```js
-const SDK = require('ringcentral');
-const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
-const platform = rcsdk.platform();
-await platform.login({ username: 'username', extension: 'extension', password: 'password' });
-const r = await platform.post('/restapi/v1.0/glip/notes', glipNoteCreate);
-```
-
-
-`glipNoteCreate` is an object with the following definition:
-
-```yaml
-{
-  "type": "object",
-  "required": [
-    "title"
-  ],
-  "properties": {
-    "title": {
-      "type": "string",
-      "description": "Title of a note"
-    },
-    "status": {
-      "type": "string",
-      "description": "If a note should be immediately published then pass 'Active' value. This doesn't create a new post in the current group but as a result the note can be read by members of this group",
-      "default": "Draft",
-      "enum": [
-        "Active",
-        "Draft"
-      ]
-    },
-    "body": {
-      "type": "string",
-      "description": "Contents of a note"
-    }
-  }
-}
-```
-
-You can get response json data by `const json = r.json()`
-
-- `json` is an object with [this definition](./definitions/GlipNoteInfo.yaml)
-
-[Try it out](https://developer.ringcentral.com/api-reference#Notes-createUserNote) in API Explorer.
-
-## Get Note
-
-HTTP GET `/restapi/v1.0/glip/notes/{noteId}`
-
-```js
-const SDK = require('ringcentral');
-const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
-const platform = rcsdk.platform();
-await platform.login({ username: 'username', extension: 'extension', password: 'password' });
-const r = await platform.get(`/restapi/v1.0/glip/notes/${noteId}`);
-```
-
-
-You can get response json data by `const json = r.json()`
-
-- `json` is an object with [this definition](./definitions/GlipNotesInfo.yaml)
-
-[Try it out](https://developer.ringcentral.com/api-reference#Notes-loadUserNote) in API Explorer.
-
-## Delete Note
-
-HTTP DELETE `/restapi/v1.0/glip/notes/{noteId}`
-
-```js
-const SDK = require('ringcentral');
-const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
-const platform = rcsdk.platform();
-await platform.login({ username: 'username', extension: 'extension', password: 'password' });
-const r = await platform.delete(`/restapi/v1.0/glip/notes/${noteId}`);
-```
-
-
-Response body is empty
-
-[Try it out](https://developer.ringcentral.com/api-reference#Notes-deleteNote) in API Explorer.
-
-## Patch Note
-
-HTTP PATCH `/restapi/v1.0/glip/notes/{noteId}`
-
-```js
-const SDK = require('ringcentral');
-const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
-const platform = rcsdk.platform();
-await platform.login({ username: 'username', extension: 'extension', password: 'password' });
-const r = await platform.patch(`/restapi/v1.0/glip/notes/${noteId}`, glipNoteCreate, patchNoteParameters);
-```
-
-
-`glipNoteCreate` is an object with the following definition:
-
-```yaml
-{
-  "type": "object",
-  "required": [
-    "title"
-  ],
-  "properties": {
-    "title": {
-      "type": "string",
-      "description": "Title of a note"
-    },
-    "status": {
-      "type": "string",
-      "description": "If a note should be immediately published then pass 'Active' value. This doesn't create a new post in the current group but as a result the note can be read by members of this group",
-      "default": "Draft",
-      "enum": [
-        "Active",
-        "Draft"
-      ]
-    },
-    "body": {
-      "type": "string",
-      "description": "Contents of a note"
-    }
-  }
-}
-```
-
-`patchNoteParameters` is an **optional** object with the following definition:
-
-```yaml
-{
-  "properties": {
-    "releaseLock": {
-      "in": "query",
-      "type": "boolean",
-      "default": false,
-      "description": "If true then note lock (if any) will be released upon request"
-    }
-  }
-}
-```
-
-You can get response json data by `const json = r.json()`
-
-- `json` is an object with [this definition](./definitions/GlipNoteInfo.yaml)
-
-[Try it out](https://developer.ringcentral.com/api-reference#Notes-patchNote) in API Explorer.
-
-## Update Note
-
-HTTP PUT `/restapi/v1.0/glip/notes/{noteId}`
-
-```js
-const SDK = require('ringcentral');
-const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
-const platform = rcsdk.platform();
-await platform.login({ username: 'username', extension: 'extension', password: 'password' });
-const r = await platform.put(`/restapi/v1.0/glip/notes/${noteId}`, glipNoteCreate);
-```
-
-
-`glipNoteCreate` is an object with the following definition:
-
-```yaml
-{
-  "type": "object",
-  "required": [
-    "title"
-  ],
-  "properties": {
-    "title": {
-      "type": "string",
-      "description": "Title of a note"
-    },
-    "status": {
-      "type": "string",
-      "description": "If a note should be immediately published then pass 'Active' value. This doesn't create a new post in the current group but as a result the note can be read by members of this group",
-      "default": "Draft",
-      "enum": [
-        "Active",
-        "Draft"
-      ]
-    },
-    "body": {
-      "type": "string",
-      "description": "Contents of a note"
-    }
-  }
-}
-```
-
-You can get response json data by `const json = r.json()`
-
-- `json` is an object with [this definition](./definitions/GlipNoteInfo.yaml)
-
-[Try it out](https://developer.ringcentral.com/api-reference#Notes-updateNote) in API Explorer.
-
-## Lock Note
-
-HTTP POST `/restapi/v1.0/glip/notes/{noteId}/lock`
-
-```js
-const SDK = require('ringcentral');
-const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
-const platform = rcsdk.platform();
-await platform.login({ username: 'username', extension: 'extension', password: 'password' });
-const r = await platform.post(`/restapi/v1.0/glip/notes/${noteId}/lock`);
-```
-
-
-You can get response json data by `const json = r.json()`
-
-- `json` is an object with [this definition](./definitions/GlipNoteInfo.yaml)
-
-[Try it out](https://developer.ringcentral.com/api-reference#Notes-lockNote) in API Explorer.
-
-## Publish Note
-
-HTTP POST `/restapi/v1.0/glip/notes/{noteId}/publish`
-
-```js
-const SDK = require('ringcentral');
-const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
-const platform = rcsdk.platform();
-await platform.login({ username: 'username', extension: 'extension', password: 'password' });
-const r = await platform.post(`/restapi/v1.0/glip/notes/${noteId}/publish`);
-```
-
-
-You can get response json data by `const json = r.json()`
-
-- `json` is an object with [this definition](./definitions/GlipNoteInfo.yaml)
-
-[Try it out](https://developer.ringcentral.com/api-reference#Notes-publishNote) in API Explorer.
-
-## Unlock Note
-
-HTTP POST `/restapi/v1.0/glip/notes/{noteId}/unlock`
-
-```js
-const SDK = require('ringcentral');
-const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
-const platform = rcsdk.platform();
-await platform.login({ username: 'username', extension: 'extension', password: 'password' });
-const r = await platform.post(`/restapi/v1.0/glip/notes/${noteId}/unlock`);
-```
-
-
-You can get response json data by `const json = r.json()`
-
-- `json` is an object with [this definition](./definitions/GlipNoteInfo.yaml)
-
-[Try it out](https://developer.ringcentral.com/api-reference#Notes-unlockNote) in API Explorer.
-
 ## Get Person
 
 HTTP GET `/restapi/v1.0/glip/persons/{personId}`
@@ -12573,18 +12355,7 @@ const r = await platform.post('/restapi/v1.0/glip/posts', glipCreatePost);
           },
           "color": {
             "type": "string",
-            "description": "Hex color code specifying font color of Event title, including its presentation in Calendar; or the color of the side border of an interactive message of a Card",
-            "enum": [
-              "Black",
-              "Red",
-              "Orange",
-              "Yellow",
-              "Green",
-              "Blue",
-              "Purple",
-              "Magenta"
-            ],
-            "default": "Black"
+            "description": "Color of Event title, including its presentation in Calendar; or the color of the side border of an interactive message of a Card. The default color is 'Black'"
           },
           "intro": {
             "type": "string",
@@ -12705,7 +12476,7 @@ You can get response json data by `const json = r.json()`
 
 [Try it out](https://developer.ringcentral.com/api-reference#Posts-createPost) in API Explorer.
 
-## Get User Preferences
+## Get Preferences
 
 HTTP GET `/restapi/v1.0/glip/preferences`
 
@@ -12744,7 +12515,7 @@ const r = await platform.get('/restapi/v1.0/glip/recent/chats', listRecentChatsP
   "properties": {
     "type": {
       "in": "query",
-      "description": "Type of chats to be fetched (by default, all type of chats will be fetched).",
+      "description": "Type of chats to be fetched. By default all chat types are returned",
       "required": false,
       "type": "array",
       "collectionFormat": "multi",
@@ -12777,7 +12548,7 @@ You can get response json data by `const json = r.json()`
 
 [Try it out](https://developer.ringcentral.com/api-reference#Chats-listRecentChats) in API Explorer.
 
-## Get Team List
+## Get Teams
 
 HTTP GET `/restapi/v1.0/glip/teams`
 
@@ -12920,15 +12691,15 @@ const r = await platform.patch(`/restapi/v1.0/glip/teams/${chatId}`, glipPatchTe
   "properties": {
     "public": {
       "type": "boolean",
-      "description": "Team access level."
+      "description": "Team access level"
     },
     "name": {
       "type": "string",
-      "description": "Team name."
+      "description": "Team name. Maximum number of characters supported is 250"
     },
     "description": {
       "type": "string",
-      "description": "Team description."
+      "description": "Team description. Maximum number of characters supported is 1000"
     }
   }
 }
@@ -12980,7 +12751,7 @@ const r = await platform.post(`/restapi/v1.0/glip/teams/${chatId}/add`, glipPost
   ],
   "properties": {
     "members": {
-      "description": "Identifier(s) of chat members.",
+      "description": "Identifier(s) of chat member(s)",
       "type": "array",
       "items": {
         "type": "object",
@@ -12993,7 +12764,8 @@ const r = await platform.post(`/restapi/v1.0/glip/teams/${chatId}/add`, glipPost
             "type": "string",
             "description": "Email of a person"
           }
-        }
+        },
+        "description": "Conversation is opened"
       }
     }
   }
@@ -13055,7 +12827,7 @@ Response body is empty
 
 [Try it out](https://developer.ringcentral.com/api-reference#Chats-leaveGlipTeam) in API Explorer.
 
-## Remove Members from Team
+## Remove Team Members
 
 HTTP POST `/restapi/v1.0/glip/teams/{chatId}/remove`
 
@@ -13204,7 +12976,7 @@ Response body is empty
 
 [Try it out](https://developer.ringcentral.com/api-reference#Glip-Webhooks-suspendGlipWebhook) in API Explorer.
 
-## Parse Phone Number [Beta]
+## Parse Phone Number
 
 HTTP POST `/restapi/v1.0/number-parser/parse`
 
@@ -13261,6 +13033,51 @@ You can get response json data by `const json = r.json()`
 
 [Try it out](https://developer.ringcentral.com/api-reference#Account-Provisioning-parsePhoneNumber) in API Explorer.
 
+## Number Porting Verify
+
+HTTP POST `/restapi/v1.0/number-porting/verify-number`
+
+```js
+const SDK = require('ringcentral');
+const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
+const platform = rcsdk.platform();
+await platform.login({ username: 'username', extension: 'extension', password: 'password' });
+const r = await platform.post('/restapi/v1.0/number-porting/verify-number', numberPortingVerifyNumberRequest);
+```
+
+
+`numberPortingVerifyNumberRequest` is an object with the following definition:
+
+```yaml
+{
+  "type": "object",
+  "properties": {
+    "records": {
+      "type": "array",
+      "items": {
+        "properties": {
+          "phoneNumber": {
+            "type": "string",
+            "description": "Phone number to verify"
+          },
+          "isBillingNumber": {
+            "type": "boolean",
+            "description": "Is phone number billing phone number or not. Can be specified for one phone number only.",
+            "default": false
+          }
+        }
+      }
+    }
+  }
+}
+```
+
+You can get response json data by `const json = r.json()`
+
+- `json` is an object with [this definition](./definitions/NumberPortingVerifyNumberResponse.yaml)
+
+[Try it out](https://developer.ringcentral.com/api-reference#Number-Porting-numberPortingVerify) in API Explorer.
+
 ## Get Service Status
 
 HTTP GET `/restapi/v1.0/status`
@@ -13276,7 +13093,7 @@ const r = await platform.get('/restapi/v1.0/status');
 
 Response body is empty
 
-[Try it out](https://developer.ringcentral.com/api-reference#API-Info-loadAPIStatus) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#API-Info-readAPIStatus) in API Explorer.
 
 ## Get Subscriptions
 
@@ -13351,7 +13168,7 @@ const r = await platform.post('/restapi/v1.0/subscription', createSubscriptionRe
         },
         "certificateName": {
           "type": "string",
-          "description": "For 'PubNub/APNS' and 'PubNub/GCM' transport types. Name of a certificate"
+          "description": "For 'PubNub/APNS', 'APNS' and 'PubNub/GCM' transport types. Name of a certificate"
         },
         "registrationId": {
           "type": "string",
@@ -13450,7 +13267,7 @@ const r = await platform.put(`/restapi/v1.0/subscription/${subscriptionId}`, mod
         },
         "certificateName": {
           "type": "string",
-          "description": "For 'PubNub/APNS' and 'PubNub/GCM' transport types. Name of a certificate"
+          "description": "For 'PubNub/APNS', 'APNS' and 'PubNub/GCM' transport types. Name of a certificate"
         },
         "registrationId": {
           "type": "string",
@@ -13546,26 +13363,9 @@ You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/GetVersionResponse.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#API-Info-getApiVersion) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#API-Info-readAPIVersion) in API Explorer.
 
-## check health
-
-HTTP GET `/scim/health`
-
-```js
-const SDK = require('ringcentral');
-const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
-const platform = rcsdk.platform();
-await platform.login({ username: 'username', extension: 'extension', password: 'password' });
-const r = await platform.get('/scim/health');
-```
-
-
-Response body is empty
-
-[Try it out](https://developer.ringcentral.com/api-reference#SCIM-checkHealth) in API Explorer.
-
-## Get Service Provider Configuration
+## Get Service Provider Config
 
 HTTP GET `/scim/v2/ServiceProviderConfig`
 

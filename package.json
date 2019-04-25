@@ -2,8 +2,7 @@
   "license": "MIT",
   "scripts": {
     "generate": "rm definitions/* && node -r dotenv-override-true/config -r @babel/register index.js",
-    "json": "node -r dotenv-override-true/config -r @babel/register json.js",
-    "test": "node -r dotenv-override-true/config -r @babel/register utils.js"
+    "json": "node -r dotenv-override-true/config -r @babel/register json.js"
   },
   "dependencies": {
     "change-case": "^3.1.0",

@@ -125,11 +125,15 @@
               "type": "string"
             },
             "extensionId": {
-              "description": "Internal extension identifier",
+              "description": "Internal identifier of an extension",
               "type": "string"
             },
             "name": {
               "description": "Displayed name of a party",
+              "type": "string"
+            },
+            "deviceId": {
+              "description": "Internal identifier of a device",
               "type": "string"
             }
           }
@@ -142,11 +146,15 @@
               "type": "string"
             },
             "extensionId": {
-              "description": "Internal extension identifier",
+              "description": "Internal identifier of an extension",
               "type": "string"
             },
             "name": {
               "description": "Displayed name of a party",
+              "type": "string"
+            },
+            "deviceId": {
+              "description": "Internal identifier of a device",
               "type": "string"
             }
           }

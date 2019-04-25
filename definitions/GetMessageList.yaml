@@ -50,7 +50,7 @@
                 },
                 "vmDuration": {
                   "type": "integer",
-                  "description": "Voicemail only Duration of the voicemail in seconds"
+                  "description": "Supported for `Voicemail` only. Duration of a voicemail in seconds"
                 },
                 "filename": {
                   "type": "string",

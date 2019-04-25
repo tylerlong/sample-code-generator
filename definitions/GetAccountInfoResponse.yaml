@@ -410,11 +410,13 @@
                   "RCTeams",
                   "RingOut",
                   "SalesForce",
+                  "SharedLines",
                   "SingleExtensionUI",
                   "SiteCodes",
                   "SMS",
                   "SMSReceiving",
                   "SoftPhoneUpdate",
+                  "TelephonySessions",
                   "UserManagement",
                   "VideoConferencing",
                   "VoipCalling",
@@ -799,9 +801,47 @@
       "description": "Specifies whether an account is included into any federation of accounts or not",
       "type": "boolean"
     },
+    "outboundCallPrefix": {
+      "type": "integer",
+      "description": "If outbound call prefix is not specified, or set to null (0), then the parameter is not returned; the supported value range is 2-9"
+    },
     "cfid": {
       "type": "string",
       "description": "Customer facing identifier. Returned for accounts with the turned off PBX features. Equals to main company number in [E.164](https://www.itu.int/rec/T-REC-E.164-201011-I) (without '+' sign)format "
+    },
+    "limits": {
+      "description": "Limits which are effective for the account",
+      "properties": {
+        "freeSoftPhoneLinesPerExtension": {
+          "type": "integer",
+          "description": "Max number of free softphone phone lines per user extension"
+        },
+        "meetingSize": {
+          "type": "integer",
+          "description": "Max number of participants in RingCentral meeting hosted by this account's user"
+        },
+        "cloudRecordingStorage": {
+          "type": "integer",
+          "description": "Meetings recording cloud storage limitaion in Gb"
+        },
+        "maxMonitoredExtensionsPerUser": {
+          "type": "integer",
+          "description": "Max number of extensions which can be included in the list of users monitored for Presence"
+        },
+        "maxExtensionNumberLength": {
+          "type": "integer",
+          "description": "Max length of extension numbers of an account; the supported value is up to 8 symbols, depends on account type",
+          "default": 5
+        },
+        "siteCodeLength": {
+          "type": "integer",
+          "description": "Length of a site code"
+        },
+        "shortExtensionNumberLength": {
+          "type": "integer",
+          "description": "Length of a short extension number"
+        }
+      }
     }
   }
 }

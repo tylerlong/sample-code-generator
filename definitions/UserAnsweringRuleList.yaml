@@ -3,29 +3,27 @@
   "properties": {
     "uri": {
       "type": "string",
-      "description": "Link to an answering rule resource"
+      "description": "Canonical URI of an answering rule list resource",
+      "example": "https://platform.ringcentral.com/restapi/v1.0/account/240913004/extension/240972004/answering-rule?page=1&perPage=100"
     },
     "records": {
       "type": "array",
-      "description": "List of user answering rules",
+      "description": "List of answering rules",
       "items": {
         "properties": {
-          "id": {
-            "type": "string",
-            "description": "Internal identifier of an answering rule"
-          },
           "uri": {
             "type": "string",
-            "description": "Canonical URI of an answering rule"
+            "description": "Canonical URI to an answering rule resource",
+            "example": "https://platform.ringcentral.com/restapi/v1.0/account/240913004/extension/240972004/answering-rule/business-hours-rule"
           },
-          "enabled": {
-            "type": "boolean",
-            "description": "Specifies if the rule is active or inactive. The default value is 'True'",
-            "default": true
+          "id": {
+            "type": "string",
+            "description": "Internal identifier of an asnwering rule",
+            "example": "business-hours-rule"
           },
           "type": {
             "type": "string",
-            "description": "Type of an answering rule, the default value is 'Custom' = ['BusinessHours', 'AfterHours', 'Custom']",
+            "description": "Type of an answering rule",
             "enum": [
               "BusinessHours",
               "AfterHours",
@@ -34,72 +32,80 @@
           },
           "name": {
             "type": "string",
-            "description": "Name of an answering rule specified by user. Max number of symbols is 30. The default value is 'My Rule N' where 'N' is the first free number"
+            "description": "Name of an answering rule specified by user"
+          },
+          "enabled": {
+            "description": "Specifies if an answering rule is active or inactive",
+            "type": "boolean"
           }
         }
       }
     },
     "paging": {
-      "description": "Information on paging",
       "properties": {
         "page": {
           "type": "integer",
-          "description": "The current page number. 1-indexed, so the first page is 1 by default. May be omitted if result is empty (because non-existent page was specified or perPage=0 was requested)"
-        },
-        "perPage": {
-          "type": "integer",
-          "description": "Current page size, describes how many items are in each page. Default value is 100. Maximum value is 1000. If perPage value in the request is greater than 1000, the maximum value (1000) is applied"
-        },
-        "pageStart": {
-          "type": "integer",
-          "description": "The zero-based number of the first element on the current page. Omitted if the page is omitted or result is empty"
-        },
-        "pageEnd": {
-          "type": "integer",
-          "description": "The zero-based index of the last element on the current page. Omitted if the page is omitted or result is empty"
+          "description": "The current page number. 1-indexed, so the first page is 1 by default. May be omitted if result is empty (because non-existent page was specified or perPage=0 was requested)",
+          "example": 1
         },
         "totalPages": {
           "type": "integer",
-          "description": "The total number of pages in a dataset. May be omitted for some resources due to performance reasons"
+          "description": "The total number of pages in a dataset.",
+          "example": 1
+        },
+        "perPage": {
+          "type": "integer",
+          "description": "Current page size, describes how many items are in each page. Default value is 100. Maximum value is 1000. If perPage value in the request is greater than 1000, the maximum value (1000) is applied",
+          "example": 100
         },
         "totalElements": {
           "type": "integer",
-          "description": "The total number of elements in a dataset. May be omitted for some resource due to performance reasons"
+          "description": "The total number of elements in a dataset.",
+          "example": 1
+        },
+        "pageStart": {
+          "type": "integer",
+          "description": "The zero-based number of the first element on the current page. Omitted if the page is omitted or result is empty",
+          "example": 0
+        },
+        "pageEnd": {
+          "type": "integer",
+          "description": "The zero-based index of the last element on the current page. Omitted if the page is omitted or result is empty",
+          "example": 0
         }
       }
     },
     "navigation": {
-      "description": "Information on navigation",
       "properties": {
         "firstPage": {
-          "description": "Canonical URI for the first page of the list",
           "properties": {
             "uri": {
-              "type": "string"
+              "type": "string",
+              "example": "https://platform.ringcentral.com/restapi/v1.0/account/240913004/extension/240972004/answering-rule?page=1&perPage=100"
             }
           }
         },
         "nextPage": {
-          "description": "Canonical URI for the next page of the list",
           "properties": {
             "uri": {
-              "type": "string"
+              "type": "string",
+              "example": "https://platform.ringcentral.com/restapi/v1.0/account/240913004/extension/240972004/answering-rule?page=1&perPage=100"
             }
           }
         },
         "previousPage": {
-          "description": "Canonical URI for the previous page of the list",
           "properties": {
             "uri": {
-              "type": "string"
+              "type": "string",
+              "example": "https://platform.ringcentral.com/restapi/v1.0/account/240913004/extension/240972004/answering-rule?page=1&perPage=100"
             }
           }
         },
         "lastPage": {
-          "description": "Canonical URI for the last page of the list",
           "properties": {
             "uri": {
-              "type": "string"
+              "type": "string",
+              "example": "https://platform.ringcentral.com/restapi/v1.0/account/240913004/extension/240972004/answering-rule?page=1&perPage=100"
             }
           }
         }

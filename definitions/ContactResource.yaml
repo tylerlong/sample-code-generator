@@ -1,0 +1,131 @@
+{
+  "type": "object",
+  "properties": {
+    "account": {
+      "properties": {
+        "companyName": {
+          "type": "string"
+        },
+        "federatedName": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "mainNumber": {
+          "properties": {
+            "formattedPhoneNumber": {
+              "type": "string"
+            },
+            "phoneNumber": {
+              "type": "string"
+            },
+            "type": {
+              "type": "string"
+            },
+            "label": {
+              "type": "string",
+              "description": "Custom user name of a phone number, if any"
+            },
+            "usageType": {
+              "type": "string",
+              "enum": [
+                "MobileNumber",
+                "ContactNumber",
+                "DirectNumber",
+                "ForwardedNumber"
+              ],
+              "description": "Usage type of a phone number"
+            }
+          }
+        }
+      }
+    },
+    "department": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "extensionNumber": {
+      "type": "string"
+    },
+    "firstName": {
+      "type": "string",
+      "description": "First name of a contact, for user extensions only"
+    },
+    "lastName": {
+      "type": "string",
+      "description": "Last name of a contact, for user extensions only"
+    },
+    "name": {
+      "type": "string",
+      "description": "Name of a contact, for non-user extensions"
+    },
+    "id": {
+      "type": "string"
+    },
+    "jobTitle": {
+      "type": "string"
+    },
+    "phoneNumbers": {
+      "type": "array",
+      "items": {
+        "properties": {
+          "formattedPhoneNumber": {
+            "type": "string"
+          },
+          "phoneNumber": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          },
+          "label": {
+            "type": "string",
+            "description": "Custom user name of a phone number, if any"
+          },
+          "usageType": {
+            "type": "string",
+            "enum": [
+              "MobileNumber",
+              "ContactNumber",
+              "DirectNumber",
+              "ForwardedNumber"
+            ],
+            "description": "Usage type of a phone number"
+          }
+        }
+      }
+    },
+    "profileImage": {
+      "properties": {
+        "etag": {
+          "type": "string"
+        },
+        "uri": {
+          "type": "string"
+        }
+      }
+    },
+    "site": {
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "code": {
+          "type": "string"
+        }
+      }
+    },
+    "status": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string"
+    }
+  }
+}
