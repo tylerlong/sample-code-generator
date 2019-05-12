@@ -19,7 +19,7 @@ You can get response json data by `const json = r.json()`
 
 [Try it out](https://developer.ringcentral.com/api-reference#API-Info-readAPIVersions) in API Explorer.
 
-## Get Company Info
+## Get Account Info
 
 HTTP GET `/restapi/v1.0/account/{accountId}`
 
@@ -37,7 +37,7 @@ You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/GetAccountInfoResponse.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#Company-Settings-loadAccount) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Company-readAccountInfo) in API Explorer.
 
 ## Get Company Active Calls
 
@@ -437,9 +437,9 @@ You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/CompanyAnsweringRuleInfo.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#Call-Handling-Settings-createCompanyAnsweringRule) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Rule-Management-createCompanyAnsweringRule) in API Explorer.
 
-## Get Company Call Handling Rules
+## Get Company Call Handling Rule List
 
 HTTP GET `/restapi/v1.0/account/{accountId}/answering-rule`
 
@@ -457,7 +457,7 @@ You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/CompanyAnsweringRuleList.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#Call-Handling-Settings-listCompanyAnsweringRule) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Rule-Management-listCompanyAnsweringRules) in API Explorer.
 
 ## Get Company Call Handling Rule
 
@@ -477,7 +477,7 @@ You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/CompanyAnsweringRuleInfo.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#Call-Handling-Settings-loadCompanyAnsweringRule) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Rule-Management-readCompanyAnsweringRule) in API Explorer.
 
 ## Update Company Call Handling Rule
 
@@ -772,7 +772,7 @@ You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/CompanyAnsweringRuleInfo.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#Call-Handling-Settings-updateCompanyAnsweringRule) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Rule-Management-updateCompanyAnsweringRule) in API Explorer.
 
 ## Delete Company Call Handling Rule
 
@@ -790,9 +790,9 @@ const r = await platform.delete(`/restapi/v1.0/account/${accountId}/answering-ru
 
 Response body is empty
 
-[Try it out](https://developer.ringcentral.com/api-reference#Call-Handling-Settings-deleteCompanyAnsweringRule) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Rule-Management-deleteCompanyAnsweringRule) in API Explorer.
 
-## Get Company Business Address
+## Get Account Business Address
 
 HTTP GET `/restapi/v1.0/account/{accountId}/business-address`
 
@@ -810,7 +810,7 @@ You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/AccountBusinessAddressResource.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#Company-Settings-loadAccountBusinessAddress) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Company-readAccountBusinessAddress) in API Explorer.
 
 ## Update Company Business Address
 
@@ -876,7 +876,7 @@ You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/AccountBusinessAddressResource.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#Company-Settings-updateAccountBusinessAddress) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Company-updateAccountBusinessAddress) in API Explorer.
 
 ## Get Company Business Hours
 
@@ -896,7 +896,7 @@ You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/CompanyBusinessHours.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#Call-Handling-Settings-loadCompanyBusinessHours) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Business-Hours-readCompanyBusinessHours) in API Explorer.
 
 ## Update Company Business Hours
 
@@ -1083,7 +1083,7 @@ You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/CompanyBusinessHours.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#Call-Handling-Settings-updateCompanyBusinessHours) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Business-Hours-updateCompanyBusinessHours) in API Explorer.
 
 ## Get Company Call Log Records
 
@@ -1276,7 +1276,7 @@ You can get response json data by `const json = r.json()`
 
 [Try it out](https://developer.ringcentral.com/api-reference#Account-Provisioning-createCallMonitoringGroup) in API Explorer.
 
-## Get Call Monitoring Groups
+## Get Call Monitoring Groups List
 
 HTTP GET `/restapi/v1.0/account/{accountId}/call-monitoring-groups`
 
@@ -1365,7 +1365,7 @@ You can get response json data by `const json = r.json()`
 
 [Try it out](https://developer.ringcentral.com/api-reference#Account-Provisioning-updateCallMonitoringGroup) in API Explorer.
 
-## Remove Given Call Monitoring Group
+## Delete Call Monitoring Group
 
 HTTP DELETE `/restapi/v1.0/account/{accountId}/call-monitoring-groups/{groupId}`
 
@@ -1381,9 +1381,9 @@ const r = await platform.delete(`/restapi/v1.0/account/${accountId}/call-monitor
 
 Response body is empty
 
-[Try it out](https://developer.ringcentral.com/api-reference#Account-Provisioning-removeCallMonitoringGroup) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Account-Provisioning-deleteCallMonitoringGroup) in API Explorer.
 
-## Edit Call Monitoring Group
+## Update Call Monitoring Group List
 
 HTTP POST `/restapi/v1.0/account/{accountId}/call-monitoring-groups/{groupId}/bulk-assign`
 
@@ -1409,7 +1409,7 @@ const r = await platform.post(`/restapi/v1.0/account/${accountId}/call-monitorin
         "properties": {
           "id": {
             "type": "string",
-            "description": " Only the following extension types are allowed: User, DigitalUser, VirtualUser, FaxUser, Limited"
+            "description": "Only the following extension types are allowed: User, DigitalUser, VirtualUser, FaxUser, Limited"
           },
           "permissions": {
             "description": "Set of call monitoring group permissions granted to the specified extension. In order to remove the specified extension from a call monitoring group use an empty value",
@@ -1431,9 +1431,9 @@ const r = await platform.post(`/restapi/v1.0/account/${accountId}/call-monitorin
 
 Response body is empty
 
-[Try it out](https://developer.ringcentral.com/api-reference#Account-Provisioning-updateCallMonitoringGroups) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Account-Provisioning-updateCallMonitoringGroupList) in API Explorer.
 
-## Get Call Monitoring Group Members
+## Get Call Monitoring Group Member List
 
 HTTP GET `/restapi/v1.0/account/{accountId}/call-monitoring-groups/{groupId}/members`
 
@@ -1522,9 +1522,9 @@ You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/CallQueues.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#Account-Provisioning-listCallQueues) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Call-Queues-listCallQueues) in API Explorer.
 
-## Edit Call Queue Members
+## Assign Multiple Call Queue Members
 
 HTTP POST `/restapi/v1.0/account/{accountId}/call-queues/{groupId}/bulk-assign`
 
@@ -1562,7 +1562,7 @@ const r = await platform.post(`/restapi/v1.0/account/${accountId}/call-queues/${
 
 Response body is empty
 
-[Try it out](https://developer.ringcentral.com/api-reference#Account-Provisioning-assignCallQueueMembers) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Call-Queues-assignMultipleCallQueueMembers) in API Explorer.
 
 ## Get Call Queue Members
 
@@ -1605,7 +1605,7 @@ You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/CallQueueMembers.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#Account-Provisioning-listCallQueueMembers) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Call-Queues-listCallQueueMembers) in API Explorer.
 
 ## Get Call Recording Settings
 
@@ -1625,7 +1625,7 @@ You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/CallRecordingSettingsResource.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#Call-Handling-Settings-loadCallRecordingSettings) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Rule-Management-readCallRecordingSettings) in API Explorer.
 
 ## Update Call Recording Settings
 
@@ -1711,7 +1711,7 @@ You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/CallRecordingSettingsResource.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#Call-Handling-Settings-updateCallRecordingSettings) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Rule-Management-updateCallRecordingSettings) in API Explorer.
 
 ## Update Call Recording Extension List
 
@@ -1817,9 +1817,9 @@ const r = await platform.post(`/restapi/v1.0/account/${accountId}/call-recording
 
 Response body is empty
 
-[Try it out](https://developer.ringcentral.com/api-reference#Call-Handling-Settings-updateCallRecordingExtensionList) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Rule-Management-updateCallRecordingExtensionList) in API Explorer.
 
-## Get Call Recording Custom Greetings
+## Get Call Recording Custom Greeting List
 
 HTTP GET `/restapi/v1.0/account/{accountId}/call-recording/custom-greetings`
 
@@ -1856,9 +1856,9 @@ You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/CallRecordingCustomGreetings.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#Call-Handling-Settings-listCallRecordingCustomGreetings) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Rule-Management-listCallRecordingCustomGreetings) in API Explorer.
 
-## Delete Call Recording Custom Greetings
+## Delete Call Recording Custom Greeting List
 
 HTTP DELETE `/restapi/v1.0/account/{accountId}/call-recording/custom-greetings`
 
@@ -1874,7 +1874,7 @@ const r = await platform.delete(`/restapi/v1.0/account/${accountId}/call-recordi
 
 Response body is empty
 
-[Try it out](https://developer.ringcentral.com/api-reference#Call-Handling-Settings-deleteCallRecordingCustomGreetings) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Rule-Management-deleteCallRecordingCustomGreetingList) in API Explorer.
 
 ## Delete Call Recording Custom Greeting
 
@@ -1892,7 +1892,7 @@ const r = await platform.delete(`/restapi/v1.0/account/${accountId}/call-recordi
 
 Response body is empty
 
-[Try it out](https://developer.ringcentral.com/api-reference#Call-Handling-Settings-deleteCallRecordingCustomGreeting) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Rule-Management-deleteCallRecordingCustomGreeting) in API Explorer.
 
 ## Get Call Recording Extension List
 
@@ -1912,9 +1912,9 @@ You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/CallRecordingExtensions.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#Call-Handling-Settings-listCallRecordingExtensions) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Rule-Management-listCallRecordingExtensions) in API Explorer.
 
-## Edit Department Members
+## Assign Multiple Department Members
 
 HTTP POST `/restapi/v1.0/account/{accountId}/department/bulk-assign`
 
@@ -1962,7 +1962,7 @@ const r = await platform.post(`/restapi/v1.0/account/${accountId}/department/bul
 
 Response body is empty
 
-[Try it out](https://developer.ringcentral.com/api-reference#Account-Provisioning-bulkAssignDepartments) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Call-Queues-assignMultipleDepartmentMembers) in API Explorer.
 
 ## Get Department Member List
 
@@ -2005,9 +2005,9 @@ You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/DepartmentMemberList.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#Account-Provisioning-listDepartmentMembers) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Call-Queues-listDepartmentMembers) in API Explorer.
 
-## Get Device Info
+## Get Device
 
 HTTP GET `/restapi/v1.0/account/{accountId}/device/{deviceId}`
 
@@ -2016,12 +2016,12 @@ const SDK = require('ringcentral');
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
-const r = await platform.get(`/restapi/v1.0/account/${accountId}/device/${deviceId}`, loadAccountDeviceParameters);
+const r = await platform.get(`/restapi/v1.0/account/${accountId}/device/${deviceId}`, readDeviceParameters);
 ```
 
 - `accountId`'s default value is `~`
 
-`loadAccountDeviceParameters` is an **optional** object with the following definition:
+`readDeviceParameters` is an **optional** object with the following definition:
 
 ```yaml
 {
@@ -2040,7 +2040,7 @@ You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/GetDeviceInfoResponse.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#Account-Provisioning-loadAccountDevice) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Devices-readDevice) in API Explorer.
 
 ## Update Device
 
@@ -2133,7 +2133,7 @@ You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/DeviceResource.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#Account-Provisioning-updateDevice) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Devices-updateDevice) in API Explorer.
 
 ## Get Company Directory Entries
 
@@ -2207,7 +2207,7 @@ You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/DirectoryResource.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#Company-Contacts-listDirectoryEntries) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Internal-Contacts-listDirectoryEntries) in API Explorer.
 
 ## Search Company Directory Entries
 
@@ -2301,7 +2301,7 @@ You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/DirectoryResource.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#Company-Contacts-searchDirectoryEntries) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Internal-Contacts-searchDirectoryEntries) in API Explorer.
 
 ## Get Corporate Directory Entry
 
@@ -2321,7 +2321,7 @@ You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/ContactResource.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#Company-Contacts-readDirectoryEntry) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Internal-Contacts-readDirectoryEntry) in API Explorer.
 
 ## Get Account Federation
 
@@ -2341,7 +2341,7 @@ You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/FederationResource.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#Company-Contacts-readAccountFederation) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Internal-Contacts-readAccountFederation) in API Explorer.
 
 ## Get Extension List
 
@@ -2442,7 +2442,7 @@ You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/GetExtensionListResponse.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#Account-Provisioning-listExtensions) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Extensions-listExtensions) in API Explorer.
 
 ## Create Extension
 
@@ -2780,9 +2780,9 @@ You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/ExtensionCreationResponse.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#Account-Provisioning-createExtension) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Extensions-createExtension) in API Explorer.
 
-## Get Extension Info
+## Get Extension
 
 HTTP GET `/restapi/v1.0/account/{accountId}/extension/{extensionId}`
 
@@ -2801,7 +2801,7 @@ You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/GetExtensionInfoResponse.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#User-Settings-loadExtensionInfo) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#User-Settings-readExtension) in API Explorer.
 
 ## Update Extension
 
@@ -3219,7 +3219,7 @@ You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/AddressBookSync.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#User-Contacts-syncAddressBook) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#External-Contacts-syncAddressBook) in API Explorer.
 
 ## Get Contact List
 
@@ -3293,7 +3293,7 @@ You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/ContactList.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#User-Contacts-listContacts) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#External-Contacts-listContacts) in API Explorer.
 
 ## Create Contact
 
@@ -3531,7 +3531,7 @@ You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/PersonalContactResource.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#User-Contacts-createContact) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#External-Contacts-createContact) in API Explorer.
 
 ## Get Contact
 
@@ -3552,7 +3552,7 @@ You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/PersonalContactResource.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#User-Contacts-readContact) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#External-Contacts-readContact) in API Explorer.
 
 ## Update Contact
 
@@ -3790,7 +3790,7 @@ You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/PersonalContactResource.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#User-Contacts-updateContact) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#External-Contacts-updateContact) in API Explorer.
 
 ## Delete Contact
 
@@ -3809,7 +3809,7 @@ const r = await platform.delete(`/restapi/v1.0/account/${accountId}/extension/${
 
 Response body is empty
 
-[Try it out](https://developer.ringcentral.com/api-reference#User-Contacts-deleteContact) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#External-Contacts-deleteContact) in API Explorer.
 
 ## Get Call Handling Rules
 
@@ -3863,9 +3863,9 @@ You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/UserAnsweringRuleList.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#Call-Handling-Settings-listAnsweringRules) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Rule-Management-listAnsweringRules) in API Explorer.
 
-## Create Custom Call Handling Rules
+## Create Call Handling Rule
 
 HTTP POST `/restapi/v1.0/account/{accountId}/extension/{extensionId}/answering-rule`
 
@@ -4390,7 +4390,7 @@ You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/AnsweringRuleInfo.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#Call-Handling-Settings-createAnsweringRule) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Rule-Management-createAnsweringRule) in API Explorer.
 
 ## Get Call Handling Rule
 
@@ -4401,13 +4401,13 @@ const SDK = require('ringcentral');
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
-const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/answering-rule/${ruleId}`, loadAnsweringRuleParameters);
+const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/answering-rule/${ruleId}`, readAnsweringRuleParameters);
 ```
 
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-`loadAnsweringRuleParameters` is an **optional** object with the following definition:
+`readAnsweringRuleParameters` is an **optional** object with the following definition:
 
 ```yaml
 {
@@ -4427,9 +4427,9 @@ You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/AnsweringRuleInfo.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#Call-Handling-Settings-loadAnsweringRule) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Rule-Management-readAnsweringRule) in API Explorer.
 
-## Update Custom Call Handling Rule
+## Update Call Handling Rule
 
 HTTP PUT `/restapi/v1.0/account/{accountId}/extension/{extensionId}/answering-rule/{ruleId}`
 
@@ -4914,7 +4914,7 @@ You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/AnsweringRuleInfo.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#Call-Handling-Settings-updateAnsweringRule) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Rule-Management-updateAnsweringRule) in API Explorer.
 
 ## Delete Call Handling Rule
 
@@ -4933,9 +4933,9 @@ const r = await platform.delete(`/restapi/v1.0/account/${accountId}/extension/${
 
 Response body is empty
 
-[Try it out](https://developer.ringcentral.com/api-reference#Call-Handling-Settings-deleteAnsweringRule) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Rule-Management-deleteAnsweringRule) in API Explorer.
 
-## Get User Permissions
+## Get Authorization Profile
 
 HTTP GET `/restapi/v1.0/account/{accountId}/extension/{extensionId}/authz-profile`
 
@@ -4954,9 +4954,9 @@ You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/AuthProfileResource.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#Authorization-Profile-getAuthorizationProfile) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#User-Permissions-readAuthorizationProfile) in API Explorer.
 
-## Check User Permissions
+## Check User Permission
 
 HTTP GET `/restapi/v1.0/account/{accountId}/extension/{extensionId}/authz-profile/check`
 
@@ -4994,7 +4994,7 @@ You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/AuthProfileCheckResource.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#Authorization-Profile-checkUserPermission) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#User-Permissions-checkUserPermission) in API Explorer.
 
 ## Get User Business Hours
 
@@ -5015,7 +5015,7 @@ You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/GetUserBusinessHoursResponse.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#Call-Handling-Settings-loadUserBusinessHours) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Business-Hours-readUserBusinessHours) in API Explorer.
 
 ## Update User Business Hours
 
@@ -5171,7 +5171,7 @@ You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/UserBusinessHoursUpdateResponse.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#Call-Handling-Settings-updateUserBusinessHours) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Business-Hours-updateUserBusinessHours) in API Explorer.
 
 ## Get User Call Log Records
 
@@ -5565,7 +5565,7 @@ You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/CallerBlockingSettings.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#Call-Handling-Settings-loadCallBlockingSettings) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Call-Blocking-readCallerBlockingSettings) in API Explorer.
 
 ## Update Caller Blocking Settings
 
@@ -5650,9 +5650,9 @@ You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/CallerBlockingSettings.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#Call-Handling-Settings-updateCallBlockingSettings) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Call-Blocking-updateCallerBlockingSettings) in API Explorer.
 
-## Get Blocked/Allowed Numbers
+## Get Blocked/Allowed Phone Numbers
 
 HTTP GET `/restapi/v1.0/account/{accountId}/extension/{extensionId}/caller-blocking/phone-numbers`
 
@@ -5661,13 +5661,13 @@ const SDK = require('ringcentral');
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
-const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/caller-blocking/phone-numbers`, listBlockedAllowedPhoneNumberParameters);
+const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/caller-blocking/phone-numbers`, listBlockedAllowedNumbersParameters);
 ```
 
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-`listBlockedAllowedPhoneNumberParameters` is an **optional** object with the following definition:
+`listBlockedAllowedNumbersParameters` is an **optional** object with the following definition:
 
 ```yaml
 {
@@ -5699,7 +5699,7 @@ You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/BlockedAllowedPhoneNumbersList.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#Call-Handling-Settings-listBlockedAllowedPhoneNumber) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Call-Blocking-listBlockedAllowedNumbers) in API Explorer.
 
 ## Add Blocked/Allowed Number
 
@@ -5748,7 +5748,7 @@ You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/BlockedAllowedPhoneNumberInfo.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#Call-Handling-Settings-createBlockedAllowedPhoneNumberList) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Call-Blocking-createBlockedAllowedNumber) in API Explorer.
 
 ## Get Blocked/Allowed Number
 
@@ -5769,9 +5769,9 @@ You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/BlockedAllowedPhoneNumberInfo.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#Call-Handling-Settings-loadBlockedAllowedPhoneNumber) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Call-Blocking-readBlockedAllowedNumber) in API Explorer.
 
-## Delete Blocked Number
+## Delete Blocked/Allowed Number
 
 HTTP DELETE `/restapi/v1.0/account/{accountId}/extension/{extensionId}/caller-blocking/phone-numbers/{blockedNumberId}`
 
@@ -5788,7 +5788,7 @@ const r = await platform.delete(`/restapi/v1.0/account/${accountId}/extension/${
 
 Response body is empty
 
-[Try it out](https://developer.ringcentral.com/api-reference#Call-Handling-Settings-deleteBlockedAllowedPhoneNumber) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Call-Blocking-deleteBlockedAllowedNumber) in API Explorer.
 
 ## Update Blocked/Allowed Number
 
@@ -5837,7 +5837,7 @@ You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/BlockedAllowedPhoneNumberInfo.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#Call-Handling-Settings-updateBlockedAllowedPhoneNumber) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Call-Blocking-updateBlockedAllowedNumber) in API Explorer.
 
 ## Get Extension Caller ID
 
@@ -5858,7 +5858,7 @@ You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/ExtensionCallerIdInfo.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#User-Settings-loadExtensionCallerId) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#User-Settings-readExtensionCallerId) in API Explorer.
 
 ## Update Extension Caller ID
 
@@ -6062,7 +6062,7 @@ You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/GetMessageInfoResponse.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#Internal-Messages-createInternalTextMessage) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Pager-Messages-createInternalTextMessage) in API Explorer.
 
 ## Get User Conferencing Settings
 
@@ -6073,13 +6073,13 @@ const SDK = require('ringcentral');
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
-const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/conferencing`, loadConferencingInfoParameters);
+const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/conferencing`, readConferencingSettingsParameters);
 ```
 
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-`loadConferencingInfoParameters` is an **optional** object with the following definition:
+`readConferencingSettingsParameters` is an **optional** object with the following definition:
 
 ```yaml
 {
@@ -6098,7 +6098,7 @@ You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/GetConferencingInfoResponse.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#User-Settings-loadConferencingInfo) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#User-Settings-readConferencingSettings) in API Explorer.
 
 ## Update User Conferencing Settings
 
@@ -6149,9 +6149,9 @@ You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/GetConferencingInfoResponse.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#User-Settings-updateConferencingInfo) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#User-Settings-updateConferencingSettings) in API Explorer.
 
-## Get User Device Info
+## Get Extension Device List
 
 HTTP GET `/restapi/v1.0/account/{accountId}/extension/{extensionId}/device`
 
@@ -6201,7 +6201,7 @@ You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/GetExtensionDevicesResponse.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#Account-Provisioning-listExtensionDevices) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Devices-listExtensionDevices) in API Explorer.
 
 ## Get Favorite Contact List
 
@@ -6220,7 +6220,7 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${ext
 
 Response body is empty
 
-[Try it out](https://developer.ringcentral.com/api-reference#User-Contacts-listFavoriteContacts) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#External-Contacts-listFavoriteContacts) in API Explorer.
 
 ## Update Favorite Contact List
 
@@ -6273,7 +6273,7 @@ const r = await platform.put(`/restapi/v1.0/account/${accountId}/extension/${ext
 
 Response body is empty
 
-[Try it out](https://developer.ringcentral.com/api-reference#User-Contacts-updateFavoriteContactList) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#External-Contacts-updateFavoriteContactList) in API Explorer.
 
 ## Create Fax Message
 
@@ -6355,7 +6355,7 @@ You can get response json data by `const json = r.json()`
 
 [Try it out](https://developer.ringcentral.com/api-reference#Fax-createFaxMessage) in API Explorer.
 
-## Get Forwarding Numbers
+## Get Forwarding Number List
 
 HTTP GET `/restapi/v1.0/account/{accountId}/extension/{extensionId}/forwarding-number`
 
@@ -6364,13 +6364,13 @@ const SDK = require('ringcentral');
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
-const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/forwarding-number`, listExtensionForwardingNumbersParameters);
+const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${extensionId}/forwarding-number`, listForwardingNumbersParameters);
 ```
 
 - `accountId`'s default value is `~`
 - `extensionId`'s default value is `~`
 
-`listExtensionForwardingNumbersParameters` is an **optional** object with the following definition:
+`listForwardingNumbersParameters` is an **optional** object with the following definition:
 
 ```yaml
 {
@@ -6397,9 +6397,9 @@ You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/GetExtensionForwardingNumberListResponse.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#Call-Handling-Settings-listExtensionForwardingNumbers) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Call-Forwarding-listForwardingNumbers) in API Explorer.
 
-## Create Forwarding Numbers
+## Create Forwarding Number
 
 HTTP POST `/restapi/v1.0/account/{accountId}/extension/{extensionId}/forwarding-number`
 
@@ -6456,7 +6456,7 @@ You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/ForwardingNumberInfo.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#Call-Handling-Settings-createExtensionForwardingNumber) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Call-Forwarding-createForwardingNumber) in API Explorer.
 
 ## Get Forwarding Number
 
@@ -6477,9 +6477,9 @@ You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/ForwardingNumberResource.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#Call-Handling-Settings-loadExtensionForwardingNumber) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Call-Forwarding-readForwardingNumber) in API Explorer.
 
-## Update Forwarding Numbers
+## Update Forwarding Number
 
 HTTP PUT `/restapi/v1.0/account/{accountId}/extension/{extensionId}/forwarding-number/{forwardingNumberId}`
 
@@ -6532,7 +6532,7 @@ You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/ForwardingNumberInfo.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#Call-Handling-Settings-updateExtensionForwardingNumber) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Call-Forwarding-updateForwardingNumber) in API Explorer.
 
 ## Delete Forwarding Number
 
@@ -6551,9 +6551,9 @@ const r = await platform.delete(`/restapi/v1.0/account/${accountId}/extension/${
 
 Response body is empty
 
-[Try it out](https://developer.ringcentral.com/api-reference#Call-Handling-Settings-deleteExtensionForwardingNumber) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Call-Forwarding-deleteForwardingNumber) in API Explorer.
 
-## Get Extension Grants
+## Get Extension Grant List
 
 HTTP GET `/restapi/v1.0/account/{accountId}/extension/{extensionId}/grant`
 
@@ -6595,7 +6595,7 @@ You can get response json data by `const json = r.json()`
 
 [Try it out](https://developer.ringcentral.com/api-reference#User-Settings-listExtensionGrants) in API Explorer.
 
-## Create User Custom Greeting
+## Create Custom User Greeting
 
 HTTP POST `/restapi/v1.0/account/{accountId}/extension/{extensionId}/greeting`
 
@@ -6650,9 +6650,9 @@ You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/CustomUserGreetingInfo.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#Call-Handling-Settings-createUserCustomGreeting) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Rule-Management-createCustomUserGreeting) in API Explorer.
 
-## Get Custom Greeting Info
+## Get Custom Greeting
 
 HTTP GET `/restapi/v1.0/account/{accountId}/extension/{extensionId}/greeting/{greetingId}`
 
@@ -6671,7 +6671,7 @@ You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/CustomUserGreetingInfo.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#Call-Handling-Settings-loadCustomGreeting) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Rule-Management-readCustomGreeting) in API Explorer.
 
 ## Get Scheduled Meetings
 
@@ -6692,7 +6692,7 @@ You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/MeetingsResource.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#Upcoming-Meetings-listMeetings) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Meeting-Mgmt.-listMeetings) in API Explorer.
 
 ## Create Meetings
 
@@ -6789,7 +6789,7 @@ You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/MeetingResponseResource.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#Upcoming-Meetings-createMeeting) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Meeting-Mgmt.-createMeeting) in API Explorer.
 
 ## Get Meeting Service Info
 
@@ -6810,7 +6810,7 @@ You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/MeetingServiceInfoResource.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#Meetings-Configuration-loadMeetingServiceInfo) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Meetings-Config-readMeetingServiceInfo) in API Explorer.
 
 ## Get Meeting Info
 
@@ -6831,7 +6831,7 @@ You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/MeetingResponseResource.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#Upcoming-Meetings-loadMeeting) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Meeting-Mgmt.-readMeeting) in API Explorer.
 
 ## Update Meeting
 
@@ -6928,7 +6928,7 @@ You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/MeetingResponseResource.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#Upcoming-Meetings-updateMeeting) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Meeting-Mgmt.-updateMeeting) in API Explorer.
 
 ## Delete Meeting
 
@@ -6947,7 +6947,7 @@ const r = await platform.delete(`/restapi/v1.0/account/${accountId}/extension/${
 
 Response body is empty
 
-[Try it out](https://developer.ringcentral.com/api-reference#Upcoming-Meetings-deleteMeeting) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Meeting-Mgmt.-deleteMeeting) in API Explorer.
 
 ## End Meeting
 
@@ -6966,7 +6966,7 @@ const r = await platform.post(`/restapi/v1.0/account/${accountId}/extension/${ex
 
 Response body is empty
 
-[Try it out](https://developer.ringcentral.com/api-reference#Active-Meetings-endMeeting) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Meeting-Control-endMeeting) in API Explorer.
 
 ## Get Assistants
 
@@ -6987,7 +6987,7 @@ You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/AssistantsResource.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#Meetings-Configuration-loadAssistants) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Meetings-Config-readAssistants) in API Explorer.
 
 ## Get Assisted Users
 
@@ -7008,7 +7008,7 @@ You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/AssistedUsersResource.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#Meetings-Configuration-loadAssistedUsers) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Meetings-Config-readAssistedUsers) in API Explorer.
 
 ## Get Message List
 
@@ -7144,7 +7144,7 @@ You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/GetMessageList.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#Fax-listMessages) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Message-Store-listMessages) in API Explorer.
 
 ## Delete Conversation
 
@@ -7203,7 +7203,7 @@ const r = await platform.delete(`/restapi/v1.0/account/${accountId}/extension/${
 
 Response body is empty
 
-[Try it out](https://developer.ringcentral.com/api-reference#Fax-deleteMessageByFilter) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Message-Store-deleteMessageByFilter) in API Explorer.
 
 ## Get Message
 
@@ -7224,7 +7224,7 @@ You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/GetMessageInfoResponse.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#Fax-readMessage) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Message-Store-readMessage) in API Explorer.
 
 ## Update Message(s)
 
@@ -7263,7 +7263,7 @@ You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/GetMessageInfoResponse.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#Fax-updateMessage) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Message-Store-updateMessage) in API Explorer.
 
 ## Delete Message
 
@@ -7304,7 +7304,7 @@ const r = await platform.delete(`/restapi/v1.0/account/${accountId}/extension/${
 
 Response body is empty
 
-[Try it out](https://developer.ringcentral.com/api-reference#Fax-deleteMessage) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Message-Store-deleteMessage) in API Explorer.
 
 ## Get Message Content
 
@@ -7343,7 +7343,7 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${ext
 
 You can get response binary data by `const buffer = await r.response().buffer()`
 
-[Try it out](https://developer.ringcentral.com/api-reference#Fax-readMessageContent) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Message-Store-readMessageContent) in API Explorer.
 
 ## Sync Messages
 
@@ -7456,7 +7456,7 @@ You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/GetMessageSyncResponse.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#Fax-syncMessages) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Message-Store-syncMessages) in API Explorer.
 
 ## Get Notification Settings
 
@@ -7477,7 +7477,7 @@ You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/NotificationSettings.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#User-Settings-loadNotificationSettings) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#User-Settings-readNotificationSettings) in API Explorer.
 
 ## Update Notification Settings
 
@@ -7928,7 +7928,7 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${ext
 
 You can get response binary data by `const buffer = await r.response().buffer()`
 
-[Try it out](https://developer.ringcentral.com/api-reference#User-Settings-loadProfileImage) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#User-Settings-readUserProfileImage) in API Explorer.
 
 ## Upload User Profile Image
 
@@ -7950,7 +7950,7 @@ const r = await platform.post(`/restapi/v1.0/account/${accountId}/extension/${ex
 
 Response body is empty
 
-[Try it out](https://developer.ringcentral.com/api-reference#User-Settings-createProfileImage) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#User-Settings-createUserProfileImage) in API Explorer.
 
 ## Update User Profile Image
 
@@ -7972,9 +7972,9 @@ const r = await platform.put(`/restapi/v1.0/account/${accountId}/extension/${ext
 
 Response body is empty
 
-[Try it out](https://developer.ringcentral.com/api-reference#User-Settings-updateProfileImage) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#User-Settings-updateUserProfileImage) in API Explorer.
 
-## Get User Profile Image (Scaled)
+## Get Scaled User Profile Image
 
 HTTP GET `/restapi/v1.0/account/{accountId}/extension/{extensionId}/profile-image/{scaleSize}`
 
@@ -7991,7 +7991,7 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/extension/${ext
 
 You can get response binary data by `const buffer = await r.response().buffer()`
 
-[Try it out](https://developer.ringcentral.com/api-reference#User-Settings-loadScaledPofileImage) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#User-Settings-readScaledPofileImage) in API Explorer.
 
 ## Make RingOut Call
 
@@ -8290,9 +8290,9 @@ You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/GetMessageInfoResponse.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#SMS-and-MMS-createSMSMessage) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#SMS-createSMSMessage) in API Explorer.
 
-## Create Custom Company Greeting
+## Create Company Greeting
 
 HTTP POST `/restapi/v1.0/account/{accountId}/greeting`
 
@@ -8343,7 +8343,7 @@ You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/CustomCompanyGreetingInfo.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#Call-Handling-Settings-createCompanyGreeting) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Rule-Management-createCompanyGreeting) in API Explorer.
 
 ## Create IVR Menu
 
@@ -8483,7 +8483,7 @@ You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/IVRMenuInfo.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#Call-Handling-Settings-createIvrMenu) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Call-Routing-createIVRMenu) in API Explorer.
 
 ## Get IVR Menu
 
@@ -8503,7 +8503,7 @@ You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/IVRMenuInfo.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#Call-Handling-Settings-loadIvrMenu) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Call-Routing-readIVRMenu) in API Explorer.
 
 ## Update IVR Menu
 
@@ -8643,7 +8643,7 @@ You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/IVRMenuInfo.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#Call-Handling-Settings-updateIvrMenu) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Call-Routing-updateIVRMenu) in API Explorer.
 
 ## Create IVR Prompts
 
@@ -8682,9 +8682,9 @@ You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/PromptInfo.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#Call-Handling-Settings-createIvrPrompt) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Call-Routing-createIVRPrompt) in API Explorer.
 
-## Get IVR Prompts
+## Get IVR Prompt List
 
 HTTP GET `/restapi/v1.0/account/{accountId}/ivr-prompts`
 
@@ -8702,7 +8702,7 @@ You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/IVRPrompts.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#Call-Handling-Settings-listIvrPrompts) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Call-Routing-listIVRPrompts) in API Explorer.
 
 ## Get IVR Prompt
 
@@ -8722,7 +8722,7 @@ You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/PromptInfo.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#Call-Handling-Settings-loadIvrPrompt) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Call-Routing-readIVRPrompt) in API Explorer.
 
 ## Delete IVR Prompt
 
@@ -8740,7 +8740,7 @@ const r = await platform.delete(`/restapi/v1.0/account/${accountId}/ivr-prompts/
 
 Response body is empty
 
-[Try it out](https://developer.ringcentral.com/api-reference#Call-Handling-Settings-deleteIvrPrompt) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Call-Routing-deleteIVRPrompt) in API Explorer.
 
 ## Update IVR Prompt
 
@@ -8758,7 +8758,7 @@ const r = await platform.put(`/restapi/v1.0/account/${accountId}/ivr-prompts/${p
 
 Response body is empty
 
-[Try it out](https://developer.ringcentral.com/api-reference#Call-Handling-Settings-updateIvrPrompt) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Call-Routing-updateIVRPrompt) in API Explorer.
 
 ## Get IVR Prompt Content
 
@@ -8776,7 +8776,7 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/ivr-prompts/${p
 
 Response body is empty
 
-[Try it out](https://developer.ringcentral.com/api-reference#Call-Handling-Settings-loadIvrPromptContent) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Call-Routing-readIVRPromptContent) in API Explorer.
 
 ## Get Message Store Configuration
 
@@ -8796,7 +8796,7 @@ You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/MessageStoreConfiguration.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#Message-Store-Configuration-readMessageStoreConfiguration) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Message-Store-readMessageStoreConfiguration) in API Explorer.
 
 ## Update Message Store Configuration
 
@@ -8832,7 +8832,7 @@ You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/MessageStoreConfiguration.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#Message-Store-Configuration-updateMessageStoreConfiguration) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Message-Store-updateMessageStoreConfiguration) in API Explorer.
 
 ## Create Message Store Report
 
@@ -8890,7 +8890,7 @@ You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/MessageStoreReport.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#Message-Exports-loadMessageStoreReportTask) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Message-Exports-readMessageStoreReportTask) in API Explorer.
 
 ## Get Message Store Report Archive
 
@@ -8910,7 +8910,7 @@ You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/MessageStoreReportArchive.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#Message-Exports-loadMessageStoreReportArchive) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Message-Exports-readMessageStoreReportArchive) in API Explorer.
 
 ## Get Message Store Report Archive Content
 
@@ -8928,9 +8928,9 @@ const r = await platform.get(`/restapi/v1.0/account/${accountId}/message-store-r
 
 Response body is empty
 
-[Try it out](https://developer.ringcentral.com/api-reference#Message-Exports-loadMessageStoreReportArchiveContent) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Message-Exports-readMessageStoreReportArchiveContent) in API Explorer.
 
-## Edit Paging Group Users and Devices
+## Assign Paging Group Users and Devices
 
 HTTP POST `/restapi/v1.0/account/{accountId}/paging-only-groups/{pagingOnlyGroupId}/bulk-assign`
 
@@ -8984,9 +8984,9 @@ const r = await platform.post(`/restapi/v1.0/account/${accountId}/paging-only-gr
 
 Response body is empty
 
-[Try it out](https://developer.ringcentral.com/api-reference#Account-Provisioning-bulkAssignPagingGroup) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Paging-Only-Groups-assignMultiplePagingGroupUsersDevices) in API Explorer.
 
-## Get Paging Only Group Devices
+## Get Paging Group Devices
 
 HTTP GET `/restapi/v1.0/account/{accountId}/paging-only-groups/{pagingOnlyGroupId}/devices`
 
@@ -9027,9 +9027,9 @@ You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/PagingOnlyGroupDevices.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#Account-Provisioning-listPagingGroupDevices) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Paging-Only-Groups-listPagingGroupDevices) in API Explorer.
 
-## Get Paging Only Group Users
+## Get Paging Group Users
 
 HTTP GET `/restapi/v1.0/account/{accountId}/paging-only-groups/{pagingOnlyGroupId}/users`
 
@@ -9070,7 +9070,7 @@ You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/PagingOnlyGroupUsers.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#Account-Provisioning-listPagingGroupUsers) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Paging-Only-Groups-listPagingGroupUsers) in API Explorer.
 
 ## Get Company Phone Number List
 
@@ -9155,7 +9155,7 @@ You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/CompanyPhoneNumberInfo.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#Phone-Numbers-loadAccountPhoneNumber) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Phone-Numbers-readAccountPhoneNumber) in API Explorer.
 
 ## Get User Presence Status List
 
@@ -9268,7 +9268,7 @@ You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/GetServiceInfoResponse.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#Company-Settings-loadServiceInfo) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Company-readAcountServiceInfo) in API Explorer.
 
 ## Create CallOut Call Session
 
@@ -9336,12 +9336,12 @@ const SDK = require('ringcentral');
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
-const r = await platform.get(`/restapi/v1.0/account/${accountId}/telephony/sessions/${sessionId}`, getCallSessionStatusParameters);
+const r = await platform.get(`/restapi/v1.0/account/${accountId}/telephony/sessions/${sessionId}`, readCallSessionStatusParameters);
 ```
 
 - `accountId`'s default value is `~`
 
-`getCallSessionStatusParameters` is an **optional** object with the following definition:
+`readCallSessionStatusParameters` is an **optional** object with the following definition:
 
 ```yaml
 {
@@ -9366,7 +9366,7 @@ You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/CallSessionObject.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#Call-Control-getCallSessionStatus) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Call-Control-readCallSessionStatus) in API Explorer.
 
 ## Drop Call Session
 
@@ -9404,7 +9404,7 @@ You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/CallParty.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#Call-Control-getCallPartyStatus) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Call-Control-readCallPartyStatus) in API Explorer.
 
 ## Update Call Party
 
@@ -9740,7 +9740,7 @@ You can get response json data by `const json = r.json()`
 
 [Try it out](https://developer.ringcentral.com/api-reference#Call-Control-superviseCallSession) in API Explorer.
 
-## Get User Templates
+## Get User Template List
 
 HTTP GET `/restapi/v1.0/account/{accountId}/templates`
 
@@ -9783,7 +9783,7 @@ You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/UserTemplates.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#Account-Provisioning-listUserTemplates) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Extensions-listUserTemplates) in API Explorer.
 
 ## Get User Template
 
@@ -9803,7 +9803,7 @@ You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/TemplateInfo.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#Account-Provisioning-loadUserTemplate) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Extensions-readUserTemplate) in API Explorer.
 
 ## Register SIP Device
 
@@ -9875,7 +9875,7 @@ You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/CreateSipRegistrationResponse.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#Application-Settings-createSipRegistration) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#SIP-createSIPRegistration) in API Explorer.
 
 ## Get Country List
 
@@ -9960,7 +9960,7 @@ You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/GetCountryInfoDictionaryResponse.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#Regional-Settings-loadCountry) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Regional-Settings-readCountry) in API Explorer.
 
 ## Get Fax Cover Page List
 
@@ -10004,7 +10004,7 @@ You can get response json data by `const json = r.json()`
 
 [Try it out](https://developer.ringcentral.com/api-reference#Fax-listFaxCoverPages) in API Explorer.
 
-## Get Standard Greetings
+## Get Standard Greeting List
 
 HTTP GET `/restapi/v1.0/dictionary/greeting`
 
@@ -10074,9 +10074,9 @@ You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/DictionaryGreetingList.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#Call-Handling-Settings-listStandardGreetings) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Rule-Management-listStandardGreetings) in API Explorer.
 
-## Get Greeting Info
+## Get Standard Greeting
 
 HTTP GET `/restapi/v1.0/dictionary/greeting/{greetingId}`
 
@@ -10093,7 +10093,7 @@ You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/DictionaryGreetingInfo.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#Call-Handling-Settings-loadStandardGreeting) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Rule-Management-readStandardGreeting) in API Explorer.
 
 ## Get Language List
 
@@ -10131,7 +10131,7 @@ You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/LanguageInfo.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#Regional-Settings-loadLanguage) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Regional-Settings-readLanguage) in API Explorer.
 
 ## Get Location List
 
@@ -10198,7 +10198,7 @@ You can get response json data by `const json = r.json()`
 
 [Try it out](https://developer.ringcentral.com/api-reference#Regional-Settings-listLocations) in API Explorer.
 
-## Get State List
+## Get States List
 
 HTTP GET `/restapi/v1.0/dictionary/state`
 
@@ -10276,7 +10276,7 @@ You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/GetStateInfoResponse.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#Regional-Settings-loadState) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Regional-Settings-readState) in API Explorer.
 
 ## Get Timezone List
 
@@ -10329,11 +10329,11 @@ const SDK = require('ringcentral');
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
-const r = await platform.get(`/restapi/v1.0/dictionary/timezone/${timezoneId}`, loadTimezoneParameters);
+const r = await platform.get(`/restapi/v1.0/dictionary/timezone/${timezoneId}`, readTimezoneParameters);
 ```
 
 
-`loadTimezoneParameters` is an **optional** object with the following definition:
+`readTimezoneParameters` is an **optional** object with the following definition:
 
 ```yaml
 {
@@ -10360,7 +10360,7 @@ You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/GetTimezoneInfoResponse.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#Regional-Settings-loadTimezone) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Regional-Settings-readTimezone) in API Explorer.
 
 ## Create Card
 
@@ -10549,7 +10549,7 @@ You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/GlipMessageAttachmentInfo.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#Posts-loadGlipCard) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Posts-readGlipCard) in API Explorer.
 
 ## Update Card
 
@@ -10798,7 +10798,7 @@ You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/GlipChatInfo.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#Chats-loadGlipChat) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Chats-readGlipChat) in API Explorer.
 
 ## Add Chat to Favorites
 
@@ -10826,11 +10826,11 @@ const SDK = require('ringcentral');
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
-const r = await platform.get(`/restapi/v1.0/glip/chats/${chatId}/posts`, loadGlipPostsParameters);
+const r = await platform.get(`/restapi/v1.0/glip/chats/${chatId}/posts`, readGlipPostsParameters);
 ```
 
 
-`loadGlipPostsParameters` is an **optional** object with the following definition:
+`readGlipPostsParameters` is an **optional** object with the following definition:
 
 ```yaml
 {
@@ -10857,7 +10857,7 @@ You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/GlipPostsList.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#Posts-loadGlipPosts) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Posts-readGlipPosts) in API Explorer.
 
 ## Create Post
 
@@ -10929,7 +10929,7 @@ You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/GlipPostInfo.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#Posts-loadGlipPost) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Posts-readGlipPost) in API Explorer.
 
 ## Update Post
 
@@ -10962,7 +10962,7 @@ You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/GlipPostInfo.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#Posts-updateGlipPost) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Posts-patchGlipPost) in API Explorer.
 
 ## Delete Post
 
@@ -11049,7 +11049,7 @@ You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/GlipCompany.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#Glip-Profile-loadGlipCompany) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Glip-Profile-readGlipCompany) in API Explorer.
 
 ## Get Conversations
 
@@ -11159,7 +11159,7 @@ You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/GlipConversationInfo.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#Chats-loadGlipConversation) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Chats-readGlipConversation) in API Explorer.
 
 ## Create Data Export Task
 
@@ -11229,7 +11229,7 @@ You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/DataExportTask.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#Glip-Compliance-Exports-loadDataExportTask) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Glip-Compliance-Exports-readDataExportTask) in API Explorer.
 
 ## Get Glip Data Archive
 
@@ -11246,7 +11246,7 @@ const r = await platform.get(`/restapi/v1.0/glip/data-export/${taskId}/archive/$
 
 Response body is empty
 
-[Try it out](https://developer.ringcentral.com/api-reference#Glip-Compliance-Exports-getComplianceArchiveStream) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Glip-Compliance-Exports-readComplianceArchive) in API Explorer.
 
 ## Get User Events List
 
@@ -11257,11 +11257,11 @@ const SDK = require('ringcentral');
 const rcsdk = new SDK({server: 'serverURL', appKey: 'clientId', appSecret: 'clientSecret'});
 const platform = rcsdk.platform();
 await platform.login({ username: 'username', extension: 'extension', password: 'password' });
-const r = await platform.get('/restapi/v1.0/glip/events', loadGlipEventsParameters);
+const r = await platform.get('/restapi/v1.0/glip/events', readGlipEventsParameters);
 ```
 
 
-`loadGlipEventsParameters` is an **optional** object with the following definition:
+`readGlipEventsParameters` is an **optional** object with the following definition:
 
 ```yaml
 {
@@ -11288,7 +11288,7 @@ You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/GlipEventsInfo.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#Events-loadGlipEvents) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Events-readGlipEvents) in API Explorer.
 
 ## Create Event
 
@@ -11419,7 +11419,7 @@ You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/GlipEventInfo.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#Events-loadEvent) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Events-readEvent) in API Explorer.
 
 ## Update Event
 
@@ -11567,7 +11567,7 @@ You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/GlipEveryoneInfo.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#Chats-loadGlipEveryone) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Chats-readGlipEveryone) in API Explorer.
 
 ## Update Everyone Сhat
 
@@ -11604,7 +11604,7 @@ You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/GlipEveryoneInfo.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#Chats-updateGlipEveryone) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Chats-patchGlipEveryone) in API Explorer.
 
 ## Get Favorite Chats
 
@@ -11772,7 +11772,7 @@ You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/GlipGroupInfo.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#Chats-loadGlipGroup) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Chats-readGlipGroup) in API Explorer.
 
 ## Edit Group Members
 
@@ -12248,7 +12248,7 @@ You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/GlipPersonInfo.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#Glip-Profile-loadGlipPerson) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Glip-Profile-readGlipPerson) in API Explorer.
 
 ## Get Posts
 
@@ -12493,7 +12493,7 @@ You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/GlipPreferencesInfo.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#Glip-Profile-loadGlipPreferences) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Glip-Profile-readGlipPreferences) in API Explorer.
 
 ## Get Recent Chats
 
@@ -12668,7 +12668,7 @@ You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/GlipTeamInfo.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#Chats-loadGlipTeam) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Chats-readGlipTeam) in API Explorer.
 
 ## Update Team
 
@@ -12709,7 +12709,7 @@ You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/GlipTeamInfo.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#Chats-updateGlipTeam) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Chats-patchGlipTeam) in API Explorer.
 
 ## Delete Team
 
@@ -12923,7 +12923,7 @@ You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/GlipWebhookList.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#Glip-Webhooks-loadGlipWebhook) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Glip-Webhooks-readGlipWebhook) in API Explorer.
 
 ## Delete Webhook
 
@@ -13033,7 +13033,7 @@ You can get response json data by `const json = r.json()`
 
 [Try it out](https://developer.ringcentral.com/api-reference#Account-Provisioning-parsePhoneNumber) in API Explorer.
 
-## Number Porting Verify
+## Verify Number
 
 HTTP POST `/restapi/v1.0/number-porting/verify-number`
 
@@ -13076,7 +13076,7 @@ You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/NumberPortingVerifyNumberResponse.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#Number-Porting-numberPortingVerify) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Number-Porting-verifyNumber) in API Explorer.
 
 ## Get Service Status
 
@@ -13212,7 +13212,7 @@ You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/SubscriptionInfo.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#Subscriptions-loadSubscription) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#Subscriptions-readSubscription) in API Explorer.
 
 ## Renew Subscription / Update Event Filters
 
@@ -13382,7 +13382,7 @@ You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/ServiceProviderConfig.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#SCIM-getServiceProviderConfig2) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#SCIM-readServiceProviderConfig2) in API Explorer.
 
 ## Search or List Users
 
@@ -13659,7 +13659,7 @@ You can get response json data by `const json = r.json()`
 
 - `json` is an object with [this definition](./definitions/UserResponse.yaml)
 
-[Try it out](https://developer.ringcentral.com/api-reference#SCIM-getUser2) in API Explorer.
+[Try it out](https://developer.ringcentral.com/api-reference#SCIM-readUser2) in API Explorer.
 
 ## Update/Replace User
 
